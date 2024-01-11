@@ -54,3 +54,17 @@ This work is published under [MIT][mit] License.
 [use-template]: https://github.com/cotes2020/chirpy-starter/generate
 [CD]: https://en.wikipedia.org/wiki/Continuous_deployment
 [mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+
+Follow link here for chirpy setup 
+https://chirpy.cotes.page/posts/getting-started/
+After cloning repo 
+
+``` 
+bundle // Install 
+```
+
+Run locally 
+```
+bundle exec jekyll s
+```
+Go to Link http://127.0.0.1:4000/ or http://localhost:4000/ 
