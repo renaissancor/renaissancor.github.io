@@ -1,7 +1,7 @@
 ---
-title: Fast API Study Summary 
+title: Fast API Study I 
 date: 2023-09-17 21:15:20 +0900
-categories: [Server]
+categories: [Server, FastAPI]
 tags: [python, fastapi]		# tags MUST be small letters, like tag NOT TAG 
 ---
 

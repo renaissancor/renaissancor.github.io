@@ -1,7 +1,7 @@
 ---
-title: Redux Study Notes
+title: Redux Study I
 date: 2023-09-10 21:15:20 +0900
-categories: [Web, ReactJS]
+categories: [Web, React]
 tags: [react, redux]		# tags MUST be small letters, like tag NOT TAG 
 ---
 # Redux Study Notes
