@@ -5,6 +5,9 @@ categories: [Web, GraphQL]
 tags: [graphql, api]		# tags MUST be small letters, like tag NOT TAG 
 ---
 
+Relay GraphQL problem: Relay source code has compiler to continuously optimize graphql`content` code by parsing strping template. 
+Its compiler uses watchman. No tutorial info about it in relay tutorial 
+
 1. GraphQL Schema has multiple types. Currently empty.
 2. The first output is the schema.graphql file, defining the GraphQL SDL (Schema Def. Language) that structures the API.
 3. The second output is the TS typegen file containing definitions of TypeScript types for graphql.schema, ensuring type safety and maintaining schema consistency when changes occur.
