@@ -1,0 +1,6 @@
+site_name: Renaissancoriate 
+
+theme:
+  name: material
+  palette:
+    scheme: slate
