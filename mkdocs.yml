@@ -4,3 +4,6 @@ theme:
   name: material
   palette:
     scheme: slate
+
+docs_dir: "docs"
+encoding: "utf-8"
