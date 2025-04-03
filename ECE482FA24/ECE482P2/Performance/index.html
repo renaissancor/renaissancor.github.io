@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../MultiThreading/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../RoadMap/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
     
     
       
-        <title>Renaissancor</title>
+        <title>Performance Improvements - Renaissancor</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -65,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#performance-improvements" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -77,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Renaissancor" class="md-header__button md-logo" aria-label="Renaissancor" data-md-component="logo">
+    <a href="../../.." title="Renaissancor" class="md-header__button md-logo" aria-label="Renaissancor" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -97,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Performance Improvements
             
           </span>
         </div>
@@ -175,7 +184,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Renaissancor" class="md-nav__button md-logo" aria-label="Renaissancor" data-md-component="logo">
+    <a href="../../.." title="Renaissancor" class="md-nav__button md-logo" aria-label="Renaissancor" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -193,7 +202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -215,7 +224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/AR250401/" class="md-nav__link">
+      <a href="../../../AR250401/" class="md-nav__link">
         
   
   
@@ -237,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/AR250402/" class="md-nav__link">
+      <a href="../../../AR250402/" class="md-nav__link">
         
   
   
@@ -259,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/AR250403/" class="md-nav__link">
+      <a href="../../../AR250403/" class="md-nav__link">
         
   
   
@@ -278,18 +287,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -305,7 +316,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             ECE482FA24
@@ -357,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482HW/ECE482H1/" class="md-nav__link">
+      <a href="../../ECE482HW/ECE482H1/" class="md-nav__link">
         
   
   
@@ -380,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482HW/ECE482H2/" class="md-nav__link">
+      <a href="../../ECE482HW/ECE482H2/" class="md-nav__link">
         
   
   
@@ -403,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482HW/ECE482H3/" class="md-nav__link">
+      <a href="../../ECE482HW/ECE482H3/" class="md-nav__link">
         
   
   
@@ -426,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482HW/ECE482H4/" class="md-nav__link">
+      <a href="../../ECE482HW/ECE482H4/" class="md-nav__link">
         
   
   
@@ -449,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482HW/ECE482H5/" class="md-nav__link">
+      <a href="../../ECE482HW/ECE482H5/" class="md-nav__link">
         
   
   
@@ -472,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482HW/ECE482H6/" class="md-nav__link">
+      <a href="../../ECE482HW/ECE482H6/" class="md-nav__link">
         
   
   
@@ -495,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482HW/ECE482H7/" class="md-nav__link">
+      <a href="../../ECE482HW/ECE482H7/" class="md-nav__link">
         
   
   
@@ -518,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482HW/ECE482H8/" class="md-nav__link">
+      <a href="../../ECE482HW/ECE482H8/" class="md-nav__link">
         
   
   
@@ -587,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L1/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L1/" class="md-nav__link">
         
   
   
@@ -610,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L10/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L10/" class="md-nav__link">
         
   
   
@@ -633,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L11/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L11/" class="md-nav__link">
         
   
   
@@ -656,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L2/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L2/" class="md-nav__link">
         
   
   
@@ -679,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L3/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L3/" class="md-nav__link">
         
   
   
@@ -702,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L4/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L4/" class="md-nav__link">
         
   
   
@@ -725,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L5/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L5/" class="md-nav__link">
         
   
   
@@ -748,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L6/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L6/" class="md-nav__link">
         
   
   
@@ -771,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L7/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L7/" class="md-nav__link">
         
   
   
@@ -794,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L8/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L8/" class="md-nav__link">
         
   
   
@@ -817,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482LAB/ECE482L9/" class="md-nav__link">
+      <a href="../../ECE482LAB/ECE482L9/" class="md-nav__link">
         
   
   
@@ -845,18 +856,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -872,7 +885,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             ECE482P2
@@ -886,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P2/Design/" class="md-nav__link">
+      <a href="../Design/" class="md-nav__link">
         
   
   
@@ -909,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P2/DeveloperGuide/" class="md-nav__link">
+      <a href="../DeveloperGuide/" class="md-nav__link">
         
   
   
@@ -932,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P2/Home/" class="md-nav__link">
+      <a href="../Home/" class="md-nav__link">
         
   
   
@@ -955,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P2/MultiThreading/" class="md-nav__link">
+      <a href="../MultiThreading/" class="md-nav__link">
         
   
   
@@ -975,10 +988,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P2/Performance/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Performance Improvements
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -989,6 +1024,95 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-analysis-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Analysis Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Insights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Log Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timing-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timing Highlights
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimization-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1001,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P2/RoadMap/" class="md-nav__link">
+      <a href="../RoadMap/" class="md-nav__link">
         
   
   
@@ -1070,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P3/Design/" class="md-nav__link">
+      <a href="../../ECE482P3/Design/" class="md-nav__link">
         
   
   
@@ -1093,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P3/Developer/" class="md-nav__link">
+      <a href="../../ECE482P3/Developer/" class="md-nav__link">
         
   
   
@@ -1116,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P3/Home/" class="md-nav__link">
+      <a href="../../ECE482P3/Home/" class="md-nav__link">
         
   
   
@@ -1139,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P3/Performance/" class="md-nav__link">
+      <a href="../../ECE482P3/Performance/" class="md-nav__link">
         
   
   
@@ -1162,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P3/Risk/" class="md-nav__link">
+      <a href="../../ECE482P3/Risk/" class="md-nav__link">
         
   
   
@@ -1185,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ECE482FA24/ECE482P3/RoadMap/" class="md-nav__link">
+      <a href="../../ECE482P3/RoadMap/" class="md-nav__link">
         
   
   
@@ -1233,6 +1357,85 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-analysis-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Analysis Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Insights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Log Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timing-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timing Highlights
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimization-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1244,8 +1447,130 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="performance-improvements">Performance Improvements</h1>
+<p>This section documents the performance improvements of our LemonDB systems in school server. </p>
+<h2 id="navigation">Navigation</h2>
+<ul>
+<li><a href="../Home/">Home</a></li>
+<li><a href="../RoadMap/">Project Roadmap</a></li>
+<li><a href="../Design/">System Design</a></li>
+<li><a href="./">Performance Improvements</a></li>
+<li><a href="../MultiThreading/">Multi-threading Challenges</a></li>
+<li><a href="../DeveloperGuide/">Developer Guide</a></li>
+</ul>
+<h2 id="performance-analysis-overview">Performance Analysis Overview</h2>
+<p>How multi-threading, query optimization, and efficient resource allocation
+improved overall system throughput and responsiveness will be recorded.</p>
+<p>Key observations from the timing log:
+- <strong>Baseline Performance</strong>: The original system's performance metrics were extracted to serve as a benchmark.
+- <strong>Improved Metrics</strong>:
+    - Execution times have been significantly reduced across all query types.
+    - Parallel query handling demonstrates efficient core utilization with minimal overhead.
+    - The system scales effectively with the number of cores, as verified on the 64-core test server.</p>
+<h2 id="log-insights">Log Insights</h2>
+<h3 id="timing-highlights">Timing Highlights</h3>
+<p>Below are the key timing statistics derived from the log:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Query Type</strong></th>
+<th><strong>sample lemondb Time (ms)</strong></th>
+<th><strong>our lemondb Time (ms)</strong></th>
+<th><strong>Improvement (%)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>many_insert_delete</td>
+<td>18021</td>
+<td>5446.0</td>
+<td>230.9</td>
+</tr>
+<tr>
+<td>many_read</td>
+<td>18899</td>
+<td>5386</td>
+<td>250.1</td>
+</tr>
+<tr>
+<td>few_insert_delete</td>
+<td>15708</td>
+<td>5538</td>
+<td>183.6</td>
+</tr>
+<tr>
+<td>few_read</td>
+<td>23977</td>
+<td>7145</td>
+<td>235.6</td>
+</tr>
+<tr>
+<td>single_insert_delete</td>
+<td>29316</td>
+<td>23434</td>
+<td>25.1</td>
+</tr>
+<tr>
+<td>single_read</td>
+<td>38493</td>
+<td>28934</td>
+<td>33.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="optimization-techniques">Optimization Techniques</h2>
+<ol>
+<li><strong>Multi-threading</strong>:<ul>
+<li>Implemented parallel query execution.</li>
+<li>Dynamically allocated threads using the <code>--threads</code> argument.</li>
+</ul>
+</li>
+<li><strong>Resource Management</strong>:<ul>
+<li>Improved memory allocation and reallocation strategies.</li>
+<li>Minimized contention and avoided deadlocks.</li>
+</ul>
+</li>
+<li><strong>Query Parsing Enhancements</strong>:<ul>
+<li>Optimized ID assignment for continuous integer sequences.</li>
+</ul>
+</li>
+<li><strong>Core Utilization</strong>:<ul>
+<li>Auto-detection of available cores for <code>--threads=0</code>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Continue profiling to identify edge cases that may impact performance.</li>
+<li>Explore advanced optimizations (e.g., thread pooling, asynchronous I/O).</li>
+<li>Document any additional improvements in subsequent updates.</li>
+</ul>
+<h2 id="navigation_1">Navigation</h2>
+<ul>
+<li><a href="../Home/">Home</a></li>
+<li><a href="../RoadMap/">Project Roadmap</a></li>
+<li><a href="../Design/">System Design</a></li>
+<li><a href="./">Performance Improvements</a></li>
+<li><a href="../MultiThreading/">Multi-threading Challenges</a></li>
+<li><a href="../DeveloperGuide/">Developer Guide</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1281,10 +1606,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
