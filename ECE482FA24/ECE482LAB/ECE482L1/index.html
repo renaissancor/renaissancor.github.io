@@ -1,0 +1,2225 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../ECE482HW/ECE482H8/">
+      
+      
+        <link rel="next" href="../ECE482L10/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Lab 01 - Renaissancor</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-01" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Renaissancor" class="md-header__button md-logo" aria-label="Renaissancor" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renaissancor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 01
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Renaissancor" class="md-nav__button md-logo" aria-label="Renaissancor" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Renaissancor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250402
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482FA24
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482FA24
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482HW
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482HW
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment III
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment IV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment V
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VIII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482LAB
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482LAB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 01
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 01
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-hardware-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Hardware overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Hardware overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-the-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      In the computer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-the-motherboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      On the motherboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer-the-following-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Answer the following questions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-gitea-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Gitea usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Gitea usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-git-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Git Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-agile-development-with-gitea" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Agile development with Gitea
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Command line interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Command line interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-basic-unix-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Basic Unix commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-shell-scripting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Shell scripting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-the-mkdir-touch-mv-cp-and-ls-commands-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the mkdir, touch, mv, cp, and ls commands to:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-grep-command-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the grep command to:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-find-command-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the find command to:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-redirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      &gt; Output Redirection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#append-output-redirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      &gt;&gt; Append Output Redirection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#here-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      &lt;&lt;&lt; Here String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-redirect-to-standard-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      &gt;&amp;1 Redirect to Standard Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-order-of-redirections" class="md-nav__link">
+    <span class="md-ellipsis">
+      2&gt;&amp;1&gt; Order of Redirections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-use-of-the-tee-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the use of the tee command.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explain-the-behaviour-of-the-xargs-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explain the behaviour of the xargs command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-pipe-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      The | pipe operator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-head-and-tail-commands-how-to-live-display-a-file-as-new-lines-are-appended" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the head and tail commands? How to “live display” a file as new lines are appended?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-monitor-the-system-using-ps-top-free-vmstat" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to monitor the system using ps, top, free, vmstat?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-differences-between-sh-bash-csh-and-zsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main differences between sh, bash, csh, and zsh?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-meaning-of-0-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the meaning of $0, $1,…, $?, $!?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-use-of-the-ps3-variable-provide-a-short-code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the use of the PS3 variable? Provide a short code example.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-iconv-command-and-why-is-it-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the iconv command, and why is it useful?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#given-a-variable-temp-what-is-the-effect-of-temp-tempword-temppatternstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Given a variable $temp what is the effect of ${#temp}, ${temp%%word}, ${temp/pattern/string}.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-online-not-in-the-man-pages-how-files-are-organised-on-a-unix-like-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search online (not in the man pages), how files are organised on a Unix like system.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 09
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/DeveloperGuide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 2 LemonDB Multi Threading Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/MultiThreading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-threading Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Improvements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Road Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Risk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling Risk Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling RoadMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-hardware-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Hardware overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Hardware overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-the-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      In the computer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-the-motherboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      On the motherboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer-the-following-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Answer the following questions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-gitea-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Gitea usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Gitea usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-git-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Git Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-agile-development-with-gitea" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Agile development with Gitea
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Command line interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Command line interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-basic-unix-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Basic Unix commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-shell-scripting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Shell scripting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-the-mkdir-touch-mv-cp-and-ls-commands-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the mkdir, touch, mv, cp, and ls commands to:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-grep-command-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the grep command to:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-find-command-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the find command to:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-redirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      &gt; Output Redirection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#append-output-redirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      &gt;&gt; Append Output Redirection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#here-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      &lt;&lt;&lt; Here String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-redirect-to-standard-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      &gt;&amp;1 Redirect to Standard Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-order-of-redirections" class="md-nav__link">
+    <span class="md-ellipsis">
+      2&gt;&amp;1&gt; Order of Redirections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-use-of-the-tee-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the use of the tee command.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explain-the-behaviour-of-the-xargs-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explain the behaviour of the xargs command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-pipe-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      The | pipe operator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-head-and-tail-commands-how-to-live-display-a-file-as-new-lines-are-appended" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the head and tail commands? How to “live display” a file as new lines are appended?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-monitor-the-system-using-ps-top-free-vmstat" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to monitor the system using ps, top, free, vmstat?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-differences-between-sh-bash-csh-and-zsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main differences between sh, bash, csh, and zsh?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-meaning-of-0-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the meaning of $0, $1,…, $?, $!?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-use-of-the-ps3-variable-provide-a-short-code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the use of the PS3 variable? Provide a short code example.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-purpose-of-the-iconv-command-and-why-is-it-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the purpose of the iconv command, and why is it useful?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#given-a-variable-temp-what-is-the-effect-of-temp-tempword-temppatternstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Given a variable $temp what is the effect of ${#temp}, ${temp%%word}, ${temp/pattern/string}.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-online-not-in-the-man-pages-how-files-are-organised-on-a-unix-like-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search online (not in the man pages), how files are organised on a Unix like system.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-01">Lab 01</h1>
+<p>ECE4820 FA2024 Introduction to Operating Systems</p>
+<p>518370990004 Jae Heung Park</p>
+<hr />
+<h2 id="1-hardware-overview">1 Hardware overview</h2>
+<h3 id="in-the-computer">In the computer</h3>
+<p>The motherboard</p>
+<p><img alt="Motherboard" src="../photos/MTB.jpeg" /></p>
+<p>A Hard Disk Drive</p>
+<p><img alt="Hard Disk Drive" src="../photos/HDD.jpeg" /></p>
+<p>An Optical disk drive</p>
+<p><img alt="Optical Disk Drive" src="../photos/ODD.jpeg" /></p>
+<p>The PC power supply</p>
+<p><img alt="PC Power Supply" src="../photos/POW.jpeg" /></p>
+<p>A PCI card</p>
+<p>PCI card did not exist in computer disassembled during lab.</p>
+<h3 id="on-the-motherboard">On the motherboard</h3>
+<p>The RAM</p>
+<p><img alt="RAM" src="../photos/RAM.jpeg" /></p>
+<p>A SATA socket</p>
+<p><img alt="SATA Socket" src="../photos/SATA.jpeg" /></p>
+<p>A PCI/PCI-e slot</p>
+<p><img alt="PCI Slot" src="../photos/PCI.jpeg" /></p>
+<p>The CPU</p>
+<p><img alt="CPU" src="../photos/CPU.jpeg" /></p>
+<p>The North and South bridges</p>
+<p><img alt="North and South Bridge" src="../photos/BRIDGE.jpeg" /></p>
+<p>The battery</p>
+<p><img alt="Battery" src="../photos/BATTERY.jpeg" /></p>
+<p>The BIOS</p>
+<p><img alt="BIOS" src="../photos/BIOS.jpeg" /></p>
+<h3 id="answer-the-following-questions">Answer the following questions</h3>
+<ul>
+<li>Where is the CPU hidden, and why?</li>
+</ul>
+<p>CPU (Central Processing Unit) is located below a fan and
+heat sink in CPU dismantled during lab.
+CPU creates a lot of heat during computer is operating,
+so it is necessary to have a cooling system attached to CPU.
+Air cooling by fan is universal, but sometimes liquid based cooling
+system can be used.</p>
+<ul>
+<li>What are the North and South bridges?</li>
+</ul>
+<p>North and South bridges are chips only existing in old motherboard chips.
+North Bridge controls CPU, RAM, internal Graphics Card interaction to be fast
+South Bridge controls HDD, USB, or PCIs like external VGA.</p>
+<ul>
+<li>How are the North and South bridges connected together?</li>
+</ul>
+<p>North &amp; South Bridges are connected through a bus. In motherboard, bus
+let data flow between these two bridges.</p>
+<ul>
+<li>What is the BIOS?</li>
+</ul>
+<p>BIOS(Basic Input/Output System) is a firmware software saved in motherboard chip.
+After the power is on, BIOS will be launched in computer,
+initializing CPU and RAM to either start Operating Systems like
+Windows or Linux, or changing setup.</p>
+<ul>
+<li>Take out the CPU, rotate it and try to plug it back in a different position, is that working?</li>
+</ul>
+<p>CPU is specifically designed compatible for only certain type of socket.
+Thus, CPU will be inserted only in the way it was inserted before.
+Forcing different position will result in compromising both
+CPU and motherboard CPU socket.</p>
+<ul>
+<li>Explain what overclocking is?</li>
+</ul>
+<p>Instructed in ECE370 Computer organization course, CPU is
+operating by each clock. More clocks per same time means
+faster CPU operation, but more consumption of electricity and
+creation of heat, so that CPU lifespan or even CPU circuit
+might be compromised if cooling system cannot handle it.</p>
+<ul>
+<li>What are pins on a PCI/PCI-e card and what are they used for?</li>
+</ul>
+<p>PCI PCI-e card pins connect PCI card to motherboard by their slots.
+These pins will let PCI card to interact with data transfer to motherboard.
+Thus, card and motherboard will communicate.
+One of the most popular type of PCI PCI-e card are VGA (Video Graphics Array),
+we call as external graphic cards like Nvidia RTX4090 or GTX1650.</p>
+<ul>
+<li>Before PCI-e became a common standard many graphics cards were using Accelerated Graphics
+  Port (AGP), explain why.</li>
+</ul>
+<p>AGP was specifically designed only for fast communication between
+CPU and graphic card. Before PCI-e, AGP was standard since it had
+better performance than PCI bus for data interaction with motherboard,
+but PCI-e performance was better in speed and compatibility, so it replaced AGP.</p>
+<h2 id="2-gitea-usage">2 Gitea usage</h2>
+<p>Register on our git server at http://focs.ji.sjtu.edu.cn/git. We will use Gitea all along the semester.
+For the various group projects student must use git: part of their grade will be based on their commits.
+Please closely follow the TAs’ instructions and ensure your are fully setup for the rest of the semester.
+In particular by the end of the lab you should have uploaded your ssh public key on Gitea.</p>
+<h3 id="21-git-usage">2.1 Git Usage</h3>
+<p>Basic git usage will be studied in a future lab. In the meantime get familiar with:</p>
+<ul>
+<li>Opening and using issues;</li>
+<li>Simple commands such as clone, commit, push, and pull;</li>
+<li>Using the Wiki and markdown, they will be used for the projects documentation;</li>
+</ul>
+<h3 id="22-agile-development-with-gitea">2.2 Agile development with Gitea</h3>
+<p>In ECE482 we expect you follow the adgile development strategy which is adopted by most companies
+nowadays. If you have any question of need further explanations feel free to ask. Here is a brief summary
+of the expected Gitea workflow in the course.</p>
+<h2 id="3-command-line-interface">3 Command line interface</h2>
+<h3 id="31-basic-unix-commands">3.1 Basic Unix commands</h3>
+<h3 id="32-shell-scripting">3.2 Shell scripting</h3>
+<h3 id="33-tasks">3.3 Tasks</h3>
+<p>Answer the following questions, only refering to man pages:</p>
+<h4 id="use-the-mkdir-touch-mv-cp-and-ls-commands-to">Use the mkdir, touch, mv, cp, and ls commands to:</h4>
+<ul>
+<li>Create a file named test.</li>
+<li>Move test to dir/test.txt, where dir is a new directory.</li>
+<li>Copy dir/test.txt to dir/test_copy.txt.</li>
+<li>List all the files contained in dir.</li>
+</ul>
+<pre><code class="language-shell">touch test
+mkdir dir
+mv test dir
+ls dir
+</code></pre>
+<h4 id="use-the-grep-command-to">Use the grep command to:</h4>
+<p>List all the files form /etc containing the pattern 127.0.0.1.</p>
+<pre><code class="language-shell">grep -rl '127.0.0.1' /etc
+</code></pre>
+<p>Returned nothing</p>
+<p>Only print the lines containing your username and root in the file /etc/passwd (only one grep should be used)</p>
+<pre><code class="language-shell">grep -rE 'root|jaeheungpark' /etc/passwd
+</code></pre>
+<p>Returns following</p>
+<pre><code class="language-text">/etc/passwd:root:*:0:0:System Administrator:/var/root:/bin/sh
+/etc/passwd:daemon:*:1:1:System Services:/var/root:/usr/bin/false
+/etc/passwd:_cvmsroot:*:212:212:CVMS Root:/var/empty:/usr/bin/false
+</code></pre>
+<h4 id="use-the-find-command-to">Use the find command to:</h4>
+<p>List all the files from /etc that have been accessed less than 24 hours ago.</p>
+<pre><code class="language-shell">find /etc -atime -1
+</code></pre>
+<p>Returned nothing</p>
+<p>List all the files from /etc whose name contains the pattern “netw”.</p>
+<pre><code class="language-shell">find /etc -name &quot;*netw*&quot;
+</code></pre>
+<p>Returned nothing</p>
+<p>In the bash man-page read the part related to redirections. Explain the following operators &gt;, &gt;&gt;,
+&lt;&lt;&lt;, &gt;&amp;1, and 2&gt;&amp;1 &gt;. What is the use of the tee command.</p>
+<p>Use <code>bash</code> instead of <code>zsh</code> terminal if you are MacOS user.
+Simply type <code>bash</code> or <code>zsh</code> to switch.</p>
+<h4 id="output-redirection"><code>&gt;</code> Output Redirection</h4>
+<p>Output Redirection redirect output from command to file.
+If file already exists, it will be overwritten.</p>
+<pre><code class="language-shell">echo &quot;Hello, Shell!&quot; &gt; output.txt
+</code></pre>
+<p>This will generate <code>output.txt</code> file or if it exists, overwrite
+it with contents written as <code>Hello Shell!</code>.</p>
+<h4 id="append-output-redirection"><code>&gt;&gt;</code> Append Output Redirection</h4>
+<p>Append Output Redirection redirect output from command to file.
+However, this time, command will be appended to originally existing file,
+instead of getting overwritten.</p>
+<pre><code class="language-shell">echo &quot;Hello, Again!&quot; &gt;&gt; output.txt
+</code></pre>
+<h4 id="here-string"><code>&lt;&lt;&lt;</code> Here String</h4>
+<p>Here String provide input to command from string. When using grep,</p>
+<p><code>grep "find this" &lt;&lt;&lt; "input sentence"</code></p>
+<pre><code class="language-shell">grep &quot;Hello&quot; &lt;&lt;&lt; &quot;Hello, Shell!&quot;
+grep &quot;World&quot; &lt;&lt;&lt; &quot;Hello, Shell!&quot;
+</code></pre>
+<p>First one will return <code>Hello Shell!</code> while the second one
+will return nothing.</p>
+<h4 id="1-redirect-to-standard-output"><code>&gt;&amp;1</code> Redirect to Standard Output</h4>
+<p>Redirect to Standard Output will make a file descriptor input to
+a copy file descriptor 1. Generally, it is standard output.</p>
+<pre><code class="language-shell">ls non_existing_file
+ls non_existing_file &gt;&amp;1
+</code></pre>
+<p>Both returns</p>
+<pre><code class="language-text">ls: non_existing_file: No such file or directory
+ls: non_existing_file: No such file or directory
+</code></pre>
+<p>However, former one returns error, while latter one returns
+output as standard output string.</p>
+<h4 id="21-order-of-redirections"><code>2&gt;&amp;1&gt;</code> Order of Redirections</h4>
+<p>Order of redirections will redirect standard output to file.</p>
+<pre><code class="language-shell">ls non_existing_file &gt; nofile.txt
+ls non_existing_file &gt; nofile.txt 2&gt;&amp;1
+</code></pre>
+<p>Formal one returns the following error on terminal.</p>
+<pre><code class="language-text">ls: non_existing_file: No such file or directory
+</code></pre>
+<p>However, latter one will create file named as nofile.txt as
+a command file.</p>
+<h4 id="what-is-the-use-of-the-tee-command">What is the use of the <code>tee</code> command.</h4>
+<p>The <code>tee</code> command will read from standard input and write as standard output.</p>
+<pre><code class="language-shell">echo &quot;Hello, Shell!&quot; | tee teefile.txt
+echo &quot;Hello, Again!&quot; | tee -a teefile.txt
+</code></pre>
+<p>Former command creates output file first sentence.
+Latter command adds output file second sentence.</p>
+<h4 id="explain-the-behaviour-of-the-xargs-command">Explain the behaviour of the <code>xargs</code> command</h4>
+<p>The <code>xargs</code> command will build and execute commands from standard input.</p>
+<pre><code class="language-shell">echo &quot;file1 file2 file3&quot; | xargs touch
+echo &quot;file1 file2 file3&quot; | xargs rm
+</code></pre>
+<p>will create and remove file1 file2 file3.</p>
+<h4 id="the-pipe-operator">The <code>|</code> pipe operator</h4>
+<p>The <code>|</code> pipe operator will take output of each command and
+apply it as input. For instance,</p>
+<pre><code class="language-shell">ls -l | grep &quot;txt&quot;
+</code></pre>
+<p>will return</p>
+<pre><code class="language-text">-rw-r--r--@ 1 jaeheungpark  staff  47 Sep 22 15:19 nofile.txt
+-rw-r--r--@ 1 jaeheungpark  staff  28 Sep 22 15:27 output.txt
+-rw-r--r--@ 1 jaeheungpark  staff  28 Sep 22 15:28 teefile.txt
+</code></pre>
+<h4 id="what-are-the-head-and-tail-commands-how-to-live-display-a-file-as-new-lines-are-appended">What are the head and tail commands? How to “live display” a file as new lines are appended?</h4>
+<p><code>Head</code> commands display first few lines of file, 10 lines in default.
+<code>Tail</code> commands display last few lines of file, 10 lines in default.
+If live display of a file is required, type <code>tail -f file.txt</code>,
+since <code>-f</code> represents follow.</p>
+<h4 id="how-to-monitor-the-system-using-ps-top-free-vmstat">How to monitor the system using ps, top, free, vmstat?</h4>
+<p><code>ps</code> shows currently running processes.</p>
+<pre><code class="language-text">  PID TTY           TIME CMD
+ 2360 ttys000    0:00.11 /bin/zsh --login -i
+ 2362 ttys000    0:00.49 /Users/jaeheungpark/.cache/gitstatus/gitstatusd-darwin-arm64 -G v1.5.4 -s -1 -u -1 -d -1 -c -1 -m -1 -v FATAL -t 22
+ 3018 ttys000    0:00.02 bash
+ 3189 ttys000    0:00.86 zsh
+</code></pre>
+<p><code>top</code> shows real time dynamic system process view including
+CPU usage and memory usage. Command input <code>top</code> returns</p>
+<pre><code class="language-text">Processes: 659 total, 2 running, 657 sleeping, 3545 threads                                                                               15:57:40
+Load Avg: 2.13, 1.97, 1.95  CPU usage: 3.19% user, 3.10% sys, 93.69% idle  SharedLibs: 765M resident, 149M data, 92M linkedit.
+MemRegions: 169888 total, 5315M resident, 502M private, 3869M shared. PhysMem: 17G used (2236M wired, 761M compressor), 359M unused.
+VM: 256T vsize, 4915M framework vsize, 0(0) swapins, 0(0) swapouts. Networks: packets: 3661368/5529M in, 2247373/2009M out.
+Disks: 1271160/19G read, 399936/13G written.
+mode [n]:
+PID    COMMAND      %CPU TIME     #TH    #WQ  #PORT MEM    PURG   CMPRS  PGRP  PPID  STATE    BOOSTS          %CPU_ME %CPU_OTHRS UID  FAULTS
+464    mobileassetd 13.5 00:20.36 7      5    201   14M-   0B     1824K  464   1     sleeping *7+[137]        0.04815 12.17135   0    7653+
+0      kernel_task  7.5  24:37.01 576/11 0    0     9040K  0B     0B     0     0     running   0[0]           0.00000 0.00000    0    39329+
+1104   clion        7.1  22:43.94 129    6    685+  1889M- 278M+  345M   1104  1     sleeping *0[1516]        0.04079 0.00000    501  1150909+
+</code></pre>
+<p><code>free</code> shows different kinds of memory usage including total,
+used, free, shared, buffer, cache, and available memories.</p>
+<p><code>vmstat</code> Shows virtual memory statistics including status of
+memory, process, paging, block input, output, traps updated
+per input second. For instance, <code>vmstat 1</code> will update
+the output every second.</p>
+<h4 id="what-are-the-main-differences-between-sh-bash-csh-and-zsh">What are the main differences between sh, bash, csh, and zsh?</h4>
+<p><code>sh</code> Shell is original basic shell, with the least amount of features</p>
+<p><code>bash</code> Bourne Again SHell is implemented shell version including
+command history, job control, and array.</p>
+<p><code>csh</code> C shell is based on similar syntax to the programming language C.</p>
+<p><code>zsh</code> Z shell is configurable shell with several features from
+both bash and csh. Currently shell of my M3 MacBook Pro OS is
+using zsh shell.</p>
+<h4 id="what-is-the-meaning-of-0-1">What is the meaning of $0, $1,…, $?, $!?</h4>
+<p><code>$0</code> Name of script / shell</p>
+<p><code>$1, $2, $3 ...</code> Arguments in order to get passed in script.</p>
+<p><code>$?</code> Exit status of last command. 0 means success while
+other numbers represent fail.</p>
+<p><code>$!</code> Process ID of last background command.</p>
+<h4 id="what-is-the-use-of-the-ps3-variable-provide-a-short-code-example">What is the use of the PS3 variable? Provide a short code example.</h4>
+<p>PS3 variable can set prompt for select command in bash. For instance, this is possible.</p>
+<pre><code class="language-shell">PS3=&quot;Select option: &quot;
+select option in &quot;Start&quot; &quot;Resume&quot; &quot;Quit&quot;; do
+  echo &quot;You selected: $option&quot;
+  [[ $option == &quot;Quit&quot; ]] &amp;&amp; break
+done
+</code></pre>
+<h4 id="what-is-the-purpose-of-the-iconv-command-and-why-is-it-useful">What is the purpose of the <code>iconv</code> command, and why is it useful?</h4>
+<p>Purpose of <code>iconv</code> command is to convert text between different
+character encodings systems like from ISO to UTF-8.
+It is useful when working with files with different systems or
+programs that have difference from standard format.</p>
+<h4 id="given-a-variable-temp-what-is-the-effect-of-temp-tempword-temppatternstring">Given a variable $temp what is the effect of ${#temp}, ${temp%%word}, ${temp/pattern/string}.</h4>
+<p><code>${#temp}</code> Return string length stored in <code>temp</code> variable</p>
+<p><code>${temp%%word}</code> Remove longest match of pattern word</p>
+<p><code>${temp/pattern/string}</code> Replace first <code>pattern</code> in <code>temp</code> containing <code>string</code>.</p>
+<h4 id="search-online-not-in-the-man-pages-how-files-are-organised-on-a-unix-like-system">Search online (not in the man pages), how files are organised on a Unix like system.</h4>
+<p>In particular explain what are the following directories used for:</p>
+<ul>
+<li><code>/:</code> Root directory, File System tree root.</li>
+<li><code>/bin</code> Binaries, store basic user commands including <code>ls</code>, <code>mv</code>, <code>cp</code>.</li>
+<li><code>/boot</code> Store bootloader files like kernel, initial RAM space.</li>
+<li><code>/etc</code> Configuration files for OS &amp; Applications</li>
+<li><code>/lib</code> System libraries necessary for OS booting</li>
+<li><code>/media</code> If media devices are connected or inserted in computer, OS will make corresponding directory here</li>
+<li><code>/mnt</code> Temporary mounted files.</li>
+<li><code>/usr/bin</code> User Binary files for User Applications</li>
+<li><code>/usr/share</code> Sharable text files</li>
+<li><code>/usr/lib</code> User Libraries required for <code>usr/bin</code></li>
+<li><code>/usr/src</code> Source codes for Linux Kernel</li>
+<li><code>/proc</code> Virtual Filesystems with process and kernel info</li>
+<li><code>/sys</code> Kernel interface with info view and configuration settings</li>
+<li><code>/srv</code> Data for Services by system like web servers</li>
+<li><code>/opt</code> Optional packages for subordinate directories</li>
+<li><code>/var</code> Variable data including system logging files</li>
+<li><code>/sbin</code> System binaries required for booting and system restoration</li>
+<li><code>/dev</code> Device files representing hardware</li>
+<li><code>/vmlinuz</code> Compressed Linux kernel used for booting</li>
+<li><code>/initrd.img</code> Initial RAM space used by kernel for booting</li>
+</ul>
+<p>Write a game where the computer selects a random number, prompts the user for a number, compares
+it to its number and displays “Larger” or “Smaller” to the user, until the player discovers the random
+number initially chosen by the computer.</p>
+<p>Execute by command</p>
+<pre><code class="language-shell">chmod +x game.sh
+./game.sh
+</code></pre>
+<p>Code works well.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

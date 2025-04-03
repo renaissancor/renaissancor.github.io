@@ -1,0 +1,2224 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ECE482H6/">
+      
+      
+        <link rel="next" href="../ECE482H8/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Assignment VII - Renaissancor</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#assignment-vii" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Renaissancor" class="md-header__button md-logo" aria-label="Renaissancor" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renaissancor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Assignment VII
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Renaissancor" class="md-nav__button md-logo" aria-label="Renaissancor" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Renaissancor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250402
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482FA24
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482FA24
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482HW
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482HW
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment III
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment IV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment V
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Assignment VII
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VII
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ex-1-page-replacement-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 1 — Page replacement algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 1 — Page replacement algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex-11-explain-the-content-of-the-new-table-entries-if-a-clock-interrupt-occurs-at-tick-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 1.1. Explain the content of the new table entries if a clock interrupt occurs at tick 10.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-12-due-to-a-read-request-to-page-4-a-page-fault-occurs-at-tick-10-describe-the-new-table-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 1.2. Due to a read request to page 4 a page fault occurs at tick 10. Describe the new table entry.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ex-2-minix-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2 — Minix 3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 2 — Minix 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex-21-in-which-files-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.1. In which files are:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 2.1. In which files are:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-the-constants-with-number-and-name-for-the-system-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      a) the constants with number and name for the system calls?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-the-names-of-the-system-call-routines" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) the names of the system call routines?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-the-prototypes-of-the-system-call-routines" class="md-nav__link">
+    <span class="md-ellipsis">
+      c) the prototypes of the system call routines?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-the-system-calls-of-type-signal-coded" class="md-nav__link">
+    <span class="md-ellipsis">
+      d) the system calls of type “signal” coded?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-22-what-problems-arise-when-trying-to-implement-a-system-call-int-getchpidsint-n-pid_t-childpid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.2. What problems arise when trying to implement a system call int getchpids(int n, pid_t *childpid)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 2.2. What problems arise when trying to implement a system call int getchpids(int n, pid_t *childpid)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-writes-the-pids-of-up-to-n-children-of-the-current-process-into-childpid" class="md-nav__link">
+    <span class="md-ellipsis">
+      which “writes” the pids of up to n children of the current process into *childpid?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-23-write-a-sub-system-call-int-getnchpidint-n-pid_t-childpid-which-retrieves-the-n-th-child-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.3. Write a “sub-system call” int getnchpid(int n, pid_t childpid) which retrieves the n-th child process.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-24-using-the-previous-sub-system-call-implement-the-original-getchpids-system-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.4. Using the previous sub-system call, implement the original getchpids system call.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 2.4. Using the previous sub-system call, implement the original getchpids system call.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-returned-int-value-corresponds-to-the-number-of-pids-in-childpid-or-1-on-an-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      The returned int value corresponds to the number of pids in *childpid, or -1 on an error.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-25-write-a-short-program-that-demonstrate-the-previous-system-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.5. Write a short program that demonstrate the previous system calls.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-26-the-above-strategy-solves-the-initial-problem-through-the-introduction-of-a-sub-system-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.6. The above strategy solves the initial problem through the introduction of a sub-system call.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 2.6. The above strategy solves the initial problem through the introduction of a sub-system call.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-what-are-the-drawbacks-and-benefits-of-this-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      a) What are the drawbacks and benefits of this solution?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-without-implementing-it-describe-the-basic-details-of-an-alternative-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) Without implementing it, describe the basic details of an alternative approach.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ex-3-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 3 — Research
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 3 — Research">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write-about-a-page-on-the-topic-of-the-ext2-filesystem-do-not-forget-to-reference-your-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write about a page on the topic of the ext2 filesystem. Do not forget to reference your sources.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ex-4-simple-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 4 — Simple questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 4 — Simple questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex-41-if-a-page-is-shared-between-two-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 4.1. If a page is shared between two processes,
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 4.1. If a page is shared between two processes,">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-it-possible-that-the-page-is-read-only-for-one-process-and-read-write-for-the-other-why-or-why-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      is it possible that the page is read-only for one process and read-write for the other? Why or why not?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-42-when-both-paging-and-segmentation-are-being-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 4.2. When both paging and segmentation are being used,
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 4.2. When both paging and segmentation are being used,">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-the-segment-descriptor-is-found-and-then-the-page-descriptor-does-the-tlb-also-need-a-two-levels-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      first the segment descriptor is found and then the page descriptor. Does the TLB also need a two-levels lookup?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VIII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482LAB
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482LAB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 09
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/DeveloperGuide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 2 LemonDB Multi Threading Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/MultiThreading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-threading Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Improvements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Road Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Risk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling Risk Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling RoadMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ex-1-page-replacement-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 1 — Page replacement algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 1 — Page replacement algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex-11-explain-the-content-of-the-new-table-entries-if-a-clock-interrupt-occurs-at-tick-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 1.1. Explain the content of the new table entries if a clock interrupt occurs at tick 10.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-12-due-to-a-read-request-to-page-4-a-page-fault-occurs-at-tick-10-describe-the-new-table-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 1.2. Due to a read request to page 4 a page fault occurs at tick 10. Describe the new table entry.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ex-2-minix-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2 — Minix 3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 2 — Minix 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex-21-in-which-files-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.1. In which files are:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 2.1. In which files are:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-the-constants-with-number-and-name-for-the-system-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      a) the constants with number and name for the system calls?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-the-names-of-the-system-call-routines" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) the names of the system call routines?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-the-prototypes-of-the-system-call-routines" class="md-nav__link">
+    <span class="md-ellipsis">
+      c) the prototypes of the system call routines?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-the-system-calls-of-type-signal-coded" class="md-nav__link">
+    <span class="md-ellipsis">
+      d) the system calls of type “signal” coded?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-22-what-problems-arise-when-trying-to-implement-a-system-call-int-getchpidsint-n-pid_t-childpid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.2. What problems arise when trying to implement a system call int getchpids(int n, pid_t *childpid)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 2.2. What problems arise when trying to implement a system call int getchpids(int n, pid_t *childpid)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-writes-the-pids-of-up-to-n-children-of-the-current-process-into-childpid" class="md-nav__link">
+    <span class="md-ellipsis">
+      which “writes” the pids of up to n children of the current process into *childpid?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-23-write-a-sub-system-call-int-getnchpidint-n-pid_t-childpid-which-retrieves-the-n-th-child-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.3. Write a “sub-system call” int getnchpid(int n, pid_t childpid) which retrieves the n-th child process.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-24-using-the-previous-sub-system-call-implement-the-original-getchpids-system-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.4. Using the previous sub-system call, implement the original getchpids system call.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 2.4. Using the previous sub-system call, implement the original getchpids system call.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-returned-int-value-corresponds-to-the-number-of-pids-in-childpid-or-1-on-an-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      The returned int value corresponds to the number of pids in *childpid, or -1 on an error.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-25-write-a-short-program-that-demonstrate-the-previous-system-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.5. Write a short program that demonstrate the previous system calls.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-26-the-above-strategy-solves-the-initial-problem-through-the-introduction-of-a-sub-system-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 2.6. The above strategy solves the initial problem through the introduction of a sub-system call.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 2.6. The above strategy solves the initial problem through the introduction of a sub-system call.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-what-are-the-drawbacks-and-benefits-of-this-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      a) What are the drawbacks and benefits of this solution?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-without-implementing-it-describe-the-basic-details-of-an-alternative-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) Without implementing it, describe the basic details of an alternative approach.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ex-3-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 3 — Research
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 3 — Research">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write-about-a-page-on-the-topic-of-the-ext2-filesystem-do-not-forget-to-reference-your-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write about a page on the topic of the ext2 filesystem. Do not forget to reference your sources.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ex-4-simple-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 4 — Simple questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 4 — Simple questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex-41-if-a-page-is-shared-between-two-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 4.1. If a page is shared between two processes,
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 4.1. If a page is shared between two processes,">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-it-possible-that-the-page-is-read-only-for-one-process-and-read-write-for-the-other-why-or-why-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      is it possible that the page is read-only for one process and read-write for the other? Why or why not?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-42-when-both-paging-and-segmentation-are-being-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ex. 4.2. When both paging and segmentation are being used,
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ex. 4.2. When both paging and segmentation are being used,">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-the-segment-descriptor-is-found-and-then-the-page-descriptor-does-the-tlb-also-need-a-two-levels-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      first the segment descriptor is found and then the page descriptor. Does the TLB also need a two-levels lookup?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="assignment-vii">Assignment VII</h1>
+<p>ECE4820 FA2024 Introduction to Operating Systems</p>
+<p>518370990004 Jae Heung Park</p>
+<hr />
+<h2 id="ex-1-page-replacement-algorithm">Ex. 1 — Page replacement algorithm</h2>
+<p>In this exercise we consider the WSClock page replacement algorithm with a τ value of two ticks.
+The system state is given as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Time Stamp</th>
+<th>Present</th>
+<th>Referenced</th>
+<th>Modified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>6</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ex-11-explain-the-content-of-the-new-table-entries-if-a-clock-interrupt-occurs-at-tick-10">Ex. 1.1. Explain the content of the new table entries if a clock interrupt occurs at tick 10.</h3>
+<p>Page 0, <code>Time Stamp</code> $= 6 \leq 8$, old,
+<code>Referenced</code> $=0$, Replacement candidate,
+<code>Modified</code> $=1$, Should be written in disk.</p>
+<p>Page 1, <code>Time Stamp</code> $= 9 \geq 8$, Not old, No change</p>
+<p>Page 2, <code>Time Stamp</code> $= 9 \geq 8$, Not old, No change</p>
+<p>Page 3, <code>Time Stamp</code> $= 7 \leq 8$, old,
+Replacement candidate, with no need to write back to disk</p>
+<p>Page 4, <code>Present</code>$=0$, so not in memory, not considered for replacement</p>
+<p>Table after Tick 10 interrupt is following.</p>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Time Stamp</th>
+<th>Present</th>
+<th>Referenced</th>
+<th>Modified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>6</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ex-12-due-to-a-read-request-to-page-4-a-page-fault-occurs-at-tick-10-describe-the-new-table-entry">Ex. 1.2. Due to a read request to page 4 a page fault occurs at tick 10. Describe the new table entry.</h3>
+<p>Suppose read request for page 4 is made.
+Since <code>Present</code> = 0, page is not in memory. Page Fault.</p>
+<p>WSLock Algorithm</p>
+<p>First, select victim page. For page 3,
+<code>Time Stamp</code> $= 7 \leq 8$, old,
+<code>Referenced</code>$=0$, <code>Modified</code>$=0$, No need to write back in disk.</p>
+<p>Now remove page 3 and load page 4.
+Update <code>Present</code> $=1$, <code>Referenced</code>$=0$, <code>Modified</code>$=0$.
+Result table will be following.</p>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Time Stamp</th>
+<th>Present</th>
+<th>Referenced</th>
+<th>Modified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>6</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>10</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ex-2-minix-3">Ex. 2 — Minix 3</h2>
+<p>The goal of this exercise is to understand and implement system calls.</p>
+<h3 id="ex-21-in-which-files-are">Ex. 2.1. In which files are:</h3>
+<h4 id="a-the-constants-with-number-and-name-for-the-system-calls">a) the constants with number and name for the system calls?</h4>
+<p>Path is <code>/include/minix/callnr.h</code></p>
+<h4 id="b-the-names-of-the-system-call-routines">b) the names of the system call routines?</h4>
+<p><code>/servers/*/table.c</code></p>
+<h4 id="c-the-prototypes-of-the-system-call-routines">c) the prototypes of the system call routines?</h4>
+<p><code>/servers/*/proto.h</code></p>
+<h4 id="d-the-system-calls-of-type-signal-coded">d) the system calls of type “signal” coded?</h4>
+<p><code>/servers/pm/signal.c</code></p>
+<h3 id="ex-22-what-problems-arise-when-trying-to-implement-a-system-call-int-getchpidsint-n-pid_t-childpid">Ex. 2.2. What problems arise when trying to implement a system call int getchpids(int n, pid_t *childpid)</h3>
+<h4 id="which-writes-the-pids-of-up-to-n-children-of-the-current-process-into-childpid">which “writes” the pids of up to n children of the current process into *childpid?</h4>
+<ul>
+<li>Since <code>*childpid</code> is located in user space, kernel code will not directly access to user space pointers</li>
+<li>Secure copy mechanism (<code>sys_datacopy</code>) is required.</li>
+<li>Validate Buffer size sufficiency to handle <code>n</code> child PIDs.</li>
+<li>Concurrent issue appears when process create or remove children during execution.</li>
+</ul>
+<h3 id="ex-23-write-a-sub-system-call-int-getnchpidint-n-pid_t-childpid-which-retrieves-the-n-th-child-process">Ex. 2.3. Write a “sub-system call” int getnchpid(int n, pid_t childpid) which retrieves the n-th child process.</h3>
+<pre><code class="language-c">#include &quot;pm.h&quot;
+#include &quot;mproc.h&quot;
+
+int getnchpid(int n, pid_t *childpid) {
+    if (childpid == NULL) return -1;
+    if (n &gt;= NR_PROCS) return -1;
+
+    struct mproc *child = &amp;mproc[n];
+    if (child-&gt;mp_parent != who_p) return -1;    // Ensure the process is a child of caller
+
+    *childpid = child-&gt;mp_pid;                    // Retrieve PID of the child
+    return 0;
+}
+</code></pre>
+<h3 id="ex-24-using-the-previous-sub-system-call-implement-the-original-getchpids-system-call">Ex. 2.4. Using the previous sub-system call, implement the original getchpids system call.</h3>
+<h4 id="the-returned-int-value-corresponds-to-the-number-of-pids-in-childpid-or-1-on-an-error">The returned int value corresponds to the number of pids in *childpid, or -1 on an error.</h4>
+<pre><code class="language-c">#include &quot;pm.h&quot;
+#include &quot;mproc.h&quot;
+
+int do_getchpids(int n, pid_t *childpid) {
+    if (childpid == NULL) return -1;
+    if (n &gt; NR_PROCS) return -1;
+
+    int count = 0;
+    for (int i = 0; i &lt; n; i++) {
+        int result = getnchpid(i, &amp;childpid[i]);
+        if (result == -1) break;  // Stop if no more children
+        count++;
+    }
+    return count;                 // Return children retrieved count
+}
+</code></pre>
+<h3 id="ex-25-write-a-short-program-that-demonstrate-the-previous-system-calls">Ex. 2.5. Write a short program that demonstrate the previous system calls.</h3>
+<pre><code class="language-c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;sys/wait.h&gt;
+
+#define NUM 10  // Number of child processes to create
+
+int main() {
+    pid_t child_pids[NUM];
+    pid_t retrieved_pids[NUM];
+
+    // Create child processes
+    for (int i = 0; i &lt; NUM; i++) {
+        pid_t pid = fork();
+        if (pid == 0) { // Child process
+            printf(&quot;Child %d: PID = %d\n&quot;, i, getpid());
+            exit(0);
+        } else if (pid &gt; 0) { // Parent process
+            child_pids[i] = pid;
+        } else {
+            perror(&quot;fork failed&quot;);
+            exit(1);
+        }
+    }
+
+    // Wait for all child processes to terminate
+    for (int i = 0; i &lt; NUM; i++) {
+        wait(NULL);
+    }
+
+    // Call `getchpids` to retrieve child PIDs
+    int result = getchpids(NUM, retrieved_pids);
+    if (result &lt; 0) {
+        fprintf(stderr, &quot;getchpids fail\n&quot;);
+        return -1;
+    }
+
+    // Validate and print results
+    for (int i = 0; i &lt; result; i++) {
+        printf(&quot;Retrieved PID: %d\n&quot;, retrieved_pids[i]);
+    }
+
+    return 0;
+}
+</code></pre>
+<h3 id="ex-26-the-above-strategy-solves-the-initial-problem-through-the-introduction-of-a-sub-system-call">Ex. 2.6. The above strategy solves the initial problem through the introduction of a sub-system call.</h3>
+<h4 id="a-what-are-the-drawbacks-and-benefits-of-this-solution">a) What are the drawbacks and benefits of this solution?</h4>
+<p><strong>Drawbacks</strong>:</p>
+<ul>
+<li>Additional overhead due to multiple calls to <code>getnchpid</code>.</li>
+<li>Complexity in handling edge cases (e.g., invalid indices).</li>
+<li>Higher potential for race conditions.</li>
+</ul>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Modular design makes debugging easier.</li>
+<li>Reusability of the <code>getnchpid</code> function.</li>
+</ul>
+<h4 id="b-without-implementing-it-describe-the-basic-details-of-an-alternative-approach">b) Without implementing it, describe the basic details of an alternative approach.</h4>
+<p>Implement <code>getchpids</code> as single system call</p>
+<ul>
+<li>Iteration through the process table in one pass.</li>
+<li>Retrieval of all child PIDs directly into user-provided buffer.</li>
+</ul>
+<hr />
+<h2 id="ex-3-research">Ex. 3 — Research</h2>
+<h3 id="write-about-a-page-on-the-topic-of-the-ext2-filesystem-do-not-forget-to-reference-your-sources">Write about a page on the topic of the ext2 filesystem. Do not forget to reference your sources.</h3>
+<p>Second Extended File System, or ext2 file system is a non-journaling filesystem
+introduced in 1993 for Linux. It was designed to overcome the limit of
+the ext filesystem by improving performance, flexibility, and scalability.
+due to its simplicity and efficiency, ext2 is still used for certain applications.
+Key components of ext2 are followings.</p>
+<ul>
+<li><strong>Superblock</strong> contains filesystem metadata, its size, block num, inodes, etc</li>
+<li><strong>Inode Table</strong> represent file or directory and contain information like size, owner, timestamp, etc</li>
+<li><strong>Data Blocks</strong> save file contents. Large files are supported by indirect, double indirect, etc.</li>
+<li><strong>Block Group</strong> divide filesystem to block group, each containing inode table, data block, etc.</li>
+</ul>
+<p>Since ext2 does not use journaling, overhead is reduced and writing speed is faster
+than later generation filesystems like ext3 or ext4 sometimes.
+This make it appropriate for devices with limited resources like USB or embedded systems.
+Its flexible inode allocation system allow optimized work performance with
+large quantity of volumes, even up to 2TB in size on 4KB block systems at maximum.</p>
+<p>However, absence of journaling represents crash or system power fail will
+require <code>fsck</code> check to restart. It might compromise data, and much slower.
+Also, its workload is not enough to handle huge quantity of volumes nowadays.</p>
+<p><strong>References</strong></p>
+<ul>
+<li>"The Linux Kernel Archives" - https://www.kernel.org</li>
+<li>"Understanding Linux Filesystems" - https://tldp.org</li>
+<li>Linux terminal man pages (man ext2, man fsck).</li>
+</ul>
+<hr />
+<h2 id="ex-4-simple-questions">Ex. 4 — Simple questions</h2>
+<h3 id="ex-41-if-a-page-is-shared-between-two-processes">Ex. 4.1. If a page is shared between two processes,</h3>
+<h4 id="is-it-possible-that-the-page-is-read-only-for-one-process-and-read-write-for-the-other-why-or-why-not">is it possible that the page is read-only for one process and read-write for the other? Why or why not?</h4>
+<p>Yes. Memory Management Unit (MMU) will enforce access permission based on page table of each process.
+One process will map page for read only, and other process will map as read and write.</p>
+<h3 id="ex-42-when-both-paging-and-segmentation-are-being-used">Ex. 4.2. When both paging and segmentation are being used,</h3>
+<h4 id="first-the-segment-descriptor-is-found-and-then-the-page-descriptor-does-the-tlb-also-need-a-two-levels-lookup">first the segment descriptor is found and then the page descriptor. Does the TLB also need a two-levels lookup?</h4>
+<p>No. TLB will not need two process layers. TLB acquire virtual to physical transition
+after page lookup and full segment. TLB will miss trigger two level lookup to update TLB.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
