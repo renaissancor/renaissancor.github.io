@@ -2126,14 +2126,14 @@ The system state is given as follows.</p>
 </tbody>
 </table>
 <h3 id="ex-11-explain-the-content-of-the-new-table-entries-if-a-clock-interrupt-occurs-at-tick-10">Ex. 1.1. Explain the content of the new table entries if a clock interrupt occurs at tick 10.</h3>
-<p>Page 0, <code>Time Stamp</code> $= 6 \leq 8$, old,
-<code>Referenced</code> $=0$, Replacement candidate,
-<code>Modified</code> $=1$, Should be written in disk.</p>
-<p>Page 1, <code>Time Stamp</code> $= 9 \geq 8$, Not old, No change</p>
-<p>Page 2, <code>Time Stamp</code> $= 9 \geq 8$, Not old, No change</p>
-<p>Page 3, <code>Time Stamp</code> $= 7 \leq 8$, old,
+<p>Page 0, <code>Time Stamp</code> <span class="arithmatex">\(= 6 \leq 8\)</span>, old,
+<code>Referenced</code> <span class="arithmatex">\(=0\)</span>, Replacement candidate,
+<code>Modified</code> <span class="arithmatex">\(=1\)</span>, Should be written in disk.</p>
+<p>Page 1, <code>Time Stamp</code> <span class="arithmatex">\(= 9 \geq 8\)</span>, Not old, No change</p>
+<p>Page 2, <code>Time Stamp</code> <span class="arithmatex">\(= 9 \geq 8\)</span>, Not old, No change</p>
+<p>Page 3, <code>Time Stamp</code> <span class="arithmatex">\(= 7 \leq 8\)</span>, old,
 Replacement candidate, with no need to write back to disk</p>
-<p>Page 4, <code>Present</code>$=0$, so not in memory, not considered for replacement</p>
+<p>Page 4, <code>Present</code><span class="arithmatex">\(=0\)</span>, so not in memory, not considered for replacement</p>
 <p>Table after Tick 10 interrupt is following.</p>
 <table>
 <thead>
@@ -2188,10 +2188,10 @@ Replacement candidate, with no need to write back to disk</p>
 Since <code>Present</code> = 0, page is not in memory. Page Fault.</p>
 <p>WSLock Algorithm</p>
 <p>First, select victim page. For page 3,
-<code>Time Stamp</code> $= 7 \leq 8$, old,
-<code>Referenced</code>$=0$, <code>Modified</code>$=0$, No need to write back in disk.</p>
+<code>Time Stamp</code> <span class="arithmatex">\(= 7 \leq 8\)</span>, old,
+<code>Referenced</code><span class="arithmatex">\(=0\)</span>, <code>Modified</code><span class="arithmatex">\(=0\)</span>, No need to write back in disk.</p>
 <p>Now remove page 3 and load page 4.
-Update <code>Present</code> $=1$, <code>Referenced</code>$=0$, <code>Modified</code>$=0$.
+Update <code>Present</code> <span class="arithmatex">\(=1\)</span>, <code>Referenced</code><span class="arithmatex">\(=0\)</span>, <code>Modified</code><span class="arithmatex">\(=0\)</span>.
 Result table will be following.</p>
 <table>
 <thead>
@@ -2455,6 +2455,10 @@ after page lookup and full segment. TLB will miss trigger two level lookup to up
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
