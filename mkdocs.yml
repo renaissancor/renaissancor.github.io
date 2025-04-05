@@ -1,9 +1,47 @@
-site_name: Renaissancor
+# Basic site metadata
+site_name: Renaissancoriate           # The title of your site (shown in the navigation bar and page title)
+site_description: C++ Blog and Study Notes  # Shown in HTML metadata for SEO and previews
+site_author: Renaissancor             # The author of the site (used in metadata)
+site_url: https://renaissancor.github.io  # The URL where your site will be published (useful for generating correct links)
 
+# Theme configuration
 theme:
-  name: material
-  palette:
-    scheme: slate
+  name: material                      # Use the Material for MkDocs theme
+  language: en                        # Interface language set to English
 
-docs_dir: "docs"
-encoding: "utf-8"
+  palette:                            # Configure the color palette (dark mode)
+    scheme: slate                     # Use the 'slate' dark color scheme
+    primary: light green              # Primary UI color (navigation, links, buttons)
+    accent: green                     # Accent color (highlighted elements like checkboxes)
+
+  font:
+    text: Roboto                      # Font for main content
+    code: Fira Code                   # Font for code blocks "Fira Code, JetBrains Mono, Consolas, monospace"
+
+  features:                           # Enable extra Material theme features
+    - navigation.top                 # Adds a sticky top navigation bar
+    - content.code.annotate         # Allows you to annotate lines in code blocks
+    - content.code.copy             # Adds a "copy" button to code blocks
+    - search.highlight              # Highlights search terms in the content
+    - search.share                  # Adds a share button to search results
+    - toc.follow                    # Highlights the current heading in the table of contents as you scroll
+
+# Markdown extensions for enhanced rendering
+markdown_extensions:
+  - codehilite:                      # Syntax highlighting for code blocks
+      guess_lang: false              # Don't guess the language if it's not specified
+      linenums: true                 # Show line numbers in code blocks
+
+  - pymdownx.superfences            # Allows nesting code blocks, and improves compatibility with other extensions
+  - pymdownx.inlinehilite           # Enables inline syntax highlighting using backticks and `==highlight==` style
+  - pymdownx.highlight:             # Advanced syntax highlighting using Pygments
+      anchor_linenums: true         # Line numbers are linkable via anchors (useful for referencing lines)
+      linenums_style: table         # Line numbers are rendered in a separate column like IDEs
+      guess_lang: false             # Don't auto-detect language
+      use_pygments: true            # Use the Pygments library for highlighting instead of Highlight.js
+
+  - pymdownx.snippets               # Lets you include external code snippets using `--8<-- "file.cpp"`
+
+# Other configuration
+docs_dir: "docs"                     # Folder that contains your Markdown documentation
+encoding: "utf-8"                    # Encoding for reading the documentation files
