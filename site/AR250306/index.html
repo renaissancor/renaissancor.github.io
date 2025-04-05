@@ -6,7 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="C++ Blog and Study Notes">
       
+      
+        <meta name="author" content="Renaissancor">
+      
+      
+        <link rel="canonical" href="https://renaissancor.github.io/AR250306/">
       
       
         <link rel="prev" href="../AR250305/">
@@ -20,7 +26,7 @@
     
     
       
-        <title>Operators in C++ - Renaissancor</title>
+        <title>Operators and Precedence - Renaissancoriate</title>
       
     
     
@@ -41,8 +47,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
       
     
     
@@ -61,7 +67,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="green">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -70,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#operators-in-c" class="md-skip">
+        <a href="#operators-and-precedence" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Renaissancor" class="md-header__button md-logo" aria-label="Renaissancor" data-md-component="logo">
+    <a href=".." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,13 +106,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Renaissancor
+            Renaissancoriate
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Operators in C++
+              Operators and Precedence
             
           </span>
         </div>
@@ -136,6 +142,11 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
@@ -184,13 +195,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Renaissancor" class="md-nav__button md-logo" aria-label="Renaissancor" data-md-component="logo">
+    <a href=".." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Renaissancor
+    Renaissancoriate
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -251,7 +262,7 @@
   
   
   <span class="md-ellipsis">
-    Data Types in C++
+    C++ Data Types and Basics
     
   </span>
   
@@ -282,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Operators in C++
+    Operators and Precedence
     
   </span>
   
@@ -295,7 +306,7 @@
   
   
   <span class="md-ellipsis">
-    Operators in C++
+    Operators and Precedence
     
   </span>
   
@@ -327,16 +338,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-overview-of-operators" class="md-nav__link">
+  <a href="#key-points" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Overview of Operators
+      Key Points
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Overview of Operators">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#arithmetic-operators" class="md-nav__link">
     <span class="md-ellipsis">
       Arithmetic Operators
@@ -344,17 +354,35 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#assignment-operators" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#floating-point-division" class="md-nav__link">
     <span class="md-ellipsis">
-      Assignment Operators
+      Floating-Point Division
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#assignment-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assignment Operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#increment-and-decrement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Increment and Decrement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#comparison-operators" class="md-nav__link">
     <span class="md-ellipsis">
       Comparison Operators
@@ -362,36 +390,40 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#logical-operators" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#boolean-and-logical-operators" class="md-nav__link">
     <span class="md-ellipsis">
-      Logical Operators
+      Boolean and Logical Operators
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#bitwise-operators" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#operator-precedence-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Bitwise Operators
+      Operator Precedence Example
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#increment-and-decrement-operators" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#tricky-case-precedence-pitfall" class="md-nav__link">
     <span class="md-ellipsis">
-      Increment and Decrement Operators
+      Tricky Case: Precedence Pitfall
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
   
 </li>
       
@@ -415,7 +447,7 @@
   
   
   <span class="md-ellipsis">
-    Increment/Decrement and Conditional Statements
+    Control Flow in C++
     
   </span>
   
@@ -437,7 +469,7 @@
   
   
   <span class="md-ellipsis">
-    Bitwise Operators and Preprocessor Macros in C++
+    Bitwise Operators &amp; Preprocessor Macros
     
   </span>
   
@@ -459,7 +491,51 @@
   
   
   <span class="md-ellipsis">
-    Local Variables, Arrays, and Loops in C++
+    Local Variables, Arrays, &amp; Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structs and Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Function Mechanics
     
   </span>
   
@@ -550,10 +626,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
             
   
   
@@ -566,8 +642,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             ECE482FA24
           </label>
@@ -588,10 +664,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1" >
         
           
-          <label class="md-nav__link" for="__nav_11_1" id="__nav_11_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13_1" id="__nav_13_1_label" tabindex="0">
             
   
   
@@ -604,8 +680,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_1">
             <span class="md-nav__icon md-icon"></span>
             ECE482HW
           </label>
@@ -818,10 +894,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_2" >
         
           
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13_2" id="__nav_13_2_label" tabindex="0">
             
   
   
@@ -834,8 +910,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_2">
             <span class="md-nav__icon md-icon"></span>
             ECE482LAB
           </label>
@@ -1117,10 +1193,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_3" >
         
           
-          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13_3" id="__nav_13_3_label" tabindex="0">
             
   
   
@@ -1133,8 +1209,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_3">
             <span class="md-nav__icon md-icon"></span>
             ECE482P2
           </label>
@@ -1301,10 +1377,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_4" >
         
           
-          <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13_4" id="__nav_13_4_label" tabindex="0">
             
   
   
@@ -1317,8 +1393,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_4">
             <span class="md-nav__icon md-icon"></span>
             ECE482P3
           </label>
@@ -1513,16 +1589,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-overview-of-operators" class="md-nav__link">
+  <a href="#key-points" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Overview of Operators
+      Key Points
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Overview of Operators">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#arithmetic-operators" class="md-nav__link">
     <span class="md-ellipsis">
       Arithmetic Operators
@@ -1530,17 +1605,35 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#assignment-operators" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#floating-point-division" class="md-nav__link">
     <span class="md-ellipsis">
-      Assignment Operators
+      Floating-Point Division
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#assignment-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assignment Operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#increment-and-decrement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Increment and Decrement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#comparison-operators" class="md-nav__link">
     <span class="md-ellipsis">
       Comparison Operators
@@ -1548,36 +1641,40 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#logical-operators" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#boolean-and-logical-operators" class="md-nav__link">
     <span class="md-ellipsis">
-      Logical Operators
+      Boolean and Logical Operators
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#bitwise-operators" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#operator-precedence-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Bitwise Operators
+      Operator Precedence Example
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#increment-and-decrement-operators" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#tricky-case-precedence-pitfall" class="md-nav__link">
     <span class="md-ellipsis">
-      Increment and Decrement Operators
+      Tricky Case: Precedence Pitfall
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
   
 </li>
       
@@ -1597,60 +1694,109 @@
 
 
 
-<h1 id="operators-in-c">Operators in C++</h1>
+<h1 id="operators-and-precedence">Operators and Precedence</h1>
 <h3 id="date-2025-03-06">Date: 2025-03-06</h3>
 <hr />
-<h2 id="1-overview-of-operators">1. Overview of Operators</h2>
-<p>Operators allow manipulation of variables and data. They are categorized as follows:</p>
-<h3 id="arithmetic-operators">Arithmetic Operators</h3>
-<pre><code class="language-cpp">int a = 10, b = 3;
-int sum = a + b;   // Addition
-int diff = a - b;  // Subtraction
-int prod = a * b;  // Multiplication
-int quot = a / b;  // Division (integer division, result: 3)
-int rem = a % b;   // Modulo (remainder: 1)
-</code></pre>
-<p><strong>Tricky Cases</strong></p>
-<pre><code class="language-cpp">float fquot = 10 / 3;     // Result: 3 (integer division)
-float correct = 10.0 / 3; // Result: 3.333... (floating-point division)
-</code></pre>
-<h3 id="assignment-operators">Assignment Operators</h3>
-<pre><code class="language-cpp">int x = 10;
-x += 5;  // x = x + 5
-x -= 3;  // x = x - 3
-x *= 2;  // x = x * 2
-x /= 4;  // x = x / 4
-x %= 3;  // x = x % 3
-</code></pre>
-<h3 id="comparison-operators">Comparison Operators</h3>
-<pre><code class="language-cpp">bool isEqual = (a == b);  // Equal to
-bool isNotEqual = (a != b); // Not equal to
-bool isGreater = (a &gt; b);  // Greater than
-bool isLess = (a &lt; b);    // Less than
-bool isGE = (a &gt;= b);    // Greater or equal to
-bool isLE = (a &lt;= b);    // Less or equal to
-</code></pre>
-<h3 id="logical-operators">Logical Operators</h3>
-<pre><code class="language-cpp">bool result = (a &gt; 5) &amp;&amp; (b &lt; 5); // AND
-result = (a &gt; 5) || (b &lt; 5);      // OR
-result = !(a &gt; 5);               // NOT
-</code></pre>
-<h3 id="bitwise-operators">Bitwise Operators</h3>
-<pre><code class="language-cpp">int bitwise_and = a &amp; b;  // Bitwise AND
-int bitwise_or = a | b;   // Bitwise OR
-int bitwise_xor = a ^ b;  // Bitwise XOR
-int bitwise_not = ~a;     // Bitwise NOT
-int left_shift = a &lt;&lt; 1;  // Shift left by 1 bit
-int right_shift = a &gt;&gt; 1; // Shift right by 1 bit
-</code></pre>
-<h3 id="increment-and-decrement-operators">Increment and Decrement Operators</h3>
-<pre><code class="language-cpp">int num = 5;
-int preIncrement = ++num;  // Increment first, then assign
-int postIncrement = num++; // Assign first, then increment
-int preDecrement = --num;  // Decrement first, then assign
-int postDecrement = num--; // Assign first, then decrement
-</code></pre>
-<p>In expressions, pre-increment/decrement has higher precedence than post-increment/decrement.</p>
+<h2 id="key-points">Key Points</h2>
+<ul>
+<li>Operators perform computations on variables and values.</li>
+<li>Operator precedence determines evaluation order in expressions.</li>
+<li>C++ includes arithmetic, assignment, comparison, logical, and increment/decrement operators.</li>
+</ul>
+<hr />
+<h2 id="arithmetic-operators">Arithmetic Operators</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">    </span><span class="c1">// 13</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">   </span><span class="c1">// 7</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">prod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">   </span><span class="c1">// 30</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">div</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">    </span><span class="c1">// 3 (integer division)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kt">int</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">    </span><span class="c1">// 1 (remainder)</span>
+</code></pre></div>
+<ul>
+<li>When both operands are integers, division truncates the result.</li>
+<li><code>%</code> is only applicable to integers.</li>
+</ul>
+<hr />
+<h2 id="floating-point-division">Floating-Point Division</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">fdiv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.f</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3.f</span><span class="p">;</span><span class="w">    </span><span class="c1">// 3.333...</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">ddiv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span><span class="w">   </span><span class="c1">// 3.333...</span>
+</code></pre></div>
+<ul>
+<li>Floating-point division returns a more accurate result.</li>
+</ul>
+<hr />
+<h2 id="assignment-operator">Assignment Operator</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// Assigns value 5 to x</span>
+</code></pre></div>
+<ul>
+<li><code>=</code> assigns the right-hand side value to the left-hand variable.</li>
+</ul>
+<hr />
+<h2 id="increment-and-decrement">Increment and Decrement</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="o">++</span><span class="n">num</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pre-increment: increment before use</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="o">--</span><span class="n">num</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pre-decrement</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">num</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// Post-increment: use before increment</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">dec</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="c1">// Post-decrement</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="o">++</span><span class="p">;</span><span class="w">  </span><span class="c1">// result gets old num; num is incremented afterward</span>
+</code></pre></div>
+<ul>
+<li>Pre-increment/decrement has higher precedence than post.</li>
+<li>Mixed with other expressions, they can affect evaluation order.</li>
+</ul>
+<hr />
+<h2 id="comparison-operators">Comparison Operators</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">bool</span><span class="w"> </span><span class="n">isEqual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">   </span><span class="c1">// false</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kt">bool</span><span class="w"> </span><span class="n">isNotEqual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="c1">// true</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kt">bool</span><span class="w"> </span><span class="n">isGreater</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="kt">bool</span><span class="w"> </span><span class="n">isLessEqual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
+<ul>
+<li>Always return boolean values: <code>true</code> or <code>false</code>.</li>
+</ul>
+<hr />
+<h2 id="boolean-and-logical-operators">Boolean and Logical Operators</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// false (AND)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">bool</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// true  (OR)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">bool</span><span class="w"> </span><span class="n">result3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="nb">true</span><span class="p">;</span><span class="w">          </span><span class="c1">// false (NOT)</span>
+</code></pre></div>
+<ul>
+<li><code>&amp;&amp;</code>, <code>||</code> use short-circuit evaluation.</li>
+<li>Only <code>0</code> is false; all non-zero integers are considered true.</li>
+</ul>
+<hr />
+<h2 id="operator-precedence-example">Operator Precedence Example</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">bool</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y</span><span class="o">++</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li><code>x++ &lt; y</code>: <code>x</code> is compared first, then incremented.</li>
+<li><code>&amp;&amp;</code>: evaluates only if the first condition is true.</li>
+<li><code>y++ &gt; 15</code>: executed only if <code>x++ &lt; y</code> is true.</li>
+</ul>
+<hr />
+<h2 id="tricky-case-precedence-pitfall">Tricky Case: Precedence Pitfall</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">;</span>
+</code></pre></div>
+<p>Step-by-step evaluation:
+- <code>i++</code> = 10 (then i becomes 11)
+- <code>++i</code> = 12 (i becomes 12 before use)
+- <code>j = 10 * 2 + 12 = 32</code></p>
+<hr />
+<h2 id="interview-questions">Interview Questions</h2>
+<p><strong>Q: What's the difference between <code>++i</code> and <code>i++</code>?</strong><br />
+A: <code>++i</code> increments the value before it's used in the expression, while <code>i++</code> uses the current value and then increments.</p>
+<p><strong>Q: What happens when mixing <code>&amp;&amp;</code>, <code>||</code>, and comparison operators in one expression?</strong><br />
+A: C++ follows operator precedence rules: comparison operators are evaluated first, then logical AND (<code>&amp;&amp;</code>), then logical OR (<code>||</code>). Use parentheses for clarity.</p>
+<p><strong>Q: What’s short-circuit evaluation?</strong><br />
+A: In logical expressions, <code>&amp;&amp;</code> stops evaluating if the first condition is false, and <code>||</code> stops if the first is true. This avoids unnecessary computation.</p>
 
 
 
@@ -1670,6 +1816,12 @@ int postDecrement = num--; // Assign first, then decrement
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -1699,7 +1851,7 @@ int postDecrement = num--; // Assign first, then decrement
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
