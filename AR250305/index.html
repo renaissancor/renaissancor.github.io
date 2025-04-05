@@ -6,7 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="C++ Blog and Study Notes">
       
+      
+        <meta name="author" content="Renaissancor">
+      
+      
+        <link rel="canonical" href="https://renaissancor.github.io/AR250305/">
       
       
         <link rel="prev" href="../AR111111/">
@@ -20,7 +26,7 @@
     
     
       
-        <title>Data Types in C++ - Renaissancor</title>
+        <title>C++ Data Types and Basics - Renaissancoriate</title>
       
     
     
@@ -41,8 +47,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
       
     
     
@@ -61,7 +67,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="green">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -70,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-types-in-c" class="md-skip">
+        <a href="#c-data-types-and-basics" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Renaissancor" class="md-header__button md-logo" aria-label="Renaissancor" data-md-component="logo">
+    <a href=".." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,13 +106,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Renaissancor
+            Renaissancoriate
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Types in C++
+              C++ Data Types and Basics
             
           </span>
         </div>
@@ -136,6 +142,11 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
@@ -184,13 +195,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Renaissancor" class="md-nav__button md-logo" aria-label="Renaissancor" data-md-component="logo">
+    <a href=".." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Renaissancor
+    Renaissancoriate
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -260,7 +271,7 @@
   
   
   <span class="md-ellipsis">
-    Data Types in C++
+    C++ Data Types and Basics
     
   </span>
   
@@ -273,7 +284,7 @@
   
   
   <span class="md-ellipsis">
-    Data Types in C++
+    C++ Data Types and Basics
     
   </span>
   
@@ -305,28 +316,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-overview-of-programming-languages-and-compilation-process" class="md-nav__link">
+  <a href="#key-points" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Overview of Programming Languages and Compilation Process
+      Key Points
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-integer-data-types" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Integer Data Types
+      Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Integer Data Types">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primitive Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primitive Data Types">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#signed-vs-unsigned" class="md-nav__link">
+  <a href="#integer-types" class="md-nav__link">
     <span class="md-ellipsis">
-      Signed vs Unsigned
+      Integer Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-size-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integer Size Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-vs-unsigned-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signed vs Unsigned Behavior
     </span>
   </a>
   
@@ -338,28 +376,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-integer-representation-and-twos-complement" class="md-nav__link">
+  <a href="#floating-point-types" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Integer Representation and Two’s Complement
+      Floating-Point Types
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-floating-point-data-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Floating-Point Data Types
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Floating-Point Data Types">
+    <nav class="md-nav" aria-label="Floating-Point Types">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#floating-point-precision-issues" class="md-nav__link">
+  <a href="#initialization-vs-assignment" class="md-nav__link">
     <span class="md-ellipsis">
-      Floating-Point Precision Issues
+      Initialization vs Assignment
     </span>
   </a>
   
@@ -371,37 +400,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-type-conversion-implicit-and-explicit-casting" class="md-nav__link">
+  <a href="#type-conversion-and-casting" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Type Conversion (Implicit and Explicit Casting)
+      Type Conversion and Casting
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. Type Conversion (Implicit and Explicit Casting)">
+    <nav class="md-nav" aria-label="Type Conversion and Casting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#implicit-type-conversion" class="md-nav__link">
+  <a href="#implicit-conversion" class="md-nav__link">
     <span class="md-ellipsis">
-      Implicit Type Conversion
+      Implicit Conversion
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#explicit-type-conversion" class="md-nav__link">
+  <a href="#explicit-casting" class="md-nav__link">
     <span class="md-ellipsis">
-      Explicit Type Conversion
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tricky-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tricky Cases
+      Explicit Casting
     </span>
   </a>
   
@@ -413,9 +433,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#common-mistakes" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
     </span>
   </a>
   
@@ -441,7 +470,7 @@
   
   
   <span class="md-ellipsis">
-    Operators in C++
+    Operators and Precedence
     
   </span>
   
@@ -463,7 +492,7 @@
   
   
   <span class="md-ellipsis">
-    Increment/Decrement and Conditional Statements
+    Control Flow in C++
     
   </span>
   
@@ -485,7 +514,7 @@
   
   
   <span class="md-ellipsis">
-    Bitwise Operators and Preprocessor Macros in C++
+    Bitwise Operators &amp; Preprocessor Macros
     
   </span>
   
@@ -507,7 +536,51 @@
   
   
   <span class="md-ellipsis">
-    Local Variables, Arrays, and Loops in C++
+    Local Variables, Arrays, &amp; Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structs and Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Function Mechanics
     
   </span>
   
@@ -598,10 +671,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
             
   
   
@@ -614,8 +687,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             ECE482FA24
           </label>
@@ -636,10 +709,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1" >
         
           
-          <label class="md-nav__link" for="__nav_11_1" id="__nav_11_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13_1" id="__nav_13_1_label" tabindex="0">
             
   
   
@@ -652,8 +725,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_1">
             <span class="md-nav__icon md-icon"></span>
             ECE482HW
           </label>
@@ -866,10 +939,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_2" >
         
           
-          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13_2" id="__nav_13_2_label" tabindex="0">
             
   
   
@@ -882,8 +955,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_2">
             <span class="md-nav__icon md-icon"></span>
             ECE482LAB
           </label>
@@ -1165,10 +1238,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_3" >
         
           
-          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13_3" id="__nav_13_3_label" tabindex="0">
             
   
   
@@ -1181,8 +1254,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_3">
             <span class="md-nav__icon md-icon"></span>
             ECE482P2
           </label>
@@ -1349,10 +1422,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_4" >
         
           
-          <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13_4" id="__nav_13_4_label" tabindex="0">
             
   
   
@@ -1365,8 +1438,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_4">
             <span class="md-nav__icon md-icon"></span>
             ECE482P3
           </label>
@@ -1561,28 +1634,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-overview-of-programming-languages-and-compilation-process" class="md-nav__link">
+  <a href="#key-points" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Overview of Programming Languages and Compilation Process
+      Key Points
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-integer-data-types" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Integer Data Types
+      Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Integer Data Types">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primitive Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primitive Data Types">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#signed-vs-unsigned" class="md-nav__link">
+  <a href="#integer-types" class="md-nav__link">
     <span class="md-ellipsis">
-      Signed vs Unsigned
+      Integer Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-size-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integer Size Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-vs-unsigned-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signed vs Unsigned Behavior
     </span>
   </a>
   
@@ -1594,28 +1694,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-integer-representation-and-twos-complement" class="md-nav__link">
+  <a href="#floating-point-types" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Integer Representation and Two’s Complement
+      Floating-Point Types
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-floating-point-data-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Floating-Point Data Types
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Floating-Point Data Types">
+    <nav class="md-nav" aria-label="Floating-Point Types">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#floating-point-precision-issues" class="md-nav__link">
+  <a href="#initialization-vs-assignment" class="md-nav__link">
     <span class="md-ellipsis">
-      Floating-Point Precision Issues
+      Initialization vs Assignment
     </span>
   </a>
   
@@ -1627,37 +1718,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-type-conversion-implicit-and-explicit-casting" class="md-nav__link">
+  <a href="#type-conversion-and-casting" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Type Conversion (Implicit and Explicit Casting)
+      Type Conversion and Casting
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. Type Conversion (Implicit and Explicit Casting)">
+    <nav class="md-nav" aria-label="Type Conversion and Casting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#implicit-type-conversion" class="md-nav__link">
+  <a href="#implicit-conversion" class="md-nav__link">
     <span class="md-ellipsis">
-      Implicit Type Conversion
+      Implicit Conversion
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#explicit-type-conversion" class="md-nav__link">
+  <a href="#explicit-casting" class="md-nav__link">
     <span class="md-ellipsis">
-      Explicit Type Conversion
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tricky-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tricky Cases
+      Explicit Casting
     </span>
   </a>
   
@@ -1669,9 +1751,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#common-mistakes" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
     </span>
   </a>
   
@@ -1693,120 +1784,91 @@
 
 
 
-<h1 id="data-types-in-c">Data Types in C++</h1>
+<h1 id="c-data-types-and-basics">C++ Data Types and Basics</h1>
 <h3 id="date-2025-03-05">Date: 2025-03-05</h3>
 <hr />
-<h2 id="1-overview-of-programming-languages-and-compilation-process">1. Overview of Programming Languages and Compilation Process</h2>
-<pre><code class="language-cpp">// C++, C, Java, C#, Objective-C
-//        |
-//     Compiler
-//        ↓
-// Assembly Code → Binary (Machine Code)
-</code></pre>
-<p>Compilers convert high-level code into low-level assembly and binary code, enabling execution on a CPU.</p>
+<h2 id="key-points">Key Points</h2>
+<ul>
+<li>Data types define the size and purpose of variables in memory.</li>
+<li>Each type has a default range and behavior, especially with signed vs unsigned.</li>
+<li>Type casting allows explicit conversion between types.</li>
+<li>Floating-point numbers follow the IEEE standard.</li>
+</ul>
 <hr />
-<h2 id="2-integer-data-types">2. Integer Data Types</h2>
-<p>Integer types store whole numbers in memory. The range depends on size (bytes).</p>
-<pre><code class="language-cpp">// Integer data types with their size (on most systems)
-bool        b;   // 1 byte, true(1) / false(0)
-char        c;   // 1 byte, -128 to 127 (signed), 0 to 255 (unsigned)
-short       s;   // 2 bytes, -32,768 to 32,767
-int         i;   // 4 bytes, -2,147,483,648 to 2,147,483,647
-long        l;   // 4 bytes (same as int in most systems)
-long long   ll;  // 8 bytes, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-</code></pre>
-<h3 id="signed-vs-unsigned">Signed vs Unsigned</h3>
-<pre><code class="language-cpp">signed char sc = -10;  // Can hold negative values
-unsigned char uc = 255; // No negatives, 0 to 255
-</code></pre>
-<p><strong>Signed vs Unsigned Comparisons</strong></p>
-<pre><code class="language-cpp">int a = -1;
-unsigned int b = 1;
-
-if (a &lt; b)
-    std::cout &lt;&lt; &quot;a is less than b\n&quot;;  // Unexpected output!
-else
-    std::cout &lt;&lt; &quot;b is less than a\n&quot;;  // Prints this!
-
-// When comparing signed and unsigned, 'a' becomes a large positive number.
-</code></pre>
-<p>To fix this, explicitly cast before comparing:</p>
-<pre><code class="language-cpp">if (static_cast&lt;int&gt;(b) &gt; a)  // Correct comparison
-</code></pre>
+<h2 id="overview">Overview</h2>
+<p>In C++, data types determine how memory is allocated for variables and how operations are performed. Understanding data types is fundamental for both correctness and performance.</p>
 <hr />
-<h2 id="3-integer-representation-and-twos-complement">3. Integer Representation and Two’s Complement</h2>
-<p>Binary Representation (2’s complement for negative numbers):</p>
-<pre><code class="language-cpp">signed char x = -1;  // -1 in binary: 1111 1111 (2’s complement)
-unsigned char y = x; // Now interpreted as 255 (not -1!)
-std::cout &lt;&lt; (int)y;  // Output: 255
-</code></pre>
-<p>Signed and unsigned types interpret bits differently.</p>
+<h2 id="primitive-data-types">Primitive Data Types</h2>
+<h3 id="integer-types">Integer Types</h3>
+<p>Integer types store whole numbers and can be either signed (default) or unsigned.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Signed: can represent negative and positive values</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">// Range: -128 to 127</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">// Unsigned: only non-negative values</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">uc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// Range: 0 to 255</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span><span class="w">  </span><span class="c1">// Triggers overflow, behavior is implementation-defined</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">uc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span><span class="w">  </span><span class="c1">// Valid</span>
+</code></pre></div>
+<h3 id="integer-size-summary">Integer Size Summary</h3>
+<ul>
+<li><code>bool</code> — 1 byte</li>
+<li><code>char</code> — 1 byte</li>
+<li><code>short</code> — 2 bytes</li>
+<li><code>int</code> — 4 bytes</li>
+<li><code>long</code> — 4 bytes (platform dependent)</li>
+<li><code>long long</code> — 8 bytes</li>
+</ul>
+<h3 id="signed-vs-unsigned-behavior">Signed vs Unsigned Behavior</h3>
+<p>Signed integers can represent both positive and negative values using two's complement representation. To convert a positive binary to its negative form, invert the bits and add 1.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span><span class="w">                  </span><span class="c1">// Overflow: wraps around to 0</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">unchar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w">     </span><span class="c1">// Stores 255 due to wrap-around</span>
+</code></pre></div>
 <hr />
-<h2 id="4-floating-point-data-types">4. Floating-Point Data Types</h2>
-<p>Floating-point numbers store decimal values, but with precision limitations.</p>
-<pre><code class="language-cpp">float  f = 3.14f;  // 4 bytes, ~7 decimal digits precision
-double d = 3.14;   // 8 bytes, ~15 decimal digits precision
-</code></pre>
-<h3 id="floating-point-precision-issues">Floating-Point Precision Issues</h3>
-<pre><code class="language-cpp">float x = 0.1f + 0.2f;
-std::cout &lt;&lt; (x == 0.3f);  // Output: 0, false
-</code></pre>
-<p>To fix this, use a small error margin (epsilon):</p>
-<pre><code class="language-cpp">if (fabs(x - 0.3f) &lt; 1e-6)  // Correct floating-point comparison
-</code></pre>
+<h2 id="floating-point-types">Floating-Point Types</h2>
+<p>Floating-point types store real numbers, including decimals. They follow the IEEE 754 standard for binary representation.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">fData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.66f</span><span class="p">;</span><span class="w">  </span><span class="c1">// 4 bytes</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">float</span><span class="w"> </span><span class="n">fResult</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">iData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">fResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">iData</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fData</span><span class="p">;</span><span class="w">  </span><span class="c1">// Type casting to float for precise addition</span>
+</code></pre></div>
+<h3 id="initialization-vs-assignment">Initialization vs Assignment</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">     </span><span class="c1">// Initialization</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20.5f</span><span class="p">;</span><span class="w">      </span><span class="c1">// Assignment</span>
+</code></pre></div>
 <hr />
-<h2 id="5-type-conversion-implicit-and-explicit-casting">5. Type Conversion (Implicit and Explicit Casting)</h2>
-<h3 id="implicit-type-conversion">Implicit Type Conversion</h3>
-<pre><code class="language-cpp">int i = 3.14;  // Output: 3, truncation occurs
-float f = 10;  // Converts int → float, no issue
-</code></pre>
-<h3 id="explicit-type-conversion">Explicit Type Conversion</h3>
-<pre><code class="language-cpp">float f = (float)10 / 3;  // Ensures floating-point division (3.333...)
-</code></pre>
-<h3 id="tricky-cases">Tricky Cases</h3>
-<pre><code class="language-cpp">int i = 100000;
-short s = i;   // Possible overflow if i &gt; 32767
-char c = i;    // Undefined if i &gt; 127 or i &lt; -128
-</code></pre>
-<p>Always check range compatibility when converting types.</p>
+<h2 id="type-conversion-and-casting">Type Conversion and Casting</h2>
+<h3 id="implicit-conversion">Implicit Conversion</h3>
+<p>Assigning an integer to a float will automatically cast the value:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// Implicitly becomes 3.0</span>
+</code></pre></div>
+<h3 id="explicit-casting">Explicit Casting</h3>
+<p>Use C-style casting for precise control:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">iData</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fData</span><span class="p">;</span>
+</code></pre></div>
 <hr />
-<h2 id="summary">Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Example</th>
-<th>Key Point</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Signed vs Unsigned</td>
-<td><code>int a = -1; unsigned int b = 1;</code></td>
-<td>Be cautious when comparing signed and unsigned.</td>
-</tr>
-<tr>
-<td>Two’s Complement</td>
-<td><code>signed char c = -1; unsigned char uc = c;</code></td>
-<td>Signed and unsigned interpret bits differently.</td>
-</tr>
-<tr>
-<td>Integer Truncation</td>
-<td><code>int x = 3.14;</code></td>
-<td>Decimal part is cut off, not rounded.</td>
-</tr>
-<tr>
-<td>Floating-Point Precision</td>
-<td><code>float x = 0.1f + 0.2f;</code></td>
-<td>Due to rounding errors, <code>x != 0.3f</code>.</td>
-</tr>
-<tr>
-<td>Type Conversion</td>
-<td><code>(float)10 / 3;</code></td>
-<td>Explicit casting prevents unintended truncation.</td>
-</tr>
-</tbody>
-</table>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p><strong>Overflow on signed/unsigned types:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span><span class="w">  </span><span class="c1">// Undefined or implementation-defined</span>
+</code></pre></div></p>
+<p><strong>Assigning negative to unsigned types:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">uc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Becomes 255</span>
+</code></pre></div></p>
+<p><strong>Assigning float to int:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.99</span><span class="p">;</span><span class="w">  </span><span class="c1">// i = 3, truncates decimal part</span>
+</code></pre></div></p>
+<hr />
+<h2 id="interview-questions">Interview Questions</h2>
+<p><strong>Q: What is the difference between signed and unsigned types?</strong><br />
+A: Signed types represent both negative and positive values using two's complement. Unsigned types can only represent zero and positive values.</p>
+<p><strong>Q: What happens when you assign a negative number to an unsigned variable?</strong><br />
+A: The value wraps around using modulo arithmetic. For example, <code>unsigned char uc = -1;</code> results in <code>uc = 255</code>.</p>
+<p><strong>Q: What is the difference between float and double?</strong><br />
+A: <code>float</code> uses 4 bytes and has lower precision. <code>double</code> uses 8 bytes and offers higher precision for decimal values.</p>
+<p><strong>Q: When should you use explicit casting in C++?</strong><br />
+A: When combining different data types in operations, such as adding an int to a float, or to avoid implicit conversion bugs.</p>
 
 
 
@@ -1826,6 +1888,12 @@ char c = i;    // Undefined if i &gt; 127 or i &lt; -128
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -1855,7 +1923,7 @@ char c = i;    // Undefined if i &gt; 127 or i &lt; -128
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
