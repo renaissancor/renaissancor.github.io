@@ -32,6 +32,9 @@ markdown_extensions:
       guess_lang: false              # Don't guess the language if it's not specified
       linenums: true                 # Show line numbers in code blocks
 
+  - pymdownx.arithmatex:            # Latex Math
+      generic: true                 # Enable math rendering like $$ a^2 + b^2 = c^2 $$
+
   - pymdownx.superfences            # Allows nesting code blocks, and improves compatibility with other extensions
   - pymdownx.inlinehilite           # Enables inline syntax highlighting using backticks and `==highlight==` style
   - pymdownx.highlight:             # Advanced syntax highlighting using Pygments
@@ -41,6 +44,12 @@ markdown_extensions:
       use_pygments: true            # Use the Pygments library for highlighting instead of Highlight.js
 
   - pymdownx.snippets               # Lets you include external code snippets using `--8<-- "file.cpp"`
+
+
+extra_javascript:                   # Latex Math
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 
 # Other configuration
 docs_dir: "docs"                     # Folder that contains your Markdown documentation
