@@ -1,7 +1,3 @@
-Here's a step-by-step summary to set up **Chocolatey, Python, and MkDocs** on a new Windows computer:
-
----
-
 ### **1. Install Chocolatey**
 Chocolatey is a package manager for Windows, making software installation easier.
 
