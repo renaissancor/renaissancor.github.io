@@ -12,13 +12,13 @@
         <meta name="author" content="Renaissancor">
       
       
-        <link rel="canonical" href="https://renaissancor.github.io/AR250310/">
+        <link rel="canonical" href="https://renaissancor.github.io/AR250319/">
       
       
-        <link rel="prev" href="../AR250307/">
+        <link rel="prev" href="../AR250318/">
       
       
-        <link rel="next" href="../AR250311/">
+        <link rel="next" href="../AR250320/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Bitwise Operators & Preprocessor Macros - Renaissancoriate</title>
+        <title>Pointer Basics and Function Overloading - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bitwise-operators-preprocessor-macros" class="md-skip">
+        <a href="#pointer-basics-and-function-overloading" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bitwise Operators &amp; Preprocessor Macros
+              Pointer Basics and Function Overloading
             
           </span>
         </div>
@@ -320,32 +320,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Bitwise Operators &amp; Preprocessor Macros
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../AR250310/" class="md-nav__link">
         
   
   
@@ -356,140 +334,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#date-2025-03-10" class="md-nav__link">
-    <span class="md-ellipsis">
-      Date: 2025-03-10
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Points
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bit-mask-macros" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bit Mask Macros
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bitwise-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bitwise Operators
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Bitwise Operators">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#left-shift" class="md-nav__link">
-    <span class="md-ellipsis">
-      Left Shift (&lt;&lt;)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#right-shift" class="md-nav__link">
-    <span class="md-ellipsis">
-      Right Shift (&gt;&gt;)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bitwise-and-or-xor-not" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bitwise AND, OR, XOR, NOT
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#character-status-flags" class="md-nav__link">
-    <span class="md-ellipsis">
-      Character Status Flags
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tricky-case-signed-vs-unsigned-shift" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tricky Case: Signed vs Unsigned Shift
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visual-bit-flag-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visual: Bit Flag Example
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -608,10 +452,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../AR250319/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Pointer Basics and Function Overloading
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -622,6 +488,164 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#date-2025-03-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date: 2025-03-19
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-overloading-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Overloading in C++
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Overloading in C++">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tricky-case-default-parameters-and-overloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tricky Case: Default Parameters and Overloading
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointer-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointer Fundamentals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointer-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointer Casting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#void-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Void Pointers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointer-arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointer Arithmetic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-and-pointer-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array and Pointer Relationship
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-pointer-arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual: Pointer Arithmetic
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1683,9 +1707,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#date-2025-03-10" class="md-nav__link">
+  <a href="#date-2025-03-19" class="md-nav__link">
     <span class="md-ellipsis">
-      Date: 2025-03-10
+      Date: 2025-03-19
     </span>
   </a>
   
@@ -1710,37 +1734,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bit-mask-macros" class="md-nav__link">
+  <a href="#function-overloading-in-c" class="md-nav__link">
     <span class="md-ellipsis">
-      Bit Mask Macros
+      Function Overloading in C++
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bitwise-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bitwise Operators
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Bitwise Operators">
+    <nav class="md-nav" aria-label="Function Overloading in C++">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#left-shift" class="md-nav__link">
+  <a href="#tricky-case-default-parameters-and-overloading" class="md-nav__link">
     <span class="md-ellipsis">
-      Left Shift (&lt;&lt;)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#right-shift" class="md-nav__link">
-    <span class="md-ellipsis">
-      Right Shift (&gt;&gt;)
+      Tricky Case: Default Parameters and Overloading
     </span>
   </a>
   
@@ -1752,27 +1758,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bitwise-and-or-xor-not" class="md-nav__link">
+  <a href="#pointer-fundamentals" class="md-nav__link">
     <span class="md-ellipsis">
-      Bitwise AND, OR, XOR, NOT
+      Pointer Fundamentals
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#character-status-flags" class="md-nav__link">
+  <a href="#pointer-casting" class="md-nav__link">
     <span class="md-ellipsis">
-      Character Status Flags
+      Pointer Casting
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tricky-case-signed-vs-unsigned-shift" class="md-nav__link">
+  <a href="#void-pointers" class="md-nav__link">
     <span class="md-ellipsis">
-      Tricky Case: Signed vs Unsigned Shift
+      Void Pointers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointer-arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointer Arithmetic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-and-pointer-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array and Pointer Relationship
     </span>
   </a>
   
@@ -1788,9 +1836,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#visual-bit-flag-example" class="md-nav__link">
+  <a href="#visual-pointer-arithmetic" class="md-nav__link">
     <span class="md-ellipsis">
-      Visual: Bit Flag Example
+      Visual: Pointer Arithmetic
     </span>
   </a>
   
@@ -1812,118 +1860,140 @@
 
 
 
-<h1 id="bitwise-operators-preprocessor-macros">Bitwise Operators &amp; Preprocessor Macros</h1>
-<h3 id="date-2025-03-10">Date: 2025-03-10</h3>
+<h1 id="pointer-basics-and-function-overloading">Pointer Basics and Function Overloading</h1>
+<h3 id="date-2025-03-19">Date: 2025-03-19</h3>
 <hr />
 <h2 id="key-points">Key Points</h2>
 <ul>
-<li>Macros simplify complex or frequently-used expressions.</li>
-<li>Bitwise operators manipulate data at the bit level.</li>
-<li>Use <code>unsigned</code> types with bitwise operations to avoid signed behavior issues.</li>
-<li>Bit masks efficiently represent multiple boolean flags in a single variable.</li>
-<li>Combine and check bitwise states using <code>|</code>, <code>&amp;</code>, <code>^</code>, <code>~</code>, and shift operators.</li>
+<li>Pointers store memory addresses; their size is typically 8 bytes on modern systems.</li>
+<li><code>&amp;</code> retrieves a variable's address, <code>*</code> dereferences a pointer.</li>
+<li><code>void*</code> is a generic pointer type, but cannot be dereferenced directly.</li>
+<li>Pointer arithmetic depends on the pointer's data type.</li>
+<li>Arrays and pointers are closely related; array indexing uses pointer arithmetic.</li>
+<li>Function overloading allows multiple functions with the same name but different signatures.</li>
 </ul>
 <hr />
 <h2 id="overview">Overview</h2>
-<p>C++ provides a rich set of <strong>bitwise operators</strong> that are useful for low-level programming tasks. When used correctly with <code>#define</code> macros, they can improve both code clarity and performance—especially in scenarios like setting and checking character statuses in games.</p>
-<p>The <code>#define</code> preprocessor directive is used to define constants or macro functions that can simplify repetitive or verbose code patterns.</p>
+<p>This code snippet covers fundamental C++ concepts including pointer usage, function overloading, pointer casting, and memory operations using external functions like <code>MemSet</code> and <code>MemMove</code>.</p>
+<p>Let's walk through the details.</p>
 <hr />
-<h2 id="bit-mask-macros">Bit Mask Macros</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#define MY int</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#define MAX_FLOOR 60</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">#define ATT_UP     0x1</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cp">#define DEF_UP     0x2</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cp">#define DEX_UP     0x4</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="cp">#define SPEED_UP   0x8</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="cp">#define ATT_DOWN   0x10</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="cp">#define DEF_DOWN   0x20</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="cp">#define DEX_DOWN   0x40</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="cp">#define SPEED_DOWN 0x80</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="cp">#define EVENT_POTION (ATT_UP | DEF_UP | DEX_UP | SPEED_UP)</span>
+<h2 id="function-overloading-in-c">Function Overloading in C++</h2>
+<p>Function overloading allows the same function name to be used with different parameter lists.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Test</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">_f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="n">Test</span><span class="p">(</span><span class="mf">1.1f</span><span class="p">);</span><span class="w">    </span><span class="c1">// Calls void Test(float)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="n">Test</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="w">  </span><span class="c1">// Calls void Test(int, int)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span>
 </code></pre></div>
-<p>These macros define constants using hexadecimal values where each constant represents a unique bit flag. <code>EVENT_POTION</code> combines several buffs using the bitwise OR operator (<code>|</code>).</p>
+<h3 id="tricky-case-default-parameters-and-overloading">Tricky Case: Default Parameters and Overloading</h3>
+<p>Be cautious when using default parameters with overloaded functions—they can lead to ambiguity.</p>
 <hr />
-<h2 id="bitwise-operators">Bitwise Operators</h2>
-<h3 id="left-shift">Left Shift (<code>&lt;&lt;</code>)</h3>
-<p>Doubles the value for each shift to the left.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// a = 16 (2 * 2^3)</span>
-</code></pre></div></p>
-<h3 id="right-shift">Right Shift (<code>&gt;&gt;</code>)</h3>
-<p>Halves the value for each shift to the right.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">127</span><span class="p">;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// c = 63</span>
-</code></pre></div></p>
-<p>Use <code>unsigned</code> types to avoid unexpected behavior due to sign bit propagation in signed integers.</p>
-<hr />
-<h2 id="bitwise-and-or-xor-not">Bitwise AND, OR, XOR, NOT</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">   </span><span class="c1">// 0000 1010</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">    </span><span class="c1">// 0000 0010</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">c2</span><span class="p">;</span><span class="w"> </span><span class="c1">// AND: 0000 0010</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">c3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">c2</span><span class="p">;</span><span class="w">               </span><span class="c1">// OR:  0000 1010</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">c1</span><span class="p">;</span><span class="w">                   </span><span class="c1">// NOT: 1111 0101 (bitwise inverse)</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">c3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">c2</span><span class="p">;</span><span class="w">               </span><span class="c1">// XOR: 0000 1000</span>
+<h2 id="pointer-fundamentals">Pointer Fundamentals</h2>
+<p>Pointers are variables that store memory addresses.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">short</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kt">int</span><span class="o">*</span><span class="w">   </span><span class="n">pI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kt">char</span><span class="o">*</span><span class="w">  </span><span class="n">pC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kt">short</span><span class="o">*</span><span class="w"> </span><span class="n">pS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">pI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">pC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">pS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="o">*</span><span class="n">pI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="o">*</span><span class="n">pC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="o">*</span><span class="n">pS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
 </code></pre></div>
-<p>You can also use compound assignment operators for clarity:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">c3</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">  </span><span class="c1">// Instead of: c3 = c3 + 2</span>
-</code></pre></div></p>
+<p>Declaring a pointer with a type (e.g., <code>int*</code>) defines how the memory at that address will be interpreted.</p>
 <hr />
-<h2 id="character-status-flags">Character Status Flags</h2>
-<p>Use a single variable to hold multiple flags.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">CharStat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">CharStat</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">ATT_UP</span><span class="p">;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">CharStat</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">DEF_UP</span><span class="p">;</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">CharStat</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">DEX_UP</span><span class="p">;</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">CharStat</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">SPEED_UP</span><span class="p">;</span>
+<h2 id="pointer-casting">Pointer Casting</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">c</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
 </code></pre></div>
-<p>Check if a flag is set:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CharStat</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">DEF_UP</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="c1">// DEF_UP is active</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>Remove a flag using XOR (toggles the bit):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CharStat</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">SPEED_UP</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="n">CharStat</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">SPEED_UP</span><span class="p">;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>Forcefully clear a flag using AND with NOT:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">CharStat</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="o">~</span><span class="n">SPEED_UP</span><span class="p">;</span><span class="w"> </span><span class="c1">// Clear SPEED_UP</span>
-</code></pre></div></p>
-<p>Re-apply a predefined buff combination:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">CharStat</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">EVENT_POTION</span><span class="p">;</span>
-</code></pre></div></p>
+<p>This forces interpretation of memory as another type. Use with caution—it bypasses type safety.</p>
 <hr />
-<h2 id="tricky-case-signed-vs-unsigned-shift">Tricky Case: Signed vs Unsigned Shift</h2>
-<p>Avoid right-shifting signed integers, as the behavior of sign bit propagation may differ between platforms.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// May retain sign bit (platform-dependent)</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1">// Use unsigned instead:</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Interpreted as 255</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">           </span><span class="c1">// Safe right shift</span>
+<h2 id="void-pointers">Void Pointers</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pVoid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">pVoid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">pVoid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">pVoid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">;</span>
 </code></pre></div>
+<p><code>void*</code> can store any address but must be cast to another type before dereferencing.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Invalid:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">// pS = pVoid;</span>
+</code></pre></div>
+<hr />
+<h2 id="memory-utilities">Memory Utilities</h2>
+<p>Assuming the following external functions:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MemSet</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_pData</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_Size</span><span class="p">);</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MemMove</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_pData</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_Size</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_Src</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="example-usage">Example Usage</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">short</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">MemSet</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">MemSet</span><span class="p">(</span><span class="o">&amp;</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kt">int</span><span class="w"> </span><span class="n">iArr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="kt">int</span><span class="w"> </span><span class="n">iArrOther</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">MemMove</span><span class="p">(</span><span class="n">iArrOther</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">iArr</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h2 id="pointer-arithmetic">Pointer Arithmetic</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pInt</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Moves pointer by sizeof(int)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kt">short</span><span class="o">*</span><span class="w"> </span><span class="n">pShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">pShort</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Moves pointer by sizeof(short)</span>
+</code></pre></div>
+<p>The increment steps over a number of bytes depending on the type.</p>
+<hr />
+<h2 id="array-and-pointer-relationship">Array and Pointer Relationship</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">iTest</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">pInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iTest</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">pInt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// *(pInt + 0)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">pInt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">  </span><span class="c1">// *(pInt + 1)</span>
+</code></pre></div>
+<p>Array indexing is syntactic sugar for pointer arithmetic.</p>
 <hr />
 <h2 id="interview-questions">Interview Questions</h2>
-<p><strong>Q: Why use <code>unsigned</code> types with bitwise operations?</strong><br />
-A: Signed types may cause platform-dependent behavior during right shifts and logical operations due to sign bit extension. Unsigned ensures consistent results.</p>
-<p><strong>Q: What’s the difference between <code>|</code>, <code>^</code>, and <code>&amp;</code>?</strong><br />
-A: <code>|</code> sets bits, <code>&amp;</code> checks or clears bits, <code>^</code> toggles bits. Used with bit masks to manipulate flags.</p>
-<p><strong>Q: How do you clear a specific bit in a bitmask?</strong><br />
-A: Use <code>bitmask &amp;= ~BIT_FLAG;</code> to forcefully turn off the bit.</p>
-<p><strong>Q: When should you use macros vs <code>const</code> or <code>enum</code>?</strong><br />
-A: Use macros for preprocessor control or platform-specific conditions. Prefer <code>const</code> or <code>enum class</code> for type safety in C++.</p>
+<p><strong>Q: What is a pointer in C++?</strong><br />
+A: A pointer is a variable that stores the memory address of another variable.</p>
+<p><strong>Q: Can you dereference a void pointer?</strong><br />
+A: No, a <code>void*</code> must first be cast to a specific type before dereferencing.</p>
+<p><strong>Q: How is pointer arithmetic affected by the data type?</strong><br />
+A: The pointer moves in steps of the size of the data type it points to (e.g., <code>int*</code> moves 4 bytes, <code>short*</code> moves 2 bytes).</p>
+<p><strong>Q: What's the relationship between arrays and pointers?</strong><br />
+A: An array name is effectively a pointer to its first element. Array indexing uses pointer arithmetic under the hood.</p>
+<p><strong>Q: What is the purpose of function overloading?</strong><br />
+A: Function overloading allows multiple functions with the same name to coexist as long as their signatures differ.</p>
 <hr />
-<h2 id="visual-bit-flag-example">Visual: Bit Flag Example</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Initial:        0000 0000
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>+ATT_UP:        0000 0001
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>+DEF_UP:        0000 0011
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>+DEX_UP:        0000 0111
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>+SPEED_UP:      0000 1111
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>~SPEED_UP:      1111 0111 (Mask)
+<h2 id="visual-pointer-arithmetic">Visual: Pointer Arithmetic</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>int* pInt = 0;
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>pInt += 1;
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Before: pInt = 0x1000
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>After : pInt = 0x1004 (assuming int = 4 bytes)
 </code></pre></div>
+<hr />
+<p>Keep these principles in mind when dealing with pointers. 
+They're powerful but error-prone if misused. 
+Use pointer casting and void pointers with caution, 
+and always be aware of type sizes when doing arithmetic.</p>
 
 
 
