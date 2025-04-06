@@ -26,7 +26,7 @@
     
     
       
-        <title>AR250320 - Renaissancoriate</title>
+        <title>Constexpr, Const, Volatile, and Pointer Fundamentals - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#references" class="md-skip">
+        <a href="#constexpr-const-volatile-and-pointer-fundamentals" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AR250320
+              Constexpr, Const, Volatile, and Pointer Fundamentals
             
           </span>
         </div>
@@ -240,7 +240,7 @@
   
   
   <span class="md-ellipsis">
-    AR111111
+    Sample Template Title
     
   </span>
   
@@ -483,13 +483,15 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    AR250320
+    Constexpr, Const, Volatile, and Pointer Fundamentals
     
   </span>
   
@@ -502,7 +504,7 @@
   
   
   <span class="md-ellipsis">
-    AR250320
+    Constexpr, Const, Volatile, and Pointer Fundamentals
     
   </span>
   
@@ -515,12 +517,167 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#date-2025-03-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date: 2025-03-20
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#const-volatile-and-constexpr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Const, Volatile, and Constexpr
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Const, Volatile, and Constexpr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-volatile-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why volatile Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      constexpr Constants
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#null-pointer-boolean-macros-and-pointer-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      Null Pointer, Boolean Macros, and Pointer Safety
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Null Pointer, Boolean Macros, and Pointer Safety">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#null-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Null Pointers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-macros-c-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Macros (C-style)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tricky-case-pointer-passing-and-double-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tricky Case: Pointer Passing and Double Pointers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tricky Case: Pointer Passing and Double Pointers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-local-variables-in-other-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Local Variables in Other Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-pointers-for-pointer-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Double Pointers for Pointer Modification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-initialization-and-movement-with-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Initialization and Movement with void*
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-const-volatile-and-pointer-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual: Const, Volatile, and Pointer Interaction
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
@@ -1564,12 +1721,167 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#date-2025-03-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date: 2025-03-20
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#const-volatile-and-constexpr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Const, Volatile, and Constexpr
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Const, Volatile, and Constexpr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-volatile-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why volatile Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      constexpr Constants
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#null-pointer-boolean-macros-and-pointer-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      Null Pointer, Boolean Macros, and Pointer Safety
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Null Pointer, Boolean Macros, and Pointer Safety">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#null-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Null Pointers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-macros-c-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Macros (C-style)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tricky-case-pointer-passing-and-double-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tricky Case: Pointer Passing and Double Pointers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tricky Case: Pointer Passing and Double Pointers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-local-variables-in-other-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Local Variables in Other Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-pointers-for-pointer-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Double Pointers for Pointer Modification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-initialization-and-movement-with-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Initialization and Movement with void*
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-const-volatile-and-pointer-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual: Const, Volatile, and Pointer Interaction
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
@@ -1596,13 +1908,131 @@
 
 
 
-  <h1>AR250320</h1>
-
+<h1 id="constexpr-const-volatile-and-pointer-fundamentals">Constexpr, Const, Volatile, and Pointer Fundamentals</h1>
+<h3 id="date-2025-03-20">Date: 2025-03-20</h3>
+<hr />
+<h2 id="key-points">Key Points</h2>
+<ul>
+<li><code>const</code> prevents variable reassignment after initialization.</li>
+<li><code>volatile</code> disables compiler optimizations for variables that may change externally.</li>
+<li><code>constexpr</code> enforces compile-time constant evaluation.</li>
+<li>Modifying <code>const</code> or <code>constexpr</code> via pointer casting can lead to undefined behavior.</li>
+<li><code>nullptr</code> is a dedicated keyword for null pointers in C++.</li>
+<li>Double pointers allow pointer manipulation across functions.</li>
+<li><code>void*</code> pointers are type-agnostic and require size information for operations.</li>
+</ul>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>Understanding <code>const</code>, <code>constexpr</code>, and <code>volatile</code> is crucial for writing safe and optimized C++ code. These keywords provide control over variable mutability and evaluation timing, and interact closely with pointer semantics. This note also explores pointer-related concepts like null pointers, double pointers, and low-level memory manipulation with <code>MemSet</code> and <code>MemMove</code> functions.</p>
+<hr />
+<h2 id="const-volatile-and-constexpr">Const, Volatile, and Constexpr</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">volatile</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">iConst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">//iConst = 200; // Error: cannot assign to a const</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">volatile</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">iConst</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">//*pData = 200; // Error: pData is a pointer to const</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pData1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">iConst</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="o">*</span><span class="n">pData1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"> </span><span class="c1">// Undefined behavior, bypasses const</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iConst</span><span class="p">;</span><span class="w"> </span><span class="c1">// Might use cached register value if not volatile</span>
+</code></pre></div>
+<h3 id="why-volatile-matters">Why <code>volatile</code> Matters</h3>
+<p>The compiler might optimize access to <code>iConst</code>, assuming it doesn't change. Using <code>volatile</code> forces re-evaluation every time, useful when memory might be modified outside of program control (e.g., hardware registers).</p>
+<h3 id="constexpr-constants"><code>constexpr</code> Constants</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">volatile</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">iConstExpr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pConstExpr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">iConstExpr</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">*</span><span class="n">pConstExpr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"> </span><span class="c1">// Still undefined behavior</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iConstExpr</span><span class="p">;</span><span class="w"> </span><span class="c1">// Always 100 at compile time</span>
+</code></pre></div>
+<code>constexpr</code> requires compile-time evaluable expressions. It's stricter than <code>const</code> and allows compiler optimizations without runtime overhead.</p>
+<hr />
+<h2 id="null-pointer-boolean-macros-and-pointer-safety">Null Pointer, Boolean Macros, and Pointer Safety</h2>
+<h3 id="null-pointers">Null Pointers</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"> </span><span class="c1">// Safe null initialization</span>
+</code></pre></div>
+Use <code>nullptr</code> to represent a pointer to no object. Avoid using <code>0</code> or <code>NULL</code> in modern C++.</p>
+<h3 id="boolean-macros-c-style">Boolean Macros (C-style)</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#define TRUE 1;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#define FALSE 0;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kt">bool</span><span class="w"> </span><span class="n">IsTrue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRUE</span><span class="p">;</span>
+</code></pre></div>
+C++ provides <code>true</code> and <code>false</code> as keywords. Macros like <code>TRUE</code>/<code>FALSE</code> are legacy from C.</p>
+<hr />
+<h2 id="tricky-case-pointer-passing-and-double-pointers">Tricky Case: Pointer Passing and Double Pointers</h2>
+<h3 id="accessing-local-variables-in-other-functions">Accessing Local Variables in Other Functions</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Test</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">_Data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="o">*</span><span class="n">_Data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">Test</span><span class="p">(</span><span class="o">&amp;</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// i is now 10</span>
+</code></pre></div>
+<h3 id="double-pointers-for-pointer-modification">Double Pointers for Pointer Modification</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Test</span><span class="p">(</span><span class="kt">int</span><span class="o">**</span><span class="w"> </span><span class="n">_Data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="o">*</span><span class="n">_Data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">Test</span><span class="p">(</span><span class="o">&amp;</span><span class="n">pInt</span><span class="p">);</span><span class="w"> </span><span class="c1">// pInt is now nullptr</span>
+</code></pre></div>
+This is useful when you want to modify the pointer itself (not just the data it points to).</p>
+<hr />
+<h2 id="memory-initialization-and-movement-with-void">Memory Initialization and Movement with <code>void*</code></h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">BYTE</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MemSet</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_pData</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_Size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">BYTE</span><span class="o">*</span><span class="w"> </span><span class="n">pData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">BYTE</span><span class="o">*</span><span class="p">)</span><span class="n">_pData</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">_Size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="n">pData</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MemMove</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_Dest</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_Size</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_Src</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="n">BYTE</span><span class="o">*</span><span class="w"> </span><span class="n">pDest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">BYTE</span><span class="o">*</span><span class="p">)</span><span class="n">_Dest</span><span class="p">;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="n">BYTE</span><span class="o">*</span><span class="w"> </span><span class="n">pSrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">BYTE</span><span class="o">*</span><span class="p">)</span><span class="n">_Src</span><span class="p">;</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">_Size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="n">pDest</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pSrc</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="p">}</span>
+</code></pre></div>
+These utility functions show how <code>void*</code> enables flexible memory manipulation. Use with care, as type safety is lost.</p>
+<hr />
+<h2 id="interview-questions">Interview Questions</h2>
+<p><strong>Q: What is the difference between <code>const</code> and <code>constexpr</code>?</strong><br />
+A: <code>const</code> applies at runtime and allows runtime-initialized values. <code>constexpr</code> requires compile-time evaluable expressions and provides stronger optimization.</p>
+<p><strong>Q: Why use <code>volatile</code> with a <code>const</code> variable?</strong><br />
+A: It prevents the compiler from optimizing out reads to the variable, ensuring the program always fetches the latest value.</p>
+<p><strong>Q: What does <code>nullptr</code> represent and why use it over <code>0</code>?</strong><br />
+A: <code>nullptr</code> is a type-safe null pointer constant in C++11+, unlike <code>0</code> which can be ambiguous in overload resolution.</p>
+<p><strong>Q: Why are double pointers used in C++?</strong><br />
+A: Double pointers (<code>T**</code>) allow functions to modify the original pointer passed to them, useful for reassigning memory or nullifying pointers.</p>
+<p><strong>Q: What are the risks of casting away <code>const</code> using a pointer?</strong><br />
+A: It results in undefined behavior if the object was originally declared as <code>const</code>. Compilers may optimize assuming immutability.</p>
+<hr />
+<h2 id="visual-const-volatile-and-pointer-interaction">Visual: Const, Volatile, and Pointer Interaction</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Original Const Variable
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>------------------------
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>iConst = 100
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Pointer Access
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>--------------
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>pData -&gt; [100]   // Safe read
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>pData1 -&gt; [200]  // Forced overwrite (UB)
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>Effect on Compiler
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>------------------
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>With volatile: Always re-reads value
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>Without volatile: Might cache value
+</code></pre></div>
 <h2 id="references">References</h2>
-<p>M /C++/C++_56/MemSet.cpp
-A /C++/C++_56/const, const 포인터.cpp
-A /C++/C++_56/nullptr, 이중포인터.cpp
-M /C++/C++_56/포인터.cpp</p>
+<ul>
+<li>MemSet.cpp</li>
+<li>const, const pointer.cpp</li>
+<li>nullptr, double pointer.cpp</li>
+<li>pointer.cpp</li>
+</ul>
 
 
 
