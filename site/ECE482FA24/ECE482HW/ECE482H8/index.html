@@ -2046,7 +2046,7 @@ Then, load the appropriate driver without requiring any reboot or recompile.</p>
 <h3 id="a-dma-controller-has-four-channels-the-controller-is-able-to-request-a-32bit-word-every-100-nsec">A DMA controller has four channels. The controller is able to request a 32bit word every 100 <code>nsec</code>.</h3>
 <p><strong>A response takes equally long. How fats should the bus be in order to avoid being a bottleneck?</strong></p>
 <p>DMA controller request and response per 100<code>ns</code> for 32-bit words.
-Bus support speed $\frac{32 <code>bits</code>}{100 <code>ns</code>} = 320$MB/<code>sec</code> = 40 MB/<code>sec</code>
+Bus support speed <span class="arithmatex">\(\frac{32 <code>bits</code>}{100 <code>ns</code>} = 320\)</span>MB/<code>sec</code> = 40 MB/<code>sec</code>
 to avoid bottleneck.</p>
 <h3 id="5-briefly-explain-what-a-thin-client-is">5. Briefly explain what a thin client is.</h3>
 <p>Thin client is lightweight computer system.
@@ -2083,13 +2083,13 @@ Thus, absolute path will be <code>/usr/lib/mutt</code>.</p>
 <h3 id="2-a-unix-system-has-1kb-blocks-and-4b-disk-addresses">2. A Unix system has 1KB blocks and 4B disk addresses.</h3>
 <p><strong>What is the maximum file size if i-nodes contain 13 direct entries,
 and one single, double , and triple indirect entry each?</strong></p>
-<p>Each block can hold $\frac{1KB}{4KB}=256$ addresses.</p>
+<p>Each block can hold <span class="arithmatex">\(\frac{1KB}{4KB}=256\)</span> addresses.</p>
 <ul>
-<li>Direct entries are $13 \times 1KB = 13KB$</li>
-<li>Single Indirect Entry $256 \times 1KB = 256KB$</li>
-<li>Double Indirect Entry $256 \times 256 \times 1KB = 65536KB = 64MB$</li>
-<li>Triple Indirect Entry $256 \times 256 \times 256 \times 1KB = 16777216MB = 16384MB = 16GB$</li>
-<li>Maximum File Size $13KB + 256KB + 64MB + 16GB = 16448.2627 MB = 16.06GB$</li>
+<li>Direct entries are <span class="arithmatex">\(13 \times 1KB = 13KB\)</span></li>
+<li>Single Indirect Entry <span class="arithmatex">\(256 \times 1KB = 256KB\)</span></li>
+<li>Double Indirect Entry <span class="arithmatex">\(256 \times 256 \times 1KB = 65536KB = 64MB\)</span></li>
+<li>Triple Indirect Entry <span class="arithmatex">\(256 \times 256 \times 256 \times 1KB = 16777216MB = 16384MB = 16GB\)</span></li>
+<li>Maximum File Size <span class="arithmatex">\(13KB + 256KB + 64MB + 16GB = 16448.2627 MB = 16.06GB\)</span></li>
 </ul>
 <h3 id="3-the-time-required-to-read-a-certain-number-of-bytes-can-be-approximated-by-summing-the-seek-rotation-delay-and-transfer-times">3. The time required to read a certain number of bytes can be approximated by summing the seek, rotation delay, and transfer times.</h3>
 <p><strong>Given a disk with mean seek time of 8 msec, a rotation rate
@@ -2129,11 +2129,11 @@ $ \text{Transfer Time} = \frac{\text{Block Size}}{\text{Bytes per Track}} \times
 <h3 id="1-if-using-only-lowercase-letters-how-many-possible-8-letter-words-can-be-chosen">1. If using only lowercase letters how many possible 8 letter words can be chosen?</h3>
 <p><strong>Explain why a password should always contain lower and uppercase letters, numbers and symbols.</strong></p>
 <p>8 Character Word, use only lowercase letters, 26 probabilities per each character.<br />
-Possible combination likelihood will be $26^8 = 208827064576$ cases.</p>
+Possible combination likelihood will be <span class="arithmatex">\(26^8 = 208827064576\)</span> cases.</p>
 <p>It is important to contain lower case, upper case letter, number, and symbols because
 it will increment probability of password search space exponentially.
 Entropy of password increases, so brute Force attack will be more resource unlikely.
-For instance, uppercase multiplies twice probability per character, $2^8=256$ times for 8 characters.</p>
+For instance, uppercase multiplies twice probability per character, <span class="arithmatex">\(2^8=256\)</span> times for 8 characters.</p>
 <h3 id="2-explain-why-memory-dynamically-allocated-using-malloc-is-sometimes-random-and-some-other-times-set-to-0">2. Explain why memory dynamically allocated using malloc is sometimes random and some other times set to 0.</h3>
 <p>Memory allocation by <code>malloc</code> does not initialize memory.
 It reserves size but may return memory with no leftover values from previous use, while <code>calloc</code> explicitly initialize to 0.<br />
@@ -2254,6 +2254,10 @@ some framework or tool than could be part of consistent update and intrusion det
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
