@@ -12,13 +12,13 @@
         <meta name="author" content="Renaissancor">
       
       
-        <link rel="canonical" href="https://renaissancor.github.io/AR250313/">
+        <link rel="canonical" href="https://renaissancor.github.io/AR250324/">
       
       
-        <link rel="prev" href="../AR250312/">
+        <link rel="prev" href="../AR250320/">
       
       
-        <link rel="next" href="../AR250317/">
+        <link rel="next" href="../AR250401/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Recursion and Function Mechanics - Renaissancoriate</title>
+        <title>Const Pointers and Type-Punning - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#recursion-and-function-mechanics" class="md-skip">
+        <a href="#const-pointers-and-type-punning" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Recursion and Function Mechanics
+              Const Pointers and Type-Punning
             
           </span>
         </div>
@@ -386,32 +386,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Recursion and Function Mechanics
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../AR250313/" class="md-nav__link">
         
   
   
@@ -422,125 +400,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#date-2025-03-13" class="md-nav__link">
-    <span class="md-ellipsis">
-      Date: 2025-03-13
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Points
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iterative-factorial-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Iterative Factorial Function
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recursive-factorial-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recursive Factorial Function
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#power-function-iterative" class="md-nav__link">
-    <span class="md-ellipsis">
-      Power Function (Iterative)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#infinite-recursion-example-caution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Infinite Recursion Example (Caution!)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-call-mechanics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Function Call Mechanics
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#debugging-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Debugging Tips
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tricky-case-recursion-vs-iteration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tricky Case: Recursion vs Iteration
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -637,10 +496,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../AR250324/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Const Pointers and Type-Punning
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -651,6 +532,197 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#date-2025-03-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date: 2025-03-24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pointer-to-constant-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointer to Constant Value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant-pointer-to-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant Pointer to Variable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant-pointer-to-constant-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant Pointer to Constant Value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#const-safety-in-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Const Safety in Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Const Safety in Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-read-only-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe Read-Only Access
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-punning-with-structs-and-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type-Punning with Structs and Pointers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointer-size-and-type-awareness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointer Size and Type Awareness
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tricky-case-pointer-arithmetic-and-type-punning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tricky Case: Pointer Arithmetic and Type-Punning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tricky Case: Pointer Arithmetic and Type-Punning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#casting-char-to-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casting char[] to int*
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-vs-unsigned-char-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signed vs Unsigned Char Interpretation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1690,9 +1762,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#date-2025-03-13" class="md-nav__link">
+  <a href="#date-2025-03-24" class="md-nav__link">
     <span class="md-ellipsis">
-      Date: 2025-03-13
+      Date: 2025-03-24
     </span>
   </a>
   
@@ -1714,57 +1786,120 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pointer-to-constant-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointer to Constant Value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant-pointer-to-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant Pointer to Variable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant-pointer-to-constant-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant Pointer to Constant Value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#iterative-factorial-function" class="md-nav__link">
+  <a href="#const-safety-in-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Iterative Factorial Function
+      Const Safety in Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Const Safety in Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-read-only-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe Read-Only Access
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-punning-with-structs-and-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type-Punning with Structs and Pointers
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recursive-factorial-function" class="md-nav__link">
+  <a href="#pointer-size-and-type-awareness" class="md-nav__link">
     <span class="md-ellipsis">
-      Recursive Factorial Function
+      Pointer Size and Type Awareness
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#power-function-iterative" class="md-nav__link">
+  <a href="#tricky-case-pointer-arithmetic-and-type-punning" class="md-nav__link">
     <span class="md-ellipsis">
-      Power Function (Iterative)
+      Tricky Case: Pointer Arithmetic and Type-Punning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tricky Case: Pointer Arithmetic and Type-Punning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#casting-char-to-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casting char[] to int*
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#infinite-recursion-example-caution" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#signed-vs-unsigned-char-interpretation" class="md-nav__link">
     <span class="md-ellipsis">
-      Infinite Recursion Example (Caution!)
+      Signed vs Unsigned Char Interpretation
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#function-call-mechanics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Function Call Mechanics
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#debugging-tips" class="md-nav__link">
+  <a href="#common-mistakes" class="md-nav__link">
     <span class="md-ellipsis">
-      Debugging Tips
+      Common Mistakes
     </span>
   </a>
   
@@ -1780,9 +1915,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tricky-case-recursion-vs-iteration" class="md-nav__link">
+  <a href="#summary-table" class="md-nav__link">
     <span class="md-ellipsis">
-      Tricky Case: Recursion vs Iteration
+      Summary Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1804,129 +1948,154 @@
 
 
 
-<h1 id="recursion-and-function-mechanics">Recursion and Function Mechanics</h1>
-<h3 id="date-2025-03-13">Date: 2025-03-13</h3>
+<h1 id="const-pointers-and-type-punning">Const Pointers and Type-Punning</h1>
+<h3 id="date-2025-03-24">Date: 2025-03-24</h3>
 <hr />
 <h2 id="key-points">Key Points</h2>
 <ul>
-<li>Recursion involves a function calling itself.</li>
-<li>Recursive functions must include a termination condition to prevent infinite calls.</li>
-<li>Iterative approaches can replace recursion for performance.</li>
-<li>Local variables are stored in the stack during function calls.</li>
-<li>Stack overflow can occur if recursion is too deep or unbounded.</li>
+<li><code>const int*</code> means a pointer to a constant value. You can read but not write.</li>
+<li><code>int* const</code> means a constant pointer to an int. You can modify the value but not reassign the pointer.</li>
+<li>When both <code>const</code> modifiers are used, the pointer cannot be reassigned or modify the target.</li>
+<li>Type punning using casts (<code>char*</code>, <code>int*</code>, etc.) must be done with caution due to strict aliasing rules.</li>
+<li>Use <code>const</code> correctness to ensure safer, more predictable code.</li>
 </ul>
 <hr />
 <h2 id="overview">Overview</h2>
-<p>Functions in C++ are modular blocks of code that perform a specific task. Understanding how they work at runtime and how memory is allocated during execution is essential for debugging and optimizing performance. Recursive functions, in particular, are elegant for solving hierarchical problems but require careful handling.</p>
-<hr />
-<h2 id="iterative-factorial-function">Iterative Factorial Function</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Calculates N! using iteration</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Factorial</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_N</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">_N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">Value</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Value</span><span class="p">;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+<p>Understanding <code>const</code> with pointers is essential in modern C++ for writing safe and efficient code. It allows expressing intent clearly and protects against unintended modification. Pointers themselves can be constant or point to constant data, and the position of <code>const</code> determines the behavior.</p>
+<h3 id="pointer-to-constant-value">Pointer to Constant Value</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// Constant integer value</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// Pointer to a constant int</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">// *pInt = 100; // Error: cannot modify through pInt</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">pInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"> </span><span class="c1">// Allowed: pointer can point elsewhere</span>
 </code></pre></div>
-<p>This function computes factorial using a for-loop, multiplying from 2 to N. It avoids stack usage beyond the function call.</p>
-<hr />
-<h2 id="recursive-factorial-function">Recursive Factorial Function</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Calculates N! using recursion</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Factorial_Recursion</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_N</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">{</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_N</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Factorial_Recursion</span><span class="p">(</span><span class="n">_N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">_N</span><span class="p">;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
+<h3 id="constant-pointer-to-variable">Constant Pointer to Variable</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pContInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="c1">// Constant pointer to a variable</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="o">*</span><span class="n">pContInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"> </span><span class="c1">// Allowed: can modify the target</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">// pContInt = nullptr; // Error: cannot change the pointer itself</span>
 </code></pre></div>
-<p>This approach uses the call stack to solve the problem. It's more readable but can lead to stack overflow for large values.</p>
-<hr />
-<h2 id="power-function-iterative">Power Function (Iterative)</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Pow</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_b</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">_b</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="n">Value</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">_a</span><span class="p">;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Value</span><span class="p">;</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
+<h3 id="constant-pointer-to-constant-value">Constant Pointer to Constant Value</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pCCInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="c1">// Read-only pointer and value</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// *pCCInt = 300;     // Error</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">// pCCInt = nullptr;  // Error</span>
 </code></pre></div>
-<p>Raises <code>_a</code> to the power <code>_b</code> using a loop. Simple and avoids recursive overhead.</p>
 <hr />
-<h2 id="infinite-recursion-example-caution">Infinite Recursion Example (Caution!)</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">NewFunc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">NewFunc</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">  </span><span class="c1">// No termination -&gt; infinite recursion!</span>
+<h2 id="const-safety-in-functions">Const Safety in Functions</h2>
+<h3 id="safe-read-only-access">Safe Read-Only Access</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">DataOutput</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">_Data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">_Data</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="c1">// *_Data = 300; // Error: _Data points to a const</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
 </code></pre></div>
-<p>This function continuously calls itself with a constant value. Without a base case, it causes a stack overflow.</p>
+Passing a <code>const int*</code> ensures the function cannot modify the value it receives.</p>
 <hr />
-<h2 id="function-call-mechanics">Function Call Mechanics</h2>
-<ul>
-<li>Each function call uses a new stack frame.</li>
-<li>Local variables reside in the stack.</li>
-<li>Stack grows with each recursive call until the base case is reached or overflow occurs.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w">       </span><span class="c1">// 16</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w">          </span><span class="c1">// 10000</span>
+<h2 id="type-punning-with-structs-and-pointers">Type-Punning with Structs and Pointers</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">MyType</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kt">int</span><span class="w">   </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">};</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">MyType</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">};</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">MyType</span><span class="o">*</span><span class="w"> </span><span class="n">pType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">type</span><span class="p">;</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="n">NewFunc</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">            </span><span class="c1">// Infinite recursion: stack overflow</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">pType</span><span class="o">-&gt;</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">pType</span><span class="o">-&gt;</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
 </code></pre></div>
-<p>Use breakpoints and step execution to observe the stack behavior during debugging.</p>
+<p>Accessing struct members through pointers is direct and efficient. Arrow <code>-&gt;</code> syntax is shorthand for dereferencing and accessing (<code>(*p).x</code>).</p>
 <hr />
-<h2 id="debugging-tips">Debugging Tips</h2>
-<ul>
-<li><strong>F5</strong>: Start/continue debugging</li>
-<li><strong>F9</strong>: Toggle breakpoint</li>
-<li><strong>F10</strong>: Step over (function as a block)</li>
-<li><strong>F11</strong>: Step into (enter function call)</li>
-<li><strong>Ctrl + Shift + F9</strong>: Clear all breakpoints</li>
-</ul>
-<p>These commands help you trace function execution and understand stack changes.</p>
+<h2 id="pointer-size-and-type-awareness">Pointer Size and Type Awareness</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">Size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">);</span><span class="w"> </span><span class="c1">// Pointer size is typically 8 bytes on 64-bit systems</span>
+</code></pre></div>
+<p>Pointers, regardless of the type they point to, usually have the same size on a given architecture.</p>
+<hr />
+<h2 id="tricky-case-pointer-arithmetic-and-type-punning">Tricky Case: Pointer Arithmetic and Type-Punning</h2>
+<h3 id="casting-char-to-int">Casting <code>char[]</code> to <code>int*</code></h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">arrData</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">};</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">arrData</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">pData</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Advances by 2 * sizeof(int) bytes</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">pData</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">pChar</span><span class="p">;</span>
+</code></pre></div>
+Pointer arithmetic on a casted pointer can easily misalign data and lead to undefined behavior. Be careful when casting <code>char[]</code> to <code>int*</code>, especially when accessing or modifying memory.</p>
+<h3 id="signed-vs-unsigned-char-interpretation">Signed vs Unsigned Char Interpretation</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">CharData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pUChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">CharData</span><span class="p">;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">CharData</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">intData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">pUChar</span><span class="p">;</span><span class="w"> </span><span class="c1">// Value: 255 (unsigned interpretation)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">intData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">pChar</span><span class="p">;</span><span class="w">      </span><span class="c1">// Value: -1 (signed interpretation)</span>
+</code></pre></div>
+Casting a signed <code>char</code> to <code>unsigned char</code> reveals how the same memory is interpreted differently. This is useful in low-level programming but must be used carefully.</p>
+<hr />
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p><strong>Mistake: Modifying <code>const</code> value through cast</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">Data</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"> </span><span class="c1">// Undefined behavior</span>
+</code></pre></div>
+Modifying a <code>const</code> value using a cast is undefined behavior. Avoid this in production code.</p>
+<p><strong>Mistake: Confusing pointer const-ness</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// Cannot change ptr itself</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">ptr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// Cannot modify *ptr2</span>
+</code></pre></div>
+Understand which part is <code>const</code> — the pointer or the value — to avoid bugs.</p>
 <hr />
 <h2 id="interview-questions">Interview Questions</h2>
-<p><strong>Q: What is a recursive function?</strong><br />
-A: A function that calls itself to solve a subproblem.</p>
-<p><strong>Q: What are the dangers of recursion?</strong><br />
-A: Infinite recursion can cause a stack overflow if there's no proper termination condition.</p>
-<p><strong>Q: Can all recursive logic be written iteratively?</strong><br />
-A: Yes, but sometimes recursion improves readability, especially for tree and graph problems.</p>
-<p><strong>Q: Why is the stack important in recursion?</strong><br />
-A: Each recursive call stores its context (variables, return address) on the stack.</p>
+<p><strong>Q: What's the difference between <code>const int*</code> and <code>int* const</code>?</strong><br />
+<strong>A:</strong>
+- <code>const int*</code>: pointer to const int — can't modify the value.
+- <code>int* const</code>: const pointer to int — can't change the pointer.</p>
+<p><strong>Q: Can you cast away <code>const</code> and modify the value?</strong><br />
+<strong>A:</strong> Technically yes using <code>(int*)</code>, but doing so leads to undefined behavior and must be avoided.</p>
+<p><strong>Q: What is <code>nullptr</code>? Why not just use 0 or NULL?</strong><br />
+<strong>A:</strong> <code>nullptr</code> (C++11) is a type-safe null pointer constant. Prevents overload ambiguity and improves readability.</p>
+<p><strong>Q: What does <code>const int* const ptr</code> mean?</strong><br />
+<strong>A:</strong> Pointer is constant and points to a constant value. Neither the address nor the value can be changed.</p>
 <hr />
-<h2 id="tricky-case-recursion-vs-iteration">Tricky Case: Recursion vs Iteration</h2>
-<p>Recursive code:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Factorial_Recursion</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Factorial_Recursion</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>Equivalent iterative code:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Factorial</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>Prefer the iterative approach if performance and stack safety are priorities.</p>
+<h2 id="summary-table">Summary Table</h2>
+<table>
+<thead>
+<tr>
+<th>Declaration</th>
+<th>Can Change Value</th>
+<th>Can Reassign Pointer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>const int* ptr</code></td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>int* const ptr</code></td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>const int* const ptr</code></td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>This guide covers core behavior of <code>const</code> with pointers and tricky memory manipulation patterns using pointer casting. Mastering these concepts gives a solid foundation for deeper system-level C++ work.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>MemSet.cpp</li>
+<li>const pointer 2.cpp</li>
+<li>struct + pointer.cpp</li>
+<li>pointer problem.cpp</li>
+</ul>
 
 
 
