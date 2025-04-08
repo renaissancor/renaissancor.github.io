@@ -1,4 +1,4 @@
-# Performance Improvements
+﻿# Performance Improvements
 
 This section documents the performance improvements of our LemonDB systems in school server. 
 

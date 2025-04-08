@@ -1,4 +1,4 @@
-# Project 3 Lottery Scheduling RoadMap
+﻿# Project 3 Lottery Scheduling RoadMap
 
 2024FA ECE4820 Introduction to Operating Systems
 

@@ -1,4 +1,4 @@
-# Multi-threading Challenges
+﻿# Multi-threading Challenges
 
 Support concurrent query execution using multi-threading.  
 

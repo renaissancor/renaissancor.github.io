@@ -1,4 +1,4 @@
-# Developer Setup 
+﻿# Developer Setup 
 
 Full setup and test guide from beginning to end 
 
