@@ -1,4 +1,4 @@
-# Project 3 Lottery Scheduling Risk Assessment
+﻿# Project 3 Lottery Scheduling Risk Assessment
 
 2024FA ECE4820J Introduction to Operating Systems
 

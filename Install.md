@@ -1,4 +1,4 @@
-### **1. Install Chocolatey**
+﻿### **1. Install Chocolatey**
 Chocolatey is a package manager for Windows, making software installation easier.
 
 1. **Open PowerShell as Administrator** (Search for "PowerShell", right-click "Run as administrator").
