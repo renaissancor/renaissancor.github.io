@@ -1,4 +1,4 @@
-# Project 3 Lottery Scheduling 
+﻿# Project 3 Lottery Scheduling 
 
 2024FA ECE4820 Introduction to Operating Systems
 
