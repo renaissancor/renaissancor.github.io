@@ -53,7 +53,6 @@ extra_javascript:                   # Latex Math
 
 plugins:
   - search
-  - macros
 
 
 # Other configuration

@@ -1,0 +1,2105 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="C++ Blog and Study Notes">
+      
+      
+        <meta name="author" content="Renaissancor">
+      
+      
+        <link rel="canonical" href="https://renaissancor.github.io/ECE482FA24/ECE482LAB/ECE482L8/">
+      
+      
+        <link rel="prev" href="../ECE482L7/">
+      
+      
+        <link rel="next" href="../ECE482L9/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Lab 08 - Renaissancoriate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-08" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renaissancoriate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 08
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Renaissancoriate
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR111111/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sample Template Title
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C++ Data Types and Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators and Precedence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Flow in C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250310/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bitwise Operators &amp; Preprocessor Macros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250311/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local Variables, Arrays, &amp; Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structs and Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Function Mechanics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250317/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250318/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Global and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250319/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pointer Basics and Function Overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250320/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constexpr, Const, Volatile, and Pointer Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250324/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Const Pointers and Type-Punning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250325/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom String Utilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250326/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250326
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250327/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250327
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250401
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250402
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPP Dynamic Array
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250407/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250407
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482FA24
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_22">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482FA24
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_22_1" id="__nav_22_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482HW
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22_1">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482HW
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment III
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment IV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment V
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482HW/ECE482H8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VIII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_22_2" id="__nav_22_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482LAB
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_22_2">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482LAB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 08
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 08
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-looking-at-the-linux-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Looking at the Linux kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-looking-at-the-linux-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Looking at the Linux kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-a-page-fault-handler-using-ebpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 A page-fault handler using eBPF
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482L9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 09
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22_3">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/DeveloperGuide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 2 LemonDB Multi Threading Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/MultiThreading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-threading Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Improvements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Road Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_22_4" id="__nav_22_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22_4">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Risk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling Risk Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling RoadMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-looking-at-the-linux-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Looking at the Linux kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-looking-at-the-linux-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Looking at the Linux kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-a-page-fault-handler-using-ebpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 A page-fault handler using eBPF
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-08">Lab 08</h1>
+<p>ECE4820 FA2024 Introduction to Operating Systems</p>
+<p>518370990004 Jae Heung Park</p>
+<hr />
+<h2 id="1-introduction">1 Introduction</h2>
+<p>Reading</p>
+<h2 id="2-looking-at-the-linux-kernel">2 Looking at the Linux kernel</h2>
+<blockquote>
+<p>First you notice references to concepts and topics you have already seen but never dared to look at in
+details. The all seem to be related to coding quality, which you already know is of a critical importance
+when working at the kernel level.</p>
+</blockquote>
+<p><strong>What are kmsan, kasan, kfence folders?</strong></p>
+<p>KMSAN (Kernel Memory Sanitizer)</p>
+<ul>
+<li>Linux uninitialized kernel memory error detection</li>
+<li>Maintain shadow memory that track kernel memory initialization status</li>
+<li>Debug by uninitialized variable detection</li>
+</ul>
+<p>KASAN (Kernel Address Sanitizer)</p>
+<ul>
+<li>Out of Bounds and Use after free error detector</li>
+<li>Also use shadow memory that track whether memory access is valid</li>
+<li>Provide debug info and help to find problematic idea</li>
+</ul>
+<p>KFENCE (Kernel Fence)</p>
+<ul>
+<li>Lightweight detector for production</li>
+<li>Minimal performance, appropriate for live environments</li>
+</ul>
+<p><strong>What is shadow memory and how does it relate to sanitizers?</strong></p>
+<p>Shadow memory is portion of memory reserved to store metadata
+by tracking whether region is valid or not
+at the actual memory (primary memory) inside OS kernel</p>
+<p>Sanitizers use shadow memory to mark invalid or not initialized memory,
+track memory access, or find common error including use-after-free,
+out-of-bounds, etc.</p>
+<p><strong>What are sanitizers and why are they essential when coding in the kernel level?</strong></p>
+<p>Sanitizers dynamically detect bugs like memory errors, invalid accesses, etc.<br />
+KMSAN, KASAN, KFENCE above are all sanitizers.</p>
+<p>Sanitizers can detect memory error, so it is essential in low level programming memory management.
+If memory is corrupted, then OS will not only waste resource but also have several security resources.<br />
+Moreover, kernel interaction to hardware might be compromised, even result in system crash.
+Since debugging memory without sanitizer is extremely challenging.</p>
+<p><strong>What is <code>kmemleak.c</code> file about? Explain who should ?쐕se??it and under what circumstances</strong></p>
+<p>File <code>kmemleak.c</code> is about memory leak detection.
+It will track all dynamically allocated memories to detect memory leakage in a real time.</p>
+<p>During programming for kernel, it is necessary to debug memory.
+Thus, it will be really useful in kernel level module modification that require
+a lot of allocating and freeing memories.</p>
+<blockquote>
+<p>You also notice two interesting files:</p>
+</blockquote>
+<p><strong><code>nommu.c</code>: when would this file be used? List some drawbacks of having CPU without any MMU.</strong></p>
+<p>File <code>nommu.c</code> is (NO Memory Management Unit). This is useful in circumstances with limited
+resources like embedded systems.</p>
+<p>CPU Drawbacks without MMU will have these problems</p>
+<ul>
+<li>No Virtual Memory, only physical memory could be used.</li>
+<li>No Memory Protection, isolated process will make system corruption and crashes more vulnerable</li>
+<li>Memory fragmentation issue and limited ability for handling several processes simultaneously</li>
+<li>Harder debugging, as no VM and memory management is more sophisticated</li>
+</ul>
+<p><strong><code>compaction.c</code>: what is this file used for? Why is ?쐌emory compaction??important?</strong></p>
+<p>File <code>compaction.c</code> reduce fragmentation by moving freed memory blocks to restore memory spaces.</p>
+<p>This compaction is important when memory allocation for large amount of data is completed.
+Efficient memory allocation is really important for specific processes or devices that must
+have contiguous memory like DMA buffers. Optimized performance will significantly reduce
+fallback strategies, maintaining high system performance.</p>
+<blockquote>
+<p>As you keep looking at the files in the mm directory of the Linux source code as name stands out:
+oom_kill.c. This sounds scary! What could be killed. You open the files and discover that it features
+long interesting comments.</p>
+</blockquote>
+<p><strong>What is the OOM killer? In particular what does OOM mean?</strong></p>
+<p>OOM (Out of Memory) is status when system run out of both physical memory and even
+reached to limit of SSD swap memory, so that no space has left to allocate resources
+for new processes.</p>
+<p>OOM Killer is OS kernel mechanism that will free memory
+by process termination especially when system memory is low.
+It will avoid necessary processes and kill useless processes by
+distinguishing them by heuristic algorithm.</p>
+<p><strong>Based on the source code and comments, explain what could be a reason for a deadlock in the
+Linux kernel?</strong></p>
+<p>Hint. There is no need to read the whole source code, simply run a search on a well chosen keyword.</p>
+<p><a href="https://github.com/torvalds/linux/blob/master/mm/oom_kill.c">Source code of<code>oom_kill.c</code></a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;deadlock&quot;</span><span class="w"> </span>oom_kill.c
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">        </span><span class="n">panic</span><span class="p">(</span><span class="s">&quot;System is deadlocked on memory</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;mutex&quot;</span><span class="w"> </span>oom_kill.c
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">DEFINE_MUTEX</span><span class="p">(</span><span class="n">oom_lock</span><span class="p">);</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">DEFINE_MUTEX</span><span class="p">(</span><span class="n">oom_adj_mutex</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mutex_lock_killable</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_lock</span><span class="p">))</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_lock</span><span class="p">);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;wait&quot;</span><span class="w"> </span>oom_kill.c
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">static</span><span class="w"> </span><span class="n">DECLARE_WAIT_QUEUE_HEAD</span><span class="p">(</span><span class="n">oom_victims_wait</span><span class="p">);</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">static</span><span class="w"> </span><span class="n">DECLARE_WAIT_QUEUE_HEAD</span><span class="p">(</span><span class="n">oom_reaper_wait</span><span class="p">);</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">                </span><span class="n">wait_event_freezable</span><span class="p">(</span><span class="n">oom_reaper_wait</span><span class="p">,</span><span class="w"> </span><span class="n">oom_reaper_list</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="n">wake_up</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_reaper_wait</span><span class="p">);</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">before</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">exit</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">able</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">wake</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">futex</span><span class="w"> </span><span class="n">waiters</span><span class="p">.</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="n">wake_up_all</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_victims_wait</span><span class="p">);</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="err">@</span><span class="n">timeout</span><span class="o">:</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">oom</span><span class="w"> </span><span class="n">victims</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">jiffies</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Will</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="n">until</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">OOM</span><span class="w"> </span><span class="n">victims</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">killed</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">given</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wait_event_interruptible_timeout</span><span class="p">(</span><span class="n">oom_victims_wait</span><span class="p">,</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;lock&quot;</span><span class="w"> </span>oom_kill.c
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">oom_killer_disable</span><span class="p">()</span><span class="w"> </span><span class="n">relies</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">lock</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">stabilize</span><span class="w"> </span><span class="n">oom_killer_disabled</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">DEFINE_MUTEX</span><span class="p">(</span><span class="n">oom_lock</span><span class="p">);</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">rcu_read_lock</span><span class="p">();</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">rcu_read_unlock</span><span class="p">();</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="o">*</span><span class="w"> </span><span class="n">task_lock</span><span class="p">()</span><span class="w"> </span><span class="n">held</span><span class="p">.</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">struct</span><span class="w"> </span><span class="nc">task_struct</span><span class="w"> </span><span class="o">*</span><span class="n">find_lock_task_mm</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">task_struct</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">rcu_read_lock</span><span class="p">();</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">task_lock</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">task_unlock</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">rcu_read_unlock</span><span class="p">();</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find_lock_task_mm</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="n">task_unlock</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="n">task_unlock</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="n">rcu_read_lock</span><span class="p">();</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="n">rcu_read_unlock</span><span class="p">();</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="n">task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find_lock_task_mm</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="n">task_unlock</span><span class="p">(</span><span class="n">task</span><span class="p">);</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="n">rcu_read_lock</span><span class="p">();</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="n">rcu_read_unlock</span><span class="p">();</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="k">static</span><span class="w"> </span><span class="n">DEFINE_SPINLOCK</span><span class="p">(</span><span class="n">oom_reaper_lock</span><span class="p">);</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="o">*</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="n">exit_mmap</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">keeping</span><span class="w"> </span><span class="n">mm</span><span class="w"> </span><span class="n">ref</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mmu_notifier_invalidate_range_start_nonblock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">range</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mmap_read_trylock</span><span class="p">(</span><span class="n">mm</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="o">*</span><span class="w"> </span><span class="n">under</span><span class="w"> </span><span class="n">mmap_lock</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">reading</span><span class="w"> </span><span class="n">because</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">serializes</span><span class="w"> </span><span class="n">against</span><span class="w"> </span><span class="n">the</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="o">*</span><span class="w"> </span><span class="n">mmap_write_lock</span><span class="p">();</span><span class="n">mmap_write_unlock</span><span class="p">()</span><span class="w"> </span><span class="n">cycle</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">exit_mmap</span><span class="p">().</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="k">goto</span><span class="w"> </span><span class="n">out_unlock</span><span class="p">;</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="nl">out_unlock</span><span class="p">:</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="n">mmap_read_unlock</span><span class="p">(</span><span class="n">mm</span><span class="p">);</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="cm">/* Retry the mmap_read_trylock(mm) a few times */</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="n">debug_show_all_locks</span><span class="p">();</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="o">*</span><span class="w"> </span><span class="n">somebody</span><span class="w"> </span><span class="n">can</span><span class="err">&#39;</span><span class="n">t</span><span class="w"> </span><span class="n">call</span><span class="w"> </span><span class="n">mmap_write_unlock</span><span class="p">(</span><span class="n">mm</span><span class="p">).</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="n">spin_lock_irq</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_reaper_lock</span><span class="p">);</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="n">spin_unlock_irq</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_reaper_lock</span><span class="p">);</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="n">spin_lock_irqsave</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_reaper_lock</span><span class="p">,</span><span class="w"> </span><span class="n">flags</span><span class="p">);</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="n">spin_unlock_irqrestore</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_reaper_lock</span><span class="p">,</span><span class="w"> </span><span class="n">flags</span><span class="p">);</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="o">*</span><span class="w"> </span><span class="n">Has</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">called</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">oom_lock</span><span class="w"> </span><span class="n">held</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">never</span><span class="w"> </span><span class="n">after</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="o">*</span><span class="w"> </span><span class="n">under</span><span class="w"> </span><span class="n">task_lock</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">operate</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="p">).</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="o">*</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">livelock</span><span class="p">.</span><span class="w"> </span><span class="n">freezing_slow_path</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">tell</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">freezer</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="o">*</span><span class="w"> </span><span class="n">Will</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="n">until</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">OOM</span><span class="w"> </span><span class="n">victims</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">killed</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">given</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mutex_lock_killable</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_lock</span><span class="p">))</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="n">mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_lock</span><span class="p">);</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="o">*</span><span class="w"> </span><span class="n">Caller</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">sure</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">task</span><span class="o">-&gt;</span><span class="n">mm</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">stable</span><span class="w"> </span><span class="p">(</span><span class="n">hold</span><span class="w"> </span><span class="n">task_lock</span><span class="w"> </span><span class="k">or</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="o">*</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">now</span><span class="p">.</span><span class="w"> </span><span class="n">We</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">consider</span><span class="w"> </span><span class="n">find_lock_task_mm</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">future</span><span class="p">.</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="n">rcu_read_lock</span><span class="p">();</span>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="n">rcu_read_unlock</span><span class="p">();</span>
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find_lock_task_mm</span><span class="p">(</span><span class="n">victim</span><span class="p">);</span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="cm">/* Get a reference to safely compare mm after task_unlock(victim) */</span>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="n">task_unlock</span><span class="p">(</span><span class="n">victim</span><span class="p">);</span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="o">*</span><span class="w"> </span><span class="n">depletion</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">memory</span><span class="p">.</span><span class="w">  </span><span class="n">This</span><span class="w"> </span><span class="n">prevents</span><span class="w"> </span><span class="n">mm</span><span class="o">-&gt;</span><span class="n">mmap_lock</span><span class="w"> </span><span class="n">livelock</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">an</span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="n">rcu_read_lock</span><span class="p">();</span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="n">rcu_read_unlock</span><span class="p">();</span>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="n">task_lock</span><span class="p">(</span><span class="n">victim</span><span class="p">);</span>
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="n">task_unlock</span><span class="p">(</span><span class="n">victim</span><span class="p">);</span>
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a><span class="n">task_unlock</span><span class="p">(</span><span class="n">victim</span><span class="p">);</span>
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a><span class="k">static</span><span class="w"> </span><span class="n">BLOCKING_NOTIFIER_HEAD</span><span class="p">(</span><span class="n">oom_notify_list</span><span class="p">);</span>
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a><span class="kt">int</span><span class="w"> </span><span class="nf">register_oom_notifier</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">notifier_block</span><span class="w"> </span><span class="o">*</span><span class="n">nb</span><span class="p">)</span>
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a><span class="k">return</span><span class="w"> </span><span class="n">blocking_notifier_chain_register</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_notify_list</span><span class="p">,</span><span class="w"> </span><span class="n">nb</span><span class="p">);</span>
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a><span class="kt">int</span><span class="w"> </span><span class="nf">unregister_oom_notifier</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">notifier_block</span><span class="w"> </span><span class="o">*</span><span class="n">nb</span><span class="p">)</span>
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a><span class="k">return</span><span class="w"> </span><span class="n">blocking_notifier_chain_unregister</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_notify_list</span><span class="p">,</span><span class="w"> </span><span class="n">nb</span><span class="p">);</span>
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a><span class="n">blocking_notifier_call_chain</span><span class="p">(</span><span class="o">&amp;</span><span class="n">oom_notify_list</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">freed</span><span class="p">);</span>
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a><span class="n">panic</span><span class="p">(</span><span class="s">&quot;System is deadlocked on memory</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a><span class="o">*</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">locks</span><span class="w"> </span><span class="n">held</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">let</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">oom</span><span class="w"> </span><span class="n">killer</span><span class="w"> </span><span class="n">triggered</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">allocation</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="n">care</span>
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find_lock_task_mm</span><span class="p">(</span><span class="n">task</span><span class="p">);</span>
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a><span class="n">task_unlock</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mmap_read_lock_killable</span><span class="p">(</span><span class="n">mm</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a><span class="o">*</span><span class="w"> </span><span class="n">Check</span><span class="w"> </span><span class="n">MMF_OOM_SKIP</span><span class="w"> </span><span class="n">again</span><span class="w"> </span><span class="n">under</span><span class="w"> </span><span class="n">mmap_read_lock</span><span class="w"> </span><span class="n">protection</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">ensure</span>
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a><span class="n">mmap_read_unlock</span><span class="p">(</span><span class="n">mm</span><span class="p">);</span>
+</code></pre></div>
+<p>In <code>oom_lock</code> mutex is used to serialize access to the OOM Killer mechanism.
+It also defines several locks and wait queues for OOM victims and the OOM reaper.
+Various locks used are</p>
+<ul>
+<li>Mutexes (oom_lock, oom_adj_mutex)</li>
+<li>Spinlocks (oom_reaper_lock)</li>
+<li>RCU locks (rcu_read_lock)</li>
+</ul>
+<p>If locks are in inconsistent order, deadlock risk exists.</p>
+<blockquote>
+<p>As you keep exploring the mm directory you notice a few swap related filenames. Without opening them
+you start thinking of the swap and a few questions come to your mind. You know that the kernel and
+user spaces memory are separated but what about the swap? You decide to run a quick online search to
+understand</p>
+</blockquote>
+<p><strong>The ?쐒ough??layout of kernel and user space memories;</strong></p>
+<p>Kernel Space Memory</p>
+<ul>
+<li>Reserved for core functions of OS kernel code, memory stack, heap, and kernel level data .</li>
+<li>Accessible only in ring 0, privileged mode, to ensure stability.</li>
+</ul>
+<p>User Space Memory</p>
+<ul>
+<li>Used by user-level processes and applications</li>
+<li>Includes process data, stack, and heap.</li>
+<li>Runs in ring 3, unprivileged mode, that could isolate user processes from kernel.</li>
+</ul>
+<p><strong>Whether or not kernel memory can be swapped and why;</strong></p>
+<p>If kernel memory swap occurs, then OS kernel can be severely compromised in speed and stability.
+Kernel memory swap must be prohibited, and only user level process memory should be swapped.</p>
+<blockquote>
+<p>At this stage it is pretty clear that directly working in the kernel for MM is to complicated. Unfortunately
+with the pressure Mr. Frown puts on you, it is very hard for you to find enough time to properly investigate
+the benefits of MGLRU as you initially intended. Therefore you decide to keep searching online for some
+task that would prove that Mum Generally Loves to be Really Unfair! And again you are back with this
+MGLRU! Interestingly you suddenly land on this kernel documentation page. It shows how to enable and
+disable MGLRU from the user-space! What if you could work with MM from the user-space?</p>
+</blockquote>
+<h2 id="21-looking-at-the-linux-kernel">2.1 Looking at the Linux kernel</h2>
+<blockquote>
+<p>While searching information about MM in user-space you notice many recent research articles related to
+something called eBPF. As this seems to be a brand new topic this is likely a very idea to look into it:
+maybe being knowledgeable on it could earn you a better job without Mr. Frown! This really looks worth
+the effort, so you decide to read some documentation and follow a short presentation on the topic.</p>
+</blockquote>
+<p>eBPF (Extended Berkeley Packet Filter)</p>
+<p>The eBPF, (Extended Berkeley Packet Filter, guarantees secure execution of user programs at kernel level.
+This technology is commonly applied in to observe performance, computer security, and network status.
+These programs are possible to be injected inside kernel, so that
+all memory events inside are detected and viewed without changing source code of kernel.</p>
+<h2 id="22-a-page-fault-handler-using-ebpf">2.2 A page-fault handler using eBPF</h2>
+<blockquote>
+<p>At the end of the presentation you realise that you have everything you need! The eBPF approach can
+work magic for you: no need to dig any further into Linux MM with long and complex code. You can
+simply run memory pressure tests with and without MGLRU enabled. For that you just need to monitor
+page-faults using an eBPF program. This sounds like a nice starting point to learn more about this
+intriguing technology which bridges the gap between monolithic and micro kernels, by safely ?쐇njecting??
+and ?쐒unning??user-defined code into kernel space!</p>
+</blockquote>
+<p>First, install <code>bpf</code>, its trace tool, and <code>stress-ng</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>bpfcc-tools<span class="w"> </span>linux-headers-<span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>bpftrace
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>stress-ng
+</code></pre></div>
+<p>Use <code>brew</code> for macOS.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>brew<span class="w"> </span>install<span class="w"> </span>bcc
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>brew<span class="w"> </span>install<span class="w"> </span>bpftrace
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>brew<span class="w"> </span>install<span class="w"> </span>stress-ng
+</code></pre></div>
+<p>Second, write down short eBPF script.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/mm_types.h&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">handle_page_fault</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">pt_regs</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">mm_struct</span><span class="w"> </span><span class="o">*</span><span class="n">mm</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="n">bpf_trace_printk</span><span class="p">(</span><span class="s">&quot;Page fault in process: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">-&gt;</span><span class="n">owner</span><span class="o">-&gt;</span><span class="n">pid</span><span class="p">);</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>Now, execution will require Kernel event eBPF attachment and Memory pressure test running.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>bpftrace<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;tracepoint:exceptions:page_fault_user { printf(&quot;Page fault in process: %d\n&quot;, pid); }&#39;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>./page_fault_loader<span class="w"> </span>page_fault.c
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>stress-ng<span class="w"> </span>--vm<span class="w"> </span><span class="m">1</span><span class="w"> </span>--vm-bytes<span class="w"> </span><span class="m">90</span>%<span class="w"> </span>--timeout<span class="w"> </span>60s
+</code></pre></div>
+<p>Finally, compare results.</p>
+<p>Sources</p>
+<ul>
+<li><a href="https://brendangregg.com/blog/2019-01-01/learn-ebpf-tracing.html">eBPF Tracing: Tutorial and Examples</a></li>
+<li><a href="https://manpages.ubuntu.com/manpages/focal/man1/stress-ng.1.html">stress-ng: A Tool to Load and Stress a Computer System</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
