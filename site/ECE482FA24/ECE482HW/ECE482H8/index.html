@@ -1,0 +1,2462 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="C++ Blog and Study Notes">
+      
+      
+        <meta name="author" content="Renaissancor">
+      
+      
+        <link rel="canonical" href="https://renaissancor.github.io/ECE482FA24/ECE482HW/ECE482H8/">
+      
+      
+        <link rel="prev" href="../ECE482H7/">
+      
+      
+        <link rel="next" href="../../ECE482LAB/ECE482L1/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Assignment VIII - Renaissancoriate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#assignment-viii" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renaissancoriate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Assignment VIII
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Renaissancoriate
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR111111/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sample Template Title
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C++ Data Types and Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators and Precedence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Flow in C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250310/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bitwise Operators &amp; Preprocessor Macros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250311/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local Variables, Arrays, &amp; Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structs and Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Function Mechanics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250317/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250318/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Global and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250319/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pointer Basics and Function Overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250320/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constexpr, Const, Volatile, and Pointer Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250324/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Const Pointers and Type-Punning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250325/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom String Utilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250326/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250326
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250327/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250327
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250401
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250402
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPP Dynamic Array
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AR250407/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250407
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482FA24
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_22">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482FA24
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_22_1" id="__nav_22_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482HW
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_22_1">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482HW
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment III
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment IV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment V
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECE482H7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Assignment VIII
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VIII
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1-inputoutput" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 1 - Input/Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 1 - Input/Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-is-it-possible-to-scan-a-document-and-send-it-through-a-wireless-network-at-full-speed-explain-why-why-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Is it possible to scan a document and send it through a wireless network at full speed? Explain why, why not.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-how-can-an-os-facilitate-the-installation-of-a-new-device-without-any-need-to-recompile-the-os-or-even-to-reboot-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. How can an OS facilitate the installation of a new device without any need to recompile the OS or even to reboot it?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-in-the-slides-four-io-software-layers-are-listed-in-which-layers-are-the-following-operations-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. In the slides four I/O software layers are listed; in which layers are the following operations done:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-dma-controller-has-four-channels-the-controller-is-able-to-request-a-32bit-word-every-100-nsec" class="md-nav__link">
+    <span class="md-ellipsis">
+      A DMA controller has four channels. The controller is able to request a 32bit word every 100 nsec.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-briefly-explain-what-a-thin-client-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Briefly explain what a thin client is.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-describe-how-a-hard-disk-is-working-and-give-a-few-details-regarding-its-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Describe how a hard disk is working and give a few details regarding its geometry.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-what-are-differences-between-raid-0-1-5-6-and-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. What are differences between RAID 0, 1, 5, 6, and 10?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-2-multiprocessors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 2 - Multiprocessors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2 - Multiprocessors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-suppose-that-the-tsl-instruction-was-not-available-for-synchronizing-a-multiprocessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Suppose that the TSL instruction was not available for synchronizing a multiprocessor.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-briefly-describe-virtualization-and-the-main-challenges-that-need-to-be-overcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Briefly describe virtualization and the main challenges that need to be overcome.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-3-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 3 - File systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 3 - File systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-assuming-the-current-working-directory-is-usrsharedocmuttexamples" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Assuming the current working directory is /usr/share/doc/mutt/examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-a-unix-system-has-1kb-blocks-and-4b-disk-addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. A Unix system has 1KB blocks and 4B disk addresses.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-time-required-to-read-a-certain-number-of-bytes-can-be-approximated-by-summing-the-seek-rotation-delay-and-transfer-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The time required to read a certain number of bytes can be approximated by summing the seek, rotation delay, and transfer times.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The time required to read a certain number of bytes can be approximated by summing the seek, rotation delay, and transfer times.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-block-size-1-kb-1024-textbytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      (i) Block Size = 1 KB ($ 1,024 \, \text{bytes} $)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii-block-size-2-kb-2048-textbytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      (ii) Block Size = 2 KB ($ 2,048 \, \text{bytes} $)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iii-block-size-4-kb-4096-textbytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      (iii) Block Size = 4 KB ($ 4,096 \, \text{bytes} $)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-4-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 4 - Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 4 - Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-if-using-only-lowercase-letters-how-many-possible-8-letter-words-can-be-chosen" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. If using only lowercase letters how many possible 8 letter words can be chosen?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-explain-why-memory-dynamically-allocated-using-malloc-is-sometimes-random-and-some-other-times-set-to-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Explain why memory dynamically allocated using malloc is sometimes random and some other times set to 0.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-a-computer-system-is-made-of-several-components-each-featuring-a-different-level-of-security-how-secure-is-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. A computer system is made of several components each featuring a different level of security. How secure is this system?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-can-security-be-achieved-explain-your-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Can security be achieved? Explain your answer.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-5-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 5 - Research
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 5 - Research">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_22_2" id="__nav_22_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482LAB
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22_2">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482LAB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482LAB/ECE482L9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 09
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22_3">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/DeveloperGuide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 2 LemonDB Multi Threading Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/MultiThreading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-threading Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Improvements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P2/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Road Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_22_4" id="__nav_22_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22_4">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/Risk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling Risk Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482P3/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling RoadMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1-inputoutput" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 1 - Input/Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 1 - Input/Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-is-it-possible-to-scan-a-document-and-send-it-through-a-wireless-network-at-full-speed-explain-why-why-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Is it possible to scan a document and send it through a wireless network at full speed? Explain why, why not.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-how-can-an-os-facilitate-the-installation-of-a-new-device-without-any-need-to-recompile-the-os-or-even-to-reboot-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. How can an OS facilitate the installation of a new device without any need to recompile the OS or even to reboot it?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-in-the-slides-four-io-software-layers-are-listed-in-which-layers-are-the-following-operations-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. In the slides four I/O software layers are listed; in which layers are the following operations done:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-dma-controller-has-four-channels-the-controller-is-able-to-request-a-32bit-word-every-100-nsec" class="md-nav__link">
+    <span class="md-ellipsis">
+      A DMA controller has four channels. The controller is able to request a 32bit word every 100 nsec.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-briefly-explain-what-a-thin-client-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Briefly explain what a thin client is.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-describe-how-a-hard-disk-is-working-and-give-a-few-details-regarding-its-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Describe how a hard disk is working and give a few details regarding its geometry.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-what-are-differences-between-raid-0-1-5-6-and-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. What are differences between RAID 0, 1, 5, 6, and 10?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-2-multiprocessors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 2 - Multiprocessors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2 - Multiprocessors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-suppose-that-the-tsl-instruction-was-not-available-for-synchronizing-a-multiprocessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Suppose that the TSL instruction was not available for synchronizing a multiprocessor.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-briefly-describe-virtualization-and-the-main-challenges-that-need-to-be-overcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Briefly describe virtualization and the main challenges that need to be overcome.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-3-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 3 - File systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 3 - File systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-assuming-the-current-working-directory-is-usrsharedocmuttexamples" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Assuming the current working directory is /usr/share/doc/mutt/examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-a-unix-system-has-1kb-blocks-and-4b-disk-addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. A Unix system has 1KB blocks and 4B disk addresses.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-time-required-to-read-a-certain-number-of-bytes-can-be-approximated-by-summing-the-seek-rotation-delay-and-transfer-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The time required to read a certain number of bytes can be approximated by summing the seek, rotation delay, and transfer times.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The time required to read a certain number of bytes can be approximated by summing the seek, rotation delay, and transfer times.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-block-size-1-kb-1024-textbytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      (i) Block Size = 1 KB ($ 1,024 \, \text{bytes} $)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii-block-size-2-kb-2048-textbytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      (ii) Block Size = 2 KB ($ 2,048 \, \text{bytes} $)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iii-block-size-4-kb-4096-textbytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      (iii) Block Size = 4 KB ($ 4,096 \, \text{bytes} $)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-4-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 4 - Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 4 - Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-if-using-only-lowercase-letters-how-many-possible-8-letter-words-can-be-chosen" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. If using only lowercase letters how many possible 8 letter words can be chosen?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-explain-why-memory-dynamically-allocated-using-malloc-is-sometimes-random-and-some-other-times-set-to-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Explain why memory dynamically allocated using malloc is sometimes random and some other times set to 0.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-a-computer-system-is-made-of-several-components-each-featuring-a-different-level-of-security-how-secure-is-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. A computer system is made of several components each featuring a different level of security. How secure is this system?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-can-security-be-achieved-explain-your-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Can security be achieved? Explain your answer.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-5-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise 5 - Research
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 5 - Research">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="assignment-viii">Assignment VIII</h1>
+<p>ECE4820 FA2024 Introduction to Operating Systems</p>
+<p>518370990004 Jae Heung Park</p>
+<hr />
+<h2 id="exercise-1-inputoutput">Exercise 1 - Input/Output</h2>
+<h3 id="1-is-it-possible-to-scan-a-document-and-send-it-through-a-wireless-network-at-full-speed-explain-why-why-not">1. Is it possible to scan a document and send it through a wireless network at full speed? Explain why, why not.</h3>
+<p>It is theoretically possible depends on system bottleneck.
+Factors are scan resolution, scanner scan speed, and bandwidth of wireless network.
+If network speed is faster than scanner output rate, scan time will be fine.
+However, delays like image compression will prevent to send data to full speed of wireless network.</p>
+<h3 id="2-how-can-an-os-facilitate-the-installation-of-a-new-device-without-any-need-to-recompile-the-os-or-even-to-reboot-it">2. How can an OS facilitate the installation of a new device without any need to recompile the OS or even to reboot it?</h3>
+<p>OS can use modular designs to dynamically load device drivers.
+When new device is connected, OS will detect device by plug and play mechanism.
+Then, load the appropriate driver without requiring any reboot or recompile.</p>
+<h3 id="3-in-the-slides-four-io-software-layers-are-listed-in-which-layers-are-the-following-operations-done">3. In the slides four I/O software layers are listed; in which layers are the following operations done:</h3>
+<ul>
+<li>a) Computing the track, sector, and head for a disk read -&gt; Device Driver Layer</li>
+<li>b) Writing command to the device registers -&gt; Hardware Layer</li>
+<li>c) Checking if the user is allowed to use the device -&gt; User Level Software Layer or OS Layer</li>
+<li>d) Converting binary integers to ASCII for printing -&gt; User Level Software Layer</li>
+</ul>
+<h3 id="a-dma-controller-has-four-channels-the-controller-is-able-to-request-a-32bit-word-every-100-nsec">A DMA controller has four channels. The controller is able to request a 32bit word every 100 <code>nsec</code>.</h3>
+<p><strong>A response takes equally long. How fats should the bus be in order to avoid being a bottleneck?</strong></p>
+<p>DMA controller request and response per 100<code>ns</code> for 32-bit words.
+Bus support speed <span class="arithmatex">\(\frac{32 <code>bits</code>}{100 <code>ns</code>} = 320\)</span>MB/<code>sec</code> = 40 MB/<code>sec</code>
+to avoid bottleneck.</p>
+<h3 id="5-briefly-explain-what-a-thin-client-is">5. Briefly explain what a thin client is.</h3>
+<p>Thin client is lightweight computer system.
+It mostly relies on server to process and store data.
+It is primarily used for application access, data, or remote desktop.</p>
+<h3 id="6-describe-how-a-hard-disk-is-working-and-give-a-few-details-regarding-its-geometry">6. Describe how a hard disk is working and give a few details regarding its geometry.</h3>
+<p>Hard disk can store a large quantity of data in a huge scale by platters.
+Each platter is divided by tracks, and each track is divided by sectors.
+The read/write head</p>
+<h3 id="7-what-are-differences-between-raid-0-1-5-6-and-10">7. What are differences between RAID 0, 1, 5, 6, and 10?</h3>
+<ul>
+<li>RAID 0 - Stripe without redundancy, fast, no fault tolerance</li>
+<li>RAID 1 - Stripe with redundancy, mirroring</li>
+<li>RAID 5 - Stripe with distributed parity, need at minimum 3 disks.</li>
+<li>RAID 6 - Stripe with distributed dual parity, can handle 2 disk failures</li>
+<li>RAID 10 Combine RAID 0 and 1, high performance by mirroring and stripe without redundancy</li>
+</ul>
+<h2 id="exercise-2-multiprocessors">Exercise 2 - Multiprocessors</h2>
+<h3 id="1-suppose-that-the-tsl-instruction-was-not-available-for-synchronizing-a-multiprocessor">1. Suppose that the TSL instruction was not available for synchronizing a multiprocessor.</h3>
+<p><strong>Instead, another instruction, SWP was provided that atomically swapped the contents of a register with a
+word in memory. How could that be used to provide multiprocessor synchronisation?</strong></p>
+<p>The <code>SWP</code> instruction could swap register by lock with memory allocation easily.
+If lock is free, SWAP will lock variable to ensure mutual exclusion.</p>
+<h3 id="2-briefly-describe-virtualization-and-the-main-challenges-that-need-to-be-overcome">2. Briefly describe virtualization and the main challenges that need to be overcome.</h3>
+<p>Virtualization make several operating systems to run in one physical PC.
+However, resource allocation and isolation would be key technological challenges.
+Specifically, CPU scheduling, I/O virtualization, and security isolation will be important.</p>
+<h2 id="exercise-3-file-systems">Exercise 3 - File systems</h2>
+<h3 id="1-assuming-the-current-working-directory-is-usrsharedocmuttexamples">1. Assuming the current working directory is <code>/usr/share/doc/mutt/examples</code></h3>
+<p>what is the absolute path of <code>../../../doc/../../lib/mutt</code>?</p>
+<p><code>/usr/share/doc/mutt/examples</code> to <code>../../../doc</code> is <code>/usr/share/doc</code>.
+<code>/usr/share/doc</code> to <code>../../lib/mutt</code> is <code>/usr/lib/mutt</code>
+Thus, absolute path will be <code>/usr/lib/mutt</code>.</p>
+<h3 id="2-a-unix-system-has-1kb-blocks-and-4b-disk-addresses">2. A Unix system has 1KB blocks and 4B disk addresses.</h3>
+<p><strong>What is the maximum file size if i-nodes contain 13 direct entries,
+and one single, double , and triple indirect entry each?</strong></p>
+<p>Each block can hold <span class="arithmatex">\(\frac{1KB}{4KB}=256\)</span> addresses.</p>
+<ul>
+<li>Direct entries are <span class="arithmatex">\(13 \times 1KB = 13KB\)</span></li>
+<li>Single Indirect Entry <span class="arithmatex">\(256 \times 1KB = 256KB\)</span></li>
+<li>Double Indirect Entry <span class="arithmatex">\(256 \times 256 \times 1KB = 65536KB = 64MB\)</span></li>
+<li>Triple Indirect Entry <span class="arithmatex">\(256 \times 256 \times 256 \times 1KB = 16777216MB = 16384MB = 16GB\)</span></li>
+<li>Maximum File Size <span class="arithmatex">\(13KB + 256KB + 64MB + 16GB = 16448.2627 MB = 16.06GB\)</span></li>
+</ul>
+<h3 id="3-the-time-required-to-read-a-certain-number-of-bytes-can-be-approximated-by-summing-the-seek-rotation-delay-and-transfer-times">3. The time required to read a certain number of bytes can be approximated by summing the seek, rotation delay, and transfer times.</h3>
+<p><strong>Given a disk with mean seek time of 8 msec, a rotation rate
+of 15,000 rpm and 262,144 bytes per track what are the data rates for block sizes of</strong></p>
+<ul>
+<li>(i) 1 KB,</li>
+<li>(ii) 2 KB, and</li>
+<li>(iii) 4 KB?</li>
+</ul>
+<p>Parameters Provided</p>
+<ul>
+<li>Mean seek time = $ 8 \, \text{ms} $</li>
+<li>Rotation time per revolution = $ \frac{1}{15,000} \times 60,000 = 4 \, \text{ms} $</li>
+<li>Bytes per track = $ 262,144 \, \text{bytes} $</li>
+</ul>
+<p><strong>Transfer Time Formula:</strong><br />
+$ \text{Transfer Time} = \frac{\text{Block Size}}{\text{Bytes per Track}} \times 4 \, \text{ms} $</p>
+<h4 id="i-block-size-1-kb-1024-textbytes">(i) Block Size = 1 KB ($ 1,024 \, \text{bytes} $)</h4>
+<ul>
+<li>Transfer Time = $ \frac{1,024}{262,144} \times 4 \approx 0.0156 \, \text{ms} $</li>
+<li>Total Time = $ 8 + 4 + 0.0156 = 12.0156 \, \text{ms} $</li>
+<li>Data Rate = $ \frac{1,024 \, \text{bytes}}{12.0156 \, \text{ms}} \approx 85.2 \, \text{KB/s} $.</li>
+</ul>
+<h4 id="ii-block-size-2-kb-2048-textbytes">(ii) Block Size = 2 KB ($ 2,048 \, \text{bytes} $)</h4>
+<ul>
+<li>Transfer Time = $ \frac{2,048}{262,144} \times 4 \approx 0.0312 \, \text{ms} $</li>
+<li>Total Time = $ 8 + 4 + 0.0312 = 12.0312 \, \text{ms} $</li>
+<li>Data Rate = $ \frac{2,048 \, \text{bytes}}{12.0312 \, \text{ms}} \approx 170.3 \, \text{KB/s} $.</li>
+</ul>
+<h4 id="iii-block-size-4-kb-4096-textbytes">(iii) Block Size = 4 KB ($ 4,096 \, \text{bytes} $)</h4>
+<ul>
+<li>Transfer Time = $ \frac{4,096}{262,144} \times 4 \approx 0.0624 \, \text{ms} $</li>
+<li>Total Time = $ 8 + 4 + 0.0624 = 12.0624 \, \text{ms} $</li>
+<li>Data Rate = $ \frac{4,096 \, \text{bytes}}{12.0624 \, \text{ms}} \approx 339.7 \, \text{KB/s} $.</li>
+</ul>
+<h2 id="exercise-4-security">Exercise 4 - Security</h2>
+<h3 id="1-if-using-only-lowercase-letters-how-many-possible-8-letter-words-can-be-chosen">1. If using only lowercase letters how many possible 8 letter words can be chosen?</h3>
+<p><strong>Explain why a password should always contain lower and uppercase letters, numbers and symbols.</strong></p>
+<p>8 Character Word, use only lowercase letters, 26 probabilities per each character.<br />
+Possible combination likelihood will be <span class="arithmatex">\(26^8 = 208827064576\)</span> cases.</p>
+<p>It is important to contain lower case, upper case letter, number, and symbols because
+it will increment probability of password search space exponentially.
+Entropy of password increases, so brute Force attack will be more resource unlikely.
+For instance, uppercase multiplies twice probability per character, <span class="arithmatex">\(2^8=256\)</span> times for 8 characters.</p>
+<h3 id="2-explain-why-memory-dynamically-allocated-using-malloc-is-sometimes-random-and-some-other-times-set-to-0">2. Explain why memory dynamically allocated using malloc is sometimes random and some other times set to 0.</h3>
+<p>Memory allocation by <code>malloc</code> does not initialize memory.
+It reserves size but may return memory with no leftover values from previous use, while <code>calloc</code> explicitly initialize to 0.<br />
+If <code>calloc</code> is called, or memory is initialized explicitly, checking whether memory start is 0 or not is crucial.</p>
+<h3 id="3-a-computer-system-is-made-of-several-components-each-featuring-a-different-level-of-security-how-secure-is-this-system">3. A computer system is made of several components each featuring a different level of security. How secure is this system?</h3>
+<p>Computer system security is same as the most vulnerable part of the computer system.
+Attackers might detect and exploit the least secure component so that entire system is under attack.
+For instance, old firmware security vulnerability might be a trigger to compromise the entire OS,
+that has no security problem in the OS.
+Defense in depth strategies are minor ways to support weakest vulnerabilities.</p>
+<h3 id="4-can-security-be-achieved-explain-your-answer">4. Can security be achieved? Explain your answer.</h3>
+<p>Even theoretically, accomplishment of computer system to secure 100% perfect security is not achievable
+considering the complexity of computer system and its continuous technological progress.
+In some perspective, some super computer that does not exist in real world might make
+all computer systems insecure by brute force.
+In reality, it is even harder, due to several updates, conflicts, computer external problems like
+electricity supply or network, human mistakes, etc. So, people generally compromise by
+implementation of defence layer, regular updates, access controls, and continuous monitor.</p>
+<h2 id="exercise-5-research">Exercise 5 - Research</h2>
+<p><strong>Write about half a page on the topic of firewalls on Linux systems; include information on iptables.
+Do not forget to reference your sources of information.</strong></p>
+<p>In Linux Operating System, Firewalls manage and secure network traffic by controlling incoming and
+outgoing traffic based on predefined rules. It could protect against not authorized access and attacks.
+Firewall acts as barrier located between trusted networks and untrusted networks.
+It protects system access from unauthorized access, so that attacks and data breaches are prevented.</p>
+<p>Firework analyze packets and decide whether they are allowed by defined rules including:</p>
+<ul>
+<li>IP Address : allow or block traffic from specific source or destination</li>
+<li>Port Numbers : Filter by services (Block SSH by block port 22)</li>
+<li>Protocols : Protocol type based filtering like TCP or UDP</li>
+</ul>
+<p>There are several types of firewalls available.</p>
+<ul>
+<li>Packet Filtering Firewall work at network layer to inspect each individual packet, regardless of connection status.</li>
+<li>Stateful Firewall could work and track connection status to make more context aware decisions</li>
+<li>Application Firewall inspect packet contents in application layer</li>
+<li>Proxy Firewalls act between server and client to mask internal network</li>
+</ul>
+<p>One of the most commonly applied tool on Linux firewall is <code>iptables</code>.
+It is a part of the <code>netfilter</code> framework inside Linux OS kernel.
+It could operate on chains including <code>INPUT</code>, <code>OUTPUT</code>, and <code>FORWARD</code> so that
+traffic filtering is possible through IO address, ports, or protocols.</p>
+<p>Administrator access could allow and block network traffic by making <code>iptables</code> rules.
+For example, following command can be used to prevent any SSH traffic on part 22.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">22</span><span class="w"> </span>-j<span class="w"> </span>DROP
+</code></pre></div>
+<p>Even though <code>nftables</code>, more recent version that provide higher performance and better usability,
+<code>iptables</code> are still used in some modern distributions due to its stability and reliability.
+Additional tools like Uncomplicated Firewall (UFU) and firewalld support interfaces that are
+friendly for users to manage firewall rules, sot that complexity of iptables is in abstract.</p>
+<p>Although firewalls are powerful and have several functionalities,
+their limitation would be due to its subordinate part of layered security approach as
+some framework or tool than could be part of consistent update and intrusion detection systems (IDS).</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="linuxfoundation.org">Linux Foundation. "iptables Documentation."</a></li>
+<li><a href="redhat.com">Red Hat. "Introduction to Firewalld and iptables."</a></li>
+<li><a href="ubuntu.com">Ubuntu Documentation. "Uncomplicated Firewall (UFW)."</a></li>
+<li><a href="netfilter.org">Netfilter Project. "nftables Overview."</a></li>
+<li><a href="https://linux.die.net">Iptables HowTo.</a></li>
+<li><a href="https://wiki.nftables.org">Introduction to nftables</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
