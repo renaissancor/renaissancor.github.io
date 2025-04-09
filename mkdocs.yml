@@ -57,4 +57,3 @@ plugins:
 
 # Other configuration
 docs_dir: "docs"                     # Folder that contains your Markdown documentation
-encoding: "utf-8"                    # Encoding for reading the documentation files
