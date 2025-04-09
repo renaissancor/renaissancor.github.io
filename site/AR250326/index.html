@@ -26,7 +26,7 @@
     
     
       
-        <title>AR250326 - Renaissancoriate</title>
+        <title>Memory Layout and Static Variables - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#references" class="md-skip">
+        <a href="#memory-layout-and-static-variables" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AR250326
+              Memory Layout and Static Variables
             
           </span>
         </div>
@@ -549,13 +549,15 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    AR250326
+    Memory Layout and Static Variables
     
   </span>
   
@@ -568,7 +570,7 @@
   
   
   <span class="md-ellipsis">
-    AR250326
+    Memory Layout and Static Variables
     
   </span>
   
@@ -581,12 +583,86 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#date-2025-03-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date: 2025-03-26
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tricky-case-static-inside-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tricky Case: Static Inside Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-memory-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual: Memory Segments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
@@ -617,7 +693,7 @@
   
   
   <span class="md-ellipsis">
-    AR250327
+    Dynamic Memory Allocation and Heap Management
     
   </span>
   
@@ -639,7 +715,7 @@
   
   
   <span class="md-ellipsis">
-    AR250328
+    Linked List and Dynamic Array Study
     
   </span>
   
@@ -1947,12 +2023,86 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#date-2025-03-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date: 2025-03-26
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tricky-case-static-inside-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tricky Case: Static Inside Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-memory-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual: Memory Segments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
@@ -1979,8 +2129,110 @@
 
 
 
-  <h1>AR250326</h1>
-
+<h1 id="memory-layout-and-static-variables">Memory Layout and Static Variables</h1>
+<h3 id="date-2025-03-26">Date: 2025-03-26</h3>
+<hr />
+<h2 id="key-points">Key Points</h2>
+<ul>
+<li>Local variables reside in the <strong>stack</strong> segment.</li>
+<li>Global, static, and external variables live in the <strong>data</strong> segment.</li>
+<li><code>static</code> variables retain state across function calls.</li>
+<li>Heap memory is dynamically allocated during runtime.</li>
+<li>ROM includes constants, code, and string literals.</li>
+<li>Accessing static variables via pointers allows indirect manipulation.</li>
+<li>Dynamic allocation enables flexible memory usage.</li>
+</ul>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>Understanding how different types of variables are stored in memory is crucial for writing efficient and bug-free C/C++ code. This includes knowing the distinctions between stack, data, heap, and ROM segments.</p>
+<p>This example demonstrates the use of various storage classes: local, global, static, and dynamic memory allocation. It also shows how to indirectly modify <code>static</code> variables declared within a function using pointers.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">// Global variable - stored in data segment</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">tint</span><span class="w"> </span><span class="n">global</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">g_Arr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"> </span><span class="c1">// Global array - also in data segment</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">// Custom data type defined by struct</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">struct</span><span class="w"> </span><span class="nc">MyDatType</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w">     </span><span class="c1">// Two integer elements</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">fArr</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w">  </span><span class="c1">// Three float elements</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">};</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1">// Function that returns a pointer to a static variable</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="nf">Test</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">iStatic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Stored in data segment, retains value across calls</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="o">++</span><span class="n">global</span><span class="p">;</span><span class="w">     </span><span class="c1">// Modify global variable</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="o">++</span><span class="n">iStatic</span><span class="p">;</span><span class="w">    </span><span class="c1">// Modify static variable</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="n">iStatic</span><span class="p">;</span><span class="w"> </span><span class="c1">// Return address to allow external modification</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="c1">// Accessing and modifying a static variable indirectly via pointer</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Test</span><span class="p">();</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="o">*</span><span class="n">pInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">  </span><span class="c1">// Modifies the static variable directly</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="n">Test</span><span class="p">();</span><span class="w">       </span><span class="c1">// Calls again to observe incremented behavior</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="o">++</span><span class="n">global</span><span class="p">;</span><span class="w">     </span><span class="c1">// Directly modify global variable</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="c1">// Dynamic memory allocation happens in heap</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="c1">// Enables allocation of memory at runtime</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">         </span><span class="c1">// Local variable - stack</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">iArr</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w">           </span><span class="c1">// Local array - stack</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="n">MyDatType</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w">    </span><span class="c1">// Struct instance - stack</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">    </span><span class="n">data</span><span class="p">.</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w">            </span><span class="c1">// Accessing struct members</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="n">data</span><span class="p">.</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">    </span><span class="n">data</span><span class="p">.</span><span class="n">fArr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="n">data</span><span class="p">.</span><span class="n">fArr</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">    </span><span class="n">data</span><span class="p">.</span><span class="n">fArr</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p><strong>Trying to directly access a static variable outside its scope</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// ++iStatic; // Invalid - `iStatic` is local to Test(), cannot access directly</span>
+</code></pre></div></p>
+<p><strong>Forgetting to initialize dynamically allocated memory</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">// Always initialize or set the memory to avoid garbage values</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">free</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span><span class="w"> </span><span class="c1">// Always remember to free dynamically allocated memory</span>
+</code></pre></div></p>
+<hr />
+<h2 id="tricky-case-static-inside-function">Tricky Case: Static Inside Function</h2>
+<p>Even though a <code>static</code> variable is local to a function, you can manipulate its value from outside by returning its address.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Test</span><span class="p">();</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// Updates the static variable inside Test()</span>
+</code></pre></div>
+<p>The static variable is still <strong>not globally accessible</strong>, but its address can leak outside the function scope for controlled use.</p>
+<hr />
+<h2 id="interview-questions">Interview Questions</h2>
+<p><strong>Q: What is the difference between <code>static</code> and <code>global</code> variables in C?</strong><br />
+A: Both are stored in the data segment, but <code>static</code> limits the scope to the defining function or file, while global variables are accessible across files.</p>
+<p><strong>Q: What are the different memory segments in a C program?</strong><br />
+A: Stack (local variables), Heap (dynamic allocation), Data (global/static), ROM (constants, code).</p>
+<p><strong>Q: Can you return a pointer to a local variable from a function?</strong><br />
+A: No. Local variables are destroyed after function returns. But returning the address of a <code>static</code> variable is valid since it lives beyond the function scope.</p>
+<p><strong>Q: Why is heap allocation not related to the heap data structure?</strong><br />
+A: The term "heap" here refers to a memory region, not the data structure. Dynamic allocation uses this region but not the heap structure (min/max trees).</p>
+<hr />
+<h2 id="visual-memory-segments">Visual: Memory Segments</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Memory Segment     | Contents                      | Example
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>------------------ | ----------------------------- | ----------------------
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Stack              | Local variables               | int x;
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Heap               | Dynamically allocated memory  | malloc()
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Data               | Static/Global variables       | static int i;
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>ROM (Text)         | Code, constants, literals     | &quot;Hello&quot; string
+</code></pre></div>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>This study explores how variable storage classes affect memory usage and lifetime. <code>static</code> variables are powerful tools when persistent state is needed within function scope, while dynamic memory allows flexibility at runtime. Being aware of memory segment layout is essential for low-level optimization and preventing memory issues.</p>
+<hr />
 <h2 id="references">References</h2>
 <ul>
 <li><a href="../codes/my_string.cpp">my_string.cpp</a></li>
