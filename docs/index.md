@@ -22,3 +22,11 @@ mkdocs serve
 mkdocs build
 mkdocs gh-deploy
 ```
+
+Visual Studio 
+
+`Ctrl` + `F5` Program Execution 
+
+`Ctrl` + `~`  Open Terminal 
+
+`F5`          Program Debug 
