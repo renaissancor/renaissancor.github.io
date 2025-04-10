@@ -12,13 +12,13 @@
         <meta name="author" content="Renaissancor">
       
       
-        <link rel="canonical" href="https://renaissancor.github.io/AR250409/">
+        <link rel="canonical" href="https://renaissancor.github.io/AR250321/">
       
       
-        <link rel="prev" href="../AR250408/">
+        <link rel="prev" href="../AR250320/">
       
       
-        <link rel="next" href="../AR250410/">
+        <link rel="next" href="../AR250324/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>AR250409 - Renaissancoriate</title>
+        <title>C Memory Functions - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#references" class="md-skip">
+        <a href="#c-memory-functions" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AR250409
+              C Memory Functions
             
           </span>
         </div>
@@ -298,10 +298,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../AR250321/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    C Memory Functions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -312,6 +334,77 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#date-2025-03-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date: 2025-03-21
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memset" class="md-nav__link">
+    <span class="md-ellipsis">
+      MemSet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memcpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      MemCpy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memmove" class="md-nav__link">
+    <span class="md-ellipsis">
+      MemMove
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MemMove">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-use-byte-or-unsigned-char-for-memset-and-memmove" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use BYTE* (or unsigned char*) for MemSet and MemMove?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -562,30 +655,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    AR250409
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../AR250409/" class="md-nav__link">
         
   
   
@@ -596,33 +669,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2135,6 +2181,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2143,11 +2191,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#date-2025-03-21" class="md-nav__link">
     <span class="md-ellipsis">
-      References
+      Date: 2025-03-21
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memset" class="md-nav__link">
+    <span class="md-ellipsis">
+      MemSet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memcpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      MemCpy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memmove" class="md-nav__link">
+    <span class="md-ellipsis">
+      MemMove
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MemMove">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-use-byte-or-unsigned-char-for-memset-and-memmove" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use BYTE* (or unsigned char*) for MemSet and MemMove?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2167,87 +2257,107 @@
 
 
 
-  <h1>AR250409</h1>
-
-<p>iterator cannto exceed the end of the datatype </p>
-<p>dynamic array is inefficient when middle part of data is removed 
-so latter elements should be moved one unit. 
-In extremely worst case when first one is removed in dynamic array aka vector 
-it is not efficient </p>
-<p>However linked list is relatively easier</p>
-<p>That is why 
-vector only has pop_back it takes only O(1) 
-but pop_front for vector will have O(n) time complexity </p>
-<p>vecInt.erase(where) where means iterator 
-iter = vecInt.begin(); 
-vecInt.erase(iter); </p>
-<p>Similarly in linked list also exists 
-list<int>::iterator Liter = intList.begin(); 
-intList.erase(Liter); </p>
-<p>vector is dynamic array based data structure 
-using the front data is inefficient, so pop_front is not supported </p>
-<p>List is linked list based data structure so specific index access<br />
-among saved data, [] operator or at() function is not supported, 
-but iterator allow specific data index value. </p>
-<p>erase usage cautions, after iterator input is erased in list 
-so that its iterator value is removed, then iterator became not usable </p>
-<p><em>iter let it possible to access the value of the iterater points 
-However after it is removed, the </em>iterator is no longer valid </p>
-<p>since iterator cannot move beyond the end of the data structure 
-for loop like iter != array.end(); is safe loop? </p>
-<p>When erase is used be catious during loop 
-intList.erase(Liter); // error, since iterator became invalid 
-Liter = intList.erase(Liter); // Returns next value of iterator 
-// However, this loop also is problematic, since erase already 
-move into next iterator, and for loop moves one more step. 
-// for(Liter = iList.begin(); iter != iList.end(); iter++) 
-for(Liter = iList.begin(); iter != iList.end(); ){
-    if(*iter &lt; 60){
-        // iList.erase(iter); // iter became invalid 
-        iter = iList.erase(iter); // iterator move next this way 
-    } else {
-        iter++; 
-    }
-}
-return 0; </p>
-<p>iterator can access to 
-C array private data </p>
-<p>begin iterator to int reference </p>
-<p>make begin () and end () iterator returning function inside dynamic array </p>
-<p>iterator default generator 
-iterator(): m_Owner(nullptr), m_idx(-1); 
-iterator generator with input 
-iterator(Carray<T> * _Owner, int _Idx)
-: m_Owner(_Owner), m_Idx(_Idx){}</p>
-<p>based on these generator, iterator begin () will return 
-return iterator(this, 0); </p>
-<p>iterator end () will return 
-return iterator(this, -1); </p>
-<p>if m_Owner == nullptr &amp;&amp; m_IDx == -1 ==&gt; Nothing is pointed iterator 
-if m_Owner != nullptr &amp;&amp; m_IDx == -1 ==&gt; Certain filled container's end pointing </p>
-<p>if m_Idx == -1 then assert, show error as it is ++ to end iterator 
-expressed as assert(m_Idx != -1); 
-When end iterator is called with ++. </p>
-<p>if vec.begin () == vec.end() then vector is empty </p>
-<p>if m_curSize == 0 return end iterator for empmty vector this.end() 
-Else, meaning vector is not empty return iterator(this, 0); </p>
-<p>When data is not existinig and call begin, end iterator is returned 
-AKA begin and end iterators are same, when vector is empty </p>
-<p>Increment, Decrement Operator are separateed into two types ++ -- 
-iterator is inner class so can access private data easily </p>
-<p>When defined increment or decrement operator is implemented in custom 
-void operator ++(void) // AKA ++iterator</p>
-<p>void operator ++(int input == 0) // AKA iterator++ </p>
-<p>++ iterator AKA iterator.operator++(); 
-iterator ++ AKA iterator.operator++(0); input is meaningless, always 0. </p>
-<p>Iterator member function operator ++ are just function call. </p>
-<h2 id="references">References</h2>
+<h1 id="c-memory-functions">C Memory Functions</h1>
+<h3 id="date-2025-03-21">Date: 2025-03-21</h3>
+<hr />
+<h2 id="memset">MemSet</h2>
+<p><strong>Purpose:</strong><br />
+The <code>memset()</code> function sets a block of memory to a specific byte value. It is commonly used to initialize or clear memory.</p>
+<p><strong>Prototype:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">memset</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
+</code></pre></div></p>
 <ul>
-<li><a href="../codes/CArray.h">CArray.h</a></li>
-<li><a href="../codes/vector_usage.cpp">vector_usgae.cpp</a></li>
-<li><a href="../codes/iterator2.cpp">iterator2.cpp</a></li>
-<li><a href="../codes/CArray_iterator.cpp">CArray_iterator.cpp</a></li>
+<li><strong><code>ptr</code></strong>: A pointer to the starting address of the memory block to be set.</li>
+<li><strong><code>value</code></strong>: The value to set each byte in the memory block to. This value is converted to an unsigned char.</li>
+<li><strong><code>num</code></strong>: The number of bytes to set.</li>
 </ul>
+<p><strong>Usage Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">memset</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span><span class="w"> </span><span class="c1">// Set all bytes in arr to 0</span>
+</code></pre></div></p>
+<p><strong>Behavior:</strong><br />
+<code>memset()</code> sets the bytes in the memory block to the specified value. It operates <strong>byte-by-byte</strong>, making it suitable for initializing buffers, clearing memory, or filling structures with a default value.</p>
+<p><strong>Code Implementation</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">BYTE</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MemSet</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_pData</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_Size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">BYTE</span><span class="o">*</span><span class="w"> </span><span class="n">pData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">BYTE</span><span class="o">*</span><span class="p">)</span><span class="n">_pData</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">_Size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="o">*</span><span class="p">(</span><span class="n">pData</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h2 id="memcpy">MemCpy</h2>
+<p><strong>Purpose:</strong><br />
+The <code>memcpy()</code> function copies a block of memory from one location to another. It does <strong>not handle overlapping memory regions</strong>.</p>
+<p><strong>Prototype:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">memcpy</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">dest</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
+</code></pre></div></p>
+<ul>
+<li><strong><code>dest</code></strong>: A pointer to the destination memory location.</li>
+<li><strong><code>src</code></strong>: A pointer to the source memory location.</li>
+<li><strong><code>num</code></strong>: The number of bytes to copy.</li>
+</ul>
+<p><strong>Usage Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">src</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">dest</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">memcpy</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// Copies &quot;Hello\0&quot; to dest</span>
+</code></pre></div></p>
+<p><strong>Behavior:</strong><br />
+<code>memcpy()</code> performs a <strong>fast copy</strong> of <code>num</code> bytes from the source to the destination. It assumes that the memory regions do not overlap and will behave incorrectly if they do.</p>
+<p><strong>Note:</strong><br />
+If the source and destination memory regions overlap, the behavior is <strong>undefined</strong>, potentially causing data corruption.</p>
+<p><strong>Code Implementation</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">BYTE</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MemCopy</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_Dest</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_Size</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_Src</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">BYTE</span><span class="o">*</span><span class="w"> </span><span class="n">pDest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">BYTE</span><span class="o">*</span><span class="p">)</span><span class="n">_Dest</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">BYTE</span><span class="o">*</span><span class="w"> </span><span class="n">pSrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">BYTE</span><span class="o">*</span><span class="p">)</span><span class="n">_Src</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">_Size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="n">pDest</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pSrc</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h2 id="memmove">MemMove</h2>
+<p><strong>Purpose:</strong><br />
+The <code>memmove()</code> function copies a block of memory like <code>memcpy()</code>, but it <strong>safely handles overlapping memory regions</strong>.</p>
+<p><strong>Prototype:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">memmove</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">dest</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
+</code></pre></div></p>
+<ul>
+<li><strong><code>dest</code></strong>: A pointer to the destination memory location.</li>
+<li><strong><code>src</code></strong>: A pointer to the source memory location.</li>
+<li><strong><code>num</code></strong>: The number of bytes to copy.</li>
+</ul>
+<p><strong>Usage Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;123456789&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">memmove</span><span class="p">(</span><span class="o">&amp;</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// Moves &quot;12345&quot; to position starting at index 2</span>
+</code></pre></div></p>
+<p><strong>Behavior:</strong><br />
+<code>memmove()</code> copies the bytes safely even when the source and destination memory regions <strong>overlap</strong>. It checks if the regions overlap and copies in the correct direction (either forward or backward) to prevent data corruption.</p>
+<p><strong>Code Implementation</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">BYTE</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MemMove</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_Dest</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_Size</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">_Src</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">BYTE</span><span class="o">*</span><span class="w"> </span><span class="n">pDest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">BYTE</span><span class="o">*</span><span class="p">)</span><span class="n">_Dest</span><span class="p">;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">BYTE</span><span class="o">*</span><span class="w"> </span><span class="n">pSrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">BYTE</span><span class="o">*</span><span class="p">)</span><span class="n">_Src</span><span class="p">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pDest</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">pSrc</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">pDest</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">pSrc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">_Size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">_Size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">            </span><span class="n">pDest</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pSrc</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_Size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">            </span><span class="n">pDest</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pSrc</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="why-use-byte-or-unsigned-char-for-memset-and-memmove">Why Use <code>BYTE*</code> (or <code>unsigned char*</code>) for <code>MemSet</code> and <code>MemMove</code>?</h3>
+<p>In C (and C++ if templates aren't used), you often need a <strong>generic way to work with raw memory</strong>. This is where <code>void*</code> comes in, as it's a typeless pointer. However, when reading from or writing to that memory, it needs to be cast to a type that has a known size. That's why <code>BYTE*</code> (which is a typedef for <code>unsigned char*</code>) is commonly used.</p>
 
 
 
