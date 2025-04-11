@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 typedef unsigned char BYTE;
 
@@ -61,9 +62,9 @@ void MemMove(void* _Dest, int _Size, void* _Src)
 		// Test MemSet
 		short arr[10];
 		MemSet(arr, sizeof(arr));
-		std::cout << "MemSet result: ";
+		std::cout << "MemSet result:                 ";
 		for (int i = 0; i < 10; i++) {
-			std::cout << arr[i] << " ";
+			std::cout << std::left << std::setw(3) << arr[i] << " ";
 		}
 		std::cout << "\n";
 
@@ -72,9 +73,9 @@ void MemMove(void* _Dest, int _Size, void* _Src)
 		int iArrCopy[10];
 		MemSet(iArrCopy, sizeof(iArrCopy));  // Initialize iArrCopy to zero
 		MemCopy(iArrCopy, sizeof(iArr), iArr);
-		std::cout << "MemCopy result: ";
+		std::cout << "MemCopy result:                ";
 		for (int i = 0; i < 10; i++) {
-			std::cout << iArrCopy[i] << " ";
+			std::cout << std::left << std::setw(3) << iArrCopy[i] << " ";
 		}
 		std::cout << "\n";
 
@@ -83,17 +84,17 @@ void MemMove(void* _Dest, int _Size, void* _Src)
 		MemSet(iArrOther, sizeof(iArrOther));  // Initialize iArrOther to zero
 
 		MemMove(iArrOther, sizeof(iArr), iArr);
-		std::cout << "MemMove result (no overlap): ";
+		std::cout << "MemMove result (no overlap):   ";
 		for (int i = 0; i < 10; i++) {
-			std::cout << iArrOther[i] << " ";
+			std::cout << std::left << std::setw(3) << iArrOther[i] << " ";
 		}
 		std::cout << "\n";
 
 		// Test MemMove (with overlap)
-		MemMove(iArr, sizeof(iArr), iArr + 2);  // Overlap occurs here
+		MemMove(iArr, sizeof(int) * 8, iArr + 2);
 		std::cout << "MemMove result (with overlap): ";
 		for (int i = 0; i < 10; i++) {
-			std::cout << iArr[i] << " ";
+			std::cout << std::left << std::setw(3) << iArr[i] << " ";
 		}
 		std::cout << "\n";
 

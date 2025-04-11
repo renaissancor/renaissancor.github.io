@@ -30,3 +30,5 @@ Visual Studio
 `Ctrl` + `~`  Open Terminal 
 
 `F5`          Program Debug 
+
+Visual Studio Code 
