@@ -45,19 +45,19 @@ void PushBack(tList* _List, int _Data)
 void PushFront(tList* _List, int _Data)
 {
 	// Dynamically allocate space (node) to store the data
-	tNode* pNewNode = (tNode*)malloc(sizeof(tNode));
+	tNode* pNode = (tNode*)malloc(sizeof(tNode));
 
 	// Store the data in the node created in the heap
-	pNewNode->Data = _Data;
+	pNode->Data = _Data;
 
 	// Link the node currently pointed to by the list as the next node
-	pNewNode->pNext = _List->pHead;
+	pNode->pNext = _List->pHead;
 
 	// The list now points to the newly created node as the first node
-	_List->pHead = pNewNode;
+	_List->pHead = pNode;
 
 	// Increase data count
-	++_List->Size;
+	++(_List->Size);
 }
 
 void Release(tList* _List)
