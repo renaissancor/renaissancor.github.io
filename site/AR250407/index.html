@@ -26,7 +26,7 @@
     
     
       
-        <title>AR250407 - Renaissancoriate</title>
+        <title>Heap and Dynamic Allocation in C++ - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#references" class="md-skip">
+        <a href="#heap-and-dynamic-allocation-in-c" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AR250407
+              Heap and Dynamic Allocation in C++
             
           </span>
         </div>
@@ -439,13 +439,15 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    AR250407
+    Heap and Dynamic Allocation in C++
     
   </span>
   
@@ -458,7 +460,7 @@
   
   
   <span class="md-ellipsis">
-    AR250407
+    Heap and Dynamic Allocation in C++
     
   </span>
   
@@ -471,12 +473,152 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#date-2025-03-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date: 2025-03-10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixing-mallocfree-with-c-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixing malloc/free with C++ classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forgetting-delete-for-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forgetting delete[] for arrays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confusion-between-reserve-and-resize" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confusion between reserve() and resize()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tricky-case-templates-custom-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tricky Case: Templates &amp; Custom Containers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-container-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      STL Container Insights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="STL Container Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      vector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      list
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Demonstration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-memory-allocation-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual: Memory Allocation Comparison
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
@@ -633,6 +775,72 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../AR250416/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250416
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250417/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250417
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Study/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Study
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -642,10 +850,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_21" >
         
           
-          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_21" id="__nav_21_label" tabindex="0">
             
   
   
@@ -658,8 +866,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_18">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_21">
             <span class="md-nav__icon md-icon"></span>
             Algorithm
           </label>
@@ -917,10 +1125,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
         
           
-          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
             
   
   
@@ -933,8 +1141,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_19">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22">
             <span class="md-nav__icon md-icon"></span>
             C C++ Basics
           </label>
@@ -1261,10 +1469,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" >
         
           
-          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
             
   
   
@@ -1277,8 +1485,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_20">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23">
             <span class="md-nav__icon md-icon"></span>
             ECE482FA24
           </label>
@@ -1299,10 +1507,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23_1" >
         
           
-          <label class="md-nav__link" for="__nav_20_1" id="__nav_20_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23_1" id="__nav_23_1_label" tabindex="0">
             
   
   
@@ -1315,8 +1523,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_20_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_23_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23_1">
             <span class="md-nav__icon md-icon"></span>
             ECE482HW
           </label>
@@ -1529,10 +1737,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23_2" >
         
           
-          <label class="md-nav__link" for="__nav_20_2" id="__nav_20_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23_2" id="__nav_23_2_label" tabindex="0">
             
   
   
@@ -1545,8 +1753,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_20_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_23_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23_2">
             <span class="md-nav__icon md-icon"></span>
             ECE482LAB
           </label>
@@ -1828,10 +2036,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23_3" >
         
           
-          <label class="md-nav__link" for="__nav_20_3" id="__nav_20_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23_3" id="__nav_23_3_label" tabindex="0">
             
   
   
@@ -1844,8 +2052,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_20_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_23_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23_3">
             <span class="md-nav__icon md-icon"></span>
             ECE482P2
           </label>
@@ -2012,10 +2220,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23_4" >
         
           
-          <label class="md-nav__link" for="__nav_20_4" id="__nav_20_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23_4" id="__nav_23_4_label" tabindex="0">
             
   
   
@@ -2028,8 +2236,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_20_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_23_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23_4">
             <span class="md-nav__icon md-icon"></span>
             ECE482P3
           </label>
@@ -2205,12 +2413,152 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#date-2025-03-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date: 2025-03-10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixing-mallocfree-with-c-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixing malloc/free with C++ classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forgetting-delete-for-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forgetting delete[] for arrays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confusion-between-reserve-and-resize" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confusion between reserve() and resize()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tricky-case-templates-custom-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tricky Case: Templates &amp; Custom Containers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-container-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      STL Container Insights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="STL Container Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      vector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      list
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Demonstration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-memory-allocation-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual: Memory Allocation Comparison
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
@@ -2237,75 +2585,135 @@
 
 
 
-  <h1>AR250407</h1>
-
-<p>Heap 留덉씠?겢?옒?뒪 媛앹껜 ?깮?꽦?옄 ?냼硫몄옄 ?슜?룄 ?븣?젮 以?</p>
-<p>new</p>
-<p>m_data = (*int) malloc (sizeof(int) * m_Capacity); 
-m_Data = new int[m_Capacity]; </p>
-<p>MyClass *pNewMy = new MyClass; 
-delete pNewMy; </p>
-<p>MyClass *pMyArr = new MyClass[10]; 
-delete [] pMyArr; 
-?뿰?냽?쑝濡? 媛앹껜瑜? ?뿬?윭 媛? 留뚮뱾?뿀?쑝硫? 洹몃깷 DELETE ?떆 
-?룷?씤?꽣 ?븯?굹濡? ?씤?떇?븯湲? ?븣臾몄뿉 [] 瑜? 遺숈뿬以섏빞 ?븿 </p>
-<p>template <typename T> 
-template <class T> </p>
-<p>template <class T>
-void CArray::push_back(const T&amp; _Data)
-{}</p>
-<p>Generator Function
-CArray<t>::CArray(); </p>
-<p>const reference only borrowing the address 
-copy new one while keeping original value constant </p>
-<p>Compile Success 
-Link Error ? Duplicate 
-?븿?닔 ?쟾諛? ?꽑?뼵??? ?븯怨? 援ы쁽 源뚮㉨?쓬 
-int Add(int a, int b); </p>
-<p>int main(){
-    Add(1,2);
-    return 0; 
-}</p>
-<p>?깮?꽦?옄 ?샇異? 吏??뿭 蹂??닔 
-?냼硫몄옄 
-Template 紐⑤뱺 援ы쁽 遺?遺꾩쓣 ?쟾遺? ?떎 header ?뙆?씪濡? 
-?삷寃? ?넃?븘?빞 ?븿
-class ?깮?꽦?옄??? ?냼硫몄옄媛? ?꽑?뼵留? ?릺?뼱 ?엳怨? 
-?옉?꽦?씠 ?릺?뼱 ?엳吏? ?븡?떎硫? </p>
-<p>h ?뙆?씪 ?꽑?뼵 </p>
-<p>vector 
-reserve Capacity Acquisition 
-resize Capacity Acquire + feel every capacity 
-into the same value, so size = capacity 
-The default value of the type value </p>
-<p>If it was generated by class, then the
-class is generated by default generator function </p>
-<p>?룞?쟻 諛곗뿴?씠 媛?吏? 寃? 蹂대떎 ?넂??? ?씤?뜳?뒪 
-Capacity </p>
-<p>assert.h Warning 
-assert(nullptr) -&gt; Prompt 
-assert(1) or whatever -&gt; No Prompt 
-assert(m_CurSize &gt; _idx); </p>
-<p>resize result in default value</p>
-<p>0408 </p>
-<p>External class and inner class 
-inner class can be called like external class like namespace 
-but why? use class instead of namespace -&gt; hidden concealable like private protected 
-Class inner values are private in default 
-If willing to access inner class externally should be inside public scope 
-Inner class can access to the private scope of the outer class </p>
-<p>Check By Code OUTPUT if you want to check </p>
-<p>vector<T>::iterator itr; 
-Begin, the first element 
-End iterator, after the last element </p>
-<p>so for two smiple loops why iterator is better than the vector member function? 
-Speed efficiency indexing is quick O(1) in vector or dynamic array 
-However link is maximuum O(n)</p>
-<p>List is better to connect removing data inside 
-but not good at accessing really quickly 
-If indexing is required vector is recommended, but for list not likely by index access. </p>
-<p>list<int>::iterator listIter= intList.begin(); 
-for(; listIter!=end(); listIter++)</p>
+<h1 id="heap-and-dynamic-allocation-in-c">Heap and Dynamic Allocation in C++</h1>
+<h3 id="date-2025-03-10">Date: 2025-03-10</h3>
+<hr />
+<h2 id="key-points">Key Points</h2>
+<ul>
+<li>Use <code>new</code> and <code>delete</code> for type-safe memory allocation with constructor/destructor calls.</li>
+<li>C-style <code>malloc/free</code> does not call constructors or destructors.</li>
+<li>Arrays require <code>delete[]</code> instead of <code>delete</code> to properly call destructors for each element.</li>
+<li>Custom containers like <code>CArray&lt;T&gt;</code> mimic STL container behavior.</li>
+<li>Use <code>reserve()</code> to pre-allocate memory and <code>resize()</code> to fill with default values.</li>
+<li>STL <code>vector</code> offers efficient random access; <code>list</code> offers efficient insertion/deletion.</li>
+</ul>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>Dynamic memory in C++ allows you to allocate memory on the heap, crucial when the size of data isn't known at compile time. The traditional C approach uses <code>malloc()</code> and <code>free()</code>, but this is unsafe for classes due to the absence of constructor and destructor calls.</p>
+<p>Instead, C++ introduces <code>new</code> and <code>delete</code>, which allocate memory and properly construct and destruct objects.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_i</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">MyClass</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_i</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Constructor called&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="o">~</span><span class="n">MyClass</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Destructor called&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">};</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">MyClass</span><span class="o">*</span><span class="w"> </span><span class="n">pObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyClass</span><span class="p">;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">pObj</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="n">MyClass</span><span class="o">*</span><span class="w"> </span><span class="n">pArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyClass</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">pArr</span><span class="p">;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Why <code>delete[]</code>?</strong> When you use <code>new[]</code> to allocate an array, each element's destructor must be called individually during deallocation.</p>
+<hr />
+<h2 id="common-mistakes">Common Mistakes</h2>
+<h3 id="mixing-mallocfree-with-c-classes"><strong>Mixing <code>malloc/free</code> with C++ classes</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">MyClass</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">MyClass</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">MyClass</span><span class="p">));</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"> </span><span class="c1">// Constructor/Destructor not called</span>
+</code></pre></div>
+<h3 id="forgetting-delete-for-arrays"><strong>Forgetting <code>delete[]</code> for arrays</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">MyClass</span><span class="o">*</span><span class="w"> </span><span class="n">pArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyClass</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">delete</span><span class="w"> </span><span class="n">pArray</span><span class="p">;</span><span class="w"> </span><span class="c1">// Incorrect</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// Correct:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">pArray</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="confusion-between-reserve-and-resize"><strong>Confusion between <code>reserve()</code> and <code>resize()</code></strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">vec</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Allocates space but does not initialize elements</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">vec</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">  </span><span class="c1">// Allocates and initializes elements</span>
+</code></pre></div>
+<hr />
+<h2 id="tricky-case-templates-custom-containers">Tricky Case: Templates &amp; Custom Containers</h2>
+<p>A custom template-based container like <code>CArray&lt;T&gt;</code> must handle allocation, copying, and access safely:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">CArray</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">at</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">};</span>
+</code></pre></div>
+<p>Usage with structs:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">MyStruct</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">iarr</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">CArray</span><span class="o">&lt;</span><span class="n">MyStruct</span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">MyStruct</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">arr</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">st</span><span class="p">);</span>
+</code></pre></div></p>
+<p>Ensure you correctly manage memory and avoid shallow copying in your container implementation.</p>
+<hr />
+<h2 id="stl-container-insights">STL Container Insights</h2>
+<h3 id="vector"><code>vector</code></h3>
+<ul>
+<li>Random access: O(1)</li>
+<li>Efficient resizing with <code>reserve()</code> and <code>resize()</code></li>
+<li>Elements stored contiguously</li>
+</ul>
+<h3 id="list"><code>list</code></h3>
+<ul>
+<li>Doubly linked list: O(1) insertion/deletion</li>
+<li>No direct indexing: access is O(n)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>Use <code>vector</code> for fast access; <code>list</code> when frequent insertion/deletion is required.</p>
+<hr />
+<h2 id="interview-questions">Interview Questions</h2>
+<p><strong>Q: What is the difference between <code>malloc</code> and <code>new</code> in C++?</strong><br />
+A: <code>malloc</code> allocates raw memory and doesn't call constructors. <code>new</code> allocates memory and calls the constructor.</p>
+<p><strong>Q: When should <code>delete[]</code> be used?</strong><br />
+A: When the memory was allocated with <code>new[]</code>. It ensures destructors for all elements are called.</p>
+<p><strong>Q: What’s the difference between <code>reserve()</code> and <code>resize()</code> in <code>std::vector</code>?</strong><br />
+A: <code>reserve()</code> allocates memory without changing size. <code>resize()</code> changes the container's size and initializes new elements.</p>
+<p><strong>Q: Why is mixing <code>malloc/free</code> with class types dangerous?</strong><br />
+A: Because constructors and destructors won't be executed, leading to resource leaks or undefined behavior.</p>
+<p><strong>Q: What happens if I use <code>delete</code> instead of <code>delete[]</code>?</strong><br />
+A: Only the destructor of the first object is called, which causes resource leaks or undefined behavior.</p>
+<hr />
+<h2 id="code-demonstration">Code Demonstration</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vecInt</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">vecInt</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">vecInt</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">vecInt</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vecInt</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">vecInt</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vecInt</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vecInt</span><span class="p">.</span><span class="n">capacity</span><span class="p">();</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">CArray</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">arr</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">arr</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">arr</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</code></pre></div>
+<hr />
+<h2 id="visual-memory-allocation-comparison">Visual: Memory Allocation Comparison</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Heap Allocation          Constructor/Destructor
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>---------------         -----------------------
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>malloc/free             NO
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>new/delete              YES
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>new[]/delete[]          YES (for each element)
+</code></pre></div>
+<hr />
 <h2 id="references">References</h2>
 <ul>
 <li><a href="../codes/CArray.h">CArray.h</a></li>
