@@ -483,7 +483,7 @@
   
   
   <span class="md-ellipsis">
-    CPP Dynamic Array
+    Dynamic Array, STL Vector
     
   </span>
   
@@ -505,7 +505,7 @@
   
   
   <span class="md-ellipsis">
-    Heap and Dynamic Allocation in C++
+    Dynamic Memory Management and Template Usage
     
   </span>
   
@@ -527,7 +527,7 @@
   
   
   <span class="md-ellipsis">
-    AR250408
+    STL Vector and Iterator Behavior
     
   </span>
   
@@ -549,7 +549,7 @@
   
   
   <span class="md-ellipsis">
-    AR250409
+    STL Vector vs List &amp; Custom Iterator Logic (with CArray)
     
   </span>
   
@@ -571,7 +571,7 @@
   
   
   <span class="md-ellipsis">
-    AR250410
+    Double Linked List and Iterator Design
     
   </span>
   
@@ -593,7 +593,7 @@
   
   
   <span class="md-ellipsis">
-    AR250411
+    Notes on Iterators and Linked List Implementation
     
   </span>
   
@@ -2372,9 +2372,15 @@ docs/
 <p><code>Ctrl</code> + <code>~</code>  Open Terminal </p>
 <p><code>F5</code>          Program Debug </p>
 <p>Visual Studio Code </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>svn<span class="w"> </span>update<span class="w"> </span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>svn<span class="w"> </span>log<span class="w"> </span>-v<span class="w"> </span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>svn<span class="w"> </span>update<span class="w"> </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>svn<span class="w"> </span>log<span class="w"> </span>-v<span class="w"> </span>-l<span class="w"> </span><span class="m">10</span><span class="w"> </span>
 </code></pre></div>
+Shows latest 10 logs of svn updated records containing file changes </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Get-Content<span class="w"> </span><span class="s2">&quot;docs/AR250409.md&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>Out-String<span class="w"> </span><span class="p">|</span><span class="w"> </span>Select-String<span class="w"> </span>-Pattern<span class="w"> </span><span class="s1">&#39;[^\x00-\x7F]&#39;</span><span class="w"> </span>-AllMatches
+</code></pre></div>
+<p>Open git bash 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>iconv<span class="w"> </span>-f<span class="w"> </span>UTF-8<span class="w"> </span>-t<span class="w"> </span>UTF-8<span class="w"> </span>docs/AR250409.md<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</code></pre></div></p>
 
 
 
