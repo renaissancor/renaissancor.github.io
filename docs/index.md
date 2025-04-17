@@ -32,3 +32,8 @@ Visual Studio
 `F5`          Program Debug 
 
 Visual Studio Code 
+
+```shell
+svn update 
+svn log -v 
+```
