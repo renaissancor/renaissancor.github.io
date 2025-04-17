@@ -12,13 +12,13 @@
         <meta name="author" content="Renaissancor">
       
       
-        <link rel="canonical" href="https://renaissancor.github.io/AR250410/">
+        <link rel="canonical" href="https://renaissancor.github.io/AR250417/">
       
       
-        <link rel="prev" href="../AR250409/">
+        <link rel="prev" href="../AR250416/">
       
       
-        <link rel="next" href="../AR250411/">
+        <link rel="next" href="../Study/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>AR250410 - Renaissancoriate</title>
+        <title>AR250417 - Renaissancoriate</title>
       
     
     
@@ -75,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#references" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -112,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AR250410
+              AR250417
             
           </span>
         </div>
@@ -496,30 +491,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    AR250410
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../AR250410/" class="md-nav__link">
         
   
   
@@ -530,33 +505,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -653,10 +601,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../AR250417/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -667,6 +622,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2272,23 +2228,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2303,220 +2242,95 @@
 
 
 
-  <h1>AR250410</h1>
+  <h1>AR250417</h1>
 
-<p>iterator </p>
-<p>CArray<int>::iterator arrIter = arrInt.begin(); </p>
-<p>*(arrIter++); </p>
-<p>*(++arrIter); </p>
-<p>operator ++ 
-should return iterator instead of void 
-Return this pointer</p>
-<p>iterator &amp;operator++</p>
-<p>int value = *(++arrIter); </p>
-<p>// Prefix Operator 
-iterator&amp; operator ++(int _Data)
+<p>symmetric structure 
+if left is empty connect to left and design node as parent 
+if not empty recursively move onto right </p>
+<p>enumerator 
+enum 
+struct class 
+Creation of my own type </p>
+<p>enum MY_ENUM 
 {
-    iterator copyiter(<em>this); //<br />
-    ++(</em>this);
-    return copyiter; // \
+    TYPE_1, // 0
+    TYPE_2, // 1 
+    OTHER,  // 2
+    OWNER,  // 3<br />
+};</p>
+<p>considered as 4 byte integer always. </p>
+<p>struct MyType
+{
+    int m_i; 
+    float m_f; 
 }</p>
-<p>// Postfix Iterator 
-iterator operator ++(int _Data) // If you return reference, copy iterator will be terminated after this scope 
-{ // Since copyiter will be deleted after this function, dont call reference for this 
-    iterator copyiter(<em>this); // Same as the calling this 
-    ++(</em>this); // Next pointer will be targeted 
-    // calling iterator itself will increment, while the original position is saved as copy iterator  </p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>return copyiter;
+<p>int main()
+{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>MY_ENUM My = TYPE_1;
+My = TYPE_2;
+
+return 0;
 </code></pre></div></td></tr></table></div>
 
 <p>}</p>
-<p>default terminator is created automatically 
-default copy operator is also created automatically </p>
-<p>class iterator 
+<p>Idle status 
+Move status 
+Attack status 
+enum PLAYER_STATE 
 {
-private: 
-    CArray<T>* 
-}</p>
-<p>Optimization 
-vector iterator from begin to end 
-iter = vec.begin(); iter != vec.end(); ++iter // ++iter is faster than iter++ 
-Because postfix should temporarily make two more temporal variables inside loop 
-Sicne ++iter and iter++ mean same in the for loop for most cases 
-Thus, use ++iter rather than iter++ 
-So use prefix rather than postfix. </p>
-<p>iterator&amp; operator --()
+    IDLE, 
+    MOVE, 
+    JUMP, 
+    ATTACK, 
+    HURT, 
+    DEATH,
+    FALL,<br />
+}; </p>
+<p>int main()
 {
-    return <em>this; 
-} 
-iterator operator --(int)
-{
-    return </em>this; 
-}</p>
-<p>Based on ++ iterator </p>
-<p>include CList.h </p>
-<p>class VS struct - When to use what ? </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">tNode</span><span class="w"> </span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">T</span><span class="w">           </span><span class="n">m_Data</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="c1">// tNode&lt;T&gt;*   m_Prev; Originally this, but simpllified as below </span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">tNode</span><span class="o">*</span><span class="w">      </span><span class="n">m_Prev</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">tNode</span><span class="o">*</span><span class="w">      </span><span class="n">m_Next</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">public</span><span class="o">:</span><span class="w"> </span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">tNode</span><span class="p">()</span><span class="w"> </span><span class="c1">// Default generator inputs trash value, instead of 0 nullptr to data and pointer </span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">m_Data</span><span class="p">()</span><span class="w"> </span><span class="c1">// this calls the DEFAULT Generator of typename T. For instance, int will give 0. </span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">m_Next</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">m_Prev</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">{}</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">tNode</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">_Data</span><span class="p">,</span><span class="w"> </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">_Next</span><span class="p">,</span><span class="w"> </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">_Prev</span><span class="p">)</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">m_Data</span><span class="p">(</span><span class="n">_Data</span><span class="p">)</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">m_Next</span><span class="p">(</span><span class="n">_Next</span><span class="p">)</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">m_Prev</span><span class="p">(</span><span class="n">_Prev</span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="p">{}</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">}</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">class</span><span class="w"> </span><span class="nc">CList</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">{</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="k">private</span><span class="o">:</span><span class="w"> </span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w">       </span><span class="n">m_Head</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w">       </span><span class="n">m_Tail</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w">    </span><span class="n">m_Size</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="k">public</span><span class="o">:</span><span class="w"> </span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Data</span><span class="p">);</span><span class="w"> </span><span class="c1">// Data Type Size is not sure  </span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">push_front</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Data</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="n">CList</span><span class="p">()</span><span class="o">:</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="n">m_Head</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span><span class="w"> </span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="n">m_Tail</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span><span class="w"> </span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="n">m_Size</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">        </span><span class="p">{}</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">    </span><span class="o">~</span><span class="n">CList</span><span class="p">()</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">pNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_Head</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">loop</span><span class="w"> </span>
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="p">}</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="kt">void</span><span class="w"> </span><span class="n">CList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">push_back</span><span class="p">()</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="p">{</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">    </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">pNewNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="k">nullptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_Head</span><span class="p">)</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">    </span><span class="p">{}</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="w">    </span><span class="c1">// If Data is First </span>
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">    </span><span class="k">else</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">    </span><span class="p">{}</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>
-<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">    </span><span class="c1">// If Not </span>
-<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="p">}</span>
-</code></pre></div>
-<p>Generally list figured out node from head to tail by next node next node ... 
-Since tail pointer is also available right now 
-push_back and push_front will be both O(1). 
-Without tail pointer push_back will be O(n). </p>
-<p>List connects tail pointing node and newly generated node. 
-Newly generated node will be pushed back and setted as tail. </p>
-<p>Newly generated node into the new head 
-if data size is over one, aka m_Next of head exists instead of nullptr 
-Original head node, now second node, should set is prev node from nullptr to new head </p>
-<p>finally, data size counting reset. </p>
-<p>inner class iterator in my linkedlist CList </p>
-<p>private: CList<T> *m_Owner; 
-List knows iterator, and save index and starting point ...
-For vector and dynamic array it is O(1) by index adding with starting point, because they save by sequential array 
-But for list it is O(n) in the worst case, as it should move to next pointer between 1 and n times 
-Thus, list iterator should point out the target node, not the owner starting point 
-iterator is poniting nothing if m_Owner == nullptr ** m_target_node == nullptr, iterator is inside not created list<br />
-but if m_Owner != nullptr and m_target_node == nullptr, this represents iterator is at end(), while list is valid. </p>
-<p>if iterator is pointing nothing or end iterator moving iterator from target node to next node is impossible so assert(targetNode) for nullptr. 
-doing ++ at tail iterator will be fine, but end, which is nullptr would be unlikely for ++ iterator. </p>
-<p>CList Template Class gneration </p>
-<p>CList::iterator ++ == != operator 
-Postfix, erase, etc. </p>
-<p>Make -- operator on the CArray dynamic array </p>
-<p>iterator operator--(int) // Postfix 
-{
-    iterator copyiter(<em>this); 
-    --(</em>this); 
-    return copyiter; 
-}</p>
-<p>iterator&amp; operator--(void){ // Prefix 
-    assert(m_Idx);// If m_Idx == 0, decrement not allowed since begin iterator called -- </p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>// One more case : when it is end(), meaning that m_Idx == -1 and before one should be the last element 
-if(m_Idx == -1)
-{
-    // If the link has NO element, decrement is impossible 
-    assert(m_Owner-&gt;m_CurSize); 
-    m_Idx = m_Owner-&gt;m_CurSize-1; 
-} else {
-    --m_Idx; 
-}
-return *this;
+    int iState = 0 ;
+    iState = 1; // This case other people cannot understand current status 
+    // Compiler enforce 
+    Force casting possible </p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>PLAYER_STATE PlayerState = (PLAYER_STATE) 220;
 </code></pre></div></td></tr></table></div>
 
 <p>}</p>
-<p>For Lists </p>
-<p>iterator &amp;operator--(void){
-    // Call -- in begin iterator 
-    assert(m_Owner-&gt;m_Head != m_TargetNode); 
-    // If head == target node, aka it is begin iterator, bool result not equal is false, aka equal , assert </p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>// End iterator -- called 
-if(nullptr == m_TargetNode)
+<p><code>enum</code> is used to save the state value 
+Quite similar to MACROS #define PLAYER_IDLE 0 #define PLAYER_MOVE 1 etc ... 
+In Macro, Preprocessed before compile 
+enum is 4 bytes integer 
+MAcro = Preprocessor, so considered as integer or similar before compile </p>
+<p>However, still macros are not possible to define something as type. 
+enum STATE {enum1, enum2 } ... 
+STATE state =&gt; this is impossible inside macros </p>
+<p>enums are checked DURING compile, so can only get input among listed inside enum declaration so type is enforced into specific digits 
+Visual Studio shows both enum and its int value like Idle(0) Move(1) Jump(2) ... </p>
+<p>what happens inside nested enum? if name is duplicated ? </p>
+<p>MY_ENUM My = TYPE_1 // enum value names duplicated, one name in one enum, another same name in different enum number, crash 
+Thus, highly recommended to use the state with more headers like for player statte, PS_IDLE PS_MOVE etc ... 
+However, since it is not comfortable, enum class is called </p>
+<p>enum class NEW_ENUM
 {
-    // No element inside list if tail is nullptr, assert 
-    assert(m_Owner-&gt;m_Tail;)
-    // iterator inside empty list 
-    m_TargetNode = m_Owner-&gt;m_Tail;
-
-} else 
-{
-    m_TargetNode = m_TargetNode-&gt;m_Prev; // General cases 
-}
-
-if(m_TargetNode-&gt;m_Prev == nullptr){}
-
-return *this;
-</code></pre></div></td></tr></table></div>
-
-<p>}</p>
-<p>iterator operator--(int){</p>
-<p>}</p>
-<h2 id="references">References</h2>
-<ul>
-<li>[linked_list_template.cpp]</li>
-<li>[CList.cpp]</li>
-<li>[CList.h] </li>
-</ul>
+    TYPE_1, 
+    TYPE_2, 
+}</p>
+<p>enum class 
+NEW_ENUM </p>
+<p>enforce usage like class 
+for instance
+NEW_ENUM New_type = MY_ENUM::TYPE1 
+OTHER_ENUM OtherType = OTHER_ENUM::TYPE2 </p>
+<p>same name, but since class must be called to call enum no problem for duplication 
+compiler recommend to use enum class instead of  enum 
+maybe use static enum for more safety ? </p>
+<p>enumerated type enum 
+BST + enum </p>
+<p>iterator implementation of the binary search tree 
+In Order traversal iterator </p>
 
 
 
