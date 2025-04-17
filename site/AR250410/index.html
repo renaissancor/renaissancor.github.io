@@ -26,7 +26,7 @@
     
     
       
-        <title>AR250410 - Renaissancoriate</title>
+        <title>Double Linked List and Iterator Design - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#references" class="md-skip">
+        <a href="#double-linked-list-and-iterator-design" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AR250410
+              Double Linked List and Iterator Design
             
           </span>
         </div>
@@ -416,7 +416,7 @@
   
   
   <span class="md-ellipsis">
-    CPP Dynamic Array
+    Dynamic Array, STL Vector
     
   </span>
   
@@ -438,7 +438,7 @@
   
   
   <span class="md-ellipsis">
-    Heap and Dynamic Allocation in C++
+    Dynamic Memory Management and Template Usage
     
   </span>
   
@@ -460,7 +460,7 @@
   
   
   <span class="md-ellipsis">
-    AR250408
+    STL Vector and Iterator Behavior
     
   </span>
   
@@ -482,7 +482,7 @@
   
   
   <span class="md-ellipsis">
-    AR250409
+    STL Vector vs List &amp; Custom Iterator Logic (with CArray)
     
   </span>
   
@@ -505,13 +505,15 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    AR250410
+    Double Linked List and Iterator Design
     
   </span>
   
@@ -524,7 +526,7 @@
   
   
   <span class="md-ellipsis">
-    AR250410
+    Double Linked List and Iterator Design
     
   </span>
   
@@ -537,12 +539,260 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iterator-basics-and-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterator Basics and Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterator Basics and Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefix-vs-postfix-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prefix vs Postfix Operator++
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correct-return-types-for-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correct Return Types for Operator++
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clist-template-and-linked-list-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      CList Template and Linked List Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CList Template and Linked List Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clist-class-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      CList Class Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push_back" class="md-nav__link">
+    <span class="md-ellipsis">
+      push_back()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push_front" class="md-nav__link">
+    <span class="md-ellipsis">
+      push_front()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pop_front" class="md-nav__link">
+    <span class="md-ellipsis">
+      pop_front()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pop_back" class="md-nav__link">
+    <span class="md-ellipsis">
+      pop_back()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterator-internals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterator Internals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterator Internals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterator-behavior-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterator Behavior Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erase-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Erase Behavior
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Erase Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Conditions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-function-recursive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse Function (Recursive)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Interview Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample Interview Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-what-is-the-difference-between-iter-and-iter-in-a-custom-iterator-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1. What is the difference between ++iter and iter++ in a custom iterator class?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-when-does-clisteraseiterator-_iter-call-pop_front-or-pop_back" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2. When does CList::erase(iterator&amp; _iter) call pop_front() or pop_back()?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-in-the-context-of-a-doubly-linked-list-what-makes-push_back-and-push_front-o1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3. In the context of a doubly linked list, what makes push_back and push_front O(1)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-what-does-an-end-iterator-mean-in-a-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4. What does an end iterator mean in a list?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-why-is-it-necessary-to-check-m_owner-in-clisterase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5. Why is it necessary to check m_Owner in CList::erase()?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
@@ -573,7 +823,7 @@
   
   
   <span class="md-ellipsis">
-    AR250411
+    Notes on Iterators and Linked List Implementation
     
   </span>
   
@@ -2271,12 +2521,260 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iterator-basics-and-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterator Basics and Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterator Basics and Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefix-vs-postfix-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prefix vs Postfix Operator++
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correct-return-types-for-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correct Return Types for Operator++
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clist-template-and-linked-list-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      CList Template and Linked List Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CList Template and Linked List Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clist-class-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      CList Class Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push_back" class="md-nav__link">
+    <span class="md-ellipsis">
+      push_back()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push_front" class="md-nav__link">
+    <span class="md-ellipsis">
+      push_front()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pop_front" class="md-nav__link">
+    <span class="md-ellipsis">
+      pop_front()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pop_back" class="md-nav__link">
+    <span class="md-ellipsis">
+      pop_back()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterator-internals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterator Internals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterator Internals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterator-behavior-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterator Behavior Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erase-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Erase Behavior
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Erase Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Conditions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-function-recursive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse Function (Recursive)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Interview Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample Interview Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-what-is-the-difference-between-iter-and-iter-in-a-custom-iterator-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1. What is the difference between ++iter and iter++ in a custom iterator class?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-when-does-clisteraseiterator-_iter-call-pop_front-or-pop_back" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2. When does CList::erase(iterator&amp; _iter) call pop_front() or pop_back()?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-in-the-context-of-a-doubly-linked-list-what-makes-push_back-and-push_front-o1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3. In the context of a doubly linked list, what makes push_back and push_front O(1)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-what-does-an-end-iterator-mean-in-a-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4. What does an end iterator mean in a list?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-why-is-it-necessary-to-check-m_owner-in-clisterase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5. Why is it necessary to check m_Owner in CList::erase()?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
@@ -2303,214 +2801,168 @@
 
 
 
-  <h1>AR250410</h1>
-
-<p>iterator </p>
-<p>CArray<int>::iterator arrIter = arrInt.begin(); </p>
-<p>*(arrIter++); </p>
-<p>*(++arrIter); </p>
-<p>operator ++ 
-should return iterator instead of void 
-Return this pointer</p>
-<p>iterator &amp;operator++</p>
-<p>int value = *(++arrIter); </p>
-<p>// Prefix Operator 
-iterator&amp; operator ++(int _Data)
-{
-    iterator copyiter(<em>this); //<br />
-    ++(</em>this);
-    return copyiter; // \
-}</p>
-<p>// Postfix Iterator 
-iterator operator ++(int _Data) // If you return reference, copy iterator will be terminated after this scope 
-{ // Since copyiter will be deleted after this function, dont call reference for this 
-    iterator copyiter(<em>this); // Same as the calling this 
-    ++(</em>this); // Next pointer will be targeted 
-    // calling iterator itself will increment, while the original position is saved as copy iterator  </p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>return copyiter;
-</code></pre></div></td></tr></table></div>
-
-<p>}</p>
-<p>default terminator is created automatically 
-default copy operator is also created automatically </p>
-<p>class iterator 
-{
-private: 
-    CArray<T>* 
-}</p>
-<p>Optimization 
-vector iterator from begin to end 
-iter = vec.begin(); iter != vec.end(); ++iter // ++iter is faster than iter++ 
-Because postfix should temporarily make two more temporal variables inside loop 
-Sicne ++iter and iter++ mean same in the for loop for most cases 
-Thus, use ++iter rather than iter++ 
-So use prefix rather than postfix. </p>
-<p>iterator&amp; operator --()
-{
-    return <em>this; 
-} 
-iterator operator --(int)
-{
-    return </em>this; 
-}</p>
-<p>Based on ++ iterator </p>
-<p>include CList.h </p>
-<p>class VS struct - When to use what ? </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">tNode</span><span class="w"> </span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">T</span><span class="w">           </span><span class="n">m_Data</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="c1">// tNode&lt;T&gt;*   m_Prev; Originally this, but simpllified as below </span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">tNode</span><span class="o">*</span><span class="w">      </span><span class="n">m_Prev</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">tNode</span><span class="o">*</span><span class="w">      </span><span class="n">m_Next</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">public</span><span class="o">:</span><span class="w"> </span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">tNode</span><span class="p">()</span><span class="w"> </span><span class="c1">// Default generator inputs trash value, instead of 0 nullptr to data and pointer </span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">m_Data</span><span class="p">()</span><span class="w"> </span><span class="c1">// this calls the DEFAULT Generator of typename T. For instance, int will give 0. </span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">m_Next</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">m_Prev</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">{}</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">tNode</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">_Data</span><span class="p">,</span><span class="w"> </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">_Next</span><span class="p">,</span><span class="w"> </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">_Prev</span><span class="p">)</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">m_Data</span><span class="p">(</span><span class="n">_Data</span><span class="p">)</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">m_Next</span><span class="p">(</span><span class="n">_Next</span><span class="p">)</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">m_Prev</span><span class="p">(</span><span class="n">_Prev</span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="p">{}</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">}</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">class</span><span class="w"> </span><span class="nc">CList</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">{</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="k">private</span><span class="o">:</span><span class="w"> </span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w">       </span><span class="n">m_Head</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w">       </span><span class="n">m_Tail</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w">    </span><span class="n">m_Size</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="k">public</span><span class="o">:</span><span class="w"> </span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Data</span><span class="p">);</span><span class="w"> </span><span class="c1">// Data Type Size is not sure  </span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">push_front</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Data</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="n">CList</span><span class="p">()</span><span class="o">:</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="n">m_Head</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span><span class="w"> </span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="n">m_Tail</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span><span class="w"> </span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="n">m_Size</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">        </span><span class="p">{}</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">    </span><span class="o">~</span><span class="n">CList</span><span class="p">()</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">pNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_Head</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">loop</span><span class="w"> </span>
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="p">}</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="kt">void</span><span class="w"> </span><span class="n">CList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">push_back</span><span class="p">()</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="p">{</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">    </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">pNewNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="k">nullptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_Head</span><span class="p">)</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">    </span><span class="p">{}</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="w">    </span><span class="c1">// If Data is First </span>
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">    </span><span class="k">else</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">    </span><span class="p">{}</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>
-<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">    </span><span class="c1">// If Not </span>
-<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="p">}</span>
+<h1 id="double-linked-list-and-iterator-design">Double Linked List and Iterator Design</h1>
+<h2 id="iterator-basics-and-usage">Iterator Basics and Usage</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">CArray</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">arrIter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arrInt</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="o">*</span><span class="p">(</span><span class="n">arrIter</span><span class="o">++</span><span class="p">);</span><span class="w">     </span><span class="c1">// Postfix</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="o">*</span><span class="p">(</span><span class="o">++</span><span class="n">arrIter</span><span class="p">);</span><span class="w">     </span><span class="c1">// Prefix</span>
 </code></pre></div>
-<p>Generally list figured out node from head to tail by next node next node ... 
-Since tail pointer is also available right now 
-push_back and push_front will be both O(1). 
-Without tail pointer push_back will be O(n). </p>
-<p>List connects tail pointing node and newly generated node. 
-Newly generated node will be pushed back and setted as tail. </p>
-<p>Newly generated node into the new head 
-if data size is over one, aka m_Next of head exists instead of nullptr 
-Original head node, now second node, should set is prev node from nullptr to new head </p>
-<p>finally, data size counting reset. </p>
-<p>inner class iterator in my linkedlist CList </p>
-<p>private: CList<T> *m_Owner; 
-List knows iterator, and save index and starting point ...
-For vector and dynamic array it is O(1) by index adding with starting point, because they save by sequential array 
-But for list it is O(n) in the worst case, as it should move to next pointer between 1 and n times 
-Thus, list iterator should point out the target node, not the owner starting point 
-iterator is poniting nothing if m_Owner == nullptr ** m_target_node == nullptr, iterator is inside not created list<br />
-but if m_Owner != nullptr and m_target_node == nullptr, this represents iterator is at end(), while list is valid. </p>
-<p>if iterator is pointing nothing or end iterator moving iterator from target node to next node is impossible so assert(targetNode) for nullptr. 
-doing ++ at tail iterator will be fine, but end, which is nullptr would be unlikely for ++ iterator. </p>
-<p>CList Template Class gneration </p>
-<p>CList::iterator ++ == != operator 
-Postfix, erase, etc. </p>
-<p>Make -- operator on the CArray dynamic array </p>
-<p>iterator operator--(int) // Postfix 
-{
-    iterator copyiter(<em>this); 
-    --(</em>this); 
-    return copyiter; 
-}</p>
-<p>iterator&amp; operator--(void){ // Prefix 
-    assert(m_Idx);// If m_Idx == 0, decrement not allowed since begin iterator called -- </p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>// One more case : when it is end(), meaning that m_Idx == -1 and before one should be the last element 
-if(m_Idx == -1)
-{
-    // If the link has NO element, decrement is impossible 
-    assert(m_Owner-&gt;m_CurSize); 
-    m_Idx = m_Owner-&gt;m_CurSize-1; 
-} else {
-    --m_Idx; 
-}
-return *this;
-</code></pre></div></td></tr></table></div>
-
-<p>}</p>
-<p>For Lists </p>
-<p>iterator &amp;operator--(void){
-    // Call -- in begin iterator 
-    assert(m_Owner-&gt;m_Head != m_TargetNode); 
-    // If head == target node, aka it is begin iterator, bool result not equal is false, aka equal , assert </p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>// End iterator -- called 
-if(nullptr == m_TargetNode)
-{
-    // No element inside list if tail is nullptr, assert 
-    assert(m_Owner-&gt;m_Tail;)
-    // iterator inside empty list 
-    m_TargetNode = m_Owner-&gt;m_Tail;
-
-} else 
-{
-    m_TargetNode = m_TargetNode-&gt;m_Prev; // General cases 
-}
-
-if(m_TargetNode-&gt;m_Prev == nullptr){}
-
-return *this;
-</code></pre></div></td></tr></table></div>
-
-<p>}</p>
-<p>iterator operator--(int){</p>
-<p>}</p>
+<h3 id="prefix-vs-postfix-operator">Prefix vs Postfix Operator++</h3>
+<ul>
+<li>Always prefer <strong>prefix (<code>++iter</code>)</strong> over <strong>postfix (<code>iter++</code>)</strong> in loops.</li>
+<li><code>++iter</code> avoids the creation of a temporary copy.</li>
+<li><code>iter++</code> needs to save the original value, return it, then increment the iterator.</li>
+</ul>
+<h3 id="correct-return-types-for-operator">Correct Return Types for Operator++</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">();</span><span class="w">        </span><span class="c1">// Prefix</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">iterator</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w">     </span><span class="c1">// Postfix</span>
+</code></pre></div>
+- Return <code>iterator&amp;</code> for prefix (faster, no temporary).
+- Return <code>iterator</code> (by value) for postfix.</p>
+<h2 id="clist-template-and-linked-list-design">CList Template and Linked List Design</h2>
+<h3 id="node-structure">Node Structure</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">tNode</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">m_Data</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">tNode</span><span class="o">*</span><span class="w"> </span><span class="n">m_Next</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">tNode</span><span class="o">*</span><span class="w"> </span><span class="n">m_Prev</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">tNode</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_Data</span><span class="p">(),</span><span class="w"> </span><span class="n">m_Next</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span><span class="w"> </span><span class="n">m_Prev</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">tNode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Data</span><span class="p">,</span><span class="w"> </span><span class="n">tNode</span><span class="o">*</span><span class="w"> </span><span class="n">_Next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">tNode</span><span class="o">*</span><span class="w"> </span><span class="n">_Prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">m_Data</span><span class="p">(</span><span class="n">_Data</span><span class="p">),</span><span class="w"> </span><span class="n">m_Next</span><span class="p">(</span><span class="n">_Next</span><span class="p">),</span><span class="w"> </span><span class="n">m_Prev</span><span class="p">(</span><span class="n">_Prev</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">};</span>
+</code></pre></div>
+<h3 id="clist-class-structure">CList Class Structure</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">CList</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">m_Head</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">m_Tail</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="kt">int</span><span class="w">       </span><span class="n">m_Size</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Data</span><span class="p">);</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">push_front</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Data</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">pop_front</span><span class="p">();</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">pop_back</span><span class="p">();</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">front</span><span class="p">();</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">back</span><span class="p">();</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">iterator</span><span class="p">;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="n">iterator</span><span class="w"> </span><span class="nf">begin</span><span class="p">();</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="n">iterator</span><span class="w"> </span><span class="nf">end</span><span class="p">();</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="n">iterator</span><span class="w"> </span><span class="nf">erase</span><span class="p">(</span><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_iter</span><span class="p">);</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="p">};</span>
+</code></pre></div>
+<h3 id="time-complexity">Time Complexity</h3>
+<ul>
+<li><code>push_back</code>, <code>push_front</code>: <strong>O(1)</strong> (thanks to <code>m_Tail</code> and <code>m_Head</code>).</li>
+<li>Without <code>m_Tail</code>, <code>push_back</code> would be <strong>O(n)</strong>.</li>
+</ul>
+<h3 id="push_back">push_back()</h3>
+<ul>
+<li>If empty, initialize <code>m_Head</code> and <code>m_Tail</code>.</li>
+<li>Otherwise, link new node to current <code>m_Tail</code>, then update <code>m_Tail</code>.</li>
+</ul>
+<h3 id="push_front">push_front()</h3>
+<ul>
+<li>Create new node, make current head its next.</li>
+<li>Update <code>m_Head</code>.</li>
+<li>If list was non-empty, update old head's previous pointer.</li>
+</ul>
+<h3 id="pop_front">pop_front()</h3>
+<ul>
+<li>Assert not empty.</li>
+<li>If only one node, also reset <code>m_Tail</code>.</li>
+<li>Delete current <code>m_Head</code>, move to next node.</li>
+</ul>
+<h3 id="pop_back">pop_back()</h3>
+<ul>
+<li>If only one node, reuse <code>pop_front()</code>.</li>
+<li>Update <code>m_Tail</code> to previous node.</li>
+<li>Delete old tail.</li>
+</ul>
+<h2 id="iterator-internals">Iterator Internals</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">iterator</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">CList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">m_Owner</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">tNode</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">m_TargetNode</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="c1">// m_Owner == nullptr &amp;&amp; m_TargetNode == nullptr: invalid</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="c1">// m_Owner != nullptr &amp;&amp; m_TargetNode == nullptr: end()</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="c1">// Comparison</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Other</span><span class="p">);</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Other</span><span class="p">);</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="c1">// Dereference</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">*</span><span class="p">();</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="c1">// Increment</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">();</span><span class="w">       </span><span class="c1">// Prefix</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="n">iterator</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w">     </span><span class="c1">// Postfix</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="c1">// Decrement</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">--</span><span class="p">();</span><span class="w">       </span><span class="c1">// Prefix</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="n">iterator</span><span class="w"> </span><span class="k">operator</span><span class="o">--</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w">     </span><span class="c1">// Postfix</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="p">};</span>
+</code></pre></div>
+<h3 id="iterator-behavior-notes">Iterator Behavior Notes</h3>
+<ul>
+<li><code>++</code> should <code>assert(m_TargetNode)</code> because <code>nullptr</code> can't be incremented.</li>
+<li><code>--</code> can handle <code>end()</code> case by setting to <code>m_Tail</code>.</li>
+<li>If <code>--</code> called on <code>begin()</code>, assert.</li>
+<li>Be cautious with invalid iterators.</li>
+</ul>
+<h2 id="erase-behavior">Erase Behavior</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">typename</span><span class="w"> </span><span class="nc">CList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">CList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">erase</span><span class="p">(</span><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_iter</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="important-conditions">Important Conditions:</h3>
+<ul>
+<li>Must check <code>m_Owner == this</code> using <code>assert</code>.</li>
+<li>Return the iterator pointing to the next element.</li>
+</ul>
+<h3 id="edge-cases">Edge Cases:</h3>
+<ul>
+<li>If <code>m_Head == _iter.m_TargetNode</code> =&gt; use <code>pop_front()</code>.</li>
+<li>If <code>m_Tail == _iter.m_TargetNode</code> =&gt; use <code>pop_back()</code>.</li>
+<li>Otherwise, handle using <code>m_Prev</code> and <code>m_Next</code> rewiring.</li>
+</ul>
+<h2 id="reverse-function-recursive">Reverse Function (Recursive)</h2>
+<ul>
+<li>Uses recursion to reach last node, then flips <code>m_Next</code> and <code>m_Prev</code>.</li>
+<li>Once base case (<code>nullptr</code>) hit, swap <code>m_Head</code> and <code>m_Tail</code>.</li>
+</ul>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<ul>
+<li>Forgetting to update <code>m_Size</code> after push/pop.</li>
+<li>Incorrect handling of <code>nullptr</code> for empty list.</li>
+<li>Using <code>iter++</code> in loops over lists instead of <code>++iter</code>.</li>
+<li>Not asserting valid iterator before dereferencing or incrementing.</li>
+</ul>
+<h2 id="sample-interview-questions">Sample Interview Questions</h2>
+<h3 id="q1-what-is-the-difference-between-iter-and-iter-in-a-custom-iterator-class">Q1. What is the difference between <code>++iter</code> and <code>iter++</code> in a custom iterator class?</h3>
+<p><strong>A:</strong>
+- <code>++iter</code> is a prefix operator: it modifies and returns the same object (usually more efficient).
+- <code>iter++</code> is a postfix operator: it returns the value before incrementing, requiring a temporary copy.</p>
+<h3 id="q2-when-does-clisteraseiterator-_iter-call-pop_front-or-pop_back">Q2. When does <code>CList::erase(iterator&amp; _iter)</code> call <code>pop_front()</code> or <code>pop_back()</code>?</h3>
+<p><strong>A:</strong>
+- If <code>_iter</code> points to <code>m_Head</code>, it calls <code>pop_front()</code>.
+- If <code>_iter</code> points to <code>m_Tail</code>, it calls <code>pop_back()</code>.
+- These are special edge cases that must be handled explicitly.</p>
+<h3 id="q3-in-the-context-of-a-doubly-linked-list-what-makes-push_back-and-push_front-o1">Q3. In the context of a doubly linked list, what makes <code>push_back</code> and <code>push_front</code> O(1)?</h3>
+<p><strong>A:</strong>
+- The class stores both <code>m_Head</code> and <code>m_Tail</code>, allowing instant access to both ends without traversal.</p>
+<h3 id="q4-what-does-an-end-iterator-mean-in-a-list">Q4. What does an end iterator mean in a list?</h3>
+<p><strong>A:</strong>
+- <code>m_TargetNode == nullptr</code>, but <code>m_Owner != nullptr</code>. It signifies one-past-the-last element.</p>
+<h3 id="q5-why-is-it-necessary-to-check-m_owner-in-clisterase">Q5. Why is it necessary to check <code>m_Owner</code> in <code>CList::erase()</code>?</h3>
+<p><strong>A:</strong>
+- To ensure the iterator passed belongs to the current list. Otherwise, modifying foreign memory could cause undefined behavior.</p>
 <h2 id="references">References</h2>
 <ul>
 <li>[linked_list_template.cpp]</li>

@@ -35,5 +35,15 @@ Visual Studio Code
 
 ```shell
 svn update 
-svn log -v 
+svn log -v -l 10 
+```
+Shows latest 10 logs of svn updated records containing file changes 
+
+```shell
+Get-Content "docs/AR250409.md" | Out-String | Select-String -Pattern '[^\x00-\x7F]' -AllMatches
+``` 
+
+Open git bash 
+```bash 
+iconv -f UTF-8 -t UTF-8 docs/AR250409.md > /dev/null
 ```

@@ -411,7 +411,7 @@
   
   
   <span class="md-ellipsis">
-    CPP Dynamic Array
+    Dynamic Array, STL Vector
     
   </span>
   
@@ -433,7 +433,7 @@
   
   
   <span class="md-ellipsis">
-    Heap and Dynamic Allocation in C++
+    Dynamic Memory Management and Template Usage
     
   </span>
   
@@ -455,7 +455,7 @@
   
   
   <span class="md-ellipsis">
-    AR250408
+    STL Vector and Iterator Behavior
     
   </span>
   
@@ -477,7 +477,7 @@
   
   
   <span class="md-ellipsis">
-    AR250409
+    STL Vector vs List &amp; Custom Iterator Logic (with CArray)
     
   </span>
   
@@ -499,7 +499,7 @@
   
   
   <span class="md-ellipsis">
-    AR250410
+    Double Linked List and Iterator Design
     
   </span>
   
@@ -521,7 +521,7 @@
   
   
   <span class="md-ellipsis">
-    AR250411
+    Notes on Iterators and Linked List Implementation
     
   </span>
   
@@ -2344,6 +2344,19 @@ while(pBeginNode-&gt;arrPtr[LCHILD] != nullptr)
 {
     return iterator(this, nullptr); 
 }</p>
+<p>++ operator of the in order traversal 
+first check whether right child exist then 
+check whether the right child has left children 
+Go to the parent, and check whether parent is left children of the parent node </p>
+<ol>
+<li>Right Child ? go until RCHild is nullptr  </li>
+<li>check whether you are LChild of the parent </li>
+<li>check whether your parent is LChild of Parent parent </li>
+</ol>
+<p>BST iterator rule 
+if RChild does not exist check parent left child 
+check whether parent node is parent parent node's left child </p>
+<p>--operator will be vice versa </p>
 
 
 
