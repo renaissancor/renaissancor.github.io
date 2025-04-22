@@ -2,6 +2,15 @@
 
 #include "CList.h"
 
+enum NODE_TYPE
+{
+	PARENT,
+	LCHILD,
+	RCHILD,
+
+	NONE,
+};
+
 
 template<typename T1, typename T2>
 struct tPair
@@ -14,24 +23,30 @@ template<typename T1, typename T2>
 struct tBSTNode
 {
 	tPair<T1, T2>	pair;
-	tBSTNode*		pParent;
-	tBSTNode*		pLChild;
-	tBSTNode*		pRChild;
+	tBSTNode*		arrPtr[3];
+
+public:
+	bool HasLChild() { return nullptr != arrPtr[LCHILD]; }
+	bool HasRChild() { return nullptr != arrPtr[RCHILD]; }
+
+	bool IsRoot() { return arrPtr[PARENT] == nullptr; }
+	bool IsLeaf() { return (arrPtr[LCHILD] == nullptr) && (arrPtr[RCHILD] == nullptr); }
+
+	bool IsLChild() { return arrPtr[PARENT]->arrPtr[LCHILD] == this; }
+	bool IsRchild() { return arrPtr[PARENT]->arrPtr[RCHILD] == this; }
+
+	tBSTNode* GetNode(NODE_TYPE _Type) { return arrPtr[_Type]; }
 
 public:
 	tBSTNode()
 		: pair()
-		, pParent(nullptr)
-		, pLChild(nullptr)
-		, pRChild(nullptr)
+		, arrPtr{}
 	{}
 
 	tBSTNode(const tPair<T1, T2>& _Pair, tBSTNode* _Parent = nullptr
 			, tBSTNode* _LChild = nullptr, tBSTNode* _RChild = nullptr)
 		: pair(_Pair)
-		, pParent(_Parent)
-		, pLChild(_LChild)
-		, pRChild(_RChild)
+		, arrPtr{ _Parent , _LChild, _RChild }
 	{}
 };
 
@@ -47,8 +62,6 @@ tPair<T1, T2> MakePair(const T1& _First, const T2& _Second)
 	return pair;
 }
 
-
-
 template<typename T1, typename T2>
 class BST
 {
@@ -60,8 +73,29 @@ public:
 	int size() { return m_Size; }
 	bool empty() { return m_Size == 0; }
 	void clear();
-
 	void insert(const tPair<T1, T2>& _pair);
+
+	tBSTNode<T1, T2>* GetInorderSuccessor(tBSTNode<T1, T2>* _Node);
+	tBSTNode<T1, T2>* GetInorderPredecessor(tBSTNode<T1, T2>* _Node);
+
+	class iterator;
+	iterator begin()
+	{
+		if (!m_Root)
+			return iterator(this, nullptr);
+
+		// ë£¨íŠ¸ì—ì„œ ì‹œì‘, ì™¼ìª½ìœ¼ë¡œ ë‚´ë ¤ê°ˆ ìˆ˜ ì—†ì„ë•Œ ê¹Œì§€ ë‚´ë ¤ê°„ë‹¤.
+		tBSTNode<T1, T2>* pBeginNode = m_Root;		
+		while (pBeginNode->arrPtr[LCHILD] != nullptr)
+		{
+			pBeginNode = pBeginNode->arrPtr[LCHILD];
+		}
+		return iterator(this, pBeginNode);
+	}
+
+	iterator end() { return iterator(this, nullptr); }
+
+	iterator find(const T1& _Key);
 
 
 public:
@@ -69,11 +103,62 @@ public:
 		: m_Root(nullptr)
 		, m_Size(0)
 	{}
-
 	~BST()
 	{
 		clear();
 	}
+
+	class iterator
+	{
+	private:
+		BST<T1, T2>*		m_Owner;
+		tBSTNode<T1, T2>*	m_Target; // EndIterator : nullptr == m_Target && m_Owner != nullptr
+
+
+	public:
+		bool operator==(const iterator& _Other)
+		{
+			return (m_Owner == _Other.m_Owner) && (m_Target == _Other.m_Target);
+		}
+
+		bool operator != (const iterator& _Other)
+		{
+			return !((*this) == _Other);
+		}
+
+		tPair<T1, T2>& operator*()
+		{
+			return m_Target->pair;
+		}
+
+		iterator& operator ++()
+		{
+			m_Target = m_Owner->GetInorderSuccessor(m_Target);	
+
+			return *this;
+		}
+
+
+		iterator& operator --()
+		{
+			m_Target = m_Owner->GetInorderPredecessor(m_Target);
+
+			return *this;
+		}
+
+
+	public:
+		iterator()
+			: m_Owner(nullptr)
+			, m_Target(nullptr)
+		{}
+		iterator(BST<T1, T2>* _Owner, tBSTNode<T1, T2>* _Target)
+			: m_Owner(_Owner)
+			, m_Target(_Target)
+		{}
+		~iterator()
+		{}
+	};
 };
 
 template<typename T1, typename T2>
@@ -86,17 +171,17 @@ void BST<T1, T2>::clear()
 		queue.push_back(m_Root);
 	}
 
-	// queue ±¸Á¶¸¦ È°¿ëÇØ¼­ °èÃş°ü°è·Î ±¸¼ºµÈ Æ®¸®ÀÇ ³ëµåµéÀ» ·¹º§¼øÈ¸¸¦ ÇÑ´Ù.
-	// stack ±¸Á¶¸¦ È°¿ëÇÏ¸é ±íÀÌ¿ì¼±Å½»ö ¹æ½ÄÀ¸·Î ³ëµå¸¦ Á¢±ÙÇÒ ¼ö ÀÖ´Ù.
+	// queue êµ¬ì¡°ë¥¼ í™œìš©í•´ì„œ ê³„ì¸µê´€ê³„ë¡œ êµ¬ì„±ëœ íŠ¸ë¦¬ì˜ ë…¸ë“œë“¤ì„ ë ˆë²¨ìˆœíšŒë¥¼ í•œë‹¤.
+	// stack êµ¬ì¡°ë¥¼ í™œìš©í•˜ë©´ ê¹Šì´ìš°ì„ íƒìƒ‰ ë°©ì‹ìœ¼ë¡œ ë…¸ë“œë¥¼ ì ‘ê·¼í•  ìˆ˜ ìˆë‹¤.
 	while (!queue.empty())
 	{
 		tBSTNode<T1, T2>* pNode = queue.front();
 		queue.pop_front();
 
-		if (nullptr != pNode->pLChild)
-			queue.push_back(pNode->pLChild);
-		if (nullptr != pNode->pRChild)
-			queue.push_back(pNode->pRChild);
+		if (nullptr != pNode->arrPtr[LCHILD])
+			queue.push_back(pNode->arrPtr[LCHILD]);
+		if (nullptr != pNode->arrPtr[RCHILD])
+			queue.push_back(pNode->arrPtr[RCHILD]);
 
 		delete pNode;
 	}
@@ -110,61 +195,133 @@ void BST<T1, T2>::insert(const tPair<T1, T2>& _pair)
 {
 	tBSTNode<T1, T2>* pNewNode = new tBSTNode<T1, T2>(_pair);
 
-	// ÀÌ¹ø¿¡ ÀÔ·ÂµÈ µ¥ÀÌÅÍ°¡ Ã¹¹øÂ°¶ó¸é
+	// ì´ë²ˆì— ì…ë ¥ëœ ë°ì´í„°ê°€ ì²«ë²ˆì§¸ë¼ë©´
 	if (nullptr == m_Root)
 	{
 		m_Root = pNewNode;
 	}
 
-	// BST °¡ ÀÌ¹Ì µ¥ÀÌÅÍ¸¦ 1°³ÀÌ»ó º¸À¯ÇÏ°í ÀÖ´Ù¸é
+	// BST ê°€ ì´ë¯¸ ë°ì´í„°ë¥¼ 1ê°œì´ìƒ ë³´ìœ í•˜ê³  ìˆë‹¤ë©´
 	else
 	{
-		// »õ·Î ÀÔ·ÂµÈ µ¥ÀÌÅÍÀÇ First °ªÀ» ÀÌ¿ëÇØ¼­,
-		// ·çÆ®³ëµåºÎÅÍ Ãâ¹ß, ÀÚ½ÅÀÌ ¿¬°áµÉ ÀÚ¸®°¡ ¾îµòÁö Ã£¾Æ°¡¾ßÇÑ´Ù.
+		// ìƒˆë¡œ ì…ë ¥ëœ ë°ì´í„°ì˜ First ê°’ì„ ì´ìš©í•´ì„œ,
+		// ë£¨íŠ¸ë…¸ë“œë¶€í„° ì¶œë°œ, ìì‹ ì´ ì—°ê²°ë  ìë¦¬ê°€ ì–´ë”˜ì§€ ì°¾ì•„ê°€ì•¼í•œë‹¤.
 		tBSTNode<T1, T2>* pNode = m_Root;
 
 		while (pNode)
 		{
-			// ³ëµå¿¡ µé¾îÀÖ´Â °ªº¸´Ù ÀÛÀ¸¸é, ¿ŞÂÊÀ¸·Î
+			NODE_TYPE Type = NONE;
+
+			// ë…¸ë“œì— ë“¤ì–´ìˆëŠ” ê°’ë³´ë‹¤ ì‘ìœ¼ë©´, ì™¼ìª½ìœ¼ë¡œ
 			if (pNewNode->pair.first < pNode->pair.first)
-			{
-				// ¿ŞÂÊÀÌ ºñ¾îÀÖÀ¸¸é, ±×°÷¿¡ ¿¬°á
-				if (nullptr == pNode->pLChild)
-				{
-					pNode->pLChild = pNewNode;
-					pNewNode->pParent = pNode;
-					break;
-				}
-				else
-				{
-					pNode = pNode->pLChild;
-				}
-			}
-
-			// ºñ±³ÇÒ ³ëµå¿¡ µé¾îÀÖ´Â fisrt °ªº¸´Ù Å©¸é, ¿À¸¥ÂÊÀ¸·Î
+				Type = LCHILD;
+			// ë¹„êµí•  ë…¸ë“œì— ë“¤ì–´ìˆëŠ” fisrt ê°’ë³´ë‹¤ í¬ë©´, ì˜¤ë¥¸ìª½ìœ¼ë¡œ
 			else if (pNode->pair.first < pNewNode->pair.first)
+				Type = RCHILD;
+			// ë…¸ë“œì— ë“¤ì–´ìˆëŠ” first ê°’ê³¼ ì…ë ¥ëœ first ê°’ì´ ê°™ë‹¤
+			else
+				assert(nullptr);
+						
+			// ì§„í–‰í•  ë°©í–¥ì— ìë¦¬ê°€ ë¹„ì—ˆëŠ”ì§€ í™•ì¸
+			if (nullptr == pNode->arrPtr[Type])
 			{
-				// ¿À¸¥ÂÊÀÌ ºñ¾îÀÖÀ¸¸é, ±×°÷¿¡ ¿¬°á
-				if (nullptr == pNode->pRChild)
-				{
-					pNode->pRChild = pNewNode;
-					pNewNode->pParent = pNode;
-					break;
-				}
-				else
-				{
-					pNode = pNode->pRChild;
-				}
+				// ë¹„ì–´ìˆìœ¼ë©´, í•´ë‹¹ ìë¦¬ì™€ NewNode ë¥¼ ì—°ê²°
+				pNode->arrPtr[Type] = pNewNode;
+				pNewNode->arrPtr[PARENT] = pNode;
+				break;
 			}
-
-			// ³ëµå¿¡ µé¾îÀÖ´Â first °ª°ú ÀÔ·ÂµÈ first °ªÀÌ °°´Ù
+			// ì§„í–‰í•  ë°©í–¥ì˜ ë…¸ë“œìë¦¬ê°€ ë¹„ì–´ìˆì§€ ì•Šìœ¼ë©´, í•´ë‹¹ ìë¦¬ ë…¸ë“œë¥¼ ê¸°ì¤€ìœ¼ë¡œ ë‹¤ì‹œ ë°˜ë³µë¬¸ ì‹¤í–‰
 			else
 			{
-				assert(nullptr);
+				pNode = pNode->arrPtr[Type];
 			}
-
 		}
 	}
 
 	++m_Size;
+}
+
+template<typename T1, typename T2>
+tBSTNode<T1, T2>* BST<T1, T2>::GetInorderSuccessor(tBSTNode<T1, T2>* _Node)
+{
+	// End ì—ì„œ ë‹¤ìŒ ë°ì´í„°ë¥¼ ìš”ì²­í•œ ê²½ìš°
+	assert(_Node);
+
+	tBSTNode<T1, T2>* pSuccessor = nullptr;
+
+	// 1. ì˜¤ë¥¸ìª½ ìì‹ í™•ì¸, ì™¼ìª½ìì‹ì´ ì—†ì„ë•Œê¹Œì§€ ë‚´ë ¤ê°„ë‹¤.
+	if (_Node->HasRChild())
+	{
+		pSuccessor = _Node->GetNode(RCHILD);
+		while (pSuccessor->GetNode(LCHILD)) { pSuccessor = pSuccessor->GetNode(LCHILD); }
+	}
+
+	// 2. ë¶€ëª¨ì˜ ì™¼ìª½ìì‹ì¸ì§€ í™•ì¸, ë¶€ëª¨ê°€ í›„ì†ì
+	// ì™¼ìª½ìì‹ì´ ì•„ë‹ˆë©´, ë¶€ëª¨ì˜ ì™¼ìª½ìì‹ì´ ë ë•Œê¹Œì§€ ì˜¬ë¼ê°€ì„œ ê·¸ ë¶€ëª¨ë…¸ë“œê°€ í›„ì†ì
+	else
+	{
+		pSuccessor = nullptr;
+
+		// ë¶€ëª¨ë…¸ë“œê°€ ìˆë‹¤ë©´
+		while (!_Node->IsRoot())
+		{
+			// ì™¼ìª½ìì‹ì¸ì§€ í™•ì¸
+			if (_Node->IsLChild())
+			{
+				// ê·¸ë•Œ ë¶€ëª¨ë…¸ë“œê°€ í›„ì†ìë…¸ë“œ
+				pSuccessor = _Node->GetNode(PARENT);
+				break;
+			}
+			
+			// ì•„ë‹ˆë©´ ë‹¤ì‹œ ìœ„ë¡œ ì˜¬ë¼ê°
+			_Node = _Node->GetNode(PARENT);
+		}
+	}
+
+	return pSuccessor;
+}
+
+template<typename T1, typename T2>
+tBSTNode<T1, T2>* BST<T1, T2>::GetInorderPredecessor(tBSTNode<T1, T2>* _Node)
+{
+
+	return nullptr;
+}
+
+template<typename T1, typename T2>
+typename BST<T1, T2>::iterator BST<T1, T2>::find(const T1& _Key)
+{
+	// ì…ë ¥ëœ Key ê°’ì„ ì´ìš©í•´ì„œ, ë£¨íŠ¸ë…¸ë“œë¶€í„° ì¶œë°œ, 
+	// Key ê°’ê³¼ ë™ì¼í•œ First ë¥¼ ë³´ìœ í•œ ë…¸ë“œë¥¼ ì°¾ëŠ”ë‹¤.
+	tBSTNode<T1, T2>* pNode = m_Root;
+
+	while (pNode)
+	{
+		NODE_TYPE Type = NONE;
+
+		// ë…¸ë“œì— ë“¤ì–´ìˆëŠ” ê°’ë³´ë‹¤ ì‘ìœ¼ë©´, ì™¼ìª½ìœ¼ë¡œ
+		if (_Key < pNode->pair.first)
+			Type = LCHILD;
+		// ë¹„êµí•  ë…¸ë“œì— ë“¤ì–´ìˆëŠ” fisrt ê°’ë³´ë‹¤ í¬ë©´, ì˜¤ë¥¸ìª½ìœ¼ë¡œ
+		else if (pNode->pair.first < _Key)
+			Type = RCHILD;
+		// ë…¸ë“œì— ë“¤ì–´ìˆëŠ” first ê°’ê³¼ ì…ë ¥ëœ first ê°’ì´ ê°™ë‹¤
+		else
+		{
+			return iterator(this, pNode);
+		}
+
+		// ì§„í–‰í•  ë°©í–¥ì— ìë¦¬ê°€ ë¹„ì—ˆëŠ”ì§€ í™•ì¸
+		if (nullptr == pNode->arrPtr[Type])
+		{			
+			break;
+		}
+		// ì§„í–‰í•  ë°©í–¥ì˜ ë…¸ë“œìë¦¬ê°€ ë¹„ì–´ìˆì§€ ì•Šìœ¼ë©´, í•´ë‹¹ ìë¦¬ ë…¸ë“œë¥¼ ê¸°ì¤€ìœ¼ë¡œ ë‹¤ì‹œ ë°˜ë³µë¬¸ ì‹¤í–‰
+		else
+		{
+			pNode = pNode->arrPtr[Type];
+		}
+	}
+
+	return end();
 }
