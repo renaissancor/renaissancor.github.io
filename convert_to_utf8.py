@@ -4,7 +4,7 @@ import chardet  # pip install chardet
 
 TARGET_DIR = 'docs'
 EXTENSIONS = ['.md', '.txt', '.csv']
-BACKUP_DIR = 'encoding_backup'
+BACKUP_DIR = 'backup'
 
 def is_target_file(filename):
     return any(filename.lower().endswith(ext) for ext in EXTENSIONS)
