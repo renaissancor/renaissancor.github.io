@@ -12,13 +12,13 @@
         <meta name="author" content="Renaissancor">
       
       
-        <link rel="canonical" href="https://renaissancor.github.io/AR250411/">
+        <link rel="canonical" href="https://renaissancor.github.io/AR250422/">
       
       
-        <link rel="prev" href="../AR250410/">
+        <link rel="prev" href="../AR250421/">
       
       
-        <link rel="next" href="../AR250414/">
+        <link rel="next" href="../Study/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Notes on Iterators and Linked List Implementation - Renaissancoriate</title>
+        <title>C++ Inheritance and Object Lifecycle - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#notes-on-iterators-and-linked-list-implementation" class="md-skip">
+        <a href="#c-inheritance-and-object-lifecycle" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Notes on Iterators and Linked List Implementation
+              C++ Inheritance and Object Lifecycle
             
           </span>
         </div>
@@ -518,32 +518,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Notes on Iterators and Linked List Implementation
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../AR250411/" class="md-nav__link">
         
   
   
@@ -554,281 +532,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#iterator-design-and-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Iterator Design and Behavior
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Iterator Design and Behavior">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prefix-vs-postfix-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prefix vs Postfix Operators
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-return-iterator-instead-of-void" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Return Iterator Instead of Void?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clist-internals-and-iterator-logic" class="md-nav__link">
-    <span class="md-ellipsis">
-      CList Internals and Iterator Logic
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CList Internals and Iterator Logic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#default-constructors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Default Constructors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#list-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      List Operations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="List Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#push_back-and-push_front" class="md-nav__link">
-    <span class="md-ellipsis">
-      push_back() and push_front()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pop_front-and-pop_back" class="md-nav__link">
-    <span class="md-ellipsis">
-      pop_front() and pop_back()
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reverse-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reverse List
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eraseiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      erase(iterator&amp;)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#iterator-states" class="md-nav__link">
-    <span class="md-ellipsis">
-      Iterator States
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prefix-postfix-operator-for-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prefix/ Postfix -- Operator for List
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-mistakes-and-tricky-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Mistakes and Tricky Cases
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Mistakes and Tricky Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mistake-postfix-operator-returning-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mistake: Postfix Operator Returning Reference
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mistake-iterator-to-wrong-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mistake: Iterator to Wrong Container
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tricky-case-called-on-begin" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tricky Case: -- Called on begin()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tricky-case-called-on-end" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tricky Case: ++ Called on end()
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sample-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sample Interview Questions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sample Interview Questions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#q1-what-is-the-time-complexity-of-push_back-in-a-doubly-linked-list-with-tail-pointer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q1: What is the time complexity of push_back in a doubly linked list with tail pointer?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q2-what-is-the-difference-between-prefix-and-postfix-iterator-increment-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q2: What is the difference between prefix and postfix iterator increment operators?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q3-how-would-you-implement-the-erase-function-for-a-doubly-linked-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q3: How would you implement the erase function for a doubly linked list?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q4-why-is-iter-preferred-over-iter-in-a-loop" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q4: Why is ++iter preferred over iter++ in a loop?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q5-what-does-an-end-iterator-represent" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q5: What does an end() iterator represent?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#assignments-summary-0411" class="md-nav__link">
-    <span class="md-ellipsis">
-      Assignments Summary (0411)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -969,10 +672,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../AR250422/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    C++ Inheritance and Object Lifecycle
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -983,6 +708,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#date-2025-04-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date: 2025-04-22
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-parent-and-child-class-with-dynamic-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Parent and Child Class with Dynamic Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Parent and Child Class with Dynamic Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concepts:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructordestructor-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructor/Destructor Order
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructor/Destructor Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Demo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-object-lifetime-in-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual: Object Lifetime in Inheritance
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2597,28 +2444,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#iterator-design-and-behavior" class="md-nav__link">
+  <a href="#date-2025-04-22" class="md-nav__link">
     <span class="md-ellipsis">
-      Iterator Design and Behavior
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Iterator Design and Behavior">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prefix-vs-postfix-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prefix vs Postfix Operators
+      Date: 2025-04-22
     </span>
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-parent-and-child-class-with-dynamic-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Parent and Child Class with Dynamic Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Parent and Child Class with Dynamic Memory">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-return-iterator-instead-of-void" class="md-nav__link">
+  <a href="#key-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Return Iterator Instead of Void?
+      Key Concepts:
     </span>
   </a>
   
@@ -2630,88 +2495,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#clist-internals-and-iterator-logic" class="md-nav__link">
+  <a href="#common-mistakes" class="md-nav__link">
     <span class="md-ellipsis">
-      CList Internals and Iterator Logic
+      Common Mistakes
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="CList Internals and Iterator Logic">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructordestructor-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructor/Destructor Order
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructor/Destructor Order">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#default-constructors" class="md-nav__link">
+  <a href="#code-demo" class="md-nav__link">
     <span class="md-ellipsis">
-      Default Constructors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#list-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      List Operations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="List Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#push_back-and-push_front" class="md-nav__link">
-    <span class="md-ellipsis">
-      push_back() and push_front()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pop_front-and-pop_back" class="md-nav__link">
-    <span class="md-ellipsis">
-      pop_front() and pop_back()
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reverse-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reverse List
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eraseiterator" class="md-nav__link">
-    <span class="md-ellipsis">
-      erase(iterator&amp;)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#iterator-states" class="md-nav__link">
-    <span class="md-ellipsis">
-      Iterator States
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prefix-postfix-operator-for-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prefix/ Postfix -- Operator for List
+      Code Demo
     </span>
   </a>
   
@@ -2723,129 +2528,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-mistakes-and-tricky-cases" class="md-nav__link">
+  <a href="#interview-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Mistakes and Tricky Cases
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Mistakes and Tricky Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mistake-postfix-operator-returning-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mistake: Postfix Operator Returning Reference
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mistake-iterator-to-wrong-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mistake: Iterator to Wrong Container
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tricky-case-called-on-begin" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tricky Case: -- Called on begin()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tricky-case-called-on-end" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tricky Case: ++ Called on end()
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sample-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sample Interview Questions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sample Interview Questions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#q1-what-is-the-time-complexity-of-push_back-in-a-doubly-linked-list-with-tail-pointer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q1: What is the time complexity of push_back in a doubly linked list with tail pointer?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q2-what-is-the-difference-between-prefix-and-postfix-iterator-increment-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q2: What is the difference between prefix and postfix iterator increment operators?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q3-how-would-you-implement-the-erase-function-for-a-doubly-linked-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q3: How would you implement the erase function for a doubly linked list?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q4-why-is-iter-preferred-over-iter-in-a-loop" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q4: Why is ++iter preferred over iter++ in a loop?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q5-what-does-an-end-iterator-represent" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q5: What does an end() iterator represent?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#assignments-summary-0411" class="md-nav__link">
-    <span class="md-ellipsis">
-      Assignments Summary (0411)
+      Interview Questions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#visual-object-lifetime-in-inheritance" class="md-nav__link">
     <span class="md-ellipsis">
-      References
+      Visual: Object Lifetime in Inheritance
     </span>
   </a>
   
@@ -2867,143 +2561,115 @@
 
 
 
-<h1 id="notes-on-iterators-and-linked-list-implementation">Notes on Iterators and Linked List Implementation</h1>
-<h2 id="iterator-design-and-behavior">Iterator Design and Behavior</h2>
-<h3 id="prefix-vs-postfix-operators">Prefix vs Postfix Operators</h3>
-<ul>
-<li>Use <code>++iter</code> instead of <code>iter++</code> for <strong>performance</strong>:</li>
-<li>Prefix does not require a temporary copy.</li>
-<li>Postfix creates a copy before incrementing, which is slower in tight loops.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* Prefix */</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">iterator</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* Postfix */</span><span class="w"> </span><span class="p">}</span>
-</code></pre></div>
-<ul>
-<li>Similar pattern applies for <code>--iter</code> and <code>iter--</code>.</li>
-</ul>
-<h3 id="why-return-iterator-instead-of-void">Why Return Iterator Instead of Void?</h3>
-<ul>
-<li>Return type must be <code>iterator&amp;</code> for prefix, and <code>iterator</code> (by value) for postfix.</li>
-<li>This allows usage like <code>int value = *(++iter);</code>.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">();</span><span class="w">           </span><span class="c1">// Prefix</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">iterator</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w">         </span><span class="c1">// Postfix (must return copy)</span>
-</code></pre></div>
+<h1 id="c-inheritance-and-object-lifecycle">C++ Inheritance and Object Lifecycle</h1>
+<h3 id="date-2025-04-22">Date: 2025-04-22</h3>
 <hr />
-<h2 id="clist-internals-and-iterator-logic">CList Internals and Iterator Logic</h2>
-<h3 id="default-constructors">Default Constructors</h3>
+<h2 id="key-points">Key Points</h2>
 <ul>
-<li>Default constructor initializes pointers to <code>nullptr</code>, and value to default-initialized <code>T</code>.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">tNode</span><span class="p">()</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">m_Data</span><span class="p">(),</span><span class="w"> </span><span class="n">m_Next</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span><span class="w"> </span><span class="n">m_Prev</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
-</code></pre></div>
-<h3 id="list-operations">List Operations</h3>
-<h4 id="push_back-and-push_front"><code>push_back()</code> and <code>push_front()</code></h4>
-<ul>
-<li>O(1) with head and tail pointers.</li>
-<li>If list is empty:</li>
-<li>Set both <code>m_Head</code> and <code>m_Tail</code> to new node.</li>
-<li>When inserting at head:</li>
-<li>Connect new node to current head.</li>
-<li>Update old head's prev.</li>
-<li>When inserting at tail:</li>
-<li>Connect current tail to new node.</li>
-<li>Update tail pointer.</li>
-</ul>
-<h4 id="pop_front-and-pop_back"><code>pop_front()</code> and <code>pop_back()</code></h4>
-<ul>
-<li>Remove node and update adjacent pointers.</li>
-<li>Be careful with one-element list: update both head and tail.</li>
-</ul>
-<h3 id="reverse-list">Reverse List</h3>
-<ul>
-<li>Recursive reversal swaps next and prev pointers.</li>
-<li>Base case is when node is <code>nullptr</code> or last node.</li>
-</ul>
-<h3 id="eraseiterator"><code>erase(iterator&amp;)</code></h3>
-<ul>
-<li>Handles three cases:</li>
-<li>Node is head: call <code>pop_front()</code></li>
-<li>Node is tail: call <code>pop_back()</code></li>
-<li>Node is in the middle:<ul>
-<li>Connect previous and next nodes together.</li>
-<li>Delete the target node.</li>
-</ul>
-</li>
-<li>Asserts that iterator's owner matches the current list.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">assert</span><span class="p">(</span><span class="n">_iter</span><span class="p">.</span><span class="n">m_Owner</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
-</code></pre></div>
-<h3 id="iterator-states">Iterator States</h3>
-<ul>
-<li><code>m_Owner == nullptr &amp;&amp; m_TargetNode == nullptr</code> : Invalid iterator</li>
-<li><code>m_Owner != nullptr &amp;&amp; m_TargetNode == nullptr</code> : End iterator</li>
-<li>End iterator should <strong>not</strong> be incremented.</li>
-</ul>
-<h3 id="prefix-postfix-operator-for-list">Prefix/ Postfix -- Operator for List</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">--</span><span class="p">()</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">m_Owner</span><span class="o">-&gt;</span><span class="n">m_Head</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">m_TargetNode</span><span class="p">);</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">nullptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_TargetNode</span><span class="p">)</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">m_TargetNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_Owner</span><span class="o">-&gt;</span><span class="n">m_Tail</span><span class="p">;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="k">else</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">m_TargetNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_TargetNode</span><span class="o">-&gt;</span><span class="n">m_Prev</span><span class="p">;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="common-mistakes-and-tricky-cases">Common Mistakes and Tricky Cases</h2>
-<h3 id="mistake-postfix-operator-returning-reference">Mistake: Postfix Operator Returning Reference</h3>
-<ul>
-<li><code>operator++(int)</code> must return a <strong>copy</strong>, not a reference.</li>
-<li>Otherwise, the reference to a local copy goes out of scope.</li>
-</ul>
-<h3 id="mistake-iterator-to-wrong-container">Mistake: Iterator to Wrong Container</h3>
-<ul>
-<li>Ensure iterator belongs to the same list before erase.</li>
-<li>Use <code>assert(iter.m_Owner == this)</code> to prevent undefined behavior.</li>
-</ul>
-<h3 id="tricky-case-called-on-begin">Tricky Case: -- Called on <code>begin()</code></h3>
-<ul>
-<li><code>--begin()</code> is undefined; assert if <code>m_Head == m_TargetNode</code>.</li>
-</ul>
-<h3 id="tricky-case-called-on-end">Tricky Case: ++ Called on <code>end()</code></h3>
-<ul>
-<li><code>++end()</code> is undefined; assert if <code>m_TargetNode == nullptr</code>.</li>
+<li>Inheritance allows classes to extend and reuse functionality.</li>
+<li>Constructors initialize from base to derived; destructors run in reverse.</li>
+<li>Use <code>protected</code> to allow child access without exposing to external code.</li>
+<li>Manual memory management must be matched in constructors and destructors.</li>
+<li>Initializer lists only initialize members of the current class.</li>
 </ul>
 <hr />
-<h2 id="sample-interview-questions">Sample Interview Questions</h2>
-<h3 id="q1-what-is-the-time-complexity-of-push_back-in-a-doubly-linked-list-with-tail-pointer">Q1: What is the time complexity of push_back in a doubly linked list with tail pointer?</h3>
-<p><strong>A:</strong> O(1), since we can directly access and update the tail.</p>
-<h3 id="q2-what-is-the-difference-between-prefix-and-postfix-iterator-increment-operators">Q2: What is the difference between prefix and postfix iterator increment operators?</h3>
-<p><strong>A:</strong>
-- Prefix: modifies and returns the same iterator.
-- Postfix: returns a copy of the original before modification.</p>
-<h3 id="q3-how-would-you-implement-the-erase-function-for-a-doubly-linked-list">Q3: How would you implement the erase function for a doubly linked list?</h3>
-<p><strong>A:</strong>
-- Validate iterator.
-- If at head or tail, call <code>pop_front()</code> or <code>pop_back()</code>.
-- Otherwise, update surrounding node pointers and delete the target node.</p>
-<h3 id="q4-why-is-iter-preferred-over-iter-in-a-loop">Q4: Why is ++iter preferred over iter++ in a loop?</h3>
-<p><strong>A:</strong> <code>++iter</code> is faster because it doesn¡¯t need to copy the iterator object.</p>
-<h3 id="q5-what-does-an-end-iterator-represent">Q5: What does an end() iterator represent?</h3>
-<p><strong>A:</strong> An iterator pointing to <code>nullptr</code>, which comes after the last element in the container.</p>
+<h2 id="overview">Overview</h2>
+<p>This note explores class inheritance in C++, focusing on constructor and destructor order, access control, and memory management. It uses a base class <code>CParent</code> and a derived class <code>CChild</code> to illustrate these points.</p>
 <hr />
-<h2 id="assignments-summary-0411">Assignments Summary (0411)</h2>
+<h2 id="example-parent-and-child-class-with-dynamic-memory">Example: Parent and Child Class with Dynamic Memory</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">CParent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">protected</span><span class="o">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_I</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">m_pData</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">SetData</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_Data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_Data</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">GetData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_I</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">CParent</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_I</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">m_pData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">100</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">CParent</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_Data</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_I</span><span class="p">(</span><span class="n">_Data</span><span class="p">),</span><span class="w"> </span><span class="n">m_pData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">100</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="o">~</span><span class="n">CParent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_pData</span><span class="p">)</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_pData</span><span class="p">;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">};</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">class</span><span class="w"> </span><span class="nc">CChild</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">CParent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_F</span><span class="p">;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">SetFloat</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">_F</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="n">m_I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// accessing protected member from base class</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="n">m_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_F</span><span class="p">;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">GetFloat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_F</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="n">CChild</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_F</span><span class="p">(</span><span class="mf">0.f</span><span class="p">),</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">1000</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="n">CChild</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_IntData</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">_FloatData</span><span class="p">)</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">CParent</span><span class="p">(</span><span class="n">_IntData</span><span class="p">),</span><span class="w"> </span><span class="n">m_F</span><span class="p">(</span><span class="n">_FloatData</span><span class="p">),</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">1000</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="o">~</span><span class="n">CChild</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_pFloatData</span><span class="p">)</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">;</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="c1">// CParent destructor called automatically</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="p">};</span>
+</code></pre></div>
+<h3 id="key-concepts">Key Concepts:</h3>
 <ul>
-<li>Implement <code>CArray::erase(iterator&amp;)</code> and <code>pop_back()</code>.</li>
-<li><code>erase()</code> should shift elements left.</li>
-<li><code>pop_back()</code> decreases size by one.</li>
-<li>Implement <code>CList::pop_back()</code>.</li>
-<li>Handle tricky iterator edge cases and owner validation.</li>
+<li>Constructors run base-to-derived.</li>
+<li>Destructors run derived-to-base.</li>
+<li>Only the current class's members can be initialized in its constructor.</li>
 </ul>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="codes/linked_list_template.h">linked_list_template.cpp</a></li>
-<li><a href="codes/CList.cpp">CList.cpp</a></li>
-<li>[CList.h] (codes/CList.h)</li>
-</ul>
+<hr />
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p><strong>Forgetting virtual destructors in polymorphic base classes</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Base</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w">  </span><span class="c1">// required for proper cleanup</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">};</span>
+</code></pre></div></p>
+<p><strong>Accessing private base members from derived class</strong>
+- Only <code>protected</code> or <code>public</code> members are accessible.</p>
+<p><strong>Leaking memory by skipping cleanup</strong>
+- Always <code>delete[]</code> if you used <code>new[]</code>.</p>
+<hr />
+<h2 id="constructordestructor-order">Constructor/Destructor Order</h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">CChild</span><span class="w"> </span><span class="n">child</span><span class="p">;</span>
+</code></pre></div>
+This calls <code>CParent()</code> first, then <code>CChild()</code>.</p>
+<p>When <code>child</code> goes out of scope, it calls <code>~CChild()</code> first, then <code>~CParent()</code>.</p>
+<h3 id="code-demo">Code Demo</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">CParent</span><span class="p">);</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">CChild</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">CParent</span><span class="w"> </span><span class="n">parent</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">CParent</span><span class="w"> </span><span class="nf">parent1</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">CChild</span><span class="w"> </span><span class="n">child</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">CChild</span><span class="w"> </span><span class="nf">child1</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mf">2.2f</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h2 id="interview-questions">Interview Questions</h2>
+<p><strong>Q: What’s the order of constructor and destructor calls in inheritance?</strong><br />
+A: Constructors execute from base to derived. Destructors execute from derived to base.</p>
+<p><strong>Q: What happens if a derived class allocates memory but doesn’t define a destructor?</strong><br />
+A: Memory leaks may occur if the destructor doesn’t free allocated memory.</p>
+<p><strong>Q: Why use <code>protected</code> instead of <code>private</code>?</strong><br />
+A: <code>protected</code> allows access from derived classes, which <code>private</code> denies.</p>
+<p><strong>Q: Can derived constructors initialize base members directly?</strong><br />
+A: No, use the initializer list to call base constructors.</p>
+<hr />
+<h2 id="visual-object-lifetime-in-inheritance">Visual: Object Lifetime in Inheritance</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Construction:
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>CParent() -&gt; CChild()
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Destruction:
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>~CChild() -&gt; ~CParent()
+</code></pre></div>
+<p>Understanding the exact sequence is crucial for managing resources and preventing undefined behavior.</p>
+<hr />
 
 
 
