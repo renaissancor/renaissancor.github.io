@@ -112,3 +112,8 @@ Install chocolately
 Install python 
 Install git 
 
+
+Run UTF-8 Conversion of all files 
+pip install chardet
+python convert_to_utf8.py
+
