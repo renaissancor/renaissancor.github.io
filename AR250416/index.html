@@ -26,7 +26,7 @@
     
     
       
-        <title>Binary Search Tree Basic Structure - Renaissancoriate</title>
+        <title>Binary Search Tree: Study Guide - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#binary-search-tree-basic-structure" class="md-skip">
+        <a href="#binary-search-tree-study-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Binary Search Tree Basic Structure
+              Binary Search Tree: Study Guide
             
           </span>
         </div>
@@ -416,7 +416,7 @@
   
   
   <span class="md-ellipsis">
-    AR250415
+    Tree Algorithms and Traversals
     
   </span>
   
@@ -447,7 +447,7 @@
   
   
   <span class="md-ellipsis">
-    Binary Search Tree Basic Structure
+    Binary Search Tree: Study Guide
     
   </span>
   
@@ -460,7 +460,7 @@
   
   
   <span class="md-ellipsis">
-    Binary Search Tree Basic Structure
+    Binary Search Tree: Study Guide
     
   </span>
   
@@ -483,9 +483,222 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#date-2025-04-16" class="md-nav__link">
     <span class="md-ellipsis">
-      References
+      Date: 2025-04-16
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bst-node-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      BST Node Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bst-class-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      BST Class &amp; Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insertion-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insertion Operation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Insertion Operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-mistake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistake
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clearing-the-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clearing the BST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-order-successor-predecessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      In-Order Successor &amp; Predecessor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="In-Order Successor &amp; Predecessor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#successor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Successor:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predecessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predecessor:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-vs-custom-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      STL vs Custom BST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="STL vs Custom BST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stl-set-vs-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      STL set vs map:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multimap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimap:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-utility-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Utility Templates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions-and-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions and Answers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interview Questions and Answers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-what-is-the-time-complexity-of-insertion-in-a-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1: What is the time complexity of insertion in a BST?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-how-does-a-bst-handle-duplicate-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2: How does a BST handle duplicate keys?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-describe-how-in-order-traversal-works-in-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3: Describe how in-order traversal works in BST.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-how-do-you-find-the-in-order-successor-of-a-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4: How do you find the in-order successor of a node?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-why-use-bfs-for-deletion-in-a-destructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5: Why use BFS for deletion in a destructor?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
     </span>
   </a>
   
@@ -511,7 +724,7 @@
   
   
   <span class="md-ellipsis">
-    Binary Search Tree Iterator and Find Logic
+    Binary Search Tree Iterator and Enum in C++
     
   </span>
   
@@ -2380,9 +2593,222 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#date-2025-04-16" class="md-nav__link">
     <span class="md-ellipsis">
-      References
+      Date: 2025-04-16
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bst-node-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      BST Node Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bst-class-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      BST Class &amp; Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insertion-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insertion Operation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Insertion Operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-mistake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistake
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clearing-the-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clearing the BST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-order-successor-predecessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      In-Order Successor &amp; Predecessor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="In-Order Successor &amp; Predecessor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#successor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Successor:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predecessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predecessor:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-vs-custom-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      STL vs Custom BST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="STL vs Custom BST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stl-set-vs-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      STL set vs map:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multimap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimap:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-utility-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Utility Templates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions-and-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions and Answers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interview Questions and Answers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-what-is-the-time-complexity-of-insertion-in-a-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1: What is the time complexity of insertion in a BST?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-how-does-a-bst-handle-duplicate-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2: How does a BST handle duplicate keys?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-describe-how-in-order-traversal-works-in-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3: Describe how in-order traversal works in BST.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-how-do-you-find-the-in-order-successor-of-a-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4: How do you find the in-order successor of a node?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-why-use-bfs-for-deletion-in-a-destructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5: Why use BFS for deletion in a destructor?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
     </span>
   </a>
   
@@ -2404,76 +2830,201 @@
 
 
 
-<h1 id="binary-search-tree-basic-structure">Binary Search Tree Basic Structure</h1>
-<p>Binary Search Tree even though 
-data iteration by middle </p>
-<p>In Order Successor 
-In Order Predecessor </p>
-<p>set map 
-Red Black Tree </p>
-<p>set<int></p>
-<p>map<int, float> 
-key, value . key is used for sorting 
-The reason we use BST is to search data as fast as possible 
-if set is used if no number inside 
-Saved data is a sorting standard in set 
-However inside map, key is the sorting standard 
-Value data following for the second </p>
-<p>In BST perspective </p>
-<p>tBSTNode<T1,T2> * m_Root 
-this must be writen inside BST class </p>
-<p>while when Node perspective </p>
-<p>tBSTNode * pParent 
-tBSTNode * pLeftChild 
-tBSTNode * pRightChild </p>
-<p>These are fine since Node itself would automatically convert and recognize it as 
-tBSTNode<T1,T2> * pParent ... </p>
-<p>Remove function of the BST 
-level iteration to remove it 
-Use Queue Data Structure. Stack LIFO Queue FIFO 
-Let's use CList implemented before. basically using pop_front only makes list as queue </p>
-<p>Inside BST Terminator ~BST(); 
-CList<tBSTNode\<T1, T2>*> queue; 
-First input root node. 
-In queue BST the first root node address type is input inside list 
-while(queue.empty()) {}</p>
-<p>Level Order Traversal terminator is possible by queue data structure iteration 
-BFS Breadth first search </p>
-<p>If terminator using DFS is preferred, use stack data structure in tree traversal </p>
-<p>template 
-my make pair template function to make pair 
-template<typename T1, typename T2>
-tBSTPair<T1, T2> MakePair (const T1 &amp; _First, const T2 &amp; _Second)
-{
-    tPair<T1, T2> pair; 
-    pair.first = _First; 
-    pair.second = _Second; </p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>void insert(tPair&lt;T1, T2&gt; &amp;_pair);
-</code></pre></div></td></tr></table></div>
-
-<p>}</p>
-<p>this is template not function </p>
-<p>if nullptr == m_Root </p>
-<p>tree has never received input. get input as root, easy </p>
-<p>else // aka BST has at least one element </p>
-<p>When BST input is same as some node of the tree what happens to BST ? 
-in STL, std::map IGNORES same value. did not push it. not even cause error. </p>
-<p>This might cause future problem </p>
-<p>input with originally same key, will not be input, so generated node will be lost. 
-Even after terminator, that node will still exist resulting in memory leak. </p>
-<p>Thus, standard map do NOT notice whether key already exists inside and call assert. 
-Key MUST BE unique inside std::set std::map. NO Duplicated key for tree. 
-Duplicated Key will result in circumstances that do not allow </p>
-<p>Duplicated key is allowed when using standard library multi map 
-std::multipmap<int, float> multimap 
-They DO NOT call assert for failed input due to duplicated key input </p>
-<p>When same key input happens, then it makes same key node into list structure. 
-So, multi map will make inside BST, same key will be saved as linked list. 
-Thus, same key is not recommended. </p>
-<h2 id="references">References</h2>
+<h1 id="binary-search-tree-study-guide">Binary Search Tree: Study Guide</h1>
+<h3 id="date-2025-04-16">Date: 2025-04-16</h3>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>A Binary Search Tree (BST) is a hierarchical structure that stores key-value pairs with strict ordering rules for efficient data manipulation. This guide walks through essential implementation elements, corner cases, and interview-related insights.</p>
+<hr />
+<h2 id="bst-node-structure">BST Node Structure</h2>
+<p>Each BST node includes:
+- A <strong>key-value pair</strong> used for storage and sorting.
+- Three <strong>pointers</strong>:
+  - <code>Parent</code> (index 0)
+  - <code>Left Child</code> (index 1)
+  - <code>Right Child</code> (index 2)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Node structure for a BST</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pair</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">Node</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">pair</span><span class="p">(),</span><span class="w"> </span><span class="n">ptr</span><span class="p">{</span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">}</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">Node</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">_pair</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">_Parent</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">_LChild</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">_RChild</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">pair</span><span class="p">(</span><span class="n">_pair</span><span class="p">),</span><span class="w"> </span><span class="n">ptr</span><span class="p">{</span><span class="n">_Parent</span><span class="p">,</span><span class="w"> </span><span class="n">_LChild</span><span class="p">,</span><span class="w"> </span><span class="n">_RChild</span><span class="p">}</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">};</span>
+</code></pre></div>
+<hr />
+<h2 id="bst-class-initialization">BST Class &amp; Initialization</h2>
+<p>The BST class manages the root node and the size of the tree:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// BST class definition</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">BSTree</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">m_Root</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_Size</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">BSTree</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_Root</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span><span class="w"> </span><span class="n">m_Size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">};</span>
+</code></pre></div>
+<blockquote>
+<p><code>m_Root</code> must be declared inside the BST class to track the tree's entry point.</p>
+</blockquote>
+<p>In contrast, the Node structure includes:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">tBSTNode</span><span class="o">*</span><span class="w"> </span><span class="n">pParent</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">tBSTNode</span><span class="o">*</span><span class="w"> </span><span class="n">pLeftChild</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">tBSTNode</span><span class="o">*</span><span class="w"> </span><span class="n">pRightChild</span><span class="p">;</span>
+</code></pre></div>
+These pointers are naturally interpreted in context and ensure internal link integrity.</p>
+<hr />
+<h2 id="insertion-operation">Insertion Operation</h2>
+<p>The insert function ensures:
+- The first inserted node becomes the root.
+- Subsequent nodes are sorted left (smaller) or right (larger).
+- Duplicate keys are explicitly rejected via <code>assert(false)</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Inserting into BST</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">BSTree</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;::</span><span class="n">insert</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">_pair</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_pair</span><span class="p">);</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_Root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="n">m_Root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="o">++</span><span class="n">m_Size</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">itrNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_Root</span><span class="p">;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">pair</span><span class="p">.</span><span class="n">key</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">pair</span><span class="p">.</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">                </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">                </span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itrNode</span><span class="p">;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">                </span><span class="o">++</span><span class="n">m_Size</span><span class="p">;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">                </span><span class="n">itrNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">];</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">pair</span><span class="p">.</span><span class="n">key</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">pair</span><span class="p">.</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">                </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">                </span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itrNode</span><span class="p">;</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">                </span><span class="o">++</span><span class="n">m_Size</span><span class="p">;</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">                </span><span class="n">itrNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">];</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">            </span><span class="c1">// Duplicate key detected</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">            </span><span class="n">assert</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="common-mistake">Common Mistake</h3>
+<p>In STL containers like <code>std::map</code>, inserting a key that already exists will simply ignore the new value. This leads to:
+- Untracked memory (if dynamic memory was used)
+- Potential memory leaks</p>
+<p>Always ensure duplicates are prevented, asserted, or handled using a container like <code>std::multimap</code>, which stores same-key elements in a linked fashion.</p>
+<hr />
+<h2 id="clearing-the-bst">Clearing the BST</h2>
+<p>To delete all nodes:
+- Perform <strong>level-order traversal</strong> using a <strong>queue</strong> (FIFO) structure.
+- This is known as <strong>Breadth-First Search (BFS)</strong> and guarantees all nodes are deleted without breaking pointer chains.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Clearing all nodes using BFS</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">BSTree</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;::</span><span class="n">clear</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">m_Root</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">queue</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*&gt;</span><span class="w"> </span><span class="n">nodeQueue</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">m_Root</span><span class="p">);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">])</span><span class="w"> </span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">]);</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">])</span><span class="w"> </span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">]);</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="k">delete</span><span class="w"> </span><span class="n">current</span><span class="p">;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="n">m_Root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="n">m_Size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>BFS is generally safer for tree deletion. For DFS-based deletion, a stack (LIFO) should be used.</p>
+</blockquote>
+<hr />
+<h2 id="in-order-successor-predecessor">In-Order Successor &amp; Predecessor</h2>
+<p>In-order traversal visits nodes in key-sorted order.</p>
+<h3 id="successor">Successor:</h3>
 <ul>
-<li><a href="../codes/BST.h">BST.h</a></li>
+<li>If the node has a right child: return the <strong>leftmost node</strong> in the right subtree.</li>
+<li>If not: move up until you find a node that is a left child of its parent.</li>
 </ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// Find the in-order successor</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">BSTree</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;::</span><span class="n">getInOrderSuccessor</span><span class="p">(</span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">HasRChild</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">successor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">];</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">successor</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">])</span><span class="w"> </span><span class="n">successor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">successor</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">];</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">successor</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">];</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">];</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="predecessor">Predecessor:</h3>
+<ul>
+<li>If the node has a left child: return the <strong>rightmost node</strong> in the left subtree.</li>
+<li>Otherwise: move up to a parent node where the current node is in the right.</li>
+</ul>
+<hr />
+<h2 id="stl-vs-custom-bst">STL vs Custom BST</h2>
+<h3 id="stl-set-vs-map">STL <code>set</code> vs <code>map</code>:</h3>
+<ul>
+<li><strong><code>set&lt;T&gt;</code></strong>: Sorted by element value (used as key).</li>
+<li><strong><code>map&lt;K, V&gt;</code></strong>: Sorted by key only, value follows.</li>
+</ul>
+<h3 id="multimap">Multimap:</h3>
+<ul>
+<li>Allows duplicate keys.</li>
+<li>Internally maintains multiple values for the same key using a structure like a linked list at each node.</li>
+</ul>
+<h3 id="recommendation">Recommendation:</h3>
+<ul>
+<li>Avoid duplicate keys unless using <code>multimap</code>.</li>
+<li>For standard BSTs, explicitly prevent duplicates to avoid memory issues.</li>
+</ul>
+<hr />
+<h2 id="custom-utility-templates">Custom Utility Templates</h2>
+<p>Helpful for wrapping key-value pairs in custom implementations:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// Pair creation helper</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">tPair</span><span class="w"> </span><span class="n">MakePair</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T1</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_First</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Second</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">tPair</span><span class="w"> </span><span class="n">pair</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">pair</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_First</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="n">pair</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_Second</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pair</span><span class="p">;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="interview-questions-and-answers">Interview Questions and Answers</h2>
+<h3 id="q1-what-is-the-time-complexity-of-insertion-in-a-bst">Q1: What is the time complexity of insertion in a BST?</h3>
+<p><strong>A:</strong> Average case is O(log n), but worst-case (unbalanced tree) is O(n).</p>
+<h3 id="q2-how-does-a-bst-handle-duplicate-keys">Q2: How does a BST handle duplicate keys?</h3>
+<p><strong>A:</strong> Standard BST (like <code>std::set</code>, <code>std::map</code>) <strong>does not allow duplicates</strong>. You must handle this explicitly or use <code>std::multimap</code>.</p>
+<h3 id="q3-describe-how-in-order-traversal-works-in-bst">Q3: Describe how in-order traversal works in BST.</h3>
+<p><strong>A:</strong> It recursively visits left child, current node, and right child. This results in ascending order of keys.</p>
+<h3 id="q4-how-do-you-find-the-in-order-successor-of-a-node">Q4: How do you find the in-order successor of a node?</h3>
+<p><strong>A:</strong> If right child exists, go to the leftmost node of the right subtree. Else, move up to the first ancestor where the node is in the left subtree.</p>
+<h3 id="q5-why-use-bfs-for-deletion-in-a-destructor">Q5: Why use BFS for deletion in a destructor?</h3>
+<p><strong>A:</strong> It ensures each node is visited once and avoids deleting children of already deleted nodes.</p>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<p>This study covers the foundational structure and behaviors of BSTs with emphasis on implementation challenges and common interview traps. Mastery of BST fundamentals, including memory safety and proper traversal strategies, sets the groundwork for working with balanced trees like AVL or Red-Black trees.</p>
 
 
 
