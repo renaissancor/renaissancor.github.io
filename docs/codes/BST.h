@@ -27,10 +27,11 @@ struct tBSTNode
 
 public:
 	bool HasLChild() { return nullptr != arrPtr[LCHILD]; }
-	bool HasRChild() { return nullptr != arrPtr[RCHILD]; }
+	bool HasRChild() { return nullptr != arrPtr[RCHILD]; }	
 
 	bool IsRoot() { return arrPtr[PARENT] == nullptr; }
 	bool IsLeaf() { return (arrPtr[LCHILD] == nullptr) && (arrPtr[RCHILD] == nullptr); }
+	bool IsFull() { return (arrPtr[LCHILD] != nullptr) && (arrPtr[RCHILD] != nullptr); }
 
 	bool IsLChild() { return arrPtr[PARENT]->arrPtr[LCHILD] == this; }
 	bool IsRchild() { return arrPtr[PARENT]->arrPtr[RCHILD] == this; }
@@ -96,7 +97,7 @@ public:
 	iterator end() { return iterator(this, nullptr); }
 
 	iterator find(const T1& _Key);
-
+	iterator erase(iterator& _iter);
 
 public:
 	BST()
@@ -110,6 +111,7 @@ public:
 
 	class iterator
 	{
+		friend class BST;
 	private:
 		BST<T1, T2>*		m_Owner;
 		tBSTNode<T1, T2>*	m_Target; // EndIterator : nullptr == m_Target && m_Owner != nullptr
@@ -324,4 +326,108 @@ typename BST<T1, T2>::iterator BST<T1, T2>::find(const T1& _Key)
 	}
 
 	return end();
+}
+
+template<typename T1, typename T2>
+typename BST<T1, T2>::iterator BST<T1, T2>::erase(iterator& _iter)
+{
+	// 예외조건
+	assert(_iter.m_Owner == this && _iter.m_Target != nullptr);
+
+	tBSTNode<T1, T2>* pSuccessor = nullptr;
+
+	// 입력으로 들어온 iterator 가 가리키는 대상을 삭제한다.
+	// 1. 삭제할 노드가 리프(단말)노드인 경우
+	if (_iter.m_Target->IsLeaf())
+	{
+		// 삭제할 노드의 중위후속자 노드를 찾아둔다.
+		pSuccessor = GetInorderSuccessor(_iter.m_Target);
+
+		// 노드를 삭제한다.		
+		// 1. 삭제할 노드가 루트다.
+		if (_iter.m_Target == m_Root)
+		{
+			m_Root = nullptr;
+		}
+		// 2. 삭제할 노드가 루트가 아니다.
+		else
+		{
+			// 부모노드가 삭제할 노드를 가리키기 않게 한다.
+			if (_iter.m_Target->IsLChild())
+				_iter.m_Target->GetNode(PARENT)->arrPtr[LCHILD] = nullptr;
+			else
+				_iter.m_Target->GetNode(PARENT)->arrPtr[RCHILD] = nullptr;			
+		}		
+
+		delete _iter.m_Target;
+		--m_Size;	
+	}
+
+	// 2. 자식이 1개인 경우
+	else if (!_iter.m_Target->IsFull())
+	{
+		// 삭제할 노드의 중위후속자 노드를 찾아둔다.
+		pSuccessor = GetInorderSuccessor(_iter.m_Target);
+
+		// 노드를 삭제하고, 하나뿐인 자식을 삭제된 자리로 옮긴다.
+		// 1. 삭제할 노드가 루트다.
+		if (_iter.m_Target == m_Root)
+		{
+			if (_iter.m_Target->HasLChild())
+				m_Root = _iter.m_Target->GetNode(LCHILD);				
+			else
+				m_Root = _iter.m_Target->GetNode(RCHILD);
+
+			m_Root->arrPtr[PARENT] = nullptr;
+		}
+
+		// 2. 삭제할 노드가 루트가 아니라면
+		else
+		{
+			NODE_TYPE ChildType = NODE_TYPE::NONE;
+			NODE_TYPE TargetType = NODE_TYPE::NONE;
+
+			if (_iter.m_Target->HasLChild())
+				ChildType = LCHILD;
+			else
+				ChildType = RCHILD;
+
+			if (_iter.m_Target->IsLChild())
+				TargetType = LCHILD;
+			else
+				TargetType = RCHILD;
+
+			// 삭제할 노드의 자식 노드와, 삭제할 노드의 부모노드를 연결해준다
+			_iter.m_Target->GetNode(PARENT)->arrPtr[TargetType] = _iter.m_Target->GetNode(ChildType);
+			_iter.m_Target->GetNode(ChildType)->arrPtr[PARENT] = _iter.m_Target->GetNode(PARENT);
+		}
+
+		delete _iter.m_Target;
+		--m_Size;
+	}
+
+	// 3. 자식이 2개
+	else
+	{
+		// 삭제될 노드의 중위 후속자를 찾아서 그 자리를 대체시킨다.
+		// 1. 삭제할 노드의 중위후속자 노드를 찾아둔다.
+		pSuccessor = GetInorderSuccessor(_iter.m_Target);
+
+		// 2. 후속자 노드의 데이터를 삭제하려고 했던 노드로 옮긴다.
+		_iter.m_Target->pair = pSuccessor->pair;
+
+		// 3. 실제 삭제는 후속자 노드를 삭제한다.
+		iterator pNextIter(this, pSuccessor);
+		erase(pNextIter);
+
+		// 4. 원래 삭제하려고 했던 노드가, 다음 데이터를 가지게 되었으므로, 다음 노드가 된다.
+		pSuccessor = _iter.m_Target;
+	}
+		
+	// 입력으로 들어온 iterator 를 사용할 수 없는 상태로 만든다.
+	_iter.m_Owner = nullptr;
+	_iter.m_Target = nullptr;
+
+	// 삭제한 다음 노드를 가리키는 iterator 를 만들어서 반환한다.
+	return iterator(this, pSuccessor);
 }

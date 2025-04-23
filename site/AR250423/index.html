@@ -12,13 +12,13 @@
         <meta name="author" content="Renaissancor">
       
       
-        <link rel="canonical" href="https://renaissancor.github.io/AR250407/">
+        <link rel="canonical" href="https://renaissancor.github.io/AR250423/">
       
       
-        <link rel="prev" href="../AR250403/">
+        <link rel="prev" href="../AR250422/">
       
       
-        <link rel="next" href="../AR250408/">
+        <link rel="next" href="../Study/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Dynamic Memory Management and Template Usage - Renaissancoriate</title>
+        <title>AR250423 - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynamic-memory-management-and-template-usage" class="md-skip">
+        <a href="#operator-overwriting-vs-operator-overloading" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dynamic Memory Management and Template Usage
+              AR250423
             
           </span>
         </div>
@@ -364,32 +364,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Dynamic Memory Management and Template Usage
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../AR250407/" class="md-nav__link">
         
   
   
@@ -400,215 +378,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#date-2025-04-07" class="md-nav__link">
-    <span class="md-ellipsis">
-      Date: 2025-04-07
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Points
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#c-dynamic-memory-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      C++ Dynamic Memory Management
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="C++ Dynamic Memory Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-dynamic-allocation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Dynamic Allocation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#templates-in-c-carray-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Templates in C++: CArray Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-mistakes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Mistakes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Mistakes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-mismatched-memory-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Mismatched Memory Management
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-template-function-duplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Template Function Duplication
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-use-of-assert" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Use of assert
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-containers-vector-vs-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Working with Containers: vector vs list
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Working with Containers: vector vs list">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      vector
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#list" class="md-nav__link">
-    <span class="md-ellipsis">
-      list
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-list-is-better-for-certain-use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why list is Better for Certain Use Cases
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tricky-case-using-template-with-custom-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tricky Case: Using template with Custom Containers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-demonstration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code Demonstration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visual-ownership-transfer-with-new-and-delete" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visual: Ownership Transfer with new and delete
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -859,10 +628,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../AR250423/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    AR250423
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -873,6 +662,60 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operator-overwriting-vs-operator-overloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operator overwriting VS Operator overloading
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-overloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Overloading
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polymorphism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polymorphism
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 가상함수 동작원리 설명
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2546,8 +2389,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2556,189 +2397,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#date-2025-04-07" class="md-nav__link">
+  <a href="#operator-overwriting-vs-operator-overloading" class="md-nav__link">
     <span class="md-ellipsis">
-      Date: 2025-04-07
+      Operator overwriting VS Operator overloading
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
+  <a href="#function-overloading" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Points
+      Function Overloading
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#polymorphism" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Polymorphism
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#c-dynamic-memory-management" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      C++ Dynamic Memory Management
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="C++ Dynamic Memory Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-dynamic-allocation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Dynamic Allocation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#templates-in-c-carray-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Templates in C++: CArray Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-mistakes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Mistakes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Mistakes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-mismatched-memory-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Mismatched Memory Management
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-template-function-duplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Template Function Duplication
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-use-of-assert" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Use of assert
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-containers-vector-vs-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Working with Containers: vector vs list
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Working with Containers: vector vs list">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      vector
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#list" class="md-nav__link">
-    <span class="md-ellipsis">
-      list
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-list-is-better-for-certain-use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why list is Better for Certain Use Cases
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tricky-case-using-template-with-custom-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tricky Case: Using template with Custom Containers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-demonstration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code Demonstration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visual-ownership-transfer-with-new-and-delete" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visual: Ownership Transfer with new and delete
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
+      2. 가상함수 동작원리 설명
     </span>
   </a>
   
@@ -2760,171 +2448,372 @@
 
 
 
-<h1 id="dynamic-memory-management-and-template-usage">Dynamic Memory Management and Template Usage</h1>
-<h3 id="date-2025-04-07">Date: 2025-04-07</h3>
-<hr />
-<h2 id="key-points">Key Points</h2>
-<ul>
-<li>The <code>new</code> operator is used for dynamic memory allocation in C++, replacing C's <code>malloc</code>.</li>
-<li><strong>Dynamic allocation</strong> using <code>new</code> calls constructors and <code>delete</code> calls destructors automatically.</li>
-<li>Templates enable type-safe dynamic memory management.</li>
-<li>The <strong>Rule of Three/Five</strong>: Define destructors, copy constructors, and assignment operators for resource management.</li>
-<li>Using <code>assert</code> in C++ helps verify conditions during debugging.</li>
-</ul>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>C++ offers powerful ways to manage dynamic memory using <code>new</code> and <code>delete</code> operators. These operators manage memory on the heap, which is essential for objects that need to persist beyond their scope or be shared between different parts of the program. Along with dynamic memory, C++ supports templates, which allow you to create generic classes and functions that work with any data type.</p>
-<p>Dynamic memory allocation and deallocation are central concepts in C++, and understanding these is crucial for managing resources efficiently. This section will also explore <strong>containers</strong> like <code>vector</code> and <code>list</code> for handling collections of data.</p>
-<hr />
-<h2 id="c-dynamic-memory-management">C++ Dynamic Memory Management</h2>
-<h3 id="basic-dynamic-allocation">Basic Dynamic Allocation</h3>
-<p>In C++, dynamic memory is allocated using the <code>new</code> keyword, which initializes objects and arrays on the heap. Unlike the <code>malloc</code> function in C, <code>new</code> calls constructors and handles memory initialization automatically.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Allocating a single object dynamically using new</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">MyClass</span><span class="o">*</span><span class="w"> </span><span class="n">pNewMy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyClass</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">// Deallocating memory using delete</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">delete</span><span class="w"> </span><span class="n">pNewMy</span><span class="p">;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">// Allocating an array dynamically</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">MyClass</span><span class="o">*</span><span class="w"> </span><span class="n">pMyArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyClass</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">// Deallocating an array using delete[]</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">pMyArr</span><span class="p">;</span>
+  <h1>AR250423</h1>
+
+<p>Random number generator 
+rand value call </p>
+<p>srand value call </p>
+<p>based on different number value page value changes 
+number srand 
+10 </p>
+<p>srand(time(nullptr)); // Time as Seed, Random Page Setup 
+completely random ? Mathematically more complicated but anyway quite unpredictable 
+day time second etc ... combined to make completely random number </p>
+<p>irandom[i] = rand(); 
+If random number is setup between 1 and 100 then 
+divide by 100 and do modular calculation 
+(rand() % 100 + 1) &gt;&gt; returns 1 ~ 100 random numbers 
+64 72 34 ... etc ... 
+Since std::map ignore same number input it would automatically overlapping number </p>
+<p>Binary Search Tree Data Removal </p>
+<p>Child object </p>
+<p>virtualization 
+parent class should not call object </p>
+<p>Polymorphism </p>
+<p>Child class generated 
+then its parent class default generator is called together  </p>
+<p>protected only allow access to children and itself </p>
+<p>Inheritance, from parent to child reset order 
+compiler order 
+Generator initializer only its member </p>
+<p>In a reverse direction reset from parent to children 
+however in the terminator it is order from children to parents </p>
+<p>~CChild{
+    if (nullptr !- data)
+        delete [] data </p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>// Here unshown parent terminator is called
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>Default compiler made generator is copy generator. It is automatically generated 
+Copy and pasdte data one by one 
+Copy generator and inheritance </p>
+<p>Class class2(class1) // same as Class class2 = class1 // Default generator by copy </p>
+<p>Child (const Child&amp; _Other)
+:  // Parent(), // In default 
+    m_Child(_Other.m_Child)
+{</p>
+<p>}</p>
+<p>Parent default generator is called in this scenario 
+Copy generator </p>
+<p>so it should be </p>
+<p>Child (const Child&amp; _Other)
+:  Parent(_Other), // Should be this 
+    m_Child(_Other.m_Child)
+{</p>
+<p>}</p>
+<p>Constructor </p>
+<p>Class CParent 
+class CChild </p>
+<p>CChild:CChild()
+: CParent(), 
+idx(_idx)</p>
+<p>Destructor </p>
+<p>CChild:~CChild()
+{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>// 
+~CParent()
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>So during the default copy iterator if parent and children data coexist 
+chilld class copy generator works 
+parent class copy generator but this one might be setup as default generator instead of copy generator 
+Thus when explicit copy generator is implemented 
+call the parent copy generator intentionally, since default one might breakt it </p>
+<h2 id="operator-overwriting-vs-operator-overloading">Operator overwriting VS Operator overloading</h2>
+<p>Must clearly explain what overwriting and overloading is </p>
+<p>We are currently studying inheritance </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span>\
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_Base</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">public</span><span class="o">:</span><span class="w"> </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Output</span><span class="p">()</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; Parent Class &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">public</span><span class="o">:</span><span class="w"> </span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">Base</span><span class="p">(){</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="o">~</span><span class="n">Base</span><span class="p">(){}</span><span class="w"> </span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span><span class="n">l</span><span class="w"> </span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="p">()</span><span class="w"> </span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">{</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_Base</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="n">Output</span><span class="p">()</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Child Class &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">};</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="p">{</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="n">Base</span><span class="w"> </span><span class="n">base</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="n">base</span><span class="p">.</span><span class="n">Base</span><span class="o">::</span><span class="n">Output</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="n">Child</span><span class="w"> </span><span class="n">child</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="n">child</span><span class="p">.</span><span class="n">Child</span><span class="o">::</span><span class="n">Output</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;;</span><span class="w"> </span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">}</span>
 </code></pre></div>
-<p><strong>Important note:</strong> When you use <code>delete[]</code>, make sure to use the <code>[]</code> as this ensures the array destructor is called properly.</p>
-<hr />
-<h2 id="templates-in-c-carray-example">Templates in C++: <code>CArray</code> Example</h2>
-<p>Templates in C++ allow you to define classes and functions that can operate on any data type. For instance, <code>CArray</code> is a custom container that mimics the behavior of a vector:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">CArray</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="c1">// Adds an element to the array (implementation not shown here)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
-</code></pre></div>
-<p><strong>Template Constructors:</strong></p>
-<p>The constructor for a template class (e.g., <code>CArray&lt;t&gt;::CArray()</code>) initializes the object. This is useful for creating data structures that can handle any type of data.</p>
-<hr />
-<h2 id="common-mistakes">Common Mistakes</h2>
-<h3 id="1-mismatched-memory-management">1. Mismatched Memory Management</h3>
-<p>When working with dynamic memory allocation, <strong>matching <code>new</code> with <code>delete</code></strong> is essential. Failing to do so can lead to memory leaks or undefined behavior.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Correct way to allocate and deallocate dynamically</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">MyClass</span><span class="o">*</span><span class="w"> </span><span class="n">pMy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyClass</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">delete</span><span class="w"> </span><span class="n">pMy</span><span class="p">;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// Incorrect: Forgetting delete[] for arrays</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">MyClass</span><span class="o">*</span><span class="w"> </span><span class="n">pArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyClass</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">delete</span><span class="w"> </span><span class="n">pArr</span><span class="p">;</span><span class="w">  </span><span class="c1">// Error: should be delete[] for arrays</span>
-</code></pre></div>
-<h3 id="2-template-function-duplication">2. Template Function Duplication</h3>
-<p>Ensure that template functions are correctly specialized or instantiated. Duplicate definitions across files can cause <strong>link errors</strong>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Duplicate definition of a template function</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// Declaration</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// This should cause a link error if defined twice</span>
-</code></pre></div>
-<h3 id="3-use-of-assert">3. Use of <code>assert</code></h3>
-<p>The <code>assert</code> macro is used for debugging purposes, ensuring conditions hold true during runtime.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">assert</span><span class="p">(</span><span class="n">m_CurSize</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">_idx</span><span class="p">);</span><span class="w">  </span><span class="c1">// Check that the index is valid</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">// Example of assert behavior</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">assert</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span><span class="w">  </span><span class="c1">// This will prompt a failure during debugging</span>
-</code></pre></div>
-<hr />
-<h2 id="working-with-containers-vector-vs-list">Working with Containers: <code>vector</code> vs <code>list</code></h2>
-<h3 id="vector"><code>vector</code></h3>
-<p>A <strong>vector</strong> is a dynamic array that allows <strong>fast indexing</strong> but slower insertions/deletions in the middle of the collection. Its size can be dynamically adjusted, and elements can be accessed quickly.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vecInt</span><span class="p">;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">vecInt</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">vecInt</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">vecInt</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1">// Accessing elements</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="kt">int</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vecInt</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w">  </span><span class="c1">// O(1) access time</span>
-</code></pre></div>
-<p><strong>Capacity and Resizing:</strong></p>
-<ul>
-<li><strong><code>reserve()</code></strong>: Pre-allocates memory to avoid frequent reallocation.</li>
-<li><strong><code>resize()</code></strong>: Adjusts the current size and fills with default values.</li>
-</ul>
-<h3 id="list"><code>list</code></h3>
-<p>A <strong>list</strong> is a doubly-linked list, which excels at insertion and deletion operations but suffers from slower access times compared to <code>vector</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="p">;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">intList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">intList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1">// Iterating through a list using an iterator</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">iter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="c1">// Do something with *iter</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="why-list-is-better-for-certain-use-cases">Why <code>list</code> is Better for Certain Use Cases</h3>
-<ul>
-<li><strong>Insertion and Deletion:</strong> <code>list</code> is better when you frequently insert or remove elements in the middle.</li>
-<li><strong>Accessing by Index:</strong> For indexed access, <code>vector</code> is more efficient.</li>
-</ul>
-<hr />
-<h2 id="interview-questions">Interview Questions</h2>
-<p><strong>Q: What is the difference between <code>new</code> and <code>malloc</code>?</strong><br />
-A: <code>new</code> in C++ calls the constructor of the object being allocated, while <code>malloc</code> simply allocates memory without initializing it. <code>new</code> also throws exceptions in case of failure, while <code>malloc</code> returns <code>nullptr</code>.</p>
-<p><strong>Q: Why use <code>delete[]</code> instead of <code>delete</code> when deallocating arrays?</strong><br />
-A: <code>delete[]</code> ensures that the destructors for each element of the array are called properly, while <code>delete</code> only calls the destructor for the first element.</p>
-<hr />
-<h2 id="tricky-case-using-template-with-custom-containers">Tricky Case: Using <code>template</code> with Custom Containers</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// Template container example (simplified)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">CArray</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">T</span><span class="o">*</span><span class="w"> </span><span class="n">m_data</span><span class="p">;</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">m_Capacity</span><span class="p">;</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="n">CArray</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">capacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_Capacity</span><span class="p">(</span><span class="n">capacity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="n">m_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">T</span><span class="p">[</span><span class="n">m_Capacity</span><span class="p">];</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="o">~</span><span class="n">CArray</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_data</span><span class="p">;</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Data</span><span class="p">);</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="p">};</span>
-</code></pre></div>
-<p><strong>Note:</strong> When using templates, ensure that memory management is done properly, especially when handling raw pointers and dynamic arrays inside a template class.</p>
-<hr />
-<h2 id="code-demonstration">Code Demonstration</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span><span class="w">  </span><span class="c1">// Dynamically allocate an array</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">// Fill the array</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">pArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1">// Output array</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1">// Deallocate memory</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">pArr</span><span class="p">;</span>
-</code></pre></div>
-<hr />
-<h2 id="visual-ownership-transfer-with-new-and-delete">Visual: Ownership Transfer with <code>new</code> and <code>delete</code></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Before Deletion             After Deletion
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>------------                -------------
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Object A                    Object A
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>[data -&gt; 0x1234]            [data -&gt; nullptr]
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Object B                    Object B
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>[data -&gt; nullptr]           [data -&gt; 0x1234]
-</code></pre></div>
-<hr />
-<h2 id="references">References</h2>
-<ul>
-<li><a href="../codes/CArray.h">CArray.h</a></li>
-<li><a href="../codes/new_delete.cpp">new_delete.cpp</a></li>
-<li><a href="../codes/vector_usage.cpp">vector_usage.cpp</a></li>
-<li><a href="../codes/class_template.cpp">class_template.cpp</a></li>
-</ul>
+<p>So function overwriting is 
+in the child class, make exactly same function existing in parent class 
+So, EXACTLY SAME function NAME and function call parameters 
+So it is overwriting </p>
+<p>like 
+void Test(){</p>
+<p>}</p>
+<p>void test(){</p>
+<p>}</p>
+<p>this one is wrong in the file scope. </p>
+<p>However, for inherited function, this is allowed. 
+Same function name with same parameter result in different function structure </p>
+<p>Function overwriting 
+parent class pre defiuned function 
+inherited child class redefined 
+Overwriting 
+Parent::Func(int input)
+CChild::Func(int input)</p>
+<p>Overloading is 
+Func() 
+Func(int input)
+Func(int input1, int input2)</p>
+<p>For isntance, animal class 
+move function will be different 
+same function same no parmaeter 
+Snake::Move()
+Tiger::Move() 
+This is function overwrititg 
+Function can be declared for the parent class but 
+it can be overwritten inside this complicated class 
+especially when class is big
+Animal::Move() // Just moving<br />
+Bird::Move()  // Overwiting move to some kind of fly whatever. </p>
+<p>Despite of function overwriting parent function might also be required </p>
+<p>Base base; 
+base.Base::Output()l; </p>
+<p>Child child; 
+child.Child.Output(); // This is what works for child.output() in default 
+However, when child want to use parent function it is also possible 
+child.Base.Output(); // This is also possiblee ! So function overwriting in cpp still keeps its parent function usage 
+During inheritance function is not completely overwritten removing original function for child class. 
+so Parent::Function_Overwritten() can be used. </p>
+<p>Function overwriting 
+in inheritance parent class defined function redefined inside the inherited child class </p>
+<h2 id="function-overloading">Function Overloading</h2>
+<p>Class::Func(); 
+class:;Func(int a); </p>
+<h2 id="polymorphism">Polymorphism</h2>
+<p>pointer ? Function design ? Very inmprtant<br />
+int main()
+{
+    Parent P; 
+    Child S; 
+    Parent <em>pParent = &P; // 4 Byte No problem 
+    Child </em>pChild = &C; // 4 Byte No problem ?  </p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>However when 
+pParent = &amp; C; // space 4Byte, should save 8Byte data size. Too big. Parent might be copied to follow Child? 
+pChild = &amp;P;   // space 8Byte, should save 4Byte data size. Child scope became null ?
+
+= operator is copy operator. pParent = pChild::Parent this might work, but basic copy function is not likeyl
+
+Parent Pointer access to child pointer location. Inside pointer location it is 8 byte with 4 byte in front as parent and 4 byte in back. 
+Thus, parent assigned value pointer pointing child pointer can ignore back child part and just copy the parent part of child
+
+However, child point er will access to the parent, and WILL read the back part of the parent pointer, where originally child data should be included. 
+Thus, unassigned null ? Trash ? value will be read.
+
+sizeof(P); // 4 
+sizeof(S); // 4 + 2 -&gt; 6 -&gt; 8 
+return 0;
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>It is based on inheritance pointer </p>
+<p>class Parent 
+{
+private: 
+    float m_P; 
+}; </p>
+<p>class Child : public Parent 
+{
+private: 
+    short m_S; // 2 Byte, but since it is 2^n structure it should be 8 byte in total adjusting to parent float 4 byte, so 8 byte data type 
+}; </p>
+<p>So theoretically since the root parent pointer of really complicated inheritance structure, you can still access by the parent pointer </p>
+<p>Inheritance architecture when you have access to the parent pointer it is possible to access them 
+Parent Class pointer type variable is originated from the parent class all inspired class object address is possible to save 
+pointing area, should be the most front part of tha t object ()parent area) pointed </p>
+<p>Pointer declaration will 
+Thus parent pointer can be used to access any children pointer </p>
+<p>class Player public  Actor </p>
+<p>class Actor </p>
+<p>Game Space includes vector <Actor*> 
+Level stage inside actor pointer 
+actor pointer </p>
+<p>Tick 
+actor Tick function call </p>
+<p>Player monster missile all child classes have their own version of tick function 
+Parent class actor tick also exist, and function is overwritten for each </p>
+<p>vector Actor tick player tick called </p>
+<p>If polymorphism is not used level structure will be very complicated 
+parent pointer can point out children pointer so 
+Parent pointer can point out child pointer 
+so save vector of parent class pointer value </p>
+<p>If polymorphism was not available then 
+each container for each different class must be existing </p>
+<p>instead of vector <Actor*> m_Actor[]
+vector <Player*>
+vector <Monster*>
+etc ... 
+must be required. </p>
+<p>Thus instead of actor, actor pointer is saved, only 4 bytes address value of the parent class 
+Access to the player or whatever child class 
+Actor driven some child classs might exist, so when access it is easier to code 
+Since it is saved as vector pointer, function can be performed </p>
+<p>Parent class pointer CAN point out child class pointer 
+this is polymorphism 
+parent class pointer vaarialbe, all class object address driven from parent class can be saved 
+one type, generated and willl be generated all classs type objects are managable </p>
+<p>In other words one type but pointing classes can be anything inherited from the root parent class type </p>
+<p>virtual function 
+polymorphism and virutal function 
+several problems driven from the inheritance </p>
+<p>Virtualization </p>
+<p>If just function is declared on the parent node P::Parent.Move() then parent move function is called 
+but if child class move is called then function is overwritten </p>
+<p>Howver, if parent address is called by pointer pPointer = &P; 
+pParent-&gt;Move(); // Parent side move will be called. same as P.Move(); </p>
+<p>pParent = &C; </p>
+<p>Parent class output function for instance, class Animal function Movie is declared. </p>
+<p>Make Sound </p>
+<p>virutla lfunction </p>
+<p>parent pointer parent object point and move call 
+parment move is called </p>
+<p>if parent pointer points child object and call move 
+child::move should be called but problem is parent::move is called, Since pointing ptr is Parent &amp; inside the game engine scope 
+So, since pParent pointed child class function run will call Parent::Move() instead of Child::Move() 
+It is not intended consequence, since function overwritting of all child classes became meaningless 
+This is problem of polymorphism, when basic parent class function that should be overwritten in child classes will get. 
+Statis binding to the parent funciton during compile time since compiler recognize call pointer as parent pointer, so call parent function 
+instead of child function that is overwritten in parent function </p>
+<p>virtulal fuinction </p>
+<p>during runtime, according to the real object class overwritten function can be automatically distinguished and called. </p>
+<p>Parent pointer receives parent pointer </p>
+<p>Child class address to parent poineter 
+if not virtual function automatically call parent function 
+however, if it is virtual function declared in parent scope and writtein in child class, then the compiler will automatically call the child function, 
+since the parent function is declared as virtual </p>
+<p>virtual void Parent::Move(); &gt; void child::move() , and when access by parent pointer Parent &amp;target = arr[idx] 
+and call function child.Move() then it will automacilally Child::Move that is not virtual, since it is declared as virtual in parent scope. 
+Then inheritance map polymorphism access by parent class pointer this will be really useful fully using the advantage of the polymorphism and function overwriting per inheritance  </p>
+<p>Problem solving 
+function overwriting virtual function this  </p>
+<p>How does virtual function work ? Interview question MUST </p>
+<p>how does this static binding problem solved inside the virtual function 
+If virtual function operating principles is based on 
+parent class inherited any value 
+parent pointer parent class inherited then parent inherited child another child child child another child whatever ... 
+Whatever class inherited a lot of times still accessible by parent pointer 
+Move function parent inheritencne </p>
+<p>Parent inherited child compiler will still suppose that parent move but virtual make it work WHY? 
+compiler will take a look what move function is Move() is virtual function! then compiler will generate 
+typeinfo. each data structure has type info now parent and derived child classes all of them should generate type info 
+type info contains parent data structure when it is inherited child class info also generated 
+what parent typeinfo is, what child typeinfo is 
+without virtual info, parent class size will be 4, 
+but if virtual function exists then type info is also generated. In sammple code from 4 to 16 bytes </p>
+<p>IT represents some invisible member variable is added 
+without virtual function, parent memory value is float m_p only </p>
+<p>if virtual function is generated then the new member that I did not generate comes. 
+member name __vfptr this value is generated. This is pointer value, so 8 bytes. 
+Even though float is 4, __vfptr is 8 byre so total class size became 12 &gt; 16 byres </p>
+<p>virtual function  parent class but also its inherited child classes all generate typeinfo 
+virtual function owning parent class has invisible pointer variable named __vfptr 
+inheritance, but no function variable. 
+If there is NO virtual function, just function, then it is 4 byte 
+so void Move() this one in parent still size is 4 bye but 
+virtual void Move() this one is 16 bytes be careful </p>
+<p>when parent class contains at least one virtual function then 
+typeinfo will be generated and __vfpter(virtual function table) pointer value is also included 
+parent class type info __vfptr points parent class typeinfo 
+child class typeinfo points parent class typeinfo 
+If another child class is generated then it will point child too 
+__vfptr points parent or child </p>
+<p>parent pointer points parent object 
+parent pointer move into table pointer </p>
+<p>parent pointer points child object parent part. If move is virtual function in parent scope 
+then visit child table and call function there. </p>
+<p>virtual function will visit __vfptr and since object will be generated with pointing its own function 
+so if function is virtually declared in parent, then it will go to the function of that class 
+parent child child </p>
+<p>pointer class child child 
+object typeinfo pointing 
+parent move function call will visit the table of that child class pointer and go to child class and 
+get function address of that child table and execute that function. </p>
+<p>Move to pointer, go to table and call function there . When function is virtual in class. </p>
+<p>Based on what object this parent class is. 
+Even only parent is known, since it is at front, it access table </p>
+<p>Parent class<br />
+Child class </p>
+<p>if some function is NOT overriding by child but just bring same function of its parent 
+then on child table register the parent's function address   </p>
+<p>If child is called ... </p>
+<p>For each virtual function they have index inside table </p>
+<p>Detail </p>
+<p>class Parent 
+virtual void Move (){}
+virtual void Test (){}</p>
+<p>class Child 
+virtual void Move (){}
+virtual void Test (){}</p>
+<p>Pointer contains virtual function talble call index 0 function 
+Access to table 1 and child test or parent test </p>
+<p>virtual function index 0 Move 
+virtual function index 1 Test </p>
+<p>Compiler will call function Move as idx 0 and Test idx 1 
+This one effects like it distinguishes function </p>
+<p>compiler virtual function call 
+table Test index 1 call function 1 </p>
+<p>Polymorphism problem 
+by virtual function </p>
+<p>r59 | AR56 | 2025-04-23 13:54:15 +0900 (수, 23 4 2025) | 5 lines
+Changed paths:
+   M /C++/C++_56/다형성.cpp</p>
+<ol>
+<li>다형성 문제점</li>
+<li>부모포인터로 자식객체를 가리킬 경우, 오버라이딩한 함수갖 정상적으로 호출되지 않는 문제</li>
+<li>가상함수로 해결</li>
+</ol>
+<h2 id="2">2. 가상함수 동작원리 설명</h2>
+<p>r58 | AR56 | 2025-04-23 12:57:12 +0900 (수, 23 4 2025) | 3 lines
+Changed paths:
+   M /C++/C++_56/C++_56.vcxproj
+   M /C++/C++_56/C++_56.vcxproj.filters
+   A /C++/C++_56/다형성.cpp
+   M /C++/C++_56/복사생성자＿상속.cpp
+   A /C++/C++_56/오버라이딩.cpp
+   M /C++/C++_56/클래스 상속.cpp</p>
+<ol>
+<li>부모포인터로 자식클래스 객체를 가리킬 수 있다.</li>
+<li>다형성, 하나의 타입으로 파생되는 모든 클래스들을 관리 가능</li>
+</ol>
 
 
 
