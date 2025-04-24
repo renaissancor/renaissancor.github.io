@@ -394,7 +394,7 @@
   
   
   <span class="md-ellipsis">
-    AR250414
+    Linked List: Reverse Function &amp; Notes Summary
     
   </span>
   
@@ -718,12 +718,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Study/" class="md-nav__link">
+      <a href="../AR250424/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Study
+    AR250424
     
   </span>
   
@@ -2732,7 +2732,62 @@ divide by 100 and do modular calculation
 (rand() % 100 + 1) &gt;&gt; returns 1 ~ 100 random numbers 
 64 72 34 ... etc ... 
 Since std::map ignore same number input it would automatically overlapping number </p>
-<p>Binary Search Tree Data Removal </p>
+<p>Child object </p>
+<p>virtualization 
+parent class should not call object </p>
+<p>Polymorphism </p>
+<p>Child class generated 
+then its parent class default generator is called together  </p>
+<p>protected only allow access to children and itself </p>
+<p>Inheritance, from parent to child reset order 
+compiler order 
+Generator initializer only its member </p>
+<p>In a reverse direction reset from parent to children 
+however in the terminator it is order from children to parents </p>
+<p>~CChild{
+    if (nullptr !- data)
+        delete [] data </p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>// Here unshown parent terminator is called
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>Default compiler made generator is copy generator. It is automatically generated 
+Copy and pasdte data one by one 
+Copy generator and inheritance </p>
+<p>Class class2(class1) // same as Class class2 = class1 // Default generator by copy </p>
+<p>Child (const Child&amp; _Other)
+:  // Parent(), // In default 
+    m_Child(_Other.m_Child)
+{</p>
+<p>}</p>
+<p>Parent default generator is called in this scenario 
+Copy generator </p>
+<p>so it should be </p>
+<p>Child (const Child&amp; _Other)
+:  Parent(_Other), // Should be this 
+    m_Child(_Other.m_Child)
+{</p>
+<p>}</p>
+<p>Constructor </p>
+<p>Class CParent 
+class CChild </p>
+<p>CChild:CChild()
+: CParent(), 
+idx(_idx)</p>
+<p>Destructor </p>
+<p>CChild:~CChild()
+{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>// 
+~CParent()
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>So during the default copy iterator if parent and children data coexist 
+chilld class copy generator works 
+parent class copy generator but this one might be setup as default generator instead of copy generator 
+Thus when explicit copy generator is implemented 
+call the parent copy generator intentionally, since default one might breakt it </p>
 <p>r57 | AR56 | 2025-04-22 13:45:47 +0900 (화, 22 4 2025) | 3 lines
 Changed paths:
    M /C++/C++_56/C++_56.vcxproj
