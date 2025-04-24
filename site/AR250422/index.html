@@ -26,7 +26,7 @@
     
     
       
-        <title>C++ Inheritance and Object Lifecycle - Renaissancoriate</title>
+        <title>C++ Inheritance and Object Lifecycle: A Complete Guide for Game Programmers - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#c-inheritance-and-object-lifecycle" class="md-skip">
+        <a href="#c-inheritance-and-object-lifecycle-a-complete-guide-for-game-programmers" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              C++ Inheritance and Object Lifecycle
+              C++ Inheritance and Object Lifecycle: A Complete Guide for Game Programmers
             
           </span>
         </div>
@@ -394,7 +394,7 @@
   
   
   <span class="md-ellipsis">
-    AR250414
+    Linked List: Reverse Function &amp; Notes Summary
     
   </span>
   
@@ -535,7 +535,7 @@
   
   
   <span class="md-ellipsis">
-    C++ Inheritance and Object Lifecycle
+    C++ Inheritance and Object Lifecycle: A Complete Guide for Game Programmers
     
   </span>
   
@@ -548,7 +548,7 @@
   
   
   <span class="md-ellipsis">
-    C++ Inheritance and Object Lifecycle
+    C++ Inheritance and Object Lifecycle: A Complete Guide for Game Programmers
     
   </span>
   
@@ -571,46 +571,88 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#date-2025-04-22" class="md-nav__link">
+  <a href="#introduction-to-inheritance" class="md-nav__link">
     <span class="md-ellipsis">
-      Date: 2025-04-22
+      Introduction to Inheritance
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#visual-uml-diagram-of-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual: UML Diagram of Inheritance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-structure-and-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Structure and Access Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-lifecycle-in-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Lifecycle in Inheritance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Object Lifecycle in Inheritance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#construction-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construction Order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialization Lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destruction-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Destruction Order
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management-in-derived-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Management in Derived Classes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Management in Derived Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#key-points" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Points
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-parent-and-child-class-with-dynamic-memory" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Parent and Child Class with Dynamic Memory
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example: Parent and Child Class with Dynamic Memory">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Concepts:
+      Key Points:
     </span>
   </a>
   
@@ -622,28 +664,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-mistakes" class="md-nav__link">
+  <a href="#copy-construction-in-inheritance" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Mistakes
+      Copy Construction in Inheritance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copy Construction in Inheritance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-copy-constructor-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Copy Constructor Issue
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#constructordestructor-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      Constructor/Destructor Order
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Constructor/Destructor Order">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#code-demo" class="md-nav__link">
+  <a href="#correct-copy-constructor" class="md-nav__link">
     <span class="md-ellipsis">
-      Code Demo
+      Correct Copy Constructor
     </span>
   </a>
   
@@ -655,11 +697,68 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interview-questions" class="md-nav__link">
+  <a href="#polymorphism-and-virtual-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Interview Questions
+      Polymorphism and Virtual Functions
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Polymorphism and Virtual Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-destructors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Destructors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-number-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Number Generation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions-and-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions and Exercises
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-and-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes and Pitfalls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes and Pitfalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Exercises
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -673,9 +772,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#further-reading" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 복사생성자를 상속구조에서 직접 구현하는경우 주의점 설명
+      Further Reading
     </span>
   </a>
   
@@ -701,7 +800,7 @@
   
   
   <span class="md-ellipsis">
-    AR250423
+    Advanced C++ Inheritance: Polymorphism, Virtual Functions, and Function Overriding
     
   </span>
   
@@ -718,12 +817,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Study/" class="md-nav__link">
+      <a href="../AR250424/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Study
+    Advanced C++ Concepts for Game Programmers
     
   </span>
   
@@ -2482,46 +2581,88 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#date-2025-04-22" class="md-nav__link">
+  <a href="#introduction-to-inheritance" class="md-nav__link">
     <span class="md-ellipsis">
-      Date: 2025-04-22
+      Introduction to Inheritance
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#visual-uml-diagram-of-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual: UML Diagram of Inheritance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-structure-and-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Structure and Access Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-lifecycle-in-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Lifecycle in Inheritance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Object Lifecycle in Inheritance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#construction-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construction Order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialization Lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destruction-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Destruction Order
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management-in-derived-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Management in Derived Classes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Management in Derived Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#key-points" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Points
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-parent-and-child-class-with-dynamic-memory" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Parent and Child Class with Dynamic Memory
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example: Parent and Child Class with Dynamic Memory">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Concepts:
+      Key Points:
     </span>
   </a>
   
@@ -2533,28 +2674,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-mistakes" class="md-nav__link">
+  <a href="#copy-construction-in-inheritance" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Mistakes
+      Copy Construction in Inheritance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copy Construction in Inheritance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-copy-constructor-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Copy Constructor Issue
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#constructordestructor-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      Constructor/Destructor Order
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Constructor/Destructor Order">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#code-demo" class="md-nav__link">
+  <a href="#correct-copy-constructor" class="md-nav__link">
     <span class="md-ellipsis">
-      Code Demo
+      Correct Copy Constructor
     </span>
   </a>
   
@@ -2566,11 +2707,68 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interview-questions" class="md-nav__link">
+  <a href="#polymorphism-and-virtual-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Interview Questions
+      Polymorphism and Virtual Functions
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Polymorphism and Virtual Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-destructors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Destructors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-number-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Number Generation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions-and-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions and Exercises
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-and-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes and Pitfalls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes and Pitfalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Exercises
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2584,9 +2782,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#further-reading" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 복사생성자를 상속구조에서 직접 구현하는경우 주의점 설명
+      Further Reading
     </span>
   </a>
   
@@ -2608,149 +2806,284 @@
 
 
 
-<h1 id="c-inheritance-and-object-lifecycle">C++ Inheritance and Object Lifecycle</h1>
-<h3 id="date-2025-04-22">Date: 2025-04-22</h3>
-<hr />
-<h2 id="key-points">Key Points</h2>
+<h1 id="c-inheritance-and-object-lifecycle-a-complete-guide-for-game-programmers">C++ Inheritance and Object Lifecycle: A Complete Guide for Game Programmers</h1>
+<p><em>Last updated: April 22, 2025</em></p>
+<p>This article provides a thorough explanation of C++ inheritance mechanics, with special focus on the object lifecycle, memory management, and common pitfalls. It's designed as a study resource for game programming interviews where these concepts frequently appear.</p>
+<h2 id="introduction-to-inheritance">Introduction to Inheritance</h2>
+<p>Inheritance is a fundamental object-oriented programming concept that allows classes to derive properties and behaviors from other classes. In C++, it enables code reuse, extensibility, and the establishment of hierarchical relationships between classes.</p>
+<p>A derived class (or child class) inherits accessible members from a base class (or parent class), extending its functionality while maintaining the core characteristics of the parent.</p>
+<h2 id="visual-uml-diagram-of-inheritance">Visual: UML Diagram of Inheritance</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>classDiagram
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    class CParent {
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        -int m_I
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        -int* m_pData
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        +SetData(int)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        +GetData() : int
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        +CParent()
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        +CParent(int)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        +~CParent()
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    }
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    class CChild {
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        -float m_F
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        -float* m_pFloatData
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        +SetFloat(float)
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        +GetFloat() : float
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        +CChild()
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        +CChild(int, float)
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        +~CChild()
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    }
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    CChild --|&gt; CParent
+</code></pre></div>
+<p>This UML diagram provides a quick reference to the relationship between <code>CParent</code> and <code>CChild</code>, highlighting member variables and methods.</p>
+<h2 id="class-structure-and-access-control">Class Structure and Access Control</h2>
+<p>In C++, the access specifier used in inheritance dictates how base class members can be accessed by the derived class:</p>
 <ul>
-<li>Inheritance allows classes to extend and reuse functionality.</li>
-<li>Constructors initialize from base to derived; destructors run in reverse.</li>
-<li>Use <code>protected</code> to allow child access without exposing to external code.</li>
-<li>Manual memory management must be matched in constructors and destructors.</li>
-<li>Initializer lists only initialize members of the current class.</li>
+<li><strong>public inheritance</strong>: The most common form, preserving the access level of base class members</li>
+<li><strong>protected inheritance</strong>: All public members of the base class become protected in the derived class</li>
+<li><strong>private inheritance</strong>: All public and protected members of the base class become private in the derived class</li>
 </ul>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>This note explores class inheritance in C++, focusing on constructor and destructor order, access control, and memory management. It uses a base class <code>CParent</code> and a derived class <code>CChild</code> to illustrate these points.</p>
-<hr />
-<h2 id="example-parent-and-child-class-with-dynamic-memory">Example: Parent and Child Class with Dynamic Memory</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">CParent</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">protected</span><span class="o">:</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_I</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">m_pData</span><span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">SetData</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_Data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_Data</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">GetData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_I</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">CParent</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_I</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">m_pData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">100</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">CParent</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_Data</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_I</span><span class="p">(</span><span class="n">_Data</span><span class="p">),</span><span class="w"> </span><span class="n">m_pData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">100</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="o">~</span><span class="n">CParent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_pData</span><span class="p">)</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_pData</span><span class="p">;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">};</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">class</span><span class="w"> </span><span class="nc">CChild</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">CParent</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">private</span><span class="o">:</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_F</span><span class="p">;</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">;</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">SetFloat</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">_F</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="n">m_I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// accessing protected member from base class</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="n">m_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_F</span><span class="p">;</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">GetFloat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_F</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="n">CChild</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_F</span><span class="p">(</span><span class="mf">0.f</span><span class="p">),</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">1000</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="n">CChild</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_IntData</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">_FloatData</span><span class="p">)</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">CParent</span><span class="p">(</span><span class="n">_IntData</span><span class="p">),</span><span class="w"> </span><span class="n">m_F</span><span class="p">(</span><span class="n">_FloatData</span><span class="p">),</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">1000</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="o">~</span><span class="n">CChild</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_pFloatData</span><span class="p">)</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">;</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="c1">// CParent destructor called automatically</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="p">};</span>
+<p>Let's examine a practical example using <code>CParent</code> as our base class and <code>CChild</code> as the derived class:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">CParent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">protected</span><span class="o">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_I</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">m_pData</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">SetData</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_Data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_Data</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">GetData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_I</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="n">CParent</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_I</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">m_pData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">100</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">CParent</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_Data</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_I</span><span class="p">(</span><span class="n">_Data</span><span class="p">),</span><span class="w"> </span><span class="n">m_pData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">100</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="o">~</span><span class="n">CParent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_pData</span><span class="p">)</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_pData</span><span class="p">;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="p">};</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="k">class</span><span class="w"> </span><span class="nc">CChild</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">CParent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_F</span><span class="p">;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">;</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">SetFloat</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">_F</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">        </span><span class="n">m_I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// accessing protected member from base class</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span><span class="n">m_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_F</span><span class="p">;</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">GetFloat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_F</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="n">CChild</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_F</span><span class="p">(</span><span class="mf">0.f</span><span class="p">),</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">1000</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="n">CChild</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_IntData</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">_FloatData</span><span class="p">)</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">CParent</span><span class="p">(</span><span class="n">_IntData</span><span class="p">),</span><span class="w"> </span><span class="n">m_F</span><span class="p">(</span><span class="n">_FloatData</span><span class="p">),</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">1000</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">    </span><span class="o">~</span><span class="n">CChild</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_pFloatData</span><span class="p">)</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">;</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">        </span><span class="c1">// CParent destructor called automatically</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="p">};</span>
 </code></pre></div>
-<h3 id="key-concepts">Key Concepts:</h3>
-<ul>
-<li>Constructors run base-to-derived.</li>
-<li>Destructors run derived-to-base.</li>
-<li>Only the current class's members can be initialized in its constructor.</li>
-</ul>
-<hr />
-<h2 id="common-mistakes">Common Mistakes</h2>
-<p><strong>Forgetting virtual destructors in polymorphic base classes</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Base</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w">  </span><span class="c1">// required for proper cleanup</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">};</span>
-</code></pre></div></p>
-<p><strong>Accessing private base members from derived class</strong>
-- Only <code>protected</code> or <code>public</code> members are accessible.</p>
-<p><strong>Leaking memory by skipping cleanup</strong>
-- Always <code>delete[]</code> if you used <code>new[]</code>.</p>
-<hr />
-<h2 id="constructordestructor-order">Constructor/Destructor Order</h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">CChild</span><span class="w"> </span><span class="n">child</span><span class="p">;</span>
+<p>Notice how:
+- The <code>CParent</code> class uses the <code>protected</code> access modifier for member variables, allowing derived classes to access them directly
+- <code>CChild</code> can access the protected <code>m_I</code> member from <code>CParent</code>
+- Both classes properly manage their dynamically allocated memory</p>
+<h2 id="object-lifecycle-in-inheritance">Object Lifecycle in Inheritance</h2>
+<p>Understanding the precise order of construction and destruction is crucial for proper resource management in C++.</p>
+<h3 id="construction-order">Construction Order</h3>
+<p>When a derived class object is created, the construction sequence follows a specific order:</p>
+<ol>
+<li>Base class constructor is called first</li>
+<li>Derived class constructor is called after</li>
+</ol>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">CChild</span><span class="w"> </span><span class="n">child</span><span class="p">;</span><span class="w">  </span><span class="c1">// First calls CParent(), then CChild()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">CChild</span><span class="w"> </span><span class="nf">child1</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mf">2.2f</span><span class="p">);</span><span class="w">  </span><span class="c1">// First calls CParent(100), then CChild&#39;s constructor</span>
 </code></pre></div>
-This calls <code>CParent()</code> first, then <code>CChild()</code>.</p>
-<p>When <code>child</code> goes out of scope, it calls <code>~CChild()</code> first, then <code>~CParent()</code>.</p>
-<h3 id="code-demo">Code Demo</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">CParent</span><span class="p">);</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">CChild</span><span class="p">);</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">CParent</span><span class="w"> </span><span class="n">parent</span><span class="p">;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">CParent</span><span class="w"> </span><span class="nf">parent1</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">CChild</span><span class="w"> </span><span class="n">child</span><span class="p">;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">CChild</span><span class="w"> </span><span class="nf">child1</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mf">2.2f</span><span class="p">);</span>
+<h3 id="initialization-lists">Initialization Lists</h3>
+<p>An important detail: derived class constructors can only initialize their own members directly in the initialization list. Base class members must be initialized by calling the appropriate base class constructor:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">CChild</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">_IntData</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">_FloatData</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">CParent</span><span class="p">(</span><span class="n">_IntData</span><span class="p">),</span><span class="w">  </span><span class="c1">// Call base constructor to initialize base members</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="n">m_F</span><span class="p">(</span><span class="n">_FloatData</span><span class="p">),</span><span class="w">    </span><span class="c1">// Initialize own members</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="n">m_pFloatData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">1000</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div>
-<hr />
-<h2 id="interview-questions">Interview Questions</h2>
-<p><strong>Q: What’s the order of constructor and destructor calls in inheritance?</strong><br />
+<h3 id="destruction-order">Destruction Order</h3>
+<p>When objects are destroyed, the order is reversed:</p>
+<ol>
+<li>Derived class destructor executes first</li>
+<li>Base class destructor executes after</li>
+</ol>
+<p>This reverse order ensures that derived class resources are cleaned up before base class resources.</p>
+<h2 id="memory-management-in-derived-classes">Memory Management in Derived Classes</h2>
+<p>Proper memory management is critical in C++ inheritance hierarchies to prevent memory leaks and undefined behavior.</p>
+<h3 id="key-points">Key Points:</h3>
+<ol>
+<li><strong>Constructor/Destructor Pairing</strong>: Every constructor that allocates resources must have a corresponding destructor that deallocates them.</li>
+<li><strong>Resource Ownership</strong>: Be clear about which class owns which resources.</li>
+<li><strong>Destructor Chain</strong>: Destructors are called automatically in reverse order of inheritance.</li>
+</ol>
+<p>For example, in our sample code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">~</span><span class="n">CChild</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="c1">// Clean up resources owned by CChild</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_pFloatData</span><span class="p">)</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="c1">// CParent destructor is called automatically after this</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>This ensures that the <code>m_pFloatData</code> resource is freed before the base class destructor runs to free <code>m_pData</code>.</p>
+<h2 id="copy-construction-in-inheritance">Copy Construction in Inheritance</h2>
+<p>The compiler automatically generates a copy constructor if one isn't explicitly defined. However, this default copy constructor performs a shallow copy, which can lead to problems with dynamically allocated resources.</p>
+<h3 id="default-copy-constructor-issue">Default Copy Constructor Issue</h3>
+<p>In our class hierarchy, the default copy constructor would look something like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">CChild</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CChild</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Other</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">CParent</span><span class="p">(),</span><span class="w">  </span><span class="c1">// Default constructor, not copy constructor!</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">m_F</span><span class="p">(</span><span class="n">_Other</span><span class="p">.</span><span class="n">m_F</span><span class="p">),</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">m_pFloatData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">1000</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="c1">// Copy values from _Other.m_pFloatData</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>This is problematic because it calls the default constructor for <code>CParent</code>, not its copy constructor.</p>
+<h3 id="correct-copy-constructor">Correct Copy Constructor</h3>
+<p>A proper copy constructor should explicitly call the base class copy constructor:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">CChild</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CChild</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Other</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">CParent</span><span class="p">(</span><span class="n">_Other</span><span class="p">),</span><span class="w">  </span><span class="c1">// Call base copy constructor</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">m_F</span><span class="p">(</span><span class="n">_Other</span><span class="p">.</span><span class="n">m_F</span><span class="p">),</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">m_pFloatData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">1000</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="c1">// Deep copy values from _Other.m_pFloatData</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="n">m_pFloatData</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_Other</span><span class="p">.</span><span class="n">m_pFloatData</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="polymorphism-and-virtual-functions">Polymorphism and Virtual Functions</h2>
+<p>When working with inheritance, polymorphism allows derived classes to override base class methods and for those overridden methods to be called correctly even through a base class pointer.</p>
+<p>In C++, this requires the use of the <code>virtual</code> keyword:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">Method</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* base implementation */</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Base</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w">  </span><span class="c1">// Virtual destructor is crucial!</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">};</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Method</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* derived implementation */</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="o">~</span><span class="n">Derived</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">};</span>
+</code></pre></div>
+<h3 id="virtual-destructors">Virtual Destructors</h3>
+<p>A common mistake is forgetting to declare destructors as virtual in base classes intended for polymorphic use. Without a virtual destructor, deleting a derived object through a base pointer leads to undefined behavior:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Base</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Derived</span><span class="p">();</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">delete</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span><span class="w">  </span><span class="c1">// Without virtual destructor, only ~Base() is called, leaking resources</span>
+</code></pre></div>
+<h2 id="random-number-generation">Random Number Generation</h2>
+<p>While not directly related to inheritance, the notes also included information about random number generation in C++, which is often used in game programming:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// Seed the random number generator</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="k">nullptr</span><span class="p">));</span><span class="w">  </span><span class="c1">// Uses current time as seed for randomization</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1">// Generate random numbers between 1 and 100</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">random_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Returns 1-100</span>
+</code></pre></div>
+<p>This technique creates a random number between 1 and 100 by:
+1. Using <code>rand()</code> to generate a pseudo-random integer
+2. Taking the modulo (%) to restrict it to a range (0-99)
+3. Adding 1 to shift the range to 1-100</p>
+<p>For more complex game systems, using the C++11 random library provides better statistical properties:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kt">unsigned</span><span class="w"> </span><span class="n">seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">system_clock</span><span class="o">::</span><span class="n">now</span><span class="p">().</span><span class="n">time_since_epoch</span><span class="p">().</span><span class="n">count</span><span class="p">();</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">std</span><span class="o">::</span><span class="n">default_random_engine</span><span class="w"> </span><span class="nf">generator</span><span class="p">(</span><span class="n">seed</span><span class="p">);</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">std</span><span class="o">::</span><span class="n">uniform_int_distribution</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">distribution</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="kt">int</span><span class="w"> </span><span class="n">random_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">distribution</span><span class="p">(</span><span class="n">generator</span><span class="p">);</span><span class="w">  </span><span class="c1">// More robust randomization</span>
+</code></pre></div>
+<h2 id="interview-questions-and-exercises">Interview Questions and Exercises</h2>
+<p>Here are some common interview questions related to C++ inheritance, with answers based on the material covered:</p>
+<p><strong>Q: What's the order of constructor and destructor calls in inheritance?</strong><br />
 A: Constructors execute from base to derived. Destructors execute from derived to base.</p>
-<p><strong>Q: What happens if a derived class allocates memory but doesn’t define a destructor?</strong><br />
-A: Memory leaks may occur if the destructor doesn’t free allocated memory.</p>
-<p><strong>Q: Why use <code>protected</code> instead of <code>private</code>?</strong><br />
-A: <code>protected</code> allows access from derived classes, which <code>private</code> denies.</p>
+<p><strong>Q: What happens if a derived class allocates memory but doesn't define a destructor?</strong><br />
+A: Memory leaks may occur if the derived class allocates resources but doesn't clean them up in its destructor.</p>
+<p><strong>Q: Why use protected instead of private?</strong><br />
+A: Protected members allow access from derived classes while still hiding them from external code. Private members are inaccessible to derived classes.</p>
 <p><strong>Q: Can derived constructors initialize base members directly?</strong><br />
-A: No, use the initializer list to call base constructors.</p>
-<hr />
-<h2 id="visual-object-lifetime-in-inheritance">Visual: Object Lifetime in Inheritance</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Construction:
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>CParent() -&gt; CChild()
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Destruction:
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>~CChild() -&gt; ~CParent()
+A: No, derived constructors must use the initialization list to call base constructors for initializing base class members.</p>
+<p><strong>Q: What's the purpose of a virtual destructor?</strong><br />
+A: Virtual destructors ensure that the proper destructor chain is called when deleting a derived object through a base class pointer.</p>
+<h2 id="common-mistakes-and-pitfalls">Common Mistakes and Pitfalls</h2>
+<ol>
+<li>
+<p><strong>Forgetting virtual destructors</strong> in polymorphic base classes
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Base</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w">  </span><span class="c1">// Required for proper cleanup</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">};</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Attempting to access private base members</strong> from derived classes</p>
+</li>
+<li>
+<p>Only protected or public members are accessible to derived classes</p>
+</li>
+<li>
+<p><strong>Leaking memory by skipping cleanup</strong></p>
+</li>
+<li>Always match each <code>new[]</code> with a corresponding <code>delete[]</code></li>
+<li>
+<p>Each allocation in a constructor should have a corresponding deallocation in the destructor</p>
+</li>
+<li>
+<p><strong>Incorrect copy constructor implementation</strong></p>
+</li>
+<li>Not calling the base class copy constructor</li>
+<li>
+<p>Performing shallow copies of pointer members</p>
+</li>
+<li>
+<p><strong>Improperly initializing base class members</strong></p>
+</li>
+<li>Base class members must be initialized through base class constructors</li>
+<li>Derived class constructors cannot directly initialize base class members in their initialization lists</li>
+</ol>
+<h3 id="practice-exercises">Practice Exercises</h3>
+<p><strong>1. Spot the Bug: Copy Constructor</strong><br />
+What's wrong with this implementation?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">CChild</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CChild</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">m_F</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">m_F</span><span class="p">),</span><span class="w"> </span><span class="n">m_pFloatData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">1000</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div>
-<p>Understanding the exact sequence is crucial for managing resources and preventing undefined behavior.</p>
+<em>Hint: Did you initialize the base class properly?</em></p>
+<p><strong>2. Lifecycle Challenge</strong><br />
+Given the class structure, explain the order of construction and destruction in this code:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">CChild</span><span class="w"> </span><span class="n">child1</span><span class="p">;</span>
+</code></pre></div>
+<em>Write down the sequence and verify your answer.</em></p>
+<p><strong>3. Manual Memory Cleanup</strong><br />
+Modify the following class to prevent memory leaks:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Buggy</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="n">Buggy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="c1">// No destructor!</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">};</span>
+</code></pre></div></p>
+<h2 id="visual-object-lifetime-in-inheritance">Visual: Object Lifetime in Inheritance</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Construction:
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>CParent() -&gt; CChild()
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>Destruction:
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>~CChild() -&gt; ~CParent()
+</code></pre></div>
+<p>Understanding this sequence is crucial for managing resources and preventing undefined behavior in C++ inheritance hierarchies.</p>
 <hr />
-<p>Random number generator 
-rand value call </p>
-<p>srand value call </p>
-<p>based on different number value page value changes 
-number srand 
-10 </p>
-<p>srand(time(nullptr)); // Time as Seed, Random Page Setup 
-completely random ? Mathematically more complicated but anyway quite unpredictable 
-day time second etc ... combined to make completely random number </p>
-<p>irandom[i] = rand(); 
-If random number is setup between 1 and 100 then 
-divide by 100 and do modular calculation 
-(rand() % 100 + 1) &gt;&gt; returns 1 ~ 100 random numbers 
-64 72 34 ... etc ... 
-Since std::map ignore same number input it would automatically overlapping number </p>
-<p>Binary Search Tree Data Removal </p>
-<p>r57 | AR56 | 2025-04-22 13:45:47 +0900 (화, 22 4 2025) | 3 lines
-Changed paths:
-   M /C++/C++_56/C++_56.vcxproj
-   M /C++/C++_56/C++_56.vcxproj.filters
-   A /C++/C++_56/복사생성자＿상속.cpp
-   M /C++/C++_56/클래스 상속.cpp</p>
-<ol>
-<li>상속을 사용할 경우, 생성자와 소멸자 호출 동작 방식 설명</li>
-</ol>
-<h2 id="2">2. 복사생성자를 상속구조에서 직접 구현하는경우 주의점 설명</h2>
-<p>r56 | AR56 | 2025-04-22 12:54:13 +0900 (화, 22 4 2025) | 1 line
-Changed paths:
-   M /C++/C++_56/C++_56.vcxproj
-   M /C++/C++_56/C++_56.vcxproj.filters
-   A /C++/C++_56/클래스 상속.cpp</p>
-<ol>
-<li>클래스 상속 파트 시작</li>
-</ol>
+<h2 id="further-reading">Further Reading</h2>
+<p>To deepen your understanding of C++ inheritance and its application in game development, check out the following resources:</p>
+<ul>
+<li><a href="https://en.cppreference.com/w/cpp/language/inheritance">C++ Inheritance - cppreference.com</a></li>
+<li><a href="https://www.oreilly.com/library/view/effective-c/9780132979189/">Effective C++ by Scott Meyers</a></li>
+<li><a href="https://docs.unrealengine.com/en-US/ProgrammingAndScripting/index.html">Unreal Engine C++ Documentation</a></li>
+<li><a href="https://www.gdcvault.com/">Game Developer Conference (GDC) Talks</a></li>
+<li><a href="https://herbsutter.com/">Herb Sutter: C++ and Beyond</a></li>
+</ul>
+<p>These resources are invaluable for advanced understanding and staying current with best practices in modern C++ and game engine development.</p>
 
 
 
