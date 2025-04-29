@@ -12,13 +12,13 @@
         <meta name="author" content="Renaissancor">
       
       
-        <link rel="canonical" href="https://renaissancor.github.io/AR250416/">
+        <link rel="canonical" href="https://renaissancor.github.io/AR250425/">
       
       
-        <link rel="prev" href="../AR250415/">
+        <link rel="prev" href="../AR250424/">
       
       
-        <link rel="next" href="../AR250417/">
+        <link rel="next" href="../AR250426/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Binary Search Tree: Study Guide - Renaissancoriate</title>
+        <title>Singleton Design Pattern - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#binary-search-tree-study-guide" class="md-skip">
+        <a href="#singleton-design-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Binary Search Tree: Study Guide
+              Singleton Design Pattern
             
           </span>
         </div>
@@ -430,32 +430,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Binary Search Tree: Study Guide
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../AR250416/" class="md-nav__link">
         
   
   
@@ -466,248 +444,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#date-2025-04-16" class="md-nav__link">
-    <span class="md-ellipsis">
-      Date: 2025-04-16
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bst-node-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      BST Node Structure
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bst-class-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      BST Class &amp; Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#insertion-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Insertion Operation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Insertion Operation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#common-mistake" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Mistake
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clearing-the-bst" class="md-nav__link">
-    <span class="md-ellipsis">
-      Clearing the BST
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#in-order-successor-predecessor" class="md-nav__link">
-    <span class="md-ellipsis">
-      In-Order Successor &amp; Predecessor
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="In-Order Successor &amp; Predecessor">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#successor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Successor:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#predecessor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Predecessor:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stl-vs-custom-bst" class="md-nav__link">
-    <span class="md-ellipsis">
-      STL vs Custom BST
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="STL vs Custom BST">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#stl-set-vs-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      STL set vs map:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multimap" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multimap:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recommendation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommendation:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-utility-templates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Custom Utility Templates
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-questions-and-answers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interview Questions and Answers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Interview Questions and Answers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#q1-what-is-the-time-complexity-of-insertion-in-a-bst" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q1: What is the time complexity of insertion in a BST?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q2-how-does-a-bst-handle-duplicate-keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q2: How does a BST handle duplicate keys?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q3-describe-how-in-order-traversal-works-in-bst" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q3: Describe how in-order traversal works in BST.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q4-how-do-you-find-the-in-order-successor-of-a-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q4: How do you find the in-order successor of a node?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q5-why-use-bfs-for-deletion-in-a-destructor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q5: Why use BFS for deletion in a destructor?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -848,10 +584,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../AR250425/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Singleton Design Pattern
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -862,6 +620,260 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-the-singleton-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to the Singleton Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Concept
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Approaches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approach-1-dynamic-allocation-with-static-pointer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 1: Dynamic Allocation with Static Pointer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 1: Dynamic Allocation with Static Pointer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-2-static-local-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 2: Static Local Variable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 2: Static Local Variable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management-and-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Management and Allocation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Management and Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approach-1-dynamic-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 1 (Dynamic Allocation)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-2-static-local-variable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 2 (Static Local Variable)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-and-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues and Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-memory-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Memory Efficiency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lifetime-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Lifetime Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-thread-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Thread Safety
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-memory-leak-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memory Leak Prevention
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-and-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices and Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices and Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Singleton
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-drawbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Potential Drawbacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modern-c-alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern C++ Alternatives
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions-on-singleton-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interview Questions on Singleton Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2750,55 +2762,118 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#date-2025-04-16" class="md-nav__link">
+  <a href="#introduction-to-the-singleton-pattern" class="md-nav__link">
     <span class="md-ellipsis">
-      Date: 2025-04-16
+      Introduction to the Singleton Pattern
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#core-concept" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Core Concept
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bst-node-structure" class="md-nav__link">
+  <a href="#implementation-approaches" class="md-nav__link">
     <span class="md-ellipsis">
-      BST Node Structure
+      Implementation Approaches
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bst-class-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      BST Class &amp; Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#insertion-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Insertion Operation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Insertion Operation">
+    <nav class="md-nav" aria-label="Implementation Approaches">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#common-mistake" class="md-nav__link">
+  <a href="#approach-1-dynamic-allocation-with-static-pointer" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Mistake
+      Approach 1: Dynamic Allocation with Static Pointer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 1: Dynamic Allocation with Static Pointer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-2-static-local-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 2: Static Local Variable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 2: Static Local Variable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management-and-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Management and Allocation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Management and Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approach-1-dynamic-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 1 (Dynamic Allocation)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-2-static-local-variable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach 2 (Static Local Variable)
     </span>
   </a>
   
@@ -2810,37 +2885,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#clearing-the-bst" class="md-nav__link">
+  <a href="#common-issues-and-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Clearing the BST
+      Common Issues and Considerations
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#in-order-successor-predecessor" class="md-nav__link">
-    <span class="md-ellipsis">
-      In-Order Successor &amp; Predecessor
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="In-Order Successor &amp; Predecessor">
+    <nav class="md-nav" aria-label="Common Issues and Considerations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#successor" class="md-nav__link">
+  <a href="#1-memory-efficiency" class="md-nav__link">
     <span class="md-ellipsis">
-      Successor:
+      1. Memory Efficiency
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#predecessor" class="md-nav__link">
+  <a href="#2-lifetime-control" class="md-nav__link">
     <span class="md-ellipsis">
-      Predecessor:
+      2. Lifetime Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-thread-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Thread Safety
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-memory-leak-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memory Leak Prevention
     </span>
   </a>
   
@@ -2852,37 +2936,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stl-vs-custom-bst" class="md-nav__link">
+  <a href="#best-practices-and-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      STL vs Custom BST
+      Best Practices and Considerations
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="STL vs Custom BST">
+    <nav class="md-nav" aria-label="Best Practices and Considerations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#stl-set-vs-map" class="md-nav__link">
+  <a href="#when-to-use-singleton" class="md-nav__link">
     <span class="md-ellipsis">
-      STL set vs map:
+      When to Use Singleton
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#multimap" class="md-nav__link">
+  <a href="#potential-drawbacks" class="md-nav__link">
     <span class="md-ellipsis">
-      Multimap:
+      Potential Drawbacks
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#recommendation" class="md-nav__link">
+  <a href="#modern-c-alternatives" class="md-nav__link">
     <span class="md-ellipsis">
-      Recommendation:
+      Modern C++ Alternatives
     </span>
   </a>
   
@@ -2894,71 +2978,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-utility-templates" class="md-nav__link">
+  <a href="#interview-questions-on-singleton-pattern" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom Utility Templates
+      Interview Questions on Singleton Pattern
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-questions-and-answers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interview Questions and Answers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Interview Questions and Answers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#q1-what-is-the-time-complexity-of-insertion-in-a-bst" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q1: What is the time complexity of insertion in a BST?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q2-how-does-a-bst-handle-duplicate-keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q2: How does a BST handle duplicate keys?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q3-describe-how-in-order-traversal-works-in-bst" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q3: Describe how in-order traversal works in BST.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q4-how-do-you-find-the-in-order-successor-of-a-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q4: How do you find the in-order successor of a node?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q5-why-use-bfs-for-deletion-in-a-destructor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q5: Why use BFS for deletion in a destructor?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2987,201 +3011,299 @@
 
 
 
-<h1 id="binary-search-tree-study-guide">Binary Search Tree: Study Guide</h1>
-<h3 id="date-2025-04-16">Date: 2025-04-16</h3>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>A Binary Search Tree (BST) is a hierarchical structure that stores key-value pairs with strict ordering rules for efficient data manipulation. This guide walks through essential implementation elements, corner cases, and interview-related insights.</p>
-<hr />
-<h2 id="bst-node-structure">BST Node Structure</h2>
-<p>Each BST node includes:
-- A <strong>key-value pair</strong> used for storage and sorting.
-- Three <strong>pointers</strong>:
-  - <code>Parent</code> (index 0)
-  - <code>Left Child</code> (index 1)
-  - <code>Right Child</code> (index 2)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Node structure for a BST</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pair</span><span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">Node</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">pair</span><span class="p">(),</span><span class="w"> </span><span class="n">ptr</span><span class="p">{</span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">}</span><span class="w"> </span><span class="p">{}</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">Node</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">_pair</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">_Parent</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">_LChild</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">_RChild</span><span class="p">)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">pair</span><span class="p">(</span><span class="n">_pair</span><span class="p">),</span><span class="w"> </span><span class="n">ptr</span><span class="p">{</span><span class="n">_Parent</span><span class="p">,</span><span class="w"> </span><span class="n">_LChild</span><span class="p">,</span><span class="w"> </span><span class="n">_RChild</span><span class="p">}</span><span class="w"> </span><span class="p">{}</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">};</span>
+<h1 id="singleton-design-pattern">Singleton Design Pattern</h1>
+<h2 id="introduction-to-the-singleton-pattern">Introduction to the Singleton Pattern</h2>
+<p>The Singleton design pattern is a creational pattern that restricts the instantiation of a class to a single instance. This pattern is particularly useful when exactly one object is needed to coordinate actions across a system. In game programming, Singleton patterns are often employed for manager or administrator classes that need global access but controlled instantiation.</p>
+<h2 id="core-concept">Core Concept</h2>
+<p>The primary goal of the Singleton pattern is to:
+- Ensure a class has only one instance
+- Provide a global point of access to that instance
+- Control when and how that instance is created</p>
+<h2 id="implementation-approaches">Implementation Approaches</h2>
+<p>There are several ways to implement the Singleton pattern in C++. Let's explore two common approaches.</p>
+<h3 id="approach-1-dynamic-allocation-with-static-pointer">Approach 1: Dynamic Allocation with Static Pointer</h3>
+<p>This approach stores a pointer to the single instance in a static member variable and dynamically allocates memory for the instance.</p>
+<h4 id="key-components">Key Components:</h4>
+<ol>
+<li><strong>Private Constructor</strong>: Prevents external instantiation</li>
+<li><strong>Static Member Variable</strong>: Holds the instance pointer</li>
+<li><strong>Static Access Method</strong>: Returns the instance</li>
+<li><strong>Destruction Method</strong>: Properly cleans up the instance</li>
+</ol>
+<p>Let's examine the implementation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// CEngine.h</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">CEngine</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="c1">// Static member variable - stored in data area, class-specific</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="c1">// Only accessible from static member functions</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">CEngine</span><span class="o">*</span><span class="w"> </span><span class="n">m_This</span><span class="p">;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_Engine</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="c1">// Static member function - can be called without an object</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="c1">// Can access the class&#39;s private members</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">CEngine</span><span class="o">*</span><span class="w"> </span><span class="n">GetEngine</span><span class="p">();</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Destroy</span><span class="p">();</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="c1">// Private constructor prevents external instantiation</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="n">CEngine</span><span class="p">();</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="o">~</span><span class="n">CEngine</span><span class="p">();</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="p">};</span>
 </code></pre></div>
-<hr />
-<h2 id="bst-class-initialization">BST Class &amp; Initialization</h2>
-<p>The BST class manages the root node and the size of the tree:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// BST class definition</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">BSTree</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">private</span><span class="o">:</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">m_Root</span><span class="p">;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_Size</span><span class="p">;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">BSTree</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_Root</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span><span class="w"> </span><span class="n">m_Size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// CEngine.cpp</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;CEngine.h&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Initialize static member</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">CEngine</span><span class="o">*</span><span class="w"> </span><span class="n">CEngine</span><span class="o">::</span><span class="n">m_This</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">CEngine</span><span class="o">::</span><span class="n">CEngine</span><span class="p">()</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">m_Engine</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">{</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">CEngine</span><span class="o">::~</span><span class="n">CEngine</span><span class="p">()</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">{</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">CEngine</span><span class="o">*</span><span class="w"> </span><span class="n">CEngine</span><span class="o">::</span><span class="n">GetEngine</span><span class="p">()</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">{</span><span class="w">    </span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">nullptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_This</span><span class="p">)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="n">m_This</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CEngine</span><span class="p">;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">m_This</span><span class="p">;</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="p">}</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="kt">void</span><span class="w"> </span><span class="n">CEngine</span><span class="o">::</span><span class="n">Destroy</span><span class="p">()</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="p">{</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">nullptr</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">m_This</span><span class="p">)</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">        </span><span class="k">delete</span><span class="w"> </span><span class="n">m_This</span><span class="p">;</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">        </span><span class="n">m_This</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">    </span><span class="p">}</span><span class="w">    </span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p><code>m_Root</code> must be declared inside the BST class to track the tree's entry point.</p>
-</blockquote>
-<p>In contrast, the Node structure includes:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">tBSTNode</span><span class="o">*</span><span class="w"> </span><span class="n">pParent</span><span class="p">;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">tBSTNode</span><span class="o">*</span><span class="w"> </span><span class="n">pLeftChild</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">tBSTNode</span><span class="o">*</span><span class="w"> </span><span class="n">pRightChild</span><span class="p">;</span>
+<h4 id="usage">Usage:</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Get the singleton instance</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">CEngine</span><span class="o">*</span><span class="w"> </span><span class="n">pEngine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CEngine</span><span class="o">::</span><span class="n">GetEngine</span><span class="p">();</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">// Use the instance</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// ...</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">// Clean up when done</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">CEngine</span><span class="o">::</span><span class="n">Destroy</span><span class="p">();</span>
 </code></pre></div>
-These pointers are naturally interpreted in context and ensure internal link integrity.</p>
-<hr />
-<h2 id="insertion-operation">Insertion Operation</h2>
-<p>The insert function ensures:
-- The first inserted node becomes the root.
-- Subsequent nodes are sorted left (smaller) or right (larger).
-- Duplicate keys are explicitly rejected via <code>assert(false)</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Inserting into BST</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">BSTree</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;::</span><span class="n">insert</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">_pair</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_pair</span><span class="p">);</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_Root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="n">m_Root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="o">++</span><span class="n">m_Size</span><span class="p">;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">itrNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_Root</span><span class="p">;</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">pair</span><span class="p">.</span><span class="n">key</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">pair</span><span class="p">.</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">                </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">                </span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itrNode</span><span class="p">;</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">                </span><span class="o">++</span><span class="n">m_Size</span><span class="p">;</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">                </span><span class="k">break</span><span class="p">;</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">                </span><span class="n">itrNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">];</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">pair</span><span class="p">.</span><span class="n">key</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">pair</span><span class="p">.</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">                </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">                </span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itrNode</span><span class="p">;</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">                </span><span class="o">++</span><span class="n">m_Size</span><span class="p">;</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">                </span><span class="k">break</span><span class="p">;</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">                </span><span class="n">itrNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">itrNode</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">];</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">            </span><span class="c1">// Duplicate key detected</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">            </span><span class="n">assert</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="p">}</span>
+<h3 id="approach-2-static-local-variable">Approach 2: Static Local Variable</h3>
+<p>This approach creates the instance as a static local variable within the access method, leveraging C++'s guarantee that static local variables are initialized only once.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// CSingle.h</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">CSingle</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">CSingle</span><span class="o">*</span><span class="w"> </span><span class="n">GetInst</span><span class="p">();</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">CSingle</span><span class="p">();</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">};</span>
 </code></pre></div>
-<h3 id="common-mistake">Common Mistake</h3>
-<p>In STL containers like <code>std::map</code>, inserting a key that already exists will simply ignore the new value. This leads to:
-- Untracked memory (if dynamic memory was used)
-- Potential memory leaks</p>
-<p>Always ensure duplicates are prevented, asserted, or handled using a container like <code>std::multimap</code>, which stores same-key elements in a linked fashion.</p>
-<hr />
-<h2 id="clearing-the-bst">Clearing the BST</h2>
-<p>To delete all nodes:
-- Perform <strong>level-order traversal</strong> using a <strong>queue</strong> (FIFO) structure.
-- This is known as <strong>Breadth-First Search (BFS)</strong> and guarantees all nodes are deleted without breaking pointer chains.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Clearing all nodes using BFS</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">BSTree</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;::</span><span class="n">clear</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">m_Root</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">queue</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*&gt;</span><span class="w"> </span><span class="n">nodeQueue</span><span class="p">;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">m_Root</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// CSingle.cpp</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;CSingle.h&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">CSingle</span><span class="o">::</span><span class="n">CSingle</span><span class="p">()</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">])</span><span class="w"> </span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">]);</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">])</span><span class="w"> </span><span class="n">nodeQueue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">]);</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="k">delete</span><span class="w"> </span><span class="n">current</span><span class="p">;</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="n">m_Root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="n">m_Size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">CSingle</span><span class="o">*</span><span class="w"> </span><span class="n">CSingle</span><span class="o">::</span><span class="n">GetInst</span><span class="p">()</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">CSingle</span><span class="w"> </span><span class="n">single</span><span class="p">;</span><span class="w">  </span><span class="c1">// Static local variable stays in data area</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="n">single</span><span class="p">;</span><span class="w">         </span><span class="c1">// Return address of the static instance</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>BFS is generally safer for tree deletion. For DFS-based deletion, a stack (LIFO) should be used.</p>
-</blockquote>
-<hr />
-<h2 id="in-order-successor-predecessor">In-Order Successor &amp; Predecessor</h2>
-<p>In-order traversal visits nodes in key-sorted order.</p>
-<h3 id="successor">Successor:</h3>
-<ul>
-<li>If the node has a right child: return the <strong>leftmost node</strong> in the right subtree.</li>
-<li>If not: move up until you find a node that is a left child of its parent.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// Find the in-order successor</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">BSTree</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;::</span><span class="n">getInOrderSuccessor</span><span class="p">(</span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">HasRChild</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">successor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">];</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">successor</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">])</span><span class="w"> </span><span class="n">successor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">successor</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">LCHILD</span><span class="p">];</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">successor</span><span class="p">;</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">RCHILD</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">];</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">PARENT</span><span class="p">];</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="p">}</span>
+<h4 id="usage_1">Usage:</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// Get the singleton instance</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">CSingle</span><span class="o">*</span><span class="w"> </span><span class="n">pSingle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CSingle</span><span class="o">::</span><span class="n">GetInst</span><span class="p">();</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">// No explicit destruction required</span>
 </code></pre></div>
-<h3 id="predecessor">Predecessor:</h3>
+<h2 id="memory-management-and-allocation">Memory Management and Allocation</h2>
+<p>Understanding the memory implications of these two approaches is crucial:</p>
+<h3 id="approach-1-dynamic-allocation">Approach 1 (Dynamic Allocation)</h3>
 <ul>
-<li>If the node has a left child: return the <strong>rightmost node</strong> in the left subtree.</li>
-<li>Otherwise: move up to a parent node where the current node is in the right.</li>
+<li>The pointer is stored in the data area (static memory)</li>
+<li>The actual instance is stored in heap memory</li>
+<li>Requires explicit destruction to prevent memory leaks</li>
+<li>More flexible for controlling instance lifetime</li>
 </ul>
-<hr />
-<h2 id="stl-vs-custom-bst">STL vs Custom BST</h2>
-<h3 id="stl-set-vs-map">STL <code>set</code> vs <code>map</code>:</h3>
+<h3 id="approach-2-static-local-variable_1">Approach 2 (Static Local Variable)</h3>
 <ul>
-<li><strong><code>set&lt;T&gt;</code></strong>: Sorted by element value (used as key).</li>
-<li><strong><code>map&lt;K, V&gt;</code></strong>: Sorted by key only, value follows.</li>
+<li>The entire instance is stored in the data area (static memory)</li>
+<li>No dynamic memory allocation needed</li>
+<li>Automatic cleanup at program termination</li>
+<li>Instance persists for the entire program duration</li>
 </ul>
-<h3 id="multimap">Multimap:</h3>
+<h2 id="common-issues-and-considerations">Common Issues and Considerations</h2>
+<h3 id="1-memory-efficiency">1. Memory Efficiency</h3>
+<p>When implementing a Singleton for a class with substantial data members, consider:
+- <strong>Approach 1</strong>: Stores only an 8-byte pointer in the data area
+- <strong>Approach 2</strong>: Stores the entire object in the data area, potentially less efficient</p>
+<h3 id="2-lifetime-control">2. Lifetime Control</h3>
 <ul>
-<li>Allows duplicate keys.</li>
-<li>Internally maintains multiple values for the same key using a structure like a linked list at each node.</li>
+<li><strong>Approach 1</strong>: Offers explicit control through the <code>Destroy()</code> method</li>
+<li><strong>Approach 2</strong>: Instance exists until program termination, cannot be manually destroyed</li>
 </ul>
-<h3 id="recommendation">Recommendation:</h3>
-<ul>
-<li>Avoid duplicate keys unless using <code>multimap</code>.</li>
-<li>For standard BSTs, explicitly prevent duplicates to avoid memory issues.</li>
-</ul>
-<hr />
-<h2 id="custom-utility-templates">Custom Utility Templates</h2>
-<p>Helpful for wrapping key-value pairs in custom implementations:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// Pair creation helper</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">tPair</span><span class="w"> </span><span class="n">MakePair</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T1</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_First</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">_Second</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">tPair</span><span class="w"> </span><span class="n">pair</span><span class="p">;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">pair</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_First</span><span class="p">;</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="n">pair</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_Second</span><span class="p">;</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pair</span><span class="p">;</span>
+<h3 id="3-thread-safety">3. Thread Safety</h3>
+<p>Neither approach shown is thread-safe. For multi-threaded environments, additional synchronization would be needed.</p>
+<h3 id="4-memory-leak-prevention">4. Memory Leak Prevention</h3>
+<p>With the dynamic allocation approach, forgetting to call <code>Destroy()</code> will cause memory leaks. The destruction process needs careful attention:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">CEngine::Destroy</span><span class="p">()</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">nullptr</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">m_This</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="k">delete</span><span class="w"> </span><span class="n">m_This</span><span class="p">;</span><span class="w">    </span><span class="c1">// Delete the dynamically allocated object</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="n">m_This</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"> </span><span class="c1">// Reset the pointer to prevent dangling pointer issues</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="p">}</span><span class="w">    </span>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
 </code></pre></div>
-<hr />
-<h2 id="interview-questions-and-answers">Interview Questions and Answers</h2>
-<h3 id="q1-what-is-the-time-complexity-of-insertion-in-a-bst">Q1: What is the time complexity of insertion in a BST?</h3>
-<p><strong>A:</strong> Average case is O(log n), but worst-case (unbalanced tree) is O(n).</p>
-<h3 id="q2-how-does-a-bst-handle-duplicate-keys">Q2: How does a BST handle duplicate keys?</h3>
-<p><strong>A:</strong> Standard BST (like <code>std::set</code>, <code>std::map</code>) <strong>does not allow duplicates</strong>. You must handle this explicitly or use <code>std::multimap</code>.</p>
-<h3 id="q3-describe-how-in-order-traversal-works-in-bst">Q3: Describe how in-order traversal works in BST.</h3>
-<p><strong>A:</strong> It recursively visits left child, current node, and right child. This results in ascending order of keys.</p>
-<h3 id="q4-how-do-you-find-the-in-order-successor-of-a-node">Q4: How do you find the in-order successor of a node?</h3>
-<p><strong>A:</strong> If right child exists, go to the leftmost node of the right subtree. Else, move up to the first ancestor where the node is in the left subtree.</p>
-<h3 id="q5-why-use-bfs-for-deletion-in-a-destructor">Q5: Why use BFS for deletion in a destructor?</h3>
-<p><strong>A:</strong> It ensures each node is visited once and avoids deleting children of already deleted nodes.</p>
-<hr />
+<h2 id="best-practices-and-considerations">Best Practices and Considerations</h2>
+<h3 id="when-to-use-singleton">When to Use Singleton</h3>
+<ul>
+<li>When exactly one instance of a class is required</li>
+<li>When the instance needs controlled access</li>
+<li>For manager or administrator classes in a game engine</li>
+</ul>
+<h3 id="potential-drawbacks">Potential Drawbacks</h3>
+<ul>
+<li>Can make code testing more difficult</li>
+<li>Creates global state, which may lead to hidden dependencies</li>
+<li>May cause performance issues due to lack of memory flexibility</li>
+<li>Can accumulate unused data in long-running programs</li>
+</ul>
+<h3 id="modern-c-alternatives">Modern C++ Alternatives</h3>
+<ul>
+<li>Consider using dependency injection instead of Singletons</li>
+<li>Use static methods without enforcing the Singleton pattern when appropriate</li>
+<li>Leverage smart pointers for safer memory management</li>
+</ul>
+<h2 id="interview-questions-on-singleton-pattern">Interview Questions on Singleton Pattern</h2>
+<ol>
+<li>
+<p><strong>What is the Singleton design pattern and when would you use it in game development?</strong></p>
+</li>
+<li>
+<p><strong>Compare and contrast the two main approaches to implementing the Singleton pattern.</strong></p>
+</li>
+<li>
+<p><strong>How would you make a Singleton pattern thread-safe?</strong></p>
+</li>
+<li>
+<p><strong>What are the potential drawbacks of using the Singleton pattern?</strong></p>
+</li>
+<li>
+<p><strong>How would you modify the provided implementations to be more memory efficient or safer?</strong></p>
+</li>
+</ol>
 <h2 id="conclusion">Conclusion</h2>
-<p>This study covers the foundational structure and behaviors of BSTs with emphasis on implementation challenges and common interview traps. Mastery of BST fundamentals, including memory safety and proper traversal strategies, sets the groundwork for working with balanced trees like AVL or Red-Black trees.</p>
+<p>The Singleton pattern, while useful in specific scenarios like manager classes in game engines, comes with trade-offs regarding memory management, flexibility, and code maintainability. Understanding these trade-offs is crucial for effective implementation and for determining when this pattern is appropriate for your specific use case.</p>
+<p>When preparing for C++ game programming interviews, be ready to discuss not just how to implement the Singleton pattern, but also when it's appropriate to use it and what alternatives might be better in certain scenarios. </p>
+<hr />
+<p>Windows only structure </p>
+<p>4 instances input 
+Windows disadvantages too old From Windows XP </p>
+<p>Windwows failed to get smartphone market </p>
+<p>MSFT Windows had unnecessary features 
+PC OS directly inside the smartphone so not working on mobile phone 
+iOS and Andriod OS rebuilt the entire OS appropriate to phone </p>
+<p>Still let old Windows program to work still currently in Windows XP or even before </p>
+<p>get 4 instances, althouth it is not used right now lol </p>
+<p>// SAL , comment languages 
+does nOT affect code but exist for explanation 
+<em>In</em> HINSTANCE hInstance, // <em>In</em> is comment without meaning 
+<em>opt</em> .. unnecessary instance 
+<em>Out</em> // return value existing instance 
+<em>InOut</em> // Both input has meaning and o;utput is returned _</p>
+<p>For isntance </p>
+<p>void Pow(int* <em>Input, int _Pow</em>)
+{
+}</p>
+<p>int Data = 2; 
+Pow(&amp;Data, 16); // Return 2^16
+// <em>InOut</em> sample usage as SAL 
+void Pow (<em>InOut</em> int<em> <em>Input, int _Pow</em>)
+{
+    int Result = 1;
+    for (int i = 0; i &lt; <em>Pow</em>; i++)
+    {
+        Result </em>= <em>_Input;
+    }
+    </em>_Input = Result;
+}</p>
+<p>Windows Main Function 
+Purple characters are mostly macros 
+preoprocessor will replace before compiler </p>
+<h1 id="define-int-int-macros">define INT int // Macros</h1>
+<p>Unreferenced parameter macro analysis </p>
+<h1 id="define-unreferenced_parameterp-p-macro">define UNREFERENCED_PARAMETER(P) (P) // Macro</h1>
+<p>UNREFERENCED_PARAMETER(hPrevInstance); // Macro
+will be converted to 
+(hPrevInstance); // Macro, so basically meaningless code 
+So compiler , by optmization, will automatically remove these unnecessary code 
+UNREFERENCED_PARAMETER // not used parameter declared </p>
+<p>HINSTANCE HINSTANCE LPWSTR int 
+Green color characters are redefined types by typedef 
+Click with F12 then figure out what it is. 
+Also macro instance 
+Search by F12 if input then change data </p>
+<h2 id="define-my_macrop-struct-pstruct">#define MY_MACRO(p) struct p##Struct {};</h2>
+<p>MY_MACRO(MY); MYStruct st; 
+MYStruct(st); 
+So it can be defined as </p>
+<p>struct MyStruct {}; // Like this </p>
+<p>HINSTANCE__; // struct instance generated 
+typedef HINSTANCE__ * HINSTANCE; // typedef instance pointer value </p>
+<p>DECLARE_HANDLE(MyDataType); 
+MyDataType__; 
+typedef MyDataType__ <em>MyDataType; // typedef instance pointer value</em></p>
+<p>so why doing this ..? 
+Handle datatype ? 
+Kernel object  // OS 
+Core functions of the OS </p>
+<p>All seems same but codes will be different inside per OS 
+Android iOS all converted codes should be necessary 
+That is why game engine is better due to platform flexibility 
+Kernel object is core function of OS, so source code is hidden, ID value handle </p>
+<p>windows generated pointer memory whatever ... these OS only provide functions 
+Return the id value of the window. handle datatype HWND pointer type is returned </p>
+<p>float <em>pFloat; 
+int </em>pInt = pFloat; // Error </p>
+<p>Simliarly 
+HWD hWnd = 0; // pointer value pointing struct HWD__
+HBITMAP hBit = hWnd; // pointer value pointing struct HBITMAP__</p>
+<p>Compatibility Issue pointer function is applied 
+If all id are defined as UINT then the user will be extremely confused about ID type 
+so ID type is defined as different type while not revealing kernel objects 
+so HPEN HBRUSH HDC HWND HBITMAP HMODULE are used </p>
+<p>Kernel object is not revealing specific memory address or structure but provided as id value 
+by each type of kernel object id value confusion shuold be prevented 
+so id value offers different types per each kernel object </p>
+<p>simple interger type management by ID will result in kernel object confusion with different types 
+so different tpye pointers are not compatible so name is redefine dand used </p>
+<p>Each different handle not compatible 
+HWND hWnd - 0; 
+HBitMAP hBit = hWnd; // Error 
+Each differnent pointer not compatible </p>
+<p>float <em>pFloat; 
+int </em>pInt = pFloat; // Error </p>
+<p>Kernel objects </p>
 
 
 
