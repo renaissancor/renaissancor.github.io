@@ -1,0 +1,7824 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="C++ Blog and Study Notes">
+      
+      
+        <meta name="author" content="Renaissancor">
+      
+      
+        <link rel="canonical" href="https://renaissancor.github.io/Interview/INTERVIEW02/">
+      
+      
+        <link rel="prev" href="../INTERVIEW01/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>INTERVIEW02 - Renaissancoriate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renaissancoriate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              INTERVIEW02
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Renaissancoriate
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR111111/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sample Template Title
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250423/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inheritance, Polymorphism, Virtual Functions, Overriding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250424/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Virtual Function Override, Static and const
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250425/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Singleton Design Pattern
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250426/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Windows API Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250429/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Message Loops and Engine Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250430/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WinAPI Actor Architecture and Rendering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250501/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Level Management and Resource Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250507/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gaem Engine Delta Time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250508/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resolution and Device Contexts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250509/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250509
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250512/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Texture Loading and TransparentBlt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250513/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250513
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250515/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250515
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250518/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250518
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250519/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250519
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250521/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250521
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250527/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250527
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR250604/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250604
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_21" >
+        
+          
+          <label class="md-nav__link" for="__nav_21" id="__nav_21_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_21">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_21_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_21_2" id="__nav_21_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    HKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_21_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_21_2">
+            <span class="md-nav__icon md-icon"></span>
+            HKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Divide and Conquer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tower of Hanoi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Divide-and-Conquer Approach
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Master Theorem, Fibonacci Example
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fibonacci Numbers &amp; Matrix Exponentiation Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Maximum Subarray Problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exercises Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HKUL1P8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUPSET1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HKUPSET1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKU_Math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HKU Math
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        
+          
+          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    C C++ Basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22">
+            <span class="md-nav__icon md-icon"></span>
+            C C++ Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C++ Data Types and Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators and Precedence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Flow in C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250310/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bitwise Operators &amp; Preprocessor Macros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250311/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local Variables, Arrays, &amp; Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structs and Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Function Mechanics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250317/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250318/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Global and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250319/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pointer Basics and Function Overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250320/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constexpr, Const, Volatile, and Pointer Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250321/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C Memory Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250324/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Const Pointers and Type-Punning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250325/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom String Utilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250326/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Layout and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250327/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Memory Allocation and Heap Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250328/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linked List and Dynamic Array
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250331/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class vs Struct, Encapsulation, and Const-Correctness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function &amp; Operator Overloading, Object Lifetime, and Const Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Namespaces, Constructors, and Copy Mechanics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" >
+        
+          
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Network
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Network
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0503/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Macroscopic View of Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0504/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microscopic View of Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/TCPIP1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Prgramming and Socket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            Data Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Array, STL Vector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250407/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Memory Management and Template Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250408/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STL Vector and Iterator Behavior
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250409/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STL Vector vs List &amp; Custom Iterator Logic (with CArray)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250410/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Doubly Linked List and Iterator Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250411/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notes on Iterators and Linked List Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250414/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linked List: Reverse Function &amp; Notes Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250415/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tree Algorithms and Traversals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250416/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search Tree: Study Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250417/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search Tree Iterator and Enum in C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250418/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compiler Knowledge for Game Developers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250421/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search Tree Erase Logic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250422/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inheritance and Object Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" >
+        
+          
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482FA24
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482FA24
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_25_1" id="__nav_25_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482HW
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_25_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25_1">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482HW
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment III
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment IV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment V
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VIII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_25_2" id="__nav_25_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482LAB
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_25_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25_2">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482LAB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 09
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_25_3" id="__nav_25_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_25_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25_3">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/DeveloperGuide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 2 LemonDB Multi Threading Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/MultiThreading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-threading Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Improvements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Road Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_25_4" id="__nav_25_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_25_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25_4">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Risk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling Risk Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling RoadMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_26" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_26" id="__nav_26_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_26_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_26">
+            <span class="md-nav__icon md-icon"></span>
+            Interview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTERVIEW01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    INTERVIEW01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    INTERVIEW02
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>INTERVIEW02</h1>
+
+<ol>
+<li>
+<p>C / C++ 차이</p>
+</li>
+<li>
+<p>객체지향이란?</p>
+</li>
+<li>
+<p>메모리 풀에 대한 설명과 사용시 이점</p>
+</li>
+<li>
+<p>메모리 구조</p>
+</li>
+<li>
+<p>세마포어 / 뮤택스 차이</p>
+</li>
+<li>
+<p>리스트 / 벡터 차이 [구현하거나 사용해 본 자료구조]</p>
+</li>
+<li>
+<p>스택 / 큐 차이</p>
+</li>
+<li>
+<p>멀티프로세스 / 멀티 쓰레드 차이</p>
+</li>
+<li>
+<p>정렬 알고리즘들에 설명해보시오.</p>
+</li>
+<li>
+<p>이 중 퀵소트란 무엇이며, 어떤 경우 어떤 시간복잡도를 가지며, 왜 그러한 시간복잡도를 가지는가?</p>
+</li>
+<li>
+<p>싱글스레드 / 멀티스레드 차이</p>
+</li>
+<li>
+<p>페이징이란? [세그멘테이션, 프레그멘테이션, 내부단편화, 외부 단편화, 프레그멘테이션 회피방법 등]</p>
+</li>
+<li>
+<p>데드락이란?</p>
+</li>
+<li>
+<p>크리티컬 섹션이란?</p>
+</li>
+<li>
+<p>구조체 / 클래스 차이</p>
+</li>
+<li>
+<p>가상함수란?</p>
+</li>
+<li>
+<p>가상소멸자란?</p>
+</li>
+<li>
+<p>포인터 / 참조자 차이</p>
+</li>
+<li>
+<p>포인터란?</p>
+</li>
+<li>
+<p>Call by Value / Call by reference 차이</p>
+</li>
+<li>
+<p>유니코드 / 아스키코드 차이</p>
+</li>
+<li>
+<p>비동기 / 동기 차이</p>
+</li>
+<li>
+<p>렌더링 파이프라인란?</p>
+</li>
+<li>
+<p>A와 B의 앞/뒤 위치판별</p>
+</li>
+<li>
+<p>업캐스팅, 다운캐스팅이란?</p>
+</li>
+<li>
+<p>다익스트라 일고리즘이란?</p>
+</li>
+<li>
+<p>getMessage / peekMessage 차이</p>
+</li>
+<li>
+<p>동적바인딩(동적할당)이란?</p>
+</li>
+<li>
+<p>컴파일 순서</p>
+</li>
+<li>
+<p>객체지향의 4대 특징이란?</p>
+</li>
+<li>
+<p>오버로딩 / 오버라이딩 차이</p>
+</li>
+<li>
+<p>C# 가비지컬렉터란?</p>
+</li>
+<li>
+<p>C# 클래스 / 구조체 차이 </p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 3</p>
+<p>강남에 위치한 'ㅇㅇㅇㅆ'회사</p>
+<p>2018년 기술면접 목록입니다.</p>
+<ol>
+<li>
+<p>Vector, List, Map의 개념 및 차이</p>
+</li>
+<li>
+<p>new / malloc 차이</p>
+</li>
+<li>
+<p>멀티스레드의 장단점</p>
+</li>
+<li>
+<p>트랜잭션이란?</p>
+</li>
+<li>
+<p>struct / class의 차이</p>
+</li>
+<li>
+<p>TCP / UDP의 차이</p>
+</li>
+<li>
+<p>정렬 중 가장 빠른 정렬과 그렇게 생각하는 이유</p>
+</li>
+<li>
+<p>맵 / 해쉬맵 차이</p>
+</li>
+<li>
+<p>OOP에 대한 자신의 개인적인 견해</p>
+</li>
+<li>
+<p>오버로딩 / 오버라이딩 차이</p>
+</li>
+<li>
+<p>스택 / 힙 개념 및 차이</p>
+</li>
+<li>
+<p>지역, 전역, 동적 변수의 개념 및 라이프사이클 설명</p>
+</li>
+<li>
+<p>자주 사용하는 IDE와 그 이유</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 4 </p>
+<p>판교에 위치한 'ㄴㅇㅇㅈ'회사
+2018년 실기 면접 목록입니다. </p>
+<p>&lt;주의 사항&gt;</p>
+<p>사용 언어는 C++ 입니다.</p>
+<p>"이 곳을 채우시오" 부분에 코딩하십시오.</p>
+<p>런타임, STL, 기타 라이브러리는 사용 불가입니다.</p>
+<p>문제 풀이에 대한 본인의 생각을 주석으로 넣으시오.</p>
+<p>문제 1</p>
+<p>해당 문자열을 단어 단위로 순서를 뒤집어 출력하세요. </p>
+<p>&lt;예&gt;</p>
+<p>입력값 : "hello world"</p>
+<p>반환값 : "world hello"</p>
+<p>&lt;조건&gt;</p>
+<p>입력 문자열은 앞, 뒤 공백이 없다고 가정합니다. 또한 단어는 공백 한 칸으로 구분된다고 가정합니다.</p>
+<p>void Reverse(char<em> output, intoutputArraySize, const char</em> input)</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>// 이 곳을 채우시오.
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>문제 2 </p>
+<p>int형 정수 값을 입력 받아 문자열로 반환하는 함수를 만드세요.</p>
+<p>&lt;예&gt;</p>
+<p>입력값 : 4714, 반환값 : "4714"</p>
+<p>void IntToStr(char* output, int outputArraySize,int input)</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>// 이 곳을 채우시오.
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>문제 3</p>
+<p>Insertion Sort를 사용해서 작은 값이 앞으로 오도록 List 를 정렬 후,</p>
+<p>다음 head를 반환하는 함수를 만드세요.</p>
+<p>&lt;예&gt;</p>
+<p>입력값 : head → 2 → 10 → 7 → 6 → 20</p>
+<p>반환값 : head → 2 → 6 → 7 → 10 → 20</p>
+<p>struct ListNode</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>int val;
+
+ListNode* nextNode;
+
+ListNode(int x,ListNode* next) : val(x), nextNode(next) {}
+</code></pre></div></td></tr></table></div>
+
+<p>};</p>
+<p>ListNode<em> InsertionSort(ListNode</em> head)</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>// 이 곳을 채우시오.
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>문제 4</p>
+<p>시간복잡도를 염두하여 주어진 List의 마지막에서 n번째 Node를 찾으시오.</p>
+<p>&lt;예&gt;</p>
+<p>입력값 : head → 2 → 1 → 3 → 6 → 10 → 5,  2번째</p>
+<p>반환값 : 10</p>
+<p>struct ListNode</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>int val;
+
+ListNode* next;
+
+ListNode(int x,ListNode* next) : val(x), next(next) {}
+</code></pre></div></td></tr></table></div>
+
+<p>};</p>
+<p>ListNode<em> FindNthNodeFromLast(ListNode</em>head, int n) </p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>// 이 곳을 채우시오.
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>문제 5</p>
+<p>preorder 종주를 하면서 노드의 값을 출력하시오.</p>
+<p>&lt;예&gt;</p>
+<p>입력값 :</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>     10
+
+  /       \
+
+7           16
+</code></pre></div></td></tr></table></div>
+
+<p>/   \      /    \</p>
+<p>2     8    11    18</p>
+<p>반환값 : 10, 7, 2, 8, 16, 11, 18</p>
+<p>struct TreeNode</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>int val;
+
+TreeNode* leftNode;
+
+TreeNode* rightNode;
+
+TreeNode(int x,TreeNode* left = nullptr, TreeNode* right = nullptr) : val(x), leftNode(left),rightNode(right) {}
+</code></pre></div></td></tr></table></div>
+
+<p>};</p>
+<p>void PreorderTraversal(TreeNode* root)</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>// 이 곳을 채우시오.
+}
+</code></pre></div></td></tr></table></div>
+
+<p>문제 6</p>
+<p>단 한 숫자 X를 제외한 나머지는 같은 숫자가 연속해서 2번 나오는 int 배열이 있습니다.</p>
+<p>시간복잡도를 고려하여 한번만 나오는 숫자 X를 찾아보세요.</p>
+<p>&lt;예&gt;</p>
+<p>입력값 : [2,2,4,4,6,6,3,1,1,7,7]</p>
+<p>반환값 : 3</p>
+<p>int FindSingleNumber(int* numbers, intarraySize)</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>// 이 곳을 채우시오.
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>문제 7</p>
+<p>정사각형 이미지를 나타내는 정방형 2차원 배열이 있습니다. 이 때, 이미지의 크기는 동적입니다.</p>
+<p>가능한 메모리를 적게 사용해서 이미지를 시계 방향으로 90도 돌려주세요.</p>
+<p>&lt;예&gt;</p>
+<p>입력값 :</p>
+<p>1, 2, 3,</p>
+<p>4, 5, 6,</p>
+<p>7, 8, 9</p>
+<p>변경된값</p>
+<p>7, 4, 1,</p>
+<p>8, 5, 2,</p>
+<p>9, 6, 3</p>
+<p>void RotateRectangle(int* image, int width)</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>// 이 곳을 채우시오.
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+<p>게임회사 기술면접 질문 &amp; 답변 5</p>
+<p>판교에 위치한 'ㅆㅇㅇㅈ'회사
+2018년 기술면접 목록입니다.</p>
+<ol>
+<li>STL 사용 유무? 벡터 / 리스트의 차이</li>
+<li>벡터 사용 시 중간에 삽입이 가능한가?</li>
+<li>벡터 / 배열의 차이</li>
+<li>벡터의 재할당 속도 줄이는 법</li>
+<li>쿼드트리 왜 쓰는가?</li>
+<li>픽셀충돌 왜 쓰는가?</li>
+<li>픽셀충돌의 문제점이 뭘까</li>
+<li>리스트에서 at을 구현한다면 어떻게 구현하는가?</li>
+<li>리스트에서 100만번 째 데이터를 찾는데 검색속도를 줄일려면?</li>
+<li>프로스텀 컬링이란?</li>
+<li>오클루젼 컬링이 무엇인가? 오브젝트 뒤의 오브젝트를 렌더할지 말지를 어떻게 판단하는가?</li>
+<li>C++에서 구조체 / 클래스의 차이</li>
+<li>C#에서 구조체 / 클래스의 차이</li>
+<li>스택 / 힙이란?</li>
+<li>포인터와 레퍼런스의 차이</li>
+<li>Call by Value / call by reference의 차이</li>
+<li>스택에 용량 제한이 있는가?</li>
+<li>힙에 용량 제한이 없는가?</li>
+<li>스택 오버플로우를 경험한 적이 있는가?</li>
+<li>DirectX에서 Player가 지형에 있는지 어떻게 판단하는가?, 만약 복층의 개념이 추가되면 어떻게 판단하는가?</li>
+<li>게임 록맨의 충돌 처리는 어떻게 했을까? 록맨의 맵은 길게 쭉 늘어나 있는데 픽셀 충돌을 사용하면 메모리 소모가 심하지 않느냐?</li>
+<li>라이트맵 왜 쓰는가?</li>
+<li>DrawCall이란 무엇인가?</li>
+<li>앱실론이란 무엇인가? 왜 오차가 나는가?</li>
+<li>박싱, 언박싱이란?</li>
+<li>
+<p>게임을 만들고 싶어하는 이유?</p>
+</li>
+<li>
+<p>게임 개발을 위해 요즘 노력하는 것</p>
+</li>
+<li>객체지향이란 무엇인가?</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 6 </p>
+<ol>
+<li>
+<p>영어 사전을 구현할 때 어떻게 구현하면 가장 효율적으로 구성할 수 있는가?</p>
+</li>
+<li>
+<p>Select Model 구현할 때 주의해야할 점은 무엇인가?</p>
+</li>
+<li>
+<p>암호화 비대칭키 / 대칭키 차이</p>
+</li>
+<li>
+<p>AES는 대칭키인가, 비 대칭키인가?</p>
+</li>
+<li>
+<p>IOCP에서 Accept 받은 쓰레드에서 처리하지 않고 왜 Worker Thread에 포스트큐를 통해 신호를 주고 받는 작업하는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 7</p>
+<p>강남에 위치한 'ㄷㅂㅅㅅㅌㅈ'회사
+2018년 기술면접 목록입니다.</p>
+<ol>
+<li>
+<p>연락처 어플을 만드려고 한다. 어떻게 만들면 좋은가?</p>
+</li>
+<li>
+<p>그러한 방식으로 만든다면, 이러한 문제가 생길텐데 어떻게 해결하겠는가?</p>
+</li>
+<li>
+<p>이러한 문제점들이 앞으로 매번 생긴다면?</p>
+</li>
+<li>
+<p>heap / stack 차이</p>
+</li>
+<li>
+<p>특정 상황에서 둘 중 어느 메모리를 사용하는 것이 유리한가? (메모리 캐싱 및 단편화)</p>
+</li>
+<li>
+<p>C++의 장점은 무엇이라고 생각하는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 8</p>
+<p>분당에 위치한 'ㅈㅇㅅㅌㅆㅋㅍㅅㅌㄷㅇ'회사
+2018년 기술면접 목록입니다.</p>
+<ol>
+<li>
+<p>C++ 메모리 구조를 설명하시오</p>
+</li>
+<li>
+<p>C++ 함수를 호출하고 리턴하는 과정을 자세히 설명하시오</p>
+</li>
+<li>
+<p>프로세스 / 쓰레드 차이</p>
+</li>
+<li>
+<p>Context Swiching 이란?</p>
+</li>
+<li>
+<p>DeadLock 이란?</p>
+</li>
+<li>
+<p>Direct3D란?</p>
+</li>
+</ol>
+<p>8-1. Vector, LinkedList, HashMap, Map이란?</p>
+<p>8-2. 각 장점 및 단점
+8-3. 삽입, 탐색, 삭제 속도를 BigO 표기법으로 표시하시오</p>
+<ol>
+<li>
+<p>다음 코드를 보고 잘못된 부분이 있다면 서술 후 이를 고치시오</p>
+<p>//Func #1</p>
+<p>char* GetText()</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  return &quot;TEXT&quot;;
+</code></pre></div></td></tr></table></div>
+
+<p>}    </p>
+<p>//Func #2</p>
+<p>char* GetText()</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>  char ch[128] = &quot;TEXT&quot;;
+
+  return ch;
+   }
+</code></pre></div></td></tr></table></div>
+
+<p>//Func #3</p>
+<p>char* GetText()</p>
+<p>{</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>  static char ch[128] = &quot;TEXT&quot;;
+
+  return ch;
+</code></pre></div></td></tr></table></div>
+
+<p>}</p>
+</li>
+<li>
+<p>본인이 자신있는 것 아무거나 설명해보시오. </p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 9</p>
+<p>판교에 위치한 'ㄴㅅ'회사
+2018년 서버 면접 목록입니다.</p>
+<ol>
+<li>
+<p>포트폴리오에 대해 이해가 있는지, 사용된 라이브러리등에 대한 질문 </p>
+</li>
+<li>
+<p>퀵소트의 동작 원리를 설명하시오.</p>
+</li>
+<li>
+<p>boost 라이브러리란 무엇인가?</p>
+</li>
+<li>
+<p>정적 라이브러리와 동적 라이브러리란 무엇인가?</p>
+</li>
+<li>
+<p>이진트리의 장점과 삽입, 삭제 과정을 설명하시오</p>
+</li>
+<li>
+<p>패킷 설계는 어떻게 해야하며, 왜 해야하는가?</p>
+</li>
+<li>
+<p>왜 IOCP를 사용하는가?</p>
+</li>
+<li>
+<p>nonblocking과 비동기의 차이</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 10 </p>
+<p>구로구에 위치한 'ㄴㅁㅂ'회사
+2020년 엔진 프로그래머 면접 목록입니다.</p>
+<p>4:1로 1시간 30분 경 면접 보았으며, 면접 전에 Object Pool, A* 코드를 보내달라고 하셨습니다.</p>
+<p>면접 후에는 논술 필기 시험 일종으로 제가 제출한 코드를 최적하는 문제가 나왔습니다.</p>
+<ol>
+<li>
+<p>부동 소수점 에러란? Nan이란?</p>
+</li>
+<li>
+<p>멀티 쓰레드 환경이란 무엇인가?</p>
+</li>
+<li>
+<p>Modern C++에 대하여 아는대로 얘기하시오</p>
+</li>
+<li>
+<p>부모가 자식의 private 함수에 접근할 수 있는 문법은 무엇인가?</p>
+</li>
+<li>
+<p>전방 선언이란 무엇인가?</p>
+</li>
+</ol>
+<p>5-1. 전방 선언을 쓸 수 있는 문법 구조는 어떻게 되는가?</p>
+<p>5-2. enum은 전방 선언을 쓸 수 있는가?</p>
+<ol>
+<li>
+<p>선형 대수란 무엇인가? </p>
+</li>
+<li>
+<p>내적/외적 코드에 적용시켜 본 적은 있는가?</p>
+</li>
+<li>
+<p>이 때까지 고친 버그 중 가장 기억에 남는 것은 무엇인가?</p>
+</li>
+<li>
+<p>C에 대해 얼마나 알고 있는가?</p>
+</li>
+<li>
+<p>엔진 프로그래밍이란 무엇이라고 생각하는가?</p>
+</li>
+<li>
+<p>구조를 짤 때 어떤 것을 생각하며 짜는가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>가장 좋아하는 알고리즘 기법은 무엇인가?</p>
+</li>
+<li>
+<p>존경하는 프로그래머가 있다면?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 11</p>
+<p>판교에 위치한 'ㅅㅁㅇㄱㅇㅌ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>멀티 쓰레드란 무엇인가? 락과 쓰레드의 차이</p>
+</li>
+<li>
+<p>STL 자료 구조에 대해 얼마나 아는가?</p>
+</li>
+<li>
+<p>Vector resize란 무엇인가? 이는 어디에서 사용하는가?</p>
+</li>
+<li>
+<p>가상 함수 포인터란 무엇인가?</p>
+</li>
+<li>
+<p>int32 한 개와 가상 함수 두 개가 있으면 몇 바이트인가?</p>
+</li>
+<li>
+<p>Null Referencing 란 무엇인가? 이는 어떻게 해결하는가?</p>
+</li>
+<li>
+<p>디버깅을 잘 하는가?</p>
+</li>
+<li>
+<p>프로파일러란 무엇인가?</p>
+</li>
+<li>
+<p>모바일 플랫폼 AOS와 IOS에 대해 아는가?, 빌드 경험은 있는가?</p>
+</li>
+<li>
+<p>Modern C++ 무엇인가?</p>
+</li>
+<li>
+<p>람다식이란 무엇인가</p>
+</li>
+<li>
+<p>boost 라이브러리란 무엇인가?</p>
+</li>
+<li>
+<p>가비지 콜럭테란 무엇인가?</p>
+</li>
+<li>
+<p>로스트아크에 대한 관심도가 있는가?</p>
+</li>
+<li>
+<p>언리얼에 대한 이해도가 충분한가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 12</p>
+<p>강남에 위치한 'ㄷㅋㅅㅍㅌ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>유니티를 얼마나 많이 사용해보았는가?</p>
+</li>
+<li>
+<p>무슨 언어가 제일 편한가?</p>
+</li>
+<li>
+<p>Awake와 OnEnable의 차이</p>
+</li>
+<li>
+<p>델리게이트란?</p>
+</li>
+<li>
+<p>인터페이스란?</p>
+</li>
+<li>
+<p>오버로딩과 오버라이딩의 차이</p>
+</li>
+<li>
+<p>대화를 주도하는 편인가?</p>
+</li>
+<li>
+<p>본인을 프로그래머라고 생각하는가?</p>
+</li>
+<li>
+<p>업무의 성취감이란 무엇이라고 생각하는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 13</p>
+<p>광진구에 위치한 'ㅇㅈㄱㅇㅈ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>1분 자기소개</p>
+</li>
+<li>
+<p>기술 문서에 적은 모든 내용 및 꼬리물기</p>
+</li>
+<li>
+<p>벡터의 내적, 외적을 설명해보시오</p>
+</li>
+<li>
+<p>버텍스, 인덱스, 법선이란 무엇인가?</p>
+</li>
+<li>
+<p>C#과 C++의 차이점</p>
+</li>
+<li>
+<p>어떤 개발자가 되고 싶으며, 무슨 게임 개발을 해보고 싶은가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 14</p>
+<p>서초구에 위치한 'ㅂㅇㅌㄹ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>포트폴리오 설명</p>
+</li>
+<li>
+<p>포르폴리오 구성 시 어떤걸 중점으로 작업을 진행했는가?</p>
+</li>
+<li>
+<p>포트폴리오를 보며 이 작업 어떻게 해결했는가?</p>
+</li>
+<li>
+<p>회사까지 오는 시간</p>
+</li>
+<li>
+<p>유니티 사용 경력</p>
+</li>
+<li>
+<p>디자인 패턴이란?</p>
+</li>
+</ol>
+<p>6-1. 사용한 디자인 패턴 개념 및 설명</p>
+<p>6-2. 사용한 디자인 패턴의 장/단점, 사용 이유</p>
+<ol>
+<li>
+<p>술을 얼마나 먹는가?</p>
+</li>
+<li>
+<p>게임을 얼마나 좋아하는가?</p>
+</li>
+<li>
+<p>리그오브레전드 티어는 어디인가?</p>
+</li>
+<li>
+<p>자회사 게임을 해보았는가?</p>
+</li>
+<li>
+<p>연봉은 얼마나 받고 싶으며 그 이유는?</p>
+</li>
+<li>
+<p>업무 시 팀 VS 개인 단위 중 무엇이 더 편하며 그이유는?</p>
+</li>
+<li>
+<p>리드하는 스타일 VS 의견에 따르는 스타일 중 무엇이 편하며 그 이유는?</p>
+</li>
+<li>
+<p>성격의 장, 단점</p>
+</li>
+<li>
+<p>술을 일주일에 몇 번이나 먹는가?</p>
+</li>
+<li>
+<p>주사가 있는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 15</p>
+<p>분당에 위치한 'ㅍㅇㅇㅅㅍㅌ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>대학 진학 여부</p>
+</li>
+<li>
+<p>미연시 장르 게임 해보았는가?</p>
+</li>
+<li>
+<p>유니티 몇 년이나 사용해보았는가?</p>
+</li>
+<li>
+<p>제일 자신있는 언어는 무엇인가?</p>
+</li>
+<li>
+<p>게임 개발 경험 여부</p>
+</li>
+<li>
+<p>협업을 하면서 힘든 경험은 무엇인가?</p>
+</li>
+<li>
+<p>상속이란 무엇인가?</p>
+</li>
+<li>
+<p>오버로딩, 오버라이딩이란 무엇인가?</p>
+</li>
+<li>
+<p>연봉 2400 제시 및 질문, 연봉은 얼마 받고 싶은지, 또 이유는 무엇인지?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 16</p>
+<p>마포구에 위치한 'ㅍㅇㅅㄱㅇㅈ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>하이퍼 캐주얼 게임이란 무엇인가?</p>
+</li>
+<li>
+<p>워라벨, 돈 둘 중 어느것이 중요한가?</p>
+</li>
+<li>
+<p>팀 프로젝트 중 한명이 일을 정상적으로 못하면 어떻게 하는가?</p>
+</li>
+<li>
+<p>디지털 노마드란 무엇인가?</p>
+</li>
+<li>
+<p>학교 및 학원의 출결 상태는 어땟는가?</p>
+</li>
+<li>
+<p>회사를 옮긴다고 했을 때 해외까지도 따라갈 수 있는가?</p>
+</li>
+<li>
+<p>맥 환경을 사용해보았는가?</p>
+</li>
+<li>
+<p>좋아하는 게임은 무엇인가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 17</p>
+<p>분당에 위치한 'ㅇㅌㅇ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>자기소개</p>
+</li>
+<li>
+<p>학원에 대해</p>
+</li>
+<li>
+<p>전 직장에 대해</p>
+</li>
+<li>
+<p>왜 프로그래머가 되려고 하는가?</p>
+</li>
+<li>
+<p>프로그래머가 어울리는가, 기획자가 어울리는가?</p>
+</li>
+<li>
+<p>게임을 출시 할 때 기간내에 완성이 중요한가, 버그가 없는 완성도가 중요한가?</p>
+</li>
+<li>
+<p>살면서 제일 재밌게 했던 게임은?</p>
+</li>
+<li>
+<p>프로그래밍을 배운 이 후 게임에 대해 어떤 생각이 드는가?</p>
+</li>
+<li>
+<p>포트폴리오 프로젝트들에 대해서 짧은 설명</p>
+</li>
+<li>
+<p>깃허브를 이용해 버전 관리를 사용했는데 만약 버전이 꼬인다면 어떻게 해결할 것인가?</p>
+</li>
+<li>
+<p>프로젝트 진행 시 모든 데이터를 어떤 방식으로 어떻게 관리했는가?</p>
+</li>
+<li>
+<p>서버, 네트워크 쪽 데이터를 가져와서 프로젝트를 진행한 경험이 있는가?</p>
+</li>
+<li>
+<p>프로젝트를 진행하면서 가장 어려웠던 부분은 무엇이고, 이를 어떻게 해결했는가?</p>
+</li>
+<li>
+<p>유니티 라이프 사이클이란?</p>
+</li>
+<li>
+<p>유니티 최적화의 방법은 무엇이 있는가?</p>
+</li>
+<li>
+<p>가비지 컬렉션이란 무엇인가?</p>
+</li>
+<li>
+<p>디폴트 메소드란 무엇인가?</p>
+</li>
+<li>
+<p>static이란 무엇인가?</p>
+</li>
+<li>
+<p>자료구조란 무엇인가?</p>
+</li>
+<li>
+<p>Virtual Function이란?</p>
+</li>
+<li>
+<p>상속이란?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 18</p>
+<p>강남에 위치한 'ㅅㅋㄹㅌㅇ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>OOP, 객체지향 중 다형성이란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇이며, 무엇을 사용했는가?</p>
+</li>
+<li>
+<p>STL의 대표적인 선형과 비 선형은 무엇인가?</p>
+</li>
+<li>
+<p>이터레이터란 무엇인가?</p>
+</li>
+<li>
+<p>죽음의 다이아몬드란 무엇인가?</p>
+</li>
+<li>
+<p>가상함수를 사용했을 때 자식의 메모리가 오브젝트의 크기만큼 사이즈가 더 커지는 이유는 무엇인가?</p>
+</li>
+<li>
+<p>스택과 큐의 차이점은?</p>
+</li>
+<li>
+<p>트리란 무엇이며, 이진트리는 무엇인가?</p>
+</li>
+<li>
+<p>멀티 쓰레드란 무엇인가?</p>
+</li>
+<li>
+<p>가비지 콜렉터란 무엇인가?</p>
+</li>
+<li>
+<p>리플렉션이란 무엇인가?</p>
+</li>
+<li>
+<p>델리게이트란 무엇인가?</p>
+</li>
+<li>
+<p>이벤트란 무엇인가?</p>
+</li>
+<li>
+<p>박싱, 언박싱이란 무엇인가?</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>비동기 로딩이란 무엇인가?</p>
+</li>
+<li>
+<p>프로파일러를 사용해보았는가?</p>
+</li>
+<li>
+<p>쉐이더를 사용해보았는가?</p>
+</li>
+<li>
+<p>NGUI, UGUI란 무엇인가?</p>
+</li>
+<li>
+<p>유니티 렌더링 파이프라인은 어떻게 되는가?</p>
+</li>
+<li>
+<p>유니티 아틀라스의 내부동작 방식은 어떻게 되는가?</p>
+</li>
+<li>
+<p>드로우콜 배치는 무엇이며, 어떻게 줄일 수 있는가?</p>
+</li>
+<li>
+<p>이미지 파일 확장자와 패키징의 내부 동작은 어떻게 이루어지는가?</p>
+</li>
+<li>
+<p>형상관리를 써 보았는가?</p>
+</li>
+<li>
+<p>다른 형상관리 툴과 차이점이 무엇이며, 내부 동작이 어떻게 되는가?</p>
+</li>
+<li>
+<p>팀 프로젝트에서 가장 중요한 것은 무엇인가?</p>
+</li>
+<li>
+<p>다른 사람들에게 자신이 어떤 평가를 받고, 그러한 평을 들으면 기분이 어떠하는가?</p>
+</li>
+<li>
+<p>자신이 어떤 목표를 가지고 어떤 프로그래밍을 하고 싶은가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 19</p>
+<p>판교에 위치한 'ㅅㅍㅍㄹㅅ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>자기 소개</p>
+</li>
+<li>
+<p>전공이 바뀌었는데 프로그래머가 되려는 이유</p>
+</li>
+<li>
+<p>자신의 포토폴리오 소개</p>
+</li>
+<li>
+<p>Dictionary를 쓴 이유</p>
+</li>
+<li>
+<p>Dictionary가 어떻게 구현되어 있는가?</p>
+</li>
+<li>
+<p>해쉬 맵이란?</p>
+</li>
+<li>
+<p>맵이란?</p>
+</li>
+<li>
+<p>이진 트리란?</p>
+</li>
+<li>
+<p>레드 블랙 트리란?</p>
+</li>
+<li>
+<p>맵은 어떻게 정렬시키는가?</p>
+</li>
+<li>
+<p>자료구조란 무엇인가?</p>
+</li>
+<li>
+<p>벡터란 무엇인가?</p>
+</li>
+<li>
+<p>리스트란 무엇인가?</p>
+</li>
+<li>
+<p>리스트의 정렬은 어떻게 이루어지는가?</p>
+</li>
+<li>
+<p>디자인 패턴 써본것은 무엇이 있는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 20</p>
+<p>구로구에 위치한 'ㅅㅍㄹㅋ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>1부터 100까지의 짝수의 합을 함수로 작성하시오</p>
+</li>
+<li>
+<p>주사위의 2가 30% 확률로 나타나게 작성하시오.</p>
+</li>
+<li>
+<p>아무 숫자나 입력받고 1부터 입력받은 숫자까지 소수가 있을 경우 소수를 모두 출력하는 함수를 작성하시오.</p>
+</li>
+<li>
+<p>객체지향이란 무엇인가?</p>
+</li>
+<li>
+<p>코드를 짤 때 어떤걸 가장 중시하는가?</p>
+</li>
+<li>
+<p>자료구조란 무엇인가?</p>
+</li>
+<li>
+<p>스마트 포인터란 무엇인가?</p>
+</li>
+<li>
+<p>추상화란 무엇인가?</p>
+</li>
+<li>
+<p>스레드와 프로세스의 차이</p>
+</li>
+<li>
+<p>배열, 리스트 맵의 차이</p>
+</li>
+<li>
+<p>이진트리가 무엇인가?</p>
+</li>
+<li>
+<p>맵, 해쉬맵의 시간 복잡도는?</p>
+</li>
+<li>
+<p>해쉬맵 해싱 충돌이 일어날 경우 해결방법은 어떻게 되는가?</p>
+</li>
+<li>
+<p>유니티 어느정도 사용해보았는가?</p>
+</li>
+<li>
+<p>게임 학원에서 배운 것은 무엇이 있는가?</p>
+</li>
+<li>
+<p>맵툴을 왜 사용하게 되었는가?</p>
+</li>
+<li>
+<p>좋아하는 게임은 무엇인가?</p>
+</li>
+<li>
+<p>회사 게임 해보았는가? 장, 단점은 무엇인가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 21
+강남구에 위치한 'ㅂㅅㅇㅍㅅㅌ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>과제 (회사 게임 만들어보기)</p>
+</li>
+<li>
+<p>면접 전 간단한 인터뷰</p>
+</li>
+<li>
+<p>자기 자신의 과제 전형은 10점 만점의 몇 점인가?</p>
+</li>
+<li>
+<p>과제를 하면서 가장 기억에 남는 요소는 무엇인가?</p>
+</li>
+<li>
+<p>과제를 하면서 어려웠던 점은 무엇인가?</p>
+</li>
+<li>
+<p>과제를 하면서 가장 기억에 남는 구현요소는 무엇인가?</p>
+</li>
+<li>
+<p>과제를 하면서 개발한 순서는 어떻게 되는가?</p>
+</li>
+<li>
+<p>과제를 하면서 길 찾기 기능은 어떻게 구현했는가?</p>
+</li>
+<li>
+<p>오브젝트 풀링이란 무엇인가?</p>
+</li>
+<li>
+<p>NGUI, UGUI란 무엇인가?</p>
+</li>
+<li>
+<p>유니티를 처음 써봤을 때 어떤 부분이 가장 어려웠는가?</p>
+</li>
+<li>
+<p>UI를 구현했다면, UI를 최적화 시켜본 적이 있는가?</p>
+</li>
+<li>
+<p>개발 스타일이 기능을 구현하고 구조를 짜는가?, 아니면 처음부터 구조를 짜고 들어가는가?</p>
+</li>
+<li>
+<p>팀 프로젝트를 진행 시 기획자가 재미 없는 게임을 기획하면 어떠하겠는가?</p>
+</li>
+<li>
+<p>해당 기획자가 고집을 부리면 어떠하겠는가?</p>
+</li>
+<li>
+<p>팀 프로젝트를 하며 트러블이 있었는가?</p>
+</li>
+<li>
+<p>회사에 궁금한점은 무엇인가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 22</p>
+<p>송파구에 위치한 'ㄴㅇㅅㅌㄷㅇ'회사
+2020년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>벡터, 리스트, 맵, 해시맵은 무엇인가?</p>
+</li>
+<li>
+<p>포트폴리오에 이러한 요소는 왜 사용했는가?</p>
+</li>
+<li>
+<p>멀티쓰레드란 무엇인가?</p>
+</li>
+<li>
+<p>본인의 성격은 어떠한가?</p>
+</li>
+<li>
+<p>무슨 파트를 맡고 싶은가?</p>
+</li>
+<li>
+<p>무슨 게임을 만들고 싶은가?</p>
+</li>
+<li>
+<p>개발할 때 중요한 것은 무엇인가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 23</p>
+<p>마포구에 위치한 'ㄴㅂㅋㅇ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>자기소개</p>
+</li>
+<li>
+<p>성격의 장/단점</p>
+</li>
+<li>
+<p>스트레스를 받는 원인이 무엇이며, 인간 관계에서의 스트레스는 어떠한가?</p>
+</li>
+<li>
+<p>직무와 관련해서 가장 어려웠던 일과 대처 방법</p>
+</li>
+<li>
+<p>공백기에 무슨 일이 하였는가?</p>
+</li>
+<li>
+<p>면접 제안 메일을 받고 회사에 대해 알아보았을 텐데, 어떻게 생각하는가?</p>
+</li>
+<li>
+<p>회사 게임 플레이 해보시면서 개선하고 싶은 점은 무엇인가?</p>
+</li>
+<li>
+<p>회사에 입사하게 되면 어떤 일을 하고 싶은가?</p>
+</li>
+<li>
+<p>남의 코드를 분석해 본 경험이 있는가?</p>
+</li>
+<li>
+<p>마지막으로 하고 싶은 말이 있는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 24 </p>
+<p>판교에 위치한 'ㅇㅇㅅㅇ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>자기소개</p>
+</li>
+<li>
+<p>프로그래밍 진로를 정한 이유</p>
+</li>
+<li>
+<p>OOP를 배우면서 어려운 점</p>
+</li>
+<li>
+<p>본인이 C++에 대해 어느 정도 알 고 있는가?</p>
+</li>
+<li>
+<p>push_back과 emplace_back의 차이</p>
+</li>
+<li>
+<p>시간 복잡도란 무엇인가?</p>
+</li>
+<li>
+<p>배열과 연결리스트의 장/단점은 무엇인가?</p>
+</li>
+<li>
+<p>포인터와 레퍼런스의 차이</p>
+</li>
+<li>
+<p>재귀함수를 통해 1부터 N까지의 합을 리턴하는 코드를 작성하시오.</p>
+</li>
+<li>
+<p>렌더링 파이프라인이란 무엇인가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 25</p>
+<p>판교에 위치한 'ㄴㅅ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>1차 온라인 코딩 테스트</p>
+</li>
+<li>
+<p>2차 기술면접</p>
+</li>
+<li>
+<p>C++ 캐스팅 연산자란 무엇인가?</p>
+</li>
+<li>
+<p>static_cast가 실패하는 경우가 있는가?</p>
+</li>
+<li>
+<p>dynamic_cast는 내부적으로 어떤 체크를 하길래 형변환이 불가능하면 null을 반환하는가?</p>
+</li>
+<li>
+<p>가상 함수와 가상 함수 테이블이란 무엇인가?</p>
+</li>
+<li>
+<p>가상 소멸자와 소멸자에서 가상 함수 사용 시 위험할 수 있는데 어떤 경우인가?</p>
+</li>
+<li>
+<p>C++ String과 C# String의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>파일 포인터를 열고 닫을 때 프로그래머의 실수를 방지하기 위해 할 수 있는 방법은 무엇인가?</p>
+</li>
+<li>
+<p>벡터란 무엇인가?</p>
+</li>
+<li>
+<p>벡터의 재할당과 재할당 작업의 시간 복잡도는 얼마인가?</p>
+</li>
+<li>
+<p>해쉬 테이블과 맵을 비교해서 설명하고 해쉬테이블의 충돌 해결법은 무엇인가?</p>
+</li>
+<li>
+<p>문자열을 변환하는 해싱함수를 만드려고 하는데 어떻게 해야하는가?</p>
+</li>
+<li>
+<p>리플렉션이란 무엇인가?</p>
+</li>
+<li>
+<p>언리얼엔진은 어떻게 C++에서 리플렉션을 구현하였는가?</p>
+</li>
+<li>
+<p>노멀맵이란 무엇인가?</p>
+</li>
+<li>
+<p>노멀맵은 어떻게 만드는 것인가?</p>
+</li>
+<li>
+<p>탄젠트 스페이스란 무엇인가?</p>
+</li>
+<li>
+<p>노멀맵 적용 시 어떤 계산을 하는가?</p>
+</li>
+<li>
+<p>탄젠트 공간 &lt;-&gt; 월드 공간 변환 시 탄젠트 -&gt; 월드, 월드 -&gt; 탄젠트 무엇이 더 효율적인가?</p>
+</li>
+<li>
+<p>램버트, 퐁 쉐이딩이란 무엇인가?</p>
+</li>
+<li>
+<p>팀 면접</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 26</p>
+<p>송도에 위치한 'ㄹㄷㅁ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>코딩 테스트 진행 없음</p>
+</li>
+<li>
+<p>포트폴리오에 대한 코드 브리핑</p>
+</li>
+<li>
+<p>TCP를 활용하여 서버 클라이언트 구현과 유저 클라이언트를 구현 후 코드에 대해서 설명</p>
+</li>
+<li>
+<p>DB와 서버가 지속해서 데이터를 수정할 때 무겁다, 왜 하드웨어적으로나 무겁데 또는 어떻게 무거워지는지 알 고 있는가?</p>
+</li>
+<li>
+<p>서버 프로그래머가 되고 싶은가?, 클라이언트 프로그래머가 되고 싶은가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 27</p>
+<p>금천구에 위치한 'ㅌㅆㄹㅇㅌㅌㅇㅁㅌ'회사
+2021년 서버 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>스택과 큐의 차이</p>
+</li>
+<li>
+<p>STL이란 무엇인가?</p>
+</li>
+<li>
+<p>C/C++과 C#의 차이</p>
+</li>
+<li>
+<p>패턴 관련해서 알고 있는게 있는가?, 따로 찾아본 것이 있는가?</p>
+</li>
+<li>
+<p>가족 관계</p>
+</li>
+<li>
+<p>주량 및 술 좋아하는가?</p>
+</li>
+<li>
+<p>게임 좋아하는가?</p>
+</li>
+<li>
+<p>게임 이외의 다른 취미가 있는가?</p>
+</li>
+<li>
+<p>본인 성격은 어떠한가?</p>
+</li>
+<li>
+<p>말 다툼이 일어났을 땐 어떠한가?</p>
+</li>
+<li>
+<p>팀장이 욱하는 경우가 많은데 어떻게 그럴수 있는가?</p>
+</li>
+<li>
+<p>회사에 야근이 많은데 어떻게 생각하는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 28 </p>
+<p>인천 부평에 위치한 'ㅇㅇㄱㅇㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>기술 관련 질문 없음</p>
+</li>
+<li>
+<p>자기소개서 내 특정 경험의 대한 질문</p>
+</li>
+<li>
+<p>스타트업에 대해서 어떻게 생각하는가?</p>
+</li>
+<li>
+<p>전공자임에도 불구하고 게임 학원을 다닌 이유와, 어떤 점이 도움이 되었는가?</p>
+</li>
+<li>
+<p>퍼즐 알피지 게임을 좋아하는가?</p>
+</li>
+<li>
+<p>어떤 게임 장르를 좋아하는가?</p>
+</li>
+<li>
+<p>희망연봉보다 연봉이 낮으면 어떻게 생각하는가?</p>
+</li>
+<li>
+<p>프로젝트 준비 당시 어떤 파트가 제일 재미있었는가? </p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 29</p>
+<p>강남구에 위치한 'ㄷㅇㄱㅇㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>이론적인 기술질문은 하지 않음.</p>
+</li>
+<li>
+<p>포트폴리오에 프로젝트와 관련된 기술 질문만 진행</p>
+</li>
+<li>
+<p>예) 서버통신은 Tcp를 활용하였는가?, 데이터는 Json을 통해 저장을 하였는가?</p>
+</li>
+<li>
+<p>개인 프로젝트를 진행하게 된 계기는 무엇인가?</p>
+</li>
+<li>
+<p>출시한 앱에 적용시켜본 외부 라이브러리, 혹은 SDK가 무엇이 있는가?</p>
+</li>
+<li>
+<p>프로젝트는 몇 명이서 진행했는가?</p>
+</li>
+<li>
+<p>입사한다면 참여하고 싶은 프로젝트 장르가 따로 있는가?</p>
+</li>
+<li>
+<p>델리게이트와 인보크의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+</ol>
+<blockquote>
+<p>입사하면 맡게 될 파트
+동기나 비슷한 연령대의 동료분의 여부
+현재 회사 주력 프로젝트는 무엇인가</p>
+</blockquote>
+<p>게임회사 기술면접 질문 &amp; 답변 30</p>
+<p>용산구에 위치한 'ㅆㅇㅂㅅㅍㅌ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>유니티 버전은 몇 버전을 사용하였는가?</p>
+</li>
+<li>
+<p>3D 콘텐츠는 개발해보았는가?</p>
+</li>
+<li>
+<p>라이트 관련하여 알고있는게 있는가?</p>
+</li>
+<li>
+<p>오버로딩, 오버라이딩의 차이</p>
+</li>
+<li>
+<p>인터페이스란 무엇인가?</p>
+</li>
+<li>
+<p>가상함수란 무엇인가?</p>
+</li>
+<li>
+<p>유니티 내 이벤트 함수가 어떤게 있는가?</p>
+</li>
+<li>
+<p>최적화 기법은 무엇이 있는가?</p>
+</li>
+<li>
+<p>가비지컬렉터의 장점과 단점은 무엇인가?</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>코루틴과 스레드의 차이</p>
+</li>
+<li>
+<p>invoke와 코루틴의 차이</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 31
+강남구에 위치한 'ㅇㅂㅍ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>해외 경험이 있는데, 회화가 가능한가?</p>
+</li>
+<li>
+<p>이력서에 기재되어 있는 기술 일부 질문</p>
+</li>
+<li>
+<p>기술문서 및 프로젝트는 어떻게 만들었는가?</p>
+</li>
+<li>
+<p>팀 프로젝트는 어땠는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 작업하면서 힘든 상황 및 코딩은 무엇이였는가?</p>
+</li>
+<li>
+<p>팀 프로젝트할 때 무엇이 중요한가?</p>
+</li>
+<li>
+<p>현재 어느 지역에 거주하고 있는가?</p>
+</li>
+<li>
+<p>다른 부서일을 가끔 도와야하는 경우가 있다. 괜찮은가?</p>
+</li>
+<li>
+<p>주말에도 나올 수 있는가?</p>
+</li>
+<li>
+<p>야근이 많은데 괜찮은가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 32</p>
+<p>금천구에 위치한 'ㅇㅇㅍㄱㅇㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>포트폴리오에 기재된 총알 구현 및 적 충돌은 어떻게 구현하였는가?</p>
+</li>
+<li>
+<p>오버로딩과 오버라이딩의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>해당 기술이 어디서 구현되었는가?</p>
+</li>
+<li>
+<p>만약 퍼즐게임에서 오버로딩과 오버라이딩이 들어간다면 어디서 구현될 것 같은가?</p>
+</li>
+<li>
+<p>친구는 몇 명있는가?</p>
+</li>
+<li>
+<p>자취하는가?</p>
+</li>
+<li>
+<p>혈액형이 뭐냐?</p>
+</li>
+<li>
+<p>술 및 담배를 하는가?</p>
+</li>
+<li>
+<p>성격은 어떠한가?</p>
+</li>
+<li>
+<p>일을 하다가 막히는 부분이 있으면 어떻게 대처할 것인가?</p>
+</li>
+<li>
+<p>입사 후 3년 내 목표는 무엇인가?</p>
+</li>
+<li>
+<p>인생의 목표는 무엇인가?</p>
+</li>
+<li>
+<p>영어는 어느정도 할 수 있는가?</p>
+</li>
+<li>
+<p>본인의 체력은 어느정도 인가?</p>
+</li>
+<li>
+<p>역질문 할 내용이 있는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 33</p>
+<p>마포구에 위치한 'ㅁㅍㅇㅌㄹㅌㅂ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>회사까지 얼마나 걸렸는가?</p>
+</li>
+<li>
+<p>학원에서 무엇을 배웠는가?</p>
+</li>
+<li>
+<p>Unity는 얼마나 할 줄 아는가?</p>
+</li>
+<li>
+<p>VR은 처음해보는 것 같은데 가능한가?</p>
+</li>
+<li>
+<p>게임 제작이 아닌, VR/AR 콘텐츠를 제작 할 수 있는데 괜찮은가?</p>
+</li>
+<li>
+<p>자료구조에 대해 알고있는가?</p>
+</li>
+<li>
+<p>배열/리스트 차이</p>
+</li>
+<li>
+<p>디자인패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>비트 무엇이며? MSB는 무엇인가?</p>
+</li>
+<li>
+<p>그래픽스는 얼마나 알고있는가?</p>
+</li>
+<li>
+<p>랜더링 파이프라인란 무엇인가? 총 몇 단계로 이루어져 있는가?</p>
+</li>
+<li>
+<p>영어는 얼마나 할 수 있는가?, 논문을 해석 할 수 있는가?</p>
+</li>
+<li>
+<p>수학을 잘하는가? </p>
+</li>
+<li>좌표계에서 알파각에 있는 애를 베타각만큼 회전 시키려면 어떻게 해야하는가?</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 34</p>
+<p>금천구에 위치한 'ㅍㅍㄹ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>회사까지 얼마나 걸렸는가?</p>
+</li>
+<li>
+<p>왜 지원하였는가?</p>
+</li>
+<li>
+<p>좋아하는 게임은 무엇인가?</p>
+</li>
+<li>
+<p>워킹데드를 아는가?</p>
+</li>
+<li>
+<p>학교에서 무엇을 배웠는가?</p>
+</li>
+<li>
+<p>졸업작품으로 무엇을 진행했는가?</p>
+</li>
+<li>
+<p>학교에서 제일 재밌었던 수업은 무엇인가?</p>
+</li>
+<li>
+<p>가장 관심 있는 개발 분야는 무엇인가?</p>
+</li>
+<li>
+<p>C# 얼마나 할 줄 아는가?</p>
+</li>
+<li>
+<p>제일 자신 있는 언어는 무엇인가?</p>
+</li>
+<li>
+<p>C++에서 struct/class 차이</p>
+</li>
+<li>
+<p>C#에서 struct/class 차이</p>
+</li>
+<li>
+<p>stack/heap 차이</p>
+</li>
+<li>가장 많이 쓴 STL은 무엇인가?</li>
+<li>
+<p>Vector란 무엇인가?</p>
+</li>
+<li>
+<p>List는 무엇인가?</p>
+</li>
+<li>
+<p>유니티를 해보았는가?</p>
+</li>
+<li>
+<p>C++에 STL이 있으면 C#에는 무엇이 있는가?</p>
+</li>
+<li>
+<p>C# 제너릭 컬렉션 중에서는 무엇을 많이 사용했는가?</p>
+</li>
+<li>
+<p>템플릿이나 제너릭 왜 사용하는가?</p>
+</li>
+<li>
+<p>인터페이스란 무엇인가?</p>
+</li>
+<li>
+<p>가상 함수란 무엇인가?</p>
+</li>
+<li>
+<p>가비지 콜렉터란 무엇인가?</p>
+</li>
+<li>스마트 포인터란 무엇인가?</li>
+<li>
+<p>모던 C++에 관심이 있는가?</p>
+</li>
+<li>
+<p>유저 정보를 담는 매니저를 만들어 보아라.</p>
+</li>
+</ol>
+<blockquote>
+<p>자유로운 검색 가능</p>
+<p>지시에 맞춰 단계별로 진행</p>
+<p>사용한 키워드와 문법 등을 왜 썻는지, 무슨 기능인지 물어본다.</p>
+</blockquote>
+<p>게임회사 기술면접 질문 &amp; 답변 35
+강남구에 위치한 'ㅇㅂㅍ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>스택이란 무엇인가?</p>
+</li>
+<li>
+<p>큐란 무엇인가?</p>
+</li>
+<li>
+<p>벡터란 무엇인가?</p>
+</li>
+<li>
+<p>리스트란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>무슨 디자인 패턴을 사용해보았는가?</p>
+</li>
+<li>
+<p>상태 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>싱글톤 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>Z오더란 무엇인가?</p>
+</li>
+<li>
+<p>정렬 알고리즘은 무엇인가?</p>
+</li>
+<li>
+<p>퀵 정렬이란 무엇인가?</p>
+</li>
+<li>
+<p>3D 게임 개발을 해보았는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 불화는 없었는가?</p>
+</li>
+<li>팀 프로젝트 당시 가장 어려웠던 점은 무엇인가?</li>
+<li>
+<p>팀 프로젝트 게임 중 창작 + 모작이 섞여있는데 창작은 어떤 부분인지 설명가능한가?</p>
+</li>
+<li>
+<p>다이렉트 3D 경험이 있는가?</p>
+</li>
+<li>
+<p>클라이언트 개발자로 지원한 이유는 무엇인가?</p>
+</li>
+<li>
+<p>클라이언트 개발 말고 서버를 같이 할 수 있는데 괜찮은가?</p>
+</li>
+<li>
+<p>야근이 잦은데 괜찮은가?</p>
+</li>
+<li>
+<p>주말에 출근할 수 있는데 괜찮은가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 36</p>
+<p>강남구에 위치한 'ㅅㅋㄹㅌㅇ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ol>
+<li>
+<p>가비지 콜렉터란 무엇인가?</p>
+</li>
+<li>
+<p>가비지 콜렉터를 자주 쓰면 안좋은데, 안 쓸수 있는 전략은 무엇인가?</p>
+</li>
+<li>
+<p>리플렉션이란 무엇인가?</p>
+</li>
+<li>
+<p>델리게이트, 이벤트, 람다란 무엇인가?</p>
+</li>
+<li>
+<p>uml이란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>사용했던 디자인 패턴은 무엇인가?</p>
+</li>
+<li>
+<p>자료구조 중 스택과 큐란 무엇인가?</p>
+</li>
+<li>
+<p>둘의 특징을 이용해서 사용해본적이 있는가?</p>
+</li>
+<li>
+<p>맵을 써본적 있는가?</p>
+</li>
+<li>
+<p>이터레이터는 무엇이고, 어디에 쓰이는가?</p>
+</li>
+<li>
+<p>가상함수란 무엇인가?</p>
+</li>
+<li>
+<p>오버로딩/오버라이딩의 차이</p>
+</li>
+<li>형상관리 툴 사용해본 적 있는가?</li>
+<li>
+<p>사용해본 툴이 다른 툴이랑 무슨 차이가 있는가?</p>
+</li>
+<li>
+<p>팀 프로젝트에서 가장 중요한 것은 무엇인가?</p>
+</li>
+<li>
+<p>다른 사람들에게 어떤 평가를 받는 사람인가?</p>
+</li>
+<li>
+<p>그런 평을 듣고 기분이 어떠했는가?</p>
+</li>
+<li>
+<p>어떤 것을 프로그래밍 하고 싶은가?</p>
+</li>
+<li>
+<p>OOP, 객체지향 중 다형성이란 무엇인가?</p>
+</li>
+<li>
+<p>멀티 쓰레드란 무엇인가?</p>
+</li>
+<li>
+<p>프로파일러 사용해 본 적이 있는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 37</p>
+<p>강남구에 위치한 'ㅇㅇㅅㅌㅋㅍㄹㅇㅅ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술면접</p>
+</li>
+<li>
+<p>1부터 10까지 더하는 함수를 손 코딩으로 구현하여라.</p>
+</li>
+</ul>
+<p>1-2. 풀이의 시간 복잡도 O(n)인데, 이를 상수시간으로 줄여보아라. </p>
+<p>1-3. 항상 1부터 10의 합만 구한다면 어떻게 할 것인가?</p>
+<ol>
+<li>평면좌표에서 원 충돌 판단 함수 구현하여라</li>
+</ol>
+<p>2-1. 거리의 제곱과 거리로 비교하는 것 중 어떤것이 나은가?</p>
+<ul>
+<li>
+<p>C# 질문</p>
+</li>
+<li>
+<p>제네릭을 사용해보았는가?</p>
+</li>
+<li>
+<p>가비지 콜렉터란 무엇인가?</p>
+</li>
+<li>
+<p>유니티에서 가비지 콜렉터를 강제로 작동하도록 할 수 있는가?</p>
+</li>
+<li>
+<p>ref를 쓴 것과 안쓴것의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>스테이트 패턴을 어떻게 구현했는가?</p>
+</li>
+<li>
+<p>데드락이란 무엇인가?</p>
+</li>
+<li>
+<p>데드락의 회피 방법은 무엇인가?</p>
+</li>
+<li>
+<p>서버로 지원을 했는데 포트폴리오는 클라이언트로 작성했다. 왜 지원했는가?</p>
+</li>
+<li>
+<p>웹 프론트를 맡긴다면 잘 할 수 있는가?</p>
+</li>
+<li>게임 서버와 운영 서버 중 어떤것에 더 관심이 있는가?</li>
+<li>
+<p>Node.js, Firebase, C#, Unity, Photon을 사용하고 있는데 괜찮은가?</p>
+</li>
+<li>
+<p>막차 시간이 다 되었는데 일이 남았다면 어떻게 할 것인가?</p>
+</li>
+<li>
+<p>집에 가는 길에 서버에 문제가 생겼다고 연락이 오면 어떻게 할것인가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 38</p>
+<p>마포구에 위치한 'ㅁㅂㅇㅌㄹㅌㅌㅂ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>다형성이란 무엇인가?</p>
+</li>
+<li>
+<p>C++에서 다형성을 나타내는 부분은 무엇인가? (오버로딩, 오버라이딩, 템플릿)</p>
+</li>
+<li>
+<p>메모리 단편화란 무엇인가?</p>
+</li>
+<li>
+<p>전위증감과 후위증감의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>병합 정렬과 퀵 정렬의 성능적인 차이는 무엇인가?</p>
+</li>
+<li>
+<p>map과 unorded_map의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>Call by Value, Call by Reference의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>인성 질문</p>
+</li>
+<li>
+<p>가장 최근에 몰입했던 경험은 무엇인가?</p>
+</li>
+<li>
+<p>동료나 상사와 갈등이 있을 때 어떻게 해결할 것인가?</p>
+</li>
+<li>
+<p>다른 사람이 자신을 어떻게 얘기하는가?</p>
+</li>
+<li>
+<p>조직으로 일을 하다가 어려웠던 점은 무엇인가?</p>
+</li>
+<li>
+<p>조직에서 일을 성공적으로 이끈 경험은 무엇인가?</p>
+</li>
+<li>
+<p>스트레스를 어떻게 관리하는가?</p>
+</li>
+<li>
+<p>스트레스를 가장 많이 받는 상황은 어떤 것인가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 39</p>
+<p>경기도 안양시에 위치한 'ㅂㄱㅇㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>포트폴리오 및 인성 면접</p>
+</li>
+<li>
+<p>포트폴리오에 특정 기능은 어떻게 구현하였는가?</p>
+</li>
+<li>
+<p>해당 기능을 구현할 때 왜 이러한 방식을 선택하였는가?</p>
+</li>
+<li>
+<p>팀 프로젝트에 자신이 맡은 파트는 무엇인가?</p>
+</li>
+<li>
+<p>팀 프로젝트 진행하면서 어떠하였는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 팀원과의 갈등이 있을 때 어떻게 할 것인가?</p>
+</li>
+<li>
+<p>자신의 성격의 장/단점은 무엇인가?</p>
+</li>
+<li>
+<p>스트레스 받을 때 어떻게 하는가?</p>
+</li>
+<li>
+<p>좋아하는 게임은 무엇이며, 현재 하고 있는 게임은 무엇인가?</p>
+</li>
+<li>
+<p>왜 게임 프로그래밍을 지원했는가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>OS란 무엇인가?</p>
+</li>
+<li>
+<p>프로세스와 스레드의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>힙 영역과 스택 영역의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>프로세스의 영역은 무엇인가?</p>
+</li>
+<li>
+<p>OOP란 무엇인가?</p>
+</li>
+<li>
+<p>STL 컨테이너 어떠한거 사용해보았는가?</p>
+</li>
+<li>
+<p>사용해본 자료구조는 무엇인가?</p>
+</li>
+<li>
+<p>선택 정렬 알고리즘이란 무엇인가?</p>
+</li>
+<li>
+<p>퀵 정렬 알고리즘이란 무엇인가?</p>
+</li>
+<li>
+<p>퀵 정렬 알고리즘의 시간 복잡도는 얼마나 되는가?</p>
+</li>
+<li>
+<p>스마트 포인터란 무엇인가?</p>
+</li>
+<li>
+<p>렌더링 파이프 라인이란 무엇인가?</p>
+</li>
+<li>
+<p>유니티에 대한 경험은 얼마나 가지고 있는가?</p>
+</li>
+<li>
+<p>현재 공부하고 있는 것은 무엇인가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 40</p>
+<p>강남구에 위치한 'ㅇㄷㅍㅍ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>코딩테스트</p>
+</li>
+<li>
+<p>주어진 코드에 대해서 실행 가능 할 수 있도록 클래스를 구현하는 과제.</p>
+</li>
+</ul>
+<blockquote>
+<p>템플릿을 사용하여 복사 생성자 및 오퍼레이터를 정의해주었어야 하며, 벡터 자체를 직접 구현해야 한다.</p>
+</blockquote>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>L value, R value란 무엇인가?</p>
+</li>
+<li>
+<p>R value 또한 주소 값을 취할 수 있는데 다시 설명해보아라.</p>
+</li>
+<li>
+<p>벡터를 직접 클래스로 구현한다면, 값의 이동 복사 비용이 커서 메모리 오버 헤드가 생기는데, 이 때 줄일 수 있는 방법은 무엇이 있는가?</p>
+</li>
+<li>
+<p>STL Sort 알고리즘은 시간 복잡도가 어떻게 되는가?</p>
+</li>
+<li>
+<p>Map은 사용해보았는가?</p>
+</li>
+<li>
+<p>Map의 탐색 시간은 얼마나 걸리는가?</p>
+</li>
+<li>
+<p>Map은 왜 Long을 사용하는가?</p>
+</li>
+<li>
+<p>해쉬맵은 사용해보았는가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>싱글톤 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>싱글톤 패턴의 단점은 무엇인가?</p>
+</li>
+<li>
+<p>Fps 게임에서 탄도를 만들 때 물리 연산을 어떻게 할것인가?</p>
+</li>
+<li>
+<p>데디게이트 서버란 무엇인가?</p>
+</li>
+<li>
+<p>렌더링 파이프라인이란 무엇인가?</p>
+</li>
+<li>
+<p>virtual 키워드란 무엇인가?</p>
+</li>
+<li>
+<p>가상함수란 무엇인가?</p>
+</li>
+<li>
+<p>객체지향의 4대 특징은 무엇인가?</p>
+</li>
+<li>
+<p>객체지향의 5대 원칙은 무엇인가?</p>
+</li>
+<li>
+<p>dynamic_cast란 무엇인가?</p>
+</li>
+<li>
+<p>static_cast랑 무엇이 다른가?</p>
+</li>
+<li>
+<p>스택 오버 플로우란 무엇인가?</p>
+</li>
+<li>
+<p>스택 오버 플로우는 어떨 때 발생하는가?</p>
+</li>
+<li>
+<p>Async와 코루틴은 무엇이 다른가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 41</p>
+<p>금천구에 위치한 'ㅍㅍㄹ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>이력서 위주의 질문</p>
+</li>
+<li>
+<p>지원 동기는 무엇인가?</p>
+</li>
+<li>
+<p>좋아하는 게임은 무엇인가?</p>
+</li>
+<li>
+<p>회사에서 만든 게임 해보았는가?</p>
+</li>
+<li>
+<p>무슨 게임을 만드는 줄 알고 지원하였는가?</p>
+</li>
+<li>
+<p>워킹 데드는 아는가?</p>
+</li>
+<li>
+<p>공부는 어제부터 시작했는가?</p>
+</li>
+<li>
+<p>개발자가 되고 싶었던 이유는 무엇인가?</p>
+</li>
+<li>
+<p>학원 내 수강생들과 교류가 많았는가?</p>
+</li>
+<li>
+<p>제일 자신 있는 언어는 무엇인가?</p>
+</li>
+<li>
+<p>STL에 대해 아는것은 무엇인가?</p>
+</li>
+<li>
+<p>C#과 C++에 차이</p>
+</li>
+<li>
+<p>제네릭과 템플릿의 차이는 무엇인가?</p>
+</li>
+<li>스택과 힙에 차이는 무엇인가?</li>
+<li>
+<p>프로젝트 진행 시 메모리 관리는 어떻게 진행하였는가</p>
+</li>
+<li>
+<p>유니티를 해보았는가?</p>
+</li>
+<li>
+<p>스마트 포인터란 무엇인가?</p>
+</li>
+<li>
+<p>가비지 콜렉터란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>코딩 테스트(라이브 코딩)</p>
+</li>
+<li>
+<p>플레이어 매니저를 만들어 보아라.</p>
+</li>
+</ul>
+<p>아래 링크와 같은 곳입니다.</p>
+<p>게임회사 기술면접 질문 &amp; 답변 42</p>
+<p>구로구에 위치한 'ㅆㅇㅂㅅㅅㅌ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>인성 면접</p>
+</li>
+<li>
+<p>본인의 성격 장, 단점은 무엇인가?</p>
+</li>
+<li>
+<p>본인이 만들고 싱픈 게임은 무엇인가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>유니티 개발 경험은 있는가?</p>
+</li>
+<li>
+<p>3D 에셋들을 활용한 경험이 있는가?</p>
+</li>
+<li>
+<p>iOS, AOS 빌드 경험 환경이 있는가?</p>
+</li>
+<li>
+<p>VR 컨텐츠를 제작해보았는가?</p>
+</li>
+<li>
+<p>사용하는 유니티 버전은 무엇인가?</p>
+</li>
+<li>
+<p>유니티 라이팅의 종류는 무엇인가?</p>
+</li>
+<li>
+<p>유니티 투영 기법은 무엇이 있는가?</p>
+</li>
+<li>
+<p>NGUI, UGUI의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>코루틴과 스레드의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>코루틴과 인보크의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>렌더링 파이프 라인이란 무엇인가?</p>
+</li>
+<li>
+<p>키네틱 카메라 등을 통한 아웃풋 데이터를 입력받아 사용한 경험이 있는가?</p>
+</li>
+<li>
+<p>유니티 최적화 기법은 무엇이 있는가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 43</p>
+<p>금천구에 위치한 'ㅇㅇㅍㄱㅇㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>WinAPI 어떻게 사용해보았는가?</p>
+</li>
+<li>
+<p>학원 커리 큘럼이 어떻게 되는가?</p>
+</li>
+<li>
+<p>코딩을 배운지 얼마나 되었는가?</p>
+</li>
+<li>
+<p>학교에서는 무엇을 배웠는가?</p>
+</li>
+<li>
+<p>유니티를 사용해보았는가?</p>
+</li>
+<li>
+<p>이펙트를 제작해보았는가?</p>
+</li>
+<li>
+<p>사운드 제작해보았는가?</p>
+</li>
+<li>
+<p>학원 과제 말고 스스로 공부한 것이 있는가?</p>
+</li>
+<li>
+<p>인성 면접</p>
+</li>
+<li>
+<p>5년정도 일을 할 수 있는가?</p>
+</li>
+<li>
+<p>집은 어디인가?</p>
+</li>
+<li>
+<p>가족 구성원은 어떻게 되는가?</p>
+</li>
+<li>
+<p>여기까지 오기 힘들지 않았는가?</p>
+</li>
+<li>
+<p>맡게될 프로젝트가 어떤 건지 설명</p>
+</li>
+<li>
+<p>왜 면접을 불렀는지 이유 설명</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 44 </p>
+<p>강남구에 위치한 'ㅂㅇㄱㅋㄷ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>코딩 테스트</li>
+</ul>
+<p>라이브로 진행되며 감독관과 화면을 공유하면서 진행됩니다.</p>
+<ol>
+<li>입력 n이 주어지면 피보나치 수열F(0)부터 F(n)까지 한줄에 하나씩 출력하는 프로그램을 작성하시오.</li>
+</ol>
+<p>1-1. 재귀함수를 통해 구현</p>
+<p>1-2. 재귀함수를 사용하지 않고 구현</p>
+<ol>
+<li>주어진 x, y 평면 위 좌표 from에서 to로 tweenTime에 걸쳐 이동시키는 Tracker 스크립트를 작성하시오.</li>
+</ol>
+<p>2-1. Tracker에 있는 컴포넌트 Transform satellite1을 Tracker가 보는 방향을 기준으로 좌측으로 수직 거리 1만큼 떨어져 있는 상태로 따라오게 하시오.</p>
+<p>2-2. Transform satelite2를 Tracker가 움직이는 동안 거리 3을 유지하면서 5바퀴를 회전하도록 하시오.</p>
+<ol>
+<li>유니티의 이벤트 객체를 구독하여 최근에 발생한 이벤트를 반환하는 클래스 Logger를 작성하시오.</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 45</p>
+<p>강남구에 위치한 '구)ㄴㄱㅇㅈ, 현)ㄴㅅㄱㅇㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>코딩 테스트</p>
+</li>
+<li>
+<p>map find보다 vector find의 빠른 경우가 무엇이며, 왜 그런지 설명하시오.</p>
+</li>
+<li>
+<p>펜 8개가 있고, 5자루는 볼펜, 3자루는 연필일 경우 일 때</p>
+</li>
+</ul>
+<p>2-1. 8개 중 1가지를 고를 경우의 수</p>
+<p>2-2. 8개 중 1가지를 고르고 다음에 또 한가지를 고를 경우</p>
+<p>2-3. 그 중 2개를 선택해 나열할 경우의 수</p>
+<p>2-4. 그 중 1개를 반납하고 다른 1개를 선택할 때의 경우의 수</p>
+<ol>
+<li>
+<p>RTS 게임의 리플레이 struct data를 구성한다고 가정하면, 뭐가 필요하고 왜 필요한지 설명하시오.</p>
+</li>
+<li>
+<p>벡터의 내적, 외적 개념을 작성하고 어떤 경우에 응용되는지 작성하시오.</p>
+</li>
+<li>
+<p>3차원 Z축을 반시계방향으로 30도 움직일 떄의 행렬은 어떻게 되는가?</p>
+</li>
+<li>
+<p>Specular Light란 무엇인가?</p>
+</li>
+<li>
+<p>자신이 경험했던 것 중 해결하기 어려운 일은 무엇이였으며 어떻게 해결했는가?</p>
+</li>
+<li>
+<p>기술면접</p>
+</li>
+<li>
+<p>오브젝트 풀링이란 무엇인가?</p>
+</li>
+<li>
+<p>안드로이드 개발 &amp; 빌드 순서는 어떻게 되는가?</p>
+</li>
+<li>
+<p>모노비헤이비어는 무엇인가?</p>
+</li>
+<li>
+<p>유니티 라이프 사이클은 어떻게 되는가?</p>
+</li>
+<li>
+<p>렌더링 파이프 라인의 개념, 순서, 순서 별 개념은 무엇인가?</p>
+</li>
+<li>
+<p>C++, C#의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>이력서</p>
+</li>
+<li>
+<p>게임은 언제부터 만들었는가?</p>
+</li>
+<li>
+<p>삼각함수(Sin, Cos, Tan)의 개념과 그래프를 그려보아라</p>
+</li>
+<li>
+<p>자기소개서 개인적인 질문 등</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 46</p>
+<p>강남구에 위치한 'ㅇㅂㅍ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술면접</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>상태패턴 적용은 어떻게 사용하였는가?</p>
+</li>
+<li>
+<p>A* 알고리즘이란 무엇인가?</p>
+</li>
+<li>
+<p>벡터와 리스트의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>인성면접</p>
+</li>
+<li>
+<p>성격의 장/단점은 무엇인가?</p>
+</li>
+<li>
+<p>게임 개발자가 왜 되고싶은가?</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 불화는 무엇이였는가?</p>
+</li>
+<li>
+<p>학원에서 교육 받으면서 가장 어려웠던 것은 무엇인가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 47</p>
+<p>마포구에 위치한 'ㅁㅍㅇㅌㄹㅌㅂ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술면접</p>
+</li>
+<li>
+<p>벡터란 무엇인가?</p>
+</li>
+<li>
+<p>가비지 컬렉터란 무엇인가?</p>
+</li>
+<li>
+<p>언제 어디서 가비지 컬렉터가 일어나는지 아는가?</p>
+</li>
+<li>
+<p>엔진 최적화에 대해 아는가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>싱글톤 패턴의 장/단점은 무엇인가?</p>
+</li>
+<li>
+<p>렌더링 파이프 라인이란 무엇인가?</p>
+</li>
+<li>
+<p>렌더링 파이프 라인 과정은 어떻게 되는가?</p>
+</li>
+<li>
+<p>레스터 라이즈가 무엇인가?</p>
+</li>
+<li>
+<p>코루틴은 무엇인가?</p>
+</li>
+<li>
+<p>코루틴을 사용하는 이유는 무엇인가?</p>
+</li>
+<li>
+<p>깃허브 말고 다른 툴을 사용할줄 아는가?</p>
+</li>
+<li>
+<p>빅오 표기법이란 무엇인가?</p>
+</li>
+<li>
+<p>알고리즘이란 무엇인가?</p>
+</li>
+<li>
+<p>정렬 알고리즘이란 무엇인가?</p>
+</li>
+<li>
+<p>O(n Log n)을 가지는 정렬 알고리즘은 무엇인가?</p>
+</li>
+<li>
+<p>왜 O(n Log n)이 나오는지 설명할 수 있는가?</p>
+</li>
+<li>
+<p>병렬구조란 무엇인가?</p>
+</li>
+<li>
+<p>스마트 포인터란 무엇인가?</p>
+</li>
+<li>
+<p>압축 포맷에 대해 아는가?</p>
+</li>
+<li>
+<p>비트란 무엇인가?</p>
+</li>
+<li>
+<p>비트 연산자란 무엇인가?</p>
+</li>
+<li>
+<p>직선의 방정식을 구하는 방법은 무엇는가?</p>
+</li>
+<li>
+<p>두 정점간의 거리를 구하는 방법을 무엇인가?</p>
+</li>
+<li>
+<p>직선의 교차점을 구하는 방법은 무엇인가?</p>
+</li>
+<li>
+<p>평면과 선 충돌하는 방법은 무엇인가?</p>
+</li>
+<li>
+<p>원 충돌 하는 방법은 무엇인가? </p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 48</p>
+<p>강남구에 위치한 'ㅇㄷㅍㅍ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>코딩테스트</p>
+</li>
+<li>
+<p>벡터 직접 구현하기</p>
+</li>
+</ul>
+<blockquote>
+<p>생성자, 복사생성자, reserve, pushback, operator[], capacity 등</p>
+</blockquote>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>스택 오버 플로우란 무엇인가?</p>
+</li>
+<li>
+<p>스택 오버 플로우는 어떨 때 발생하는가?</p>
+</li>
+<li>
+<p>벡터의 탐색 시간은 어떻게 되는가?</p>
+</li>
+<li>
+<p>사용해본 STL 자료구조는 무엇이 있는가?</p>
+</li>
+<li>
+<p>List 자료구조에 대해 아는가?</p>
+</li>
+<li>
+<p>List와 Vector의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>지하철 노선도를 구현할 때 어떤 자료구조를 사용하고, 탐색 방법은 어떻게 해야하는가?</p>
+</li>
+<li>
+<p>A* 알고리즘이란 무엇인가?</p>
+</li>
+<li>
+<p>A* 알고리즘을 지하철 노선도 탐색에 적용하면 어떻게 되는가?</p>
+</li>
+<li>
+<p>휴리스틱이란 무엇인가?</p>
+</li>
+<li>
+<p>dynamic_cast란 무엇인가?</p>
+</li>
+<li>
+<p>static_cast란 무엇인가?</p>
+</li>
+<li>
+<p>dynamic_cast와 static_cast의 차이</p>
+</li>
+<li>
+<p>virtual 키워드란 무엇인가?</p>
+</li>
+<li>
+<p>가상 소멸자란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>싱글톤 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>싱글톤 패턴의 단점은 무엇인가?</p>
+</li>
+<li>
+<p>C++ 템플릿과 C# Generic의 차이</p>
+</li>
+<li>
+<p>Call By Value, Call By Reference의 차이</p>
+</li>
+<li>
+<p>유니티 질문</p>
+</li>
+<li>
+<p>코루틴과 쓰레드의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>프로세스와 쓰레드의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>유니티로 어떠한 것들은 구현해보았는가?</p>
+</li>
+<li>
+<p>총 게임을 만들었는데 탄도를 적용시키려면 어떻게 해야하는가?</p>
+</li>
+<li>
+<p>전공 질문</p>
+</li>
+<li>
+<p>컴퓨터 공학과의 커리 큘럼은 어떻게 되는가? </p>
+</li>
+<li>
+<p>컴퓨터 공학과에서 배운것과 학원에서 배운것은 무엇이 다른가?</p>
+</li>
+<li>
+<p>기타 질문</p>
+</li>
+<li>
+<p>만약 입사하게 된다면 컨텐츠 구현과 프레임워크 구현 중 어디를 택할것인가?</p>
+</li>
+<li>
+<p>만들고 싶은 게임은 무엇인가?</p>
+</li>
+<li>
+<p>프로그래머로서의 목표는 무엇인가?</p>
+</li>
+<li>
+<p>학원 커리큘럼은 어떻게 되는가?</p>
+</li>
+<li>
+<p>보통 팀을 짤 때 몇 명씩 팀을 짜며, 어떻게 짜는가?</p>
+</li>
+<li>
+<p>본인 프로젝트에서 가장 잘했다고 생각한 부분은 어디인가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>회사 내 팀의 규모</p>
+</li>
+<li>
+<p>만약 합격한다고 하면 어느 팀에 어떤 입무를 맡게 되는가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 49</p>
+<p>마포구에 위치한 'ㅁㅂㄱㅇㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>메모리 단편화란 무엇인가?</p>
+</li>
+<li>
+<p>원과 원의 충돌은 어떻게 탐지하는가?</p>
+</li>
+<li>
+<p>병합정렬과 퀵 정렬의 차이</p>
+</li>
+<li>
+<p>가상소멸자란 무엇인가?</p>
+</li>
+<li>
+<p>다형성이란 무엇인가?</p>
+</li>
+<li>
+<p>다형성 중 런타임 다형성과 컴파일 다형성은 무엇인가?</p>
+</li>
+<li>
+<p>전위증감과 후위증감의 차이</p>
+</li>
+<li>
+<p>언리얼 엔진을 사용해보았는가?</p>
+</li>
+<li>
+<p>인성 질문</p>
+</li>
+<li>
+<p>팀 프로젝트를 할 때 불화는 없었는가?</p>
+</li>
+<li>
+<p>팀 프로젝트를 할 때 힘든점은 무엇인가?</p>
+</li>
+<li>
+<p>다른 사람들이 말하는 본인의 성격은 어떻게 되는가?</p>
+</li>
+<li>
+<p>본인의 강점은 무엇인가?</p>
+</li>
+<li>
+<p>스트레스는 어떻게 푸는가?</p>
+</li>
+<li>
+<p>학원 다니면서 취미가 어떻게 바뀌었는가?</p>
+</li>
+<li>
+<p>팀을 이끌어본 경험은 어떻게 되는가?</p>
+</li>
+<li>
+<p>팀에서 따라오지 못하는 사람, 안따라오는 사람, 잘 따라오는 사람 중 우선 순위가 어떻게 되는가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>입사하게 되면 신입은 교육을 받는가, 실전으로 바로 투입되는가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 50</p>
+<p>서초구에 위치한 'ㅇㄴㅂㅌ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>코딩 테스트</p>
+</li>
+<li>
+<p>char 형 데이터를 받고 크기를 확인 후, 받은 데이터의 갯수가 몇개인지 카운트 하는 함수를 구현하시오</p>
+</li>
+</ul>
+<blockquote>
+<p>예) abcd를 입력하면 4를 출력하라.</p>
+<p>조건 : C/C++ 사용, string 사용 금지</p>
+<p>함수명, 매개변수 등 확인</p>
+</blockquote>
+<ol>
+<li>제한시간 30분 내, 유니티를 이용해 3가지의 기능을 넣어 로그인 화면을 구현하시오</li>
+</ol>
+<p>2-1. 아이디, 패스워드 입력 가능</p>
+<p>2-2. 입력 후, 로그인 버튼을 눌렀을 경우 결과 버튼과 텍스트 출력</p>
+<p>2-3. 로그인 버튼을 눌렀을 때, 나오는 결과 버튼 눌렀을 대때에 꺼지게 구현</p>
+<blockquote>
+<p>하이어라키뷰 구성, 변수, 함수명 확인</p>
+</blockquote>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>다형성이란 무엇인가?</p>
+</li>
+<li>
+<p>알고있는 디자인 패턴의 종류는 무엇인가?</p>
+</li>
+<li>
+<p>struct와 class의 차이</p>
+</li>
+<li>
+<p>포인터란 무엇인가?</p>
+</li>
+<li>
+<p>포인터는 어떻게 활용하는가?</p>
+</li>
+<li>
+<p>포인터는 왜 활용하는가?</p>
+</li>
+<li>
+<p>struct와 interface의 차이</p>
+</li>
+<li>
+<p>알고있는 정렬 알고리즘의 종류는 무엇인가?</p>
+</li>
+<li>
+<p>static이란 무엇인가?</p>
+</li>
+<li>
+<p>메모리 구조란 무엇인가?</p>
+</li>
+<li>
+<p>메모리 구조가 단계별로 어떻게 되는가?</p>
+</li>
+<li>
+<p>박싱, 언박싱이란 무엇인가?</p>
+</li>
+<li>
+<p>모노비헤이비어란 무엇인가?</p>
+</li>
+<li>
+<p>모노비헤이비어를 사용하지 않으면 무슨일이 일어나는가?</p>
+</li>
+<li>
+<p>map과 dictionary의 차이</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>유니티 라이프 사이클 중 Awake, Start, OnEnable의 순서가 어떻게 되는가?</p>
+</li>
+<li>
+<p>각 개념은 어떻게 되는가?</p>
+</li>
+<li>
+<p>스마트포인터란 무엇인가?</p>
+</li>
+<li>
+<p>오버라이딩, 오버로딩, 상속이란 무엇인가?</p>
+</li>
+<li>
+<p>가상함수란 무엇인가?</p>
+</li>
+<li>
+<p>가상함수를 사용하면 좋은점과, 어떨 때 활용하는가?</p>
+</li>
+<li>
+<p>깃허브 사용해보았는가?</p>
+</li>
+<li>
+<p>깃허브 사용 할 떄 어떤점을 주의했는가?</p>
+</li>
+<li>
+<p>템플릿이란 무엇인가? 또 어떻게 사용하는가?</p>
+</li>
+<li>
+<p>얕은 복사, 깊은 복사란 무엇인가?</p>
+</li>
+<li>
+<p>깊은 복사할 때 이동 생성자와 복사 생성자는 무엇인가?</p>
+</li>
+<li>
+<p>람다식이란 무엇인가?</p>
+</li>
+<li>
+<p>람다식은 어떻게 활용되는가?</p>
+</li>
+<li>
+<p>유니티에서 Time.deltatime은 어떻게 동작하는가? </p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 </p>
+<p>강남구에 위치한 'ㅇㅇㅋㅇㄹㅈㅋㄹㅇ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>코딩 테스트</p>
+</li>
+<li>
+<p>비주얼 스튜디오 2008을 사용하여 한 클래스에서 다른 클래스로 주어진 문자열을 역순으로 출력하라.</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>코딩에서 제일 중요하게 여기는 부분은 무엇인가?</p>
+</li>
+<li>
+<p>프로그래밍에서 중요하게 여기는 것은 무엇인가?</p>
+</li>
+<li>
+<p>학원 커리 큘럼은 어떻게 되는가?</p>
+</li>
+<li>
+<p>좋아하는 장르는 무엇인가?</p>
+</li>
+<li>
+<p>만들고 싶은 장르는 무엇인가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 52</p>
+<p>강남구에 위치한 'ㅅㅍㅌㄹ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>C++과 C#의 차이</p>
+</li>
+<li>
+<p>STL이란 무엇인가?</p>
+</li>
+<li>
+<p>Vector와 List란 무엇인가?</p>
+</li>
+<li>
+<p>Vector는 포트폴리오 어디서 사용되었는가?</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>모노비헤이비어란 무엇인가?</p>
+</li>
+<li>
+<p>Update와 코루틴의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>박싱과 언박싱은 무엇인가?</p>
+</li>
+<li>
+<p>A*란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>인성 면접</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 무엇이 힘들었는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 에피소드가 있었는가?</p>
+</li>
+<li>
+<p>외국에서 사용하는 엔진 아는것이 있는가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 </p>
+<p>판교에 위치한 'ㄹㅇㄹㅌㅁㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>코딩 테스트</p>
+</li>
+<li>
+<p>정렬된 두 개의 리스트를 합쳐서 정렬하는 함수 구현</p>
+</li>
+<li>
+<p>정렬한 함수의 시간 복잡도는 얼마인가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>기술문서에 작성한 내용들 전반적으로 설명</p>
+</li>
+<li>
+<p>포물선의 공식은 어떻게 되는가?</p>
+</li>
+<li>
+<p>평면에 부딪쳤을 때 반사되는 걸 평면의 법선 벡터와 부딪히는 물체의 벡터를 가지고 어떻게 구하는가?</p>
+</li>
+<li>
+<p>유니티에서 안드로이드 빌드 해보았는가?</p>
+</li>
+<li>
+<p>JAVA와 C#의 장/단점이 무엇인가?</p>
+</li>
+<li>
+<p>행렬(치환행렬, 역행렬, 회전, 이동, 위치)를 설명하고 내부 로직은 어떻게 돌아가는가?</p>
+</li>
+<li>
+<p>Array와 Linked-List의 장/단점은 무엇인가?</p>
+</li>
+<li>
+<p>자신이 구현한 혹은 보았던 코드 프로그램 중 가장 큰 뮤노는 어느정도 되는가?</p>
+</li>
+<li>
+<p>인성 면접</p>
+</li>
+<li>
+<p>자신이 다른 프로그래머를 꿈꾸는 사람보다 나은점과 단점은 무엇인가?</p>
+</li>
+<li>
+<p>자신의 성격은 어떻게 되는가?</p>
+</li>
+<li>
+<p>리드 프로그래머가 목표라고 해놓았는데, 이를 위해 어떤 노력을 할 것인가?</p>
+</li>
+<li>
+<p>캐주얼 게임을 좋아하는가?</p>
+</li>
+<li>
+<p>퍼즐 게임 해보았는가?</p>
+</li>
+<li>
+<p>3-Match에 많은 게임이 있는데 애니팡과 캔디 크러쉬 류를 비교한다고 하면 둘이 어필하는 점은 무엇인가?</p>
+</li>
+<li>
+<p>퍼즐게임 플레이시 터지는 동안 사용자의 간섭이 불가능하거나, 사용자가 실시간으로 맞추는 경우가 있는데 만약 실시간으로 맞추는 게임을 만든다면 자신이 가장 어려워 할 것 같은 부분은 무엇인가?</p>
+</li>
+<li>
+<p>수학이랑 물리에 있는 많은 파트 중 자신이 자신있어 하는 파트는 무엇인가?</p>
+</li>
+<li>
+<p>자신의 수학 실력이 상중하 중 어딘가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 54</p>
+<p>구로구에 위치한 'ㄴㅁㅂㅇㅍㅇㅆ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>인성 면접</p>
+</li>
+<li>
+<p>국비교육 동기생과 대학 학부생 사이에서 본인의 실력은 어느 정도라 생각하는가?</p>
+</li>
+<li>
+<p>자신있는 언어와 해당 언어의 경력은 어떻게 되는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 팀 구성원은 어떻게 되었는가?</p>
+</li>
+<li>
+<p>4명 모두 코더로만 진행되었는가?, 기획이나 아트는 없었는가?</p>
+</li>
+<li>
+<p>팀은 어떻게 짜여지게 되었는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 중 어려웠던 점과 이를 어떻게 해결했는가?</p>
+</li>
+<li>
+<p>요즘 게임회사들은 다들 엔진을 사용할 줄 아는 사람들을 원하는데 학원 커리큘럼에 엔진 사용은 없었는가?</p>
+</li>
+<li>
+<p>언리얼 경험은 있는가?</p>
+</li>
+<li>
+<p>본인의 성격 장/단점은 무엇인가?</p>
+</li>
+<li>
+<p>프로젝트 팀원 중 맘에 안드는 사람이 있으면 어떻게 해결할 것인가?</p>
+</li>
+<li>
+<p>언리얼 사용 경험이 없는데 어떠한 생각으로 언리얼로 지원하게 되었는가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>STL 자료구조 많이 사용했는가?</p>
+</li>
+<li>
+<p>Vector의 push_back과 emplace_back의 차이</p>
+</li>
+</ul>
+<p>2-1. 답변했더니 이는 교육과정에서 배운것인가?, 개인적으로 공부한 것인가?</p>
+<ol>
+<li>
+<p>A* 알고리즘이란 무엇인가?</p>
+</li>
+<li>
+<p>만약 맵이 너무 거대하다면 어떻게 더 효율적으로 A* 알고리즘을 사용할 수 있는가?</p>
+</li>
+</ol>
+<p>4-1. 한번에 모든 경로를 탐색하지 않고 중단점을 설정하여 끊어서 탐색하면 좋을 것 같다 답변</p>
+<p>4-2. 그룹을 형성해서 대략적인 경로를 설정하고, 이후 더 세부적으로 탐색하면 된다. 라고 알려주셨다.</p>
+<ol>
+<li>
+<p>메모리 구조(Stack, Heap)에 대해 설명</p>
+</li>
+<li>
+<p>현재 참조중인 메모리를 해제하게 되면 Nullptr 문제가 발생할 수 있는데, 이를 방지하는 기술은 무엇인가? (스마트 포인터)</p>
+</li>
+<li>
+<p>또 다른 메모리 해제기술은 무엇이 있는가? (가비지 콜렉터)</p>
+</li>
+<li>
+<p>쓰레드를 사용할 때 동기화 문제를 방지하는 방법은?</p>
+</li>
+<li>
+<p>만약 크리티컬 섹션에 진입한 사용자가 락을 해제하지 않고 죽어버리면 어떻게 해야되나?</p>
+</li>
+<li>
+<p>파일 입출력은 어떻게 진행했는가?</p>
+</li>
+<li>
+<p>파일을 열 때, 파일의 무결성은 어떻게 확인하는가?</p>
+</li>
+<li>
+<p>디자인 패턴 중 사용해본 패턴은 무엇인가?</p>
+</li>
+<li>
+<p>Direct3D를 사용해 본 적이 있는가?</p>
+</li>
+<li>
+<p>Direct3D는 학원 교육과정에서 다루는 내용인가?</p>
+</li>
+<li>
+<p>Windows API 프로젝트 진행한 이유는 무엇인가?</p>
+</li>
+<li>
+<p>기타 질문</p>
+</li>
+<li>
+<p>좋아하는 게임은 무엇이며, 주로 무슨 게임을 하는가?</p>
+</li>
+<li>
+<p>게임 이외의 취미는 무엇인가?</p>
+</li>
+<li>
+<p>성격 단점으로 직설적이라 얘기했는데, 불화가 있는 친구와 어떻게 해결하는가?</p>
+</li>
+<li>
+<p>대학에서 어떤것이든 지속적으로든 꾸준히 무언가를 해본 경험은 무엇인가?</p>
+</li>
+<li>
+<p>우리 회사와 다른 회사를 동시 합겨했는데, 저쪽과 연봉이 천만원 정도 차이가 날 떄, 어떤 기준으로 회사를 선택할 것인가?</p>
+</li>
+<li>
+<p>대학교에서 동아리 활동 한 경험이 있는가?</p>
+</li>
+<li>
+<p>만약 입사를 하게 된다면 기대되는 점과 걱정되는 점은 무엇인가?</p>
+</li>
+<li>
+<p>공채지원을 하지 않고, 수시지원으로 지원한 특별한 이유가 있는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 55 </p>
+<p>송파구에 위치한 'ㅇㅍㅈㄹㅍㅂㄹ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>인성 면접</p>
+</li>
+<li>
+<p>지금까지 살면서 무슨 일을 했는가?</p>
+</li>
+<li>
+<p>왜 그 일을 그만하면서까지 이 일을 하고 싶은가?</p>
+</li>
+<li>
+<p>사람과 같이 협업해야 하는데 어려움은 없는가?</p>
+</li>
+<li>
+<p>프로그래머로의 향후 5년의 계획은 어떻게 되는가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>C++과 C#의 차이는 무엇인가?</p>
+</li>
+<li>
+<p>RayCast란 무엇인가?</p>
+</li>
+<li>
+<p>싱글톤 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>삼각함수를 어떻게 사용해야 하는가?</p>
+</li>
+<li>
+<p>STL 컨테이너란 무엇인가?</p>
+</li>
+<li>
+<p>오브젝트 풀링이란 무엇인가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 56</p>
+<p>강남구에 위치한 'ㅎㅇㅂㄹ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>인성 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>자기소개서 기반 질문</p>
+</li>
+<li>
+<p>학원 수업 교육명이 유니티가 포함되어있는데, 많이 진행 해보았는가?</p>
+</li>
+<li>
+<p>회사를 검색해보았는가?</p>
+</li>
+<li>
+<p>연봉은 얼마나 생각하는가?</p>
+</li>
+<li>
+<p>좋아하는 게임 장르는 무엇인가?</p>
+</li>
+<li>
+<p>오래한 게임은 무엇인가?</p>
+</li>
+<li>
+<p>만약 회사를 선택해서 갈 수 있다면 어디를 가고싶은가?</p>
+</li>
+<li>
+<p>업무 스트레스는 어떻게 풀것인가?</p>
+</li>
+<li>
+<p>학교와 학원에서 했던 것과 실무는 많이 다르며, 장벽이 높다. 업무 힘들 수도 있는데 괜찮은가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>추상 소멸자란 무엇인가?</p>
+</li>
+<li>
+<p>virtual을 붙이는 이유는 무엇인가?</p>
+</li>
+<li>
+<p>Java를 할 줄 아는가?</p>
+</li>
+<li>
+<p>C++ 어느 정도 사용해보았는가?</p>
+</li>
+<li>
+<p>개발은 어느정도 해보았는가?</p>
+</li>
+<li>
+<p>요즘 따로 공부하는 것이 있는가?</p>
+</li>
+<li>
+<p>공부하면서 어려웠던 것은 무엇인가?</p>
+</li>
+<li>
+<p>UI 작업을 진행해 본 적이 있는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 진행 시 볼륨이 가장 컸던 것은 무엇인가?</p>
+</li>
+<li>
+<p>기간은 어느정도 걸렸는가?</p>
+</li>
+<li>
+<p>코드는 몇 줄정도 나왔는가?</p>
+</li>
+<li>
+<p>모바일 RPG 게임 UI 직접 구현시 얼마나 걸릴 것 같은가?</p>
+</li>
+<li>
+<p>당장 어떠한 기능을 써야하는데 아무것도 모른다면, 어떻게 할 것인가?</p>
+</li>
+<li>
+<p>배열과 리스트의 차이</p>
+</li>
+<li>
+<p>포인터란 무엇인가?</p>
+</li>
+<li>
+<p>포트폴리오 질문</p>
+</li>
+<li>
+<p>3D 포트폴리오는 없는가?</p>
+</li>
+<li>
+<p>스크립트를 모두 직접 짰는가?</p>
+</li>
+<li>
+<p>학원에서 도움을 주거나, 툴을 이용한 것인가?</p>
+</li>
+<li>
+<p>개발이 막혔을 때 어떻게 이어나가며 진행했는가?</p>
+</li>
+<li>
+<p>어디까지 본인이 작업을 진행한 것인가?</p>
+</li>
+<li>
+<p>프로젝트 끝나고도 버그 등을 수정하였는가?</p>
+</li>
+<li>
+<p>D2D 렌더러는 직접 작성한 것인가?</p>
+</li>
+<li>
+<p>왜 구조와 프레임워크를 짜는 역활을 맡았는가?</p>
+</li>
+<li>
+<p>프로그래머만 있는 팀이였는가?</p>
+</li>
+<li>
+<p>역할분담은 어떻게 진행했는가?</p>
+</li>
+<li>
+<p>팀에서 제일 도움이 되지 않았던 사람은 누구였는가?</p>
+</li>
+<li>
+<p>그 사람과 다시 작업을 해야한다면 할 수 있는가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>회사 검색 시 안좋은 얘기가 많은데 실제 회사 분위기는 어떠한가?</p>
+</li>
+<li>
+<p>Cocos2D와 Lua를 사용해본 적이 없는데, 개발 교육이 따로 있는지? 개발 교육이 없다면 경험이 없어도 괜찮은지?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 57 </p>
+<p>금천구에 위치한 'ㅍㅍㅇㅅ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>코루틴과 인보크의 차이</p>
+</li>
+<li>
+<p>델리게이트와 람다식이란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>알고 있는 종류와 이를 설명하시오.</p>
+</li>
+<li>
+<p>포인터란 무엇인가?</p>
+</li>
+<li>
+<p>스택과 큐의 차이</p>
+</li>
+<li>
+<p>프로세스와 스레드의 차이</p>
+</li>
+<li>
+<p>C++과 C#의 차이</p>
+</li>
+<li>
+<p>C++과 C#의 장/단점</p>
+</li>
+<li>
+<p>어떠한 언어를 더 선호하는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 팀원과의 불화는 없었는가?</p>
+</li>
+<li>
+<p>비전공자, 혹은 개발자가 아닌 일반인에게 개발을 설명한다면 어떻게 할 것인가?</p>
+</li>
+<li>
+<p>포톤 네트워크는 다룰 주 아는가?</p>
+</li>
+<li>
+<p>왜 유니티 포트폴리오는 없는가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>컨트롤러를 이용해 게임 개발을 하실 생각은 없으신가?</p>
+</li>
+<li>
+<p>다른 낚시게임과 달리 ㅍㅍㅇㅅ만의 차별화된 요소는 무엇인가?</p>
+</li>
+<li>
+<p>낚시게임의 장르 말고 다른 장르의 게임 개발을 하실 생각은 있으신가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 58</p>
+<p>강남구에 위치한 'ㅅㅍㅌㄹ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>인성 면접</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 힘든 점과 불화는 없었는가?</p>
+</li>
+<li>자신의 장/단점은 무엇인가?</li>
+<li>단점에 관한 에피소드는 무엇인가?</li>
+<li>
+<p>학원 커리큘럼은 어떻게 진행되는가?</p>
+</li>
+<li>
+<p>멘탈은 강한편인가?</p>
+</li>
+<li>
+<p>하고 있는 PC, 모바일, 콘솔 게임등은 어떻게 되는가?</p>
+</li>
+<li>
+<p>미니 게임에 대해 어떻게 생각하는가?</p>
+</li>
+<li>
+<p>새로운 언어나 엔진등을 학습하는 것을 어떻게 생각하는가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>코루틴이란 왜 사용하며, 왜 필요한가?</p>
+</li>
+<li>
+<p>오브젝트 풀링이란 무엇인가?</p>
+</li>
+<li>
+<p>메모리를 잡고 있으면 일반 인스턴스와 디스토이와 동일한 것 아닌가?</p>
+</li>
+<li>
+<p>유니티 라이프사이클 순서가 어떻게 되는가?</p>
+</li>
+<li>
+<p>유니티 라이프사이클 개념은 어떻게 되는가?</p>
+</li>
+<li>
+<p>렌더링 파이프 라인이란 무엇인가?</p>
+</li>
+<li>
+<p>렌더링 파이프 라인 각 단계별 개념은 어떻게 되는가?</p>
+</li>
+<li>
+<p>알고있는 자료구조는 무엇인가?</p>
+</li>
+<li>
+<p>벡터란 무엇인가?</p>
+</li>
+<li>
+<p>리스트란 무엇인가?</p>
+</li>
+<li>
+<p>무엇을 더 좋아하고 포트폴리오 어디서 사용했는가?</p>
+</li>
+<li>
+<p>모노비헤이비어는 무엇이고, 사용하지 않으면 무슨 문제가 생기는가?</p>
+</li>
+<li>
+<p>박싱, 언박싱이란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴의 종류는 무엇인가?</p>
+</li>
+<li>
+<p>해당 패턴의 개념은 어떻게 되는가?</p>
+</li>
+<li>
+<p>싱글톤 패턴의 장/단점은 무엇인가?</p>
+</li>
+<li>
+<p>단점을 해결하기 위해서는 어떻게 해야하는가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>게임에 NFT가 적용되는데, 한국에서는 이를 허용하고 있지 않는데 이를 어떻게 처리하실 것인가?</p>
+</li>
+<li>
+<p>무슨 프로젝트를 맡게 되는가?</p>
+</li>
+<li>
+<p>업무의 강도, 야근 유무, 복지는 어떻게 되는가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 59</p>
+<p>금천구에 위치한 'ㅍㅍㅇㅅ'회사</p>
+<p>2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>인성 면접</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 힘든 점과 불화는 없었는가?</p>
+</li>
+<li>오픈 소스를 사용한 경험이 있는가?</li>
+<li>공부를 할 떄 주로 무엇으로 공부하는가?</li>
+<li>
+<p>유튜브 강의 자주 듣는 것이 있는가?</p>
+</li>
+<li>
+<p>무슨 언어를 좋아하는가?</p>
+</li>
+<li>
+<p>코딩을 한 지 얼마나 되었는가?</p>
+</li>
+<li>
+<p>유니티 포트폴리오가 없는데 계획중인 프로젝트가 있는가?</p>
+</li>
+<li>
+<p>좋아하는 게임 장르는 무엇인가?</p>
+</li>
+<li>
+<p>현재 목표는 무엇인가?</p>
+</li>
+<li>
+<p>본인의 단점은 무엇인가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>코루틴과 인보크의 차이</p>
+</li>
+<li>
+<p>가비지 콜렉터란 무엇인가?</p>
+</li>
+<li>
+<p>C++, C#의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>디자인패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>알고리즘이란 무엇인가?</p>
+</li>
+<li>
+<p>객체지향이란 무엇인가?</p>
+</li>
+<li>
+<p>네트워크는 얼마나 아는가?</p>
+</li>
+<li>
+<p>유니티는 얼마나 할 줄 아는가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>프로젝트 내에서 맡게 되는 업무는 무엇인가?</p>
+</li>
+<li>
+<p>회사 내 팀원간의 교류는 어떻게 이루어지는가?</p>
+</li>
+<li>
+<p>재택근무는 어떻게 진행되는가?</p>
+</li>
+<li>연봉, 복지, 신입과정 등은 어떻게 되는가? </li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 60</p>
+<p>판교에 위치한 'ㄹㅇㄹㅌㅁㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>코딩 테스트</p>
+</li>
+<li>
+<p>정렬된 두 개의 리스트를 합쳐서 정렬하는 함수 구현</p>
+</li>
+<li>
+<p>인성 면접</p>
+</li>
+<li>
+<p>학원에서 배운 것은 무엇인가?</p>
+</li>
+<li>작성한 기술문서 처음부터 끝까지 설명해줄수 있는가?
+2-1. 보스 어떻게 구현하였는가?</li>
+</ul>
+<p>2-2. 맵툴은 어떻게 구현하였는가?</p>
+<p>2-3. 모든 타일이 다 깔리면 비효율적이지 않는가?</p>
+<p>2-4. 이를 어떻게 해결했하였는가?
+2-5. 맵툴은 어떻게 저장하는가?</p>
+<p>2-6. 랜덤 맵 생성은 어떻게 처리하였는가?</p>
+<ol>
+<li>
+<p>직무 변경을 한 이유는 무엇인가?</p>
+</li>
+<li>
+<p>프로그래머는 계속 공부를 해야하는데, 앞으로 어떻게 공부할 것인가?</p>
+</li>
+<li>
+<p>지금은 어떻게 공부하는가?</p>
+</li>
+<li>
+<p>퍼즐 게임 해보았는가?</p>
+</li>
+<li>
+<p>본인이 게이머로서 등급이 어느정도인가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>신입이 들어가면 사수가 있는가?</p>
+</li>
+<li>
+<p>어떠한 구조로 일을 하게 되는지?</p>
+</li>
+<li>
+<p>어떠한 장르를 개발하게 되는지?</p>
+</li>
+</ol>
+<p>아래 링크와 같은 곳입니다. </p>
+<p>게임회사 기술면접 질문 &amp; 답변 61</p>
+<p>금천구에 위치한 'ㅅㅁㅇㅅㅋㅇ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>코딩 테스트</li>
+</ul>
+<p>유니티를 이용하여 코딩테스트를 진행합니다.</p>
+<ol>
+<li>
+<p>문자열 뒤집기. 예) abcd를 입력하면 dcba와 같이 나오게 하시오.</p>
+</li>
+<li>
+<p>2차원 상태에서 원을 주며, 해당 원의 범위 안에 랜덤으로 빨간 점들이 원 안에서만 생성되고 사라지게 할 것.</p>
+</li>
+<li>
+<p>인성 면접</p>
+</li>
+<li>
+<p>희망 연봉은 어떻게 되는가?</p>
+</li>
+<li>
+<p>가족 관계는 어떻게 되는가?</p>
+</li>
+<li>
+<p>부모의 직업은 어떻게 되는가?</p>
+</li>
+<li>
+<p>형제/자매등의 직업은 무엇인가?</p>
+</li>
+<li>
+<p>회사까지 얼마나 걸리는가?</p>
+</li>
+<li>
+<p>즐겨하는 게임은 무엇인가?</p>
+</li>
+<li>
+<p>회사 지원 동기는 무엇인가?</p>
+</li>
+<li>
+<p>스크린 골프 및 야구 경험이 있는가?</p>
+</li>
+<li>
+<p>VR/AR 경험이 있는가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>프로파일러란 무엇인가?</p>
+</li>
+<li>
+<p>포인터란 무엇인가?</p>
+</li>
+<li>
+<p>STL Container란 무엇이고, 종류는 어떻게 되는가?</p>
+</li>
+<li>
+<p>스택이란 무엇인가?</p>
+</li>
+<li>
+<p>큐란 무엇인가?</p>
+</li>
+<li>
+<p>스택과 큐의 차이</p>
+</li>
+<li>
+<p>배열이란 무엇인가?</p>
+</li>
+<li>
+<p>벡터란 무엇인가?</p>
+</li>
+<li>
+<p>배열과 벡터의 차이</p>
+</li>
+<li>
+<p>벡터와 리스트의 차이</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>Windows API란 무엇인가?</p>
+</li>
+<li>
+<p>Direct2D란 무엇인가?</p>
+</li>
+<li>
+<p>학원 커리큘럼은 어떻게 되는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 62</p>
+<p>강남구에 위치한 'ㅎㅇㅂㄹ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>인성 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>학교 학과는 어떻게 되는가?</p>
+</li>
+<li>
+<p>흡연 여부는 어떻게 되는가?</p>
+</li>
+<li>
+<p>책을 얼마나 자주 읽는가?</p>
+</li>
+<li>
+<p>최근에 본 책은 무엇인가?</p>
+</li>
+<li>
+<p>영화를 얼마나 자주 보는가?</p>
+</li>
+<li>
+<p>가장 감명깊게 본 영화는 무엇인가?</p>
+</li>
+<li>
+<p>좋아하는 게임은 무엇인가?</p>
+</li>
+<li>
+<p>희망 연봉은 얼마인가?</p>
+</li>
+<li>
+<p>5년 뒤 자기 모습은 어떠할 것 같은가?</p>
+</li>
+<li>
+<p>편입하게 된 계기는 무엇인가?</p>
+</li>
+<li>
+<p>학점이 어떻게 되는가?</p>
+</li>
+<li>
+<p>루아 스크립트를 배워야하는데 괜찮은가?</p>
+</li>
+<li>
+<p>좋아하는 게임이 FPS 게임인데, 무슨 게임을 가장 좋아하는가?</p>
+</li>
+<li>
+<p>본인이 잘한다고 생각하는가?</p>
+</li>
+<li>
+<p>서든어택을 제외한 다른 FPS 게임 류도 좋아하는가?</p>
+</li>
+<li>
+<p>어떤 개발자가 되고 싶은가?</p>
+</li>
+<li>
+<p>기획도 할 줄 아는 개발자가 되고 싶은가? </p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 63</p>
+<p>금천구에 위치한 'ㅌㅆㄹㅇㅌㅌㅇㅁㅌ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>인성 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>자기소개</p>
+</li>
+<li>
+<p>컴퓨터 공학은 무슨 이유로 전공했는가?</p>
+</li>
+<li>
+<p>컴퓨터 공학 전공 수업 중 어떤걸 들었는가?</p>
+</li>
+<li>
+<p>회사를 다닌 경험이 있는데, 무슨 역할을 맡았는가?</p>
+</li>
+<li>
+<p>팀 프로젝트는 몇 명이서 진행했는가?</p>
+</li>
+<li>
+<p>맡은 역할은 무엇인가?</p>
+</li>
+<li>
+<p>플레이어를 맡았다고 했는데, 어떠한 것을 작업했는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 시 5명이서 진행했는데, 역할을 어떻게 나누었는가?</p>
+</li>
+<li>
+<p>우리 게임 해 보았는가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>추상클래스와 인터페이스의 차이</p>
+</li>
+<li>
+<p>정렬 알고리즘 어떠한 것을 사용해보았는가?</p>
+</li>
+<li>
+<p>C++과 C#의 차이</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>입사하게 되면 무슨 역할을 맡게 되는가?</p>
+</li>
+<li>
+<p>코드 리뷰를 많이 하는가? </p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 64 </p>
+<p>판교에 위치한 'ㅁㅌㅂㅇㅌㅌㅇㅁㅌ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>OOP의 개념은 어떻게 되는가?</p>
+</li>
+<li>
+<p>자기가 했던 경험 중 OOP를 활용하여 코드를 잘 짰다고 생각한 적이 있는가?</p>
+</li>
+<li>
+<p>델리게이트와 이벤트의 차이</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴의 종류는 어떻게 되는가?</p>
+</li>
+<li>
+<p>URP 쉐이더 사용해 본 경험이 있는가?</p>
+</li>
+<li>
+<p>유니티 경험은 얼마나 있는가?</p>
+</li>
+<li>
+<p>현재 어떤 공부를 하고 있는가?</p>
+</li>
+<li>
+<p>기타</p>
+</li>
+<li>
+<p>현재 회사가 스타트업인데 괜찮은가?</p>
+</li>
+<li>
+<p>현재 개발하고 있는 게임 예정 계획 설명 </p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 65</p>
+<p>금천구에 위치한 'ㄹㅇㅇㄱㅇㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>인성 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>자기소개</p>
+</li>
+<li>
+<p>전과를 하게 된 이유는 무엇인가?</p>
+</li>
+<li>
+<p>어떤 개발자가 되고 싶은가?</p>
+</li>
+<li>
+<p>어떤 방향으로 공부하고 싶은가?</p>
+</li>
+<li>
+<p>왜 C++을 하고 싶은가? </p>
+</li>
+<li>
+<p>PC는 요즘 많이 감소하는 추세이며, 모바일이 높은 추세인데 왜 PC 온라인을 택했는가?</p>
+</li>
+<li>
+<p>그렇다면 PC 온라인을 가게 된다면 앞으로 어떻게 준비할 것인가?</p>
+</li>
+<li>
+<p>DirectX 공부한 적이 있는가?</p>
+</li>
+<li>
+<p>엔진도 다양하게 존재하는 앞으로 어떤 엔진을 공부할 생각인가?</p>
+</li>
+<li>
+<p>왜 ㄱㅇㄱㅇㅇㅋㄷㅁ를 갔는가?</p>
+</li>
+<li>
+<p>커리 큘럼이 어떻게 되는가?</p>
+</li>
+<li>
+<p>본인이 맡게 되는일이 프로그래밍과 관련이 없다면 어떻게 할 것인가?</p>
+</li>
+<li>
+<p>UI/UX를 하게 된다면 앞으로 UI/UX만 맡게 될텐데 괜찮은가?</p>
+</li>
+<li>
+<p>야근에 대해 어떻게 생각하는가?</p>
+</li>
+<li>
+<p>야근을 하지만, 하는 것이 없을 수도 있는데 괜찮은가?</p>
+</li>
+<li>
+<p>팀 프로젝트 구성은 어떻게 나누었는가?</p>
+</li>
+<li>
+<p>플레이어를 담당했는데 어떻게 진행했는가?</p>
+</li>
+<li>
+<p>팀원들과의 불화는 없었는가?</p>
+</li>
+<li>
+<p>신입에게 보통 어떠한 업무를 시키는 지 아는가?</p>
+</li>
+<li>
+<p>오랫동안 수치 등 간단한 기본적인 업무만 시켜도 괜찮은가?</p>
+</li>
+<li>
+<p>컨텐츠 팀을 맡게 되면 앞으로 어떤 프로그래머가 되고 싶은가?</p>
+</li>
+<li>
+<p>컨텐츠 쪽을 선택하면 앞으로 패치를 계속하게 될텐데 괜찮은가?</p>
+</li>
+<li>
+<p>배우는게 그렇게 많지 않아도 괜찮은가?</p>
+</li>
+<li>
+<p>학원을 다니고 있는데 취업을 해도 지장이 없는가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>자료구조 종류가 어떻게 되는가?</p>
+</li>
+<li>
+<p>맵과 언오더드 맵의 차이</p>
+</li>
+<li>
+<p>리스트와 벡터 차이</p>
+</li>
+<li>
+<p>다형성이 무엇인가?</p>
+</li>
+<li>
+<p>소멸자에 virtual 키워드를 붙이면 어떻게 되는가?</p>
+</li>
+<li>
+<p>생성자를 재정의 하는경우는 어떻게 되는가?</p>
+</li>
+<li>
+<p>싱글톤 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>코드 리뷰를 많이 하는가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 66</p>
+<p>서초구에 위치한 'ㅋㅁㄷㅇ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>인성 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>기획일을 하다가 프로그래머로 전환하려는 이유가 무엇인가?</p>
+</li>
+<li>
+<p>왜 기획쪽으로 가지 않는가?</p>
+</li>
+<li>
+<p>6개월 밖에 배우지 않았는데 더 배워야하지 않은가?</p>
+</li>
+<li>
+<p>4년 전공자 보다 자신이 더 잘할수있는 점을 어필해보아라.</p>
+</li>
+<li>
+<p>게임 구현할 때 어떠한 것을 생각하고 구현하는가?</p>
+</li>
+<li>
+<p>무슨 게임을 좋아하는가?</p>
+</li>
+<li>
+<p>돈 잘버는 게임을 개발하고 싶은가?, 재미 있는 게임을 개발하고 싶은가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>A* 구조가 어떻게 되는가?</p>
+</li>
+<li>
+<p>STL이란 무엇인가?</p>
+</li>
+<li>
+<p>벡터는 왜 사용했는가?</p>
+</li>
+<li>
+<p>벡터의 구조는 어떻게 되는가?</p>
+</li>
+<li>
+<p>추상 클래스란 무엇인가?</p>
+</li>
+<li>
+<p>인터페이스란 무엇인가?</p>
+</li>
+<li>
+<p>객체지향의 장점은 무엇인가?</p>
+</li>
+<li>
+<p>객체지향의 특징은 무엇인가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 67</p>
+<p>금천구에 위치한 'ㅂㄹㅍ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<p>1차 기술면접과 2차 인성면접이 있으며, 1차 기술면접이 끝나고 바로 2차 인성면접을 진행하는 형태입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>대학에서 진행했던 프로젝트가 무엇이며, 무엇을 맡갔고, 어떤 역할을 하였는가?</p>
+</li>
+<li>
+<p>해당 프로젝트를 5점 만점 중 몇 점을 주고싶으며, 왜 그렇게 생각하는가?</p>
+</li>
+<li>
+<p>오브젝트 풀링이란 무엇인가?</p>
+</li>
+<li>
+<p>오브젝트 풀링을 사용하면 생기는 장/단점은 무엇인가?</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?, Awake 상태에서 코루틴을 사용할 수 있는가?</p>
+</li>
+<li>
+<p>유니티 라이프 사이클을 설명하고, 각 단계는 어떤 경우에 실행되고 동작되는가?</p>
+</li>
+<li>
+<p>렌더링 파이프 라인 개념과 순서를 설명하고, 컬링에 대해 설명해보아라.</p>
+</li>
+<li>
+<p>알고있는 컬링의 종류는 무엇이며, 각 개념을 설명해보아라.</p>
+</li>
+<li>
+<p>포인터란 무엇이며, 왜 사용하는가?</p>
+</li>
+<li>
+<p>STL 컨테이너 종류와 무엇을 가장 선호하는가?</p>
+</li>
+<li>
+<p>C++, C#의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>C++, C# 중 어떠한 언어를 더 선호하는가?</p>
+</li>
+<li>
+<p>상태 패턴이란 무엇이고, 어디에 적용시켰으며, 각 상태의 전환은 어떻게 이루어졌는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 2개를 진행하면서 무엇을 맡았으며, 무슨 역할을 하였는가?</p>
+</li>
+<li>
+<p>팀 프로젝트에 점수를 매긴다면 몇 점을 주고싶으며, 왜 그렇게 생각하는가?</p>
+</li>
+<li>
+<p>무슨 게임을 좋아하는가?</p>
+</li>
+<li>
+<p>원하는 장르와 다른 장르를 개발해도 상관없는가?</p>
+</li>
+<li>
+<p>개발은 언제부터 하고 싶었다는 생각이 들었는가?</p>
+</li>
+<li>
+<p>NCSoft 사의 블레이드 앤 소울 게임을 좋아한다고 했는데, 어떠한 점에서 좋아했는가?</p>
+</li>
+<li>
+<p>블소와 같은 게임은 보스 레이드가 진행되는동안 다양한 사용자가 존재하는데, 이 때 유저의 프레임을 유지하기 위해서는 어떻게 해결할 것인가?</p>
+</li>
+<li>
+<p>신규 개발팀과, 라이브 팀 중 무엇을 더 선호하는가?</p>
+</li>
+<li>
+<p>선택할 수 있으면 어느 팀을 선택할 것이며, 왜 해당 팀을 선택했는가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>퍼블리싱을 담당하는 회사인데, 새로운 프로젝트를 런칭할 계획이 있는가?</p>
+</li>
+<li>
+<p>저작권 및 수익 쉐어 같은 부분들은 어떤 방식으로 진행되는가?</p>
+</li>
+<li>
+<p>VR/AR 개발 등 메타버스에 대해 어떻게 생각하시는가?</p>
+</li>
+</ul>
+<p>이 후, 인성면접 진행</p>
+<p>기초적인 회사 소개 및 복지 등을 설명해주십니다.</p>
+<ul>
+<li>
+<p>인성 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>회사 방문 소요 시간은 어떻게 되는가?</p>
+</li>
+<li>
+<p>연봉은 얼마나 받고 싶은가? </p>
+</li>
+<li>
+<p>회사 사이트를 방문해보았는가?, 첫 인상이 어땠는가?</p>
+</li>
+<li>
+<p>회사 게임 해본 것이 있는가?, 있으면 무엇을 해보았는가?, 해보면서 무엇을 느꼈는가?</p>
+</li>
+<li>
+<p>잡 플래닛을 통해 회사를 검색했는가?, 검색 여부와 상관없이 왜 했는가?</p>
+</li>
+<li>
+<p>회사 평점이 낮은데 평점을 봤다면 회사를 평가하는 관점에 영향을 미치는가?</p>
+</li>
+<li>
+<p>왜 그렇게 생각하는가?</p>
+</li>
+<li>
+<p>본인의 장/단점은 무엇인가?</p>
+</li>
+<li>
+<p>단점을 극복하기 위해서 어떤 노력을 했는가?</p>
+</li>
+<li>
+<p>좌우명이 따로 있는가?</p>
+</li>
+<li>
+<p>따로 자기계발을 하고 있는가?</p>
+</li>
+<li>
+<p>근래에 읽었던 책이 무엇이며, 가장 인상 깊은 책은 무엇이고, 어떠한 장르를 좋아하는가?</p>
+</li>
+<li>
+<p>최근 일어난 사회 문제애 대해 아는 것이 있는가?</p>
+</li>
+<li>
+<p>그 중 IT 관련 소식에 대해 아는 것이 있는가?</p>
+</li>
+<li>
+<p>최종적으로 무엇을 개발하고 싶은가?</p>
+</li>
+<li>
+<p>해당 개발이 몇 년이면 가능할 것 같다고 생각하는가?</p>
+</li>
+<li>
+<p>어떠한 방식으로 개발을 진행하고 싶은가?</p>
+</li>
+<li>
+<p>그 동안 면접을 몇 군데 보았는가?, 결과 나온 것이 있는가?, 앞으로 면접은 몇 군데 더 있는가?</p>
+</li>
+<li>
+<p>다른 지원자와 무슨 차별점이 있으며, 왜 당신을 뽑아야 하는가?</p>
+</li>
+<li>
+<p>입사 예정일은 언제부터 가능한가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 68</p>
+<p>금천구에 위치한 'ㅁㄹㄴㄹㅅㅍㅌ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<p>1차 기술면접을 진행하고, 합격자들이게만 따로 2차 인성 면접이 진행됩니다. </p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>코루틴이란 무엇이며, 왜 사용하는가?</p>
+</li>
+<li>
+<p>코루틴의 동작 시간은 보장이 되는가?</p>
+</li>
+<li>
+<p>KF와 IK의 개념은 무엇이며 둘의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>로컬 좌표계와 월드 좌표계는 무슨 차이가 있는가?</p>
+</li>
+<li>
+<p>물체의 이동은 어떻게 진행 되는가?</p>
+</li>
+<li>
+<p>렌더링 파이프 라인이란 무엇인가?</p>
+</li>
+<li>
+<p>STL Cotainer란 무엇인가?</p>
+</li>
+<li>
+<p>STL Cotainer 종류는 어떻게 되는가?</p>
+</li>
+<li>
+<p>리스트(List)란 무엇인가?</p>
+</li>
+<li>
+<p>리스트(List)의 종류는 무엇이 있으며, 어떤 개념이고, 실제로 구현해보았는가?</p>
+</li>
+<li>
+<p>싱글 리스트와 더블 리스트의 차이는 무엇이며, 왜 이런 개념이 생겼는가?</p>
+</li>
+<li>
+<p>동적 할당과 정적 할당의 개념과 둘의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>그렇다면 배열을 생성한다고 하면 이는 동적 할당인가?, 정적 할당인가?</p>
+</li>
+<li>
+<p>C++과 C#은 무슨 차이가 있으며, 어떠한 언어를 더 선호하는가?</p>
+</li>
+<li>
+<p>디자인 패턴의 개념은 무엇인가?</p>
+</li>
+<li>
+<p>상태 패턴은 무엇이고, 왜 사용했으며, 어떠한 식으로 사용했는가?</p>
+</li>
+<li>
+<p>싱글톤 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>싱글톤 패턴과 전역 변수의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>컴포넌트 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>인터페이스와 추상클래스의 개념은 무엇이며, 둘의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>HDD와 SSD의 개념은 무엇이며, 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>마인크래프트, 로블록스, 테라리아과 같은 다양한 게임들이 존재하는데 이러한 게임들과 차별점은 무엇인가?</p>
+</li>
+<li>
+<p>메타버스 관련 신규 프로젝트를 외주 진행 시 VR/AR을 도입하여 개발하는가?</p>
+</li>
+<li>
+<p>게임 내 TV 기능은 어떠한 식으로 구현되었는가?</p>
+</li>
+<li>
+<p>BM과 같은 과금요소가 현재 서비스하고 있는 게임에서 수익이 잘 나오는가?</p>
+</li>
+</ul>
+<p>이 후, 기초적인 회사 소개 및 복지 등을 설명해주십니다.</p>
+<p>게임회사 기술면접 질문 &amp; 답변 69
+안양에 위치한 'ㅌㅂㅇㅌ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>왜 주로 고전게임을 모작하였는가?</p>
+</li>
+<li>
+<p>자료구조는 무엇을 사용해보았는가?</p>
+</li>
+<li>
+<p>박싱, 언박싱이란 무엇이며, 둘의 차이점는 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇이며, 사용해본 경험이 있는가?</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>코루틴과 스레드의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>메모리 단편화란 무엇인가?</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 불화는 없었는가?</p>
+</li>
+<li>
+<p>자신은 어떤 성향의 사람인가?</p>
+</li>
+<li>
+<p>요즘 하는 게임은 무엇인가?</p>
+</li>
+<li>
+<p>좋아하는 게임 장르는 무엇인가?</p>
+</li>
+<li>
+<p>만약 회사에 입사하게 된다면 어떠한 일을 하고싶은가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 70</p>
+<p>금천구에 위치한 'ㅌㅆㄹㅇㅌㅌㅇㅁㅌ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>C++, C#의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>대학교는 어느 대학을 졸업했는가?</p>
+</li>
+<li>
+<p>학원을 수강하기 전 공백이 있는데 무슨 일을 했는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 무슨 역할을 맡았으며, 무엇을 개발하였는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 당시 팀원들과의 불화는 없었는가?</p>
+</li>
+<li>
+<p>현재 라이브 팀이 아닌 개발팀으로 가게 되는데 상관없는가?</p>
+</li>
+<li>
+<p>원하는 장르의 개발이 아닌 다른 장르를 개발해도 상관없는가?</p>
+</li>
+<li>
+<p>회사 홈페이지를 방문해보았는가?, 첫 인상이 어땟는가?</p>
+</li>
+<li>
+<p>회사까지 오는데 걸린 시간은 얼마나 되는가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>게임을 리마스터 할 계획은 없는 것인가?</p>
+</li>
+<li>
+<p>회사와 ㅎㅂㅅㅍㅌ의 관계는 어떻게 되는가?</p>
+</li>
+<li>
+<p>회사 내 복지나, 업무 강도 등과 같은 기타 등등</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 71</p>
+<p>구로구에 위치한 'ㅋㄹㅌㅌ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<p>인성 면접을 시작으로, 기술 면접, 코딩 테스트가 진행됩니다.</p>
+<ul>
+<li>
+<p>인성 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>왜 프로그래밍을 하려고 하는가?</p>
+</li>
+<li>
+<p>스타트업이다보니, 야근이 많고 바쁠텐데 괜찮은가?</p>
+</li>
+<li>
+<p>학원에서 어떠한 것을 배웠는가?</p>
+</li>
+<li>
+<p>팀 프로젝트를 진행하면서 어려웠던 점은 무엇인가?</p>
+</li>
+<li>
+<p>좋아하는 게임과 그 이유는 무엇인가?</p>
+</li>
+<li>
+<p>싫어하는 장르의 게임을 개발하게 된다면 어떻게 할 것인가?</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>이력서를 바탕으로 질문</p>
+</li>
+<li>
+<p>더블 버퍼링이란 무엇인가?</p>
+</li>
+<li>
+<p>메모리풀을 사용하는 이유는 무엇인가?</p>
+</li>
+<li>
+<p>메모리 파편화란 무엇인가?</p>
+</li>
+<li>
+<p>C#에서 struct와 class의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>코딩 테스트</p>
+</li>
+<li>
+<p>C# 콘솔을 이용하여 테트리스 게임을 제작해야 합니다.</p>
+</li>
+</ul>
+<p>사용할 수 있는 함수, 예제등은 주어집니다. </p>
+<p>게임회사 기술면접 질문 &amp; 답변 72</p>
+<p>강남구에 위치한 'ㅇㅍㅅ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접 &amp; 기타 면접</p>
+</li>
+<li>
+<p>개발자를 꿈꾸게 된 시기와 계기</p>
+</li>
+<li>
+<p>FPS에서 총알 피격 말고 Raycast의 다른 용도는 무엇인가?</p>
+</li>
+<li>
+<p>Q) 카메라 프로스텀 컬링은 어떻게 구현되는가?</p>
+</li>
+<li>
+<p>A) 카메라의 렌더 영역과 오브젝트가 겹치는지 확인</p>
+</li>
+</ul>
+<p>3-1. Q) 씬에 오브젝트가 1000개 있다면, 1000번 다 검사하지 않고 최적화 할 수 있는 방법에 대해 구현한다면 어떻게 할 것인가?</p>
+<p>3-2. A) 생각나는 대로 대답</p>
+<ol>
+<li>
+<p>Q) 3D 공간의 x, y, z 정점을 2D 공간에 위치시키기까지의 과정은 어떻게 되는가?</p>
+</li>
+<li>
+<p>A) 렌더링 파이프라인 아는대로 대답</p>
+</li>
+</ol>
+<p>4-1. Q) 마지막 정점 정보를 통해 픽셀을 결정하는 과정은 어떻게 되는가?</p>
+<ol>
+<li>
+<p>텍스처를 합치면 드로우콜이 줄어드는 이유는 무엇인가?</p>
+</li>
+<li>
+<p>씬에서 필요한 리소스를 한번에 로딩하는 것과, 필요할 때마다 로딩하는 것의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>구현한 프레임워크 이외에 개발 편의성을 위해 구현한 툴이 있는가?</p>
+</li>
+<li>
+<p>씬을 전환할 때 발생하는 메모리 누수에 관한 경험과 이를 해결한 경험이 있는가?</p>
+</li>
+<li>
+<p>오브젝트 풀링을 씬 전환과 관련지어서 사용한 경험이 있는가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 73</p>
+<p>금천구에 위치한 'ㅇㅍㄹㅅㅍㅌ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>HTML5란 무엇인가?</p>
+</li>
+<li>
+<p>웹 기반의 엔진 아는것이 있는가?</p>
+</li>
+<li>
+<p>웹을 사용해보지 않았는데 왜 지원하였는가?</p>
+</li>
+<li>
+<p>프로젝트는 C++로 작성했는데 왜 웹을 이용하는곳을 지원하였는가?</p>
+</li>
+<li>
+<p>편의기능을 가진 툴을 제작해 본 경험이 있는가?</p>
+</li>
+<li>
+<p>프로젝트 내 자신있는 기능이 있는가?</p>
+</li>
+<li>
+<p>팀 프로젝트 했을 때 기억나는 에피소드가 있는가?</p>
+</li>
+<li>
+<p>프로젝트 당시 상사는 틀린 것 같고, 난 맞은 것 같을 때 어떻게 할 것인가?</p>
+</li>
+<li>
+<p>C#과 C++의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>유니티 엔진 최적화 기법은 무엇이 있는가?</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>쉐이더나, 라이팅을 사용해 본 경험이 있는가?</p>
+</li>
+<li>
+<p>오브젝트 풀이란 무엇인가?</p>
+</li>
+<li>
+<p>디자인 패턴이란 무엇인가?</p>
+</li>
+<li>
+<p>인성 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>자의로 지원한 것인가, 아니면 무작정 찔러보기 식으로 지원한 것인가?</p>
+</li>
+<li>
+<p>전공이 다른데 왜 진로를 바꾸었는가?</p>
+</li>
+<li>
+<p>프로그래머보다 공무원이 더 낫지않은가? 프로그래머로 전향한 이유는 무엇인가?</p>
+</li>
+<li>
+<p>우리 회사가 무슨 회사인지 아는가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>연봉은 어떻게 되는가?</p>
+</li>
+<li>
+<p>출/퇴근 시간은 어떻게 되는가?</p>
+</li>
+<li>
+<p>석식 및 중식은 어떻게 되는가?</p>
+</li>
+<li>
+<p>야근은 많은가?</p>
+</li>
+<li>
+<p>주말 출근을 하는가?</p>
+</li>
+<li>
+<p>입사하게 되면 맡게될 업무는 무엇인가?</p>
+</li>
+<li>
+<p>수습기간이 따로 존재하는가?</p>
+</li>
+<li>
+<p>연차와 월차는 어떻게 진행되는가?</p>
+</li>
+<li>
+<p>코드리뷰를 진행하는가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 74</p>
+<p>강남구에 위치한 'ㅋㄹㅍㅌ'회사
+2021년 클라이언트 프로그래머 필기테스트 목록입니다.</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>List, Tree, Queue, Stack, Array의 특징, 장/단점, 사용 용도를 작성하시오.</p>
+</li>
+<li>
+<p>벡터의 내적과 외적의 의미와 사용 용도를 작성하시오.</p>
+</li>
+<li>
+<p>Virtual 함수가 동작하는 과정을 서술하시오.</p>
+</li>
+<li>
+<p>Hash와 Tree의 장/단점을 비교하시오.</p>
+</li>
+<li>
+<p>하루에 전 세계에서 출산되는 아기들이 몇 명인지 과정을 논리적으로 도출하시오.</p>
+</li>
+<li>
+<p>Ambiet, Diffuse, Specular, Emissive의 각각의 특징과 연산과정을 작성하시오.</p>
+</li>
+<li>
+<p>3D 그래픽스 파이프라인을 작성하시오.</p>
+</li>
+<li>
+<p>World, View, Projection Transfrom 특징과 연산 과정을 작성하시오.</p>
+</li>
+<li>
+<p>Call Stack, Stack Overflow에 대해서 작성하시오.</p>
+</li>
+<li>
+<p>System Memory, Video Memory, AGP Memory에 대해서 작성하시오.</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 75</p>
+<p>강남구에 위치한 'ㅇㅇㅅㅇ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<p>처음 1시간은 코딩테스트가 진행되며, 기술 면접은 실무자 2분이서 진행하였습니다.</p>
+<p>이력서를 기반으로 하나하나 질문하였으며, 그 후 기술면접으로 진행했습니다.</p>
+<ul>
+<li>
+<p>코딩 테스트</p>
+</li>
+<li>
+<p>()(), (()) 와 같은걸 완전괄호라고 하고, )()(와 같이 제대로된 괄호가 아닌 걸 불완전괄호라고 했을 때,</p>
+</li>
+</ul>
+<p>1이상 12이하의 변수를 입력 받을 수 있을 수 있는 n을 선언하고 선언한 갯수만큼 완전괄호를 만들 수 있는 '모든'경우를 배열로 출력하라. 출력시에 순서는 완전 괄호의 우선 순서로 출력하시오.</p>
+<p>예) n = 1, arr[] = ()</p>
+<p>n = 3, arr[] = ((())),(()()),()()(),(())(),()(())</p>
+<ol>
+<li>String으로 사칙연산을 포함한 수식을 입력받고 이 수식을 변수로 변환하여 답을 도출 소수점을 제외
+예시 : 5 + 4 * 4 / 3</li>
+</ol>
+<p>답 : 12</p>
+<ol>
+<li>
+<p>기억나지 않음.</p>
+</li>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>객체지향 프로그래밍이란 무엇인가?</p>
+</li>
+<li>
+<p>추상화는 정확히 무엇을 얘기하는가?</p>
+</li>
+<li>
+<p>오버로딩과 오버라이딩은 무엇인가?</p>
+</li>
+<li>
+<p>Virtual 함수란 무엇인가?</p>
+</li>
+<li>
+<p>기본 오버라이딩과 Virtual 함수의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>STL에 대해서 아는대로 설명하시오.</p>
+</li>
+<li>
+<p>벡터란 무엇인가?</p>
+</li>
+<li>
+<p>벡터의 크기를 재할당할 때 무엇을 사용해야하는가?</p>
+</li>
+<li>
+<p>맵은 기존 맵과 해쉬 맵이 있는데 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>맵과 해쉬맵의 속도 수식은 어떻게 되는가?</p>
+</li>
+<li>
+<p>Foreach문을 사용한 경험이 있는가?</p>
+</li>
+<li>
+<p>유니티 최적화 기법은 무엇이 있는가?</p>
+</li>
+<li>
+<p>최적화를 했을 때와 안했을 때 실질적으로 속도 차이를 느낄 수 있었는가, 있었다면 구체적으로 어떠했는가?</p>
+</li>
+<li>
+<p>오브젝트 풀링이란 무엇인가?</p>
+</li>
+<li>
+<p>박싱, 언박싱이란 무엇인가?</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>양보를 사용한다고 했는데 어떤게 어떻게 쓰이는가?</p>
+</li>
+<li>
+<p>협업 툴은 어떠한 것을 사용해 보았는가?</p>
+</li>
+<li>
+<p>깃허브 사용했을 때 툴을 사용했다면 무슨 툴을 사용했는가?</p>
+</li>
+<li>
+<p>각 포트폴리오 제작 기간은 어떻게 되는가?</p>
+</li>
+<li>
+<p>유니티 포트폴리오 제작 기간은 어떻게 되는가?</p>
+</li>
+<li>
+<p>멀티플레이 구현에 사용한 것은 무엇인가?</p>
+</li>
+<li>
+<p>멀티가 정상적으로 구동되고, 어떠한 식으로 구동되는가?</p>
+</li>
+<li>
+<p>포톤이란 무엇인가?</p>
+</li>
+</ol>
+<p>게임회사 기술면접 질문 &amp; 답변 76</p>
+<p>판교에 위치한 'ㅇㅇㅂㅌㄱㅇㅈ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<p>자기소개 이후 간단하게 이력서 내용에 있는 질문들을 하셨습니다</p>
+<ul>
+<li>
+<p>기술 면접</p>
+</li>
+<li>
+<p>객체지향이란 무엇인가?</p>
+</li>
+<li>
+<p>객체지향의 4대 특징이란 무엇인가?</p>
+</li>
+<li>
+<p>오버로딩, 오버라이딩의 개념은 무엇인가?</p>
+</li>
+<li>
+<p>더블 버퍼링이란 무엇인가?</p>
+</li>
+<li>
+<p>유니티 라이프사이클이란 무엇인가?</p>
+</li>
+<li>
+<p>가비지 컬렉션이란 무엇인가?</p>
+</li>
+<li>
+<p>유니티 최적화와 가비지 컬렉터가 최소한으로 일하게 하려면 어떻게 해야하는가?</p>
+</li>
+<li>
+<p>박싱, 언박싱이란 무엇인가?</p>
+</li>
+<li>
+<p>동적할당에 대해 C++과 C#은 무슨 차이점을 가지는가?</p>
+</li>
+<li>
+<p>Update, FixedUpdate의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>코루틴의 yield는 무엇인가?</p>
+</li>
+<li>
+<p>기타 질문</p>
+</li>
+<li>
+<p>협업은 해보았는가?</p>
+</li>
+<li>
+<p>유니티는 어떤식으로 어디부터 어디까지 해보았는가?</p>
+</li>
+<li>
+<p>역질문</p>
+</li>
+<li>
+<p>복지가 어떻게 되는가?</p>
+</li>
+<li>
+<p>초봉은 얼마인가?</p>
+</li>
+<li>
+<p>게임은 구체적으로 어떠한 장르인가?</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 77</p>
+<p>판교에 위치한 'ㅇㄹㅅㅇㅅ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<p>자기소개 이후 간단하게 이력서 내용에 있는 질문들을 하셨습니다</p>
+<ul>
+<li>
+<p>기술 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>프로그래밍을 아예 모르는 사람에게 포인터를 설명한다고 하면 어떻게 설명할 것인가?</p>
+</li>
+<li>
+<p>포인터를 통하여 어떻게 활용되는지도 설명하시오.</p>
+</li>
+<li>
+<p>스택이란 무엇인가?</p>
+</li>
+<li>
+<p>큐란 무엇인가?</p>
+</li>
+<li>
+<p>스택과 큐의 사용처는 무엇인가?</p>
+</li>
+<li>
+<p>벡터란 무엇인가?</p>
+</li>
+<li>
+<p>리스트란 무엇인가?</p>
+</li>
+<li>
+<p>벡터와 리스트의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>컬링과 클리핑의 차이점은 무엇인가?</p>
+</li>
+<li>
+<p>오브젝트 풀링이란 무엇인가?</p>
+</li>
+<li>
+<p>최적화를 한 경험은 있는가?</p>
+</li>
+<li>
+<p>대학교에서 어떠한 것을 배웠는가?</p>
+</li>
+<li>
+<p>학원 과정이 어떻게 되는가?</p>
+</li>
+<li>
+<p>언리얼이나 유니티 엔진 사용한 경험이 있는가?</p>
+</li>
+<li>
+<p>포트폴리오 관련 질문 등.</p>
+</li>
+</ul>
+<p>게임회사 기술면접 질문 &amp; 답변 78
+금천구에 위치한 'ㅅㅍㅌㄹ'회사
+2021년 클라이언트 프로그래머 면접 목록입니다.</p>
+<p>1시간 30분 정도 면접 진행했으며, 기술적인 부분 보다는 인성을 중요시 하는 분위기입니다.</p>
+<ul>
+<li>
+<p>기술 면접 &amp; 기타 질문</p>
+</li>
+<li>
+<p>현재 사는 곳, 가족 관계 등 인적사항 질문</p>
+</li>
+<li>
+<p>전공에서 코딩으로 전환하게 된 계기는 무엇인가?</p>
+</li>
+<li>
+<p>소스, 기획, 프로그래밍 다 할 수 있는 것 같은데 1인 개발을 추후에 목표로 하는가?</p>
+</li>
+<li>
+<p>코딩을 막상 배워보니 어떠한 느낌인가?, 어렵지는 않은가?</p>
+</li>
+<li>
+<p>인생 게임, 자신이 게임 쪽으로 가야겠다 라고 정하게 된 게임이 있는가?</p>
+</li>
+<li>
+<p>코루틴이란 무엇인가?</p>
+</li>
+<li>
+<p>코루틴을 어디에 어떻게 사용했으며, 왜 사용했는가?</p>
+</li>
+</ul>
+<p>게임회사 기술&amp;인성 면접 항목 총 정리</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
