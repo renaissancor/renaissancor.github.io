@@ -1,4 +1,6 @@
-# Network Programming and Comprehension about Socket 
+# Network Prgramming and Socket
+
+## Run code in Linux, based on WSL environment 
 
 1 Open WSL Terminal and create files 
 
@@ -34,7 +36,8 @@ Make sure the files are executable:
 chmod +x server client
 ```
 
-6 for server terminal 
+6 for server terminal, if you ran code previously running it again might not work 
+because port is currently in usage. 
 
 ```shell
 gcc -o server hello_server.c 
@@ -50,253 +53,82 @@ connect() error!
 
 Because port 1234 is currently in usage 
 
-However if real server is required 
+## Linux File Generation and Data Save 
 
-### Linux Clinet Code: `hello_clinet.c` 
-
-```cpp
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <arpa/inet.h>
-#include <sys/socket.h>
-
-void error_handling(char *message);
-
-int main(int argc, char* argv[])
-{
-	int sock;
-	struct sockaddr_in serv_addr;
-	char message[30];
-	int str_len;
-	
-	if(argc!=3){
-		printf("Usage : %s <IP> <port>\n", argv[0]);
-		exit(1);
-	}
-	
-	sock=socket(PF_INET, SOCK_STREAM, 0);
-	if(sock == -1)
-		error_handling("socket() error");
-	
-	memset(&serv_addr, 0, sizeof(serv_addr));
-	serv_addr.sin_family=AF_INET;
-	serv_addr.sin_addr.s_addr=inet_addr(argv[1]);
-	serv_addr.sin_port=htons(atoi(argv[2]));
-		
-	if(connect(sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr))==-1) 
-		error_handling("connect() error!");
-	
-	str_len=read(sock, message, sizeof(message)-1);
-	if(str_len==-1)
-		error_handling("read() error!");
-	
-	printf("Message from server: %s \n", message);  
-	close(sock);
-	return 0;
-}
-
-void error_handling(char *message)
-{
-	fputs(message, stderr);
-	fputc('\n', stderr);
-	exit(1);
-}
-```
-
-### Linux Server Code: `hello_server.c` 
-
-```cpp
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <arpa/inet.h>
-#include <sys/socket.h>
-
-void error_handling(char *message);
-
-int main(int argc, char *argv[])
-{
-	int serv_sock;
-	int clnt_sock;
-
-	struct sockaddr_in serv_addr;
-	struct sockaddr_in clnt_addr;
-	socklen_t clnt_addr_size;
-
-	char message[]="Hello World!";
-	
-	if(argc!=2){
-		printf("Usage : %s <port>\n", argv[0]);
-		exit(1);
-	}
-	
-	serv_sock=socket(PF_INET, SOCK_STREAM, 0);
-	if(serv_sock == -1)
-		error_handling("socket() error");
-	
-	memset(&serv_addr, 0, sizeof(serv_addr));
-	serv_addr.sin_family=AF_INET;
-	serv_addr.sin_addr.s_addr=htonl(INADDR_ANY);
-	serv_addr.sin_port=htons(atoi(argv[1]));
-	
-	if(bind(serv_sock, (struct sockaddr*) &serv_addr, sizeof(serv_addr))==-1 )
-		error_handling("bind() error"); 
-	
-	if(listen(serv_sock, 5)==-1)
-		error_handling("listen() error");
-	
-	clnt_addr_size=sizeof(clnt_addr);  
-	clnt_sock=accept(serv_sock, (struct sockaddr*)&clnt_addr,&clnt_addr_size);
-	if(clnt_sock==-1)
-		error_handling("accept() error");  
-	
-	write(clnt_sock, message, sizeof(message));
-	close(clnt_sock);	
-	close(serv_sock);
-	return 0;
-}
-
-void error_handling(char *message)
-{
-	fputs(message, stderr);
-	fputc('\n', stderr);
-	exit(1);
-}
-```
-
-Windows client 
-hello_client_win.c 
-
-```cpp
-#include <stdio.h>
-#include <stdlib.h>
-#include <winsock2.h>
-void ErrorHandling(char* message);
-
-int main(int argc, char* argv[])
-{
-	WSADATA wsaData;
-	SOCKET hSocket;
-	SOCKADDR_IN servAddr;
-
-	char message[30];
-	int strLen;
-
-	if(argc!=3)
-	{
-		printf("Usage : %s <IP> <port>\n", argv[0]);
-		exit(1);
-	}
-
-	if(WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
-		ErrorHandling("WSAStartup() error!");  
-	
-	hSocket=socket(PF_INET, SOCK_STREAM, 0);
-	if(hSocket==INVALID_SOCKET)
-		ErrorHandling("socket() error");
-	
-	memset(&servAddr, 0, sizeof(servAddr));
-	servAddr.sin_family=AF_INET;
-	servAddr.sin_addr.s_addr=inet_addr(argv[1]);
-	servAddr.sin_port=htons(atoi(argv[2]));
-	
-	if(connect(hSocket, (SOCKADDR*)&servAddr, sizeof(servAddr))==SOCKET_ERROR)
-		ErrorHandling("connect() error!");
- 
-	strLen=recv(hSocket, message, sizeof(message)-1, 0);
-	if(strLen==-1)
-		ErrorHandling("read() error!");
-	printf("Message from server: %s \n", message);  
-
-	closesocket(hSocket);
-	WSACleanup();
-	return 0;
-}
-
-void ErrorHandling(char* message)
-{
-	fputs(message, stderr);
-	fputc('\n', stderr);
-	exit(1);
-}
-```
-
-Windows Server 
-hello_server_win.c
-```cpp
-#include <stdio.h>
-#include <stdlib.h>
-#include <winsock2.h>
-void ErrorHandling(char* message);
-
-int main(int argc, char* argv[])
-{
-	WSADATA	wsaData;
-	SOCKET hServSock, hClntSock;		
-	SOCKADDR_IN servAddr, clntAddr;		
-
-	int szClntAddr;
-	char message[]="Hello World!";
-
-	if(argc!=2) 
-	{
-		printf("Usage : %s <port>\n", argv[0]);
-		exit(1);
-	}
-  
-	if(WSAStartup(MAKEWORD(2, 2), &wsaData)!=0)
-		ErrorHandling("WSAStartup() error!"); 
-	
-	hServSock=socket(PF_INET, SOCK_STREAM, 0);
-	if(hServSock==INVALID_SOCKET)
-		ErrorHandling("socket() error");
-  
-	memset(&servAddr, 0, sizeof(servAddr));
-	servAddr.sin_family=AF_INET;
-	servAddr.sin_addr.s_addr=htonl(INADDR_ANY);
-	servAddr.sin_port=htons(atoi(argv[1]));
-	
-	if(bind(hServSock, (SOCKADDR*) &servAddr, sizeof(servAddr))==SOCKET_ERROR)
-		ErrorHandling("bind() error");  
-	
-	if(listen(hServSock, 5)==SOCKET_ERROR)
-		ErrorHandling("listen() error");
-
-	szClntAddr=sizeof(clntAddr);    	
-	hClntSock=accept(hServSock, (SOCKADDR*)&clntAddr,&szClntAddr);
-	if(hClntSock==INVALID_SOCKET)
-		ErrorHandling("accept() error");  
-	
-	send(hClntSock, message, sizeof(message), 0);
-	closesocket(hClntSock);
-	closesocket(hServSock);
-	WSACleanup();
-	return 0;
-}
-
-void ErrorHandling(char* message)
-{
-	fputs(message, stderr);
-	fputc('\n', stderr);
-	exit(1);
-}
-```
-
-To compile by gcc in windows strongly recommended to install mingw gcc by chocolately 
 ```shell
-choco install mingw
-gcc --version 
+gcc low_open.c -o lopen
+./lopen
+cat data.txt
 ```
-Path will be 
-C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin
 
-Compile by 
-```shell
-gcc hello_server_win.c -o server.exe -lws2_32
-gcc hello_client_win.c -o client.exe -lws2_32
-server.exe 1234
-client.exe 127.0.0.1 1234
+This code will actually return 
+
+
+```txt
+stephen@ASUSLAPTOP:~/TCPIP/c1$ gcc low_open.c -o lopen
+stephen@ASUSLAPTOP:~/TCPIP/c1$ ./lopen
+file descriptor: 3
+stephen@ASUSLAPTOP:~/TCPIP/c1$ cat data.txt
+Let's go!
 ```
+
+Now let's read `data.txt` file generated from the code 
+
+```shell
+gcc low_read.c -o lread
+./lread
+```
+
+This code will return 
+```txt
+stephen@ASUSLAPTOP:~/TCPIP/c1$ gcc low_read.c -o lread
+stephen@ASUSLAPTOP:~/TCPIP/c1$ ./lread
+file descriptor: 3
+file data: Let's go!
+```
+
+Now let's generate file and socket together in linux and comapre file descriptor value as integer form 
+
+```shell
+gcc fd_seri.c -o fds
+./fds
+```
+
+```txt
+stephen@ASUSLAPTOP:~/TCPIP/c1$ ./fds
+file descriptor 1: 3
+file descriptor 2: 4
+file descriptor 3: 5
+```
+
+## Run code in Windows Visual Studio
+
+client server 
+
+C++ 형식의 인수가 형식의 매개 변수와 호환되지 않습니다.
+
+속성 -> C/C++ -> 언어 -> 준수 모드 -> 아니오 
+
+Compile method 
+
+```shell 
+gcc -o client Client/main.c -lws2_32
+client <IP> <PORT> 
+
+gcc -o server Server/main.c -lws2_32 
+server <PORT> 
+``` 
+
+For example, 
+```shell
+gcc -o server Server/main.c -lws2_32 
+.\server.exe 9190
+
+gcc -o client Client/main.c -lws2_32
+.\client.exe 127.0.0.1 9190
+```
+
+속성 -> 링커 -> 입력 -> 추가 종속성 -> ws2_32.lib 추가 
+
+
+
