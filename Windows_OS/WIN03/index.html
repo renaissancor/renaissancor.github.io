@@ -12,28 +12,28 @@
         <meta name="author" content="Renaissancor">
       
       
-        <link rel="canonical" href="https://renaissancor.github.io/Algorithm/HKU/HKUL1P4/">
+        <link rel="canonical" href="https://renaissancor.github.io/Windows_OS/WIN03/">
       
       
-        <link rel="prev" href="../HKUL1P3/">
+        <link rel="prev" href="../../Game_Engine/AR250604/">
       
       
-        <link rel="next" href="../HKUL1P5/">
+        <link rel="next" href="../WIN06/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Master Theorem, Fibonacci Example - Renaissancoriate</title>
+        <title>WIN03 - Renaissancoriate</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#master-theorem-fibonacci-example" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +87,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+    <a href="../.." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Master Theorem, Fibonacci Example
+              WIN03
             
           </span>
         </div>
@@ -195,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+    <a href="../.." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -213,7 +208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -235,7 +230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../AR111111/" class="md-nav__link">
+      <a href="../../AR111111/" class="md-nav__link">
         
   
   
@@ -254,20 +249,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -283,7 +276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Algorithm
@@ -297,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../A01/" class="md-nav__link">
+      <a href="../../Algorithm/A01/" class="md-nav__link">
         
   
   
@@ -317,20 +310,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -346,7 +337,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             HKU
@@ -360,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HKUL1P1/" class="md-nav__link">
+      <a href="../../Algorithm/HKU/HKUL1P1/" class="md-nav__link">
         
   
   
@@ -383,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HKUL1P2/" class="md-nav__link">
+      <a href="../../Algorithm/HKU/HKUL1P2/" class="md-nav__link">
         
   
   
@@ -406,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HKUL1P3/" class="md-nav__link">
+      <a href="../../Algorithm/HKU/HKUL1P3/" class="md-nav__link">
         
   
   
@@ -426,32 +417,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Master Theorem, Fibonacci Example
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P4/" class="md-nav__link">
         
   
   
@@ -462,86 +431,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#master-theorem-simplified-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Master Theorem (Simplified Statement)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fibonacci-numbers-recursive-vs-iterative" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fibonacci Numbers: Recursive vs Iterative
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Fibonacci Numbers: Recursive vs Iterative">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definition:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-1-naive-recursion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Algorithm 1: Naive Recursion
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-2-iterative-loop" class="md-nav__link">
-    <span class="md-ellipsis">
-      Algorithm 2: Iterative Loop
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-can-we-do-even-better" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: Can We Do Even Better?
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -554,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HKUL1P5/" class="md-nav__link">
+      <a href="../../Algorithm/HKU/HKUL1P5/" class="md-nav__link">
         
   
   
@@ -577,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HKUL1P6/" class="md-nav__link">
+      <a href="../../Algorithm/HKU/HKUL1P6/" class="md-nav__link">
         
   
   
@@ -600,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HKUL1P7/" class="md-nav__link">
+      <a href="../../Algorithm/HKU/HKUL1P7/" class="md-nav__link">
         
   
   
@@ -623,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HKUL1P8/" class="md-nav__link">
+      <a href="../../Algorithm/HKU/HKUL1P8/" class="md-nav__link">
         
   
   
@@ -646,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HKUPSET1/" class="md-nav__link">
+      <a href="../../Algorithm/HKU/HKUPSET1/" class="md-nav__link">
         
   
   
@@ -669,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HKU_Math/" class="md-nav__link">
+      <a href="../../Algorithm/HKU/HKU_Math/" class="md-nav__link">
         
   
   
@@ -745,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Architecture/CA250709/" class="md-nav__link">
+      <a href="../../Architecture/CA250709/" class="md-nav__link">
         
   
   
@@ -768,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Architecture/CA250711/" class="md-nav__link">
+      <a href="../../Architecture/CA250711/" class="md-nav__link">
         
   
   
@@ -829,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Architecture/ko/CA250711/" class="md-nav__link">
+      <a href="../../Architecture/ko/CA250711/" class="md-nav__link">
         
   
   
@@ -905,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250305/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250305/" class="md-nav__link">
         
   
   
@@ -928,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250306/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250306/" class="md-nav__link">
         
   
   
@@ -951,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250307/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250307/" class="md-nav__link">
         
   
   
@@ -974,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250310/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250310/" class="md-nav__link">
         
   
   
@@ -997,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250311/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250311/" class="md-nav__link">
         
   
   
@@ -1020,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250312/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250312/" class="md-nav__link">
         
   
   
@@ -1043,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250313/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250313/" class="md-nav__link">
         
   
   
@@ -1066,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250317/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250317/" class="md-nav__link">
         
   
   
@@ -1089,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250318/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250318/" class="md-nav__link">
         
   
   
@@ -1112,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250319/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250319/" class="md-nav__link">
         
   
   
@@ -1135,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250320/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250320/" class="md-nav__link">
         
   
   
@@ -1158,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250321/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250321/" class="md-nav__link">
         
   
   
@@ -1181,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250324/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250324/" class="md-nav__link">
         
   
   
@@ -1204,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250325/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250325/" class="md-nav__link">
         
   
   
@@ -1227,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250326/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250326/" class="md-nav__link">
         
   
   
@@ -1250,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250327/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250327/" class="md-nav__link">
         
   
   
@@ -1273,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250328/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250328/" class="md-nav__link">
         
   
   
@@ -1296,7 +1185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250331/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250331/" class="md-nav__link">
         
   
   
@@ -1319,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250401/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250401/" class="md-nav__link">
         
   
   
@@ -1342,7 +1231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250402/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250402/" class="md-nav__link">
         
   
   
@@ -1365,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250423/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250423/" class="md-nav__link">
         
   
   
@@ -1388,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250424/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250424/" class="md-nav__link">
         
   
   
@@ -1411,7 +1300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C_C%2B%2B_Basics/AR250425/" class="md-nav__link">
+      <a href="../../C_C%2B%2B_Basics/AR250425/" class="md-nav__link">
         
   
   
@@ -1479,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_Network/NW0503/" class="md-nav__link">
+      <a href="../../Computer_Network/NW0503/" class="md-nav__link">
         
   
   
@@ -1502,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_Network/NW0504/" class="md-nav__link">
+      <a href="../../Computer_Network/NW0504/" class="md-nav__link">
         
   
   
@@ -1525,7 +1414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_Network/NW1/" class="md-nav__link">
+      <a href="../../Computer_Network/NW1/" class="md-nav__link">
         
   
   
@@ -1548,7 +1437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_Network/TCPIP1/" class="md-nav__link">
+      <a href="../../Computer_Network/TCPIP1/" class="md-nav__link">
         
   
   
@@ -1616,7 +1505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250403/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250403/" class="md-nav__link">
         
   
   
@@ -1639,7 +1528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250407/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250407/" class="md-nav__link">
         
   
   
@@ -1662,7 +1551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250408/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250408/" class="md-nav__link">
         
   
   
@@ -1685,7 +1574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250409/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250409/" class="md-nav__link">
         
   
   
@@ -1708,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250410/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250410/" class="md-nav__link">
         
   
   
@@ -1731,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250411/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250411/" class="md-nav__link">
         
   
   
@@ -1754,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250414/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250414/" class="md-nav__link">
         
   
   
@@ -1777,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250415/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250415/" class="md-nav__link">
         
   
   
@@ -1800,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250416/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250416/" class="md-nav__link">
         
   
   
@@ -1823,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250417/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250417/" class="md-nav__link">
         
   
   
@@ -1846,7 +1735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250418/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250418/" class="md-nav__link">
         
   
   
@@ -1869,7 +1758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250421/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250421/" class="md-nav__link">
         
   
   
@@ -1892,7 +1781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/AR250422/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250422/" class="md-nav__link">
         
   
   
@@ -1998,7 +1887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482HW/ECE482H1/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H1/" class="md-nav__link">
         
   
   
@@ -2021,7 +1910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482HW/ECE482H2/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H2/" class="md-nav__link">
         
   
   
@@ -2044,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482HW/ECE482H3/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H3/" class="md-nav__link">
         
   
   
@@ -2067,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482HW/ECE482H4/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H4/" class="md-nav__link">
         
   
   
@@ -2090,7 +1979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482HW/ECE482H5/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H5/" class="md-nav__link">
         
   
   
@@ -2113,7 +2002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482HW/ECE482H6/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H6/" class="md-nav__link">
         
   
   
@@ -2136,7 +2025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482HW/ECE482H7/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H7/" class="md-nav__link">
         
   
   
@@ -2159,7 +2048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482HW/ECE482H8/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H8/" class="md-nav__link">
         
   
   
@@ -2228,7 +2117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L1/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L1/" class="md-nav__link">
         
   
   
@@ -2251,7 +2140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L10/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L10/" class="md-nav__link">
         
   
   
@@ -2274,7 +2163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L11/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L11/" class="md-nav__link">
         
   
   
@@ -2297,7 +2186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L2/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L2/" class="md-nav__link">
         
   
   
@@ -2320,7 +2209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L3/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L3/" class="md-nav__link">
         
   
   
@@ -2343,7 +2232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L4/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L4/" class="md-nav__link">
         
   
   
@@ -2366,7 +2255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L5/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L5/" class="md-nav__link">
         
   
   
@@ -2389,7 +2278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L6/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L6/" class="md-nav__link">
         
   
   
@@ -2412,7 +2301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L7/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L7/" class="md-nav__link">
         
   
   
@@ -2435,7 +2324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L8/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L8/" class="md-nav__link">
         
   
   
@@ -2458,7 +2347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482LAB/ECE482L9/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L9/" class="md-nav__link">
         
   
   
@@ -2527,7 +2416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P2/Design/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P2/Design/" class="md-nav__link">
         
   
   
@@ -2550,7 +2439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P2/DeveloperGuide/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P2/DeveloperGuide/" class="md-nav__link">
         
   
   
@@ -2573,7 +2462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P2/Home/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P2/Home/" class="md-nav__link">
         
   
   
@@ -2596,7 +2485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P2/MultiThreading/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P2/MultiThreading/" class="md-nav__link">
         
   
   
@@ -2619,7 +2508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P2/Performance/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P2/Performance/" class="md-nav__link">
         
   
   
@@ -2642,7 +2531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P2/RoadMap/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P2/RoadMap/" class="md-nav__link">
         
   
   
@@ -2711,7 +2600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P3/Design/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P3/Design/" class="md-nav__link">
         
   
   
@@ -2734,7 +2623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P3/Developer/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P3/Developer/" class="md-nav__link">
         
   
   
@@ -2757,7 +2646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P3/Home/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P3/Home/" class="md-nav__link">
         
   
   
@@ -2780,7 +2669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P3/Performance/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P3/Performance/" class="md-nav__link">
         
   
   
@@ -2803,7 +2692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P3/Risk/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P3/Risk/" class="md-nav__link">
         
   
   
@@ -2826,7 +2715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECE482FA24/ECE482P3/RoadMap/" class="md-nav__link">
+      <a href="../../ECE482FA24/ECE482P3/RoadMap/" class="md-nav__link">
         
   
   
@@ -2902,7 +2791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250426/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250426/" class="md-nav__link">
         
   
   
@@ -2925,7 +2814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250429/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250429/" class="md-nav__link">
         
   
   
@@ -2948,7 +2837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250430/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250430/" class="md-nav__link">
         
   
   
@@ -2971,7 +2860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250501/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250501/" class="md-nav__link">
         
   
   
@@ -2994,7 +2883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250507/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250507/" class="md-nav__link">
         
   
   
@@ -3017,7 +2906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250508/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250508/" class="md-nav__link">
         
   
   
@@ -3040,7 +2929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250509/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250509/" class="md-nav__link">
         
   
   
@@ -3063,7 +2952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250512/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250512/" class="md-nav__link">
         
   
   
@@ -3086,7 +2975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250513/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250513/" class="md-nav__link">
         
   
   
@@ -3109,7 +2998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250515/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250515/" class="md-nav__link">
         
   
   
@@ -3132,7 +3021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250518/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250518/" class="md-nav__link">
         
   
   
@@ -3155,7 +3044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250519/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250519/" class="md-nav__link">
         
   
   
@@ -3178,7 +3067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250521/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250521/" class="md-nav__link">
         
   
   
@@ -3201,7 +3090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250527/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250527/" class="md-nav__link">
         
   
   
@@ -3224,7 +3113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Game_Engine/AR250604/" class="md-nav__link">
+      <a href="../../Game_Engine/AR250604/" class="md-nav__link">
         
   
   
@@ -3251,18 +3140,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
           <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
@@ -3278,7 +3169,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Windows OS
@@ -3289,10 +3180,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../Windows_OS/WIN03/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3303,6 +3201,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -3315,7 +3214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Windows_OS/WIN06/" class="md-nav__link">
+      <a href="../WIN06/" class="md-nav__link">
         
   
   
@@ -3338,7 +3237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Windows_OS/WIN250709/" class="md-nav__link">
+      <a href="../WIN250709/" class="md-nav__link">
         
   
   
@@ -3378,76 +3277,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#master-theorem-simplified-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Master Theorem (Simplified Statement)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fibonacci-numbers-recursive-vs-iterative" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fibonacci Numbers: Recursive vs Iterative
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Fibonacci Numbers: Recursive vs Iterative">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definition:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-1-naive-recursion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Algorithm 1: Naive Recursion
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-2-iterative-loop" class="md-nav__link">
-    <span class="md-ellipsis">
-      Algorithm 2: Iterative Loop
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-can-we-do-even-better" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: Can We Do Even Better?
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -3463,68 +3292,57 @@
 
 
 
-<h1 id="master-theorem-fibonacci-example">Master Theorem, Fibonacci Example</h1>
-<h3 id="master-theorem-simplified-statement">Master Theorem (Simplified Statement)</h3>
-<p>For recurrence of the form:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>T(n) = aT(n/b) + f(n)
+  <h1>WIN03</h1>
+
+<p>LLP64 VS LP64 </p>
+<p>char short int long pointer 
+WORD 
+DWORD </p>
+<p>BYTE 
+WORD 
+DWORD (Double Word) 
+DWORD is simply unsigned long 
+QWORD (Quadra Word)</p>
+<p>HANDLE 
+Kernel Object ID </p>
+<p>Kernel Object 
+커널 오브젝트 </p>
+<p>CreateProcess 기반 프로세스 생성 
+Windows OS가 요구사항에 맞게 Process 생성
+즉 Process 생성 관리 소멸 주체는 OS </p>
+<p>Process Status Info 
+Running Blocked Ready 
+Process Priority Info </p>
+<p>프로세스 상태 정보 : Running Blocked Ready
+프로세스 우선순위 정보 
+이 두 정보 갱신 시 Process Scheduler 가 프로세스 관리 
+프로세스 관리하는 이런 구조체가 존재할 것 </p>
+<p>프로세스 내부에서 생성된 스레드도 커널 오브젝트 
+IPC (Inter Process Communication) 파이프 / 메일 슬롯도 커널 오브젝트 
+그래야, OS가 관리 </p>
+<p>Windows 에서는 파일 생성 시에도 Kernel Object 생성, 왜냐하면 
+파일도 Windows Kernel 의 관리 대상 </p>
+<p>그리고 Kernel Object Type 종류별로 모양도 다름 </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> Kernel Object       Resource 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>|------------|      |---------|
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>| Pipe KO    | &lt;--&gt; | Pipe    |
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>|------------|      |---------|
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| Process KO | &lt;--&gt; | Process |
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>|------------|      |---------|
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>| Thread KO  | &lt;--&gt; | Thread  |
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>|------------|      |---------|
 </code></pre></div>
-where:
-- <code>a ≥ 1</code> (number of subproblems)
-- <code>b ≥ 2</code> (factor of size reduction)
-- <code>f(n) = Θ(n^p)</code> (non-recursive work per level)</p>
-<p>Then:
-- If <code>f(n) = O(n^{log_b a - ε})</code> for some ε &gt; 0:
-    - <strong>T(n) = Θ(n^{log_b a})</strong>
-- If <code>f(n) = Θ(n^{log_b a})</code>:
-    - <strong>T(n) = Θ(n^{log_b a} log n)</strong>
-- If <code>f(n) = Ω(n^{log_b a + ε})</code> and regularity condition holds:
-    - <strong>T(n) = Θ(f(n))</strong></p>
-<blockquote>
-<p>For cases where <code>n</code> is not a perfect power of <code>b</code>, the time complexity usually stays the same, but algorithms may require additional handling for leftover elements.</p>
-</blockquote>
-<hr />
-<h3 id="fibonacci-numbers-recursive-vs-iterative">Fibonacci Numbers: Recursive vs Iterative</h3>
-<h4 id="definition">Definition:</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>F(1) = 1
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>F(2) = 1
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>F(n) = F(n-1) + F(n-2) for n &gt; 2
+<p>이런 1대 1 대응 방식 
+그리고 Windows OS에서 Kernel Object 를 조작하는 방법은 
+HANDLE 을 이용하는 것 예를 들어, 
+어떤 KO 의 우선순위 변경하는 함수 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">BOOL</span><span class="w"> </span><span class="nf">SetPriorityClass</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">HANDLE</span><span class="w"> </span><span class="n">hProcess</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">dwPriorityClass</span><span class="w"> </span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">);</span>
 </code></pre></div>
-<hr />
-<h3 id="algorithm-1-naive-recursion">Algorithm 1: Naive Recursion</h3>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">FIB1</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="err">≤</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nl">else</span><span class="p">:</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">FIB1</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">FIB1</span><span class="p">(</span><span class="n">n</span><span class="mi">-2</span><span class="p">)</span>
-</code></pre></div>
-- <strong>Recurrence:</strong>
-    - T(n) = T(n-1) + T(n-2) + c₂
-    - T(n) = exponential time (approximately Θ(1.618^n))
-- <strong>Inefficient</strong>: Recomputes many values</p>
-<p><strong>Claim:</strong> T(n) &gt; 2^(n/2 - 1)
-- Recursive calls double roughly every two levels
-- Exponential growth due to repeated calls</p>
-<hr />
-<h3 id="algorithm-2-iterative-loop">Algorithm 2: Iterative Loop</h3>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">FIB2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">:</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="err">≤</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">n</span><span class="o">:</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">q</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">r</span>
-</code></pre></div>
-- <strong>Time Complexity:</strong> Θ(n)
-- <strong>Efficient</strong>: No redundant computations</p>
-<hr />
-<h3 id="q-can-we-do-even-better">Q: Can We Do Even Better?</h3>
-<ul>
-<li>Yes! Matrix exponentiation or using Binet’s formula (closed-form) can bring time complexity to <strong>O(log n)</strong>.</li>
-<li>Example: Fast doubling or matrix power via divide-and-conquer.</li>
-</ul>
+여기서 hProcess 는 Process 의 HANDLE 
+dwPriorityClass 는 우선순위 값 </p>
 
 
 
@@ -3579,10 +3397,10 @@ where:
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
