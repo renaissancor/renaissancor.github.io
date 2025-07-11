@@ -1,0 +1,3944 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="C++ Blog and Study Notes">
+      
+      
+        <meta name="author" content="Renaissancor">
+      
+      
+        <link rel="canonical" href="https://renaissancor.github.io/Game_Engine/AR250604/">
+      
+      
+        <link rel="prev" href="../AR250527/">
+      
+      
+        <link rel="next" href="../../Windows_OS/WIN250709/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>AR250604 - Renaissancoriate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#include-groundh" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renaissancoriate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AR250604
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Renaissancoriate
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR111111/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sample Template Title
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    HKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            HKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Divide and Conquer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tower of Hanoi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Divide-and-Conquer Approach
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Master Theorem, Fibonacci Example
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fibonacci Numbers &amp; Matrix Exponentiation Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Maximum Subarray Problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exercises Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HKUL1P8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUPSET1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HKUPSET1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKU_Math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HKU Math
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/CA250709/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assembly Debugging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/CA250711/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process Memory Layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ko
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ko
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/ko/CA250711/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process Memory Layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    C C++ Basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            C C++ Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C++ Data Types and Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators and Precedence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Flow in C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250310/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bitwise Operators &amp; Preprocessor Macros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250311/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local Variables, Arrays, &amp; Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structs and Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Function Mechanics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250317/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250318/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Global and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250319/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pointer Basics and Function Overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250320/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constexpr, Const, Volatile, and Pointer Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250321/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C Memory Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250324/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Const Pointers and Type-Punning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250325/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom String Utilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250326/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Layout and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250327/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Memory Allocation and Heap Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250328/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linked List and Dynamic Array
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250331/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class vs Struct, Encapsulation, and Const-Correctness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function &amp; Operator Overloading, Object Lifetime, and Const Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Namespaces, Constructors, and Copy Mechanics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250423/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inheritance, Polymorphism, Virtual Functions, Overriding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250424/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Virtual Function Override, Static and const
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250425/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Singleton Design Pattern
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Network
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Network
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0503/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Macroscopic View of Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0504/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microscopic View of Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/TCPIP1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Prgramming and Socket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Data Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Array, STL Vector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250407/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Memory Management and Template Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250408/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STL Vector and Iterator Behavior
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250409/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STL Vector vs List &amp; Custom Iterator Logic (with CArray)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250410/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Doubly Linked List and Iterator Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250411/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notes on Iterators and Linked List Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250414/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linked List: Reverse Function &amp; Notes Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250415/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tree Algorithms and Traversals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250416/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search Tree: Study Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250417/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search Tree Iterator and Enum in C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250418/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compiler Knowledge for Game Developers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250421/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search Tree Erase Logic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250422/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inheritance and Object Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482FA24
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482FA24
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482HW
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482HW
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment III
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment IV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment V
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VIII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482LAB
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482LAB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 09
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/DeveloperGuide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 2 LemonDB Multi Threading Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/MultiThreading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-threading Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Improvements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Road Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Risk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling Risk Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling RoadMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Game Engine
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Game Engine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250426/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Windows API Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250429/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Message Loops and Engine Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250430/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WinAPI Actor Architecture and Rendering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250501/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Level Management and Resource Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250507/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gaem Engine Delta Time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250508/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resolution and Device Contexts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250509/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250509
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250512/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Texture Loading and TransparentBlt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250513/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250513
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250515/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250515
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250518/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250518
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250519/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250519
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250521/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250521
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AR250527/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250527
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250604
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Windows OS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Windows OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN250709/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    프로세스의 생성과 소멸
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>벡터의 내적 </p>
+<p>두 벡터의 곱 </p>
+<p>A B 벡터의 내적 값과 외적 값이 다름 
+리턴으로 얻을 수 있는 수직 방향 벡터가 다른가에 따라 다름 </p>
+<p>Vector </p>
+<p>A B value </p>
+<p>missile vector 
+targety 
+you need to change angle </p>
+<p>Target location and your </p>
+<p>When target vector and your current vector angle theta should be recognized 
+to figure out whether continue angle change or not as angle fits perfect </p>
+<p>Normalized vector </p>
+<p>From destination to your location Vector </p>
+<p>Direction Vector 
+Target Vector inner access </p>
+<p>벡터의 내적 
+vCurDir.Dot(vTargetDir); // 내적 벡터 값 
+\arrow(A) \times \arrow(b) 
+float Dot(Vec2 _Other)
+x * _Other.x + y * _Other.y </p>
+<p>Meaning length of this vector and _Other vector and cos(theta) 
+this Length * Other Length * cos (\theta)</p>
+<p>acos(Dot); </p>
+<p>When each other pointing 
+rotation cosine theta value as zero </p>
+<p>When value Theta is nearly close to zero then no need to rotate </p>
+<p>Suppose rotation speed 90 degree per second, and rotation is not likely to return exact value </p>
+<p>Rotate minimal, but it  might get more movement than 
+So not likely to return Theta value as zero for this method changing angle over and over and over with oscillation </p>
+<p>So when angle is nearly same it might take long time. 
+Collision angle </p>
+<p>Also Appropriate rotation direction should be found </p>
+<p>벡터의 내적 외적 방향 벡터의 각도 
+3D 방향, 뒤에서 캐릭터를 때렸는지? 백 어택 판정 
+타겟 위치에서 맞은 위치를 빼면 ? 
+나를 때린 방향 벡터 ? 진행 방향 ? 일정 각도 이상 시 뒤에서 때린 걸로 친다? 
+두 벡터의 X Y 성분 길이를 곱하면 
+벡터 Normalize 하고 내적 </p>
+<p>외적은 3D에서 자주 사용 
+DX2D부터 외적 자주 사용 그러나 여기서는 조금 다른 용도 
+가상의 Z축이 존재한다고 고려  </p>
+<p>3D 외적은 3차원 공간에서 두 방향 공간에서 외적 시 둘 다에게 수직 방향인 벡터를 얻을 수 있음 
+즉 외적의 벡터 값은 여전히 좌표 형태로 나옴 
+두 벡터에 수직한 방향 위를 향하거나 아래를 향할 수 있음 
+둘 중 어느 방향 벡터가 나오는지는 간단하게 수식으로 정리 가능 </p>
+<p>x y z 평면 모니터 안으로 들어가는 방향과 나오는 방향이 존재한다면 
+외적이 어느 방향인가에 따라서 
+z 값이 음수나 양수가 될 수 있다 </p>
+<p>미사일 진행 방향 
+미사일의 목적지 방향 
+엄지가 뚫고 음수 방향으로 나옴 
+그러면 시계 방향으로 미사일 회전 </p>
+<p>목적지 방향과 현 방향의 Target Directory 플러스 값 반시계 </p>
+<p>외적 결과값의 + - 에 따라 회전 방향 결정 </p>
+<p>2차원 벡터로 외적을 하는 게 말은 안 됨 </p>
+<p>float Cross (Vec2 _Other){</p>
+<p>}</p>
+<p>If space </p>
+<p>line gets outside then all direction vectors </p>
+<p>Rigid Body 강체 적용 </p>
+<p>Rigid Body Component Design </p>
+<p>float m_Mass // 
+Vec2 m_Force // Rigid Body 강체에 누적된 힘 
+Vec2 m_Velocity // 가속도 
+빙판 미끄러짐 마찰력 멈춤 
+힘을 주지 않더라도 무한히 등속 운동하면 안됨 
+float m_FrictionCoefficient m_FricCoef 마찰 계수 
+속도의 반대 방향으로 적용되는 마찰 계수 
+강체 컴포넌트 넣고 마찰 계수 설정 
+돌바닥 빙판 설치 시 캐릭터가 빙판과 충돌 시 Begin Overlap 
+빙판 충돌체와 부딛히는 순간 
+마찰 계수 설정 </p>
+<p>Rigid Body m_FricCoef 가 높으면 </p>
+<p>EndOverlap 시 m_FricCoef 중가 하는 방식으로 
+빙판 계수 
+힘, 속도, 마찰 계수, 질량 </p>
+<p>AddForce(Vec2 _Force) m_Force += _Force; 
+AddVeolcity 
+FinalTick </p>
+<p>RigidBody Content 구현 </p>
+<p>우선 Player에 RigidBody Component 추가 
+RigidBody<em> m_Rigid; 
+m_Rigid = AddComponent(new RigidBody); 
+질량, 마찰 계수 설정 
+강체 
+RigidBody</em> GetRigidBody 
+본인 속도 정보 m_Velocity 도 Actor Player 에서 
+Component RigidBody로 이동시키기 
+m_Speed; 속도 는 최대 속도로 설정, 왜냐하면 
+m_Velocity 의 속도 제한을 주기 위해서, 고로 이름을 
+m_MaxSpeed 로 설정, 만약 걷기 뛰기 다르면 
+m_MaxWalkSpeed, m_MaxRunSpeed 등등 설정 
+애니메이션 이동 모션 걷기 / 달리기 최대 속도 설정 </p>
+<p>강체가 이걸 다 들고 있으면 ..? 아니면 Dash 같은 함수가 있으면? 
+여기서는 maxSpeed만 두는 게 나음. 이동시 최대 속도 
+걷기 달리기 전속력 달리기 등등 있으면 maxSpeed를 상황에 따라서 변경 </p>
+<p>Player 는 Move 상태 진입 시 RigidBody에 자기 상태를 Move 상태로 만들고 
+Flipbook 애니메이션도 변경함, 그리고 강체를 가져와서 SetMaxSpeed 
+최대 이동 속도를 설정함 </p>
+<p>강체를 가져와서 W키를 누르면 강체에 AddForce(Vec2(-500.f, 0.f)); </p>
+<p>이제 직접 좌표 강제 수정이 아니라, Rigid Body에 힘 벡터를 주는 방식으로 적용 
+Player RigidBody FinalTick 에 가 보면 이번 프레임에 받은 힘 만큼 
+먼저 받은 힘 확인, 
+힘에 의한 가속도 계산, 
+가속도에 따라 속도 변화, 
+속도에 따라 이동,<br />
+힘 초기화 </p>
+<p>단계로 강체의 FinalTick 을 진행 
+미세한 Delta Time 사이 그 안에 Tick 함수로 조금씩 물체가 할 일을 하게 하는 것 </p>
+<p>같은 프레임의 힘을 여러 군데에서 동시에 받을 가능성도 존재 
+힘 자체가 Add Force 
+힘을 누적해서 더함 
+700 * 200 ? 
+사선 방향으로 이동 
+벡터를 좌표 형태로 사용하면 덧셈과 뺄쌤이 용이함 
+줄다리기에서 서로 -1000, 0 그리고 1000 0 힘이 서로 가해지면 팽팽하게 서로 버팀 
+힘이 어느 방향으로 가해지는가 </p>
+<p>누적받은 힘을 확인 
+본인의 누적된 힘을 
+m_Force = Vec2(0.f, 0.f) 로 초기화 
+물리 기초 F = m X a 
+힘 = 질량 X 가속도 
+물체에게 힘을 주면 그건 질량 X 가속도로 분해 가능하다 
+질량이 1이면 1 X 100 
+힘을 준 뱡향으로 100의 가속도가 생김 </p>
+<p>질량이 커지면 커질수록 동일한 힘 대비 가속도가 커짐 
+가속도 계산 시 누적받은 힘을 질량으로 나누어야 함 
+Vec2 vAccel = m_Force / m_Mass; 
+숫자로 100,0 등으로 표현 
+질량이 2다 그러면 X Y 나눔 </p>
+<p>Vec2 operator / (float _Data)
+{
+    return Vec2(x / _Data, y / _Data);
+}</p>
+<p>만약 질량 설정을 안 하면 문제 
+질량 설정을 안 해서 질량이 0 이면 가속도가 무한대 ..? 버그 원흉 
+분모가 0이니까 ... 
+에러 비트 NaN 이 들어감 ... 
+질량 속도 가속도 
+가속도는 1초 뒤에 니 속도가 50이 되는 것 속도의 증감 량이 가속도임 
+처음에 시 작 하자마자 빠른게 아니잖아 점점 빨라지자 </p>
+<p>가속도 X DT 만큼 속도에 변화가 생김 
+가속도 때문에 속도가 증가, 이번 프레임에 속도 X DT X 이동량 변화 
+Vec2 vMove = m_Velocity * DT; 
+GetOwner</p>
+<p>가속도에 의해서 속도가 증가하는 와증 
+키를 누르면 방향으로 힘을 주고 힘이 점점점 증가! </p>
+<p>지금은 마찰력이 없어서 가속도에 의해 늘어난 속도 등속올 감 우주공간처럼 
+그래서 마찰력 필요 마찰력으로 속도가 점차 감소해야 함 </p>
+<p>마찰력 적용 시점 움직임 
+마찰 운동마찰력 정지마찰력 등등 움직이는 순간부터는 마찰력이 줄어듬 ? 
+게임적 허용 ? 마찰력 적용 시점을 물체에게 힘이 적용되지 않는 시점에만 적용시키기 
+(게임적 허용) 손을 때는 시점부터만 마찰력이 적용 
+정지마찰력 무시, 운동마찰ㄹ력만 그동안 증가한 속도를 감소시키기 위해 존재 
+힘 Force 가 0 이라면 ? 이번 프레임에서 누구도 나한테 힘을 주고 있지 않다는 것 </p>
+<p>m_Velocity 속도 점점 느려지다가 ... 만약에 반대 방향으로 가면..? 
+넘어서서 뒤로 가면 안 됨. 즉, m_Velocity _- vFriction * DT 시 
+원래 방향의 뒤로 넘어가 버리면 안 됨, 예외처리로 만약 
+vFriction * DT 
+if(m_Velocity.Length() &lt; m_FricCoef) {
+    // 속도를 0으로 설정해버리기 
+    m_Velocity = Vec2(0.f, 0,f); 
+} else {
+    m_Velocity += vFriction * DT; 
+}</p>
+<p>마찰 계수 적용, 최대 속력 제한은 어떻게? 
+RigidBody 는 MaxSpeed가 존재. </p>
+<p>가속도에 의해서 속도가 변화, 최대속도 제한 
+if (m_Veclocity.Length() &gt; m_MaxSpeed) 
+{
+    m_Velocity.Normalize(); 
+}</p>
+<p>이제 아무리 힘을 주어도 최대 속도 이상으로는 가기 어려움 
+그리고 이제 좌우 같이 누르면 마찰력이 생김! 
+마찰력을 고려해서 힘을 주는 것 
+최대 속력 계산도 후 Velocity 제어도 마찰력 속도 감소 계산 이후 
+힘은 마찰력 이상으로 주어야 한다 
+탑 뷰 방식 횡스크롤 / 벨트스크롤 액션 게임 시 
+좌 우가 이동이고 위 아래가 점프 / 중력으로 떨어짐 
+중력 적용시켜 보기 
+float m_Gravity; // 중력 가속도, 9.8 m / sec, 
+중력은 모든 물체 사이에 존재는 하지만, 현실적으로는 지구와 각 물체 사이에 
+땅 방향으로 작용한다고 만화적 허용이 가능하다. 
+기존의 F = ma 로 보기는 한데, 내 질량은 무의미함. 지구가 매우 무거워서 
+중력은 따라서 일정하게 적용된다. 갈릴레이 실험 기억나지? 
+즉 모든 물체에게 중력은 상수, 일정한 의미. 모든 물체의 질량과 무관, 
+일정한 가속도를 아랫방향으로 적용 
+점프는 탑뷰 형식 게임에서 좌표 는 고정하고, 
+정말 위로 올라가는 거면 올라갔을 때 미사일을 맞을 수 있는데 
+점프를 해서 렌더링이 위로 간 거면 충돌체 상 맞으면 안 됨 ...<br />
+그래서 탑뷰 형태의 게임에서 점프 구현시 본인 XY 좌표 유지하고, 
+충돌체만 올려야 함. 이렇게 충돌했어도 얘의 땅 발바닥 XY 좌표랑 
+내 실제 XY 좌표 충돌체랑 충돌 검사를 해야 함. 
+탑뷰는 아무튼 xy + 점프 구현시 z 축 
+횡스크롤에서는 공중으로 올라가거나 땅 쪽으로 떨어지거나 ... 
+탑뷰 게임에 중력 가속도를 적용시킬 필요는 굳이 없음 
+캐릭터 위 아래 변경 애니메이션, 충돌체 무효 처리 정도 
+중력은 일단 0으로 처리하고 
+위 아래 눌러서 움직이지 않으면 ... 위치 좌우 </p>
+<p>충돌 함수 overwriting ? 
+Ground Class </p>
+<p>Ground::Ground() </p>
+<p>Collider Component should Exist 
+Collider is showed by DebugRender, so just use it first </p>
+<p>pActor = new Ground; </p>
+<h1 id="include-groundh">include "Ground.h"</h1>
+<p>ACTOR_TYPE::BACKGROUND, pActor </p>
+<p>pActor-&gt;SetName </p>
+<p>Collision with Ground, How..? 
+TILE, PLATFORM, </p>
+<p>CollisionMgr CollisionCheck(PLAYER, PLATFORM, true); 
+RigidBody has Gravity, and Player should SetGravity (980.f) 
+If RigidBody Gravity applied to Downward, there should exist 
+Vec2 m_GravityVelocity that will be applied 
+MaxSpeed exists also for Gravity, for side scroll game 
+m_MaxGravitySpeed // Max Speed of the Gravity caused speed, in real life due to air friction speed gets same soon. 
+Maximum speed to go downard is 2000 ... and 
+Top View perspective gravitiy is not applicable. 
+enum RIGIDBODY_TYPE{
+    PLATFORMER, 
+    TOPVIEW, 
+}; </p>
+<p>RIGIDBODY_TYPE m_Type 
+void Move_Platformer(); 
+void Move_TopView(); </p>
+<p>Move_TopView(); 
+Move_Platformer(); 
+if(m_Type == PLATFORMER){</p>
+<p>} else if (m_Type == TOPVIEW) </p>
+<p>Default m_Type(PLATFORMER) 
+If Rigid Body Control by Top View approach then 
+m_Rigid-&gt;SetType(RIGIDBODY::TYPE::PLATFORMER); // Whatever etc rigidbody setup 
+Rigid Body 
+Platformer 
+Gravity setup done and its maximum speed etc ... 
+Platformer games 
+When you jump, no friction should be applied 
+when you get collided with ground </p>
+<p>bool m_bGround; // Whether landed on the ground or not 
+if(m_Ground ){
+    Vec2 vFriction = -m_Velocity; 
+    vFriction.Normalize(); 
+    vFriction *= m_FricCoef; 
+}</p>
+<p>Now for Collision with ground case 
+if(_OtherActor-&gt;GetMame() == L"Ground") m_Rigid-&gt;SetGround(true); 
+if(m_Ground){
+    m_GravityVelocity = Vec2(0.f, 0.f); 
+} else {
+    m_GravityVelocity.y += m_Gravity * DT; 
+    // Maximum gravity  speed limit too 
+    if m_GravityVelocity.Length() ? m_MaxGravitySpeed 
+    m_GravityVelocity.Normalize(); 
+    m_GravityVelocity *= m_MaxGravitySpeed;       <br />
+}</p>
+<p>When Ground EndOverlap then set Ground as False 
+Tick Space clicked then  ... </p>
+<p>if Space is pressed then give RigidBody Jump function 
+강제로 velocity를 즉시 세팅해 줘야 jump 함수가 적용될 것 </p>
+<p>강체 RigidBody에 Jump 설정 시 Jump 함수가 본인 Velocity Y축으로 Jump Speed 죽시 세팅 후 바로 추가 
+Jump Velocity 는 Gravity Velocity 로 조정해야 함 Ground 상태 ? 
+공중 이동계수값을 설정하여 공중 이동 
+float m_AirMoveCoef; // 공중에서 움직임 </p>
+<p>만약에 m_Ground 가 true 이면 m_Velocity += vAccel * DT * m_AirMoveCoef; 
+아니면 m_Velocity += DT * vAccel; </p>
+<p>게임적 허용을 위해 점프는 강제 세팅하는 방식으로 만드는 경우가 많음 
+2단 점프 기능은 Jump Stack Count 같은 걸 만들어 둘 수도 있음 최대 점프 횟수 </p>
+<p>점프 스택 초과나 이상일 경우 .. 리턴 </p>
+<p>Tick 
+m_vecActor[i][j]-&gt;Tick(); 
+Level Begin Tick FinalTick 레벨 시작, 매 프레임 레벨 내 Actor 할 일 수행 
+매 프레임 레벨 내 Actor 보유 Component 할 일 수행 
+이제 Level Render </p>
+<p>Start Level 
+Begin by CollisionMgr Setup 
+Actor Generation </p>
+<p>Level End will now </p>
+<p>Terminate previous level and begin the new level </p>
+<p>Level End will terminate every elements inside </p>
+<p>void ClearActor(ACTOR_TYPE _TYPE); </p>
+<p>for(size_t i = 0; i &lt; m_vecActor[(UINT) _Type].size(); ++i) 
+    delete m_vecActor [(UINT) _Type][i]; 
+m_vecActor[(UINT) _Type].clear();</p>
+<p>void ClearAllActor(); 
+for((UINT i = 0; i &lt; ACTOR_TYPE::ACTOR_END; ++i)){
+    ClearActor(i); 
+}</p>
+<p>Now Start Level To Editor Level </p>
+<p>virtual void Tick() override; </p>
+<p>Level Editor 
+m_hMenu = CreateMenu(); // This will make empty menu 
+InsertMenu(m_hMenu, ) // Add more elements on men bar on the top so 
+Windows have 리소스 뷰 / 메뉴 
+File 파일 
+메인 함수 메뉴 
+IDC_WINAPI56 
+리소스 뷰 메뉴 
+Resource View Menu/IDC_WINAPI56 
+리소스 뷰 가서 확인 
+파일 / 끝내기 
+도움말 / 정보 
+이러한 설정 정보가 포함되어 있는 데이터 
+아무튼 그래서 리소스 뷰 / Menu 가서 메뉴 바 확인 
+메뉴 바 이미 만들어진 거 로딩해 버리기<br />
+LoadMenu(Engine::GetInst()-&gt;GetProcessInst(), MAKEINTRESOURCEW(MENU_EDITOR)); </p>
+<p>SetMenu(Engine::GetInst()-&gt;GetMainWindow(), m_hMenu); 
+Level::Begin(); </p>
+<p>Windows 종료 Procedure WM_DESTROY PostQuitMessage(0); 
+프로세스 종료 함수 프로세스가 보유한 윈도우 중 하나라도 종료가 되는 경우 
+윈도우가 종료 Procedure 가 WM_DESTROY 
+프로세스 종료 완료, 프로그램 꺼질 준비 완료 
+WM_QUIT 이면 프로그렘 안전히 종료 가능하겠다고 고려하고 나감 
+IDM_EXIT 
+리소스 뷰에서 기존 메뉴 바 끝내기 버튼 누르고 f4 누르면 
+끝내기 버튼의 ID 가 IDM_EXIT 임 </p>
+<p>버튼이 눌렸고 눌린 버튼의 ID가 105 일 시 DestroyWindow(hWnd); 
+IDM_ABOUT 는 정보 DialogBox 띄워주는 거 </p>
+<p>에디터 Level_Editor 최하단에 
+메뉴 바 버튼 관련 함수 제작하기 
+LRESULT CALLBACK (HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {</p>
+<p>}
+에디터 레벨 CPP에 존재하는가 ? 
+case WM_COMMAND: 
+MenuButtonCallBack(hWnd, message, wParam, lParam); </p>
+<p>HINISTANCE hInst = Engine::GetInst()-&gt;GetProcessInst(); </p>
+<p>프로그램 종료 버튼 만들기 ? </p>
+<p>DialogBox 
+MainWin </p>
+<p>WMCommandPhase 
+반환 타입 전부 다 같은 인자 
+WndProc 와 똑같은 About 라는 함수가 있음. 
+그 함수 주소를 DialogBox(hInst, .... About); // About 이게 메세지 전담처리 함수 
+그리고 WndProc는 WinMain 함수의 전담 처리 </p>
+<p>그러니까 이 구조 그대로 Level_Editor.cpp 에 옮기기 </p>
+<p>함수 주소 int_ptr callback 함수 주소 불러주기. 
+전방선언 필요 </p>
+<p>Tile ColRow Dialog Procedure 
+전용 Dialogue 직접 제작 </p>
+<p>====================================================</p>
+<p>0610 </p>
+<p>확인 취소 버튼 기본으로 배정되어 있는 ID가 있음 
+switch wmID 
+WinUser.h 로 가서 매크로 확인해 보면 
+IDOK 1 
+IDCANCEL 2 
+으로 이미 지정되어 있음 
+확인 취소 버튼, 새로운 버튼 추가 가능하다 
+DialogBox DLG_TILE_COLROW 
+TileColRow 다일로그 창 처리 메세지 
+WM_COMMANND 는 해당 윈도우에서 </p>
+<p>iValue<br />
+확인 버튼을 누르면 
+이 창에 버튼이 눌렸더니 WM_COMMAND 메시지가 옴 
+WParam은 버튼같은거 누르면 WMCOMMAND 로 그러면 버튼 ID 
+확인 OK 버튼 누르면 WParam == 1 인거 디버깅에서 확인 
+만약에 wParam == IDCANCEL 이면 해당 윈도우를 종료시켜라 
+EndDialog(hDlg, LOWORD(wParam)); </p>
+<p>if(iValue == IDOK) {</p>
+<p>}</p>
+<p>/*else if (iValue == IDCANCEL){</p>
+<p>}*/</p>
+<p>iValue = DialogBox(...) 리턴 값은 </p>
+<p>OK 값이든 Cancel 값이든 확인 버튼을 누르면 창을 종료하지 않기 ? 
+if(LOWORD(wParam == IDOK)){
+    RETURN (INT_PTR) 
+}
+이런 식이면 OK 확인 버튼 눌러도 안 나가짐 </p>
+<p>X 버튼이나 취소 버튼 등드은 IDCANCEL 값이 Default 값으로 고정이 되어 있음 
+내부에 있는 버튼은 ID를 내 마음대로 바꿀 수 있음 
+그래서 IDCANCEL 뭐 이런 걸로 설정해 놓을 시 ... myID 가 #define 273 뭐 이런 식으로 ... 
+X 버튼 눌러도 안 꺼지는 식이 될 수도 있다 </p>
+<p>Resource View - Time Column Row 항목 추가, 도구 상자 보기 도구 모음 표준 
+버튼 추가나 Edit Control 등등 배치 가능 
+창 디자인 알아서 ... </p>
+<p>입력을 하면 이 창의 정체는 
+10 X 10 -&gt; 확인 시 
+10 X 10 타일 맵을 만들게 하는 것이 목표이다 </p>
+<p>TileMap 컴포넌트를 에디터와 연동하여 오브젝트 만들어 보기 
+TileMap 은 2D 게임에서 거대한 판에다가 타일 이미지를 까는 형태의 타일 기반 게임들 
+옛날 2D 게임들 타일 한칸씩 그림 그리기 
+타일들을 배치해서 땅을 만드는 것 
+왜 옛날 게임들은 타일을 썼을까 
+디자이너가 맵을 그림 또 그림을 그림 리소스카 무한대로 추가 
+게임 서비스가 오래 되면 맵 리소스가 기하급수적으로 늘어남 맵을 계속 계속 그려야 함 
+게임 용량이 무슨 2D 주제에 3D보다 용량이 많이 나갈 수도 있다 ... 
+그러면 옛날 콘솔 게임들은 용량이 지금에 비해 매우 제한적이어야 했음 디스크 램 등등 
+로딩도, 램이 작으니까 기존의 램을 오래 하는 식이었음 
+로딩이 계속 발생 ... 지금은 용량이 넉넉해도 ... 램이 32기가여도 게임은 200기가 이러면 ..? 
+여전히 저사양 게임이 아닌 이상 램에다 게임을 다 올리기는 거의 불가능 
+그래서 타일 기반 디자인이 나옴. 텍스쳐도 용량을 많이 먹는데 
+맵을 전부 다 그리면, 하나당 용량이 10MB, 20개면 200MB가 됨. 
+그러면 작은 타일 텍스쳐 그래픽을 계속 활용하여 길을 만들어 버리기 
+메모리는 텍스쳐 한 장만 있으면 됨 렌더링 시 이미지를 백 버퍼에 출력만 하면 됨 
+얘들을 맵 디자인에서 돌려 써 버리기 
+이러면, 만약 거대한 격자 배열 데이터가 존재하고, 각 배열의 위치에는 그냥 타일 enum 만 가지고 있으면 된다. 
+타일이 6 8 48개이지만, 아무튼 뭐 이 텍스쳐 하나로 맵을 거의 무한대로 만들 수 있음 
+이게 가능하게 해 주는 게 타일 맵 컴포넌트, 또는 타일 렌더 라고 해 주기 
+class TileRender : public Component {}; 
+얘는 렌더링 기능도 가지고 있을 것 </p>
+<p>private: UINT m_Col; UINT m_Row; 
+public: void SetColRow(UINT _Col, UINT _Row){
+    m_Col = _Col; m_Row = _Row; 
+} </p>
+<p>우측 하단으로 뻗어나가는 이유는 ... 타일 위치 계산이 매우 편해서 
+3 X 3 타일 맵에서 중심 위치와 3줄 3열이 나오겠지 
+LineRender 줄 4줄 그어버리고 그물망으로 타일 테두리 외곽선이 나올 것 
+3 BY 3 이면 +1씩 해서 4줄씩 
+가로 세로 행렬 
+타일 사이즈 가로 세로 타일 한 칸당 크기 
+타일 사이즈 Vec2 m_TileSize; // 타일 1개의 크기 </p>
+<p>void SetTileSize(Vec2 _Size); 뭐 이런 식으로 
+타일 하나의 사이즈를 64로 잡으면 (픽셀이 64라서)
+DebugRender 요청 FinalTick()에서 
+좌상단 시작점에서 반복문 횟수 * 타일 사이즈 </p>
+<p>Actor 추가 
+class TileActor 
+private: 
+TileRender* m_TileRender </p>
+<p>public: 
+virtual void Tick() override; 
+virtual void Render() overide; </p>
+<p>Editor Level now has one TileActor 
+TileRender Ciomponent 
+TileActor 
+TileRender* GetTileRender() </p>
+<p>Editor 
+강제 캐스팅 ? 
+Level_Editor<em> pEditorLevel = (Level_Editor</em>) pCurLevel; 
+pEditorLevel-&gt;GetTileActor()-&gt;GetTileRender()-&gt;SetColRow(Col, Row); 
+Compared to this Dynamic Casting will be more safer 
+Level_Editor* pEditorLevel = dynamic_cast<Level_Editor*> (pCurLevel); // This method instead 
+assert(pEditorLevel);<br />
+타일 설정 이제 가능 
+타일 쪽에 원하는 값 세팅 가능 
+Editor UI와 연동 가능! </p>
+<p>Tile Render 함수의 기능 만들기 </p>
+<p>Tile Render Members should include 
+class ATexture; 
+Texture pointer is also required m_AtlasTex // contains several images 
+Similar to Flipbook Image extortion </p>
+<p>class ATexture; 
+class ASprite; </p>
+<p>struct tTileInfo{
+    ASprite *m_Sprite; 
+    bool bCollision;<br />
+    bool bBlock; 
+};</p>
+<p>class TileRender : public Component {
+    private: 
+    vector<tTileInfo> m_vecTileInfo; (m_Col * m_Row) 
+}</p>
+<p>Tile 5 X 5 25 ? Map larger design ? vector resize 
+So SetColRow should change file size too ... 
+if(m_Col * m_Row) 
+if(m_vecTileInfo.size() &lt; m_Col * m_Row){
+    m_vecTileInfo.reserve(); // ? 
+    m_vecTileInfo.resize(m_Col * m_Row); 
+} else if 
+m_vecTileInfo; </p>
+<p>벡터 공간이 계속해서 변하는데 ... 
+임시 지역벡터를 만든다 
+vector<tTileInfo> vecTemp; 
+vecTemp.resize(m_Col* m_Row); 
+std::swap(m_vecTileInfo, vecTemp); 
+resize 이후 임시 벡터를 resize 해 버리기 
+이러면 원래 벡터를 지역변수 처리해버려서 삭제해버리기! 
+원본과 Capacity가 25짜리인 딱 할당된 공간만 저장해 버리기! </p>
+<p>본인이 몇 열 몇 행인지 </p>
+<p>void SetSprite 
+지금 25개의 벡터 타일 정보를 1차원 동적배열에서 관리하는 중 
+UINT loc = m_Row * _Col + _Row </p>
+<p>wstring 을 fwrite 하는 경우 sizeof(wstring) 을 하면 스택 영역의 wstring class의 사이즈, 
+wstring의 size capacity 그리고 *pointer 힙 영역의 동적배열을 가리키는 곳으로 ... 
+그래서 Key.length(); 이렇게 데이터 길이 라고 표현함 Key.size()와 같음 뭐 아무튼 
+UINT Len = (UINT) Key.length(); 
+fwrite(&amp;Len, sizof(UINT), 1, pFile); 
+Key.data(); 
+Key.c_str(); 
+fwrite(Key.c_str(), sizeof(wchar_t), Len, pFile); 이런 방식으로 하면 
+Key.data(); Key.c_str(); 이 함수들은 힙 영역 주소를 가져오는 거 ? </p>
+<p>읽는 시점에서는 
+fread(&amp;Len, sizeof(UINT), 1, pFile); 
+wchar_t buffer[255] = {}; // 255는 상수라 가능. 컴파일 타임에서 정적배열 크기 설정 완료 
+fread(buff, sizeof(wchar_t), Len, pFile); </p>
+<p>wstring Key = buff; </p>
+<p>void SaveWString(const wstring&amp; _String, FILE<em> _File); 
+void LoadWString(wstring&amp; _String, FILE</em> _File); 
+문자열 하나를 지정된 fstring에 불러올 수 있는 함수를 만들어서 Load 쪽에 넣어 버리기 </p>
+<p>아무튼 이 함수를 SaveWString(Key, pFile) 이런 식으로 진행 
+타일을 참조하던 Sprite의 Key문자열을 파일로부터 읽어 온다 
+wstring Key; 
+LoadWString(Key, pFile); 뭐 이런 식으로 
+AssetManager FindSprite 
+그런데 만약 Sprite 가 nullptr이라면 ... 어떠한 스프라이트 
+왜냐하면 해당 Sprite가 아무 Sprite도 가리키고 있지 않았을 수도 있음 그래서 확인이 필요함 
+주소값의 존재 여부 확인 
+bool Exist = m_vecTileInfo[i].Sprite; 
+fread(&amp;Exist, sizeof(bool), 1, pFile); // 이렇게 존재 여부를 확인 먼저 
+if(Exist) {
+    wstring Key;
+    ... 이하 함수 
+    } </p>
+<p>이제 파일 껐다 키기 등 모두 정상작동!! 
+지금 이 Sprite가 있는 이유는 AssetMgr Initialize 프로세스에서 
+AssetMgr에서 등록을 해버림 원래 코드는 
+프로그램이 AssetMgr에 타일 형식을 모두 넣어 놓고 시작하는 거임 </p>
+<p>TileSprite 불러오기 하면 아직은 안 됨 왜냐하면 FileRender에서 
+아까 저장이랑 같은 Key값을 달라고 했는데 find함수에서 찾아도 없어서 nullptr이 나옴 
+이게 가능한 이유는 노가다로 AssetMgr가 전부 다 파일 노가다로 저장해 놓아서임 
+그래서 ... 이 부분 해결을 위해 Sprite Asset의 저장 불러오기 기능 </p>
+<p>Sprite가 로딩이 되어 있다는 것은 ... AssetMgr Create 해서 
+이제 AssetMgr에서 무슨 키 값으로 로딩이 되었는지 문자열 저장 
+파일 로드 세이브 키값 / 상대 경로 설정 </p>
+<p>저장될 때 Sprite 포인팅 키 값 받아서 파일에 저장, Path도 파일에 저장 ? 
+로딩 시점에 만약 Sprite가 메모리에 로딩이 안 되어 있었다고 가정해도 
+경로에 있는 Sprite를 </p>
+<p>게임 엔진 Asset들이 이렇게 하나만 저장하면 관련 정보가 다 저장됨 
+그래서 로딩할 때 다른 에셋들이 연쇄적으로 메모리에 올라와 버림 
+실행 당시 이런 에셋을 알고 있었는데 
+Mest Texture Sound Asset 등등 한꺼번에 다 끌여올려짐 </p>
+<p>Sprite는 AtlasTex를 가리키고 있음 원래 ... 
+타일이 로딩될 때 관련된 Asset는 Sprite 로딩 과정에서 
+각각의 Asset들은 개별로 파일을 저장하거나 불러오는 기능이 필요함 ... 그래서 이 문제 해결을 위하여 
+Sprite와 Flipbook가 스스로 저장과 불러오기가 가능해야 함 
+Flipbook도 파일로 저장되고 불러오기 기능이 존재해야 함 </p>
+<p>로딩이 되려면 AtlasTex도 로딩, 스프라이트도 로딩, 플립북도 로딩 되는 거 ... 
+Sprite Save and Load 구현 </p>
+<p>AtlasTexture Sprite Asset Key or Path Saving 
+LoadWString 
+LoadTexture if key exist return else register by given path load it and return after loading </p>
+<p>Sprite Generation, Sprite Key generation, Register to AssetMgr, 
+wsting FilePath = PathMgr()-&gt;GetInst()-&gt;GetContentMgr(); </p>
+<p>클릭하는 순간 AtlasTex와 Sprite 등등 모두 로딩이 되어서 저장됨 
+타일 불러오기 렌더 Key만 저장 수정 가리키고 있던 Sprite가 있었는지 저장한다 </p>
+<p>앞으로 ... 파일 로드 세이브 과정을 이러한 방식으로 진행 
+깔끔하게 함수화해도 괜찮음  </p>
+<p>void SaveSprite(class ASprite<em> _Sprite, FILE</em> _File); 
+ASprite<em> LoadSpriteReference(FILE</em> _File); </p>
+<p>SaveTextureRef 
+LoadTextureRef </p>
+<p>SaveFlipbookRef 
+LoadFlipbookRef </p>
+<p>뭐 이런 식으로 Asset Save Load 모듈화 
+Flipbook Save Load Function Generation </p>
+<p>어떤 Sprite를 저장ㅎ하고 있었는지 
+func Save Load Sprite Reference </p>
+<p>Save Sprite Reference 
+Vector Size 
+저장 순서 
+Flipbook은 몇 장의 Sprite로 구성되어 있었는가 ? </p>
+<p>로딩 순서 
+그 반대로 </p>
+<p>LoadSpriteReference 
+vector push_back 
+return S_OK; </p>
+<p>이제 저장된 플립북 로딩으로 똑같은 애니메이션을 뽑을 수 있음! </p>
+<p>Resolution 해성도 위치에서 
+Scale Setup UI </p>
+<p>Reverse End 상태 
+시작보다 이전의 개념이 없기 때문에 
+일부로 실질적으로 가리키는 대상과 사용자한테 주는 대상 값이 다름 
+vecttor<T>::iterator iter = rbegin(); iter != rend();  ++iter 
+개념적인 데이터가 아니라 진짜 
+rbegin iterator 기준으로 정방향 하면 end iterator 가 나옴 
+reverse iterator 가 가지고 있는 걸 지우고 싶다면 
+맨 처음 rbegin 실제로는 End지만 * 붙어서 접근하면 ... </p>
+<p>Reverse iterator's pointing value will return ... 
+실제 위치</p>
+<p>vecUI.erase((riter + 1).base()); 
+vecUI.push_back(pParentUI); 
+Reverse Iterator 설계 원리 ? + 1 베이스 ?? 
+그림으로 잘 정리하기 
+reverse iterator ? 
+활용법 확인 필요 </p>
+<p>vector<Actor*>::iterator iter = vecUI.erase((riter + 1)).base(); 
+Panel K vs Panel </p>
+<p>Panel 1 2 Coexist check by reverse iterator 
+continue iteration reverse iter increment </p>
+<p>Sound Card 
+VGA 처럼부착 가능 
+원래는 VGA처럼 부착했지만 이제는 거의 대부분 메인보드사에 인수됨 
+극도로 전문적인 음악산업 등이 아니면 사운드카드를 따로 구매하지 않고 
+메인보드 내장 사운드 카드를 사용 중 </p>
+<p>IDirectSound8 이녀석이 함 </p>
+<p>Asset Sound 를 만들고 
+AssetMgr에서 관리 </p>
+<p>Sound Device 아무튼 만들고 </p>
+<p>wav 포멧으로 파일 변경이 필요함 </p>
+<p>원래 의도가 소리 데이터가 아닌데 소리 데이터 로 처리해서 쏴 버리면 
+이상한 데이터가 잡읍을 만들어 버릴 것 ... 
+공영방송 송출 종료 시점에 노이즈 나오는 거 
+에셋 매니저 소리 관련 정보 처리 
+데이터 로딩 사운드 카드 재싱 
+SetPosition </p>
+<p>데시벨은 소리가 제곱 함수로 올라감 ... 그래서 ++ 이딴식으로 하면 소리 개 커짐 
+그래서 이를 선형으로 변환하는 공식이 있는 게 좋음 입력으로 데시벨을 받아야 해서 
+Volume은 
+SoundBuffer 
+LevelEditior Begin -&gt; Play one Sound (Background Sound) 
+Loading First 
+AssetMgr::GetInst()-&gt;LoadSound(L"DM", L"Sound\DM.wav"); 
+Play(); 
+ASound *pBGM; 
+뭐 이렇게 사운드 로딩하고 플레이하기 </p>
+<p>이펙트 사운드는 동시다발적으로 플레이가 되어야 하는데 
+BGM 은 ... 하나만 플레이 되어야 한다 그러므로 
+PlayToBGM(true); 이라는 함수가 따로 존재함 
+AssetMgr한테 이 소리 사운드를 AssetMgr에 등록해 버리기 </p>
+<p>void RegisterToBGM(ASound* _BGM); </p>
+<p>같은 사운드 파일 공유 문제 
+파이어볼을 플레이어 1 2 가 쏘는데, 그러면 
+사운드 하나를 플레이하다가 다시 시작점으로 돌아가서 ... 해야 되는데 
+이러면 동일한 사운드를 중첩되어서 파이어볼이 동시에 여러 개 들리게 해야 하면 ... 
+외부 라이브러리를 사용함 
+메모리에는 로딩을 하나씩 하되, SoundBuffer 내부 재생 시에는 
+Channel 만들어서 이걸 원본에서 복사한 후 실행함 이러면 ... 
+새로운 채널 만들어서 복사 새로 하고 
+그리고 재생 끝나면 버퍼를 비워 버림 </p>
+<p>API 때는 중첩 동시재생 사운드는 키값 조금 씩 변경 
+다렉 FMOD 라이브러리 채널 시스템 </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
