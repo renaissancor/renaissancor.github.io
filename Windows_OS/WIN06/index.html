@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://renaissancor.github.io/Windows_OS/WIN06/">
       
       
-        <link rel="prev" href="../WIN03/">
+        <link rel="prev" href="../WIN05/">
       
       
-        <link rel="next" href="../WIN250709/">
+        <link rel="next" href="../WIN07/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -3208,6 +3208,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIN05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create &amp; Terminate Process
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -3261,44 +3284,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#operation1cpp-source-code" class="md-nav__link">
+  <a href="#about-kernel-object" class="md-nav__link">
     <span class="md-ellipsis">
-      Operation1.cpp Source Code
+      About Kernel Object
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#operation2cpp-source-code" class="md-nav__link">
+  <a href="#kernel-object-handle" class="md-nav__link">
     <span class="md-ellipsis">
-      Operation2.cpp Source Code
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Operation2.cpp Source Code">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kernel-objects-are-subordinate-to-os-not-process-while" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kernel Objects are Subordinate to OS, not Process, while
+      Kernel Object &amp; HANDLE
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#handle-aka-handle-table-are-subordinate-to-process-not-os" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#kernel-object-usage-count" class="md-nav__link">
     <span class="md-ellipsis">
-      HANDLE , aka handle table, are subordinate to Process, not OS
+      Kernel Object &amp; Usage Count
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#command-prompt-project-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Prompt Project Functions
+    </span>
+  </a>
   
 </li>
       
@@ -3306,6 +3323,52 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIN07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IPC Inter Process Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIN18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Basic IO
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3368,44 +3431,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#operation1cpp-source-code" class="md-nav__link">
+  <a href="#about-kernel-object" class="md-nav__link">
     <span class="md-ellipsis">
-      Operation1.cpp Source Code
+      About Kernel Object
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#operation2cpp-source-code" class="md-nav__link">
+  <a href="#kernel-object-handle" class="md-nav__link">
     <span class="md-ellipsis">
-      Operation2.cpp Source Code
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Operation2.cpp Source Code">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kernel-objects-are-subordinate-to-os-not-process-while" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kernel Objects are Subordinate to OS, not Process, while
+      Kernel Object &amp; HANDLE
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#handle-aka-handle-table-are-subordinate-to-process-not-os" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#kernel-object-usage-count" class="md-nav__link">
     <span class="md-ellipsis">
-      HANDLE , aka handle table, are subordinate to Process, not OS
+      Kernel Object &amp; Usage Count
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#command-prompt-project-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Prompt Project Functions
+    </span>
+  </a>
   
 </li>
       
@@ -3426,7 +3483,7 @@
 
 
 <h1 id="kernel-object-and-handle">Kernel Object and HANDLE</h1>
-<p>Kernel Object </p>
+<h2 id="about-kernel-object">About Kernel Object</h2>
 <p>CreateProcess let Windows OS make Process </p>
 <p>Process Status Info </p>
 <ul>
@@ -3460,146 +3517,188 @@ Files are also under Windows Kernel's control </p>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">);</span>
 </code></pre></div>
 <p>so Process is accessible by HANDLE datatype </p>
-<h2 id="operation1cpp-source-code">Operation1.cpp Source Code</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tchar.h&gt;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;windows.h&gt;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cp">#pragma comment(lib, &quot;User32.lib&quot;)</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">_tmain</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TCHAR</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">SetPriorityClass</span><span class="p">(</span><span class="n">GetCurrentProcess</span><span class="p">(),</span><span class="w"> </span><span class="n">IDLE_PRIORITY_CLASS</span><span class="p">);</span><span class="w"> </span><span class="c1">// Normal Priority </span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">SetProcessAffinityMask</span><span class="p">(</span><span class="n">GetCurrentProcess</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">             </span><span class="c1">// Single Core Setup, use CPU No.1 Only  </span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="n">STARTUPINFO</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">};</span><span class="w"> </span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="n">PROCESS_INFORMATION</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="n">si</span><span class="p">.</span><span class="n">cb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">si</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="n">TCHAR</span><span class="w"> </span><span class="n">command</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_T</span><span class="p">(</span><span class="s">&quot;Operation2.exe&quot;</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="n">CreateProcess</span><span class="p">(</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="nb">NULL</span><span class="p">,</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="n">command</span><span class="p">,</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="nb">NULL</span><span class="p">,</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="nb">NULL</span><span class="p">,</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">        </span><span class="n">TRUE</span><span class="p">,</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">        </span><span class="nb">NULL</span><span class="p">,</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="nb">NULL</span><span class="p">,</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="o">&amp;</span><span class="n">si</span><span class="p">,</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">        </span><span class="o">&amp;</span><span class="n">pi</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="n">WaitForInputIdle</span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">,</span><span class="w"> </span><span class="n">INFINITE</span><span class="p">);</span>
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">SetProcessAffinityMask</span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">        </span><span class="n">_ftprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="n">_T</span><span class="p">(</span><span class="s">&quot;SetProcessAffinityMask failed: %lu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">GetLastError</span><span class="p">());</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
-<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">DWORD</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">DWORD</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// Busy Waiting </span>
-<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">        </span><span class="n">_fputts</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&quot;Operation1.exe </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">stdout</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>
-<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="operation2cpp-source-code">Operation2.cpp Source Code</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tchar.h&gt;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;windows.h&gt;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">_tmain</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TCHAR</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">SetPriorityClass</span><span class="p">(</span><span class="n">GetCurrentProcess</span><span class="p">(),</span><span class="w"> </span><span class="n">HIGH_PRIORITY_CLASS</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">SetProcessAffinityMask</span><span class="p">(</span><span class="n">GetCurrentProcess</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Operation2.exe 코드 내부에 삽입</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">DWORD</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">DWORD</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="n">_fputts</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&quot;Operation2.exe </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">stdout</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="n">Sleep</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">}</span>
-</code></pre></div>
 <p>Compile and Run then </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cl<span class="w"> </span>Operation1.cpp
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>cl<span class="w"> </span>Operation2.cpp
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>.<span class="se">\O</span>peration1.cpp<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cl<span class="w"> </span>Operation1.cpp
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>cl<span class="w"> </span>Operation2.cpp
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>.<span class="se">\O</span>peration1.cpp<span class="w"> </span>
 </code></pre></div>
 <p>Result is similar to </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Operation2.exe
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Operation2.exe
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Operation2.exe
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>...
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Operation2.exe
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Operation2.exe
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Operation2.exe
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Operation2.exe
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>Operation2.exe
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Operation2.exe
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Operation1.exe
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>Operation2.exe
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Operation2.exe
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>Operation2.exe
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Operation2.exe
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Operation2.exe
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Operation2.exe
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>...
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Operation2.exe
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Operation2.exe
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Operation2.exe
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Operation2.exe
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Operation2.exe
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Operation1.exe
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Operation2.exe
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>Operation2.exe
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Operation2.exe
 </code></pre></div>
-<h3 id="kernel-objects-are-subordinate-to-os-not-process-while">Kernel Objects are Subordinate to OS, not Process, while</h3>
-<p>Kernel Object is Subordinate to the Windows Operating System, not Process </p>
-<h3 id="handle-aka-handle-table-are-subordinate-to-process-not-os">HANDLE , aka handle table, are subordinate to Process, not OS</h3>
-<p>KerObjShare.cpp </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tchar.h&gt;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;windows.h&gt;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">_tmain</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TCHAR</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="n">STARTUPINFO</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">};</span><span class="w"> </span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="n">PROCESS_INFORMATION</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="n">si</span><span class="p">.</span><span class="n">cb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">si</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="n">TCHAR</span><span class="w"> </span><span class="n">command</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_T</span><span class="p">(</span><span class="s">&quot;Operation2.exe&quot;</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="n">CreateProcess</span><span class="p">(</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">        </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">        </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">TRUE</span><span class="p">,</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">        </span><span class="o">&amp;</span><span class="n">si</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pi</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">timing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">DWORD</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">DWORD</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">        </span><span class="n">_fputts</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&quot;Parent </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">stdout</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">        </span><span class="o">++</span><span class="n">timing</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">timing</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="w">            </span><span class="n">SetPriorityClass</span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">,</span><span class="w"> </span><span class="n">NORMAL_PRIORITY_CLASS</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
-<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="p">}</span>
-</code></pre></div>
+<p>Kernel Objects are Subordinate to OS, not Process, while </p>
+<p>HANDLE , aka handle table, are subordinate to Process, not OS </p>
+<p>Types of Kernel Objects include  </p>
+<ul>
+<li>Process </li>
+<li>Thread </li>
+<li>Mutex </li>
+<li>Semaphore </li>
+<li>Event </li>
+<li>File / Pipe / Socket </li>
+<li>Timer / Job Object / Completion Port </li>
+</ul>
 <p>The core difference between <code>Operation1.cpp</code> and <code>KerObjShare.cpp</code> are 
 Last lines that only exist in <code>KerObjShare.cpp</code> code. 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">++</span><span class="n">timing</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">timing</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">            </span><span class="n">SetPriorityClass</span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">,</span><span class="w"> </span><span class="n">NORMAL_PRIORITY_CLASS</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">++</span><span class="n">timing</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">timing</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">            </span><span class="n">SetPriorityClass</span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">,</span><span class="w"> </span><span class="n">NORMAL_PRIORITY_CLASS</span><span class="p">);</span>
 </code></pre></div></p>
+<p>Operation2.exe process set priority class of itself by 
+getting its own handle by function <code>HANDLE GetCurrentProcess()</code> 
+which returns <code>HANDLE</code> value of process Operation2.exe </p>
 <p>Structure of PROCESS_INFORMATION is following </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_PROCESS_INFORMATION</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="n">HANDLE</span><span class="w"> </span><span class="n">hProcess</span><span class="p">;</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">HANDLE</span><span class="w"> </span><span class="n">hThread</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">dwProcessId</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">dwThreadId</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span><span class="w"> </span><span class="n">PROCESS_INFORMATION</span><span class="p">;</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_PROCESS_INFORMATION</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">HANDLE</span><span class="w"> </span><span class="n">hProcess</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">HANDLE</span><span class="w"> </span><span class="n">hThread</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">dwProcessId</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">dwThreadId</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span><span class="w"> </span><span class="n">PROCESS_INFORMATION</span><span class="p">;</span><span class="w"> </span>
 </code></pre></div>
-<p>By Process HANDLE variables obtained </p>
+<p>Access to Process, which is Kernel Object, by HANDLE </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>|-----------------| 
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>| Operation2.exe  | 
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>|-----------------|
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        ||
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a> SetPriorityClass (HANDLE) 
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a> to HIGH_PRIORITY_CLASS  
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        ||
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        \/  
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>|-----------------| 
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>|  Kernel Object  | 
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>|---------------- |
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        /\
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        ||
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a> SetPriorityClass (HANDLE) 
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a> to NORMAL_PRIORITY_CLASS  
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>        ||
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>|-----------------| 
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>| KerObjShare.exe | 
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>|-----------------|
+</code></pre></div>
+<p>For cases to change Process priority, HANDLE is used 
+to access Process, which is Kernel Object. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// Operation2.cpp</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">SetPriorityClass</span><span class="p">(</span><span class="n">GetCurrentProcess</span><span class="p">(),</span><span class="w"> </span><span class="n">HIGH_PRIORITY_CLASS</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1">// KerObjShare.cpp </span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">PROCESS_INFORMATION</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="cm">/* ... codes ... */</span><span class="w"> </span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">SetPriorityClass</span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">,</span><span class="w"> </span><span class="n">NORMAL_PRIORITY_CLASS</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div>
+<p>A Process creates B Process, B Process gets its priority higher 
+then A Process turn B Process priority to lower again  </p>
+<h2 id="kernel-object-handle">Kernel Object &amp; HANDLE</h2>
+<p>HANDLE 은 프로세스 종속적이다 의 의미 
+그러면 HANDLE 은 모든 커널 오브젝트 (Thread, Mutex, Semaphore, etc) 등 
+다 가리킬 수 있는데  왜 프로세스 종속적이라고 표현하는가? </p>
+<p>HANDLE 이 프로세스 종속적이라는 말은 어떠한 커널 오브젝트를 가리키냐와는 상관 없고, 
+그 HANDLE 값 자체가 소속된 프로세스의 HANDLE TABLE 에서만 유요하다는 의미 
+A 프로세스에서 생성 된 HANDLE 값으로는 B C D 프로세스의 HANDLE TABLE 에서 무효함 
+그래소 HANDLE 값은 PROCESS 종속적 
+HANDLE 값이 Kernel Object 만 가리킨다는 뜻이 절대로 아님 
+A 프로세스와 B 프로세스가 같은 C 커널 으브젝트를 HANDLE 값으로 접근할 때 
+A 프로세스에서 만든 HANDLE 값과 B 프로세스에서 만든 C 커널 오브젝트의 핸들 값은 다르지만 
+두 핸들 값 모두 동일한 C 커널 오브젝트를 가리킴 </p>
+<h2 id="kernel-object-usage-count">Kernel Object &amp; Usage Count</h2>
+<p>자식 프로세스의 종료코드는 커널 오브젝트에 저장 
+자식 프로세스 종료 시점에 커널 오브젝트도 동시에 소멸되면 
+부모 프로세스는 종료코드를 얻을 수 없음 
+그래서 프로세스 종료 -&gt; 커널 오브젝트 소멸을 안 함 </p>
+<p>그러면 언제 커널 오브젝트를 소멸 ? 
+해당 Kernel Object 참조 대상이 하나도 없을 때 소멸 
+이 소멸시기 결정을 위하여 Usage Count (UC) 참조 횟수 사용 
+Usage Count 가 0이 되면 해당 Kernel Object 소멸 </p>
+<p>Process 생성과 동시에 Kernel Object Usage Count 는 1 
+UC가 0으로 최초설정되면, 생성과 동시에 소멸될 것 
+이후 Kernel Object 접근 가능한 대상이 늘어날수록 UC 증가 
+그래서 Child UC는 2, 왜냐하면 
+부모 프로세스가 CreateProcess로 자식 Process HANDLE 을 얻음 
+PROCESS_INFORMATION pi; // In naming convention 을 통해서 </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>|---------|           |---------|
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>| Parent  |  Create   | Child   |
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>| Process | --------&gt; | Process |
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>|---------|           |---------|
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>      \                    /\
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>       \                   ||
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        \  HANDLE          ||
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>         \ return          ||
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>          \                \/
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>           \____ |---------------|
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>                 | Child Process |
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>                 | Kernel Object |
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>                 |---------------|     
+</code></pre></div>
+<p>이렇게 UC가 2개로 기본 생성 
+<code>OperationStateParent.cpp</code> </p>
+<p>CloseHandle 함수에 전달되는 자식 프로세스 핸들 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">CloseHandle</span><span class="p">(</span><span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div>
+CloseHandle 함수는 핸들을 반환 
+커널 오브젝트의 Usage Count UC를 하나 감소시키는 기능 
+UC가 0이 되면, OS가 해당 KO 를 알아서 제거 
+또한, 프로세스 자체가 종료될 때 일어나는 일도 UC가 하나 적어지는 것 </p>
+<p>CloseHandle 함수와 Process 종료는 완전히 별개 
+프로세스 종료 함수는 TerminateProcess 강제 종료 요청, 무조건 종료시켜라 
+그래서 부모 프로세스여도, 자식 프로세스를 강제 종료시키는 것은 좋지 않음 
+강제 종료 시 일반적 종료와 달리 문제 생김 
+파일 입 출력 과정 프로세스 갑자기 종료 상황 
+프로세스가 자기 일 마치고 마지막 return 문으로 종료하는 게 제일 안정적, 
+TerminateProcess 사용은 비추천 </p>
+<p><code>Calculator.cpp</code></p>
+<p>커널 오브젝트는 Usage Count UC 값을 가지고 있음 
+UC 값은 해당 커널 오브젝트를 참조하는 HANDLE 개수 </p>
+<p>만약에 자식 프로세스를 만들고 닫아주기를 반복하는데, 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">case</span><span class="w"> </span><span class="no">ELSE</span><span class="p">:</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="n">ZeroMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">pi</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">pi</span><span class="p">));</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">CreateProcess</span><span class="p">(</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="n">TRUE</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">si</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pi</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="p">);</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="c1">// CloseHandle(pi.hProcess); </span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="c1">// CloseHandle(pi.hThread); </span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</code></pre></div>
+이렇게 핸들을 닫아버리지 않으면, UC가 여전히 부모 프로세스가 참조하고 있는 1이 됨 
+만약 핸들을 계속 닫지 않는다면, 
+자식 계산기 프로세스 자체는 끝나도 생성되었던 자식 프로세스 UC가 계속 누적 </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>|---------|       |---------|
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>| Parent  | ----&gt; | Parent  |
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>| Process | ---|  | Knl Obj |
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>| Exist   | -| |  | UC = 1  |
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>|---------|  | |  |---------|
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>             | |
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>|---------|  | |  |---------|
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>| Child   |  | |  | Child   |
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>| Process |  | |-&gt;| Knl Obj |
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>| Deleted |  |    | UC = 1  |
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>|---------|  |    |---------|
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>             |
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>|---------|  |    |---------|
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>| Child   |  |    | Child   |
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>| Process |  |---&gt;| Knl Obj |
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>| Deleted |       | UC = 1  |
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>|---------|       |---------|
+</code></pre></div>
+<p>이런 방식으로, CloseHandle 누락한 상태로 반복적으로 Child Process를 생성한다면 
+Child Process는 모두 종료되어 있지만, 해당 Process 의 Kernel Object는 
+계속 사라지지 않고 누적됨. Parent Process에서 생성한 HANDLE을 계속 들고 있기 때문  </p>
+<p>바탕화면은 프로세스 
+Ctrl Alt Delete &gt; Windows 작업 관리자 
+Explorer.exe // 바탕 화면 (탐색기) 
+프로세스는 기본적으로 생성과 동시에 Usage Count 가 2가 됨 </p>
+<h2 id="command-prompt-project-functions">Command Prompt Project Functions</h2>
+<p>명령 프롬프트 프로젝트 기능 </p>
 
 
 
