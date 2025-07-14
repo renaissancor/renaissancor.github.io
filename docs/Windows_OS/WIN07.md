@@ -41,3 +41,22 @@ HANDLE CreateMailSlot (
 ); 
 ```
 if function `CreateMailSlot` fails, return value is `INVALID_HANDLE_VALUE`
+
+
+## Singnaled VS Non-Signaled 
+
+IPC 커널 오브젝트 상태 
+
+Signaled 상태 (신호를 받은 상태)
+
+Non-Signaled 상태 (신호를 받지 않은 상태) 
+
+Kernel Object status change from 
+- Signaled to Non-Signaled 
+- Or Non-Signaled to Signaled 
+
+Kernel Object state info 
+
+Process end 
+Non Signaled to Signaled or Vice Versa 
+
