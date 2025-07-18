@@ -7,3 +7,5 @@ docs/Computer_Network/code
 
 src/*.out
 src/*.exe 
+
+site/ 
