@@ -18,7 +18,7 @@
         <link rel="prev" href="../WIN06/">
       
       
-        <link rel="next" href="../WIN18/">
+        <link rel="next" href="../WIN08/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -713,7 +713,30 @@
   
   
   <span class="md-ellipsis">
-    Bit Operation
+    Disassembly of Switch case, pre post fix and bit mask.
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/CA250718/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Call, Loops
     
   </span>
   
@@ -739,10 +762,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
             
   
   
@@ -755,8 +778,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             Ko
           </label>
@@ -3234,29 +3257,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../WIN00/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CMakeLists Setup
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../WIN03/" class="md-nav__link">
         
   
@@ -3402,10 +3402,65 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#handle-inheritence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handle Inheritence 핸들 상속
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIN08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inter Process Communication, HANDLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIN09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process Scheduling
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3447,29 +3502,6 @@
   
   <span class="md-ellipsis">
     프로세스의 생성과 소멸
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Win08/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Handle Table
     
   </span>
   
@@ -3540,6 +3572,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#handle-inheritence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handle Inheritence 핸들 상속
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3589,7 +3630,8 @@ Kernel Object MailSlot 을 먼저 만들어야 함
 </code></pre></div>
 if function <code>CreateMailSlot</code> fails, return value is <code>INVALID_HANDLE_VALUE</code></p>
 <h2 id="singnaled-vs-non-signaled">Singnaled VS Non-Signaled</h2>
-<p>IPC 커널 오브젝트 상태 </p>
+<p>IPC 커널 오브젝트 상태 
+여기서 Singal 은 끄라는 Signal </p>
 <p>Signaled 상태 (신호를 받은 상태)</p>
 <p>Non-Signaled 상태 (신호를 받지 않은 상태) </p>
 <p>Kernel Object status change from 
@@ -3598,6 +3640,47 @@ if function <code>CreateMailSlot</code> fails, return value is <code>INVALID_HAN
 <p>Kernel Object state info </p>
 <p>Process end 
 Non Signaled to Signaled or Vice Versa </p>
+<h2 id="handle-inheritence">Handle Inheritence 핸들 상속</h2>
+<p>Microsoft Documentation 
+<a href="https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa">CreateProcessA Function</a> </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">BOOL</span><span class="w"> </span><span class="nf">CreateProcessA</span><span class="p">(</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">[</span><span class="n">in</span><span class="p">,</span><span class="w"> </span><span class="n">optional</span><span class="p">]</span><span class="w">      </span><span class="n">LPCSTR</span><span class="w">                </span><span class="n">lpApplicationName</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p">[</span><span class="n">in</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="n">optional</span><span class="p">]</span><span class="w"> </span><span class="n">LPSTR</span><span class="w">                 </span><span class="n">lpCommandLine</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="p">[</span><span class="n">in</span><span class="p">,</span><span class="w"> </span><span class="n">optional</span><span class="p">]</span><span class="w">      </span><span class="n">LPSECURITY_ATTRIBUTES</span><span class="w"> </span><span class="n">lpProcessAttributes</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="p">[</span><span class="n">in</span><span class="p">,</span><span class="w"> </span><span class="n">optional</span><span class="p">]</span><span class="w">      </span><span class="n">LPSECURITY_ATTRIBUTES</span><span class="w"> </span><span class="n">lpThreadAttributes</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p">[</span><span class="n">in</span><span class="p">]</span><span class="w">                </span><span class="n">BOOL</span><span class="w">                  </span><span class="n">bInheritHandles</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">[</span><span class="n">in</span><span class="p">]</span><span class="w">                </span><span class="n">DWORD</span><span class="w">                 </span><span class="n">dwCreationFlags</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="p">[</span><span class="n">in</span><span class="p">,</span><span class="w"> </span><span class="n">optional</span><span class="p">]</span><span class="w">      </span><span class="n">LPVOID</span><span class="w">                </span><span class="n">lpEnvironment</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p">[</span><span class="n">in</span><span class="p">,</span><span class="w"> </span><span class="n">optional</span><span class="p">]</span><span class="w">      </span><span class="n">LPCSTR</span><span class="w">                </span><span class="n">lpCurrentDirectory</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p">[</span><span class="n">in</span><span class="p">]</span><span class="w">                </span><span class="n">LPSTARTUPINFOA</span><span class="w">        </span><span class="n">lpStartupInfo</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="p">[</span><span class="n">out</span><span class="p">]</span><span class="w">               </span><span class="n">LPPROCESS_INFORMATION</span><span class="w"> </span><span class="n">lpProcessInformation</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">);</span>
+</code></pre></div>
+<p>5th parameter <code>bInheritHandles</code> determines whether HANDLE table registered 
+handles to the child process or not. If <code>TRUE</code> is input then 
+parent process HANDLE table info will get inherited to child process.</p>
+<p>Here is how handle table works by inheritance 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> Parent Process HANDLE Table         Child Process HANDLE Table 
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>| HANDLE | Address |Inherit?|       | HANDLE | Address |Inherit?| 
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>|   127  |  0x1200 |   Y    |------&gt;|   127  |  0x1200 |   Y    |
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>|   168  |  0x1680 |   N    |   /--&gt;|   256  |  0x2400 |   Y    |
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>|   256  |  0x2400 |   Y    |--/
+</code></pre></div></p>
+<p>There exist column to figure out whether HANDLE will be inherited. 
+Also, when Child process inherit HANDLE from parent process, it will be 
+automatically inherit HANDLE to the child process's child process and continue. </p>
+<p>Then, HANDLE inheritence and Usage Count </p>
+<p>Suppose MailSlot created by CreateMailSlot function then process will be following. </p>
+<ol>
+<li>Mail Slot resource generation </li>
+<li>Kernel Object generation </li>
+<li>HANDLE info updated to HANDLE table <strong>HANDLE</strong></li>
+<li>CreateMailSlot Function get out, return HANDLE </li>
+</ol>
+<p>When Process gets HANDLE, people mistakenly focus on step 4. 
+However, process receive HANDLE at step 3, when HANDLE info update to 
+process HANDLE table. </p>
+<p>Suppose UC Usage Count in the following graphics from </p>
 
 
 

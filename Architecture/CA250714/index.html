@@ -799,7 +799,30 @@
   
   
   <span class="md-ellipsis">
-    Bit Operation
+    Disassembly of Switch case, pre post fix and bit mask.
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250718/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Call, Loops
     
   </span>
   
@@ -825,10 +848,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
             
   
   
@@ -841,8 +864,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             Ko
           </label>
@@ -3318,29 +3341,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Windows_OS/WIN00/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CMakeLists Setup
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Windows_OS/WIN03/" class="md-nav__link">
         
   
@@ -3433,6 +3433,52 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inter Process Communication, HANDLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process Scheduling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Windows_OS/WIN18/" class="md-nav__link">
         
   
@@ -3462,29 +3508,6 @@
   
   <span class="md-ellipsis">
     프로세스의 생성과 소멸
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Windows_OS/Win08/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Handle Table
     
   </span>
   
@@ -3587,6 +3610,18 @@
 
 
 <h1 id="c-programming">C++ Programming</h1>
+<p>LLP64 Long Long Pointer 
+long long datatype 8 bytes while 
+long datatype is 4 bytes 
+X86-64 </p>
+<p>LP64 Long Pointer 
+long datatype is 8 bytes 
+also long long datatype is 8 bytes too 
+UNIX Linux MacOS </p>
+<p>Then How about X86-32 ? 
+Int Long Pointer are 4 Bytes, 32 Bits 
+Thus, X86-32 is 
+ILP32 Int Long Pointer 8 bytes </p>
 <h2 id="volatile"><code>volatile</code> 는 최적화 컴파일 안 하겠다</h2>
 <p>multithreading logic includes other function logics 
 implied but compiler do not understand this. </p>
@@ -3757,6 +3792,15 @@ only service port is opened and rest is blocked. </p>
 </tr>
 </tbody>
 </table>
+<h3 id="ternary-operator-aka-conditional-operator">Ternary Operator AKA Conditional Operator 삼항연산자</h3>
+<p>Functions like <code>a = a &gt; b ? a : b;</code> are sometimes used.
+Sometimes, these functions do not work as intended. For instance, 
+<code>a = a &gt; b ? a += c : b += c</code> is generally intended to work as 
+<code>a = a &gt; b ? (a += c) : (b += c)</code>. However, it actually operates like 
+<code>a = (a &gt; b ? (a += c) : b) += c</code>, which is not intended consequence. </p>
+<p>So how are these functions operating in disassembly? 
+Actually, they work very similar to if else, nearly same. cmp and jmp</p>
+<p>Need to check this part disassembly! </p>
 <h3 id="2s-compliment">2's Compliment</h3>
 <p>Doing two operation for 2's Compliment should return same order </p>
 <p>Basically Flip 0 and 1 then Add 1 </p>

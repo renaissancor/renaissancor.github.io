@@ -12,13 +12,13 @@
         <meta name="author" content="Renaissancor">
       
       
-        <link rel="canonical" href="https://renaissancor.github.io/Windows_OS/WIN00/">
+        <link rel="canonical" href="https://renaissancor.github.io/Architecture/CA250718/">
       
       
-        <link rel="prev" href="../../Game_Engine/AR250604/">
+        <link rel="prev" href="../CA250716/">
       
       
-        <link rel="next" href="../WIN03/">
+        <link rel="next" href="../ko/CA250711/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>CMakeLists Setup - Renaissancoriate</title>
+        <title>Function Call, Loops - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cmakelists-setup" class="md-skip">
+        <a href="#function-call-loops" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CMakeLists Setup
+              Function Call, Loops
             
           </span>
         </div>
@@ -598,18 +598,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -625,7 +627,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Architecture
@@ -639,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/CA250709/" class="md-nav__link">
+      <a href="../CA250709/" class="md-nav__link">
         
   
   
@@ -662,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/CA250711/" class="md-nav__link">
+      <a href="../CA250711/" class="md-nav__link">
         
   
   
@@ -685,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/CA250714/" class="md-nav__link">
+      <a href="../CA250714/" class="md-nav__link">
         
   
   
@@ -708,17 +710,142 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/CA250716/" class="md-nav__link">
+      <a href="../CA250716/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Bit Operation
+    Disassembly of Switch case, pre post fix and bit mask.
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Function Call, Loops
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Call, Loops
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#while-loop-for-loop-do-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      while loop, for loop, do while
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="while loop, for loop, do while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage-of-do-while-0-in-macro-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage of do {} while (0) in MACRO function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-of-do-while-0-to-finish-function-full-of-if-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage of do {} while (0) to finish function full of if else.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-call-debug-vs-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Call Debug vs Release
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-call-stack-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Call Stack Procedure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-calling-convention-__cdecl-vs-__stdcall" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Calling Convention __cdecl vs __stdcall.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -739,10 +866,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
             
   
   
@@ -755,8 +882,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             Ko
           </label>
@@ -769,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/ko/CA250711/" class="md-nav__link">
+      <a href="../ko/CA250711/" class="md-nav__link">
         
   
   
@@ -3191,20 +3318,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
           <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
@@ -3220,7 +3345,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Windows OS
@@ -3231,93 +3356,10 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    CMakeLists Setup
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    CMakeLists Setup
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#root-cmakeliststxt-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      Root CMakeLists.txt File
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chapter-cmakeliststxt-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      Chapter CMakeLists.txt File
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
-      <a href="../WIN03/" class="md-nav__link">
+      <a href="../../Windows_OS/WIN03/" class="md-nav__link">
         
   
   
@@ -3340,7 +3382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../WIN05/" class="md-nav__link">
+      <a href="../../Windows_OS/WIN05/" class="md-nav__link">
         
   
   
@@ -3363,7 +3405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../WIN06/" class="md-nav__link">
+      <a href="../../Windows_OS/WIN06/" class="md-nav__link">
         
   
   
@@ -3386,7 +3428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../WIN07/" class="md-nav__link">
+      <a href="../../Windows_OS/WIN07/" class="md-nav__link">
         
   
   
@@ -3409,7 +3451,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../WIN18/" class="md-nav__link">
+      <a href="../../Windows_OS/WIN08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inter Process Communication, HANDLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process Scheduling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN18/" class="md-nav__link">
         
   
   
@@ -3432,35 +3520,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../WIN250709/" class="md-nav__link">
+      <a href="../../Windows_OS/WIN250709/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     프로세스의 생성과 소멸
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Win08/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Handle Table
     
   </span>
   
@@ -3505,18 +3570,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#root-cmakeliststxt-file" class="md-nav__link">
+  <a href="#while-loop-for-loop-do-while" class="md-nav__link">
     <span class="md-ellipsis">
-      Root CMakeLists.txt File
+      while loop, for loop, do while
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="while loop, for loop, do while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage-of-do-while-0-in-macro-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage of do {} while (0) in MACRO function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-of-do-while-0-to-finish-function-full-of-if-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage of do {} while (0) to finish function full of if else.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-call-debug-vs-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Call Debug vs Release
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#chapter-cmakeliststxt-file" class="md-nav__link">
+  <a href="#function-call-stack-procedure" class="md-nav__link">
     <span class="md-ellipsis">
-      Chapter CMakeLists.txt File
+      Function Call Stack Procedure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-calling-convention-__cdecl-vs-__stdcall" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Calling Convention __cdecl vs __stdcall.
     </span>
   </a>
   
@@ -3538,50 +3645,282 @@
 
 
 
-<h1 id="cmakelists-setup">CMakeLists Setup</h1>
-<p>This is written during concern about 
-writing multiple CMakeLists.txt files inside the 
-folder structure to study systems programming. </p>
-<p>There are several <code>.cpp</code> files including <code>main</code> functions. 
-Meaning that several <code>exe</code> files will be generated. </p>
-<p>Compile and run are possible by powershell CLI, 
-but the problem is using VS2022 debug functions 
-while maintaining complicated CMakeLists setup hierarchy. </p>
-<p>Here is my scratch Directory hierarchy</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>C:.
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── CMakeLists.txt              &lt;-- Root CMakeLists.txt
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── CH03/
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── Example3_1.cpp
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── Example3_2.cpp
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   └── CMakeLists.txt          &lt;-- CH03&#39;s CMakeLists.txt
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── CH05/
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── CreateProcess.cpp
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ├── AdderProcess.cpp
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   ├── ThreadSync.cpp
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   └── CMakeLists.txt          &lt;-- CH05&#39;s CMakeLists.txt
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>└── CH06/
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    ├── MutexExample.cpp
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    └── CMakeLists.txt          &lt;-- CH06&#39;s CMakeLists.txt
+<h1 id="function-call-loops">Function Call, Loops</h1>
+<h2 id="while-loop-for-loop-do-while">while loop, for loop, do while</h2>
+<p><strong>Infinite <code>while</code> loop</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>     9:     while (1)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>00C815DB B8 01 00 00 00       mov         eax,1  
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>00C815E0 85 C0                test        eax,eax  
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>00C815E2 74 0B                je          main+2Fh (0C815EFh)  
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    10:     {
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    11:         ++i; 
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>00C815E4 8B 45 FC             mov         eax,dword ptr [i]  
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>00C815E7 83 C0 01             add         eax,1  
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>00C815EA 89 45 FC             mov         dword ptr [i],eax  
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    12:     }
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>00C815ED EB EC                jmp         main+1Bh (0C815DBh)  
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    13: 
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    14:     return 0; 
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>00C815EF 33 C0                xor         eax,eax  
 </code></pre></div>
-<p>So, to compile and debug inside VS2022 with CMakeLists.txt 
-switching into multiple different .cpp .exe files </p>
-<p>First, configuration of <code>CMakeLists.txt</code> in root folder is like this </p>
-<h3 id="root-cmakeliststxt-file">Root <code>CMakeLists.txt</code> File</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Root CMakeLists.txt </span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.15</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">project</span><span class="p">(</span><span class="s">SystemProgrammingPractice</span><span class="p">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD</span><span class="w"> </span><span class="s">17</span><span class="p">)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD_REQUIRED</span><span class="w"> </span><span class="s">ON</span><span class="p">)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">CH03</span><span class="p">)</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">CH05</span><span class="p">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">CH06</span><span class="p">)</span><span class="w"> </span>
+<p>Infinite while loop operates like this. Locate function table 
+after return table and do comparison in <code>00C815EF</code>. </p>
+<p><strong>Infinite <code>for</code> loop</strong> </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>     9:     for (; ;) {
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    10:         ++i; 
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>008915DB 8B 45 FC             mov         eax,dword ptr [i]  
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>008915DE 83 C0 01             add         eax,1  
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>008915E1 89 45 FC             mov         dword ptr [i],eax  
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    11:     }
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>008915E4 EB F5                jmp         main+1Bh (08915DBh)  
 </code></pre></div>
-<p>Second, configuration of <code>CMakeLists.txt</code> in chapter folder is like this </p>
-<h3 id="chapter-cmakeliststxt-file">Chapter <code>CMakeLists.txt</code> File</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
+<p>Infinite for loop IP (Instruction Pointer) continously jump to the upper code 
+and repeat it. </p>
+<h3 id="usage-of-do-while-0-in-macro-function">Usage of <code>do {} while (0)</code> in MACRO function</h3>
+<p><strong>Macro Function</strong> declaration often requires <code>do while</code> functions to 
+operate properly like macro function. Suppose <code>MACRO</code> function like this. </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#define SHOW(V)         \</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cp">{                       \</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cp">    int x = V;          \</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cp">    x += 10;            \</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="cp">    printf(&quot;%d&quot;, x);    \</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="cp">} </span>
 </code></pre></div>
+However, this might not work properly in this kind of MACRO function call. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">SHOW</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">else</span><span class="w"> </span><span class="n">SHOW</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w"> </span><span class="c1">// ERROR </span>
+</code></pre></div>
+<p>Because this operates same as the following. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                        </span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">V</span><span class="p">;</span><span class="w">          </span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">            </span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">    </span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">};</span><span class="w"> </span><span class="c1">// Terminate if else by semicolon  </span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*skip*/</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// else without if now </span>
+</code></pre></div>
+<p>This will terminate the <code>if else</code> logic, so that original 
+<code>else</code> is not working properly. To prevent this, semicolon should be used in 
+terminator only, like this. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">SHOW</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">else</span><span class="w"> </span><span class="n">SHOW</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="c1">// ERROR </span>
+</code></pre></div>
+<p>However, using C++ function without C++ is very ridiculous and confusing, 
+even though it is MACRO function that works properly. Thus, to use 
+<code>MACRO</code> function with semicolon properly, <code>do {} while(0)</code> is often used. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#define SHOW(V)         \</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cp">do {                    \</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cp">    int x = V;          \</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="cp">    x += 10;            \</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="cp">    printf(&quot;%d&quot;, x);    \</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cp">} while (0) </span>
+</code></pre></div>
+<p>So that <code>MACRO</code> function is always properly used with semicolon. </p>
+<h3 id="usage-of-do-while-0-to-finish-function-full-of-if-else">Usage of <code>do {} while (0)</code> to finish function full of <code>if else</code>.</h3>
+<p>In Game Server, there might be severals checks in game server programming like this. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Test</span><span class="p">()</span><span class="w"> </span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*logic*/</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*logic*/</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*logic*/</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>These kinds of checks are common to determine input security and prevent errors.<br />
+From Login to a lot of check and confirmation, if anything is wrong 
+comparison should stop and function should terminate. 
+Actually, in assembly level, <code>GOTO</code> usage is okay, unlike public expectation. </p>
+<p>However, as a junior programmer, if you use <code>GOTO</code> then senior engineers 
+will probably think you are not good. So, <code>do while</code> is also useful. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Test</span><span class="p">()</span><span class="w"> </span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*logic*/</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*logic*/</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/*logic*/</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">}</span>
+</code></pre></div>
+<p>Actually in assembly language <code>do while</code> works same as <code>GOTO</code>. 
+Some might suggest usage of <code>try catch</code> instead of <code>do while</code>. 
+However, <code>try catch</code> is used for exeptional, serious cases that OS should intervene. 
+It is not for game logic, but for very exceptional system programming case. 
+Thus, do not use try catch throw logic. </p>
+<h2 id="function-call-debug-vs-release">Function Call Debug vs Release</h2>
+<p>Function call disassembly, when function call happens. 
+In Debug Mode, function call moves instruction pointer by two steps. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>00AD12EE E9 DD 06 00 00       jmp         test (0AD19D0h)  
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>...
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>00AD215A E8 8F F1 FF FF       call        test (0AD12EEh)  
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>... 
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>00AD19D0 55                   push        ebp  
+</code></pre></div>
+<p>So basically IP moves twice. Why? </p>
+<p>Function calls A B C D while other function calls E F. 
+Compiler compile unit is function unit based. </p>
+<p>Function call address input, and address is not yet arrived in compile stage. 
+This is done in linker. </p>
+<p>However, in release mode, instruction pointer moves directly to the function pointer. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>00AD215A E8 8F F1 FF FF       call        test (0AD19D0h)  
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>... 
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>00AD19D0 55                   push        ebp  
+</code></pre></div>
+<p>So, why Debug mode is working like this? </p>
+<p>Suppose there are functions A B C D ... several functions. 
+Then function B() is edited, so that its size get changed. </p>
+<p>If <code>call (address)</code> address value is directly connected to the address of B. 
+It means, in Code section of the entire memory, all <code>address</code> values of not only 
+function B but also several other functions should be rewritten, since 
+function B size change will overwrite significant part of section. </p>
+<p>Moreover, if B function or other functions A C D that have their address changed 
+due to rewritting B function is called like hundreds or thousands of times, 
+then entire hundreds or thousands of function addresses in code section should 
+be rewritten completely again, and linking of function will be completely 
+reexecuted again. </p>
+<p>In Debug process, modification of functions is very common. So, reducing debug 
+compile time is recommended. Thus, usage of some space for linking convenience 
+is recommended like below. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>A jmp 
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>B jmp 
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>C jmp 
+</code></pre></div>
+<p>So, when function A is called thousands of times, and function A is edited, then 
+there would be nearly nothing to change, since A jmp that address only will be changed. 
+So, Linking process will be quicker in this method rather than rewriting function 
+call pointer values for all function A calls hundreds of times.
+However, in Release build this method is not used for faster performance. </p>
+<h2 id="function-call-stack-procedure">Function Call Stack Procedure</h2>
+<p>When function call happens with parameters a b c d, then the stack input order 
+will be R to L, aka right to left. 
+Assembly language after function parameter call is following. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>     5: static int __cdecl test(int a, int b, int c)
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>00A319D0 55                   push        ebp  
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>00A319D1 8B EC                mov         ebp,esp  
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>00A319D3 83 EC 50             sub         esp,50h  // x y z, 0Ah for Release Mode 
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>00A319D6 53                   push        ebx  
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>00A319D7 56                   push        esi  
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>00A319D8 57                   push        edi  
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    ... 
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>     7:     volatile int ans = 0; 
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>00A319E4 C7 45 FC 00 00 00 00 mov         dword ptr [ebp-4],0  // ans 
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>     8:     
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>     9:     volatile int x = a; 
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>00A319EB 8B 45 08             mov         eax,dword ptr [ebp+8]   // a
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>00A319EE 89 45 F8             mov         dword ptr [ebp-8],eax   // x
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    10:     volatile int y = b;
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>00A319F1 8B 45 0C             mov         eax,dword ptr [ebp+0Ch] // b 
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>00A319F4 89 45 F4             mov         dword ptr [ebp-0Ch],eax // y
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    11:     volatile int z = c;
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>00A319F7 8B 45 10             mov         eax,dword ptr [ebp+10h] // c
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>00A319FA 89 45 F0             mov         dword ptr [ebp-10h],eax // z 
+</code></pre></div>
+<p>Based on assembly, inside of the stack structure will be following. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>LOW  ADDRESS
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>|-------------------|
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>|     Saved EDI     |  &lt;-- (After push edi, this is at esp. Before ret, esp moves here)
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>|-------------------|
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>|     Saved ESI     |
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>|-------------------|
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>|     Saved EBX     |
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>|-------------------|
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>|     (Padding/     |  &lt;-- Remaining local var space from sub esp, 50h
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>|   Other Locals)   |
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>|-------------------|
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>|         z         |  &lt;-- ebp - 16 (0x10) (Matches [ebp-10h])
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>|-------------------|
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>|         y         |  &lt;-- ebp - 12 (0x0C) (Matches [ebp-0Ch])
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>|-------------------|
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>|         x         |  &lt;-- ebp - 8  (0x08) (Matches [ebp-8])
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>|-------------------|
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>|        ans        |  &lt;-- ebp - 4  (0x04) (Matches [ebp-4])
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>|-------------------|
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>|    Old EBP        |  &lt;-- **ebp register points here** (after `mov ebp, esp`)
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>|-------------------|
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>|    Return Address |  &lt;-- ebp + 4 (Pushed by `call` instruction)
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>|-------------------|
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>|    Parameter &#39;a&#39;  |  &lt;-- ebp + 8
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>|-------------------|
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>|    Parameter &#39;b&#39;  |  &lt;-- ebp + 12 (0x0C)
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>|-------------------|
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>|    Parameter &#39;c&#39;  |  &lt;-- ebp + 16 (0x10)
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>|-------------------|
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>|    Caller&#39;s       |
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>|    Stack Frame    |
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>|-------------------|
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>HIGH ADDRESS
+</code></pre></div>
+<p>Now after function execution, stack frame should get back into original function. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>    25:     return 0; 
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>00A33337 5F                   pop         edi  
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>00A33338 5E                   pop         esi  
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>00A33339 5B                   pop         ebx  
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>00A3333A 8B E5                mov         esp,ebp  
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>00A3333C 5D                   pop         ebp  
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>00A3333D C3                   ret  
+</code></pre></div>
+<p>Before <code>ret</code> is called, <code>ebp</code> register will save old <code>ebp</code> register value 
+saved before stack frame of function (<code>test</code> function here). Now, before <code>ret</code>, 
+stack size will get resetted. When <code>ret</code> is called during function, </p>
+<ol>
+<li><code>ret</code> pops the value currently pointed to by esp </li>
+<li><code>ret</code> loads this popped value into the Instruction Pointer</li>
+</ol>
+<p><code>ebp</code> register itself will never contain return address. Now, old <code>ebp</code> value 
+saved in stack, will get popped out by <code>ret</code> and it will get back to caller 
+<code>ebp</code>, in here <code>main</code> function <code>ebp</code>. </p>
+<h2 id="function-calling-convention-__cdecl-vs-__stdcall">Function Calling Convention <code>__cdecl</code> vs <code>__stdcall</code>.</h2>
+<p>x86 Architecture function call convention. </p>
+<p>Suppose you call function with parameters like <code>void Test(int a, int b, int c, int d)</code>. 
+Then, how does these parameters <code>a, b, c, d</code> are going to get transferred? </p>
+<p>In default, our functions follow <code>__cdecl</code> convention. This calling convention 
+is going to manage parameter stack pointer in caller side. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>    30:     volatile int result = test(a, b, c, d); 
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>00BC3340 8B 45 F0             mov         eax,dword ptr [d]  
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>         ... 
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>00BC334C 8B 45 FC             mov         eax,dword ptr [a]  
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>00BC334F 50                   push        eax  
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>00BC3350 E8 7B E6 FF FF       call        test (0BC19D0h)  
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>00BC3355 83 C4 10             add         esp,10h  
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>00BC3358 89 45 EC             mov         dword ptr [result],eax  
+</code></pre></div>
+<p>This is function caller part, and it is possible to see that 
+<code>add esp, 10h</code> actually adds stack pointer 16, parameter space 
+after function <code>call test</code> is done. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>     5: static int __cdecl test(int a, int b, int c, int d)
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>        ... 
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    20:     return ans; 
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>00BC1A17 8B 45 FC             mov         eax,dword ptr [ans]  
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>00BC1A1A 5F                   pop         edi  
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>00BC1A1B 5E                   pop         esi  
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>00BC1A1C 5B                   pop         ebx  
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>00BC1A1D 8B E5                mov         esp,ebp  
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>00BC1A1F 5D                   pop         ebp  
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>00BC1A20 C3                   ret  
+</code></pre></div>
+<p>It is possible to see that <code>ret</code> value does not return anything. </p>
+<p>On the other hand, <code>__stdcall</code> convention will manage parameter in callee side. 
+In this calling convention, </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>    30:     volatile int result = test(a, b, c, d); 
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>00BC3340 8B 45 F0             mov         eax,dword ptr [d]  
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>         ... 
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>00BC334C 8B 45 FC             mov         eax,dword ptr [a]  
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>00BC334F 50                   push        eax  
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>00BC3350 E8 7B E6 FF FF       call        test (0BC19D0h)  
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>00BC3358 89 45 EC             mov         dword ptr [result],eax  
+</code></pre></div>
+<p>After call, parameter space memory is not handled on the caller side. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>return ans; 
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>00641A1A 5F                   pop         edi  
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>00641A1B 5E                   pop         esi  
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>00641A1C 5B                   pop         ebx  
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>00641A1D 8B E5                mov         esp,ebp  
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>00641A1F 5D                   pop         ebp  
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>00641A20 C2 10 00             ret         10h 
+</code></pre></div>
+<p>It is possible to see that <code>ret 10h</code>, assembly command <code>ret</code> has parameter 16, 
+space assigned for 4 integers a b c d for input. </p>
 
 
 
