@@ -1,4 +1,4 @@
-# Handle Table 
+# Inter Process Communication, HANDLE 
 
 MailReceiver.cpp 
 
@@ -89,3 +89,31 @@ Process getting HANDLE means after Step 3.
 Handle Table A Handle info registered, A Handle is obtained. 
 
 Normally 3rd and 4th steps proceed together, 
+
+
+## Pseudo HANDLE and Duplicate 
+
+Function `GetCurrentProcess` returns HANDLE of process itself.
+However, the HANDLE returned by `GetCurrentProcess` is actually 
+a Pseudo HANDLE. It is not registered at the HANDLE Table. 
+It is rather close to the currently working process cited
+promised integer is returned. Or, it might be compared to the 
+network IP address `192.168.0.1` or `127.0.0.1` which represents 
+IP to maintain localhost rather than real IP address in other's perspective. 
+
+However, somethimes process might require its real HANDLE value 
+rather than Pseudo HANDLE that works only inside process itself. 
+This is when function `DuplicateHandle` below is used. 
+
+```cpp
+BOOL DuplicateHandle(
+  [in]  HANDLE   hSourceProcessHandle, // Original HANDLE Owner Process 
+  [in]  HANDLE   hSourceHandle,        // Original HANDLE to Duplicate 
+  [in]  HANDLE   hTargetProcessHandle, // Duplicated HANDLE Owner Process 
+  [out] LPHANDLE lpTargetHandle,       // Duplicated HANDLE value save address 
+  [in]  DWORD    dwDesiredAccess,
+  [in]  BOOL     bInheritHandle,
+  [in]  DWORD    dwOptions
+);
+```
+
