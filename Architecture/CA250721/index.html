@@ -26,7 +26,7 @@
     
     
       
-        <title>random number - Renaissancoriate</title>
+        <title>Struct Parameter and Random Number - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#random-number" class="md-skip">
+        <a href="#struct-parameter-and-random-number" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              random number
+              Struct Parameter and Random Number
             
           </span>
         </div>
@@ -770,7 +770,7 @@
   
   
   <span class="md-ellipsis">
-    random number
+    Struct Parameter and Random Number
     
   </span>
   
@@ -783,7 +783,7 @@
   
   
   <span class="md-ellipsis">
-    random number
+    Struct Parameter and Random Number
     
   </span>
   
@@ -804,6 +804,48 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#memorize" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memorize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Call
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-datatype-in-stack-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struct datatype in Stack Frame
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struct datatype in Stack Frame">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-potential-error-for-missing-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical potential error for missing function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#disassembly-for-stdrand-and-srand-function" class="md-nav__link">
@@ -3557,6 +3599,48 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#memorize" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memorize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Call
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-datatype-in-stack-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struct datatype in Stack Frame
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struct datatype in Stack Frame">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-potential-error-for-missing-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical potential error for missing function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disassembly-for-stdrand-and-srand-function" class="md-nav__link">
     <span class="md-ellipsis">
       Disassembly for std::rand() and srand function.
@@ -3596,7 +3680,218 @@
 
 
 
-<h1 id="random-number">random number</h1>
+<h1 id="struct-parameter-and-random-number">Struct Parameter and Random Number</h1>
+<h3 id="memorize">Memorize</h3>
+<ul>
+<li>What is <code>__fastcall</code> Function? Parameters inside Register, not stack! </li>
+<li><code>printf()</code> function also has return value! </li>
+</ul>
+<h2 id="function-call">Function Call</h2>
+<p>Release Mode Debugging, no optimized compile </p>
+<p>How does return value of the function works in C++? 
+Mostly, <code>eax</code> Register is used to get return value. </p>
+<p>For function <code>int test() {return 10;}</code>, Disassembly looks like following. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>call Test(01A10000h) 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mov ptr[x], eax 
+</code></pre></div>
+<p>This one is easy, but in real game server programming, sometimes WINAPI or modularized libraries<br />
+debugging will enforce disassembly without source code. For instance, if function 
+<code>int test() {int a; ++a; return a;}</code> exists, then </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    a++; 
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mov eax, ptr[a]
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>add eax, 1 
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>mov ptr[a]
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    return a; 
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>mov eax, ptr[a]
+</code></pre></div>
+<p>Then last <code>ptr[a]</code> to <code>eax</code> data movement is putting the return value to <code>ax</code> register. 
+For instance, <code>printf</code> function has a return value. It returns number of characters it printed. 
+Thus, using function like below will get completely unexpected variable. 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">test</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">!=</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;abcde&quot;</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</code></pre></div></p>
+<p>In this case, <code>eax</code> register variable will become 6 by <code>printf</code> function, which is completely unexpected 
+behavior in many cases. So, if code uses return value of <code>test()</code> function, it will cause error. 
+Thus, <strong>Remove EVERY warning is necessary</strong> to debug and maintain code in a long term. </p>
+<h2 id="struct-datatype-in-stack-frame">Struct datatype in Stack Frame</h2>
+<p>Generally simple structs are working in expectable way. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">DATA</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"> </span><span class="c1">//[100];</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">};</span>
+</code></pre></div>
+<p>This will be 12 bytes data size with last place 3 bytes padding. 
+Below is <code>main()</code> function disassembly. 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    33:     DATA data1 = { 1, 2 }; 
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>00DD3404 C7 45 F8 01 00 00 00 mov         dword ptr [data1],1  
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>00DD340B C7 45 FC 02 00 00 00 mov         dword ptr [ebp-4],2  
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    34:     DATA data2 = fdata(data1); 
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>00DD3412 8B 45 FC             mov         eax,dword ptr [ebp-4]  
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>00DD3415 50                   push        eax  
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>00DD3416 8B 4D F8             mov         ecx,dword ptr [data1]  
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>00DD3419 51                   push        ecx  
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>00DD341A E8 CA DE FF FF       call        fdata (0DD12E9h)  
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>00DD341F 83 C4 08             add         esp,8  
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>00DD3422 89 45 A8             mov         dword ptr [ebp-58h],eax  
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>00DD3425 89 55 AC             mov         dword ptr [ebp-54h],edx  
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>00DD3428 8B 55 A8             mov         edx,dword ptr [ebp-58h]  
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>00DD342B 8B 45 AC             mov         eax,dword ptr [ebp-54h]  
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>00DD342E 89 55 F0             mov         dword ptr [data2],edx  
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>00DD3431 89 45 F4             mov         dword ptr [ebp-0Ch],eax 
+</code></pre></div></p>
+<p>Below is <code>fdata()</code> function disassembly </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    22: __declspec(noinline)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    23: DATA fdata(DATA in) {
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>00DD1630 55                   push        ebp  
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>00DD1631 8B EC                mov         ebp,esp  
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>00DD1633 83 EC 48             sub         esp,48h  
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>00DD1636 53                   push        ebx  
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>00DD1637 56                   push        esi  
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>00DD1638 57                   push        edi  
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>00DD1639 B9 7B 90 DD 00       mov         ecx,offset _12BD23D1_tmain@cpp (0DD907Bh)  
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>00DD163E E8 33 FC FF FF       call        @__CheckForDebuggerJustMyCode@4 (0DD1276h)  
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>00DD1643 90                   nop  
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    24:     DATA data;
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    25:     data.a = in.a;
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>00DD1644 8B 45 08             mov         eax,dword ptr [in]  
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>00DD1647 89 45 F8             mov         dword ptr [data],eax  
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    26:     data.b = in.b;
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>00DD164A 8B 45 0C             mov         eax,dword ptr [ebp+0Ch]  
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>00DD164D 89 45 FC             mov         dword ptr [ebp-4],eax  
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    27:         
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    28:     return data;
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>00DD1650 8B 45 F8             mov         eax,dword ptr [data]  
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>00DD1653 8B 55 FC             mov         edx,dword ptr [ebp-4]  
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    29: }
+</code></pre></div>
+<p>Line <code>__declspec(noinline)</code> is MSVC compiler enforcing NO inline function. 
+Struct value copy generally works like considering certain stack block like a local variable. 
+However, given huge size of struct variable, assembly code to copy struct 
+contains loop similar to memory copy. </p>
+<p>Given struct like below </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">DATA</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">47</span><span class="p">];</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">};</span>
+</code></pre></div>
+<p>Function disassembly for <code>main()</code> is following. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    33:     DATA data1 = { 1, 2 }; 
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>00433411 C7 45 C4 01 00 00 00 mov         dword ptr [data1],1  
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>00433418 C7 45 C8 02 00 00 00 mov         dword ptr [ebp-38h],2  
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>0043341F 6A 30                push        30h  
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>00433421 6A 00                push        0  
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>00433423 8D 45 CC             lea         eax,[ebp-34h]  
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>00433426 50                   push        eax  
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>00433427 E8 EC DC FF FF       call        _memset (0431118h)  
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>0043342C 83 C4 0C             add         esp,0Ch  
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    34:     DATA data2 = fdata(data1); 
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>0043342F 83 EC 38             sub         esp,38h  
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>00433432 B9 0E 00 00 00       mov         ecx,0Eh  
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>00433437 8D 75 C4             lea         esi,[data1]  
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>0043343A 8B FC                mov         edi,esp  
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>0043343C F3 A5                rep movs    dword ptr es:[edi],dword ptr [esi]  
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>0043343E 8D 85 DC FE FF FF    lea         eax,[ebp-124h]  
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>00433444 50                   push        eax  
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>00433445 E8 9F DE FF FF       call        fdata (04312E9h)  
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>0043344A 83 C4 3C             add         esp,3Ch  
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>0043344D B9 0E 00 00 00       mov         ecx,0Eh  
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>00433452 8B F0                mov         esi,eax  
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>00433454 8D BD 14 FF FF FF    lea         edi,[ebp-0ECh]  
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>0043345A F3 A5                rep movs    dword ptr es:[edi],dword ptr [esi]  
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>0043345C B9 0E 00 00 00       mov         ecx,0Eh  
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>00433461 8D B5 14 FF FF FF    lea         esi,[ebp-0ECh]  
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>00433467 8D 7D 8C             lea         edi,[data2]  
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>0043346A F3 A5                rep movs    dword ptr es:[edi],dword ptr [esi]  
+</code></pre></div>
+<p>Function disassembly for <code>fdata</code> is below. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>    22: __declspec(noinline)
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    23: DATA fdata(DATA in) {
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>00431630 55                   push        ebp  
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>00431631 8B EC                mov         ebp,esp  
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>00431633 83 EC 78             sub         esp,78h  
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>00431636 53                   push        ebx  
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>00431637 56                   push        esi  
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>00431638 57                   push        edi  
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>00431639 B9 7B 90 43 00       mov         ecx,offset _12BD23D1_tmain@cpp (043907Bh)  
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>0043163E E8 33 FC FF FF       call        @__CheckForDebuggerJustMyCode@4 (0431276h)  
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>00431643 90                   nop  
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    24:     DATA data;
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    25:     data.a = in.a;
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>00431644 8B 45 0C             mov         eax,dword ptr [in]  
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>00431647 89 45 C8             mov         dword ptr [data],eax  
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    26:     data.b = in.b;
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>0043164A 8B 45 10             mov         eax,dword ptr [ebp+10h]  
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>0043164D 89 45 CC             mov         dword ptr [ebp-34h],eax  
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>    27:         
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>    28:     return data;
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>00431650 B9 0E 00 00 00       mov         ecx,0Eh  
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>00431655 8D 75 C8             lea         esi,[data]  
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>00431658 8B 7D 08             mov         edi,dword ptr [ebp+8]  
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>0043165B F3 A5                rep movs    dword ptr es:[edi],dword ptr [esi]  
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>0043165D 8B 45 08             mov         eax,dword ptr [ebp+8]  
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>    29: }
+</code></pre></div>
+<p>Showing that when huge array is inside <code>struct</code> then loop is used like <code>rep movs</code>. 
+Also, it is possible to see very inefficient stack memory usage to copy <code>struct</code> from 
+caller function to callee function. This is basic schema when return value is <code>struct</code> 
+instead of basic datatype. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>           ^ Stack Growth (towards lower addresses)
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>           |
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>+----------+------------+
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>|  ...     |            |
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>|          |            |
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>| data2.c[0-46] (56 bytes total for data2)
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>| data2.b  |            |
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>| data2.a  |            |  &lt;-- [ebp-0ECh] (base of data2)
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>+----------+------------+
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>|  ...     |            |
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>|          |            |
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>| main Local variables  |
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>|          |            |
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>+----------+------------+
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>|  RETURN BUFFER FOR    |
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>|   FDATA CALL (56 bytes) |  &lt;-- [ebp-124h] (address pushed as hidden arg)
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>+----------+------------+
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>|  ...     |            |
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>+----------+------------+  &lt;-- main&#39;s ESP before call to fdata
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>|  Copy of data1 struct |
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>|  for argument &#39;in&#39;    |
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>|  (56 bytes)           |
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>+----------+------------+
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>|  Address of Return Buf|  &lt;-- This is the hidden first argument pushed by main
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>+----------+------------+
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>|  Return Address       |
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>+----------+------------+  &lt;-- fdata&#39;s EBP (after prologue)
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>|  Saved EBP (main&#39;s)   |
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>+----------+------------+
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>|  Saved Registers (EBX, ESI, EDI) |
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>+----------+------------+
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>|  Local variables of fdata (e.g., local &#39;data&#39; struct) |
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>|  ...                  |
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>+----------+------------+  &lt;-- fdata&#39;s ESP (after prologue&#39;s stack allocation)
+</code></pre></div>
+<p>So, it copies from <code>fdata()</code> function local variable to the return buffer of <code>fdata()</code>, 
+and then <code>main</code> function return value save buffer from <code>fdata</code> function return value saving 
+buffer, and then to original destination from temporarily created <code>struct</code> space inside <code>main()</code>. 
+Thus, it is extremely ineffective, decreasing performance significantly, and that is why 
+using pointer parameters to send <code>struct</code> is recommended. </p>
+<p>Script languages like <code>C#</code> or <code>JavaScript</code> or a lot of these work well 
+with input of <code>struct</code> or <code>class</code>. However, they internally also work by reference call. 
+Thus, in <code>C++</code> data transfer by using <code>struct</code> especially when it is large, should be avoided. </p>
+<h3 id="critical-potential-error-for-missing-function">Critical potential error for missing function</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">test</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">!=</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>This one does NOT return value for all cases, but it causes warning only, NO error. 
+However, this kind of code might make very critical, unexpected behaivor potentially. </p>
 <h2 id="disassembly-for-stdrand-and-srand-function">Disassembly for <code>std::rand()</code> and <code>srand</code> function.</h2>
 <p>Completely random number is impossible. However, in progrmmer perspective, 
 if we do not have to consider deeply about computer security in cryptographic 
@@ -3613,39 +3908,39 @@ sequence of numbers. Then, this is not likely to use as random number. </p>
 it is working in such a function that will return same sequence of number 
 according to the given input. Disassembly debugging is required to see 
 what happens inside <code>rand()</code> function in detail. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="mi">13</span><span class="o">:</span><span class="w">     </span><span class="n">srand</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="mi">33</span><span class="w"> </span><span class="n">C9</span><span class="w">                </span><span class="k">xor</span><span class="w">         </span><span class="n">ecx</span><span class="p">,</span><span class="n">ecx</span><span class="w">  </span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">FF</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="n">C4</span><span class="w"> </span><span class="n">F9</span><span class="w"> </span><span class="mo">00</span><span class="w"> </span><span class="mo">00</span><span class="w">    </span><span class="n">call</span><span class="w">        </span><span class="n">qword</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">__imp_srand</span><span class="w"> </span><span class="p">(</span><span class="mf">07F</span><span class="n">F79B4E1318h</span><span class="p">)]</span><span class="w">  </span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="mi">90</span><span class="w">                   </span><span class="n">nop</span><span class="w">  </span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="mi">14</span><span class="o">:</span><span class="w"> </span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="mi">15</span><span class="o">:</span><span class="w">     </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">();</span><span class="w"> </span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">FF</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="n">B5</span><span class="w"> </span><span class="n">F9</span><span class="w"> </span><span class="mo">00</span><span class="w"> </span><span class="mo">00</span><span class="w">    </span><span class="n">call</span><span class="w">        </span><span class="n">qword</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">__imp_rand</span><span class="w"> </span><span class="p">(</span><span class="mf">07F</span><span class="n">F79B4E1310h</span><span class="p">)]</span><span class="w">  </span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="mi">66</span><span class="w"> </span><span class="mi">89</span><span class="w"> </span><span class="mi">45</span><span class="w"> </span><span class="mo">04</span><span class="w">          </span><span class="n">mov</span><span class="w">         </span><span class="n">word</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">ax</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">    </span><span class="mi">13</span><span class="o">:</span><span class="w">     </span><span class="n">srand</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="mi">33</span><span class="w"> </span><span class="n">C9</span><span class="w">                </span><span class="k">xor</span><span class="w">         </span><span class="n">ecx</span><span class="p">,</span><span class="n">ecx</span><span class="w">  </span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">FF</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="n">C4</span><span class="w"> </span><span class="n">F9</span><span class="w"> </span><span class="mo">00</span><span class="w"> </span><span class="mo">00</span><span class="w">    </span><span class="n">call</span><span class="w">        </span><span class="n">qword</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">__imp_srand</span><span class="w"> </span><span class="p">(</span><span class="mf">07F</span><span class="n">F79B4E1318h</span><span class="p">)]</span><span class="w">  </span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="mi">90</span><span class="w">                   </span><span class="n">nop</span><span class="w">  </span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="mi">14</span><span class="o">:</span><span class="w"> </span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="mi">15</span><span class="o">:</span><span class="w">     </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">FF</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="n">B5</span><span class="w"> </span><span class="n">F9</span><span class="w"> </span><span class="mo">00</span><span class="w"> </span><span class="mo">00</span><span class="w">    </span><span class="n">call</span><span class="w">        </span><span class="n">qword</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">__imp_rand</span><span class="w"> </span><span class="p">(</span><span class="mf">07F</span><span class="n">F79B4E1310h</span><span class="p">)]</span><span class="w">  </span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="mi">66</span><span class="w"> </span><span class="mi">89</span><span class="w"> </span><span class="mi">45</span><span class="w"> </span><span class="mo">04</span><span class="w">          </span><span class="n">mov</span><span class="w">         </span><span class="n">word</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">ax</span><span class="w"> </span>
 </code></pre></div>
 <p>First, check where seed value is saved. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a> mov         dword ptr [rsp+8],ecx  
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a> sub         rsp,28h  
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a> call        00007FFE11D64610  
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a> mov         ecx,dword ptr [rsp+30h]  
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a> mov         dword ptr [rax+28h],ecx  
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a> add         rsp,28h
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a> mov         dword ptr [rsp+8],ecx  
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a> sub         rsp,28h  
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a> call        00007FFE11D64610  
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a> mov         ecx,dword ptr [rsp+30h]  
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a> mov         dword ptr [rax+28h],ecx  
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a> add         rsp,28h
 </code></pre></div>
 <p>Based on this function, it is likely that seed value is saved at <code>ptr [rax + 28h]</code>. </p>
 <p>Given the structure, dive into call <code>rand</code> function move Instruction Pointer. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sub         rsp,38h                             Allocate Stack Frame 
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>call        00007FFE2B3A4610                    
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>mov         qword ptr [rsp+20h],rax             
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>mov         rax,qword ptr [rsp+20h]             
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>imul        eax,dword ptr [rax+28h],343FDh      X_n *= 214,013
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>add         eax,269EC3h                         X_n += 2,531,011
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>mov         rcx,qword ptr [rsp+20h]             
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>mov         dword ptr [rcx+28h],eax             
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>mov         rax,qword ptr [rsp+20h]             
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>mov         eax,dword ptr [rax+28h]  
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>shr         eax,10h                             X_n &lt;&lt; 16 
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>and         eax,7FFFh                           X_n &amp;= 7FFF == 0001 1111 ... 
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>add         rsp,38h                             Retrieve Stack Frame 
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>ret  
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sub         rsp,38h                             Allocate Stack Frame 
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>call        00007FFE2B3A4610                    
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>mov         qword ptr [rsp+20h],rax             
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>mov         rax,qword ptr [rsp+20h]             
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>imul        eax,dword ptr [rax+28h],343FDh      X_n *= 214,013
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>add         eax,269EC3h                         X_n += 2,531,011
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>mov         rcx,qword ptr [rsp+20h]             
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>mov         dword ptr [rcx+28h],eax             
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>mov         rax,qword ptr [rsp+20h]             
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>mov         eax,dword ptr [rax+28h]  
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>shr         eax,10h                             X_n &lt;&lt; 16 
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>and         eax,7FFFh                           X_n &amp;= 7FFF == 0001 1111 ... 
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>add         rsp,38h                             Retrieve Stack Frame 
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>ret  
 </code></pre></div>
 <p>Value <span class="arithmatex">\(X_0\)</span> is seed value input. 
 Function <code>rand()</code> return value is used like <code>ax</code>. 
@@ -3663,19 +3958,19 @@ unsigned short, the register value <code>eax</code> retrieved from <span class="
 which is total 15 bit. </p>
 <p>Now, based on this math equation derived from disassembly analysis, 
 same <code>myrand</code> function will be implemented through using C++ code. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">jhp</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0X343FD</span><span class="p">;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0X269EC3</span><span class="p">;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">srand</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seed</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">rand</span><span class="p">()</span><span class="w"> </span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="o">&gt;</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0X7FFF</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">jhp</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0X343FD</span><span class="p">;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0X269EC3</span><span class="p">;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">srand</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seed</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">rand</span><span class="p">()</span><span class="w"> </span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="o">&gt;</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0X7FFF</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="p">}</span>
 </code></pre></div>
 <p>Now, for same <code>std::srand()</code> and <code>jhp::srand()</code> seed value, 
 the output of <code>std::rand()</code> and <code>jhp::rand()</code> <code>unsigned short</code> values will be same. </p>
