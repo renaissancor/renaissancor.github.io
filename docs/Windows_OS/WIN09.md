@@ -80,4 +80,3 @@ Process B.
 The solution might be, instead of Process A just turn to blocked without responsibility 
 it might rent its high priority to Process C and then gets blocked, so that 
 Process B will not take CPU resource. 
-
