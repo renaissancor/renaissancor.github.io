@@ -166,15 +166,3 @@ When `SuspendThread` is called `Suspend Count` became 1, and when
 `ResumeThread` is called `Suspend Count` became 2. 
 
 
-# Thread Synchronization 
-
-Two perspectives of thread synchronization 
-
-Synchronize means matching different stuffs. 
-For instance A server and B server synchronous means both data are in same status 
-
-However, synchronous here represents order, or **sequence**, rather than match.
-
-### Memory Access based synchronization 
-
-Blocking simultaneous, or Councurrent access of more than one thread into memory 
