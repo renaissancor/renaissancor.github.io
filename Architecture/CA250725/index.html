@@ -12,13 +12,13 @@
         <meta name="author" content="Renaissancor">
       
       
-        <link rel="canonical" href="https://renaissancor.github.io/Data_Structure/AR250418/">
+        <link rel="canonical" href="https://renaissancor.github.io/Architecture/CA250725/">
       
       
-        <link rel="prev" href="../AR250417/">
+        <link rel="prev" href="../CA250723/">
       
       
-        <link rel="next" href="../AR250421/">
+        <link rel="next" href="../ko/CA250711/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Compiler Knowledge for Game Developers - Renaissancoriate</title>
+        <title>Debugging Process of Base Pointer or Instruction Pointer Contamination - Renaissancoriate</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#compiler-knowledge-for-game-developers" class="md-skip">
+        <a href="#debugging-process-of-base-pointer-or-instruction-pointer-contamination" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Compiler Knowledge for Game Developers
+              Debugging Process of Base Pointer or Instruction Pointer Contamination
             
           </span>
         </div>
@@ -598,18 +598,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -625,7 +627,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Architecture
@@ -639,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/CA250709/" class="md-nav__link">
+      <a href="../CA250709/" class="md-nav__link">
         
   
   
@@ -662,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/CA250711/" class="md-nav__link">
+      <a href="../CA250711/" class="md-nav__link">
         
   
   
@@ -685,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/CA250714/" class="md-nav__link">
+      <a href="../CA250714/" class="md-nav__link">
         
   
   
@@ -708,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/CA250716/" class="md-nav__link">
+      <a href="../CA250716/" class="md-nav__link">
         
   
   
@@ -731,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/CA250718/" class="md-nav__link">
+      <a href="../CA250718/" class="md-nav__link">
         
   
   
@@ -754,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/CA250721/" class="md-nav__link">
+      <a href="../CA250721/" class="md-nav__link">
         
   
   
@@ -776,6 +778,151 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../CA250723/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stack Local Variable Contamination
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Debugging Process of Base Pointer or Instruction Pointer Contamination
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Debugging Process of Base Pointer or Instruction Pointer Contamination
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-process-of-base-pointer-contamination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging Process of Base Pointer Contamination
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debugging Process of Base Pointer Contamination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prove-bp-backup-value-is-contaminated" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prove bp backup value is contaminated.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      64 Bit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-process-of-instruction-pointer-contamination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging Process of Instruction Pointer Contamination
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debugging Process of Instruction Pointer Contamination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-dump-file-dmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Dump File .DMP.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -785,10 +932,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
             
   
   
@@ -801,8 +948,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
             <span class="md-nav__icon md-icon"></span>
             Ko
           </label>
@@ -815,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Architecture/ko/CA250711/" class="md-nav__link">
+      <a href="../ko/CA250711/" class="md-nav__link">
         
   
   
@@ -1443,7 +1590,7 @@
   
   
   <span class="md-ellipsis">
-    Computer Network
+    Compilers
     
   </span>
   
@@ -1453,6 +1600,97 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Compilers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/CMP01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compiler Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/CMP02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compiler Knowledge for Game Developers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Network
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Computer Network
           </label>
@@ -1494,6 +1732,29 @@
   
   <span class="md-ellipsis">
     Microscopic View of Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0724/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Physical Layer &amp; Data Link Layer
     
   </span>
   
@@ -1561,23 +1822,21 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -1590,8 +1849,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Data Structure
           </label>
@@ -1604,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250403/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250403/" class="md-nav__link">
         
   
   
@@ -1627,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250407/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250407/" class="md-nav__link">
         
   
   
@@ -1650,7 +1909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250408/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250408/" class="md-nav__link">
         
   
   
@@ -1673,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250409/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250409/" class="md-nav__link">
         
   
   
@@ -1696,7 +1955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250410/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250410/" class="md-nav__link">
         
   
   
@@ -1719,7 +1978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250411/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250411/" class="md-nav__link">
         
   
   
@@ -1742,7 +2001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250414/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250414/" class="md-nav__link">
         
   
   
@@ -1765,7 +2024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250415/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250415/" class="md-nav__link">
         
   
   
@@ -1788,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250416/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250416/" class="md-nav__link">
         
   
   
@@ -1811,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250417/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250417/" class="md-nav__link">
         
   
   
@@ -1831,243 +2090,10 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Compiler Knowledge for Game Developers
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Compiler Knowledge for Game Developers
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-c-compilation-pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. C++ Compilation Pipeline
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. C++ Compilation Pipeline">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#compilation-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compilation Steps:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-key-concepts-for-game-developers" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Key Concepts for Game Developers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Key Concepts for Game Developers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#must-know" class="md-nav__link">
-    <span class="md-ellipsis">
-      Must-Know:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#very-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      Very Useful:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optional-deeper-knowledge" class="md-nav__link">
-    <span class="md-ellipsis">
-      Optional (Deeper Knowledge):
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-common-c-compilers-and-toolchains" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Common C++ Compilers and Toolchains
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Common C++ Compilers and Toolchains">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gcc-gnu-compiler-collection" class="md-nav__link">
-    <span class="md-ellipsis">
-      GCC (GNU Compiler Collection)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#clang" class="md-nav__link">
-    <span class="md-ellipsis">
-      Clang
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msvc-microsoft-visual-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      MSVC (Microsoft Visual C++)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mingw-mingw-w64" class="md-nav__link">
-    <span class="md-ellipsis">
-      MinGW / MinGW-w64
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-differences-mingw-vs-msvc" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Differences (MinGW vs MSVC):
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-useful-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Useful Tools
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-summary-what-to-learn-and-why" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Summary: What to Learn (and Why)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Summary: What to Learn (and Why)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#focus-on" class="md-nav__link">
-    <span class="md-ellipsis">
-      Focus On:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optional-but-beneficial" class="md-nav__link">
-    <span class="md-ellipsis">
-      Optional but Beneficial:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
-      <a href="../AR250421/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250421/" class="md-nav__link">
         
   
   
@@ -2090,7 +2116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AR250422/" class="md-nav__link">
+      <a href="../../Data_Structure/AR250422/" class="md-nav__link">
         
   
   
@@ -2128,10 +2154,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   
@@ -2144,8 +2170,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             ECE482FA24
           </label>
@@ -2166,10 +2192,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
         
           
-          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
             
   
   
@@ -2182,8 +2208,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
             <span class="md-nav__icon md-icon"></span>
             ECE482HW
           </label>
@@ -2396,10 +2422,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
         
           
-          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
             
   
   
@@ -2412,8 +2438,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
             <span class="md-nav__icon md-icon"></span>
             ECE482LAB
           </label>
@@ -2695,10 +2721,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
         
           
-          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
             
   
   
@@ -2711,8 +2737,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
             <span class="md-nav__icon md-icon"></span>
             ECE482P2
           </label>
@@ -2879,10 +2905,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4" >
         
           
-          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
             
   
   
@@ -2895,8 +2921,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4">
             <span class="md-nav__icon md-icon"></span>
             ECE482P3
           </label>
@@ -3070,10 +3096,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -3086,8 +3112,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Game Engine
           </label>
@@ -3460,10 +3486,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   
@@ -3476,8 +3502,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Windows OS
           </label>
@@ -3628,6 +3654,121 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function &amp; Calling Convention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process VS Thread
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thread Generation and Termination
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thread Synchronization by Memory Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thread Synchronization by sequence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Windows_OS/WIN18/" class="md-nav__link">
         
   
@@ -3701,19 +3842,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-c-compilation-pipeline" class="md-nav__link">
+  <a href="#debugging-process-of-base-pointer-contamination" class="md-nav__link">
     <span class="md-ellipsis">
-      1. C++ Compilation Pipeline
+      Debugging Process of Base Pointer Contamination
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. C++ Compilation Pipeline">
+    <nav class="md-nav" aria-label="Debugging Process of Base Pointer Contamination">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#compilation-steps" class="md-nav__link">
+  <a href="#prove-bp-backup-value-is-contaminated" class="md-nav__link">
     <span class="md-ellipsis">
-      Compilation Steps:
+      Prove bp backup value is contaminated.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      64 Bit
     </span>
   </a>
   
@@ -3725,139 +3875,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-key-concepts-for-game-developers" class="md-nav__link">
+  <a href="#debugging-process-of-instruction-pointer-contamination" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Key Concepts for Game Developers
+      Debugging Process of Instruction Pointer Contamination
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Key Concepts for Game Developers">
+    <nav class="md-nav" aria-label="Debugging Process of Instruction Pointer Contamination">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#must-know" class="md-nav__link">
+  <a href="#create-dump-file-dmp" class="md-nav__link">
     <span class="md-ellipsis">
-      Must-Know:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#very-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      Very Useful:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optional-deeper-knowledge" class="md-nav__link">
-    <span class="md-ellipsis">
-      Optional (Deeper Knowledge):
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-common-c-compilers-and-toolchains" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Common C++ Compilers and Toolchains
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Common C++ Compilers and Toolchains">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gcc-gnu-compiler-collection" class="md-nav__link">
-    <span class="md-ellipsis">
-      GCC (GNU Compiler Collection)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#clang" class="md-nav__link">
-    <span class="md-ellipsis">
-      Clang
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msvc-microsoft-visual-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      MSVC (Microsoft Visual C++)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mingw-mingw-w64" class="md-nav__link">
-    <span class="md-ellipsis">
-      MinGW / MinGW-w64
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-differences-mingw-vs-msvc" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Differences (MinGW vs MSVC):
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-useful-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Useful Tools
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-summary-what-to-learn-and-why" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Summary: What to Learn (and Why)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Summary: What to Learn (and Why)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#focus-on" class="md-nav__link">
-    <span class="md-ellipsis">
-      Focus On:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optional-but-beneficial" class="md-nav__link">
-    <span class="md-ellipsis">
-      Optional but Beneficial:
+      Create Dump File .DMP.
     </span>
   </a>
   
@@ -3884,107 +3914,195 @@
 
 
 
-<h1 id="compiler-knowledge-for-game-developers">Compiler Knowledge for Game Developers</h1>
-<p>This guide summarizes essential compiler-related knowledge for aspiring video game developers. While deep compiler theory isn't necessary for game development, understanding how your code is built, optimized, and run is absolutely crucial for building efficient, cross-platform games.</p>
-<h2 id="1-c-compilation-pipeline">1. C++ Compilation Pipeline</h2>
-<p>Understanding how your C++ code turns into an executable is foundational.</p>
-<h3 id="compilation-steps">Compilation Steps:</h3>
+<h1 id="debugging-process-of-base-pointer-or-instruction-pointer-contamination">Debugging Process of Base Pointer or Instruction Pointer Contamination</h1>
+<p>What <code>ret</code> does includes <code>pop eip</code>, which includes decrementing <code>esp</code> register too.<br />
+Or in other words, it pops what <code>esp</code> is pointing and save it into <code>eip</code>. </p>
+<p>When stack variable result in unexpected variable </p>
+<p>This is typical end of the disassembly of function. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>00FE1144  add         esp,8  
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>00FE1147  mov         ecx,dword ptr [ebp-4]  
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>00FE114A  xor         ecx,ebp  
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>00FE114C  call        __security_check_cookie (0FE116Ch)  
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>00FE1151  mov         esp,ebp  
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>00FE1153  pop         ebp  
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>00FE1154  ret  
+</code></pre></div>
+<p>In this disassembly code, <code>ret</code> will pop current memory right below <code>ebp</code>. </p>
+<p>This is memory hierarchy before the callee function is terminated. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>|------------|
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>|   Callee   |
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>|   Stack    |
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>|   Frame    |
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>|------------| 
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>|   Canary   |
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>|------------|
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>| ebp backup | &lt;- Potentially Might be accessed and changed 
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>|------------| 
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>| eip backup | &lt;- Potentially Might be accessed and changed 
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>|------------| 
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>| Parameters |
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>|------------|
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>|   Caller   |
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>|   Stack    |
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>|   Frame    | 
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>|------------|
+</code></pre></div>
+<p>When pop <code>ebp</code> is called, the previous base pointer value is restored from the stack into <code>ebp</code>. 
+This does not delete memory, but simply moves the esp up by 4 bytes (in 32-bit). </p>
+<p>When <code>ret</code> is called, the return address (original <code>eip</code>) is popped from the top of the stack 
+into the instruction pointer <code>eip</code>. Again, this modifies <code>esp</code>, not memory content directly.</p>
+<h2 id="debugging-process-of-base-pointer-contamination">Debugging Process of Base Pointer Contamination</h2>
+<p>Goal : Detect when memory of caller function base pointer backup is changed. </p>
+<p>First, when <code>ebp</code> is changed in callee function, then callee function itself 
+would work mostly correct with appropriate access to stack members like <code>ebp - 4</code> similar calculations. 
+However, when <code>pop ebp</code> replace current <code>ebp</code> to old <code>ebp</code> of previous caller stack frame, but 
+it is contaminated, then caller function access in stack frame variables will be completely wrong, 
+causing either error, or for worse, undefined behavior.  </p>
+<p>Suppose code like this. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">__declspec</span><span class="p">(</span><span class="n">noinline</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">parent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">func1</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="n">fpfunc</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">func2</span><span class="p">();</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">func3</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="n">a</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// Error thrown, reading access violated. </span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>Stack variable seems to be disrupted. </p>
+<p>First, check current <code>ebp</code> register value. If it is strange, it is clear. 
+Then, <code>ebp</code> contamination should be checked by <code>__debugbreak();</code> function. </p>
+<p>Contamination of <code>ebp</code> can be detectable through local variable. For instance, 
+if one single local variable exist, then meaningless assignment of 
+static variable from local variable would detect any <code>ebp</code> contamination easily. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">parent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">g_whatever</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">func1</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">g_whatever</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">func3</span><span class="p">();</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="n">g_whatever</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">fpfunc</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="c1">// Same checking process ... </span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
+</code></pre></div>
+<p>However, when there does not exist any local variable, only likely option is to use 
+function called as <code>_AddressOfReturnAddress()</code> which will return pointer value of 
+<code>eip</code> address that is right below the <code>ebp</code>. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;intrin.h&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kr">__declspec</span><span class="p">(</span><span class="n">noinline</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">parent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">uintptr_t</span><span class="o">*</span><span class="w"> </span><span class="n">g_ebptr</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">uintptr_t</span><span class="w"> </span><span class="n">g_ebpvalue</span><span class="p">;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">g_ebptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">uintptr_t</span><span class="o">*&gt;</span><span class="w"> </span><span class="c1">// eip - 4</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="p">((</span><span class="kt">uintptr_t</span><span class="p">)</span><span class="w"> </span><span class="n">_AddressOfReturnAddress</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">));</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="n">g_ebpvalue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">g_ebptr</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="n">func1</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="n">g_ebptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">uintptr_t</span><span class="o">*&gt;</span><span class="w"> </span><span class="c1">// eip - 4</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="p">((</span><span class="kt">uintptr_t</span><span class="p">)</span><span class="n">_AddressOfReturnAddress</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">));</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">g_ebpvalue</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">*</span><span class="n">g_ebptr</span><span class="p">)</span><span class="w"> </span><span class="n">__debugbreak</span><span class="p">();</span><span class="w"> </span><span class="c1">// check if ebp is contaminated</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="n">func3</span><span class="p">();</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="c1">// Same checking process ... </span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="p">}</span>
+</code></pre></div>
+<p>This is very messy and require header, so not that much recommended approach.</p>
+<h3 id="prove-bp-backup-value-is-contaminated">Prove <code>bp</code> backup value is contaminated.</h3>
+<p>First, check <code>esp</code>. 
+From <code>esp</code>, look whether upper variable is 0 or not. </p>
+<p>During debugging, Registers are visible. However, how to check 
+current <code>ebp</code> value by checking ? </p>
+<h3 id="64-bit">64 Bit</h3>
+<p>The 32 Bit disassembly function call and finish are composed by strict following pattern </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>push ebp 
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>add esp 12h // Whatever 
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>...
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>mov esp ebp 
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>pop ebp
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>ret
+</code></pre></div>
+<p>However, Release mode of 64 Bit stack frame acquisition might NOT use <code>rbp</code>, only based on 
+pure calculation of <code>rsp</code>, while <code>rbp</code> is used for some kind of other saving register, 
+especially in release mode. In debug mode, <code>rbp</code> works like <code>ebp</code> though.  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sub         rsp,48h  
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>add         rsp,48h  
+</code></pre></div>
+<p>Thus, in 64 Bit OS Release Mode debugging, base pointer contamination 
+disrupting stack frame variable access by method like <code>[ebp - 8]</code> is not likely. </p>
+<h2 id="debugging-process-of-instruction-pointer-contamination">Debugging Process of Instruction Pointer Contamination</h2>
+<p>Goal : Detect when memory of caller function instruction register backup is changed. </p>
+<p>Every disassembly debugging is possible based on register that contains instruction pointer value. 
+However, when this instruction pointer is contaminated, even currently operating function 
+is not working. Then, how to detect problem? </p>
+<p>Probability of Register Instruction Pointer <code>rip</code> or <code>eip</code> will change in following circumstances. </p>
+<ul>
+<li>Move to next </li>
+<li>Jump <code>jmp</code> <code>jeq</code> <code>jne</code> etc ... </li>
+<li>Function <code>call</code> change <code>ip</code> to target assembly code </li>
+<li>Function <code>ret</code> pop <code>ip</code> to return from stack </li>
+</ul>
+<p>Given that C++ code is compiled and linked without error, it means that 
+code itself works for basic logic including execution of next command or jump. 
+Potential likelihood of <code>eip</code> contanimation is two : either <code>call</code> or <code>ret</code>. </p>
+<p>When function pointer parameter is not transferred properly into <code>call</code>, then 
+function call might point invalid zone, making unexpected behavior. </p>
+<p>If the return address (saved instruction pointer) on the stack is overwritten, 
+the <code>ret</code> instruction will jump to an unintended location. 
+This is often seen in stack corruption or exploitation scenarios and 
+can result in crashes or arbitrary code execution.</p>
+<p>So first, distinguish whether it is function call pointer problem or IP register backup 
+contamination problem. </p>
+<p>For 32 Bit Architecture, when Instruction pointer is completely broken, 
+both function call pointer interruption and <code>eip</code> disruption can be checked by 
+checking <code>ebp</code> register, which is currently saving the previous caller function
+<code>ebp</code>. Also, below previous <code>ebp</code> there would be previous <code>eip</code> too. 
+So, when Only <code>eip</code> is corrupted, and <code>ebp</code> is still same, make following approach. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>|------------|
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>| ebp callee | &lt;-This might be safe, saving (ebp caller) address 
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>|------------| 
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>| eip backup | &lt;-Suppose this is corrupted 
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>|------------| 
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>| Parameters |
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>|------------|
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>|   Caller   |
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>|   Stack    |
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>|   Frame    | 
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>|------------|
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>| ebp caller | &lt;-This place is accessible 
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>|------------| 
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>| eip backup | &lt;-This place is right below, containing .text area address 
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>|------------| 
+</code></pre></div>
+<p>Now, based on the address saved in <code>eip</code> backup of caller function, 
+search disassembly code address to find out function. 
+Then, finally can reach caller function of the function that corrupted <code>eip</code>. </p>
+<p>Given <code>ebp</code> is still not contaminated so it exist as callee function <code>ebp</code>, 
+tracking root would be following. </p>
 <ol>
-<li><strong>Preprocessing</strong> (<code>.cpp</code> -&gt; <code>.i</code>):</li>
-<li>Expands macros, includes headers.</li>
-<li>
-<p>Handles <code>#define</code>, <code>#include</code>, and conditional compilation.</p>
-</li>
-<li>
-<p><strong>Compilation</strong> (<code>.i</code> -&gt; <code>.s</code>):</p>
-</li>
-<li>Translates preprocessed code into assembly.</li>
-<li>
-<p>Performs syntax and type checking.</p>
-</li>
-<li>
-<p><strong>Assembly</strong> (<code>.s</code> -&gt; <code>.o</code>):</p>
-</li>
-<li>
-<p>Converts assembly to machine code in an object file.</p>
-</li>
-<li>
-<p><strong>Linking</strong> (<code>.o</code> -&gt; <code>.exe</code>):</p>
-</li>
-<li>Combines object files and libraries into an executable.</li>
-<li>Resolves symbols and sets up the entry point.</li>
+<li>Search <code>ebp</code> register saving address in Memory </li>
+<li>Suppose that address is caller function <code>ebp</code> stored, and look at one space down. </li>
+<li>Suppose it as caller function <code>eip</code>, and search them in code area to see caller function code.  </li>
 </ol>
-<h2 id="2-key-concepts-for-game-developers">2. Key Concepts for Game Developers</h2>
-<h3 id="must-know">Must-Know:</h3>
-<ul>
-<li>C++ syntax and build systems (Make, CMake, Visual Studio projects).</li>
-<li>Common linker errors and how to resolve them.</li>
-<li>Compilation units and header management.</li>
-</ul>
-<h3 id="very-useful">Very Useful:</h3>
-<ul>
-<li>Compiler optimization flags: <code>-O0</code>, <code>-O2</code>, <code>-O3</code>, <code>-g</code>, <code>-Wall</code>.</li>
-<li>Debug vs Release build differences.</li>
-<li>Profiling and debugging tools: GDB, Visual Studio Debugger, Valgrind, perf.</li>
-</ul>
-<h3 id="optional-deeper-knowledge">Optional (Deeper Knowledge):</h3>
-<ul>
-<li>Understanding intermediate representations (GIMPLE, LLVM IR).</li>
-<li>Assembly and disassembly for performance tuning.</li>
-<li>Differences between compilers (GCC, Clang, MSVC).</li>
-</ul>
-<h2 id="3-common-c-compilers-and-toolchains">3. Common C++ Compilers and Toolchains</h2>
-<h3 id="gcc-gnu-compiler-collection">GCC (GNU Compiler Collection)</h3>
-<ul>
-<li>Open-source and cross-platform.</li>
-<li>Common on Linux and embedded systems.</li>
-</ul>
-<h3 id="clang">Clang</h3>
-<ul>
-<li>LLVM-based, modern, and modular.</li>
-<li>Very fast with better error messages.</li>
-<li>Often used with Apple platforms and modern C++ tooling.</li>
-</ul>
-<h3 id="msvc-microsoft-visual-c">MSVC (Microsoft Visual C++)</h3>
-<ul>
-<li>The default compiler in Visual Studio on Windows.</li>
-<li>Deep integration with the Windows ecosystem.</li>
-</ul>
-<h3 id="mingw-mingw-w64">MinGW / MinGW-w64</h3>
-<ul>
-<li>"Minimalist GNU for Windows": A Windows port of GCC.</li>
-<li>Allows you to use <code>g++</code> on Windows and build Windows executables.</li>
-<li>Great for cross-platform development or when avoiding MSVC.</li>
-</ul>
-<h3 id="key-differences-mingw-vs-msvc">Key Differences (MinGW vs MSVC):</h3>
-<ul>
-<li><strong>MSVC</strong>: Tightly coupled with Visual Studio IDE, uses Microsoft's C++ runtime, and generates PE files with native Windows linkage.</li>
-<li><strong>MinGW</strong>: Uses GCC toolchain, can produce smaller binaries, and follows more POSIX-like behavior.</li>
-<li><strong>Use Case</strong>: MSVC for deep Windows integration (e.g., DirectX, UWP). MinGW for portable or cross-compiled apps.</li>
-</ul>
-<h2 id="4-useful-tools">4. Useful Tools</h2>
-<ul>
-<li><strong>GCC/g++</strong>: Common open-source compiler for Linux.</li>
-<li><strong>MSVC</strong>: Visual Studio's compiler for Windows.</li>
-<li><strong>Clang</strong>: Modern, fast, and modular compiler.</li>
-<li><strong>CMake</strong>: Cross-platform build system.</li>
-<li><strong>Valgrind, perf</strong>: Profiling and debugging tools for Linux.</li>
-<li><strong>GDB</strong>: GNU Debugger for C++.</li>
-</ul>
-<h2 id="5-summary-what-to-learn-and-why">5. Summary: What to Learn (and Why)</h2>
-<h3 id="focus-on">Focus On:</h3>
-<ul>
-<li>C++ compilation steps and how to build with <code>g++</code>, <code>clang</code>, or Visual Studio.</li>
-<li>How to use and understand build systems (Make, CMake, etc.).</li>
-<li>How to debug builds, fix linker errors, and use compiler flags.</li>
-<li>Tools for profiling and memory checking.</li>
-</ul>
-<h3 id="optional-but-beneficial">Optional but Beneficial:</h3>
-<ul>
-<li>Disassembling <code>.o</code> files for optimization.</li>
-<li>Intermediate compiler layers if you're into deep systems or engine development.</li>
-</ul>
-<p>Game developers do not need to master compiler internals, but understanding how your code is turned into a game-ready executable can give you a major edge in performance, debugging, and cross-platform development.</p>
+<p>Now, at least parent function of the function that contaminated <code>eip</code> is detectable. </p>
+<p>In 64 Bit Architecture, <code>rip</code> contamination would work quite similar. 
+However, 64 Bit Architecture has way more security features, and also 
+stack frame structure is not as intuitively clear as 32 Bit. </p>
+<h3 id="create-dump-file-dmp">Create Dump File <code>.DMP</code>.</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>.dump<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span>FileName
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>.dump<span class="w"> </span>/?
+</code></pre></div>
+<p>Or, Ctrl Shift ESC -&gt; Make Snapshot </p>
+<p>작업 관리자 / 세부 정보 / 프로세스 목록 / exe 우클릭 / 덤프 파일 만들기 </p>
+<p>Path </p>
+<p>DMP File Path location </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>C:\Users\user\AppData\Local\Temp\ProcessName.DMP
+</code></pre></div>
+<p>관리 전용 디버그 
+혼합 디버그 
+네이티브 전용 디버그 &lt;- Select This </p>
 
 
 
