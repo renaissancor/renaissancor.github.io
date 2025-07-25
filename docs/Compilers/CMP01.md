@@ -9,8 +9,6 @@ Comparison between `.vcxproj` and `CMakeLists.txt` to manage project
 CMakeLists.txt 
 
 
-
-
 프로젝트 설정 시 환경과 컴파일러 설정을 매우 자세히 기록할 필요가 있습니다. 
 특히 CMake를 이용해 대규모 프로젝트를 `msvc` 컴파일러 기반으로 디버깅할 경우 매우 중요합니다. 
 
@@ -78,7 +76,8 @@ Inline Function Expansion
 Microsoft Multi threading safe ANSI standard library 
 C/C++ -> Code Generation -> Runtime Library 
 
-- `/MDd` Multi-threaded Debug DLL (/MDd)
+- `/MDd` Multi-threaded Debug DLL (/MDd) 
+- `/MD` Multi-threaded Release DLL (/MD)
 
 ### Default Debuggable Release Mode for Server Programming 
 
@@ -89,4 +88,22 @@ C/C++ -> Code Generation -> Runtime Library
 - Inline Function Expansion `/Ob1` Only __inline, only `inline` declared functions are inlined  
 
 ### Debug Mode to catch 
+
+MSVC Warning C4715 : Not all return route returns value. 
+If intended to change this warning as error, setup 
+
+- `WX` Compiler Plag, set Every Message into ERROR 
+ 
+
+ Or, set some specific warning only as as Error like 
+
+ - `/we4715` 
+
+ Inside CMake, Compiler Setup is possible by 
+
+ ```cmake
+add_compile_options(/we4715)   # MSVC
+# or for all warnings as errors
+add_compile_options(/WX)
+ ``` 
 
