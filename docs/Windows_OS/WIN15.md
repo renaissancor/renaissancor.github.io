@@ -20,6 +20,77 @@ Complete check about thread pool
 
 
 
+## What is Work 
+
+Function pointer 
+
+WORK defined as function pointer 
+
+```cpp
+typedef void (*WORK) (void); 
+// In disassembly pointer value address in code section 
+
+typedef struct __WorkerThread 
+{
+    HANDLE hThread; 
+    DWORD idThread; 
+} WorkerThread; 
+
+
+struct __ThreadPool 
+{
+    WORK workList[WORK_MAX]; (Saving function pointers)
+
+    WorkerThread workerThreadList[THREAD_MAX]; 
+    HANDLE workerEventList[THREAD_MAX]; 
+
+    DWORD idxOfCurrentWork; 
+    DWORD idxOfLastAddedWork; 
+
+    DWORD threadIdx; 
+} gThreadPool; 
+``` 
+
+Save WORK, aka function pointer, in sequential order. 
+
+```
+    Thread<+
+            \
+|WORK|WORK|WORK|WORK|WORK|WORK|WORK|    |    |
+            |                         |
+     idxOfCurrentWork        idxOfLastAddedWork
+```
+
+Functions before idxOfCurrentWork are either completed or assigned in progress by Thread. 
+So, after idxOfCurrentWork, functions are registered but not executed yet. 
+
+When function is called, Thread waits by using 
+WaitForSingleObject looking at Event Kernel Object 
+so it gets automatically blocked. 
+
+Thread ststus if blocked, will not be scheduled by OS. 
+
+So when Thread is created, then let each thread blocked to wait for Event, 
+so that it sleeps while OS scheduler will not assign resources 
+This is status saved in Thread pool. 
+
+Work is function pointer. When WORK is registered, Thread pool might awake thread. 
+One or all or whatever ... waking only one thread per work would be efficient way. 
+
+In thread pool wake up thread from thread pool. 
+From non signaled to signaled.  
+
+Thread function how to get implemented? First WaitForSingleObject call 
+sleeping, when event signaled it gets ready. 
+Then that thread will get function pointer from WORK array and execute it. 
+
+When function by WORK access is over and returned get into loop again 
+Waiting for Single Object. 
+
+Thread that wait Event Object assigned to itself until it gets signaled, 
+when WinAPI Event gets out from WaitForSingleObject call function by 
+WORK function pointer then WaitForSingleObject then repeat ...  
+
 # Memory Hierarchy 
 
 Memory 
@@ -57,5 +128,8 @@ Register L1Cache L2Cache RAM SSD/HDD
 Mostly, it is generally over 90% probability to include data trying to find
 are inside L1 Cache or L2 Cache, Cache hit percentage is over 90%. 
 
-
 ## Virtual Memory 
+
+
+
+
