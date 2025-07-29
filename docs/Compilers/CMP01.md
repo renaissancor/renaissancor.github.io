@@ -107,3 +107,54 @@ add_compile_options(/we4715)   # MSVC
 add_compile_options(/WX)
  ``` 
 
+
+
+Release Mode 
+Turn off compiler optimizations for Release mode
+`inline` function expansion 
+
+- /Od : Disable optimizations
+- /Ob1 : Expand only specified `inline` functions
+- /Zi : Include debugging information
+- /DNDEBUG : Define `NDEBUG` for Release mode
+- /MD : Use multi-threaded DLL C runtime 
+
+
+
+목표 
+
+- 릴리즈 모드 기본 
+- 최적화 컴파일 끄기 
+- 디버그 모드 컴파일로 간헐적으로 에러 파악 
+
+vcxproj 기반 과거 설정 
+
+VS2022 > 속성 > C/C++ > 최적화 
+inline 함수 최적화 사용 / 사용 안 함(/Od) 등등 
+inline 함수 확장 여기서 
+_inline 만 확장 이러면 명시한 것만 inline 처리하도록 가능 __inline만 확장 (/Ob1) 
+
+최적화 컴파일러 끈 상황에서 inline 만 확장 
+C++ STL은 inline 처리가 이미 다 되어 있기 때문 
+
+설정 기본 
+
+- Release 모드에서  
+- 최적화 컴파일러 끄고 
+- inline 함수 확장 
+
+- 이걸 CMakeList.txt에 체계적으로 적용해 보기 
+
+## 공통 디버그/릴리즈 설정
+
+**컴파일러가 MSVC일 경우**
+
+if(MSVC)
+  - /Od : 최적화 비활성화
+  - /Ob1 : 명시된 inline만 확장
+  - /Zi : 디버깅 정보 포함
+  - /DNDEBUG : Release 모드 플래그
+  - /MD : 멀티스레드 DLL C 런타임 사용
+  set(CMAKE_CXX_FLAGS_RELEASE "/Od /Ob1 /Zi /DNDEBUG /MD")
+endif()
+
