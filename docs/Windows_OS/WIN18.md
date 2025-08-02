@@ -72,3 +72,31 @@ Internally recall system function
 Win Linux UNIX etc ... functions 
 ANSI functions only support common sharing part 
 Each OS System function should be used. 
+
+
+File based Basic functions 
+
+File Create 
+- `CreateFile` Generation Kernel Object, HANDLE file pointer is returned 
+- ReadFile  
+- WriteFile 
+- CloseHandle Termination like other Kernel Objects 
+- `GetFileTime` created, edited, accessed date, check info by HANDLE 
+- `GetFileAttributes` Read only, hide, store, check info by file name instead of HANDLE 
+- `GetFileInformationByHandle` get info OF both `GetFilelTime` and `GetFileAttributes`, get info by HANDLE 
+
+File pointer movement 
+
+32 Bit OS based 
+
+SetFilePointer(hFile, sizeof(TCHAR) * 4, NULL, FILE_BEGIN); 
+File Maximum Size : 4GB - 2 
+4GB - 1 ==== INVALID_SET_FILE_POINTER (0xFFFFFFFF) aka -1 
+
+64 Bit OS based 
+SetFilePointer(hFile, lDistanceLow, &lDistanceHigh, FILE_BEGIN); 
+lDistanceLow is low 4 bytes 
+4GB - 1 Check 
+dwPtrLow = SetFilePointer(...)
+if((dwPtrLow == INVALID_SET_FILE_POINTER) && (GetLastError() != NO_ERROR)) { // Real Error}
+
