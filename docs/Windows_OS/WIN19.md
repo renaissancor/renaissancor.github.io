@@ -103,3 +103,7 @@ return  |        Receive Data        |
 ```
 
 This is called as **Overlapped I/O**. I/O calculation might be literally overlapped multiple times. 
+
+## Completion Routine Based Extended I/O 
+
+
