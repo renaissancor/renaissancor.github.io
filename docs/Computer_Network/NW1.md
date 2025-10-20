@@ -1,12 +1,11 @@
 # Computer Networks 
 
-How to Study Computer Networks 
+127.0.0.1 Loopback Address 
 
-Make Windows Client and Windows Server? 
-Goal is to make a Mafia Game Client and Server without pretty GUI. 
+Single Host, several NIC card : USB Wifi etc 
+TCP Server Client 
+P2P is no Server Client, just P2P 
 
-```powershell
-wsl --install 
-```
-Automatically install ubuntu in default 
+Port Number is assigned to Process 
 
+Server Socket Connect 
