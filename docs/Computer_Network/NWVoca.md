@@ -15,7 +15,8 @@ ISAKMP Internet Security Association Key Management Protocol
 IP AH (Authentication Header)
 IP ESP (Encapsulation Security Payload) 
 
-
+ICMP Internet Control Message Protocol 
+PING Packet Internet Grouper 
 
 IPS Intrusion Prevention System : Inline 
 NIDS Network Intrusion Detection System : Out of Path  
