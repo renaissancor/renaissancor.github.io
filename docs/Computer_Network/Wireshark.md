@@ -3,7 +3,7 @@
 Chappell University 
 https://www.chappell-university.com/ 
 
-Download and Install 
+Download and Install Wireshark in Windows OS 
 
 Checkbox 
 
@@ -31,10 +31,10 @@ Session == 연결 Connection
 However in Wireshark it is called as Stream 
 1st discovered TCP session index is 0, not 1. 
 
-마우스 우클릭 > Colorize Conversation > TCP Session 
+Mouse Right Click > Colorize Conversation > TCP Session 
 Then only can get that TCP color 
 
-마우스 우클릭 > Follow > TCP Stream 
+Mouse Right Click > Follow > TCP Stream 
 Then assemble packet to make data stream combined 
 
 컬러링 적용 취소 / Ctrl Space 등등 
