@@ -1,0 +1,5928 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="C++ Blog and Study Notes">
+      
+      
+        <meta name="author" content="Renaissancor">
+      
+      
+        <link rel="canonical" href="https://renaissancor.github.io/Architecture/CA250917/">
+      
+      
+        <link rel="prev" href="../CA250915/">
+      
+      
+        <link rel="next" href="../CA250919/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Operator Overloading - Renaissancoriate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operator-overloading" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renaissancoriate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operator Overloading
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Renaissancoriate
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV | Jae Heung Park
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AR111111/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sample Template Title
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Path Finding Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Sort Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bucket Sort
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash Table Hashing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graph Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/BOJ12850/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adjacent Matrix Multiplication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/CCW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CCW Counter Clockwise Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/FloydWarshall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Floyd-Warshall Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/UnionFind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Union Find Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    HKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            HKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Divide and Conquer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tower of Hanoi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Divide-and-Conquer Approach
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Master Theorem, Fibonacci Example
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fibonacci Numbers &amp; Matrix Exponentiation Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Maximum Subarray Problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exercises Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HKUL1P8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUPSET1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HKUPSET1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKU_Math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HKU Math
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250709/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assembly Debugging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250711/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process Memory Layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250714/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operator Priority
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250716/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Disassembly of Switch case, pre post fix and bit mask.
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250718/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Call, Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250721/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Struct Parameter and Random Number
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250723/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stack Local Variable Contamination
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250725/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Debugging Process of Base Pointer or Instruction Pointer Contamination
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250728/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Switching, Stack Frames, and Struct Alignment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250730/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Time Measurement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250801/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250804/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cache Memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250806/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPU Cache Memory Simulator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250811/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash Function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250812/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. 비동기 I/O와 Overlapped I/O
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250813/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. 메모리 관리: 힙(Heap)과 페이지(Page)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250818/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. C 런타임 라이브러리와 실행 파일
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250820/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. DLL (Dynamic-Link Library)과 링크 방식
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250822/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. 데드락 (Deadlock)과 동기화
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250825/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CA250825
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250827/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CA250827
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250829/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CA250829
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250908/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C++ params, inline, OOP, etc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250910/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class this pointer and class Member function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250912/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CA250912
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250915/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template, Try Catch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Operator Overloading
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operator Overloading
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#impossible-operator-to-overload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impossible operator to overload
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overload-only-for-member-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overload only for member function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expression-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expression new
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placement-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      Placement new
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-leak-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Leak Detector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-leak-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Leak Track
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Leak Track">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      메모리 누수 확인 및 추적 기법
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="메모리 누수 확인 및 추적 기법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-new-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. new, delete 연산자 오버로딩
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 단계적 추적
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newdelete-mallocfree" class="md-nav__link">
+    <span class="md-ellipsis">
+      new/delete와 malloc/free의 차이 🔄
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250919/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    operator new overload, header, class inheritance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250922/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAII template try catch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA250924/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CA250924
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_31" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_31" id="__nav_4_31_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Exam
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_31_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_31">
+            <span class="md-nav__icon md-icon"></span>
+            Exam
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    핵심 요약: 어셈블리 및 메모리 구조
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    메모리 관리 및 성능 최적화
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    15
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    16
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    17
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    18
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    핵심 요약: 컴파일러, 스택, 디버깅
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    핵심 요약: 운영체제, 컴파일러 및 어셈블리
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    핵심 요약: 프로세스, 호출 규약, 그리고 코드 최적화
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. 함수 호출과 반환 값
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. 쓰레드 개념의 재정립: 커널 vs. 유저 레벨
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. 메모리 실행 속성 및 컨텍스트 스위칭
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/e1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/e10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/e2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/e3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/e4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/e5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/e6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/e7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/e8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/e9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    E9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam/r1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    리뷰
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_32" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_32" id="__nav_4_32_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ko
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_32_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_32">
+            <span class="md-nav__icon md-icon"></span>
+            Ko
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/CA250711/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process Memory Layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    C C++ Basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            C C++ Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C++ Data Types and Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators and Precedence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Flow in C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250310/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bitwise Operators &amp; Preprocessor Macros
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250311/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local Variables, Arrays, &amp; Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structs and Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250313/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Function Mechanics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250317/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250318/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Global and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250319/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pointer Basics and Function Overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250320/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constexpr, Const, Volatile, and Pointer Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250321/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C Memory Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250324/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Const Pointers and Type-Punning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250325/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom String Utilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250326/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Layout and Static Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250327/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Memory Allocation and Heap Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250328/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linked List and Dynamic Array
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250331/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class vs Struct, Encapsulation, and Const-Correctness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function &amp; Operator Overloading, Object Lifetime, and Const Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Namespaces, Constructors, and Copy Mechanics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250423/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inheritance, Polymorphism, Virtual Functions, Overriding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250424/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Virtual Function Override, Static and const
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C_C%2B%2B_Basics/AR250425/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Singleton Design Pattern
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Compilers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Compilers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/CMP01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compiler Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/CMP02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compiler Knowledge for Game Developers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Network
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Network
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0503/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Macroscopic View of Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0504/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microscopic View of Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0724/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Physical Layer &amp; Data Link Layer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NWL2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCP/IP Model Layer 1 Network Access (네트워크 엑세스)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NWVoca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NWVoca
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/TCPIP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCPIP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/TCPIP1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Prgramming and Socket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/Wireshark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wireshark Install Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Data Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Array, STL Vector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250407/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Memory Management and Template Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250408/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STL Vector and Iterator Behavior
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250409/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STL Vector vs List &amp; Custom Iterator Logic (with CArray)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250410/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Doubly Linked List and Iterator Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250411/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notes on Iterators and Linked List Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250414/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linked List: Reverse Function &amp; Notes Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250415/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tree Algorithms and Traversals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250416/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search Tree: Study Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250417/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search Tree Iterator and Enum in C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250421/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search Tree Erase Logic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/AR250422/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inheritance and Object Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/STL00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STL container size
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482FA24
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482FA24
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482HW
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482HW
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment III
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment IV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment V
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment VIII
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482LAB
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482LAB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 09
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/DeveloperGuide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 2 LemonDB Multi Threading Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/MultiThreading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-threading Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Improvements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Road Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ECE482P3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            ECE482P3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Risk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling Risk Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 3 Lottery Scheduling RoadMap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Game Engine
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Game Engine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250426/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Windows API Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250429/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Message Loops and Engine Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250430/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WinAPI Actor Architecture and Rendering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250501/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Level Management and Resource Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250507/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gaem Engine Delta Time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250508/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resolution and Device Contexts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250509/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250509
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250512/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Texture Loading and TransparentBlt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250513/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250513
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250515/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250515
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250518/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250518
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250519/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250519
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250521/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250521
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250527/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250527
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game_Engine/AR250604/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AR250604
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Windows OS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Windows OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/IOCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overlapped I/O
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WIN03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create &amp; Terminate Process
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kernel Object and HANDLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IPC Inter Process Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inter Process Communication, HANDLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process Scheduling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function &amp; Calling Convention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Process VS Thread
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thread Generation and Termination
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thread Synchronization by Memory Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thread Synchronization by sequence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thread Pool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Basic IO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Asynchronous I/O
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Virtual Memory, Heap, MMF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/WIN250709/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    프로세스의 생성과 소멸
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_OS/Win23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Asynchronous I/O
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#impossible-operator-to-overload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impossible operator to overload
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overload-only-for-member-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overload only for member function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expression-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expression new
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placement-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      Placement new
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-leak-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Leak Detector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-leak-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Leak Track
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Leak Track">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      메모리 누수 확인 및 추적 기법
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="메모리 누수 확인 및 추적 기법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-new-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. new, delete 연산자 오버로딩
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 단계적 추적
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newdelete-mallocfree" class="md-nav__link">
+    <span class="md-ellipsis">
+      new/delete와 malloc/free의 차이 🔄
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="operator-overloading">Operator Overloading</h1>
+<h2 id="impossible-operator-to-overload">Impossible operator to overload</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>Member Access</td>
+</tr>
+<tr>
+<td><code>.*</code></td>
+<td>Member Pointer Access</td>
+</tr>
+<tr>
+<td><code>::</code></td>
+<td>Scope Resolution</td>
+</tr>
+<tr>
+<td><code>?:</code></td>
+<td>Ternary Conditional</td>
+</tr>
+<tr>
+<td><code>sizeof</code></td>
+<td>Object / Type Size</td>
+</tr>
+<tr>
+<td><code>typeid</code></td>
+<td>Runtime Type Information</td>
+</tr>
+<tr>
+<td><code>static_cast</code></td>
+<td>Compile-time cast</td>
+</tr>
+<tr>
+<td><code>dynamic_cast</code></td>
+<td>Runtime cast (RTTI)</td>
+</tr>
+<tr>
+<td><code>reinterpret_cast</code></td>
+<td>Bitwise cast</td>
+</tr>
+<tr>
+<td><code>const_cast</code></td>
+<td>Remove const/volatile</td>
+</tr>
+</tbody>
+</table>
+<h2 id="overload-only-for-member-function">Overload only for member function</h2>
+<p>Few functions MUST be overloaded as class member functions. 
+Because their operators are specific classes dependent. </p>
+<p><code>=</code>      Assignment Operator 
+<code>[]</code>     Array Access Operator 
+<code>()</code>     Function Call Operator 
+<code>-&gt;</code>     Arrow Operator 
+<code>new</code>    Class Generation &amp; Memory Allocation 
+<code>delete</code> Class Termination &amp; Memory Free </p>
+<h2 id="expression-new">Expression <code>new</code></h2>
+<p>When using the <code>new</code> expression, it is composed of two steps:
+1. Memory allocation using <code>operator new(sizeof(T))</code>
+2. Constructor call on the allocated memory</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">T</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">T</span><span class="p">(</span><span class="n">args</span><span class="p">...);</span>
+</code></pre></div>
+<p>This is equivalent to the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">mem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span><span class="w"> </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">T</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">mem</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">T</span><span class="o">::</span><span class="n">T</span><span class="p">(</span><span class="n">args</span><span class="p">...);</span><span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">operator</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span><span class="w"> </span><span class="c1">// ptr = malloc(...); </span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">Entity</span><span class="p">();</span><span class="w"> </span><span class="c1">// Class Generator Function</span>
+</code></pre></div>
+<p>Suppose you want to reuse the same memory pool:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Entity</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">Entity</span><span class="w"> </span><span class="o">*</span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Entity</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">delete</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Entity</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">delete</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span><span class="w"> </span>
+</code></pre></div>
+<p>This code repeatedly allocates and frees memory,
+causing unnecessary overhead.</p>
+<h2 id="placement-new">Placement <code>new</code></h2>
+<p>Instead, you can manually manage the memory
+and reuse the same address by calling the destructor
+and constructor directly.
+This is called placement new.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Entity</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Entity</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Entity</span><span class="p">));</span><span class="w"> </span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">new</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="n">Entity</span><span class="p">();</span><span class="w"> </span><span class="c1">// placement new, call Function Generator </span>
+</code></pre></div>
+<p>By using placement new,
+you allocate and free memory only once,
+while reusing the same memory block.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Entity</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Entity</span><span class="w"> </span><span class="o">*</span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Entity</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Entity</span><span class="p">));</span><span class="w"> </span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">new</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="w"> </span><span class="n">Entity</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">p1</span><span class="o">-&gt;~</span><span class="n">Entity</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">new</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="w"> </span><span class="n">Entity</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">p1</span><span class="o">-&gt;~</span><span class="n">Entity</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">operator</span><span class="w"> </span><span class="k">delete</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div>
+<p>In game server contents programming, this might be implemented as following. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">ActorPool</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">capacity</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="n">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Actor</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">operator</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Actor</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">capacity</span><span class="p">));</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="o">~</span><span class="n">ActorPool</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Actor</span><span class="o">*</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">activeActors</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="n">actor</span><span class="o">-&gt;~</span><span class="n">Actor</span><span class="p">();</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">operator</span><span class="w"> </span><span class="k">delete</span><span class="p">(</span><span class="n">pool</span><span class="p">);</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
+</code></pre></div>
+<p>In experssion <code>new</code>, the <code>operator new(size_t)</code> works as calling <code>malloc(size_t)</code> internally, and can be overwritten! 
+New operator overloading is possible! </p>
+<p>In expresssion <code>new</code>, the placement <code>new(ptr)</code> calls generator function by using that pointer with NO heap memory allocation 
+Placement <code>new</code> does not allocate memory, but only call function to allocated space. </p>
+<p>Recursion problem when <code>operator new override</code>, if the <code>new</code> operator is called inside the generator function of the class. 
+So, usage of low level memory allocator like <code>malloc()</code> is necessary. </p>
+<p>Memory pooling is basically allocating memory first and reusing it for a while. 
+Used previously a lot in the past, nowadays still sometimes but not as much because of hardware performance increase. </p>
+<h2 id="memory-leak-detector">Memory Leak Detector</h2>
+<p>use macro function to overload <code>operator new(size_t)</code> and <code>operator delete</code> which basically do <code>malloc(size_t)</code> and <code>free</code> 
+to record memory leak efficiently. </p>
+<h2 id="memory-leak-track">Memory Leak Track</h2>
+<h3 id="_1">메모리 누수 확인 및 추적 기법</h3>
+<p>메모리 누수는 프로그램의 성능을 저하시키고 불안정하게 만드는 주요 원인입니다. 누수를 효과적으로 추적하기 위해서는 다음의 방법을 사용할 수 있습니다.</p>
+<h4 id="1-new-delete">1. <code>new</code>, <code>delete</code> 연산자 오버로딩</h4>
+<p>전역적으로 <code>operator new</code>와 <code>operator delete</code>를 오버로딩하여 모든 메모리 할당/해제 요청을 가로챕니다.</p>
+<ul>
+<li><strong><code>#define new</code> 매크로</strong>:<ul>
+<li><code>#define new new(__FILE__, __LINE__)</code>와 같이 매크로를 정의하여 <code>new</code>가 호출될 때 <strong><code>__FILE__</code></strong> (파일 이름)과 <strong><code>__LINE__</code></strong> (라인 번호) 매크로를 자동으로 인자로 전달합니다.</li>
+<li>이 매크로는 <strong>컴파일 타임에 치환</strong>되므로, 메모리 할당이 발생한 정확한 위치를 기록할 수 있습니다.</li>
+</ul>
+</li>
+<li><strong>할당 정보 저장</strong>:<ul>
+<li><code>operator new</code> 내부에서 메모리 주소, 크기, 파일 이름, 라인 번호 등의 정보를 <code>std::map</code>이나 리스트와 같은 자료구조에 저장합니다.</li>
+<li><code>uintptr_t</code>와 같은 타입은 포인터 값을 정수형으로 안전하게 저장할 수 있어 유용합니다.</li>
+</ul>
+</li>
+<li><strong>누수 확인</strong>:<ul>
+<li><code>delete</code> 연산자가 호출될 때, 저장된 할당 정보를 찾아서 제거합니다.</li>
+<li>프로그램이 종료될 때, 이 자료구조에 남아있는 모든 정보는 <strong>메모리 누수</strong>로 간주됩니다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="2">2. 단계적 추적</h4>
+<p>모든 메모리 할당을 로깅하는 것은 성능 저하를 초래할 수 있습니다. 따라서 다음과 같이 단계적으로 추적하는 것이 효율적입니다.</p>
+<ol>
+<li><strong>전반적인 증상 확인</strong>: 프로그램의 실행 시간 동안 <strong>메모리 사용량의 지속적인 증가</strong>를 관찰합니다.</li>
+<li><strong>타겟 선정</strong>:<ul>
+<li><code>new/delete</code> 카운팅 시스템을 도입하여 의심되는 특정 객체(<code>Player</code>, <code>Monster</code> 등)의 생성/소멸 횟수를 비교합니다.</li>
+<li>만약 생성 횟수와 소멸 횟수가 일치하지 않으면 해당 객체가 누수의 원인일 가능성이 높습니다.</li>
+</ul>
+</li>
+<li><strong>정확한 위치 추적</strong>:<ul>
+<li><code>#define new</code> 매크로와 로깅 시스템을 활용하여 누수가 발생한 객체의 타입, 할당 시점, 그리고 코드 라인까지 찾아냅니다.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="newdelete-mallocfree"><code>new/delete</code>와 <code>malloc/free</code>의 차이 🔄</h3>
+<p><code>new/delete</code>와 <code>malloc/free</code>는 모두 동적으로 메모리를 할당하고 해제하는 기능을 하지만, 다음과 같은 중요한 차이점이 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">특징</th>
+<th style="text-align: left;"><code>new</code> / <code>delete</code></th>
+<th style="text-align: left;"><code>malloc</code> / <code>free</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>타입 안전성</strong></td>
+<td style="text-align: left;">타입 정보를 기반으로 작동 (타입이 정해짐)</td>
+<td style="text-align: left;"><code>void*</code>를 반환하여 명시적인 타입 캐스팅 필요</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>생성자/소멸자</strong></td>
+<td style="text-align: left;">객체 생성 시 <strong>생성자 호출</strong>, 해제 시 <strong>소멸자 호출</strong></td>
+<td style="text-align: left;">생성자/소멸자 호출 기능이 없음</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>오버로딩</strong></td>
+<td style="text-align: left;">연산자 오버로딩을 통해 재정의 가능</td>
+<td style="text-align: left;">함수 재정의가 불가능</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>예외 처리</strong></td>
+<td style="text-align: left;">메모리 할당 실패 시 <code>std::bad_alloc</code> 예외 발생</td>
+<td style="text-align: left;">메모리 할당 실패 시 <code>nullptr</code> 반환</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>언어</strong></td>
+<td style="text-align: left;">C++</td>
+<td style="text-align: left;">C</td>
+</tr>
+</tbody>
+</table>
+<p><code>new/delete</code>는 <strong>객체 지향적인 메모리 관리</strong>를 제공하는 반면, <code>malloc/free</code>는 <strong>순수한 메모리 관리</strong> 기능만을 수행합니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
