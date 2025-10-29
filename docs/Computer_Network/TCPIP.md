@@ -116,11 +116,3 @@ Loopback Interface is nearly IPC.
 This one will make NO_DELAY. Recommended for Game Client, 
 but not recommende for game server. 
 
-
-
-Data Structure 
-Algorithm Basics 
-Operating Systems 
-Computer Networks 
-Database Management 
-Algorithm Design 
