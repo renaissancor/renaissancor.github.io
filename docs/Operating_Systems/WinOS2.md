@@ -45,10 +45,15 @@ Windows manages execution priority through **IRQL**. Higher IRQL tasks can preem
 * Every thread has a **separate Kernel Stack** (typically 4KB~). (모든 쓰레드는 별도의 커널 스택을 가집니다.)
 * **Why per thread?** Since Context Switching can happen even while in Kernel Mode, each thread needs its own space to save its state. (커널 모드 상태에서도 문맥 교환이 일어날 수 있으므로, 각자의 상태를 저장할 독립된 공간이 필요합니다.)
 
----
-
-### **💡 Pro's Insight (전문가적 보충)**
+--- 
 
 * **TimeBeginPeriod(1):** Raising timer resolution makes `Sleep()` more accurate but increases Context Switching frequency, potentially lowering overall system throughput. (타이머 해상도를 높이면 정밀도는 올라가지만, 스케줄링이 너무 자주 발생해 전체 성능은 떨어질 수 있습니다.)
 * **Hyper-Threading:** It shares L1/L2 caches. If two threads on the same physical core fight for cache, it can cause **Stalls**. In high-performance servers, sometimes it's better to disable it or use **Core Affinity**. (하이퍼쓰레딩은 캐시를 공유하므로 경합이 발생하면 성능이 저하될 수 있습니다. 고성능 서버에서는 코어 선호도를 수동으로 관리하기도 합니다.)
 
+Windows XP, Vista OS 의 경우 Quantum을 상수로 두고, ISR / DPC 를 처리할 경우에도 일관적으로 
+스레드의 Quantum 을 상수로 1씩 차감했기 때문에 실제로는 스레드가 ISR / DPC 처리에 사용한 시간을 보상받지 못 
+했고, Windows 7 이후 OS 는 이제 Quantum 을 Timer Interrupt Count 대신 CPU Tick 기반으로 
+부여하고, ISR / DPC 의 시작이나 종료 시간을 레지스터에 저장한 후 Quantum 에 보충하는 식으로 해당 스레드의 
+부여받은 퀀텀 CPU Frequency 만큼 보상함. Timer Interrupt 는 이제 해당 스레드가 Quantum 틱을 모두 
+소진하였는지만 확인하고 소진 완료 시 Dispatcher 로 TCB 노드를 만든 후 레디 큐에 집어넣으면서 다른 TCB를 레디 
+큐에서 가져오는 방식으로 컨텍스트 스위칭을 진행함. 
