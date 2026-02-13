@@ -39,7 +39,7 @@ claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequen
 
 ## 3. MCP Server: GitHub
 
-Connects Claude to your repositories for PR management, issue tracking, and code search.
+Connects Claude to your repositories for PR management, issue tracking, and code search. 
 
 ### Step A: Generate a GitHub Token
 
@@ -57,7 +57,6 @@ Open your shell profile (e.g., `~/.zshrc` or `~/.bashrc`):
 
 ```bash
 code ~/.zshrc
-
 ```
 
 Add the following line (replace with your actual token):
@@ -78,7 +77,6 @@ source ~/.zshrc
 
 ```bash
 claude mcp add github -- npx -y @modelcontextprotocol/server-github
-
 ```
 
 ---
@@ -167,6 +165,3 @@ claude
 - **Timeout Errors:** Usually caused by Serena trying to open a browser. Ensure `web_dashboard: false` is set in `~/.serena/serena_config.yml`.
 - **Path Errors:** Ensure your `projects` in Serena are simple strings (e.g., `"/Users/name/Project"`) and not maps (no `name:` or `path:` keys).
 
----
-
-**Would you like me to help you create a one-click shell script to automate this entire setup on other machines?**
