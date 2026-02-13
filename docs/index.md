@@ -10,7 +10,7 @@ title: "CV | Jae Heung Park"
 
 ---
 
-## 🧭 Introduction  
+## Introduction  
 
 Dynamic & adaptable **software engineer** with a strong foundation in **C/C++** and **system-level programming**.  
 Over 1 year of experience in **web development**, focused on front-end integration with back-end and AI/ML modules.  
@@ -23,7 +23,7 @@ Passionate about leveraging innovative technologies to deliver efficient and sca
 
 ---
 
-## 🎓 Education  
+## Education  
 
 **Shanghai Jiao Tong University**  
 _Bachelor of Engineering (September 2018 – March 2025)_  
@@ -38,7 +38,7 @@ Pre-University Education
 
 ---
 
-## 🗃️ Programming Languages  
+## Programming Languages  
 
 ![C](https://img.shields.io/badge/-C-333333?style=flat&logo=c)
 ![C++](https://img.shields.io/badge/-C++-333333?style=flat&logo=cplusplus)
@@ -50,7 +50,7 @@ Pre-University Education
 
 ---
 
-## 🏗️ Frameworks  
+## Frameworks  
 
 ![React](https://img.shields.io/badge/-React-333333?style=flat&logo=react)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-333333?style=flat&logo=typescript)
@@ -59,7 +59,7 @@ Pre-University Education
 
 ---
 
-## 🤝 Collaboration & Documentation  
+## Collaboration & Documentation  
 
 ![Git](https://img.shields.io/badge/-Git-333333?style=flat&logo=git)
 ![GitHub](https://img.shields.io/badge/-GitHub-333333?style=flat&logo=github)
@@ -71,7 +71,7 @@ Pre-University Education
 
 ---
 
-## ⚙️ System & Network Programming  
+## System & Network Programming  
 
 - Proficient in **Windows System Programming**, focusing on **asynchronous I/O** models such as **IOCP** and **Overlapped I/O**.  
 - Experienced with **socket programming (TCP/UDP)** using **Winsock2** and **POSIX sockets**.  
@@ -80,7 +80,7 @@ Pre-University Education
 
 ---
 
-## 💼 Experience  
+## Experience  
 
 ### **NAVER Start Up Factory – DeepAuto AI**  
 _August 2023 – January 2024_  
@@ -101,11 +101,11 @@ _March 2021 – December 2021_
 
 ---
 
-## 🧩 Projects  
+## Projects  
 
 ### **AI Image Generator (GenAIOps)** — *Fall 2023* 
 
-- [🎥 YouTube Demo](https://www.youtube.com/watch?v=yq9ckGJPQOE) 
+- [YouTube Demo](https://www.youtube.com/watch?v=yq9ckGJPQOE) 
 
 **Tools:** Python, FastAPI, TypeScript, React, NextJS, Tailwind CSS, Shadcn UI, Relay  
 - Developed a web app for visualizing and optimizing machine learning models.  
@@ -117,7 +117,7 @@ _March 2021 – December 2021_
 
 ### **AI Model Optimization Statistics Viewer** — *Winter 2023*  
 
-- [🎥 YouTube Demo](https://www.youtube.com/watch?v=7fE3d_xOX0A) 
+- [YouTube Demo](https://www.youtube.com/watch?v=7fE3d_xOX0A) 
 
 **Tools:** Docker, TypeScript, React, NextJS, Redux, RTK Query, Radix UI, ECharts, ApexChart  
 - Developed a web application to display and optimize AI model performance metrics in real-time.  
@@ -129,7 +129,7 @@ _March 2021 – December 2021_
 
 ### **Big Data Million Song Project** — *Summer 2024*  
 
-- [💻 GitHub Repo](https://github.com/renaissancor/ECE472P1)
+- [GitHub Repo](https://github.com/renaissancor/ECE472P1)
 
 **Tools:** Hadoop, Spark, Python, Drill, Docker, NumPy, Pandas  
 - Processed and analyzed the Million Song Dataset to enhance recommendation systems.  
@@ -141,7 +141,7 @@ _March 2021 – December 2021_
 
 ### **Web App & Database Design and Development** — *Summer 2024*  
 
-- [💻 GitHub Repo](https://github.com/renaissancor/ECE450SU24)
+- [GitHub Repo](https://github.com/renaissancor/ECE450SU24)
 
 **Tools:** MySQL, OAuth, React, Node.js, NextJS, Shadcn UI, Tanstack Query  
 - Designed and developed a scalable web application for capstone project tracking.  
@@ -152,7 +152,7 @@ _March 2021 – December 2021_
 
 ### **Multi-Threading Database** — *Fall 2024*  
 
-- [💻 GitHub Repo](https://github.com/renaissancor/ECE482P2)
+- [GitHub Repo](https://github.com/renaissancor/ECE482P2)
 
 **Tools:** C++, PThreads, SQLite, Linux, Shell Script, LLDB  
 - Developed a highly optimized multi-threaded database for 64-thread servers.  
@@ -163,7 +163,7 @@ _March 2021 – December 2021_
 
 ### **Lottery Scheduling (Linux Kernel)** — *Winter 2024*  
 
-- [💻 GitHub Repo](https://github.com/renaissancor/ECE482P3)
+- [GitHub Repo](https://github.com/renaissancor/ECE482P3)
 
 **Tools:** C, C++, eBPF, Linux Kernel, Shell Script, BPF Maps  
 - Implemented a lottery scheduling algorithm in the Linux kernel using eBPF.  
