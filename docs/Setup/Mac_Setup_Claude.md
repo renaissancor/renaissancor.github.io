@@ -1,4 +1,4 @@
-# Ultimate Claude Terminal Setup Guide (macOS)
+# Claude Code Setup Guide (macOS)
 
 This guide configures a high-performance **Claude Code** terminal environment on macOS with GitHub integration, Sequential Thinking, and the Serena agent.
 
@@ -13,10 +13,19 @@ This guide configures a high-performance **Claude Code** terminal environment on
 # Add Homebrew to PATH (run the two lines the installer prints, then:)
 source ~/.zprofile
 
-# Install core tools
-brew install claude uv node
+# Install core formulae (already done if you followed MacBook_Dev_Setup.md)
+brew install uv node
 
-# Initialize Claude (follow the login prompts)
+# Install the Claude desktop app
+brew install --cask claude
+```
+
+> **Claude desktop app vs Claude Code CLI**
+> - `brew install --cask claude` installs **Claude.app** — the GUI desktop application.
+> - The **Claude Code CLI** (`claude` terminal command) is a separate native binary. Install it via the official Claude Code installer, then verify with `claude --version`.
+
+```bash
+# Initialize Claude Code CLI (follow the login prompts)
 claude
 ```
 
