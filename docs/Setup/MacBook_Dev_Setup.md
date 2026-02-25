@@ -1,6 +1,6 @@
-# MacBook Developer Setup Guide (From Zero)
+# MacBook Developer Setup Guide (2026, M4)
 
-This guide sets up a fresh MacBook for software development, written for engineers coming from a Windows/WSL background.
+This guide sets up a fresh MacBook Pro M4 for software development, written for engineers coming from a Windows/WSL background.
 
 ---
 
@@ -51,7 +51,7 @@ git --version
 
 ## 4. Homebrew
 
-Homebrew is the macOS equivalent of `apt` on Linux/WSL.
+Homebrew is the macOS package manager for both GUI apps (casks) and CLI tools (formulae).
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -68,29 +68,92 @@ brew --version
 
 ---
 
-## 5. Terminal Upgrade
+## 5. Apps via Homebrew Cask
 
-macOS uses **zsh** by default. Install Oh My Zsh for a better shell experience.
+Install all GUI applications in one command:
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+brew install --cask \
+  arc \
+  google-chrome \
+  firefox \
+  cursor \
+  claude \
+  docker-desktop \
+  jetbrains-toolbox \
+  warp \
+  iterm2
 ```
 
-This adds Git branch display in your prompt, tab completion, and aliases like `gst` (`git status`) and `gco` (`git checkout`).
+| App | Purpose |
+|---|---|
+| **Arc** | Primary browser |
+| **Google Chrome** | Secondary browser / DevTools |
+| **Firefox** | Cross-browser testing |
+| **Cursor** | AI-powered code editor |
+| **Claude** | Claude desktop app |
+| **Docker Desktop** | Container runtime |
+| **JetBrains Toolbox** | Manage IntelliJ IDEs |
+| **Warp** | Modern GPU-accelerated terminal |
+| **iTerm2** | Terminal with deep shell integration |
+
+---
+
+## 6. Core Formulae
 
 ```bash
-# (Optional) Install iTerm2 — a better terminal app than Terminal.app
-brew install --cask iterm2
+brew install uv pixi node
+```
+
+| Tool | Purpose |
+|---|---|
+| **uv** | Fast Python package and project manager |
+| **pixi** | Conda-based cross-language environment manager |
+| **node** | JavaScript runtime |
+
+```bash
+# Verify
+uv --version      # uv 0.x.x
+pixi --version    # pixi 0.x.x
+node --version    # v22.x.x
 ```
 
 ---
 
-## 6. Git Configuration
+## 7. Claude Code CLI
+
+Follow the dedicated guide for Claude Code and MCP servers:
+
+→ **[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)**
+
+Covers: installing the Claude Code native binary, and adding Sequential Thinking, GitHub, and Serena MCP servers.
+
+---
+
+## 8. iTerm2 Finalization
+
+For full iTerm2 configuration (shell integration, status bar, hotkey window, fonts, shortcuts), see the dedicated guide:
+
+→ **[Mac_Setup_iTerm2.md](./Mac_Setup_iTerm2.md)**
+
+The two steps to do immediately after installing:
+
+```bash
+# 1. Install Shell Integration (or use iTerm2 menu → Install Shell Integration)
+curl -L https://iterm2.com/shell_integration/install_shell_integration.sh | bash
+source ~/.zshrc
+
+# 2. Suppress the login banner
+touch ~/.hushlogin
+```
+
+---
+
+## 9. Git Configuration
 
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
-git config --global core.editor "code --wait"
 git config --global init.defaultBranch main
 ```
 
@@ -115,92 +178,45 @@ ssh -T git@github.com
 
 ---
 
-## 7. Core Developer Tools
+## 10. Python Environments
+
+> Never use the system Python (`/usr/bin/python3`). Manage environments per project.
+
+### uv — Python projects
 
 ```bash
-brew install node python uv gh
-```
-
-```bash
-# Verify
-node --version    # v22.x.x
-python3 --version # Python 3.x.x
-uv --version      # uv 0.x.x
-gh --version      # gh version 2.x.x
-```
-
-```bash
-# Authenticate GitHub CLI
-gh auth login
-# Choose: GitHub.com → SSH → Login with a web browser
-```
-
----
-
-## 8. Node Version Management
-
-> Different projects often require different Node versions. Use `nvm` to switch between them.
-
-```bash
-brew install nvm
-
-# Add to ~/.zshrc
-echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc
-echo '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"' >> ~/.zshrc
-source ~/.zshrc
-
-# Install LTS version
-nvm install --lts
-nvm use --lts
-```
-
----
-
-## 9. Python Environment
-
-> Never use the system Python (`/usr/bin/python3`). Always use virtual environments per project.
-
-### Option A: venv
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-### Option B: uv (faster)
-
-```bash
+# Create a virtual environment
 uv venv
 source .venv/bin/activate
+
+# Install packages
+uv pip install <package>
+```
+
+### pixi — multi-language / conda-based projects
+
+```bash
+# Initialize a project
+pixi init my-project
+cd my-project
+
+# Add packages from conda-forge or PyPI
+pixi add python numpy pandas
+
+# Run inside the managed environment
+pixi run python script.py
 ```
 
 ---
 
-## 10. VS Code
+## 11. Node
+
+Node is installed as a standalone formula. For projects requiring a specific version, declare it in `package.json` `engines` or a `.nvmrc` and let your editor enforce it.
 
 ```bash
-brew install --cask visual-studio-code
+node --version    # v22.x.x
+npm --version     # 10.x.x
 ```
-
-Enable the `code` terminal command: open VS Code → `Cmd+Shift+P` → **Shell Command: Install 'code' command in PATH**
-
-```bash
-# Verify
-code --version
-
-# Open any project from terminal
-code ~/Projects/my-project
-```
-
----
-
-## 11. Claude Code Setup
-
-Follow the dedicated guide for Claude Code and MCP servers:
-
-→ **[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)**
-
-Covers: installing `claude`, and adding the Sequential Thinking, GitHub, and Serena MCP servers.
 
 ---
 
@@ -222,9 +238,8 @@ Covers: installing `claude`, and adding the Sequential Thinking, GitHub, and Ser
 - [ ] Password changed, FileVault enabled
 - [ ] Xcode Command Line Tools installed (`git --version` works)
 - [ ] Homebrew installed and on PATH (`brew --version` works)
-- [ ] Oh My Zsh installed
-- [ ] Git configured with name, email, and SSH key added to GitHub
-- [ ] `node`, `python`, `uv`, `gh` installed
-- [ ] GitHub CLI authenticated (`gh auth status`)
-- [ ] VS Code installed with `code` command in PATH
-- [ ] Claude Code configured (see `Mac_Setup_Claude.md`)
+- [ ] All casks installed (Arc, Chrome, Firefox, Cursor, Claude, Docker, JetBrains Toolbox, Warp, iTerm2)
+- [ ] Core formulae installed (`uv --version`, `pixi --version`, `node --version` all work)
+- [ ] Claude Code CLI configured (see `Mac_Setup_Claude.md`)
+- [ ] iTerm2 Shell Integration installed, `.hushlogin` created
+- [ ] Git configured with name, email, SSH key added to GitHub

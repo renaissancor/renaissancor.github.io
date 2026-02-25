@@ -61,6 +61,7 @@ nav:
   - Setup:
     - Setup/MacBook_Dev_Setup.md
     - Setup/Mac_Setup_Claude.md
+    - Setup/Mac_Setup_iTerm2.md
     - Setup/WSL_Setup_Claude.md
     - Setup/Windows_Dev_Setup.md
     - Setup/Linux_Dev_Setup.md
