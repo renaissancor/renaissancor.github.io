@@ -16,13 +16,16 @@ source ~/.zprofile
 # Install core formulae (already done if you followed MacBook_Dev_Setup.md)
 brew install uv node
 
-# Install the Claude desktop app
+# Install the Claude desktop app (GUI)
 brew install --cask claude
+
+# Install Claude Code CLI (separate native binary, auto-updates)
+curl -fsSL https://claude.ai/install.sh | bash
 ```
 
 > **Claude desktop app vs Claude Code CLI**
 > - `brew install --cask claude` installs **Claude.app** — the GUI desktop application.
-> - The **Claude Code CLI** (`claude` terminal command) is a separate native binary. Install it via the official Claude Code installer, then verify with `claude --version`.
+> - The **Claude Code CLI** (`claude` terminal command) is a separate native binary installed via the curl script above. Verify with `claude --version`.
 
 ```bash
 # Initialize Claude Code CLI (follow the login prompts)
@@ -37,9 +40,9 @@ Select your login method when prompted:
 
 ---
 
-## 2. MCP Server: Sequential Thinking
+## 2. MCP Server: Sequential Thinking (Optional)
 
-Enables Claude to break down complex problems into step-by-step reasoning.
+> **Note:** Claude's built-in extended thinking (`/think` during chat) covers most reasoning use cases natively. Add this server only if you want explicit step-by-step tool calls in your workflow.
 
 ```bash
 claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking
@@ -49,30 +52,56 @@ claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequen
 
 ## 3. MCP Server: GitHub
 
-Connects Claude to your repositories for PR management, issue tracking, and code search.
+Connects Claude to your repositories for PR management, issue tracking, and code search. Uses GitHub's official hosted endpoint with OAuth — no personal access token required.
 
-### Step A: Generate a GitHub Token
-
-1. Go to [GitHub Personal Access Tokens (Classic)](https://github.com/settings/tokens).
-2. **Required Scopes:** `repo`, `read:org`, `user:email`, `workflow` (optional)
-
-### Step B: Configure Environment
+### Step A: Add to Claude
 
 ```bash
-# Add token to shell profile
-echo 'export GITHUB_PERSONAL_ACCESS_TOKEN="ghp_your_token_here"' >> ~/.zshrc
-source ~/.zshrc
+claude mcp add --transport http github https://api.githubcopilot.com/mcp/
 ```
 
-### Step C: Add to Claude
+### Step B: Authenticate
 
 ```bash
-claude mcp add github -- npx -y @modelcontextprotocol/server-github
+# Inside Claude Code, open the MCP menu and follow the browser login flow
+claude
+❯ /mcp
+```
+
+Select **github** → **Authenticate** and complete the GitHub OAuth flow in your browser.
+
+---
+
+## 4. MCP Server: Sentry
+
+Connects Claude to your error monitoring — search issues, inspect stack traces, and debug production errors without leaving the terminal.
+
+### Step A: Add to Claude
+
+```bash
+claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
+```
+
+### Step B: Authenticate
+
+```bash
+claude
+❯ /mcp
+```
+
+Select **sentry** → **Authenticate** and complete the Sentry OAuth flow.
+
+### Usage examples
+
+```
+> What are the top 5 errors in production this week?
+> Show me the full stack trace for issue PROJ-1234
+> Which errors spiked after the last deploy?
 ```
 
 ---
 
-## 4. MCP Server: Serena
+## 5. MCP Server: Serena
 
 Serena is a professional coding agent. The web dashboard must be disabled in terminal environments to prevent timeouts.
 
@@ -108,7 +137,72 @@ claude mcp add serena -- /Users/$(whoami)/.local/bin/serena start-mcp-server
 
 ---
 
-## 5. Expected `~/.claude.json`
+## 6. Project Memory (CLAUDE.md)
+
+`CLAUDE.md` is a file Claude reads automatically at the start of every session in your project. Use it to encode project-specific conventions, commands, and gotchas so Claude never needs to be told twice.
+
+### Initialize
+
+```bash
+# Inside your project directory, inside Claude Code:
+❯ /init
+```
+
+This generates a starter `CLAUDE.md` based on your codebase. Edit it to reflect your actual workflow:
+
+```markdown
+# Build & Test
+- Build: `npm run build`
+- Test single: `npm test -- --testNamePattern="pattern"`
+- Lint (auto-fix): `npm run lint:fix`
+
+# Conventions
+- Use 2-space indentation
+- Prefer `const` over `let`; avoid `var`
+- Commit format: `type(scope): description` (e.g. `feat(auth): add OAuth`)
+
+# Gotchas
+- DB migrations must be idempotent
+- `utils/legacy.ts` is deprecated — use `utils/new.ts`
+- Requires `REDIS_URL` and `API_KEY` env vars
+```
+
+> Commit `CLAUDE.md` to git — it applies to everyone on the team. Keep it concise; delete anything Claude can already infer from the code.
+
+---
+
+## 7. Permissions & Settings
+
+Claude Code respects a `settings.json` file that controls which commands are allowed or denied, preventing accidental destructive operations.
+
+```bash
+mkdir -p ~/.claude
+```
+
+Create or edit `~/.claude/settings.json`:
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(git *)",
+      "Bash(docker *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Read(.env*)"
+    ]
+  }
+}
+```
+
+> For team-wide defaults, create `.claude/settings.json` inside your project repo and commit it. User-level `~/.claude/settings.json` takes precedence.
+
+---
+
+## 8. Expected `~/.claude.json`
 
 Your final configuration should look like:
 
@@ -120,11 +214,12 @@ Your final configuration should look like:
       "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
     },
     "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_your_token_here"
-      }
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "sentry": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp"
     },
     "serena": {
       "command": "/Users/your_username/.local/bin/serena",
@@ -136,16 +231,18 @@ Your final configuration should look like:
 
 ---
 
-## 6. Verification
+## 9. Verification
 
 ```bash
 claude
-❯ /mcp list
+❯ /mcp
 ```
 
 All status indicators should be **green**.
 
-### Troubleshooting
+---
+
+## Troubleshooting
 
 | Issue | Solution |
 |---|---|
@@ -153,3 +250,5 @@ All status indicators should be **green**.
 | **Path errors (Serena)** | Use simple strings in `projects` (e.g., `"/Users/name/Project"`), not maps with `name:` or `path:` keys |
 | **Node not found** | Run `brew install node` or restart your shell |
 | **Homebrew not on PATH** | Run `source ~/.zprofile` or restart your terminal |
+| **GitHub auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for GitHub |
+| **Sentry auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for Sentry |
