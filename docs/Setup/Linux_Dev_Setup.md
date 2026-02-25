@@ -47,7 +47,6 @@ echo $SHELL
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
-git config --global core.editor "code --wait"
 git config --global init.defaultBranch main
 ```
 
@@ -99,34 +98,12 @@ node -v
 > Never use the system Python. Always use virtual environments per project.
 
 ```bash
-# Install Python and pip
 sudo apt install -y python3 python3-pip python3-venv
 ```
 
 Choose **one** of the following per project:
 
-### Option A: venv
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-### Option B: Conda
-
-```bash
-# Install Miniconda (if not already installed)
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-source ~/.zshrc
-
-conda create -n myenv python=3.10 -y
-conda activate myenv
-```
-
----
-
-## 6. uv (Python/Tool Manager)
+### Option A: uv (recommended)
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -135,11 +112,34 @@ source ~/.zshrc
 
 # Verify
 uv --version
+
+# Create a virtual environment in your project
+uv venv
+source .venv/bin/activate
+```
+
+### Option B: venv
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### Option C: Miniconda
+
+```bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+# Follow prompts; answer 'yes' to init when asked
+source ~/.zshrc
+
+conda create -n myenv python=3.11 -y
+conda activate myenv
 ```
 
 ---
 
-## 7. GitHub CLI
+## 6. GitHub CLI
 
 ```bash
 # Add the official GitHub CLI apt repository
@@ -160,7 +160,7 @@ gh auth login
 
 ---
 
-## 8. VS Code
+## 7. VS Code
 
 ```bash
 # Install via Snap (simplest method)
@@ -184,12 +184,11 @@ code --install-extension ms-python.python
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension esbenp.prettier-vscode
 code --install-extension eamodio.gitlens
-code --install-extension github.copilot
 ```
 
 ---
 
-## 9. Verify All Installations
+## 8. Verify All Installations
 
 ```bash
 node -v && python3 --version && uv --version && gh --version && code --version
@@ -197,7 +196,7 @@ node -v && python3 --version && uv --version && gh --version && code --version
 
 ---
 
-## 10. Claude Code
+## 9. Claude Code
 
 ```bash
 npm install -g @anthropic-ai/claude-code
@@ -212,7 +211,7 @@ Select your login method when prompted:
 
 ---
 
-## 11. MCP Server: Sequential Thinking
+## 10. MCP Server: Sequential Thinking
 
 Enables Claude to break down complex problems into step-by-step reasoning.
 
@@ -222,7 +221,7 @@ claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequen
 
 ---
 
-## 12. MCP Server: GitHub
+## 11. MCP Server: GitHub
 
 Connects Claude to your repositories for PR management, issue tracking, and code search.
 
@@ -234,7 +233,6 @@ Connects Claude to your repositories for PR management, issue tracking, and code
 ### Step B: Configure Environment
 
 ```bash
-# Add token to shell profile
 echo 'export GITHUB_PERSONAL_ACCESS_TOKEN="ghp_your_token_here"' >> ~/.zshrc
 source ~/.zshrc
 ```
@@ -247,7 +245,7 @@ claude mcp add github -- npx -y @modelcontextprotocol/server-github
 
 ---
 
-## 13. MCP Server: Serena
+## 12. MCP Server: Serena
 
 Serena is a professional coding agent. The web dashboard must be disabled in terminal environments to prevent timeouts.
 
@@ -280,7 +278,7 @@ claude mcp add serena -- /home/$(whoami)/.local/bin/serena start-mcp-server
 
 ---
 
-## 14. Optional Tools
+## 13. Optional Tools
 
 ### FFmpeg
 
@@ -289,18 +287,9 @@ sudo apt install -y ffmpeg
 ffmpeg -version
 ```
 
-### Actionbook (Browser Access from Terminal)
-
-```bash
-npm install -g @actionbookdev/cli
-sudo apt install -y chromium-browser
-```
-
-See: [github.com/actionbook/actionbook](https://github.com/actionbook/actionbook)
-
 ---
 
-## 15. Expected `~/.claude.json`
+## 14. Expected `~/.claude.json`
 
 Your final configuration should look like:
 
@@ -328,7 +317,7 @@ Your final configuration should look like:
 
 ---
 
-## 16. Verification
+## 15. Verification
 
 ```bash
 claude
@@ -358,9 +347,9 @@ All status indicators should be **green**.
 | Home directory | `/home/username` | `/Users/username` | `/home/username` |
 | Copy to clipboard | `xclip -selection clipboard` | `pbcopy` | `clip.exe` |
 | Open folder in GUI | `xdg-open .` | `open .` | `explorer.exe .` |
-| Default shell | bash (change to zsh) | zsh | bash or zsh |
+| Default shell | bash (change to zsh) | zsh | bash (change to zsh) |
 | Shell profile | `~/.zshrc` | `~/.zshrc` + `~/.zprofile` | `~/.zshrc` |
-| VS Code install | `snap install code` | `brew install --cask` | Windows installer |
+| VS Code install | `snap install code` | `brew install --cask cursor` | Windows installer |
 | System Python | Avoid | Avoid | Avoid |
 
 ---
@@ -373,7 +362,7 @@ All status indicators should be **green**.
 - [ ] Oh My Zsh installed
 - [ ] Git configured with name, email, and SSH key added to GitHub
 - [ ] `node` installed via nvm (v22+)
-- [ ] `python3`, `uv` installed
+- [ ] `python3` and `uv` installed
 - [ ] GitHub CLI installed and authenticated (`gh auth status`)
 - [ ] VS Code installed (`code --version` works)
 - [ ] Claude Code installed and logged in (`claude`)

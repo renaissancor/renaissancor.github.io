@@ -1,18 +1,46 @@
 # WSL Dev Setup Guide
 
-This guide configures a high-performance **Claude Code** terminal environment on Windows (WSL/Ubuntu) with GitHub integration, Sequential Thinking, and the Serena agent.
+This guide configures a **Claude Code** terminal environment on Windows (WSL/Ubuntu) with GitHub integration, Sequential Thinking, and the Serena agent.
 
 ---
 
-## 1. System Update
+## 1. System Update & Build Tools
 
 ```bash
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+
+# Install compilers and core tools needed by nvm, uv, and other installers
+sudo apt install -y build-essential curl git wget unzip ca-certificates gnupg
 ```
 
 ---
 
-## 2. Node.js (via nvm)
+## 2. Shell: zsh + Oh My Zsh
+
+> Ubuntu defaults to **bash**. zsh gives you Git branch display, tab completion, and useful aliases. This step must come before anything that writes to `~/.zshrc`.
+
+```bash
+# Install zsh
+sudo apt install -y zsh
+
+# Set zsh as your default shell (takes effect on next login)
+chsh -s $(which zsh)
+
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Close and reopen your terminal. You should now be in zsh.
+
+```bash
+# Verify
+echo $SHELL
+# Expected: /usr/bin/zsh
+```
+
+---
+
+## 3. Node.js (via nvm)
 
 > **Do NOT** use `sudo apt install nodejs` — it installs an outdated version.
 
@@ -31,35 +59,40 @@ node -v
 
 ---
 
-## 3. Python Environment
+## 4. Python Environment
 
-Choose **one** of the following:
+> Never use the system Python. Always use virtual environments per project.
 
-### Option A: Conda
-
-```bash
-~/miniconda3/bin/conda init zsh
-source ~/.zshrc
-
-conda create -n myenv python=3.10 -y
-conda activate myenv
-```
-
-### Option B: venv
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
----
-
-## 4. uv (Python/Tool Manager)
+### Option A: uv (recommended)
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
+
+# Verify
+uv --version
+
+# Create a virtual environment in your project
+uv venv
+source .venv/bin/activate
+```
+
+### Option B: Miniconda
+
+```bash
+# Download and install Miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+# Follow the prompts; answer 'yes' to init when asked
+
+# Initialize for zsh
+~/miniconda3/bin/conda init zsh
+source ~/.zshrc
+
+# Create an environment
+conda create -n myenv python=3.11 -y
+conda activate myenv
 ```
 
 ---
@@ -67,14 +100,18 @@ source ~/.zshrc
 ## 5. Verify All Installations
 
 ```bash
-node -v && python -V && conda --version && uv --version
+node -v && uv --version
+```
+
+If using Conda:
+
+```bash
+conda --version
 ```
 
 ---
 
 ## 6. Claude Code
-
-### Install & Login
 
 ```bash
 npm install -g @anthropic-ai/claude-code
@@ -111,7 +148,6 @@ Connects Claude to your repositories for PR management, issue tracking, and code
 ### Step B: Configure Environment
 
 ```bash
-# Add token to shell profile
 echo 'export GITHUB_PERSONAL_ACCESS_TOKEN="ghp_your_token_here"' >> ~/.zshrc
 source ~/.zshrc
 ```
@@ -162,18 +198,9 @@ claude mcp add serena -- /home/$(whoami)/.local/bin/serena start-mcp-server
 ### FFmpeg
 
 ```bash
-sudo apt install ffmpeg -y
+sudo apt install -y ffmpeg
 ffmpeg -version
 ```
-
-### Actionbook (Browser Access from Terminal)
-
-```bash
-npm install -g @actionbookdev/cli
-sudo apt install chromium-browser -y
-```
-
-See: [github.com/actionbook/actionbook](https://github.com/actionbook/actionbook)
 
 ---
 
@@ -221,5 +248,6 @@ All status indicators should be **green**.
 | **Serena timeout** | Ensure `web_dashboard: false` in `~/.serena/serena_config.yml` |
 | **Path errors (Serena)** | Use simple strings in `projects` (e.g., `"/home/name/Project"`), not maps with `name:` or `path:` keys |
 | **Node not found** | Run `nvm use --lts` or restart your shell |
+| **zsh not default** | Run `chsh -s $(which zsh)` then close and reopen WSL |
+| **`~/.zshrc` not found** | Make sure Oh My Zsh is installed before running the Node/uv installers |
 | **WSL paths** | Use `/home/username/...` not `/Users/username/...` (that's macOS) |
-
