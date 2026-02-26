@@ -30,10 +30,6 @@ theme:
 
 # Markdown extensions for enhanced rendering
 markdown_extensions:
-  - codehilite:
-      guess_lang: false
-      linenums: true
-
   - pymdownx.arithmatex:
       generic: true
 
@@ -67,29 +63,89 @@ nav:
     - Setup/Linux_Dev_Setup.md
     - Setup/Vibe_Coder_Manifesto.md
 
-  - Algorithm:
-    - Algorithm/A01.md
-    - Algorithm/A02.md
-    - Algorithm/A05.md
-    - Algorithm/A06.md
-    - Algorithm/A08.md
-    - Algorithm/A09.md
-    - Algorithm/BOJ12850.md
-    - Algorithm/CCW.md
-    - Algorithm/FloydWarshall.md
-    - Algorithm/Parametric_Search.md
-    - Algorithm/UnionFind.md
-    - HKU Problems:
-      - Algorithm/HKU/HKUL1P1.md
-      - Algorithm/HKU/HKUL1P2.md
-      - Algorithm/HKU/HKUL1P3.md
-      - Algorithm/HKU/HKUL1P4.md
-      - Algorithm/HKU/HKUL1P5.md
-      - Algorithm/HKU/HKUL1P6.md
-      - Algorithm/HKU/HKUL1P7.md
-      - Algorithm/HKU/HKUL1P8.md
-      - Algorithm/HKU/HKUPSET1.md
-      - Algorithm/HKU/HKU_Math.md
+  - C++ & Game Engine:
+    - C / C++ Basics:
+      - C_C++_Basics/AR250305.md
+      - C_C++_Basics/AR250306.md
+      - C_C++_Basics/AR250307.md
+      - C_C++_Basics/AR250310.md
+      - C_C++_Basics/AR250311.md
+      - C_C++_Basics/AR250312.md
+      - C_C++_Basics/AR250313.md
+      - C_C++_Basics/AR250317.md
+      - C_C++_Basics/AR250318.md
+      - C_C++_Basics/AR250319.md
+      - C_C++_Basics/AR250320.md
+      - C_C++_Basics/AR250321.md
+      - C_C++_Basics/AR250324.md
+      - C_C++_Basics/AR250325.md
+      - C_C++_Basics/AR250326.md
+      - C_C++_Basics/AR250327.md
+      - C_C++_Basics/AR250328.md
+      - C_C++_Basics/AR250331.md
+      - C_C++_Basics/AR250401.md
+      - C_C++_Basics/AR250402.md
+      - C_C++_Basics/AR250423.md
+      - C_C++_Basics/AR250424.md
+      - C_C++_Basics/AR250425.md
+    - Data Structure:
+      - Data_Structure/AR250403.md
+      - Data_Structure/AR250407.md
+      - Data_Structure/AR250408.md
+      - Data_Structure/AR250409.md
+      - Data_Structure/AR250410.md
+      - Data_Structure/AR250411.md
+      - Data_Structure/AR250414.md
+      - Data_Structure/AR250415.md
+      - Data_Structure/AR250416.md
+      - Data_Structure/AR250417.md
+      - Data_Structure/AR250421.md
+      - Data_Structure/AR250422.md
+      - Data_Structure/STL00.md
+    - Game Engine:
+      - Game_Engine/AR250426.md
+      - Game_Engine/AR250429.md
+      - Game_Engine/AR250430.md
+      - Game_Engine/AR250501.md
+      - Game_Engine/AR250507.md
+      - Game_Engine/AR250508.md
+      - Game_Engine/AR250509.md
+      - Game_Engine/AR250512.md
+      - Game_Engine/AR250513.md
+      - Game_Engine/AR250515.md
+      - Game_Engine/AR250518.md
+      - Game_Engine/AR250519.md
+      - Game_Engine/AR250521.md
+      - Game_Engine/AR250527.md
+      - Game_Engine/AR250604.md
+
+  - Systems Programming:
+    - Windows System Programming:
+      - Windows_System_Programming/WIN03.md
+      - Windows_System_Programming/WIN05.md
+      - Windows_System_Programming/WIN06.md
+      - Windows_System_Programming/WIN07.md
+      - Windows_System_Programming/Win08.md
+      - Windows_System_Programming/WIN09.md
+      - Windows_System_Programming/WIN10.md
+      - Windows_System_Programming/WIN11.md
+      - Windows_System_Programming/WIN12.md
+      - Windows_System_Programming/WIN13.md
+      - Windows_System_Programming/WIN14.md
+      - Windows_System_Programming/WIN15.md
+      - Windows_System_Programming/WIN18.md
+      - Windows_System_Programming/WIN19.md
+      - Windows_System_Programming/WIN20.md
+      - Windows_System_Programming/Win23.md
+      - Windows_System_Programming/WIN250709.md
+      - Windows_System_Programming/IOCP.md
+    - Operating Systems:
+      - Operating_Systems/WinOS00.md
+      - Operating_Systems/WinOS1.md
+      - Operating_Systems/WinOS2.md
+      - Operating_Systems/WinOS3.md
+      - Operating_Systems/WinOS4.md
+      - Operating_Systems/WinOS5.md
 
   - Computer Architecture:
     - Architecture/CA250709.md
@@ -155,150 +211,89 @@ nav:
     - Korean:
       - Architecture/ko/CA250711.md
 
-  - C / C++ Basics:
-    - C_C++_Basics/AR250305.md
-    - C_C++_Basics/AR250306.md
-    - C_C++_Basics/AR250307.md
-    - C_C++_Basics/AR250310.md
-    - C_C++_Basics/AR250311.md
-    - C_C++_Basics/AR250312.md
-    - C_C++_Basics/AR250313.md
-    - C_C++_Basics/AR250317.md
-    - C_C++_Basics/AR250318.md
-    - C_C++_Basics/AR250319.md
-    - C_C++_Basics/AR250320.md
-    - C_C++_Basics/AR250321.md
-    - C_C++_Basics/AR250324.md
-    - C_C++_Basics/AR250325.md
-    - C_C++_Basics/AR250326.md
-    - C_C++_Basics/AR250327.md
-    - C_C++_Basics/AR250328.md
-    - C_C++_Basics/AR250331.md
-    - C_C++_Basics/AR250401.md
-    - C_C++_Basics/AR250402.md
-    - C_C++_Basics/AR250423.md
-    - C_C++_Basics/AR250424.md
-    - C_C++_Basics/AR250425.md
+  - Algorithms:
+    - Algorithm/A01.md
+    - Algorithm/A02.md
+    - Algorithm/A05.md
+    - Algorithm/A06.md
+    - Algorithm/A08.md
+    - Algorithm/A09.md
+    - Algorithm/BOJ12850.md
+    - Algorithm/CCW.md
+    - Algorithm/FloydWarshall.md
+    - Algorithm/Parametric_Search.md
+    - Algorithm/UnionFind.md
+    - HKU Problems:
+      - Algorithm/HKU/HKUL1P1.md
+      - Algorithm/HKU/HKUL1P2.md
+      - Algorithm/HKU/HKUL1P3.md
+      - Algorithm/HKU/HKUL1P4.md
+      - Algorithm/HKU/HKUL1P5.md
+      - Algorithm/HKU/HKUL1P6.md
+      - Algorithm/HKU/HKUL1P7.md
+      - Algorithm/HKU/HKUL1P8.md
+      - Algorithm/HKU/HKUPSET1.md
+      - Algorithm/HKU/HKU_Math.md
 
-  - Compilers:
-    - Compilers/CMP01.md
-    - Compilers/CMP02.md
-    - Compilers/CMP03.md
-    - Compilers/CMP04.md
-    - Compilers/MSVCProject.md
-    - Compilers/MSVCSolution.md
-    - Compilers/MSVCSolutionKR.md
+  - Self-Study Notes:
+    - Computer Network:
+      - Computer_Network/NW0503.md
+      - Computer_Network/NW0504.md
+      - Computer_Network/NW0724.md
+      - Computer_Network/NW1.md
+      - Computer_Network/NWHeaders.md
+      - Computer_Network/NWL2.md
+      - Computer_Network/NWTCP.md
+      - Computer_Network/NWVoca.md
+      - Computer_Network/TCPIP.md
+      - Computer_Network/TCPIP1.md
+      - Computer_Network/Wireshark.md
+    - Compilers:
+      - Compilers/CMP01.md
+      - Compilers/CMP02.md
+      - Compilers/CMP03.md
+      - Compilers/CMP04.md
+      - Compilers/MSVCProject.md
+      - Compilers/MSVCSolution.md
+      - Compilers/MSVCSolutionKR.md
+    - Cryptography:
+      - Cryptography/C2PA.md
+      - Cryptography/C2PA_Ref.md
 
-  - Computer Network:
-    - Computer_Network/NW0503.md
-    - Computer_Network/NW0504.md
-    - Computer_Network/NW0724.md
-    - Computer_Network/NW1.md
-    - Computer_Network/NWHeaders.md
-    - Computer_Network/NWL2.md
-    - Computer_Network/NWTCP.md
-    - Computer_Network/NWVoca.md
-    - Computer_Network/TCPIP.md
-    - Computer_Network/TCPIP1.md
-    - Computer_Network/Wireshark.md
-
-  - Cryptography:
-    - Cryptography/C2PA.md
-    - Cryptography/C2PA_Ref.md
-
-  - Data Structure:
-    - Data_Structure/AR250403.md
-    - Data_Structure/AR250407.md
-    - Data_Structure/AR250408.md
-    - Data_Structure/AR250409.md
-    - Data_Structure/AR250410.md
-    - Data_Structure/AR250411.md
-    - Data_Structure/AR250414.md
-    - Data_Structure/AR250415.md
-    - Data_Structure/AR250416.md
-    - Data_Structure/AR250417.md
-    - Data_Structure/AR250421.md
-    - Data_Structure/AR250422.md
-    - Data_Structure/STL00.md
-
-  - ECE482 FA24:
-    - Homework:
-      - ECE482FA24/ECE482HW/ECE482H1.md
-      - ECE482FA24/ECE482HW/ECE482H2.md
-      - ECE482FA24/ECE482HW/ECE482H3.md
-      - ECE482FA24/ECE482HW/ECE482H4.md
-      - ECE482FA24/ECE482HW/ECE482H5.md
-      - ECE482FA24/ECE482HW/ECE482H6.md
-      - ECE482FA24/ECE482HW/ECE482H7.md
-      - ECE482FA24/ECE482HW/ECE482H8.md
-    - Lab:
-      - ECE482FA24/ECE482LAB/ECE482L1.md
-      - ECE482FA24/ECE482LAB/ECE482L2.md
-      - ECE482FA24/ECE482LAB/ECE482L3.md
-      - ECE482FA24/ECE482LAB/ECE482L4.md
-      - ECE482FA24/ECE482LAB/ECE482L5.md
-      - ECE482FA24/ECE482LAB/ECE482L6.md
-      - ECE482FA24/ECE482LAB/ECE482L7.md
-      - ECE482FA24/ECE482LAB/ECE482L8.md
-      - ECE482FA24/ECE482LAB/ECE482L9.md
-      - ECE482FA24/ECE482LAB/ECE482L10.md
-      - ECE482FA24/ECE482LAB/ECE482L11.md
-    - Project 2:
-      - ECE482FA24/ECE482P2/Home.md
-      - ECE482FA24/ECE482P2/Design.md
-      - ECE482FA24/ECE482P2/DeveloperGuide.md
-      - ECE482FA24/ECE482P2/MultiThreading.md
-      - ECE482FA24/ECE482P2/Performance.md
-      - ECE482FA24/ECE482P2/RoadMap.md
-    - Project 3:
-      - ECE482FA24/ECE482P3/Home.md
-      - ECE482FA24/ECE482P3/Design.md
-      - ECE482FA24/ECE482P3/Developer.md
-      - ECE482FA24/ECE482P3/Performance.md
-      - ECE482FA24/ECE482P3/Risk.md
-      - ECE482FA24/ECE482P3/RoadMap.md
-
-  - Game Engine:
-    - Game_Engine/AR250426.md
-    - Game_Engine/AR250429.md
-    - Game_Engine/AR250430.md
-    - Game_Engine/AR250501.md
-    - Game_Engine/AR250507.md
-    - Game_Engine/AR250508.md
-    - Game_Engine/AR250509.md
-    - Game_Engine/AR250512.md
-    - Game_Engine/AR250513.md
-    - Game_Engine/AR250515.md
-    - Game_Engine/AR250518.md
-    - Game_Engine/AR250519.md
-    - Game_Engine/AR250521.md
-    - Game_Engine/AR250527.md
-    - Game_Engine/AR250604.md
-
-  - Operating Systems:
-    - Operating_Systems/WinOS00.md
-    - Operating_Systems/WinOS1.md
-    - Operating_Systems/WinOS2.md
-    - Operating_Systems/WinOS3.md
-    - Operating_Systems/WinOS4.md
-    - Operating_Systems/WinOS5.md
-
-  - Windows System Programming:
-    - Windows_System_Programming/WIN03.md
-    - Windows_System_Programming/WIN05.md
-    - Windows_System_Programming/WIN06.md
-    - Windows_System_Programming/WIN07.md
-    - Windows_System_Programming/Win08.md
-    - Windows_System_Programming/WIN09.md
-    - Windows_System_Programming/WIN10.md
-    - Windows_System_Programming/WIN11.md
-    - Windows_System_Programming/WIN12.md
-    - Windows_System_Programming/WIN13.md
-    - Windows_System_Programming/WIN14.md
-    - Windows_System_Programming/WIN15.md
-    - Windows_System_Programming/WIN18.md
-    - Windows_System_Programming/WIN19.md
-    - Windows_System_Programming/WIN20.md
-    - Windows_System_Programming/Win23.md
-    - Windows_System_Programming/WIN250709.md
-    - Windows_System_Programming/IOCP.md
+  - Course Archive:
+    - ECE482 FA24:
+      - Homework:
+        - ECE482FA24/ECE482HW/ECE482H1.md
+        - ECE482FA24/ECE482HW/ECE482H2.md
+        - ECE482FA24/ECE482HW/ECE482H3.md
+        - ECE482FA24/ECE482HW/ECE482H4.md
+        - ECE482FA24/ECE482HW/ECE482H5.md
+        - ECE482FA24/ECE482HW/ECE482H6.md
+        - ECE482FA24/ECE482HW/ECE482H7.md
+        - ECE482FA24/ECE482HW/ECE482H8.md
+      - Lab:
+        - ECE482FA24/ECE482LAB/ECE482L1.md
+        - ECE482FA24/ECE482LAB/ECE482L2.md
+        - ECE482FA24/ECE482LAB/ECE482L3.md
+        - ECE482FA24/ECE482LAB/ECE482L4.md
+        - ECE482FA24/ECE482LAB/ECE482L5.md
+        - ECE482FA24/ECE482LAB/ECE482L6.md
+        - ECE482FA24/ECE482LAB/ECE482L7.md
+        - ECE482FA24/ECE482LAB/ECE482L8.md
+        - ECE482FA24/ECE482LAB/ECE482L9.md
+        - ECE482FA24/ECE482LAB/ECE482L10.md
+        - ECE482FA24/ECE482LAB/ECE482L11.md
+      - Project 2:
+        - ECE482FA24/ECE482P2/Home.md
+        - ECE482FA24/ECE482P2/Design.md
+        - ECE482FA24/ECE482P2/DeveloperGuide.md
+        - ECE482FA24/ECE482P2/MultiThreading.md
+        - ECE482FA24/ECE482P2/Performance.md
+        - ECE482FA24/ECE482P2/RoadMap.md
+      - Project 3:
+        - ECE482FA24/ECE482P3/Home.md
+        - ECE482FA24/ECE482P3/Design.md
+        - ECE482FA24/ECE482P3/Developer.md
+        - ECE482FA24/ECE482P3/Performance.md
+        - ECE482FA24/ECE482P3/Risk.md
+        - ECE482FA24/ECE482P3/RoadMap.md

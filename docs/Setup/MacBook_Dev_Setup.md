@@ -126,7 +126,7 @@ Follow the dedicated guide for Claude Code and MCP servers:
 
 → **[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)**
 
-Covers: installing the Claude Code native binary, and adding Sequential Thinking, GitHub, and Serena MCP servers.
+Covers: installing the Claude Code native binary, and adding Sequential Thinking, GitHub, Sentry, and Serena MCP servers.
 
 ---
 
@@ -207,6 +207,27 @@ pixi add python numpy pandas
 pixi run python script.py
 ```
 
+### uv tool — Global Python CLI Tools
+
+Use `uv tool install` for CLI tools you want available globally (modern replacement for `pipx`). The tool runs in its own isolated environment — no virtual env activation needed.
+
+```bash
+# Example: MkDocs for static site generation
+uv tool install "mkdocs>=1.6,<2.0" --with mkdocs-material
+
+# Verify
+mkdocs --version
+```
+
+```bash
+# Common MkDocs commands (run from your docs project root)
+mkdocs serve        # local preview at http://127.0.0.1:8000
+mkdocs build        # build static site to /site
+mkdocs gh-deploy    # deploy directly to GitHub Pages
+```
+
+> **Why pin `<2.0`?** MkDocs 2.0 (released Feb 2026) is incompatible with `mkdocs-material`. Pin to 1.x until the Material theme officially supports 2.0. The build still works but shows a warning — ignore it.
+
 ---
 
 ## 11. Node
@@ -240,6 +261,7 @@ npm --version     # 10.x.x
 - [ ] Homebrew installed and on PATH (`brew --version` works)
 - [ ] All casks installed (Arc, Chrome, Firefox, Cursor, Claude, Docker, JetBrains Toolbox, Warp, iTerm2)
 - [ ] Core formulae installed (`uv --version`, `pixi --version`, `node --version` all work)
+- [ ] MkDocs installed via uv tool (`mkdocs --version` works)
 - [ ] Claude Code CLI configured (see `Mac_Setup_Claude.md`)
 - [ ] iTerm2 Shell Integration installed, `.hushlogin` created
 - [ ] Git configured with name, email, SSH key added to GitHub
