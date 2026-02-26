@@ -40,7 +40,20 @@ Select your login method when prompted:
 
 ---
 
-## 2. MCP Server: Sequential Thinking (Optional)
+## 2. Claude.ai Auto-Integrated Services
+
+Claude.ai automatically adds Google Calendar and Gmail as MCP servers when you sign in. These appear in `claude mcp list` but **were not manually added** — they come from your Claude.ai account:
+
+```
+claude.ai Google Calendar: https://gcal.mcp.claude.com/mcp  - ! Needs authentication
+claude.ai Gmail:           https://gmail.mcp.claude.com/mcp  - ! Needs authentication
+```
+
+Authenticate them via `claude` → `/mcp` if you want to use them, or leave them unauthenticated — they don't affect other MCP servers.
+
+---
+
+## 3. MCP Server: Sequential Thinking (Optional)
 
 > **Note:** Claude's built-in extended thinking (`/think` during chat) covers most reasoning use cases natively. Add this server only if you want explicit step-by-step tool calls in your workflow.
 
@@ -50,7 +63,7 @@ claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequen
 
 ---
 
-## 3. MCP Server: GitHub
+## 4. MCP Server: GitHub
 
 Connects Claude to your repositories for PR management, issue tracking, and code search. Uses GitHub's official hosted endpoint with OAuth — no personal access token required.
 
@@ -72,7 +85,7 @@ Select **github** → **Authenticate** and complete the GitHub OAuth flow in you
 
 ---
 
-## 4. MCP Server: Sentry
+## 5. MCP Server: Sentry
 
 Connects Claude to your error monitoring — search issues, inspect stack traces, and debug production errors without leaving the terminal.
 
@@ -101,7 +114,7 @@ Select **sentry** → **Authenticate** and complete the Sentry OAuth flow.
 
 ---
 
-## 5. MCP Server: Serena
+## 6. MCP Server: Serena
 
 Serena is a professional coding agent. The web dashboard must be disabled in terminal environments to prevent timeouts.
 
@@ -137,7 +150,7 @@ claude mcp add serena -- /Users/$(whoami)/.local/bin/serena start-mcp-server
 
 ---
 
-## 6. Project Memory (CLAUDE.md)
+## 7. Project Memory (CLAUDE.md)
 
 `CLAUDE.md` is a file Claude reads automatically at the start of every session in your project. Use it to encode project-specific conventions, commands, and gotchas so Claude never needs to be told twice.
 
@@ -171,7 +184,7 @@ This generates a starter `CLAUDE.md` based on your codebase. Edit it to reflect 
 
 ---
 
-## 7. Permissions & Settings
+## 8. Permissions & Settings
 
 Claude Code respects a `settings.json` file that controls which commands are allowed or denied, preventing accidental destructive operations.
 
@@ -202,7 +215,7 @@ Create or edit `~/.claude/settings.json`:
 
 ---
 
-## 8. Expected `~/.claude.json`
+## 9. Expected `~/.claude.json`
 
 Your final configuration should look like:
 
@@ -231,7 +244,7 @@ Your final configuration should look like:
 
 ---
 
-## 9. Verification
+## 10. Verification
 
 ```bash
 claude
