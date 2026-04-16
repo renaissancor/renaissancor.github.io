@@ -4,7 +4,7 @@ title: "CV | Jae Heung Park"
 
 # Jae Heung Park (박재흥)
 
-**Email:** pauljhpark@naver.com  
+**Email:** stephenjhpark99@gmail.com  
 **LinkedIn:** [linkedin.com/in/jaeheungpark](https://www.linkedin.com/in/jaeheung-park-6623ab1b1/)  
 **GitHub:** [github.com/renaissancor](https://github.com/renaissancor)  
 
@@ -12,14 +12,12 @@ title: "CV | Jae Heung Park"
 
 ## Introduction  
 
-Dynamic & adaptable **software engineer** with a strong foundation in **C/C++** and **system-level programming**.  
-Over 1 year of experience in **web development**, focused on front-end integration with back-end and AI/ML modules.  
+Versatile **software engineer** with experience spanning **web development**, **systems programming**, and **ML infrastructure**.  
+Built and deployed a production **VLM-based image classifier** on **H200 GPU** infrastructure at i-Scream Media.  
 
-Currently deepening expertise in **network and game server programming**, exploring **IOCP-based asynchronous I/O**,  
-**multi-threaded architectures**, and **Windows system programming** for scalable, real-time applications.  
+Background in **C/C++ systems programming** (IOCP, multi-threaded architectures, Linux kernel) with prior internship experience in **React/TypeScript** web platforms at NAVER.  
 
-Connected technical and non-technical teams in diverse international environments.  
-Passionate about leveraging innovative technologies to deliver efficient and scalable solutions.
+Trilingual (Korean, English, Mandarin) with international experience across the US, China, and South Korea.
 
 ---
 
@@ -59,7 +57,17 @@ Pre-University Education
 
 ---
 
-## Collaboration & Documentation  
+## ML & Infrastructure  
+
+![vLLM](https://img.shields.io/badge/-vLLM-333333?style=flat&logo=python)
+![Hugging Face](https://img.shields.io/badge/-Hugging_Face-333333?style=flat&logo=huggingface)
+![FastAPI](https://img.shields.io/badge/-FastAPI-333333?style=flat&logo=fastapi)
+![Docker](https://img.shields.io/badge/-Docker-333333?style=flat&logo=docker)
+![NVIDIA](https://img.shields.io/badge/-CUDA_/_H200_/_RTX_4090-333333?style=flat&logo=nvidia)
+
+---
+
+## Collaboration & Tools  
 
 ![Git](https://img.shields.io/badge/-Git-333333?style=flat&logo=git)
 ![GitHub](https://img.shields.io/badge/-GitHub-333333?style=flat&logo=github)
@@ -71,8 +79,9 @@ Pre-University Education
 
 ---
 
-## System & Network Programming  
+## Systems & Network Programming  
 
+- Built a production **VLM image classification pipeline** on **H200 GPU** with **FP8/AWQ quantization** for cost-efficient on-premise inference.  
 - Proficient in **Windows System Programming**, focusing on **asynchronous I/O** models such as **IOCP** and **Overlapped I/O**.  
 - Experienced with **socket programming (TCP/UDP)** using **Winsock2** and **POSIX sockets**.  
 - Designed and benchmarked **multi-threaded**, **event-driven**, and **asynchronous** server architectures.  
@@ -81,6 +90,17 @@ Pre-University Education
 ---
 
 ## Experience  
+
+### **i-Scream Media**  
+_February 2026 – Present_  
+**Junior Researcher**, Seoul, South Korea
+
+- Built an on-premise **VLM image safety classifier** for children's educational platforms using **Gemma 4 31B (FP8)** deployed on **H200 GPU** via **vLLM**.  
+- Designed a **2-pass classification pipeline**: VLM visual analysis + deterministic text analysis (profanity/slur detection), outputting Korean media ratings (all/12/15/18).  
+- Developed a **FastAPI production server** for integration with the internal content management system.  
+- Managed multi-GPU infrastructure (**H200 NVL**, **RTX 4090**) with **FP8/AWQ quantization** for cost-efficient inference under children's data privacy constraints.
+
+---
 
 ### **NAVER Start Up Factory – DeepAuto AI**  
 _August 2023 – January 2024_  
@@ -173,4 +193,4 @@ _March 2021 – December 2021_
 
 ---
 
-_Last updated: October 2025_
+_Last updated: April 2026_
