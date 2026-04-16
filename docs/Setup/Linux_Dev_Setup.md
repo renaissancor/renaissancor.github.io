@@ -223,25 +223,23 @@ claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequen
 
 ## 11. MCP Server: GitHub
 
-Connects Claude to your repositories for PR management, issue tracking, and code search.
+Connects Claude to your repositories for PR management, issue tracking, and code search. Uses GitHub's official hosted endpoint with OAuth — no personal access token required.
 
-### Step A: Generate a GitHub Token
-
-1. Go to [GitHub Personal Access Tokens (Classic)](https://github.com/settings/tokens).
-2. **Required Scopes:** `repo`, `read:org`, `user:email`, `workflow` (optional)
-
-### Step B: Configure Environment
+### Step A: Add to Claude
 
 ```bash
-echo 'export GITHUB_PERSONAL_ACCESS_TOKEN="ghp_your_token_here"' >> ~/.zshrc
-source ~/.zshrc
+claude mcp add --transport http github https://api.githubcopilot.com/mcp/
 ```
 
-### Step C: Add to Claude
+### Step B: Authenticate
 
 ```bash
-claude mcp add github -- npx -y @modelcontextprotocol/server-github
+# Inside Claude Code, open the MCP menu and follow the browser login flow
+claude
+❯ /mcp
 ```
+
+Select **github** → **Authenticate** and complete the GitHub OAuth flow in your browser.
 
 ---
 
@@ -301,11 +299,8 @@ Your final configuration should look like:
       "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
     },
     "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_your_token_here"
-      }
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
     },
     "serena": {
       "command": "/home/your_username/.local/bin/serena",
