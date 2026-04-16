@@ -199,7 +199,10 @@ node -v && python3 --version && uv --version && gh --version && code --version
 ## 9. Claude Code
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+# Install Claude Code CLI (native binary, auto-updates)
+curl -fsSL https://claude.ai/install.sh | bash
+
+# Initialize (follow the login prompts)
 claude
 ```
 
@@ -211,9 +214,9 @@ Select your login method when prompted:
 
 ---
 
-## 10. MCP Server: Sequential Thinking
+## 10. MCP Server: Sequential Thinking (Optional)
 
-Enables Claude to break down complex problems into step-by-step reasoning.
+> **Note:** Claude's built-in extended thinking (`/think` during chat) covers most reasoning use cases natively. Add this server only if you want explicit step-by-step tool calls in your workflow.
 
 ```bash
 claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking
@@ -243,7 +246,36 @@ Select **github** → **Authenticate** and complete the GitHub OAuth flow in you
 
 ---
 
-## 12. MCP Server: Serena
+## 12. MCP Server: Sentry
+
+Connects Claude to your error monitoring — search issues, inspect stack traces, and debug production errors without leaving the terminal.
+
+### Step A: Add to Claude
+
+```bash
+claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
+```
+
+### Step B: Authenticate
+
+```bash
+claude
+❯ /mcp
+```
+
+Select **sentry** → **Authenticate** and complete the Sentry OAuth flow.
+
+### Usage examples
+
+```
+> What are the top 5 errors in production this week?
+> Show me the full stack trace for issue PROJ-1234
+> Which errors spiked after the last deploy?
+```
+
+---
+
+## 13. MCP Server: Serena
 
 Serena is a professional coding agent. The web dashboard must be disabled in terminal environments to prevent timeouts.
 
@@ -276,7 +308,7 @@ claude mcp add serena -- /home/$(whoami)/.local/bin/serena start-mcp-server
 
 ---
 
-## 13. Optional Tools
+## 14. Optional Tools
 
 ### FFmpeg
 
@@ -287,7 +319,7 @@ ffmpeg -version
 
 ---
 
-## 14. Expected `~/.claude.json`
+## 15. Expected `~/.claude.json`
 
 Your final configuration should look like:
 
@@ -302,6 +334,10 @@ Your final configuration should look like:
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/"
     },
+    "sentry": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp"
+    },
     "serena": {
       "command": "/home/your_username/.local/bin/serena",
       "args": ["start-mcp-server"]
@@ -312,7 +348,7 @@ Your final configuration should look like:
 
 ---
 
-## 15. Verification
+## 16. Verification
 
 ```bash
 claude
@@ -331,6 +367,8 @@ All status indicators should be **green**.
 | **zsh not default** | Run `chsh -s $(which zsh)` then log out and back in |
 | **`code` not found** | Run `sudo snap install code --classic` or restart your terminal |
 | **`xclip` not found** | Run `sudo apt install -y xclip` |
+| **GitHub auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for GitHub |
+| **Sentry auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for Sentry |
 
 ---
 
@@ -361,4 +399,4 @@ All status indicators should be **green**.
 - [ ] GitHub CLI installed and authenticated (`gh auth status`)
 - [ ] VS Code installed (`code --version` works)
 - [ ] Claude Code installed and logged in (`claude`)
-- [ ] All three MCP servers green (`/mcp list`)
+- [ ] All four MCP servers green (`/mcp list`)
