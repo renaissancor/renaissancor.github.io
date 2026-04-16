@@ -124,7 +124,7 @@ This installs:
 - CMake tools for Windows
 - MSBuild
 
-> Installation takes 10–20 minutes depending on your connection speed.
+> Installation takes 10-20 minutes depending on your connection speed.
 
 ---
 
@@ -278,9 +278,9 @@ Select your login method when prompted:
 
 ---
 
-## 16. MCP Server: Sequential Thinking
+## 16. MCP Server: Sequential Thinking (Optional)
 
-Enables Claude to break down complex problems into step-by-step reasoning.
+> **Note:** Claude's built-in extended thinking (`/think` during chat) covers most reasoning use cases natively. Add this server only if you want explicit step-by-step tool calls in your workflow.
 
 ```powershell
 claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking
@@ -310,7 +310,36 @@ Select **github** → **Authenticate** and complete the GitHub OAuth flow in you
 
 ---
 
-## 18. MCP Server: Serena
+## 18. MCP Server: Sentry
+
+Connects Claude to your error monitoring — search issues, inspect stack traces, and debug production errors without leaving the terminal.
+
+### Step A: Add to Claude
+
+```powershell
+claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
+```
+
+### Step B: Authenticate
+
+```powershell
+claude
+❯ /mcp
+```
+
+Select **sentry** → **Authenticate** and complete the Sentry OAuth flow.
+
+### Usage examples
+
+```
+> What are the top 5 errors in production this week?
+> Show me the full stack trace for issue PROJ-1234
+> Which errors spiked after the last deploy?
+```
+
+---
+
+## 19. MCP Server: Serena
 
 Serena is a professional coding agent. The web dashboard must be disabled in terminal environments to prevent timeouts.
 
@@ -344,7 +373,7 @@ claude mcp add serena -- "$env:USERPROFILE\.local\bin\serena.exe" start-mcp-serv
 
 ---
 
-## 19. Expected `~/.claude.json`
+## 20. Expected `~/.claude.json`
 
 Your final configuration should look like:
 
@@ -359,6 +388,10 @@ Your final configuration should look like:
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/"
     },
+    "sentry": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp"
+    },
     "serena": {
       "command": "C:\\Users\\your_username\\.local\\bin\\serena.exe",
       "args": ["start-mcp-server"]
@@ -369,7 +402,7 @@ Your final configuration should look like:
 
 ---
 
-## 20. Verification
+## 21. Verification
 
 ```powershell
 claude
@@ -390,6 +423,8 @@ All status indicators should be **green**.
 | **VS workload missing** | Open Visual Studio Installer → Modify → add **Desktop development with C++** |
 | **DirectX headers missing** | Ensure Windows 11 SDK is checked in the VS workload |
 | **Script execution blocked** | Run `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` |
+| **GitHub auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for GitHub |
+| **Sentry auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for Sentry |
 
 ---
 
@@ -424,4 +459,4 @@ All status indicators should be **green**.
 - [ ] GitHub CLI installed and authenticated (`gh auth status`)
 - [ ] VS Code installed (`code --version`)
 - [ ] Claude Code installed and logged in (`claude`)
-- [ ] All three MCP servers green (`/mcp list`)
+- [ ] All four MCP servers green (`/mcp list`)
