@@ -1,6 +1,6 @@
 # Basic site metadata
 site_name: Renaissancoriate
-site_description: C++ Blog and Study Notes
+site_description: C/C++ and Systems Programming notes
 site_author: Renaissancor
 site_url: https://renaissancor.github.io
 
@@ -64,10 +64,13 @@ plugins:
 docs_dir: "docs"
 
 # ---------------------------------------------------------------------------
-# Navigation
-#   Top level = curated / portfolio (topic posts, projects).
-#   Raw daily lecture notes + exam scratch live under "Archive" at the bottom.
-#   Archive is being progressively distilled into concise topic posts.
+# Navigation — canonical taxonomy (flat).
+#   Two discipline rules remove overlap:
+#     theory <-> platform        : OS theory -> Operating Systems;
+#                                  platform mechanics -> Windows/Linux Systems.
+#     translate <-> execute      : code -> machine code / disassembly -> Compilers
+#                                  & Low-Level; hardware behavior -> Computer Architecture.
+#   Raw daily notes + exam scratch are preserved under "Archive", pending distillation.
 # ---------------------------------------------------------------------------
 nav:
   - Home: index.md
@@ -81,40 +84,12 @@ nav:
     - Setup/Linux_Dev_Setup.md
     - Setup/Vibe_Coder_Manifesto.md
 
-  - C++:
+  - C / C++:
     - Cpp/cpp-01-fundamentals.md
     - Cpp/cpp-02-functions-and-lifetime.md
     - Cpp/cpp-03-pointers-and-memory.md
     - Cpp/cpp-04-classes-and-oop.md
     - Cpp/cpp-05-inheritance-and-polymorphism.md
-
-  - Systems Programming:
-    - Windows System Programming:
-      - Windows_System_Programming/WIN03.md
-      - Windows_System_Programming/WIN05.md
-      - Windows_System_Programming/WIN06.md
-      - Windows_System_Programming/WIN07.md
-      - Windows_System_Programming/Win08.md
-      - Windows_System_Programming/WIN09.md
-      - Windows_System_Programming/WIN10.md
-      - Windows_System_Programming/WIN11.md
-      - Windows_System_Programming/WIN12.md
-      - Windows_System_Programming/WIN13.md
-      - Windows_System_Programming/WIN14.md
-      - Windows_System_Programming/WIN15.md
-      - Windows_System_Programming/WIN18.md
-      - Windows_System_Programming/WIN19.md
-      - Windows_System_Programming/WIN20.md
-      - Windows_System_Programming/Win23.md
-      - Windows_System_Programming/WIN250709.md
-      - Windows_System_Programming/IOCP.md
-    - Operating Systems:
-      - Operating_Systems/WinOS00.md
-      - Operating_Systems/WinOS1.md
-      - Operating_Systems/WinOS2.md
-      - Operating_Systems/WinOS3.md
-      - Operating_Systems/WinOS4.md
-      - Operating_Systems/WinOS5.md
 
   - Data Structures:
     - Data_Structure/ds-01-dynamic-array-and-vector.md
@@ -146,7 +121,49 @@ nav:
       - Algorithm/HKU/HKUPSET1.md
       - Algorithm/HKU/HKU_Math.md
 
-  - Networking:
+  - Computer Architecture:
+    - Architecture/arch-01-cpu-cache-coherence.md
+
+  - Compilers & Low-Level:
+    - Compilers/asm-01-disassembly-control-flow.md
+    - Compilers/asm-02-stack-frames-calling-conventions.md
+    - Compilers/asm-03-disassembly-debugging.md
+    - Compilers/CMP01.md
+    - Compilers/CMP02.md
+    - Compilers/CMP03.md
+    - Compilers/CMP04.md
+    - Compilers/MSVCProject.md
+    - Compilers/MSVCSolution.md
+
+  - Operating Systems:
+    - Operating_Systems/WinOS00.md
+    - Operating_Systems/WinOS1.md
+    - Operating_Systems/WinOS2.md
+    - Operating_Systems/WinOS3.md
+    - Operating_Systems/WinOS4.md
+    - Operating_Systems/WinOS5.md
+
+  - Windows Systems:
+    - Windows_System_Programming/WIN03.md
+    - Windows_System_Programming/WIN05.md
+    - Windows_System_Programming/WIN06.md
+    - Windows_System_Programming/WIN07.md
+    - Windows_System_Programming/Win08.md
+    - Windows_System_Programming/WIN09.md
+    - Windows_System_Programming/WIN10.md
+    - Windows_System_Programming/WIN11.md
+    - Windows_System_Programming/WIN12.md
+    - Windows_System_Programming/WIN13.md
+    - Windows_System_Programming/WIN14.md
+    - Windows_System_Programming/WIN15.md
+    - Windows_System_Programming/WIN18.md
+    - Windows_System_Programming/WIN19.md
+    - Windows_System_Programming/WIN20.md
+    - Windows_System_Programming/Win23.md
+    - Windows_System_Programming/WIN250709.md
+    - Windows_System_Programming/IOCP.md
+
+  - Computer Networks:
     - Computer_Network/NW0503.md
     - Computer_Network/NW0504.md
     - Computer_Network/NW0724.md
@@ -159,20 +176,13 @@ nav:
     - Computer_Network/TCPIP1.md
     - Computer_Network/Wireshark.md
 
-  - Compilers:
-    - Compilers/CMP01.md
-    - Compilers/CMP02.md
-    - Compilers/CMP03.md
-    - Compilers/CMP04.md
-    - Compilers/MSVCProject.md
-    - Compilers/MSVCSolution.md
-    - Compilers/MSVCSolutionKR.md
-
   - Cryptography:
     - Cryptography/C2PA.md
     - Cryptography/C2PA_Ref.md
 
-  - Course Projects:
+  - Projects:
+    - Portfolio:
+      - Compilers/MSVCSolutionKR.md
     - ECE482 FA24:
       - Homework:
         - ECE482FA24/ECE482HW/ECE482H1.md
