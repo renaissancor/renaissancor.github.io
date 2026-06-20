@@ -90,6 +90,8 @@ nav:
     - Cpp/cpp-03-pointers-and-memory.md
     - Cpp/cpp-04-classes-and-oop.md
     - Cpp/cpp-05-inheritance-and-polymorphism.md
+    - Cpp/cpp-06-templates-exceptions-raii.md
+    - Cpp/cpp-07-operator-overloading-and-memory.md
 
   - Data Structures:
     - Data_Structure/ds-01-dynamic-array-and-vector.md
