@@ -8,4 +8,9 @@ docs/Computer_Network/code
 src/*.out
 src/*.exe 
 
-site/ 
+site/
+
+# tooling / local build env
+.omc/
+.venv/
+__pycache__/ 
