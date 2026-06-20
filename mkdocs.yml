@@ -130,6 +130,7 @@ nav:
     - Compilers/asm-01-disassembly-control-flow.md
     - Compilers/asm-02-stack-frames-calling-conventions.md
     - Compilers/asm-03-disassembly-debugging.md
+    - Compilers/asm-04-c-runtime-and-executable.md
     - Compilers/CMP01.md
     - Compilers/CMP02.md
     - Compilers/CMP03.md
@@ -322,7 +323,7 @@ nav:
       - Architecture/CA250922.md
       - Architecture/CA250924.md
       - Architecture/ko/CA250711.md
-    - Architecture Exam Prep:
+    - Architecture Review Summaries:
       - Architecture/Exam/1.md
       - Architecture/Exam/2.md
       - Architecture/Exam/3.md
@@ -341,14 +342,3 @@ nav:
       - Architecture/Exam/16.md
       - Architecture/Exam/17.md
       - Architecture/Exam/18.md
-      - Architecture/Exam/e1.md
-      - Architecture/Exam/e2.md
-      - Architecture/Exam/e3.md
-      - Architecture/Exam/e4.md
-      - Architecture/Exam/e5.md
-      - Architecture/Exam/e6.md
-      - Architecture/Exam/e7.md
-      - Architecture/Exam/e8.md
-      - Architecture/Exam/e9.md
-      - Architecture/Exam/e10.md
-      - Architecture/Exam/r1.md
