@@ -138,32 +138,17 @@ nav:
     - Compilers/MSVCSolution.md
 
   - Operating Systems:
-    - Operating_Systems/WinOS00.md
-    - Operating_Systems/WinOS1.md
-    - Operating_Systems/WinOS2.md
-    - Operating_Systems/WinOS3.md
-    - Operating_Systems/WinOS4.md
-    - Operating_Systems/WinOS5.md
+    - Operating_Systems/os-01-processes-and-threads.md
+    - Operating_Systems/os-02-scheduling-and-interrupts.md
+    - Operating_Systems/os-03-synchronization-and-deadlock.md
 
   - Windows Systems:
-    - Windows_System_Programming/WIN03.md
-    - Windows_System_Programming/WIN05.md
-    - Windows_System_Programming/WIN06.md
-    - Windows_System_Programming/WIN07.md
-    - Windows_System_Programming/Win08.md
-    - Windows_System_Programming/WIN09.md
-    - Windows_System_Programming/WIN10.md
-    - Windows_System_Programming/WIN11.md
-    - Windows_System_Programming/WIN12.md
-    - Windows_System_Programming/WIN13.md
-    - Windows_System_Programming/WIN14.md
-    - Windows_System_Programming/WIN15.md
-    - Windows_System_Programming/WIN18.md
-    - Windows_System_Programming/WIN19.md
-    - Windows_System_Programming/WIN20.md
-    - Windows_System_Programming/Win23.md
-    - Windows_System_Programming/WIN250709.md
-    - Windows_System_Programming/IOCP.md
+    - Windows_System_Programming/win-01-processes-and-kernel-objects.md
+    - Windows_System_Programming/win-02-ipc.md
+    - Windows_System_Programming/win-03-threads-and-synchronization.md
+    - Windows_System_Programming/win-04-async-io-and-iocp.md
+    - Windows_System_Programming/win-05-virtual-memory-heap-mmf.md
+    - Windows_System_Programming/win-06-dlls-and-dynamic-linking.md
 
   - Computer Networks:
     - Computer_Network/NW0503.md
@@ -279,6 +264,32 @@ nav:
       - Game_Engine/AR250521.md
       - Game_Engine/AR250527.md
       - Game_Engine/AR250604.md
+    - Operating Systems Daily Notes:
+      - Operating_Systems/WinOS00.md
+      - Operating_Systems/WinOS1.md
+      - Operating_Systems/WinOS2.md
+      - Operating_Systems/WinOS3.md
+      - Operating_Systems/WinOS4.md
+      - Operating_Systems/WinOS5.md
+    - Windows System Programming Daily Notes:
+      - Windows_System_Programming/WIN03.md
+      - Windows_System_Programming/WIN05.md
+      - Windows_System_Programming/WIN06.md
+      - Windows_System_Programming/WIN07.md
+      - Windows_System_Programming/Win08.md
+      - Windows_System_Programming/WIN09.md
+      - Windows_System_Programming/WIN10.md
+      - Windows_System_Programming/WIN11.md
+      - Windows_System_Programming/WIN12.md
+      - Windows_System_Programming/WIN13.md
+      - Windows_System_Programming/WIN14.md
+      - Windows_System_Programming/WIN15.md
+      - Windows_System_Programming/WIN18.md
+      - Windows_System_Programming/WIN19.md
+      - Windows_System_Programming/WIN20.md
+      - Windows_System_Programming/Win23.md
+      - Windows_System_Programming/WIN250709.md
+      - Windows_System_Programming/IOCP.md
     - Computer Architecture Daily Notes:
       - Architecture/CA250709.md
       - Architecture/CA250711.md
