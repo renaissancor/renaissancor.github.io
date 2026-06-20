@@ -4,7 +4,34 @@ This guide configures a **Claude Code** terminal environment on Windows (WSL/Ubu
 
 ---
 
-## 1. System Update & Build Tools
+## 1. Install WSL2 (Windows Side)
+
+> Run these commands in **PowerShell (Admin)** — right-click Start → Terminal (Admin). Everything after this step runs inside WSL.
+
+```powershell
+# Install WSL2 + Ubuntu (if not already present)
+wsl --install -d Ubuntu
+
+# Keep WSL and the kernel up to date
+wsl --update
+```
+
+Verify WSL2 is active:
+
+```powershell
+wsl --list --verbose
+# VERSION column must be 2 for Ubuntu
+```
+
+If it shows version 1, convert: `wsl --set-version Ubuntu 2`.
+
+Launch Ubuntu once to create your Linux user, then close PowerShell. **All remaining steps run inside the WSL terminal.**
+
+> **Performance rule:** Always keep projects under `~/` inside WSL. The `/mnt/c/` mount is Windows NTFS bridged through WSL — it is **10-100x slower** for git, node_modules, and file-watching. Never clone repos to `/mnt/c/Users/...`.
+
+---
+
+## 2. System Update & Build Tools
 
 ```bash
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
@@ -15,7 +42,7 @@ sudo apt install -y build-essential curl git wget unzip ca-certificates gnupg
 
 ---
 
-## 2. Shell: zsh + Oh My Zsh
+## 3. Shell: zsh + Oh My Zsh
 
 > Ubuntu defaults to **bash**. zsh gives you Git branch display, tab completion, and useful aliases. This step must come before anything that writes to `~/.zshrc`.
 
@@ -40,7 +67,7 @@ echo $SHELL
 
 ---
 
-## 3. Node.js (via nvm)
+## 4. Node.js (via nvm)
 
 > **Do NOT** use `sudo apt install nodejs` — it installs an outdated version.
 
@@ -59,7 +86,7 @@ node -v
 
 ---
 
-## 4. Python Environment
+## 5. Python Environment
 
 > Never use the system Python. Always use virtual environments per project.
 
@@ -97,7 +124,7 @@ conda activate myenv
 
 ---
 
-## 5. Verify All Installations
+## 6. Verify All Installations
 
 ```bash
 node -v && uv --version
@@ -111,7 +138,7 @@ conda --version
 
 ---
 
-## 6. Claude Code
+## 7. Claude Code
 
 ```bash
 # Install Claude Code CLI (native binary, auto-updates)
@@ -129,7 +156,7 @@ Select your login method when prompted:
 
 ---
 
-## 7. MCP Server: Sequential Thinking (Optional)
+## 8. MCP Server: Sequential Thinking (Optional)
 
 > **Note:** Claude's built-in extended thinking (`/think` during chat) covers most reasoning use cases natively. Add this server only if you want explicit step-by-step tool calls in your workflow.
 
@@ -139,7 +166,7 @@ claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequen
 
 ---
 
-## 8. MCP Server: GitHub
+## 9. MCP Server: GitHub
 
 Connects Claude to your repositories for PR management, issue tracking, and code search. Uses GitHub's official hosted endpoint with OAuth — no personal access token required.
 
@@ -161,7 +188,7 @@ Select **github** → **Authenticate** and complete the GitHub OAuth flow in you
 
 ---
 
-## 9. MCP Server: Sentry
+## 10. MCP Server: Sentry
 
 Connects Claude to your error monitoring — search issues, inspect stack traces, and debug production errors without leaving the terminal.
 
@@ -190,7 +217,7 @@ Select **sentry** → **Authenticate** and complete the Sentry OAuth flow.
 
 ---
 
-## 10. MCP Server: Serena
+## 11. MCP Server: Serena
 
 Serena is a professional coding agent. The web dashboard must be disabled in terminal environments to prevent timeouts.
 
@@ -223,7 +250,7 @@ claude mcp add serena -- /home/$(whoami)/.local/bin/serena start-mcp-server
 
 ---
 
-## 11. Project Memory (CLAUDE.md)
+## 12. Project Memory (CLAUDE.md)
 
 `CLAUDE.md` is a file Claude reads automatically at the start of every session in your project. Use it to encode project-specific conventions, commands, and gotchas so Claude never needs to be told twice.
 
@@ -257,7 +284,7 @@ This generates a starter `CLAUDE.md` based on your codebase. Edit it to reflect 
 
 ---
 
-## 12. Permissions & Settings
+## 13. Permissions & Settings
 
 Claude Code respects a `settings.json` file that controls which commands are allowed or denied, preventing accidental destructive operations.
 
@@ -288,7 +315,52 @@ Create or edit `~/.claude/settings.json`:
 
 ---
 
-## 13. Optional Tools
+## 14. Windows Interop
+
+### Clipboard — `pbcopy` / `pbpaste` shims
+
+Many guides and workflows reference `pbcopy` (macOS). On WSL, use Windows clipboard interop:
+
+```bash
+# Add to ~/.zshrc
+alias pbcopy='clip.exe'
+alias pbpaste='powershell.exe -NoProfile -Command Get-Clipboard | tr -d "\r"'
+```
+
+`clip.exe` reads stdin and puts it on the Windows clipboard — `echo "foo" | pbcopy` works exactly like on macOS.
+
+### Opening URLs and folders in Windows
+
+```bash
+# Install wslu (Windows Subsystem for Linux Utilities) if not already present
+sudo apt install -y wslu
+
+wslview https://example.com      # opens default Windows browser
+explorer.exe .                   # opens current WSL dir in Windows Explorer
+```
+
+### Editors / IDEs
+
+- **VS Code**: Install on Windows, then add the **WSL** extension. Run `code .` inside WSL — the VS Code server runs in WSL, the UI runs on Windows. This is the recommended setup.
+- **JetBrains (PyCharm/IntelliJ)**: Use "Remote Development → WSL" from the Welcome screen. Don't open WSL projects via `\\wsl$\...` in the Windows IDE — that breaks file watchers.
+
+### SSH keys
+
+Keep SSH keys inside WSL, not on the Windows filesystem:
+
+```bash
+# If you have existing keys on Windows, copy them in:
+cp /mnt/c/Users/YOUR_USERNAME/.ssh/id_ed25519{,.pub} ~/.ssh/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_ed25519
+chmod 644 ~/.ssh/id_ed25519.pub
+```
+
+Permissions on `/mnt/c` are faked by WSL and will break SSH's strict-mode check — always store keys under `~/.ssh/` inside WSL.
+
+---
+
+## 15. Optional Tools
 
 ### FFmpeg
 
@@ -299,7 +371,7 @@ ffmpeg -version
 
 ---
 
-## 14. Expected `~/.claude.json`
+## 16. Expected `~/.claude.json`
 
 Your final configuration should look like:
 
@@ -328,7 +400,7 @@ Your final configuration should look like:
 
 ---
 
-## 15. Verification
+## 17. Verification
 
 ```bash
 claude
@@ -343,6 +415,8 @@ All status indicators should be **green**.
 
 | Issue | Solution |
 |---|---|
+| **WSL version is 1** | From PowerShell: `wsl --set-version Ubuntu 2` |
+| **Slow git/npm operations** | Move your project to `~/` inside WSL — `/mnt/c` is 10-100x slower |
 | **Serena timeout** | Ensure `web_dashboard: false` in `~/.serena/serena_config.yml` |
 | **Path errors (Serena)** | Use simple strings in `projects` (e.g., `"/home/name/Project"`), not maps with `name:` or `path:` keys |
 | **Node not found** | Run `nvm use --lts` or restart your shell |
@@ -351,3 +425,5 @@ All status indicators should be **green**.
 | **WSL paths** | Use `/home/username/...` not `/Users/username/...` (that's macOS) |
 | **GitHub auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for GitHub |
 | **Sentry auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for Sentry |
+| **Clipboard not working** | Ensure `alias pbcopy='clip.exe'` is in `~/.zshrc` and restart your shell |
+| **VS Code can't see WSL** | Install the **WSL** extension in VS Code on the Windows side |
