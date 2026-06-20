@@ -22,6 +22,7 @@ theme:
     - navigation.top
     - navigation.sections
     - navigation.path
+    - navigation.indexes
     - content.code.annotate
     - content.code.copy
     - search.highlight
@@ -48,9 +49,26 @@ extra_javascript:
 
 plugins:
   - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: ko
+          name: 한국어
+          build: true
 
 docs_dir: "docs"
 
+# ---------------------------------------------------------------------------
+# Navigation
+#   Top level = curated / portfolio (topic posts, projects).
+#   Raw daily lecture notes + exam scratch live under "Archive" at the bottom.
+#   Archive is being progressively distilled into concise topic posts.
+# ---------------------------------------------------------------------------
 nav:
   - Home: index.md
 
@@ -63,61 +81,12 @@ nav:
     - Setup/Linux_Dev_Setup.md
     - Setup/Vibe_Coder_Manifesto.md
 
-  - C++ & Game Engine:
-    - C / C++ Basics:
-      - C_C++_Basics/AR250305.md
-      - C_C++_Basics/AR250306.md
-      - C_C++_Basics/AR250307.md
-      - C_C++_Basics/AR250310.md
-      - C_C++_Basics/AR250311.md
-      - C_C++_Basics/AR250312.md
-      - C_C++_Basics/AR250313.md
-      - C_C++_Basics/AR250317.md
-      - C_C++_Basics/AR250318.md
-      - C_C++_Basics/AR250319.md
-      - C_C++_Basics/AR250320.md
-      - C_C++_Basics/AR250321.md
-      - C_C++_Basics/AR250324.md
-      - C_C++_Basics/AR250325.md
-      - C_C++_Basics/AR250326.md
-      - C_C++_Basics/AR250327.md
-      - C_C++_Basics/AR250328.md
-      - C_C++_Basics/AR250331.md
-      - C_C++_Basics/AR250401.md
-      - C_C++_Basics/AR250402.md
-      - C_C++_Basics/AR250423.md
-      - C_C++_Basics/AR250424.md
-      - C_C++_Basics/AR250425.md
-    - Data Structure:
-      - Data_Structure/AR250403.md
-      - Data_Structure/AR250407.md
-      - Data_Structure/AR250408.md
-      - Data_Structure/AR250409.md
-      - Data_Structure/AR250410.md
-      - Data_Structure/AR250411.md
-      - Data_Structure/AR250414.md
-      - Data_Structure/AR250415.md
-      - Data_Structure/AR250416.md
-      - Data_Structure/AR250417.md
-      - Data_Structure/AR250421.md
-      - Data_Structure/AR250422.md
-      - Data_Structure/STL00.md
-    - Game Engine:
-      - Game_Engine/AR250426.md
-      - Game_Engine/AR250429.md
-      - Game_Engine/AR250430.md
-      - Game_Engine/AR250501.md
-      - Game_Engine/AR250507.md
-      - Game_Engine/AR250508.md
-      - Game_Engine/AR250509.md
-      - Game_Engine/AR250512.md
-      - Game_Engine/AR250513.md
-      - Game_Engine/AR250515.md
-      - Game_Engine/AR250518.md
-      - Game_Engine/AR250519.md
-      - Game_Engine/AR250521.md
-      - Game_Engine/AR250527.md
-      - Game_Engine/AR250604.md
+  - C++:
+    - Cpp/cpp-01-fundamentals.md
+    - Cpp/cpp-02-functions-and-lifetime.md
+    - Cpp/cpp-03-pointers-and-memory.md
+    - Cpp/cpp-04-classes-and-oop.md
+    - Cpp/cpp-05-inheritance-and-polymorphism.md
 
   - Systems Programming:
     - Windows System Programming:
@@ -147,69 +116,11 @@ nav:
       - Operating_Systems/WinOS4.md
       - Operating_Systems/WinOS5.md
 
-  - Computer Architecture:
-    - Architecture/CA250709.md
-    - Architecture/CA250711.md
-    - Architecture/CA250714.md
-    - Architecture/CA250716.md
-    - Architecture/CA250718.md
-    - Architecture/CA250721.md
-    - Architecture/CA250723.md
-    - Architecture/CA250725.md
-    - Architecture/CA250728.md
-    - Architecture/CA250730.md
-    - Architecture/CA250801.md
-    - Architecture/CA250804.md
-    - Architecture/CA250806.md
-    - Architecture/CA250811.md
-    - Architecture/CA250812.md
-    - Architecture/CA250813.md
-    - Architecture/CA250818.md
-    - Architecture/CA250820.md
-    - Architecture/CA250822.md
-    - Architecture/CA250825.md
-    - Architecture/CA250827.md
-    - Architecture/CA250829.md
-    - Architecture/CA250908.md
-    - Architecture/CA250910.md
-    - Architecture/CA250912.md
-    - Architecture/CA250915.md
-    - Architecture/CA250917.md
-    - Architecture/CA250919.md
-    - Architecture/CA250922.md
-    - Architecture/CA250924.md
-    - Exam:
-      - Architecture/Exam/1.md
-      - Architecture/Exam/2.md
-      - Architecture/Exam/3.md
-      - Architecture/Exam/4.md
-      - Architecture/Exam/5.md
-      - Architecture/Exam/6.md
-      - Architecture/Exam/7.md
-      - Architecture/Exam/8.md
-      - Architecture/Exam/9.md
-      - Architecture/Exam/10.md
-      - Architecture/Exam/11.md
-      - Architecture/Exam/12.md
-      - Architecture/Exam/13.md
-      - Architecture/Exam/14.md
-      - Architecture/Exam/15.md
-      - Architecture/Exam/16.md
-      - Architecture/Exam/17.md
-      - Architecture/Exam/18.md
-      - Architecture/Exam/e1.md
-      - Architecture/Exam/e2.md
-      - Architecture/Exam/e3.md
-      - Architecture/Exam/e4.md
-      - Architecture/Exam/e5.md
-      - Architecture/Exam/e6.md
-      - Architecture/Exam/e7.md
-      - Architecture/Exam/e8.md
-      - Architecture/Exam/e9.md
-      - Architecture/Exam/e10.md
-      - Architecture/Exam/r1.md
-    - Korean:
-      - Architecture/ko/CA250711.md
+  - Data Structures:
+    - Data_Structure/ds-01-dynamic-array-and-vector.md
+    - Data_Structure/ds-02-linked-lists-and-iterators.md
+    - Data_Structure/ds-03-trees-and-traversals.md
+    - Data_Structure/ds-04-binary-search-trees.md
 
   - Algorithms:
     - Algorithm/A01.md
@@ -235,32 +146,33 @@ nav:
       - Algorithm/HKU/HKUPSET1.md
       - Algorithm/HKU/HKU_Math.md
 
-  - Self-Study Notes:
-    - Computer Network:
-      - Computer_Network/NW0503.md
-      - Computer_Network/NW0504.md
-      - Computer_Network/NW0724.md
-      - Computer_Network/NW1.md
-      - Computer_Network/NWHeaders.md
-      - Computer_Network/NWL2.md
-      - Computer_Network/NWTCP.md
-      - Computer_Network/NWVoca.md
-      - Computer_Network/TCPIP.md
-      - Computer_Network/TCPIP1.md
-      - Computer_Network/Wireshark.md
-    - Compilers:
-      - Compilers/CMP01.md
-      - Compilers/CMP02.md
-      - Compilers/CMP03.md
-      - Compilers/CMP04.md
-      - Compilers/MSVCProject.md
-      - Compilers/MSVCSolution.md
-      - Compilers/MSVCSolutionKR.md
-    - Cryptography:
-      - Cryptography/C2PA.md
-      - Cryptography/C2PA_Ref.md
+  - Networking:
+    - Computer_Network/NW0503.md
+    - Computer_Network/NW0504.md
+    - Computer_Network/NW0724.md
+    - Computer_Network/NW1.md
+    - Computer_Network/NWHeaders.md
+    - Computer_Network/NWL2.md
+    - Computer_Network/NWTCP.md
+    - Computer_Network/NWVoca.md
+    - Computer_Network/TCPIP.md
+    - Computer_Network/TCPIP1.md
+    - Computer_Network/Wireshark.md
 
-  - Course Archive:
+  - Compilers:
+    - Compilers/CMP01.md
+    - Compilers/CMP02.md
+    - Compilers/CMP03.md
+    - Compilers/CMP04.md
+    - Compilers/MSVCProject.md
+    - Compilers/MSVCSolution.md
+    - Compilers/MSVCSolutionKR.md
+
+  - Cryptography:
+    - Cryptography/C2PA.md
+    - Cryptography/C2PA_Ref.md
+
+  - Course Projects:
     - ECE482 FA24:
       - Homework:
         - ECE482FA24/ECE482HW/ECE482H1.md
@@ -297,3 +209,123 @@ nav:
         - ECE482FA24/ECE482P3/Performance.md
         - ECE482FA24/ECE482P3/Risk.md
         - ECE482FA24/ECE482P3/RoadMap.md
+
+  # -------------------------------------------------------------------------
+  # Archive — raw study logs, pending distillation into topic posts.
+  # -------------------------------------------------------------------------
+  - Archive — Study Logs:
+    - C / C++ Daily Notes:
+      - C_C++_Basics/AR250305.md
+      - C_C++_Basics/AR250306.md
+      - C_C++_Basics/AR250307.md
+      - C_C++_Basics/AR250310.md
+      - C_C++_Basics/AR250311.md
+      - C_C++_Basics/AR250312.md
+      - C_C++_Basics/AR250313.md
+      - C_C++_Basics/AR250317.md
+      - C_C++_Basics/AR250318.md
+      - C_C++_Basics/AR250319.md
+      - C_C++_Basics/AR250320.md
+      - C_C++_Basics/AR250321.md
+      - C_C++_Basics/AR250324.md
+      - C_C++_Basics/AR250325.md
+      - C_C++_Basics/AR250326.md
+      - C_C++_Basics/AR250327.md
+      - C_C++_Basics/AR250328.md
+      - C_C++_Basics/AR250331.md
+      - C_C++_Basics/AR250401.md
+      - C_C++_Basics/AR250402.md
+      - C_C++_Basics/AR250423.md
+      - C_C++_Basics/AR250424.md
+      - C_C++_Basics/AR250425.md
+    - Data Structures Daily Notes:
+      - Data_Structure/AR250403.md
+      - Data_Structure/AR250407.md
+      - Data_Structure/AR250408.md
+      - Data_Structure/AR250409.md
+      - Data_Structure/AR250410.md
+      - Data_Structure/AR250411.md
+      - Data_Structure/AR250414.md
+      - Data_Structure/AR250415.md
+      - Data_Structure/AR250416.md
+      - Data_Structure/AR250417.md
+      - Data_Structure/AR250421.md
+      - Data_Structure/AR250422.md
+      - Data_Structure/STL00.md
+    - Game Engine Daily Notes:
+      - Game_Engine/AR250426.md
+      - Game_Engine/AR250429.md
+      - Game_Engine/AR250430.md
+      - Game_Engine/AR250501.md
+      - Game_Engine/AR250507.md
+      - Game_Engine/AR250508.md
+      - Game_Engine/AR250509.md
+      - Game_Engine/AR250512.md
+      - Game_Engine/AR250513.md
+      - Game_Engine/AR250515.md
+      - Game_Engine/AR250519.md
+      - Game_Engine/AR250521.md
+      - Game_Engine/AR250527.md
+      - Game_Engine/AR250604.md
+    - Computer Architecture Daily Notes:
+      - Architecture/CA250709.md
+      - Architecture/CA250711.md
+      - Architecture/CA250714.md
+      - Architecture/CA250716.md
+      - Architecture/CA250718.md
+      - Architecture/CA250721.md
+      - Architecture/CA250723.md
+      - Architecture/CA250725.md
+      - Architecture/CA250728.md
+      - Architecture/CA250730.md
+      - Architecture/CA250801.md
+      - Architecture/CA250804.md
+      - Architecture/CA250806.md
+      - Architecture/CA250811.md
+      - Architecture/CA250812.md
+      - Architecture/CA250813.md
+      - Architecture/CA250818.md
+      - Architecture/CA250820.md
+      - Architecture/CA250822.md
+      - Architecture/CA250825.md
+      - Architecture/CA250827.md
+      - Architecture/CA250829.md
+      - Architecture/CA250908.md
+      - Architecture/CA250910.md
+      - Architecture/CA250912.md
+      - Architecture/CA250915.md
+      - Architecture/CA250917.md
+      - Architecture/CA250919.md
+      - Architecture/CA250922.md
+      - Architecture/CA250924.md
+      - Architecture/ko/CA250711.md
+    - Architecture Exam Prep:
+      - Architecture/Exam/1.md
+      - Architecture/Exam/2.md
+      - Architecture/Exam/3.md
+      - Architecture/Exam/4.md
+      - Architecture/Exam/5.md
+      - Architecture/Exam/6.md
+      - Architecture/Exam/7.md
+      - Architecture/Exam/8.md
+      - Architecture/Exam/9.md
+      - Architecture/Exam/10.md
+      - Architecture/Exam/11.md
+      - Architecture/Exam/12.md
+      - Architecture/Exam/13.md
+      - Architecture/Exam/14.md
+      - Architecture/Exam/15.md
+      - Architecture/Exam/16.md
+      - Architecture/Exam/17.md
+      - Architecture/Exam/18.md
+      - Architecture/Exam/e1.md
+      - Architecture/Exam/e2.md
+      - Architecture/Exam/e3.md
+      - Architecture/Exam/e4.md
+      - Architecture/Exam/e5.md
+      - Architecture/Exam/e6.md
+      - Architecture/Exam/e7.md
+      - Architecture/Exam/e8.md
+      - Architecture/Exam/e9.md
+      - Architecture/Exam/e10.md
+      - Architecture/Exam/r1.md
