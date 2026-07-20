@@ -7,13 +7,14 @@ title: "CV | Jae Heung Park"
 **Email:** stephenjhpark99@gmail.com  
 **LinkedIn:** [linkedin.com/in/jaeheungpark](https://www.linkedin.com/in/jaeheung-park-6623ab1b1/)  
 **GitHub:** [github.com/renaissancor](https://github.com/renaissancor)  
+**Download:** [PDF (English)](cv.pdf) · [PDF (한국어)](cv-ko.pdf)  
 
 ---
 
 ## Introduction  
 
-Versatile **software engineer** with experience spanning **web development**, **systems programming**, and **ML infrastructure**.  
-Built and deployed a production **VLM-based image classifier** on **H200 GPU** infrastructure at i-Scream Media.  
+Versatile **software engineer** with experience spanning **web development**, **systems programming**, and **ML / data infrastructure**.  
+At **i-Scream Media**, built and scaled a production **multi-modal content-understanding platform** — VLM, OCR, and ASR extraction pipelines processing **millions of assets** on on-premise **H200 GPU** infrastructure.  
 
 Background in **C/C++ systems programming** (IOCP, multi-threaded architectures, Linux kernel) with prior internship experience in **React/TypeScript** web platforms at NAVER.  
 
@@ -57,13 +58,19 @@ Pre-University Education
 
 ---
 
-## ML & Infrastructure  
+## ML & Data Infrastructure  
 
 ![vLLM](https://img.shields.io/badge/-vLLM-333333?style=flat&logo=python)
 ![Hugging Face](https://img.shields.io/badge/-Hugging_Face-333333?style=flat&logo=huggingface)
 ![FastAPI](https://img.shields.io/badge/-FastAPI-333333?style=flat&logo=fastapi)
 ![Docker](https://img.shields.io/badge/-Docker-333333?style=flat&logo=docker)
 ![NVIDIA](https://img.shields.io/badge/-CUDA_/_H200_/_RTX_4090-333333?style=flat&logo=nvidia)
+![DuckDB](https://img.shields.io/badge/-DuckDB-333333?style=flat&logo=duckdb)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-333333?style=flat&logo=postgresql)
+![MySQL](https://img.shields.io/badge/-MySQL-333333?style=flat&logo=mysql)
+![Parquet](https://img.shields.io/badge/-Parquet-333333?style=flat&logo=apacheparquet)
+![Streamlit](https://img.shields.io/badge/-Streamlit-333333?style=flat&logo=streamlit)
+![FFmpeg](https://img.shields.io/badge/-FFmpeg-333333?style=flat&logo=ffmpeg)
 
 ---
 
@@ -95,10 +102,13 @@ Pre-University Education
 _February 2026 – Present_  
 **Junior Researcher**, Seoul, South Korea
 
-- Built an on-premise **VLM image safety classifier** for children's educational platforms using **Gemma 4 31B (FP8)** deployed on **H200 GPU** via **vLLM**.  
-- Designed a **2-pass classification pipeline**: VLM visual analysis + deterministic text analysis (profanity/slur detection), outputting Korean media ratings (all/12/15/18).  
-- Developed a **FastAPI production server** for integration with the internal content management system.  
-- Managed multi-GPU infrastructure (**H200 NVL**, **RTX 4090**) with **FP8/AWQ quantization** for cost-efficient inference under children's data privacy constraints.
+- Built and scaled an on-premise **multi-modal content-understanding platform** that extracts metadata and curriculum tags from a large children's educational media library, spanning **images, video, documents, interactive HTML, and legacy Flash** assets under a unified metadata contract.  
+- Shipped the original **VLM image-safety classifier** (**Gemma 4 31B, FP8**) on **H200 GPU** via **vLLM** — a **2-pass pipeline** (VLM visual analysis + deterministic profanity/slur text analysis) producing Korean media ratings (all/12/15/18), served via a **FastAPI** production server.  
+- Engineered **high-throughput, resumable extraction pipelines** processing **5M+ images and 1.5M+ curriculum records at 99.9%+ success**, using transactional claim queues, checkpointing, and watchdog-based recovery; batching optimizations cut a projected multi-week run to a few days (**~5× throughput**).  
+- Built **video and document AI pipelines** — frame/audio extraction with **Whisper** transcription and **VAD**, plus layout-aware OCR (**PaddleOCR-VL**) over PDF/PPT/HWP formats.  
+- Designed the platform's **data layer**: stable content-hash identity, content-specific schemas, and an analytical **DuckDB / Parquet** mart benchmarked **50–180× faster** than the operational **MySQL / PostgreSQL** store.  
+- Automated **Mac → H200 deployment** (standalone rsync scripts, systemd services, locked `uv` environments) and shipped **Streamlit / static QA dashboards** for coverage and data-quality review.  
+- Managed shared multi-GPU infrastructure (**H200 NVL**, **RTX 4090**) with **FP8/AWQ quantization**, tensor-parallel topologies, and concurrency tuning for cost-efficient inference under children's data-privacy constraints.
 
 ---
 
@@ -123,74 +133,16 @@ _March 2021 – December 2021_
 
 ## Projects  
 
-### **AI Image Generator (GenAIOps)** — *Fall 2023* 
+- **AI Image Generator (GenAIOps)** — *Fall 2023* — ML-model visualization & optimization web platform with real-time performance monitoring — [YouTube](https://www.youtube.com/watch?v=yq9ckGJPQOE) · *Python, FastAPI, React, Next.js*
+- **AI Model Optimization Statistics Viewer** — *Winter 2023* — real-time dashboards for AI-model performance metrics — [YouTube](https://www.youtube.com/watch?v=7fE3d_xOX0A) · *TypeScript, React, Redux, ECharts*
 
-- [YouTube Demo](https://www.youtube.com/watch?v=yq9ckGJPQOE) 
+**Academic projects** (SJTU · ECE coursework):
 
-**Tools:** Python, FastAPI, TypeScript, React, NextJS, Tailwind CSS, Shadcn UI, Relay  
-- Developed a web app for visualizing and optimizing machine learning models.  
-- Built real-time performance monitoring and optimization tools.  
-- Integrated algorithms for efficient model analysis and optimization.  
-- Designed scalable API services for model interaction.  
-
----
-
-### **AI Model Optimization Statistics Viewer** — *Winter 2023*  
-
-- [YouTube Demo](https://www.youtube.com/watch?v=7fE3d_xOX0A) 
-
-**Tools:** Docker, TypeScript, React, NextJS, Redux, RTK Query, Radix UI, ECharts, ApexChart  
-- Developed a web application to display and optimize AI model performance metrics in real-time.  
-- Created dynamic visualizations for performance tracking and analysis.  
-- Integrated APIs for handling model data and ensuring scalability.  
-- Implemented interactive interfaces for exploring optimization results.  
+- **Multi-Threading Database** — *Fall 2024* — 64-thread-optimized database with semaphore-based read/write locking — [GitHub](https://github.com/renaissancor/ECE482P2) · *C++, PThreads, SQLite*
+- **Lottery Scheduling (Linux Kernel)** — *Winter 2024* — eBPF ticket-based scheduler with shared dispatch queues — [GitHub](https://github.com/renaissancor/ECE482P3) · *C, eBPF, Linux Kernel*
+- **Big Data Million Song** — *Summer 2024* — distributed recommendation over the Million Song Dataset — [GitHub](https://github.com/renaissancor/ECE472P1) · *Hadoop, Spark, Python*
+- **Web App & Database Design** — *Summer 2024* — capstone-tracking web app with OAuth + decentralized DB — [GitHub](https://github.com/renaissancor/ECE450SU24) · *MySQL, React, Node.js*
 
 ---
 
-### **Big Data Million Song Project** — *Summer 2024*  
-
-- [GitHub Repo](https://github.com/renaissancor/ECE472P1)
-
-**Tools:** Hadoop, Spark, Python, Drill, Docker, NumPy, Pandas  
-- Processed and analyzed the Million Song Dataset to enhance recommendation systems.  
-- Pre-processed large-scale datasets for improved recommendation performance.  
-- Applied distributed computing techniques for scalable data analysis.  
-- Conducted feature engineering to enhance song similarity detection.
-
----
-
-### **Web App & Database Design and Development** — *Summer 2024*  
-
-- [GitHub Repo](https://github.com/renaissancor/ECE450SU24)
-
-**Tools:** MySQL, OAuth, React, Node.js, NextJS, Shadcn UI, Tanstack Query  
-- Designed and developed a scalable web application for capstone project tracking.  
-- Implemented decentralized database management and secure authentication.  
-- Enabled efficient collaboration and project data access.
-
----
-
-### **Multi-Threading Database** — *Fall 2024*  
-
-- [GitHub Repo](https://github.com/renaissancor/ECE482P2)
-
-**Tools:** C++, PThreads, SQLite, Linux, Shell Script, LLDB  
-- Developed a highly optimized multi-threaded database for 64-thread servers.  
-- Engineered concurrency control mechanisms for efficient query handling.  
-- Designed semaphore-based read/write lock strategies to minimize execution time.
-
----
-
-### **Lottery Scheduling (Linux Kernel)** — *Winter 2024*  
-
-- [GitHub Repo](https://github.com/renaissancor/ECE482P3)
-
-**Tools:** C, C++, eBPF, Linux Kernel, Shell Script, BPF Maps  
-- Implemented a lottery scheduling algorithm in the Linux kernel using eBPF.  
-- Developed enqueue, dispatch, and init functions for task scheduling.  
-- Designed a ticket-based task selection mechanism to prioritize execution.  
-- Built shared dispatch queues (DSQ) for task coordination.
-
----
-
-_Last updated: April 2026_
+_Last updated: July 2026_
