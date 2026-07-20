@@ -1,0 +1,13 @@
+# CV PDF export — OPTIONAL, heavyweight, on-demand only.
+#
+# This is NOT needed to build or deploy the site; `requirements.txt` stays
+# lean for that. Installing this pulls in Playwright + a headless Chromium
+# purely so `scripts/build_cv_pdf.py` can snapshot the CV page to PDF.
+#
+#   python -m venv .venv-cv && source .venv-cv/bin/activate
+#   pip install -r requirements-cv.txt
+#   playwright install chromium      # one-time browser download
+#   python scripts/build_cv_pdf.py   # -> cv.pdf, cv.ko.pdf
+mkdocs-material
+mkdocs-static-i18n
+playwright
