@@ -6,7 +6,7 @@ guide — everything from Section 2 onward applies to a native Ubuntu machine to
 WSL-specific parts (Sections 1 and 9).
 
 > The AI-harness layer (plugins, Codex offload, rtk, Serena, skills) is documented once in
-> **[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)** — the concepts and commands are
+> **[Harness_setup.md](./Harness_setup.md)** — the concepts and commands are
 > platform-independent. This guide covers the Linux-side installs and the WSL-specific
 > pitfalls.
 
@@ -168,7 +168,7 @@ API-metered billing.
 Everything beyond the bare install — **plugins** (oh-my-claudecode, codex), the **Codex
 CLI** as a token-offload second engine, **rtk**, **skills**, the **CLAUDE.md hierarchy**,
 and `settings.json` permissions — is documented in
-**[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)** and works identically on Linux/WSL.
+**[Harness_setup.md](./Harness_setup.md)** and works identically on Linux/WSL.
 Linux-specific notes:
 
 ```bash
@@ -218,7 +218,7 @@ commands, and gotchas live there so Claude never needs to be told twice.
 ```
 
 Keep it concise; delete anything Claude can infer from the code. Details and the global
-`~/.claude/CLAUDE.md` hierarchy: see [Mac_Setup_Claude.md](./Mac_Setup_Claude.md).
+`~/.claude/CLAUDE.md` hierarchy: see [Harness_setup.md](./Harness_setup.md).
 
 ---
 
@@ -311,11 +311,11 @@ claude
 - [ ] Git configured, SSH key added to GitHub, `gh` authenticated
 - [ ] `node` via nvm (v24+ LTS), `uv` installed
 - [ ] Claude Code installed and logged in
-- [ ] Harness layer configured per [Mac_Setup_Claude.md](./Mac_Setup_Claude.md) (plugins, Codex, Serena)
+- [ ] Harness layer configured per [Harness_setup.md](./Harness_setup.md) (plugins, Codex, Serena)
 - [ ] Clipboard shims and wslu installed
 
 ---
 
-_Last updated: August 2026 — harness layer consolidated into Mac_Setup_Claude.md; stale
+_Last updated: August 2026 — harness layer consolidated into Harness_setup.md; stale
 MCP recipe (Sequential Thinking / Sentry / GitHub) removed. This guide also serves as the
 native-Ubuntu setup reference (the former Linux_Dev_Setup.md)._

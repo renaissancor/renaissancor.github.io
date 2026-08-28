@@ -17,7 +17,7 @@ output, **Serena** for semantic code navigation, and **skills** for repeatable w
 ## 1. Claude Code CLI
 
 ```bash
-# Prerequisites (see MacBook_Dev_Setup.md): brew, uv, node
+# Prerequisites (see Mac_dev_setup.md): brew, uv, node
 
 # Claude desktop app (GUI) — optional but useful
 brew install --cask claude

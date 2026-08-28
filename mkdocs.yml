@@ -76,11 +76,11 @@ nav:
   - Home: index.md
 
   - Setup:
-    - Setup/MacBook_Dev_Setup.md
-    - Setup/Mac_Setup_Claude.md
-    - Setup/Mac_Setup_iTerm2.md
-    - Setup/WSL_Setup_Claude.md
-    - Setup/Windows_Dev_Setup.md
+    - Setup/Mac_dev_setup.md
+    - Setup/Harness_setup.md
+    - Setup/iterm2_setup.md
+    - Setup/WSL_dev_setup.md
+    - Setup/Win_dev_setup.md
     - Setup/Vibe_Coder_Manifesto.md
 
   - C / C++:
