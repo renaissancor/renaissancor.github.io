@@ -1,6 +1,14 @@
-# WSL Dev Setup Guide
+# WSL Dev Setup Guide (Windows + Ubuntu)
 
-This guide configures a **Claude Code** terminal environment on Windows (WSL/Ubuntu) with GitHub integration, Sequential Thinking, and the Serena agent.
+This guide sets up **WSL2 (Ubuntu)** on my personal Windows desktop as a Linux dev
+environment with **Claude Code** and the AI harness. It doubles as the generic Linux setup
+guide — everything from Section 2 onward applies to a native Ubuntu machine too; skip the
+WSL-specific parts (Sections 1 and 9).
+
+> The AI-harness layer (plugins, Codex offload, rtk, Serena, skills) is documented once in
+> **[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)** — the concepts and commands are
+> platform-independent. This guide covers the Linux-side installs and the WSL-specific
+> pitfalls.
 
 ---
 
@@ -67,12 +75,47 @@ echo $SHELL
 
 ---
 
-## 4. Node.js (via nvm)
+## 4. Git + GitHub
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+git config --global init.defaultBranch main
+
+# Generate an SSH key (use your GitHub email), then add the .pub to GitHub → Settings → SSH Keys
+ssh-keygen -t ed25519 -C "your@email.com"
+cat ~/.ssh/id_ed25519.pub
+
+# Test
+ssh -T git@github.com
+```
+
+### GitHub CLI
+
+`gh` handles PRs, issues, and API calls from the terminal — and Claude Code drives it
+natively, which is why no GitHub MCP server is needed anymore.
+
+```bash
+sudo mkdir -p -m 755 /etc/apt/keyrings
+wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+  | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null
+sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] \
+  https://cli.github.com/packages stable main" \
+  | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
+sudo apt update && sudo apt install -y gh
+gh auth login   # GitHub.com → SSH → Login with a web browser
+```
+
+---
+
+## 5. Node.js (via nvm)
 
 > **Do NOT** use `sudo apt install nodejs` — it installs an outdated version.
 
 ```bash
-# Install nvm
+# Install nvm (check https://github.com/nvm-sh/nvm for the current version tag)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 source ~/.zshrc
 
@@ -80,17 +123,16 @@ source ~/.zshrc
 nvm install --lts
 nvm use --lts
 
-# Verify (should be v22+)
+# Verify (v24+ LTS as of 2026)
 node -v
 ```
 
 ---
 
-## 5. Python Environment
+## 6. Python: uv
 
-> Never use the system Python. Always use virtual environments per project.
-
-### Option A: uv (recommended)
+> Never use the system Python. `uv` is the default for every Python project; skip conda
+> unless a specific project demands it.
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -100,40 +142,10 @@ source ~/.zshrc
 # Verify
 uv --version
 
-# Create a virtual environment in your project
-uv venv
-source .venv/bin/activate
-```
-
-### Option B: Miniconda
-
-```bash
-# Download and install Miniconda
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-# Follow the prompts; answer 'yes' to init when asked
-
-# Initialize for zsh
-~/miniconda3/bin/conda init zsh
-source ~/.zshrc
-
-# Create an environment
-conda create -n myenv python=3.11 -y
-conda activate myenv
-```
-
----
-
-## 6. Verify All Installations
-
-```bash
-node -v && uv --version
-```
-
-If using Conda:
-
-```bash
-conda --version
+# Per-project workflow
+uv venv && source .venv/bin/activate   # classic venv
+uv sync                                # or: locked project from pyproject.toml + uv.lock
+uv run python script.py                # run without activating
 ```
 
 ---
@@ -141,181 +153,76 @@ conda --version
 ## 7. Claude Code
 
 ```bash
-# Install Claude Code CLI (native binary, auto-updates)
+# Install Claude Code CLI (native binary, self-updating, lands in ~/.local/bin)
 curl -fsSL https://claude.ai/install.sh | bash
 
 # Initialize (follow the login prompts)
 claude
 ```
 
-Select your login method when prompted:
+Log in with a **Claude account** (Pro/Max/Team/Enterprise) unless you specifically want
+API-metered billing.
 
-1. **Claude account** — Pro, Max, Team, or Enterprise
-2. **Anthropic Console** — API usage billing
-3. **3rd-party platform** — Amazon Bedrock, Microsoft Foundry, or Vertex AI
+### The harness layer
+
+Everything beyond the bare install — **plugins** (oh-my-claudecode, codex), the **Codex
+CLI** as a token-offload second engine, **rtk**, **skills**, the **CLAUDE.md hierarchy**,
+and `settings.json` permissions — is documented in
+**[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)** and works identically on Linux/WSL.
+Linux-specific notes:
+
+```bash
+# Codex CLI on Linux (no brew cask here) — install via npm, log in with ChatGPT account
+npm install -g @openai/codex
+codex login
+```
+
+### Serena MCP (per-project)
+
+Register Serena in a committed `.mcp.json` at the repo root rather than globally — the
+machine stays reproducible from the repo alone:
+
+```json
+{
+  "mcpServers": {
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from", "git+https://github.com/oraios/serena",
+        "serena", "start-mcp-server", "--context", "ide-assistant"
+      ]
+    }
+  }
+}
+```
+
+Verify from any session:
+
+```bash
+claude mcp list
+```
+
+> **Dropped since the February version of this guide:** Sequential Thinking MCP (built-in
+> extended thinking covers it), Sentry MCP (never used), GitHub MCP (`gh` does it better).
 
 ---
 
-## 8. MCP Server: Sequential Thinking (Optional)
+## 8. Project Memory (CLAUDE.md)
 
-> **Note:** Claude's built-in extended thinking (`/think` during chat) covers most reasoning use cases natively. Add this server only if you want explicit step-by-step tool calls in your workflow.
-
-```bash
-claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking
-```
-
----
-
-## 9. MCP Server: GitHub
-
-Connects Claude to your repositories for PR management, issue tracking, and code search. Uses GitHub's official hosted endpoint with OAuth — no personal access token required.
-
-### Step A: Add to Claude
-
-```bash
-claude mcp add --transport http github https://api.githubcopilot.com/mcp/
-```
-
-### Step B: Authenticate
-
-```bash
-# Inside Claude Code, open the MCP menu and follow the browser login flow
-claude
-❯ /mcp
-```
-
-Select **github** → **Authenticate** and complete the GitHub OAuth flow in your browser.
-
----
-
-## 10. MCP Server: Sentry
-
-Connects Claude to your error monitoring — search issues, inspect stack traces, and debug production errors without leaving the terminal.
-
-### Step A: Add to Claude
-
-```bash
-claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
-```
-
-### Step B: Authenticate
-
-```bash
-claude
-❯ /mcp
-```
-
-Select **sentry** → **Authenticate** and complete the Sentry OAuth flow.
-
-### Usage examples
-
-```
-> What are the top 5 errors in production this week?
-> Show me the full stack trace for issue PROJ-1234
-> Which errors spiked after the last deploy?
-```
-
----
-
-## 11. MCP Server: Serena
-
-Serena is a professional coding agent. The web dashboard must be disabled in terminal environments to prevent timeouts.
-
-### Step A: Install Permanently
-
-```bash
-uv tool install git+https://github.com/oraios/serena
-uv tool update-shell
-source ~/.zshrc
-```
-
-### Step B: Headless Configuration
-
-```bash
-mkdir -p ~/.serena
-
-cat << EOF > ~/.serena/serena_config.yml
-web_dashboard: false
-web_dashboard_open_on_launch: false
-projects:
-  - "/home/$(whoami)/Project"
-EOF
-```
-
-### Step C: Add to Claude
-
-```bash
-claude mcp add serena -- /home/$(whoami)/.local/bin/serena start-mcp-server
-```
-
----
-
-## 12. Project Memory (CLAUDE.md)
-
-`CLAUDE.md` is a file Claude reads automatically at the start of every session in your project. Use it to encode project-specific conventions, commands, and gotchas so Claude never needs to be told twice.
-
-### Initialize
+`CLAUDE.md` is read automatically at session start — project conventions, build/test
+commands, and gotchas live there so Claude never needs to be told twice.
 
 ```bash
 # Inside your project directory, inside Claude Code:
 ❯ /init
 ```
 
-This generates a starter `CLAUDE.md` based on your codebase. Edit it to reflect your actual workflow:
-
-```markdown
-# Build & Test
-- Build: `npm run build`
-- Test single: `npm test -- --testNamePattern="pattern"`
-- Lint (auto-fix): `npm run lint:fix`
-
-# Conventions
-- Use 2-space indentation
-- Prefer `const` over `let`; avoid `var`
-- Commit format: `type(scope): description` (e.g. `feat(auth): add OAuth`)
-
-# Gotchas
-- DB migrations must be idempotent
-- `utils/legacy.ts` is deprecated — use `utils/new.ts`
-- Requires `REDIS_URL` and `API_KEY` env vars
-```
-
-> Commit `CLAUDE.md` to git — it applies to everyone on the team. Keep it concise; delete anything Claude can already infer from the code.
+Keep it concise; delete anything Claude can infer from the code. Details and the global
+`~/.claude/CLAUDE.md` hierarchy: see [Mac_Setup_Claude.md](./Mac_Setup_Claude.md).
 
 ---
 
-## 13. Permissions & Settings
-
-Claude Code respects a `settings.json` file that controls which commands are allowed or denied, preventing accidental destructive operations.
-
-```bash
-mkdir -p ~/.claude
-```
-
-Create or edit `~/.claude/settings.json`:
-
-```json
-{
-  "permissions": {
-    "allow": [
-      "Bash(npm run *)",
-      "Bash(git *)",
-      "Bash(docker *)"
-    ],
-    "deny": [
-      "Bash(rm -rf *)",
-      "Bash(sudo *)",
-      "Read(.env*)"
-    ]
-  }
-}
-```
-
-> For team-wide defaults, create `.claude/settings.json` inside your project repo and commit it. User-level `~/.claude/settings.json` takes precedence.
-
----
-
-## 14. Windows Interop
+## 9. Windows Interop
 
 ### Clipboard — `pbcopy` / `pbpaste` shims
 
@@ -360,54 +267,22 @@ Permissions on `/mnt/c` are faked by WSL and will break SSH's strict-mode check 
 
 ---
 
-## 15. Optional Tools
-
-### FFmpeg
+## 10. Optional Tools
 
 ```bash
-sudo apt install -y ffmpeg
-ffmpeg -version
+sudo apt install -y ffmpeg jq ripgrep tmux
 ```
 
 ---
 
-## 16. Expected `~/.claude.json`
-
-Your final configuration should look like:
-
-```json
-{
-  "mcpServers": {
-    "sequential-thinking": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
-    },
-    "github": {
-      "type": "http",
-      "url": "https://api.githubcopilot.com/mcp/"
-    },
-    "sentry": {
-      "type": "http",
-      "url": "https://mcp.sentry.dev/mcp"
-    },
-    "serena": {
-      "command": "/home/your_username/.local/bin/serena",
-      "args": ["start-mcp-server"]
-    }
-  }
-}
-```
-
----
-
-## 17. Verification
+## 11. Verification
 
 ```bash
+node -v && uv --version && gh --version && claude --version && codex --version
 claude
-❯ /mcp
+❯ /mcp        # MCP servers green
+❯ /plugin     # plugins enabled
 ```
-
-All status indicators should be **green**.
 
 ---
 
@@ -417,13 +292,30 @@ All status indicators should be **green**.
 |---|---|
 | **WSL version is 1** | From PowerShell: `wsl --set-version Ubuntu 2` |
 | **Slow git/npm operations** | Move your project to `~/` inside WSL — `/mnt/c` is 10-100x slower |
-| **Serena timeout** | Ensure `web_dashboard: false` in `~/.serena/serena_config.yml` |
-| **Path errors (Serena)** | Use simple strings in `projects` (e.g., `"/home/name/Project"`), not maps with `name:` or `path:` keys |
+| **Serena timeout** | Use `--context ide-assistant` in the `.mcp.json` args |
+| **`claude` not found** | The installer puts it in `~/.local/bin` — ensure that's on PATH |
 | **Node not found** | Run `nvm use --lts` or restart your shell |
 | **zsh not default** | Run `chsh -s $(which zsh)` then close and reopen WSL |
 | **`~/.zshrc` not found** | Make sure Oh My Zsh is installed before running the Node/uv installers |
 | **WSL paths** | Use `/home/username/...` not `/Users/username/...` (that's macOS) |
-| **GitHub auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for GitHub |
-| **Sentry auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for Sentry |
 | **Clipboard not working** | Ensure `alias pbcopy='clip.exe'` is in `~/.zshrc` and restart your shell |
 | **VS Code can't see WSL** | Install the **WSL** extension in VS Code on the Windows side |
+
+---
+
+## Checklist
+
+- [ ] WSL2 + Ubuntu installed, projects under `~/` (never `/mnt/c`)
+- [ ] `build-essential` and `git` installed
+- [ ] zsh + Oh My Zsh installed and default
+- [ ] Git configured, SSH key added to GitHub, `gh` authenticated
+- [ ] `node` via nvm (v24+ LTS), `uv` installed
+- [ ] Claude Code installed and logged in
+- [ ] Harness layer configured per [Mac_Setup_Claude.md](./Mac_Setup_Claude.md) (plugins, Codex, Serena)
+- [ ] Clipboard shims and wslu installed
+
+---
+
+_Last updated: August 2026 — harness layer consolidated into Mac_Setup_Claude.md; stale
+MCP recipe (Sequential Thinking / Sentry / GitHub) removed. This guide also serves as the
+native-Ubuntu setup reference (the former Linux_Dev_Setup.md)._

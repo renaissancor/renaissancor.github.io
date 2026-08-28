@@ -1,8 +1,15 @@
 # Windows Developer Setup Guide (From Zero)
 
-This guide sets up a fresh Windows 11 machine for C++ development using WinGet, ending with a working Claude Code environment ready for ImGui + DirectX game engine and IOCP WinSocket server portfolios.
+This guide sets up a fresh Windows 11 machine for C++ development using WinGet, ending with
+a working Claude Code environment ready for ImGui + DirectX game engine and IOCP WinSocket
+server portfolios.
 
 > All commands run in **PowerShell**. Right-click the Start menu → **Terminal (Admin)** for steps that require elevation.
+
+> For Linux-side development on the same machine (Python/ML, anything POSIX), set up WSL2
+> alongside this: **[WSL_Setup_Claude.md](./WSL_Setup_Claude.md)**. The AI-harness layer
+> (plugins, Codex offload, Serena, skills) is documented in
+> **[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)** and applies here too.
 
 ---
 
@@ -213,7 +220,7 @@ winget install CoreyButler.NVMforWindows
 nvm install lts
 nvm use lts
 
-# Verify (should be v22+)
+# Verify (v24+ LTS as of 2026)
 node -v
 ```
 
@@ -222,12 +229,14 @@ node -v
 ## 11. Python + uv
 
 ```powershell
-winget install Python.Python.3.12
 winget install astral-sh.uv
 
+# uv manages Python interpreters itself — no separate Python install needed
+uv python install 3.13
+
 # Restart terminal, then verify
-python --version
 uv --version
+uv run python --version
 ```
 
 ---
@@ -241,6 +250,9 @@ winget install GitHub.cli
 gh auth login
 # Choose: GitHub.com → SSH → Login with a web browser
 ```
+
+> `gh` is also why no GitHub MCP server is configured anymore — Claude Code drives `gh`
+> natively for PRs, issues, and API calls.
 
 ---
 
@@ -258,188 +270,110 @@ code --version
 ## 14. Verify All Installations
 
 ```powershell
-git --version && node -v && python --version && uv --version && gh --version && cmake --version && vcpkg version
+git --version && node -v && uv --version && gh --version && cmake --version && vcpkg version
 ```
 
 ---
 
 ## 15. Claude Code
 
+Claude Code runs natively on Windows (PowerShell) — Git for Windows (Section 5) is a
+prerequisite. For heavy non-C++ work I run it inside WSL instead (see
+[WSL_Setup_Claude.md](./WSL_Setup_Claude.md)); native Windows is the right choice for the
+Visual Studio / DirectX portfolio work here.
+
 ```powershell
+# Native installer
+irm https://claude.ai/install.ps1 | iex
+
+# Fallback: npm-based install
 npm install -g @anthropic-ai/claude-code
+
+# First run — follow the login prompts
 claude
 ```
 
-Select your login method when prompted:
+Log in with a **Claude account** (Pro/Max/Team/Enterprise) unless you specifically want
+API-metered billing.
 
-1. **Claude account** — Pro, Max, Team, or Enterprise
-2. **Anthropic Console** — API usage billing
-3. **3rd-party platform** — Amazon Bedrock, Microsoft Foundry, or Vertex AI
+### Harness layer
 
----
-
-## 16. MCP Server: Sequential Thinking (Optional)
-
-> **Note:** Claude's built-in extended thinking (`/think` during chat) covers most reasoning use cases natively. Add this server only if you want explicit step-by-step tool calls in your workflow.
+Plugins (oh-my-claudecode, codex), the Codex CLI, skills, the CLAUDE.md hierarchy, and
+`settings.json` permissions are documented in
+**[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)** — the `/plugin` flow is identical.
+Windows-specific bits:
 
 ```powershell
-claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking
+# Codex CLI (no Homebrew here) — npm install, ChatGPT login
+npm install -g @openai/codex
+codex login
 ```
 
----
+### Serena MCP (per-project)
 
-## 17. MCP Server: GitHub
-
-Connects Claude to your repositories for PR management, issue tracking, and code search. Uses GitHub's official hosted endpoint with OAuth — no personal access token required.
-
-### Step A: Add to Claude
-
-```powershell
-claude mcp add --transport http github https://api.githubcopilot.com/mcp/
-```
-
-### Step B: Authenticate
-
-```powershell
-# Inside Claude Code, open the MCP menu and follow the browser login flow
-claude
-❯ /mcp
-```
-
-Select **github** → **Authenticate** and complete the GitHub OAuth flow in your browser.
-
----
-
-## 18. MCP Server: Sentry
-
-Connects Claude to your error monitoring — search issues, inspect stack traces, and debug production errors without leaving the terminal.
-
-### Step A: Add to Claude
-
-```powershell
-claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
-```
-
-### Step B: Authenticate
-
-```powershell
-claude
-❯ /mcp
-```
-
-Select **sentry** → **Authenticate** and complete the Sentry OAuth flow.
-
-### Usage examples
-
-```
-> What are the top 5 errors in production this week?
-> Show me the full stack trace for issue PROJ-1234
-> Which errors spiked after the last deploy?
-```
-
----
-
-## 19. MCP Server: Serena
-
-Serena is a professional coding agent. The web dashboard must be disabled in terminal environments to prevent timeouts.
-
-### Step A: Install Permanently
-
-```powershell
-uv tool install git+https://github.com/oraios/serena
-uv tool update-shell
-. $PROFILE
-```
-
-### Step B: Headless Configuration
-
-```powershell
-New-Item -Path "$env:USERPROFILE\.serena" -ItemType Directory -Force
-
-@"
-web_dashboard: false
-web_dashboard_open_on_launch: false
-projects:
-  - "C:/Users/$env:USERNAME/Project"
-"@ | Out-File "$env:USERPROFILE\.serena\serena_config.yml" -Encoding UTF8
-```
-
-### Step C: Add to Claude
-
-```powershell
-# Use the local tool path for maximum startup speed
-claude mcp add serena -- "$env:USERPROFILE\.local\bin\serena.exe" start-mcp-server
-```
-
----
-
-## 20. Expected `~/.claude.json`
-
-Your final configuration should look like:
+As on the other platforms, register Serena per project in a committed `.mcp.json` at the
+repo root (uv from Section 11 provides `uvx`):
 
 ```json
 {
   "mcpServers": {
-    "sequential-thinking": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
-    },
-    "github": {
-      "type": "http",
-      "url": "https://api.githubcopilot.com/mcp/"
-    },
-    "sentry": {
-      "type": "http",
-      "url": "https://mcp.sentry.dev/mcp"
-    },
     "serena": {
-      "command": "C:\\Users\\your_username\\.local\\bin\\serena.exe",
-      "args": ["start-mcp-server"]
+      "command": "uvx",
+      "args": [
+        "--from", "git+https://github.com/oraios/serena",
+        "serena", "start-mcp-server", "--context", "ide-assistant"
+      ]
     }
   }
 }
 ```
 
----
-
-## 21. Verification
-
 ```powershell
-claude
-❯ /mcp list
+# Verify
+claude mcp list
 ```
 
-All status indicators should be **green**.
+> **Dropped since the February version of this guide:** Sequential Thinking MCP (built-in
+> extended thinking covers it), Sentry MCP (never used), GitHub MCP (`gh` does it better),
+> and the global uv-tool Serena install (per-project `uvx` keeps repos self-contained).
+
+---
+
+## 16. Verification
+
+```powershell
+claude --version && codex --version
+claude
+❯ /mcp        # MCP servers green
+❯ /plugin     # plugins enabled
+```
 
 ### Troubleshooting
 
 | Issue | Solution |
 |---|---|
-| **Serena timeout** | Ensure `web_dashboard: false` in `%USERPROFILE%\.serena\serena_config.yml` |
-| **Path errors (Serena)** | Use forward slashes in `projects` (e.g., `"C:/Users/name/Project"`) |
+| **Serena timeout** | Use `--context ide-assistant` in the `.mcp.json` args; use forward slashes in any paths |
 | **`winget` not found** | Update App Installer from the Microsoft Store |
 | **`nvm` not found** | Restart terminal after `winget install CoreyButler.NVMforWindows` |
 | **`vcpkg` not found** | Restart terminal after setting the PATH environment variable |
 | **VS workload missing** | Open Visual Studio Installer → Modify → add **Desktop development with C++** |
 | **DirectX headers missing** | Ensure Windows 11 SDK is checked in the VS workload |
 | **Script execution blocked** | Run `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` |
-| **GitHub auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for GitHub |
-| **Sentry auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for Sentry |
+| **`claude` install fails natively** | Ensure Git for Windows is installed, or use the npm fallback |
 
 ---
 
-## Windows vs macOS vs Linux — Key Differences
+## Windows vs macOS vs WSL — Key Differences
 
-| | Windows | macOS | Linux |
+| | Windows | macOS | WSL |
 |---|---|---|---|
-| Package manager | `winget` | `brew` | `apt` / `dnf` |
-| Terminal | Windows Terminal + PS7 | iTerm2 + zsh | GNOME Terminal + zsh |
-| Shell profile | `$PROFILE` | `~/.zshrc` | `~/.zshrc` |
-| Copy to clipboard | `Set-Clipboard` | `pbcopy` | `xclip` |
-| Open folder in GUI | `explorer.exe .` | `open .` | `xdg-open .` |
+| Package manager | `winget` | `brew` | `apt` |
+| Terminal | Windows Terminal + PS7 | iTerm2 + zsh | Windows Terminal + zsh |
+| Shell profile | `$PROFILE` | `~/.zshrc` + `~/.zprofile` | `~/.zshrc` |
+| Copy to clipboard | `Set-Clipboard` | `pbcopy` | `clip.exe` |
+| Open folder in GUI | `explorer.exe .` | `open .` | `explorer.exe .` |
 | C++ package manager | vcpkg | vcpkg / brew | vcpkg / apt |
-| DirectX | Native (Windows SDK) | Not available | Not available |
-| IOCP | Native (Windows SDK) | Not available | Not available |
+| DirectX / IOCP | Native (Windows SDK) | Not available | Not available |
 
 ---
 
@@ -454,9 +388,13 @@ All status indicators should be **green**.
 - [ ] `cmake` available in terminal (`cmake --version`)
 - [ ] vcpkg cloned, bootstrapped, and integrated (`vcpkg integrate install`)
 - [ ] DirectX and ImGui packages installed via vcpkg
-- [ ] `node` installed via nvm-windows (v22+)
-- [ ] `python`, `uv` installed
+- [ ] `node` installed via nvm-windows (v24+ LTS)
+- [ ] `uv` installed, Python via `uv python install`
 - [ ] GitHub CLI installed and authenticated (`gh auth status`)
 - [ ] VS Code installed (`code --version`)
-- [ ] Claude Code installed and logged in (`claude`)
-- [ ] All four MCP servers green (`/mcp list`)
+- [ ] Claude Code installed and logged in; harness per [Mac_Setup_Claude.md](./Mac_Setup_Claude.md)
+
+---
+
+_Last updated: August 2026 — Claude layer modernized (native installer, plugins, per-project
+Serena; Sequential Thinking / Sentry / GitHub MCP removed), Python now managed by uv._
