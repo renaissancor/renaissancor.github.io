@@ -104,7 +104,7 @@ brew install --cask zoom
 | App | Purpose |
 |---|---|
 | **Arc** | Primary browser |
-| **iTerm2** | Primary terminal (see [Mac_Setup_iTerm2.md](./Mac_Setup_iTerm2.md)) |
+| **iTerm2** | Primary terminal (see [iterm2_setup.md](./iterm2_setup.md)) |
 | **Ghostty / Warp** | Alternate terminals — Ghostty for speed, Warp for AI features |
 | **VS Code / Cursor / Zed** | Editors; JetBrains Toolbox manages DataGrip/PyCharm |
 | **Claude** | Claude desktop app (the CLI is separate — see below) |
@@ -156,7 +156,7 @@ uv --version && pixi --version && node --version
 
 The AI tooling (Claude Code CLI, plugins, MCP servers, Codex CLI, rtk) has its own guide:
 
-→ **[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)**
+→ **[Harness_setup.md](./Harness_setup.md)**
 
 Covers: the Claude Code native binary, the oh-my-claudecode plugin, the Codex CLI offload
 harness, the rtk token proxy, Serena MCP, skills, and scheduled automation.
@@ -167,7 +167,7 @@ harness, the rtk token proxy, Serena MCP, skills, and scheduled automation.
 
 For full iTerm2 configuration (shell integration, status bar, hotkey window, fonts, shortcuts), see:
 
-→ **[Mac_Setup_iTerm2.md](./Mac_Setup_iTerm2.md)**
+→ **[iterm2_setup.md](./iterm2_setup.md)**
 
 The two steps to do immediately after installing:
 
@@ -301,7 +301,7 @@ npm --version
 - [ ] Casks installed (browsers, terminals, editors, AI apps, utilities)
 - [ ] Core formulae installed (`uv`, `pixi`, `node`, `gh`, `duckdb` all on PATH)
 - [ ] MkDocs installed via uv tool (`mkdocs --version` works)
-- [ ] Claude Code + AI harness configured (see `Mac_Setup_Claude.md`)
+- [ ] Claude Code + AI harness configured (see `Harness_setup.md`)
 - [ ] iTerm2 Shell Integration installed, `.hushlogin` created
 - [ ] Git configured with name, email, SSH key added to GitHub
 

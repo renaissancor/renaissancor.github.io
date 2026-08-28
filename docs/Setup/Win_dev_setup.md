@@ -7,9 +7,9 @@ server portfolios.
 > All commands run in **PowerShell**. Right-click the Start menu → **Terminal (Admin)** for steps that require elevation.
 
 > For Linux-side development on the same machine (Python/ML, anything POSIX), set up WSL2
-> alongside this: **[WSL_Setup_Claude.md](./WSL_Setup_Claude.md)**. The AI-harness layer
+> alongside this: **[WSL_dev_setup.md](./WSL_dev_setup.md)**. The AI-harness layer
 > (plugins, Codex offload, Serena, skills) is documented in
-> **[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)** and applies here too.
+> **[Harness_setup.md](./Harness_setup.md)** and applies here too.
 
 ---
 
@@ -279,7 +279,7 @@ git --version && node -v && uv --version && gh --version && cmake --version && v
 
 Claude Code runs natively on Windows (PowerShell) — Git for Windows (Section 5) is a
 prerequisite. For heavy non-C++ work I run it inside WSL instead (see
-[WSL_Setup_Claude.md](./WSL_Setup_Claude.md)); native Windows is the right choice for the
+[WSL_dev_setup.md](./WSL_dev_setup.md)); native Windows is the right choice for the
 Visual Studio / DirectX portfolio work here.
 
 ```powershell
@@ -300,7 +300,7 @@ API-metered billing.
 
 Plugins (oh-my-claudecode, codex), the Codex CLI, skills, the CLAUDE.md hierarchy, and
 `settings.json` permissions are documented in
-**[Mac_Setup_Claude.md](./Mac_Setup_Claude.md)** — the `/plugin` flow is identical.
+**[Harness_setup.md](./Harness_setup.md)** — the `/plugin` flow is identical.
 Windows-specific bits:
 
 ```powershell
@@ -392,7 +392,7 @@ claude
 - [ ] `uv` installed, Python via `uv python install`
 - [ ] GitHub CLI installed and authenticated (`gh auth status`)
 - [ ] VS Code installed (`code --version`)
-- [ ] Claude Code installed and logged in; harness per [Mac_Setup_Claude.md](./Mac_Setup_Claude.md)
+- [ ] Claude Code installed and logged in; harness per [Harness_setup.md](./Harness_setup.md)
 
 ---
 
