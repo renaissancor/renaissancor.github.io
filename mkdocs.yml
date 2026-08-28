@@ -163,6 +163,10 @@ nav:
     - Computer_Network/TCPIP1.md
     - Computer_Network/Wireshark.md
 
+  - Data Systems:
+    - Data_Systems/db-01-namespaces-and-catalogs.md
+    - Data_Systems/db-02-derived-data-placement.md
+
   - Cryptography:
     - Cryptography/C2PA.md
     - Cryptography/C2PA_Ref.md
