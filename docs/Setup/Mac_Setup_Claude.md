@@ -1,257 +1,263 @@
-# Claude Code Setup Guide (macOS)
+# Claude Code + AI Harness Setup (macOS)
 
-This guide configures a high-performance **Claude Code** terminal environment on macOS with GitHub integration, Sequential Thinking, and the Serena agent.
+This guide rebuilds my full AI coding environment on macOS as of August 2026. It goes well
+beyond a bare Claude Code install: the working setup is a **harness** — Claude Code at the
+center, extended by the **oh-my-claudecode** plugin (multi-agent orchestration), the
+**Codex CLI** as a token-offload second engine, the **rtk** proxy for token-efficient shell
+output, **Serena** for semantic code navigation, and **skills** for repeatable workflows.
+
+> The February 2026 version of this guide described four MCP servers (Sequential Thinking,
+> GitHub, Sentry, Serena) on a stock install. Sequential Thinking is superseded by built-in
+> extended thinking, and hosted connectors (GitHub, Slack, Notion, Google Drive…) are now
+> managed from the Claude app side rather than hand-added MCP endpoints. This rewrite
+> documents what I actually run.
 
 ---
 
-## 1. Prerequisites
+## 1. Claude Code CLI
 
 ```bash
-# Install Homebrew (if not already installed)
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Prerequisites (see MacBook_Dev_Setup.md): brew, uv, node
 
-# Add Homebrew to PATH (run the two lines the installer prints, then:)
-source ~/.zprofile
-
-# Install core formulae (already done if you followed MacBook_Dev_Setup.md)
-brew install uv node
-
-# Install the Claude desktop app (GUI)
+# Claude desktop app (GUI) — optional but useful
 brew install --cask claude
 
-# Install Claude Code CLI (separate native binary, auto-updates)
+# Claude Code CLI — native binary, self-updating
 curl -fsSL https://claude.ai/install.sh | bash
+
+# Verify — installs to ~/.local/bin/claude
+claude --version
 ```
 
-> **Claude desktop app vs Claude Code CLI**
-> - `brew install --cask claude` installs **Claude.app** — the GUI desktop application.
-> - The **Claude Code CLI** (`claude` terminal command) is a separate native binary installed via the curl script above. Verify with `claude --version`.
+> **Desktop app vs CLI:** `brew install --cask claude` installs **Claude.app** (GUI).
+> The **Claude Code CLI** (`claude` in the terminal) is a separate native binary from the
+> curl script. They share your Claude account but update independently.
 
 ```bash
-# Initialize Claude Code CLI (follow the login prompts)
+# First run — follow the login prompts
 claude
 ```
 
-Select your login method when prompted:
-
-1. **Claude account** — Pro, Max, Team, or Enterprise
-2. **Anthropic Console** — API usage billing
-3. **3rd-party platform** — Amazon Bedrock, Microsoft Foundry, or Vertex AI
+Log in with a **Claude account** (Pro/Max/Team/Enterprise) unless you specifically want
+API-metered billing via Anthropic Console.
 
 ---
 
-## 2. Claude.ai Auto-Integrated Services
+## 2. Plugins
 
-Claude.ai automatically adds Google Calendar and Gmail as MCP servers when you sign in. These appear in `claude mcp list` but **were not manually added** — they come from your Claude.ai account:
+Plugins are the biggest change since early 2026 — they bundle agents, skills, hooks, and
+MCP servers into installable units. Manage them with `/plugin` inside Claude Code.
+
+My enabled set:
+
+| Plugin | Marketplace | What it adds |
+|---|---|---|
+| **oh-my-claudecode** | `omc` | Multi-agent orchestration: specialized agents (executor, architect, verifier…), execution modes (autopilot, ralph, ultrawork), team pipelines, HUD statusline |
+| **codex** | `openai-codex` | Bridges the Codex CLI as a rescue/second-opinion subagent |
+| **warp** | `claude-code-warp` | Warp terminal integration |
+
+Inside Claude Code:
 
 ```
-claude.ai Google Calendar: https://gcal.mcp.claude.com/mcp  - ! Needs authentication
-claude.ai Gmail:           https://gmail.mcp.claude.com/mcp  - ! Needs authentication
+/plugin
+# → Browse marketplaces → add the marketplace → install → enable
 ```
 
-Authenticate them via `claude` → `/mcp` if you want to use them, or leave them unauthenticated — they don't affect other MCP servers.
+oh-my-claudecode also has a guided setup — after installing, just say **"setup omc"** in a
+session and it configures its hooks, HUD, and state directories itself.
 
 ---
 
-## 3. MCP Server: Sequential Thinking (Optional)
+## 3. Codex CLI (Second Engine)
 
-> **Note:** Claude's built-in extended thinking (`/think` during chat) covers most reasoning use cases natively. Add this server only if you want explicit step-by-step tool calls in your workflow.
+The Codex CLI runs OpenAI models with its own context window. I use it as a **token
+offload**: bulk file reading, self-contained lookups, and second opinions run in Codex so
+the file contents never enter Claude's context — only the conclusion comes back.
 
 ```bash
-claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking
+# The codex cask bundles the CLI
+brew install --cask codex
+
+# Log in (ChatGPT account — no API key needed)
+codex login
+
+# Verify
+codex --version
 ```
+
+The core pattern — read-only, self-contained prompts whose return value is the answer:
+
+```bash
+codex exec --sandbox read-only "Summarize what this repo's scripts/ directory does. Reply with one line per script."
+```
+
+Mark trusted repos in `~/.codex/config.toml` so `codex exec` runs there without prompts.
+Rules I follow: Codex never touches secrets, and anything needing conversation context gets
+that context paraphrased into the prompt (Codex starts blank every call).
 
 ---
 
-## 4. MCP Server: GitHub
+## 4. rtk (Token Proxy)
 
-Connects Claude to your repositories for PR management, issue tracking, and code search. Uses GitHub's official hosted endpoint with OAuth — no personal access token required.
-
-### Step A: Add to Claude
-
-```bash
-claude mcp add --transport http github https://api.githubcopilot.com/mcp/
-```
-
-### Step B: Authenticate
+rtk ("Rust Token Killer") wraps common CLI commands (`git
+status`, `ls`, test runners…) and returns compressed, token-efficient output — 60–90%
+savings on routine dev operations. A Claude Code **PreToolUse hook** rewrites commands to
+pass through rtk transparently.
 
 ```bash
-# Inside Claude Code, open the MCP menu and follow the browser login flow
-claude
-❯ /mcp
+brew install rtk
+
+# Verify — should print savings analytics, not "command not found"
+rtk gain
 ```
 
-Select **github** → **Authenticate** and complete the GitHub OAuth flow in your browser.
+> **Name collision:** if `rtk gain` fails, you may have installed a different `rtk`
+> (Rust Type Kit). Check `which rtk` and the formula source.
+
+The hook lives in `~/.claude/settings.json` under `hooks.PreToolUse`; oh-my-claudecode's
+setup wires it. Useful meta-commands: `rtk gain --history` (per-command savings),
+`rtk discover` (finds missed opportunities in your Claude Code history).
 
 ---
 
-## 5. MCP Server: Sentry
+## 5. MCP Servers
 
-Connects Claude to your error monitoring — search issues, inspect stack traces, and debug production errors without leaving the terminal.
+My current MCP philosophy: **fewer, scoped, project-level where possible.** Hosted
+integrations (Slack, Notion, Google Drive, Gmail…) come through Claude-app connectors
+automatically; hand-configured MCP servers are only for things connectors don't cover.
 
-### Step A: Add to Claude
+### Serena (semantic code navigation) — per-project
 
-```bash
-claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
-```
-
-### Step B: Authenticate
-
-```bash
-claude
-❯ /mcp
-```
-
-Select **sentry** → **Authenticate** and complete the Sentry OAuth flow.
-
-### Usage examples
-
-```
-> What are the top 5 errors in production this week?
-> Show me the full stack trace for issue PROJ-1234
-> Which errors spiked after the last deploy?
-```
-
----
-
-## 6. MCP Server: Serena
-
-Serena is a professional coding agent. The web dashboard must be disabled in terminal environments to prevent timeouts.
-
-### Step A: Install Permanently
-
-> Using `uvx` every time can be slow. Installing as a tool ensures instant startup.
-
-```bash
-uv tool install git+https://github.com/oraios/serena
-uv tool update-shell
-source ~/.zshrc
-```
-
-### Step B: Headless Configuration
-
-```bash
-mkdir -p ~/.serena
-
-cat <<EOF > ~/.serena/serena_config.yml
-web_dashboard: false
-web_dashboard_open_on_launch: false
-projects:
-  - "/Users/$(whoami)/Project"
-EOF
-```
-
-### Step C: Add to Claude
-
-```bash
-# Use the local tool path for maximum startup speed
-claude mcp add serena -- /Users/$(whoami)/.local/bin/serena start-mcp-server
-```
-
----
-
-## 7. Project Memory (CLAUDE.md)
-
-`CLAUDE.md` is a file Claude reads automatically at the start of every session in your project. Use it to encode project-specific conventions, commands, and gotchas so Claude never needs to be told twice.
-
-### Initialize
-
-```bash
-# Inside your project directory, inside Claude Code:
-❯ /init
-```
-
-This generates a starter `CLAUDE.md` based on your codebase. Edit it to reflect your actual workflow:
-
-```markdown
-# Build & Test
-- Build: `npm run build`
-- Test single: `npm test -- --testNamePattern="pattern"`
-- Lint (auto-fix): `npm run lint:fix`
-
-# Conventions
-- Use 2-space indentation
-- Prefer `const` over `let`; avoid `var`
-- Commit format: `type(scope): description` (e.g. `feat(auth): add OAuth`)
-
-# Gotchas
-- DB migrations must be idempotent
-- `utils/legacy.ts` is deprecated — use `utils/new.ts`
-- Requires `REDIS_URL` and `API_KEY` env vars
-```
-
-> Commit `CLAUDE.md` to git — it applies to everyone on the team. Keep it concise; delete anything Claude can already infer from the code.
-
----
-
-## 8. Permissions & Settings
-
-Claude Code respects a `settings.json` file that controls which commands are allowed or denied, preventing accidental destructive operations.
-
-```bash
-mkdir -p ~/.claude
-```
-
-Create or edit `~/.claude/settings.json`:
-
-```json
-{
-  "permissions": {
-    "allow": [
-      "Bash(npm run *)",
-      "Bash(git *)",
-      "Bash(docker *)"
-    ],
-    "deny": [
-      "Bash(rm -rf *)",
-      "Bash(sudo *)",
-      "Read(.env*)"
-    ]
-  }
-}
-```
-
-> For team-wide defaults, create `.claude/settings.json` inside your project repo and commit it. User-level `~/.claude/settings.json` takes precedence.
-
----
-
-## 9. Expected `~/.claude.json`
-
-Your final configuration should look like:
+Serena provides LSP-backed symbol search, references, and precise edits. I register it
+**per project** in a committed `.mcp.json` rather than globally — projects that don't need
+it don't pay its startup cost:
 
 ```json
 {
   "mcpServers": {
-    "sequential-thinking": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
-    },
-    "github": {
-      "type": "http",
-      "url": "https://api.githubcopilot.com/mcp/"
-    },
-    "sentry": {
-      "type": "http",
-      "url": "https://mcp.sentry.dev/mcp"
-    },
     "serena": {
-      "command": "/Users/your_username/.local/bin/serena",
-      "args": ["start-mcp-server"]
+      "command": "uvx",
+      "args": [
+        "--from", "git+https://github.com/oraios/serena",
+        "serena", "start-mcp-server", "--context", "ide-assistant"
+      ]
     }
   }
 }
 ```
 
----
+> `--context ide-assistant` trims Serena's toolset to what makes sense inside Claude Code.
+> The old advice to `uv tool install` it globally and disable the web dashboard still works
+> (`web_dashboard: false` in `~/.serena/serena_config.yml`), but per-project `uvx` keeps
+> machines reproducible from the repo alone.
 
-## 10. Verification
+### Google Docs / Sheets — user-level
+
+Local stdio servers (run via `uv`/`uvx`) for reading and editing Google Docs/Sheets from
+sessions. Added with `claude mcp add`; check status any time:
 
 ```bash
-claude
-❯ /mcp
+claude mcp list
 ```
 
-All status indicators should be **green**.
+### What I dropped since February
+
+- **Sequential Thinking** — built-in extended thinking covers it; the extra server was noise.
+- **Sentry** — never used it; it came from a tutorial, not a need.
+- **GitHub MCP** — the `gh` CLI does everything (PRs, issues, API) with less overhead, and
+  Claude Code drives `gh` natively.
+
+---
+
+## 6. Skills
+
+Skills are reusable instruction sets invoked as `/name` or auto-triggered. Personal skills
+live in `~/.claude/skills/`; I keep the sources in the repos they belong to and **symlink**
+them in, so the skill is versioned with the project it serves:
+
+```bash
+ln -s ~/my-project/skills/my-skill ~/.claude/skills/my-skill
+```
+
+My daily-driver example: a two-phase daily-report system —
+
+- `daily-report-capture` — at the end of any work session, writes a digest of that
+  session's work into an inbox directory (fast, no report composition)
+- `daily-report` — composes the day's digests into a bilingual report pair, lints, commits
+
+The compose step runs unattended at 21:30 via **launchd**:
+
+```bash
+# ~/Library/LaunchAgents/com.<user>.daily-report-compose.plist
+launchctl list | grep daily-report
+```
+
+This pattern — capture cheaply during sessions, compose on a schedule — generalizes to any
+"end of day roll-up" workflow.
+
+---
+
+## 7. Memory: CLAUDE.md Hierarchy
+
+Claude Code reads instruction files at session start, most-specific last:
+
+| File | Scope | What goes in it |
+|---|---|---|
+| `~/.claude/CLAUDE.md` | All projects | Cross-project rules: delegation policy, secret-handling rules, server-protection rules. Can `@include` other files (mine pulls in `RTK.md` and `CODEX.md`) |
+| `<repo>/CLAUDE.md` | One project, committed | Build/test commands, conventions, hard operational rules for that repo |
+| Auto-memory | Per project, private | Claude's own persistent notes across sessions |
+
+```bash
+# Generate a starter project CLAUDE.md from inside Claude Code:
+❯ /init
+```
+
+Keep them concise: delete anything Claude can infer from the code itself. The highest-value
+content is **rules that prevent damage** (what never to run, what never to read) and
+**decisions that aren't visible in the code**.
+
+---
+
+## 8. Permissions & Settings
+
+`~/.claude/settings.json` controls permissions, hooks, model choice, and the statusline.
+The shape of mine:
+
+```json
+{
+  "model": "opus",
+  "permissions": {
+    "allow": ["Bash(git *)", "Bash(uv run *)", "..."],
+    "deny": ["Bash(sudo *)", "Read(.env*)", "..."]
+  },
+  "hooks": {
+    "PreToolUse": ["... rtk rewrite + guard hooks ..."]
+  },
+  "statusLine": { "command": "node $HOME/.claude/hud/omc-hud.mjs" }
+}
+```
+
+- **Deny-list reads of secret files** (`.env*`, key files) — the deny rule is cheap
+  insurance against a careless session.
+- Project-level `.claude/settings.json` (committed) sets team defaults; user-level wins.
+- The statusline HUD comes from oh-my-claudecode and shows model, context usage, and
+  active agents.
+
+---
+
+## 9. Verification
+
+```bash
+# CLI + engines
+claude --version && codex --version && rtk gain
+
+# MCP servers all green
+claude mcp list
+
+# Plugins enabled
+claude
+❯ /plugin
+```
 
 ---
 
@@ -259,9 +265,14 @@ All status indicators should be **green**.
 
 | Issue | Solution |
 |---|---|
-| **Serena timeout** | Ensure `web_dashboard: false` in `~/.serena/serena_config.yml` |
-| **Path errors (Serena)** | Use simple strings in `projects` (e.g., `"/Users/name/Project"`), not maps with `name:` or `path:` keys |
-| **Node not found** | Run `brew install node` or restart your shell |
-| **Homebrew not on PATH** | Run `source ~/.zprofile` or restart your terminal |
-| **GitHub auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for GitHub |
-| **Sentry auth fails** | Run `/mcp` inside Claude Code and select **Authenticate** for Sentry |
+| **Serena timeout** | Use `--context ide-assistant`; if using a global config, ensure `web_dashboard: false` in `~/.serena/serena_config.yml` |
+| **`rtk gain` fails** | Wrong `rtk` binary installed (name collision) — check `which rtk` |
+| **Codex asks for approval constantly** | Add the repo to the trusted list in `~/.codex/config.toml`, or pass `--sandbox read-only` |
+| **`claude` not found** | The native installer puts it in `~/.local/bin` — ensure that's on PATH |
+| **Homebrew not on PATH** | `source ~/.zprofile` or restart the terminal |
+| **Plugin hooks not firing** | Re-run the plugin's setup (e.g. "setup omc") after Claude Code updates |
+
+---
+
+_Last updated: August 2026 — rewritten from the stock-install guide to document the full
+working harness (plugins, Codex offload, rtk, per-project Serena, skills, launchd automation)._
