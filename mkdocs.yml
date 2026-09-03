@@ -124,6 +124,7 @@ nav:
 
   - Computer Architecture:
     - Architecture/arch-01-cpu-cache-coherence.md
+    - Architecture/arch-02-roofline-model.md
 
   - Compilers & Low-Level:
     - Compilers/asm-01-disassembly-control-flow.md
@@ -141,6 +142,7 @@ nav:
     - Operating_Systems/os-01-processes-and-threads.md
     - Operating_Systems/os-02-scheduling-and-interrupts.md
     - Operating_Systems/os-03-synchronization-and-deadlock.md
+    - Operating_Systems/os-04-tlb-page-faults-and-copy-on-write.md
 
   - Windows Systems:
     - Windows_System_Programming/win-01-processes-and-kernel-objects.md
@@ -151,6 +153,7 @@ nav:
     - Windows_System_Programming/win-06-dlls-and-dynamic-linking.md
 
   - Computer Networks:
+    - Computer_Network/nw-tcp-loss-signals-and-round-trips.md
     - Computer_Network/NW0503.md
     - Computer_Network/NW0504.md
     - Computer_Network/NW0724.md
@@ -166,6 +169,8 @@ nav:
   - Data Systems:
     - Data_Systems/db-01-namespaces-and-catalogs.md
     - Data_Systems/db-02-derived-data-placement.md
+    - Data_Systems/db-03-write-skew-and-isolation.md
+    - Data_Systems/db-04-sequential-writes-wal-and-lsm.md
 
   - Cryptography:
     - Cryptography/C2PA.md
