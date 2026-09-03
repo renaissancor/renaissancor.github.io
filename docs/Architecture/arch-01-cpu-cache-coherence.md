@@ -183,6 +183,20 @@ The `__rdtsc()` approach used in the cache simulator is ideal for cache benchmar
 
 ---
 
+## Memory ordering is the memory model, not CISC versus RISC
+
+Thread A writes `data = 42` then `ready = true`. Thread B spins on `ready`, then reads `data`. No locks, no atomics. B can read stale `data`, and the reason it breaks on ARM but often appears to work on x86 is not instruction-set size.
+
+- **x86 is TSO** (total store order). Hardware never reorders two stores with each other, or two loads. This specific pattern happens to work on x86 *hardware*. It is still a bug, because the compiler may reorder or hoist the reads. A quieter bug.
+- **ARM is weakly ordered.** Store-store and load-load reordering are allowed. `ready = true` can become visible before `data = 42`. Code that passed on a dev x86 box fails on Apple silicon or Graviton.
+- **Fix:** `std::atomic<bool> ready`, store with `memory_order_release`, load with `memory_order_acquire`. Everything before the release is visible to whoever observes it via the acquire. Compiles to plain moves on x86, emits barriers on ARM.
+
+This is the visibility half of synchronization. MESI keeps caches coherent per line; it does not promise the *order* in which two different lines become visible. That is what the memory model and the barriers are for.
+
+**Open:** write the race, run it on an M-series Mac with `-O2` and no atomics, and see it fail.
+
+---
+
 ## Summary
 
 | Concept | Key number |
