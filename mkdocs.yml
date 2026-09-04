@@ -44,6 +44,12 @@ markdown_extensions:
 
   - pymdownx.snippets
 
+extra_css:
+  - stylesheets/typst.css
+
+hooks:
+  - hooks/typst_diagrams.py
+
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
@@ -171,6 +177,7 @@ nav:
     - Data_Systems/db-02-derived-data-placement.md
     - Data_Systems/db-03-write-skew-and-isolation.md
     - Data_Systems/db-04-sequential-writes-wal-and-lsm.md
+    - Data_Systems/db-05-delete-and-space-reclamation.md
 
   - Cryptography:
     - Cryptography/C2PA.md

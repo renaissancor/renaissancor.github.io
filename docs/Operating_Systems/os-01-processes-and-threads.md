@@ -58,19 +58,28 @@ Lives in **user-mode memory**, so user-mode code can read it without a syscall. 
 
 On 64-bit Windows the **GS segment register** is permanently pointed at the current thread's TEB. Assembly stubs and the runtime use `gs:[offset]` to reach thread-specific data without any indirection through the kernel.
 
-```
-User Mode
-  ┌─────────────────────────────┐
-  │  TEB  (GS points here)      │  ← Thread ID, TLS base, …
-  │  User Stack                 │  ← local variables, call frames
-  └─────────────────────────────┘
-
-Kernel Mode
-  ┌─────────────────────────────┐
-  │  TCB  (per thread)          │  ← register context, priority, quantum
-  │  Kernel Stack (per thread)  │  ← separate; needed for kernel re-entry
-  │  PCB  (per process)         │  ← address-space map, handles
-  └─────────────────────────────┘
+```typst
+#let row(name, note) = (
+  box(width: 13.5em, inset: 5pt, stroke: 0.6pt, [#name]),
+  text(size: 8.5pt, fill: gray.darken(30%))[← #note],
+)
+#let region(title, rows) = stack(
+  spacing: 4pt,
+  text(weight: "bold")[#title],
+  grid(columns: 2, column-gutter: 8pt, row-gutter: 0pt, align: horizon, ..rows),
+)
+#stack(
+  spacing: 14pt,
+  region([User Mode], (
+    ..row([TEB #h(4pt) #text(size: 8pt)[(GS points here)]], [Thread ID, TLS base, …]),
+    ..row([User Stack], [local variables, call frames]),
+  )),
+  region([Kernel Mode], (
+    ..row([TCB #h(4pt) #text(size: 8pt)[(per thread)]], [register context, priority, quantum]),
+    ..row([Kernel Stack #h(4pt) #text(size: 8pt)[(per thread)]], [separate; needed for kernel re-entry]),
+    ..row([PCB #h(4pt) #text(size: 8pt)[(per process)]], [address-space map, handles]),
+  )),
+)
 ```
 
 Every thread also has a dedicated **kernel stack** (typically 4–12 KB). Because a context switch can occur even while the thread is executing kernel-mode code, the kernel cannot use a shared stack; each thread must have its own place to save its kernel-mode state.
