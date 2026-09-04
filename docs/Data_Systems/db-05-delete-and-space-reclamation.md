@@ -36,4 +36,28 @@ A point read of a deleted key is **cheap** on an LSM — the tombstone is recent
 
 Range scans reverse it. Scanning a range that is mostly tombstones means reading and skipping every one of them, a known production pathology — Cassandra will abort a query that crosses a tombstone threshold.
 
-**Open:** measure it — `pg_total_relation_size` before a 90% delete, after it, after `VACUUM`, and after `VACUUM FULL`, expecting a change only at the last step.
+## Measured, and the index was the surprise
+
+Postgres 16, defaults, `autovacuum_enabled = off` on the table. One million rows of `(id int primary key, payload text)` — roughly 97 bytes per row in the heap, 21 in the index.
+
+| stage | heap | index | live | dead |
+|---|---|---|---|---|
+| baseline, 1M rows | 97 MB | 21 MB | 1,000,000 | 0 |
+| after `DELETE WHERE id%10<>0` | **97 MB** | 21 MB | 100,000 | 900,000 |
+| after `VACUUM` | **97 MB** | 21 MB | 100,000 | **0** |
+| refill 900k rows, ids `i+2000000` | 97 MB | **41 MB** | 1,000,000 | 0 |
+| refill 900k rows, ids into the gap | 97 MB | **21 MB** | 1,000,000 | 0 |
+| after `VACUUM FULL` (190k rows) | 18 MB | 4192 kB | 190,000 | 0 |
+
+`VACUUM` reclaimed 900,000 dead tuples and the file size did not change by a byte. Only `VACUUM FULL` returned anything to the operating system.
+
+The unexpected result is in the last two refills. Both insert 900,000 rows into the vacancies; both leave the heap at exactly 97 MB. But refilling with *higher* keys nearly doubles the index, and refilling with the deleted keys does not touch it.
+
+Two mechanisms combine. The delete left one live entry in every ten, so no btree page emptied completely — and Postgres recycles only a fully empty btree page, never merging underfull ones. All 21 MB stayed allocated at about 10% occupancy. Then keys `2000001..2900000` sort past the entire existing range, so they demand new pages at the right edge of the tree. The free space existed; it was in the wrong place.
+
+**Heap free space is location-agnostic — the free space map will hand a 90%-empty page to any row. Index free space is location-bound, because a key must go where it sorts.** The stable-address constraint, measured.
+
+This is an ordinary production shape rather than a contrived one: a time-series table that deletes old rows and inserts monotonically increasing ids will bloat its index indefinitely while the heap looks healthy. It is why `REINDEX` exists separately from `VACUUM`.
+
+
+**Open:** does the index bloat survive a non-monotonic key (uuid, hash)? Prediction: no, since new keys scatter into existing pages — but that is a guess. And confirm in the source that Postgres btree never merges underfull pages, rather than inferring it from one result. Original measurement plan, now done — `pg_total_relation_size` before a 90% delete, after it, after `VACUUM`, and after `VACUUM FULL`, expecting a change only at the last step.
