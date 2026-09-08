@@ -178,6 +178,10 @@ nav:
     - Data_Systems/db-03-write-skew-and-isolation.md
     - Data_Systems/db-04-sequential-writes-wal-and-lsm.md
     - Data_Systems/db-05-delete-and-space-reclamation.md
+    - Data_Systems/db-06-replication-mechanics.md
+
+  - Distributed Systems:
+    - Distributed/dist-01-replication-health-and-time.md
 
   - Cryptography:
     - Cryptography/C2PA.md
