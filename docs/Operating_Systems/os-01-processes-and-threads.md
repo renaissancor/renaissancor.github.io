@@ -168,4 +168,42 @@ Both cost something. A kernel mode switch costs a register save and a privilege-
 
 ---
 
+## The GIL is a lock on bytecode execution, not a ban on threads
+
+Python threads are real OS threads — the same kernel-scheduled entities `std::thread`
+wraps. The Global Interpreter Lock does not change that; it admits **one thread executing
+Python bytecode at a time**. It is a lock, not a core affinity: the holder runs on whatever
+core the scheduler picked, and threads migrate across cores over their lifetime. "Python
+runs on one core" is the observed effect, not the mechanism, and the difference matters
+because the lock is *released* around blocking I/O and inside C extensions. Threaded numpy
+work and threaded I/O really do use several cores from one process. The constraint is
+narrower than it sounds: **pure-Python compute** cannot run in parallel within a process.
+
+It is tempting to group GIL-limited threading with coroutines, since both multiplex many
+logical tasks onto one core's worth of execution. That shared axis is real, but the
+mechanism separating them is the one that predicts the bugs:
+
+| | who decides the switch | parallelism |
+|---|---|---|
+| OS threads under a GIL | the OS preempts — timer expiry or on I/O | I/O and native code only |
+| coroutines (`asyncio`, Unity `IEnumerator`) | the code, at an explicit `yield` / `await` | never |
+| separate processes | the OS, with independent interpreters | real |
+
+Preemption can cut between any two bytecodes; a cooperative yield cannot. That single fact
+is why threaded code needs locks around shared mutable state and coroutine code mostly does
+not — the coroutine author knows every point at which control can leave.
+
+The cross-language mapping is easy to get backwards. A Unity coroutine's counterpart is
+`asyncio`, not `threading`: `IEnumerator`/`yield` driven by the engine's update loop, no
+threads involved at any point. And Unity coroutines are the outlier within .NET itself —
+C#'s `Task`/`async` dispatches onto a real thread pool with genuine multicore parallelism,
+so `async` in C# and `async` in Python read alike and differ fundamentally underneath.
+Syntactic resemblance across languages says nothing about which of the three rows above
+you are in.
+
+**Open:** CPU-bound loop across 1 vs 4 threads, default build vs free-threaded build, with
+`multiprocessing` as the control.
+
+---
+
 *Study notes — Windows-specific material based on 윤성우, 《윈도우즈 시스템 프로그래밍》 (book + lectures).*
