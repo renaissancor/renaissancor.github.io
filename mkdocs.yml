@@ -131,6 +131,7 @@ nav:
   - Computer Architecture:
     - Architecture/arch-01-cpu-cache-coherence.md
     - Architecture/arch-02-roofline-model.md
+    - Architecture/arch-03-gpu-memory-budget-llm-serving.md
 
   - Compilers & Low-Level:
     - Compilers/asm-01-disassembly-control-flow.md
