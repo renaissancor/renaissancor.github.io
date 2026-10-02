@@ -1,0 +1,5570 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Systems Programming & Software Engineering Portfolio">
+      
+      
+        <meta name="author" content="Renaissancor">
+      
+      
+        <link rel="canonical" href="https://renaissancor.github.io/Operating_Systems/os-01-processes-and-threads/">
+      
+      
+        <link rel="prev" href="../../Compilers/MSVCSolution/">
+      
+      
+        <link rel="next" href="../os-02-scheduling-and-interrupts/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../ko/Operating_Systems/os-01-processes-and-threads/" hreflang="ko">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Processes and Threads - Renaissancoriate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/typst.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#processes-and-threads" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renaissancoriate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Processes and Threads
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../ko/Operating_Systems/os-01-processes-and-threads/" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Renaissancoriate
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/Mac_dev_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MacBook Developer Setup Guide (2026, M4 Pro)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/Harness_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code + AI Harness Setup (macOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/iterm2_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    iTerm2 Setup Guide (macOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/WSL_dev_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSL Dev Setup Guide (Windows + Ubuntu)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/Win_dev_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Developer Setup Guide (From Zero)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/Vibe_Coder_Manifesto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Vibe Coder’s Manifesto (Terminal Edition)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C / C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C / C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/cpp-01-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Fundamentals — Types, Operators, and Control Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/cpp-02-functions-and-lifetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Functions, Recursion, and Variable Lifetime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/cpp-03-pointers-and-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Pointers and Memory Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/cpp-04-classes-and-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Classes, Overloading, and Object Lifetime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/cpp-05-inheritance-and-polymorphism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Inheritance, Polymorphism, and the Singleton Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/cpp-06-templates-exceptions-raii/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Templates, Exceptions, and RAII
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/cpp-07-operator-overloading-and-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Operator Overloading and Custom Memory Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Structures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/ds-01-dynamic-array-and-vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Arrays and STL Vector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/ds-02-linked-lists-and-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linked Lists and Iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/ds-03-trees-and-traversals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trees and Traversals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/ds-04-binary-search-trees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Binary Search Trees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Algorithms
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Path Finding Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Sort Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bucket Sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash Table Hashing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/A09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graph Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/BOJ12850/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adjacent Matrix Multiplication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/CCW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CCW Counter Clockwise Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/FloydWarshall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Floyd-Warshall Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/Parametric_Search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parametric Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/UnionFind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Union Find Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HKU Problems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    HKU Problems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divide and Conquer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tower of Hanoi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divide-and-Conquer Approach
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Theorem, Fibonacci Example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fibonacci Numbers &amp; Matrix Exponentiation Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maximum Subarray Problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUL1P8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HKUL1P8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKUPSET1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HKUPSET1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/HKU/HKU_Math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HKU Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/arch-01-cpu-cache-coherence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU Cache, Coherence, and Performance Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/arch-02-roofline-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roofline Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/arch-03-gpu-memory-budget-llm-serving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU Memory Budget in LLM Serving
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compilers & Low-Level
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compilers & Low-Level
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/asm-01-disassembly-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading x86 Disassembly: Operators, Control Flow, and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/asm-02-stack-frames-calling-conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stack Frames, Calling Conventions, and Memory Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/asm-03-disassembly-debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Through Disassembly: Stack and Pointer Corruption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/asm-04-c-runtime-and-executable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The C Runtime and the Executable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/CMP01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/CMP02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Knowledge for Game Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/CMP03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSVC All Compiler Properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/CMP04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSVC Compiler Property 정리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/MSVCProject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSVCProject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/MSVCSolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSVCSolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operating Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Processes and Threads
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Processes and Threads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Process?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Thread?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-structures-pcb-tcb-teb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel Structures: PCB, TCB, TEB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel Structures: PCB, TCB, TEB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pcb-process-control-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PCB — Process Control Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcb-thread-control-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCB — Thread Control Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teb-thread-environment-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TEB — Thread Environment Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread-local-storage-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread Local Storage (TLS)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fibers-user-mode-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fibers: User-Mode Threads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-level-vs-user-level-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel-Level vs. User-Level Threads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-vs-thread-the-cost-dimension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process vs. Thread: The Cost Dimension
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-vs-user-mode-why-it-matters-for-thread-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel vs. User Mode: Why It Matters for Thread Switching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gil-is-a-lock-on-bytecode-execution-not-a-ban-on-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The GIL is a lock on bytecode execution, not a ban on threads
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os-02-scheduling-and-interrupts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling and Interrupts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os-03-synchronization-and-deadlock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synchronization and Deadlock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os-04-tlb-page-faults-and-copy-on-write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLB, Page Faults, and Copy-on-Write
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Windows Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_System_Programming/win-01-processes-and-kernel-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Processes and Kernel Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_System_Programming/win-02-ipc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Inter-Process Communication (IPC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_System_Programming/win-03-threads-and-synchronization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Threads and Synchronization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_System_Programming/win-04-async-io-and-iocp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows File and Asynchronous I/O (Overlapped I/O & IOCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_System_Programming/win-05-virtual-memory-heap-mmf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Virtual Memory, Heap, and Memory-Mapped Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_System_Programming/win-06-dlls-and-dynamic-linking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows DLLs and Dynamic Linking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Networks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Networks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/nw-tcp-loss-signals-and-round-trips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP Loss Signals and Round Trips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0503/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macroscopic View of Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0504/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microscopic View of Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0724/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physical Layer &amp; Data Link Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NWHeaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP / IP Headers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NWL2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP/IP Model Layer 1 Network Access (네트워크 엑세스)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NWTCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Socket Options and select model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NWVoca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWVoca
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/TCPIP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCPIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/TCPIP1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Prgramming and Socket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/Wireshark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireshark Install Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Systems/db-01-namespaces-and-catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Namespaces and System Catalogs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Systems/db-02-derived-data-placement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Where Derived Data Belongs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Systems/db-03-write-skew-and-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Write Skew and Isolation Levels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Systems/db-04-sequential-writes-wal-and-lsm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequential Writes: WAL and LSM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Systems/db-05-delete-and-space-reclamation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE and Space Reclamation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Systems/db-06-replication-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replication Mechanics: Row Identity and Catalog Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Distributed Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Distributed/dist-01-replication-health-and-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replication Health and Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptography
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cryptography
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cryptography/C2PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C2PA (Content Credentials) - Technical Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cryptography/C2PA_Ref/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C2PA TSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portfolio
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Portfolio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/MSVCSolutionKR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    멀티스레딩 실시간 서버 포트폴리오
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECE482 FA24
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ECE482 FA24
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_2_1" id="__nav_14_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homework
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment III
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment IV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment V
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment VI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment VII
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482HW/ECE482H8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment VIII
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_2_2" id="__nav_14_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 03
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 04
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 05
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 06
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 07
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 08
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 09
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482LAB/ECE482L11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_2_3" id="__nav_14_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 2 LemonDB Multi Threading Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/DeveloperGuide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/MultiThreading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-threading Challenges
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance Improvements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P2/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Road Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_2_4" id="__nav_14_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 3 Lottery Scheduling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/Risk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 3 Lottery Scheduling Risk Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECE482FA24/ECE482P3/RoadMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 3 Lottery Scheduling RoadMap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Process?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Thread?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-structures-pcb-tcb-teb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel Structures: PCB, TCB, TEB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel Structures: PCB, TCB, TEB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pcb-process-control-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PCB — Process Control Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcb-thread-control-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCB — Thread Control Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teb-thread-environment-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TEB — Thread Environment Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread-local-storage-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread Local Storage (TLS)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fibers-user-mode-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fibers: User-Mode Threads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-level-vs-user-level-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel-Level vs. User-Level Threads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-vs-thread-the-cost-dimension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process vs. Thread: The Cost Dimension
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-vs-user-mode-why-it-matters-for-thread-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel vs. User Mode: Why It Matters for Thread Switching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gil-is-a-lock-on-bytecode-execution-not-a-ban-on-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The GIL is a lock on bytecode execution, not a ban on threads
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Operating Systems
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="processes-and-threads">Processes and Threads</h1>
+<p>Modern operating systems multiplex a single CPU across many concurrent activities. The two fundamental units of that multiplexing are the <strong>process</strong> and the <strong>thread</strong>. Understanding what each one <em>is</em> — its address space, its kernel structures, its cost — is the foundation for every higher-level topic in systems programming.</p>
+<hr />
+<h2 id="what-is-a-process">What is a Process?</h2>
+<p>A process is an isolated execution environment: a running program together with all the resources the OS has allocated to it.</p>
+<p>The kernel tracks every process with a <strong>Process Control Block (PCB)</strong>. The PCB holds:</p>
+<ul>
+<li>the virtual address space map (code, data, heap, stack regions),</li>
+<li>the open handle/file-descriptor table,</li>
+<li>security tokens and ownership information,</li>
+<li>pointers to the process's threads.</li>
+</ul>
+<p>Because each process owns a <em>private</em> virtual address space, one process cannot read or write another's memory without an explicit OS-mediated mechanism. This isolation is the defining property of a process — it is both its chief safety guarantee and its chief cost.</p>
+<hr />
+<h2 id="what-is-a-thread">What is a Thread?</h2>
+<p>A thread is the unit of <em>execution</em> scheduled by the OS. Every process contains at least one thread, and can contain many.</p>
+<p>Where processes are isolated, threads within the same process <strong>share</strong>:</p>
+<ul>
+<li>the code section,</li>
+<li>the global data section,</li>
+<li>the heap.</li>
+</ul>
+<p>Each thread has its own:</p>
+<ul>
+<li><strong>stack</strong> — local variables and call frames; sharing stacks is impossible,</li>
+<li><strong>program counter / instruction pointer</strong> — its position in the code,</li>
+<li><strong>register set</strong> — the CPU state at any given moment.</li>
+</ul>
+<p>Because threads share the code section, any thread can call any function defined in the process. Child <em>processes</em>, by contrast, get a separate copy of the code section and cannot call the parent's functions directly.</p>
+<hr />
+<h2 id="kernel-structures-pcb-tcb-teb">Kernel Structures: PCB, TCB, TEB</h2>
+<p>Three data structures together describe a running thread's full state.</p>
+<h3 id="pcb-process-control-block">PCB — Process Control Block</h3>
+<p>Owned and managed by the kernel. Contains process-wide resources: address-space metadata, open handle tables, security context. One PCB per process.</p>
+<h3 id="tcb-thread-control-block">TCB — Thread Control Block</h3>
+<p>Owned and managed by the kernel. Contains per-thread scheduling state: thread priority, quantum remaining, register context saved at the last context switch, pointer to the kernel stack. One TCB per thread.</p>
+<h3 id="teb-thread-environment-block">TEB — Thread Environment Block</h3>
+<p>Lives in <strong>user-mode memory</strong>, so user-mode code can read it without a syscall. Contains the thread ID, the base address of the thread's Thread Local Storage (TLS) slots, and other runtime support data.</p>
+<p>On 64-bit Windows the <strong>GS segment register</strong> is permanently pointed at the current thread's TEB. Assembly stubs and the runtime use <code>gs:[offset]</code> to reach thread-specific data without any indirection through the kernel.</p>
+<div class="typst-diagram"><svg viewBox="0 0 299.687 133.98" width="299.687pt" height="133.98pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><g transform="matrix(1 0 0 -1 6 13.14)"><use xlink:href="#gF60AD143D0FC7470899CF49ABC48090E" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g3BDD167888FE9297E5CBBF14977DDF81" x="7.41" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g34C6A7BC17D0AF2BD816D9B656C21B9A" x="12.78" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gBE46CFB3EBAB215C63CA4E5DC5C3824E" x="18.52" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gC0028CDFE5B81F190779666A1161EEDC" x="25.19" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gFF1456EA4BB31B37F9C12235E0FB18D8" x="34.26" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g180A1C7921DEACAA49E1994A21F42AF3" x="40.37" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g34C6A7BC17D0AF2BD816D9B656C21B9A" x="46.48" y="0" fill="currentColor" fill-rule="nonzero"/></g><g transform="translate(6 17.14)"><path fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0v 17.14h 135v -17.14Z "/><g transform="matrix(1 0 0 -1 5 12.14)"><use xlink:href="#gCA28990952702E58D6DF9CE0763FFD17" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g20A9CC531CAB7C17BE1EEA34EB5C1EDF" x="5.74" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g3945B4270717F0961EF6573805D77D53" x="11.85" y="0" fill="currentColor" fill-rule="nonzero"/></g><g transform="matrix(1 0 0 -1 30.48 12.14)"><use xlink:href="#g19F4600DA8A92559FDFEFC9A8CD7BC07" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gE30C0223EE66B8B6C43BED25697636B0" x="2.072" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gEB0C7BF042A45E8E051389A540257FCD" x="8.144" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g97071A2893B0C7191AEDE27EAE655EFE" x="15.552" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gC76F11DAD52FAC92E5F6681E1F3A8E24" x="20.296" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g32B342CADBF6914BAE52C992C70E94C0" x="24.888" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gFC762F034065CB92308F77DA50904636" x="26.664" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g786D0DA605A095191D5C33A5BB968848" x="31.112" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g3633D5EF187E794EAF4ED06368BFDFCF" x="33.632" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g4EEC1B00D99564D728DA8C8DDE163729" x="39.856" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g6B217B44DBEC65D521E4D6C450891318" x="44.304" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gDE0960E94F350358A27A95EE3692B6C6" x="48.6" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g6B217B44DBEC65D521E4D6C450891318" x="51.12" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gEED9CF782470B5DCDB2CF7DB8714BD48" x="55.416" y="0" fill="currentColor" fill-rule="nonzero"/></g></g><g transform="matrix(1 0 0 -1 149 28.7445)"><use xlink:href="#g41516107AE83FB83E5AE2165801750F7" x="0" y="0" fill="#777777" fill-rule="nonzero"/></g><g transform="matrix(1 0 0 -1 154.9925 28.7445)"><use xlink:href="#g52531330ECDC432DBC325F643AA7DEF9" x="2.363" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g1B4722D9F4FE97383780CE10F3A76397" x="7.242" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="11.968" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="14.6455" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="19.21" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g993EBF1AD28CAB3FFB9DDAF0A15070DA" x="23.7745" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g57F7317BECB8988ED01A49BA6A3AE0AE" x="31.178" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g5ABD0C1ECEB5D5BB743CADA1294A3E6D" x="33.3795" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g3337A01C082E07854289A63A40BA08CE" x="39.3635" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g52531330ECDC432DBC325F643AA7DEF9" x="44.0895" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gAB63E54F48E1E72099F0EC89367B5056" x="48.9685" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g5DAA1AE453809C96C7FEC42254F2FF75" x="53.6945" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g5C0757D5B458AFBDF3F360CD3C8D67DE" x="61.5655" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="66.606" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gEFF7AD7F29645B31072E3462C9C68DCD" x="71.1705" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="75.4205" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g3337A01C082E07854289A63A40BA08CE" x="79.985" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gCEBC7EEB67795D3EAE33D077102FE47F" x="84.711" y="0" fill="#777777" fill-rule="nonzero"/></g><g transform="translate(6 34.28)"><path fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0v 17.14h 135v -17.14Z "/><g transform="matrix(1 0 0 -1 5 12.14)"><use xlink:href="#g8DF90092F2CD3B8E0CE2AE6E7518F6A9" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g18134C4F02EF7053944117CC3EBA0B25" x="7.22" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g359A41E389AB4F8C1AB7B11BF543716" x="12.22" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gF90067B15B1A2D88A04973AD74C0BCEB" x="17.59" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g6369F59511D23C22C98F42CC8A857C1B" x="23.7" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gADE9984FB9D3ECC11EDE65D5E64F858B" x="30.18" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g59981CEF024D02F67F8217D5BBFAC7BF" x="33.33" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g8B9CBF712A22D61CD86133FE06377EE3" x="38.7" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gEB0FC0C5D8A144870A7CCE1006EB3CE" x="44.07" y="0" fill="currentColor" fill-rule="nonzero"/></g></g><g transform="matrix(1 0 0 -1 149 45.8845)"><use xlink:href="#g41516107AE83FB83E5AE2165801750F7" x="0" y="0" fill="#777777" fill-rule="nonzero"/></g><g transform="matrix(1 0 0 -1 154.9925 45.8845)"><use xlink:href="#g8DF6A522626854C7709ACD35BFD2AEB6" x="2.363" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA5D6CEF0D74556716394878F527C6297" x="4.25" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gB8AE167C7E8AF9C2B1D821858016BC99" x="9.129" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="13.6935" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g8DF6A522626854C7709ACD35BFD2AEB6" x="18.258" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gD89022FE766BF8810F98A780DAC5F580" x="22.508" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="26.758" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="31.3225" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gED36C8EF2EA17EEE3B8FC4EC51EBEF3C" x="34.153" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="36.04" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g5C0757D5B458AFBDF3F360CD3C8D67DE" x="40.6045" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g8DF6A522626854C7709ACD35BFD2AEB6" x="45.645" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="47.532" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gEFF7AD7F29645B31072E3462C9C68DCD" x="52.0965" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g3337A01C082E07854289A63A40BA08CE" x="56.3465" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gB8AE167C7E8AF9C2B1D821858016BC99" x="61.0725" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="65.637" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g8DF6A522626854C7709ACD35BFD2AEB6" x="70.2015" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g8DF6A522626854C7709ACD35BFD2AEB6" x="72.0885" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g5B9B31CA1DAC6835C9F63CA8589137E0" x="76.3385" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="78.8545" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="81.685" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g8B4750DBC1F8DA4E46AE9A564E179E48" x="86.2495" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="93.5" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gEFF7AD7F29645B31072E3462C9C68DCD" x="98.0645" y="0" fill="#777777" fill-rule="nonzero"/></g><g transform="matrix(1 0 0 -1 6 72.56)"><use xlink:href="#g6E719F786D7B1141CA8C4512E00A2E0D" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g34C6A7BC17D0AF2BD816D9B656C21B9A" x="7.22" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gBE46CFB3EBAB215C63CA4E5DC5C3824E" x="12.96" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g34490206F6358D73AC96D0A0F4603814" x="16.85" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g34C6A7BC17D0AF2BD816D9B656C21B9A" x="22.78" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g2A097BC7EEE91105D52B352EA84246F0" x="28.52" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gC0028CDFE5B81F190779666A1161EEDC" x="33.88" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gFF1456EA4BB31B37F9C12235E0FB18D8" x="42.95" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g180A1C7921DEACAA49E1994A21F42AF3" x="49.06" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g34C6A7BC17D0AF2BD816D9B656C21B9A" x="55.17" y="0" fill="currentColor" fill-rule="nonzero"/></g><g transform="translate(6 76.56)"><path fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0v 17.14h 135v -17.14Z "/><g transform="matrix(1 0 0 -1 5 12.14)"><use xlink:href="#gCA28990952702E58D6DF9CE0763FFD17" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g3CC7049769A82D5EE9C0E77D6E6F8B92" x="5.74" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g3945B4270717F0961EF6573805D77D53" x="12.96" y="0" fill="currentColor" fill-rule="nonzero"/></g><g transform="matrix(1 0 0 -1 31.59 12.14)"><use xlink:href="#g19F4600DA8A92559FDFEFC9A8CD7BC07" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g97071A2893B0C7191AEDE27EAE655EFE" x="2.072" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g6B217B44DBEC65D521E4D6C450891318" x="6.816" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gDE0960E94F350358A27A95EE3692B6C6" x="11.112" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g786D0DA605A095191D5C33A5BB968848" x="16" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g4EEC1B00D99564D728DA8C8DDE163729" x="18.52" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gDE0960E94F350358A27A95EE3692B6C6" x="22.968" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g6B217B44DBEC65D521E4D6C450891318" x="25.488" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gB9D4D6D822821FBD03112B321A4F5F37" x="29.784" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g56F73A9DDE7688229227FB61E73B22EB" x="34.08" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gEED9CF782470B5DCDB2CF7DB8714BD48" x="38.824" y="0" fill="currentColor" fill-rule="nonzero"/></g></g><g transform="matrix(1 0 0 -1 149 88.1645)"><use xlink:href="#g41516107AE83FB83E5AE2165801750F7" x="0" y="0" fill="#777777" fill-rule="nonzero"/></g><g transform="matrix(1 0 0 -1 154.9925 88.1645)"><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="2.363" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="5.0405" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g48D42B4C02F6C0875A6D8CA769E6D9DA" x="9.605" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gED36C8EF2EA17EEE3B8FC4EC51EBEF3C" x="14.484" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gEFF7AD7F29645B31072E3462C9C68DCD" x="16.371" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA31EDC1ABF3BB95E8FD2BBC5AD7FA25A" x="20.621" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="23.2985" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="27.863" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gB8AE167C7E8AF9C2B1D821858016BC99" x="33.0565" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA5D6CEF0D74556716394878F527C6297" x="37.621" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g97E59DF75FB3E5C6F844F55382E35B0A" x="42.5" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA31EDC1ABF3BB95E8FD2BBC5AD7FA25A" x="47.226" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="49.9035" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g17E99E3193B4C1CE34646AA81E4507C4" x="54.468" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA31EDC1ABF3BB95E8FD2BBC5AD7FA25A" x="58.871" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g3337A01C082E07854289A63A40BA08CE" x="61.5485" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gAC818DE454FD3EA4D62ADA13561B42A0" x="66.2745" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="71.315" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gED36C8EF2EA17EEE3B8FC4EC51EBEF3C" x="74.1455" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA5D6CEF0D74556716394878F527C6297" x="76.0325" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="80.9115" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gED36C8EF2EA17EEE3B8FC4EC51EBEF3C" x="83.742" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA31EDC1ABF3BB95E8FD2BBC5AD7FA25A" x="85.629" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g3527964F1BF9125605F3F602192A3621" x="88.3065" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g3337A01C082E07854289A63A40BA08CE" x="91.9275" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gC2F6980C151AC63F63332C7A69380D07" x="96.6535" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gB4B3A1E58F4B4830738DE4A2DF37C1FC" x="101.694" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="106.42" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g97E59DF75FB3E5C6F844F55382E35B0A" x="110.9845" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA31EDC1ABF3BB95E8FD2BBC5AD7FA25A" x="115.7105" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gB4B3A1E58F4B4830738DE4A2DF37C1FC" x="118.388" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g8B4750DBC1F8DA4E46AE9A564E179E48" x="123.114" y="0" fill="#777777" fill-rule="nonzero"/></g><g transform="translate(6 93.7)"><path fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0v 17.14h 135v -17.14Z "/><g transform="matrix(1 0 0 -1 5 12.14)"><use xlink:href="#g96334AC65714C73960638556C49F2926" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g359A41E389AB4F8C1AB7B11BF543716" x="6.67" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gF90067B15B1A2D88A04973AD74C0BCEB" x="12.04" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g80B889F384B774BBBF423D6B65B0767C" x="15.55" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g359A41E389AB4F8C1AB7B11BF543716" x="21.11" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g1F43A2232334803B694E993B6894957E" x="26.48" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g6369F59511D23C22C98F42CC8A857C1B" x="31.48" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gADE9984FB9D3ECC11EDE65D5E64F858B" x="37.96" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g59981CEF024D02F67F8217D5BBFAC7BF" x="41.11" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g8B9CBF712A22D61CD86133FE06377EE3" x="46.48" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gEB0FC0C5D8A144870A7CCE1006EB3CE" x="51.85" y="0" fill="currentColor" fill-rule="nonzero"/></g><g transform="matrix(1 0 0 -1 68.82 12.14)"><use xlink:href="#g19F4600DA8A92559FDFEFC9A8CD7BC07" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g97071A2893B0C7191AEDE27EAE655EFE" x="2.072" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g6B217B44DBEC65D521E4D6C450891318" x="6.816" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gDE0960E94F350358A27A95EE3692B6C6" x="11.112" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g786D0DA605A095191D5C33A5BB968848" x="16" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g4EEC1B00D99564D728DA8C8DDE163729" x="18.52" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gDE0960E94F350358A27A95EE3692B6C6" x="22.968" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g6B217B44DBEC65D521E4D6C450891318" x="25.488" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gB9D4D6D822821FBD03112B321A4F5F37" x="29.784" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g56F73A9DDE7688229227FB61E73B22EB" x="34.08" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gEED9CF782470B5DCDB2CF7DB8714BD48" x="38.824" y="0" fill="currentColor" fill-rule="nonzero"/></g></g><g transform="matrix(1 0 0 -1 149 105.3045)"><use xlink:href="#g41516107AE83FB83E5AE2165801750F7" x="0" y="0" fill="#777777" fill-rule="nonzero"/></g><g transform="matrix(1 0 0 -1 154.9925 105.3045)"><use xlink:href="#gEFF7AD7F29645B31072E3462C9C68DCD" x="2.363" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="6.613" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gAC818DE454FD3EA4D62ADA13561B42A0" x="11.1775" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="16.218" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="20.7825" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="23.613" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA31EDC1ABF3BB95E8FD2BBC5AD7FA25A" x="28.1775" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="30.855" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA535E6BDA378EF53C87FC6ABDDA06322" x="35.4195" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g97E59DF75FB3E5C6F844F55382E35B0A" x="40.1455" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="44.8715" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="49.436" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g993EBF1AD28CAB3FFB9DDAF0A15070DA" x="54.0005" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="59.041" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g993EBF1AD28CAB3FFB9DDAF0A15070DA" x="63.6055" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g5B9B31CA1DAC6835C9F63CA8589137E0" x="71.009" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA5D6CEF0D74556716394878F527C6297" x="73.525" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="78.404" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA1243D111EE351A27AB4C59FD5A914F7" x="83.5975" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="88.009" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="92.5735" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g97E59DF75FB3E5C6F844F55382E35B0A" x="95.557" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="100.283" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g8DF6A522626854C7709ACD35BFD2AEB6" x="104.8475" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="109.0975" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="111.775" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g38C705FD0C01EF1EF0483CC20C78CCB6" x="116.3395" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="119.646" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g97E59DF75FB3E5C6F844F55382E35B0A" x="124.2105" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gA31EDC1ABF3BB95E8FD2BBC5AD7FA25A" x="128.9365" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="131.614" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g3527964F1BF9125605F3F602192A3621" x="134.4445" y="0" fill="#777777" fill-rule="nonzero"/></g><g transform="translate(6 110.84)"><path fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0v 17.14h 135v -17.14Z "/><g transform="matrix(1 0 0 -1 5 12.14)"><use xlink:href="#gDDA3FB04B4DABB891619FF70BE5A5D36" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g3CC7049769A82D5EE9C0E77D6E6F8B92" x="6.48" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g3945B4270717F0961EF6573805D77D53" x="13.7" y="0" fill="currentColor" fill-rule="nonzero"/></g><g transform="matrix(1 0 0 -1 32.33 12.14)"><use xlink:href="#g19F4600DA8A92559FDFEFC9A8CD7BC07" x="0" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g97071A2893B0C7191AEDE27EAE655EFE" x="2.072" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g6B217B44DBEC65D521E4D6C450891318" x="6.816" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gDE0960E94F350358A27A95EE3692B6C6" x="11.112" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g97071A2893B0C7191AEDE27EAE655EFE" x="16" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gDE0960E94F350358A27A95EE3692B6C6" x="20.744" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gC76F11DAD52FAC92E5F6681E1F3A8E24" x="23.264" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g9524DB2AB7AD3B578280EC160D005BAC" x="27.856" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g6B217B44DBEC65D521E4D6C450891318" x="32.152" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g3633D5EF187E794EAF4ED06368BFDFCF" x="36.448" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#g3633D5EF187E794EAF4ED06368BFDFCF" x="40.448" y="0" fill="currentColor" fill-rule="nonzero"/><use xlink:href="#gEED9CF782470B5DCDB2CF7DB8714BD48" x="44.448" y="0" fill="currentColor" fill-rule="nonzero"/></g></g><g transform="matrix(1 0 0 -1 149 122.4445)"><use xlink:href="#g41516107AE83FB83E5AE2165801750F7" x="0" y="0" fill="#777777" fill-rule="nonzero"/></g><g transform="matrix(1 0 0 -1 154.9925 122.4445)"><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="2.363" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g993EBF1AD28CAB3FFB9DDAF0A15070DA" x="6.9275" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g993EBF1AD28CAB3FFB9DDAF0A15070DA" x="11.968" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gF45992B42E75E87B98881826EC0760BD" x="17.0085" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="19.686" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gEFF7AD7F29645B31072E3462C9C68DCD" x="24.2505" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gEFF7AD7F29645B31072E3462C9C68DCD" x="28.5005" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g38C705FD0C01EF1EF0483CC20C78CCB6" x="32.7505" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gEFF7AD7F29645B31072E3462C9C68DCD" x="36.057" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gAC818DE454FD3EA4D62ADA13561B42A0" x="40.307" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="45.3475" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gB8AE167C7E8AF9C2B1D821858016BC99" x="49.912" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="54.4765" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g8B4750DBC1F8DA4E46AE9A564E179E48" x="61.404" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="68.6545" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gAC818DE454FD3EA4D62ADA13561B42A0" x="73.219" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g3337A01C082E07854289A63A40BA08CE" x="78.2595" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g1B4722D9F4FE97383780CE10F3A76397" x="82.9855" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gFB5E59F574088C208BF0BF08F92C98F0" x="87.7115" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g97E59DF75FB3E5C6F844F55382E35B0A" x="92.276" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g993EBF1AD28CAB3FFB9DDAF0A15070DA" x="97.002" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g8DF6A522626854C7709ACD35BFD2AEB6" x="102.0425" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#g25E4DAFBABD40AF20C6EFEB705BE41D4" x="103.9295" y="0" fill="#777777" fill-rule="nonzero"/><use xlink:href="#gEFF7AD7F29645B31072E3462C9C68DCD" x="108.494" y="0" fill="#777777" fill-rule="nonzero"/></g><defs><symbol id="gF60AD143D0FC7470899CF49ABC48090E" overflow="visible"><path d="M 0 0m 6.75 2.7v 4.44h -1.57v -4.44q 0 -0.8 -0.32 -1.175q -0.32 -0.375 -1.16 -0.375q -0.48 0 -0.765 0.135q -0.285 0.135 -0.445 0.35q -0.16 0.215 -0.21 0.495q -0.05 0.28 -0.05 0.57v 4.44h -1.57v -4.44q 0 -1.46 0.795 -2.16q 0.795 -0.7 2.245 -0.7q 1.43 0 2.24 0.705q 0.81 0.705 0.81 2.155Z "/></symbol><symbol id="g3BDD167888FE9297E5CBBF14977DDF81" overflow="visible"><path d="M 0 0m 1.64 1.68h -1.35q 0.02 -0.52 0.235 -0.865q 0.215 -0.345 0.55 -0.555q 0.335 -0.21 0.765 -0.3q 0.43 -0.09 0.88 -0.09q 0.44 0 0.865 0.085q 0.425 0.085 0.755 0.295q 0.33 0.21 0.535 0.555q 0.205 0.345 0.205 0.855q 0 0.36 -0.14 0.605q -0.14 0.245 -0.37 0.41q -0.23 0.165 -0.525 0.265q -0.295 0.1 -0.605 0.17q -0.3 0.07 -0.59 0.13q -0.29 0.06 -0.515 0.135q -0.225 0.075 -0.365 0.195q -0.14 0.12 -0.14 0.31q 0 0.16 0.08 0.255q 0.08 0.095 0.195 0.145q 0.115 0.05 0.255 0.065q 0.14 0.015 0.26 0.015q 0.38 0 0.66 -0.145q 0.28 -0.145 0.31 -0.555h 1.35q -0.04 0.48 -0.245 0.795q -0.205 0.315 -0.515 0.505q -0.31 0.19 -0.705 0.27q -0.395 0.08 -0.815 0.08q -0.42 0 -0.82 -0.075q -0.4 -0.075 -0.72 -0.26q -0.32 -0.185 -0.515 -0.505q -0.195 -0.32 -0.195 -0.82q 0 -0.34 0.14 -0.575q 0.14 -0.235 0.37 -0.39q 0.23 -0.155 0.525 -0.25q 0.295 -0.095 0.605 -0.165q 0.76 -0.16 1.185 -0.32q 0.425 -0.16 0.425 -0.48q 0 -0.19 -0.09 -0.315q -0.09 -0.125 -0.225 -0.2q -0.135 -0.075 -0.3 -0.11q -0.165 -0.035 -0.315 -0.035q -0.21 0 -0.405 0.05q -0.195 0.05 -0.345 0.155q -0.15 0.105 -0.245 0.27q -0.095 0.165 -0.095 0.395Z "/></symbol><symbol id="g34C6A7BC17D0AF2BD816D9B656C21B9A" overflow="visible"><path d="M 0 0m 4.02 3.14h -2.31q 0.01 0.15 0.065 0.34q 0.055 0.19 0.19 0.36q 0.135 0.17 0.36 0.285q 0.225 0.115 0.565 0.115q 0.52 0 0.775 -0.28q 0.255 -0.28 0.355 -0.82Z m -2.31 -0.9h 3.73q 0.04 0.6 -0.1 1.15q -0.14 0.55 -0.455 0.98q -0.315 0.43 -0.805 0.685q -0.49 0.255 -1.15 0.255q -0.59 0 -1.075 -0.21q -0.485 -0.21 -0.835 -0.575q -0.35 -0.365 -0.54 -0.865q -0.19 -0.5 -0.19 -1.08q 0 -0.6 0.185 -1.1q 0.185 -0.5 0.525 -0.86q 0.34 -0.36 0.83 -0.555q 0.49 -0.195 1.1 -0.195q 0.88 0 1.5 0.4q 0.62 0.4 0.92 1.33h -1.25q -0.07 -0.24 -0.38 -0.455q -0.31 -0.215 -0.74 -0.215q -0.6 0 -0.92 0.31q -0.32 0.31 -0.35 1Z "/></symbol><symbol id="gBE46CFB3EBAB215C63CA4E5DC5C3824E" overflow="visible"><path d="M 0 0m 0.54 5.17v -5.17h 1.42v 2.33q 0 0.35 0.07 0.65q 0.07 0.3 0.235 0.525q 0.165 0.225 0.435 0.355q 0.27 0.13 0.66 0.13q 0.13 0 0.27 -0.015q 0.14 -0.015 0.24 -0.035v 1.32q -0.17 0.05 -0.31 0.05q -0.27 0 -0.52 -0.08q -0.25 -0.08 -0.47 -0.225q -0.22 -0.145 -0.39 -0.35q -0.17 -0.205 -0.27 -0.445h -0.02v 0.96h -1.35Z "/></symbol><symbol id="gC0028CDFE5B81F190779666A1161EEDC" overflow="visible"><path d="M 0 0m 0.69 7.14v -7.14h 1.47v 5.01h 0.02l 1.75 -5.01h 1.21l 1.75 5.06h 0.02v -5.06h 1.47v 7.14h -2.21l -1.58 -4.91h -0.02l -1.67 4.91h -2.21Z "/></symbol><symbol id="gFF1456EA4BB31B37F9C12235E0FB18D8" overflow="visible"><path d="M 0 0m 1.8 2.58q 0 0.31 0.06 0.61q 0.06 0.3 0.205 0.53q 0.145 0.23 0.385 0.375q 0.24 0.145 0.6 0.145q 0.36 0 0.605 -0.145q 0.245 -0.145 0.39 -0.375q 0.145 -0.23 0.205 -0.53q 0.06 -0.3 0.06 -0.61q 0 -0.31 -0.06 -0.605q -0.06 -0.295 -0.205 -0.53q -0.145 -0.235 -0.39 -0.375q -0.245 -0.14 -0.605 -0.14q -0.36 0 -0.6 0.14q -0.24 0.14 -0.385 0.375q -0.145 0.235 -0.205 0.53q -0.06 0.295 -0.06 0.605Z m -1.42 0q 0 -0.62 0.19 -1.12q 0.19 -0.5 0.54 -0.855q 0.35 -0.355 0.84 -0.545q 0.49 -0.19 1.1 -0.19q 0.61 0 1.105 0.19q 0.495 0.19 0.845 0.545q 0.35 0.355 0.54 0.855q 0.19 0.5 0.19 1.12q 0 0.62 -0.19 1.125q -0.19 0.505 -0.54 0.86q -0.35 0.355 -0.845 0.55q -0.495 0.195 -1.105 0.195q -0.61 0 -1.1 -0.195q -0.49 -0.195 -0.84 -0.55q -0.35 -0.355 -0.54 -0.86q -0.19 -0.505 -0.19 -1.125Z "/></symbol><symbol id="g180A1C7921DEACAA49E1994A21F42AF3" overflow="visible"><path d="M 0 0m 4.21 2.6q 0 -0.32 -0.06 -0.62q -0.06 -0.3 -0.2 -0.535q -0.14 -0.235 -0.375 -0.375q -0.235 -0.14 -0.585 -0.14q -0.33 0 -0.565 0.145q -0.235 0.145 -0.39 0.38q -0.155 0.235 -0.225 0.535q -0.07 0.3 -0.07 0.6q 0 0.32 0.065 0.615q 0.065 0.295 0.21 0.525q 0.145 0.23 0.385 0.37q 0.24 0.14 0.59 0.14q 0.35 0 0.58 -0.14q 0.23 -0.14 0.375 -0.365q 0.145 -0.225 0.205 -0.52q 0.06 -0.295 0.06 -0.615Z m 0.02 -1.94v -0.66h 1.35v 7.14h -1.42v -2.6h -0.02q -0.24 0.38 -0.655 0.575q -0.415 0.195 -0.875 0.195q -0.57 0 -1 -0.225q -0.43 -0.225 -0.715 -0.595q -0.285 -0.37 -0.43 -0.855q -0.145 -0.485 -0.145 -1.005q 0 -0.54 0.145 -1.04q 0.145 -0.5 0.43 -0.885q 0.285 -0.385 0.725 -0.61q 0.44 -0.225 1.02 -0.225q 0.51 0 0.915 0.185q 0.405 0.185 0.655 0.605h 0.02Z "/></symbol><symbol id="gCA28990952702E58D6DF9CE0763FFD17" overflow="visible"><path d="M 0 0m 2.4 6.34v -6.34h 0.95v 6.34h 2.38v 0.8h -5.71v -0.8h 2.38Z "/></symbol><symbol id="g20A9CC531CAB7C17BE1EEA34EB5C1EDF" overflow="visible"><path d="M 0 0m 0.78 7.14v -7.14h 4.96v 0.8h -4.01v 2.47h 3.71v 0.8h -3.71v 2.27h 3.98v 0.8h -4.93Z "/></symbol><symbol id="g3945B4270717F0961EF6573805D77D53" overflow="visible"><path d="M 0 0m 1.73 4.07v 2.27h 1.9q 0.31 0 0.585 -0.035q 0.275 -0.035 0.485 -0.155q 0.21 -0.12 0.33 -0.34q 0.12 -0.22 0.12 -0.6q 0 -0.57 -0.355 -0.855q -0.355 -0.285 -1.165 -0.285h -1.9Z m -0.95 3.07v -7.14h 3.45q 0.53 0 0.935 0.175q 0.405 0.175 0.68 0.46q 0.275 0.285 0.415 0.655q 0.14 0.37 0.14 0.76q 0 0.66 -0.35 1.12q -0.35 0.46 -1.01 0.6v 0.02q 0.51 0.2 0.785 0.615q 0.275 0.415 0.275 0.985q 0 0.54 -0.245 0.91q -0.245 0.37 -0.595 0.58q -0.16 0.1 -0.385 0.15q -0.225 0.05 -0.485 0.075q -0.26 0.025 -0.525 0.03q -0.265 0.005 -0.495 0.005h -2.59Z m 0.95 -6.34v 2.47h 2.17q 0.3 0 0.58 -0.055q 0.28 -0.055 0.495 -0.19q 0.215 -0.135 0.345 -0.365q 0.13 -0.23 0.13 -0.58q 0 -0.6 -0.355 -0.94q -0.355 -0.34 -0.985 -0.34h -2.38Z "/></symbol><symbol id="g19F4600DA8A92559FDFEFC9A8CD7BC07" overflow="visible"><path d="M 0 0m 1.632 -1.576h 0.52q -0.568 0.92 -0.812 1.824q -0.244 0.904 -0.244 1.912q 0 0.984 0.24 1.88q 0.24 0.896 0.816 1.808h -0.52q -0.624 -0.824 -0.94 -1.784q -0.316 -0.96 -0.316 -1.904q 0 -0.528 0.088 -1.008q 0.088 -0.48 0.252 -0.936q 0.164 -0.456 0.396 -0.9q 0.232 -0.444 0.52 -0.892Z "/></symbol><symbol id="gE30C0223EE66B8B6C43BED25697636B0" overflow="visible"><path d="M 0 0m 4.896 0.712l 0.2 -0.712h 0.48v 3.008h -2.504v -0.64h 1.824q 0.016 -0.392 -0.104 -0.732q -0.12 -0.34 -0.356 -0.592q -0.236 -0.252 -0.58 -0.396q -0.344 -0.144 -0.792 -0.144q -0.48 0 -0.844 0.188q -0.364 0.188 -0.612 0.504q -0.248 0.316 -0.376 0.728q -0.128 0.412 -0.128 0.86q 0 0.456 0.112 0.892q 0.112 0.436 0.348 0.776q 0.236 0.34 0.608 0.548q 0.372 0.208 0.892 0.208q 0.32 0 0.604 -0.076q 0.284 -0.076 0.508 -0.228q 0.224 -0.152 0.376 -0.388q 0.152 -0.236 0.208 -0.564h 0.76q -0.08 0.504 -0.3 0.86q -0.22 0.356 -0.544 0.588q -0.324 0.232 -0.736 0.34q -0.412 0.108 -0.876 0.108q -0.68 0 -1.188 -0.252q -0.508 -0.252 -0.848 -0.676q -0.34 -0.424 -0.512 -0.988q -0.172 -0.564 -0.172 -1.188q 0 -0.56 0.184 -1.08q 0.184 -0.52 0.536 -0.92q 0.352 -0.4 0.856 -0.636q 0.504 -0.236 1.144 -0.236q 0.504 0 1 0.196q 0.496 0.196 0.832 0.644Z "/></symbol><symbol id="gEB0C7BF042A45E8E051389A540257FCD" overflow="visible"><path d="M 0 0m 3.928 4.04h 0.72q -0.016 0.472 -0.18 0.812q -0.164 0.34 -0.448 0.564q -0.284 0.224 -0.66 0.328q -0.376 0.104 -0.816 0.104q -0.392 0 -0.764 -0.1q -0.372 -0.1 -0.664 -0.304q -0.292 -0.204 -0.468 -0.52q -0.176 -0.316 -0.176 -0.748q 0 -0.392 0.156 -0.652q 0.156 -0.26 0.416 -0.424q 0.26 -0.164 0.588 -0.264q 0.328 -0.1 0.668 -0.176q 0.34 -0.076 0.668 -0.148q 0.328 -0.072 0.588 -0.188q 0.26 -0.116 0.416 -0.3q 0.156 -0.184 0.156 -0.48q 0 -0.312 -0.128 -0.512q -0.128 -0.2 -0.336 -0.316q -0.208 -0.116 -0.468 -0.164q -0.26 -0.048 -0.516 -0.048q -0.32 0 -0.624 0.08q -0.304 0.08 -0.532 0.248q -0.228 0.168 -0.368 0.428q -0.14 0.26 -0.14 0.62h -0.72q 0 -0.52 0.188 -0.9q 0.188 -0.38 0.512 -0.624q 0.324 -0.244 0.752 -0.364q 0.428 -0.12 0.908 -0.12q 0.392 0 0.788 0.092q 0.396 0.092 0.716 0.296q 0.32 0.204 0.524 0.528q 0.204 0.324 0.204 0.78q 0 0.424 -0.156 0.704q -0.156 0.28 -0.416 0.464q -0.26 0.184 -0.588 0.292q -0.328 0.108 -0.668 0.188q -0.34 0.08 -0.668 0.148q -0.328 0.068 -0.588 0.172q -0.26 0.104 -0.416 0.268q -0.156 0.164 -0.156 0.428q 0 0.28 0.108 0.468q 0.108 0.188 0.288 0.3q 0.18 0.112 0.412 0.16q 0.232 0.048 0.472 0.048q 0.592 0 0.972 -0.276q 0.38 -0.276 0.444 -0.892Z "/></symbol><symbol id="g97071A2893B0C7191AEDE27EAE655EFE" overflow="visible"><path d="M 0 0m 0.536 4.136v -5.712h 0.68v 2.128h 0.016q 0.112 -0.184 0.276 -0.308q 0.164 -0.124 0.348 -0.196q 0.184 -0.072 0.372 -0.104q 0.188 -0.032 0.34 -0.032q 0.472 0 0.828 0.168q 0.356 0.168 0.592 0.46q 0.236 0.292 0.352 0.684q 0.116 0.392 0.116 0.832q 0 0.44 -0.12 0.832q -0.12 0.392 -0.356 0.692q -0.236 0.3 -0.592 0.476q -0.356 0.176 -0.836 0.176q -0.432 0 -0.792 -0.156q -0.36 -0.156 -0.528 -0.5h -0.016v 0.56h -0.68Z m 3.2 -2.032q 0 -0.304 -0.064 -0.592q -0.064 -0.288 -0.208 -0.512q -0.144 -0.224 -0.38 -0.36q -0.236 -0.136 -0.588 -0.136q -0.352 0 -0.6 0.132q -0.248 0.132 -0.404 0.348q -0.156 0.216 -0.228 0.5q -0.072 0.284 -0.072 0.588q 0 0.288 0.068 0.568q 0.068 0.28 0.22 0.5q 0.152 0.22 0.392 0.356q 0.24 0.136 0.584 0.136q 0.328 0 0.572 -0.128q 0.244 -0.128 0.4 -0.344q 0.156 -0.216 0.232 -0.492q 0.076 -0.276 0.076 -0.564Z "/></symbol><symbol id="gC76F11DAD52FAC92E5F6681E1F3A8E24" overflow="visible"><path d="M 0 0m 1.008 2.064q 0 0.376 0.1 0.668q 0.1 0.292 0.276 0.492q 0.176 0.2 0.412 0.304q 0.236 0.104 0.5 0.104q 0.264 0 0.5 -0.104q 0.236 -0.104 0.412 -0.304q 0.176 -0.2 0.276 -0.492q 0.1 -0.292 0.1 -0.668q 0 -0.376 -0.1 -0.668q -0.1 -0.292 -0.276 -0.488q -0.176 -0.196 -0.412 -0.3q -0.236 -0.104 -0.5 -0.104q -0.264 0 -0.5 0.104q -0.236 0.104 -0.412 0.3q -0.176 0.196 -0.276 0.488q -0.1 0.292 -0.1 0.668Z m -0.72 0q 0 -0.456 0.128 -0.848q 0.128 -0.392 0.384 -0.684q 0.256 -0.292 0.632 -0.456q 0.376 -0.164 0.864 -0.164q 0.496 0 0.868 0.164q 0.372 0.164 0.628 0.456q 0.256 0.292 0.384 0.684q 0.128 0.392 0.128 0.848q 0 0.456 -0.128 0.852q -0.128 0.396 -0.384 0.688q -0.256 0.292 -0.628 0.46q -0.372 0.168 -0.868 0.168q -0.488 0 -0.864 -0.168q -0.376 -0.168 -0.632 -0.46q -0.256 -0.292 -0.384 -0.688q -0.128 -0.396 -0.128 -0.852Z "/></symbol><symbol id="g32B342CADBF6914BAE52C992C70E94C0" overflow="visible"><path d="M 0 0m 1.232 4.88v 0.832h -0.68v -0.832h 0.68Z m -0.68 -0.744v -4.136h 0.68v 4.136h -0.68Z "/></symbol><symbol id="gFC762F034065CB92308F77DA50904636" overflow="visible"><path d="M 0 0m 0.512 4.136v -4.136h 0.68v 2.336q 0 0.28 0.076 0.516q 0.076 0.236 0.228 0.412q 0.152 0.176 0.38 0.272q 0.228 0.096 0.54 0.096q 0.392 0 0.616 -0.224q 0.224 -0.224 0.224 -0.608v -2.8h 0.68v 2.72q 0 0.336 -0.068 0.612q -0.068 0.276 -0.236 0.476q -0.168 0.2 -0.44 0.312q -0.272 0.112 -0.68 0.112q -0.92 0 -1.344 -0.752h -0.016v 0.656h -0.64Z "/></symbol><symbol id="g786D0DA605A095191D5C33A5BB968848" overflow="visible"><path d="M 0 0m 1.456 4.136v 1.24h -0.68v -1.24h -0.704v -0.6h 0.704v -2.632q 0 -0.288 0.056 -0.464q 0.056 -0.176 0.172 -0.272q 0.116 -0.096 0.304 -0.132q 0.188 -0.036 0.452 -0.036h 0.52v 0.6h -0.312q -0.16 0 -0.26 0.012q -0.1 0.012 -0.156 0.052q -0.056 0.04 -0.076 0.112q -0.02 0.072 -0.02 0.192v 2.568h 0.824v 0.6h -0.824Z "/></symbol><symbol id="g3633D5EF187E794EAF4ED06368BFDFCF" overflow="visible"><path d="M 0 0m 0.928 1.304h -0.68q 0.016 -0.384 0.16 -0.652q 0.144 -0.268 0.384 -0.432q 0.24 -0.164 0.552 -0.236q 0.312 -0.072 0.656 -0.072q 0.312 0 0.628 0.06q 0.316 0.06 0.568 0.212q 0.252 0.152 0.408 0.4q 0.156 0.248 0.156 0.624q 0 0.296 -0.116 0.496q -0.116 0.2 -0.304 0.332q -0.188 0.132 -0.432 0.212q -0.244 0.08 -0.5 0.136q -0.24 0.056 -0.48 0.108q -0.24 0.052 -0.432 0.128q -0.192 0.076 -0.316 0.192q -0.124 0.116 -0.124 0.292q 0 0.16 0.08 0.26q 0.08 0.1 0.208 0.16q 0.128 0.06 0.284 0.084q 0.156 0.024 0.308 0.024q 0.168 0 0.332 -0.036q 0.164 -0.036 0.3 -0.116q 0.136 -0.08 0.224 -0.212q 0.088 -0.132 0.104 -0.332h 0.68q -0.024 0.376 -0.16 0.628q -0.136 0.252 -0.364 0.4q -0.228 0.148 -0.524 0.208q -0.296 0.06 -0.648 0.06q -0.272 0 -0.548 -0.068q -0.276 -0.068 -0.496 -0.208q -0.22 -0.14 -0.36 -0.364q -0.14 -0.224 -0.14 -0.536q 0 -0.4 0.2 -0.624q 0.2 -0.224 0.5 -0.348q 0.3 -0.124 0.652 -0.192q 0.352 -0.068 0.652 -0.152q 0.3 -0.084 0.5 -0.22q 0.2 -0.136 0.2 -0.4q 0 -0.192 -0.096 -0.316q -0.096 -0.124 -0.244 -0.188q -0.148 -0.064 -0.324 -0.088q -0.176 -0.024 -0.336 -0.024q -0.208 0 -0.404 0.04q -0.196 0.04 -0.352 0.132q -0.156 0.092 -0.252 0.248q -0.096 0.156 -0.104 0.38Z "/></symbol><symbol id="g4EEC1B00D99564D728DA8C8DDE163729" overflow="visible"><path d="M 0 0m 0.512 5.712v -5.712h 0.68v 2.336q 0 0.28 0.076 0.516q 0.076 0.236 0.228 0.412q 0.152 0.176 0.38 0.272q 0.228 0.096 0.54 0.096q 0.392 0 0.616 -0.224q 0.224 -0.224 0.224 -0.608v -2.8h 0.68v 2.72q 0 0.336 -0.068 0.612q -0.068 0.276 -0.236 0.476q -0.168 0.2 -0.44 0.312q -0.272 0.112 -0.68 0.112q -0.184 0 -0.38 -0.04q -0.196 -0.04 -0.376 -0.124q -0.18 -0.084 -0.324 -0.216q -0.144 -0.132 -0.224 -0.324h -0.016v 2.184h -0.68Z "/></symbol><symbol id="g6B217B44DBEC65D521E4D6C450891318" overflow="visible"><path d="M 0 0m 3.384 2.464h -2.376q 0.016 0.24 0.104 0.452q 0.088 0.212 0.24 0.372q 0.152 0.16 0.364 0.252q 0.212 0.092 0.476 0.092q 0.256 0 0.468 -0.092q 0.212 -0.092 0.368 -0.248q 0.156 -0.156 0.248 -0.372q 0.092 -0.216 0.108 -0.456Z m 0.656 -1.152h -0.672q -0.088 -0.408 -0.364 -0.608q -0.276 -0.2 -0.708 -0.2q -0.336 0 -0.584 0.112q -0.248 0.112 -0.408 0.3q -0.16 0.188 -0.232 0.432q -0.072 0.244 -0.064 0.516h 3.096q 0.016 0.376 -0.068 0.792q -0.084 0.416 -0.304 0.768q -0.22 0.352 -0.584 0.58q -0.364 0.228 -0.916 0.228q -0.424 0 -0.78 -0.16q -0.356 -0.16 -0.616 -0.448q -0.26 -0.288 -0.404 -0.68q -0.144 -0.392 -0.144 -0.864q 0.016 -0.472 0.14 -0.872q 0.124 -0.4 0.372 -0.688q 0.248 -0.288 0.612 -0.448q 0.364 -0.16 0.86 -0.16q 0.704 0 1.168 0.352q 0.464 0.352 0.6 1.048Z "/></symbol><symbol id="gDE0960E94F350358A27A95EE3692B6C6" overflow="visible"><path d="M 0 0m 0.488 4.136v -4.136h 0.68v 1.84q 0 0.4 0.08 0.708q 0.08 0.308 0.256 0.524q 0.176 0.216 0.464 0.328q 0.288 0.112 0.696 0.112v 0.72q -0.552 0.016 -0.912 -0.224q -0.36 -0.24 -0.608 -0.744h -0.016v 0.872h -0.64Z "/></symbol><symbol id="gEED9CF782470B5DCDB2CF7DB8714BD48" overflow="visible"><path d="M 0 0m -0.072 -1.576h 0.512q 0.624 0.824 0.94 1.78q 0.316 0.956 0.316 1.9q 0 0.528 -0.088 1.008q -0.088 0.48 -0.252 0.94q -0.164 0.46 -0.396 0.904q -0.232 0.444 -0.52 0.892h -0.512q 0.56 -0.92 0.804 -1.828q 0.244 -0.908 0.244 -1.916q 0 -0.976 -0.24 -1.876q -0.24 -0.9 -0.808 -1.804Z "/></symbol><symbol id="g41516107AE83FB83E5AE2165801750F7" overflow="visible"><path d="M 0 0m 5.9925 3.6635h -4.42l 0.6035 1.0115l -0.119 0.136l -1.666 -1.3855l 1.666 -1.377l 0.119 0.136l -0.6035 1.003h 4.42Z "/></symbol><symbol id="g52531330ECDC432DBC325F643AA7DEF9" overflow="visible"><path d="M 0 0m 2.04 5.389v -5.389h 0.8075v 5.389h 2.023v 0.68h -4.8535v -0.68h 2.023Z "/></symbol><symbol id="g1B4722D9F4FE97383780CE10F3A76397" overflow="visible"><path d="M 0 0m 0.544 6.069v -6.069h 0.7225v 2.482q 0 0.2975 0.08075 0.54825q 0.08075 0.25075 0.24225 0.43775q 0.1615 0.187 0.40375 0.289q 0.24225 0.102 0.57375 0.102q 0.4165 0 0.6545 -0.238q 0.238 -0.238 0.238 -0.646v -2.975h 0.7225v 2.89q 0 0.357 -0.07225 0.65025q -0.07225 0.29325 -0.25075 0.50575q -0.1785 0.2125 -0.4675 0.3315q -0.289 0.119 -0.7225 0.119q -0.1955 0 -0.40375 -0.0425q -0.20825 -0.0425 -0.3995 -0.13175q -0.19125 -0.08925 -0.34425 -0.2295q -0.153 -0.14025 -0.238 -0.34425h -0.017v 2.3205h -0.7225Z "/></symbol><symbol id="gF45992B42E75E87B98881826EC0760BD" overflow="visible"><path d="M 0 0m 0.5185 4.3945v -4.3945h 0.7225v 1.955q 0 0.425 0.085 0.75225q 0.085 0.32725 0.272 0.55675q 0.187 0.2295 0.493 0.3485q 0.306 0.119 0.7395 0.119v 0.765q -0.5865 0.017 -0.969 -0.238q -0.3825 -0.255 -0.646 -0.7905h -0.017v 0.9265h -0.68Z "/></symbol><symbol id="g25E4DAFBABD40AF20C6EFEB705BE41D4" overflow="visible"><path d="M 0 0m 3.5955 2.618h -2.5245q 0.017 0.255 0.1105 0.48025q 0.0935 0.22525 0.255 0.39525q 0.1615 0.17 0.38675 0.26775q 0.22525 0.09775 0.50575 0.09775q 0.272 0 0.49725 -0.09775q 0.22525 -0.09775 0.391 -0.2635q 0.16575 -0.16575 0.2635 -0.39525q 0.09775 -0.2295 0.11475 -0.4845Z m 0.697 -1.224h -0.714q -0.0935 -0.4335 -0.38675 -0.646q -0.29325 -0.2125 -0.75225 -0.2125q -0.357 0 -0.6205 0.119q -0.2635 0.119 -0.4335 0.31875q -0.17 0.19975 -0.2465 0.459q -0.0765 0.25925 -0.068 0.54825h 3.2895q 0.017 0.3995 -0.07225 0.8415q -0.08925 0.442 -0.323 0.816q -0.23375 0.374 -0.6205 0.61625q -0.38675 0.24225 -0.97325 0.24225q -0.4505 0 -0.82875 -0.17q -0.37825 -0.17 -0.6545 -0.476q -0.27625 -0.306 -0.42925 -0.7225q -0.153 -0.4165 -0.153 -0.918q 0.017 -0.5015 0.14875 -0.9265q 0.13175 -0.425 0.39525 -0.731q 0.2635 -0.306 0.65025 -0.476q 0.38675 -0.17 0.91375 -0.17q 0.748 0 1.241 0.374q 0.493 0.374 0.6375 1.1135Z "/></symbol><symbol id="gFB5E59F574088C208BF0BF08F92C98F0" overflow="visible"><path d="M 0 0m 4.437 0.017q -0.187 -0.1105 -0.5185 -0.1105q -0.2805 0 -0.44625 0.15725q -0.16575 0.15725 -0.16575 0.51425q -0.2975 -0.357 -0.69275 -0.51425q -0.39525 -0.15725 -0.85425 -0.15725q -0.2975 0 -0.56525 0.068q -0.26775 0.068 -0.46325 0.2125q -0.1955 0.1445 -0.31025 0.37825q -0.11475 0.23375 -0.11475 0.56525q 0 0.374 0.1275 0.612q 0.1275 0.238 0.33575 0.38675q 0.20825 0.14875 0.476 0.22525q 0.26775 0.0765 0.54825 0.1275q 0.2975 0.0595 0.56525 0.08925q 0.26775 0.02975 0.47175 0.085q 0.204 0.05525 0.323 0.1615q 0.119 0.10625 0.119 0.31025q 0 0.238 -0.08925 0.3825q -0.08925 0.1445 -0.2295 0.221q -0.14025 0.0765 -0.3145 0.102q -0.17425 0.0255 -0.34425 0.0255q -0.459 0 -0.765 -0.17425q -0.306 -0.17425 -0.3315 -0.65875h -0.7225q 0.017 0.408 0.17 0.6885q 0.153 0.2805 0.408 0.45475q 0.255 0.17425 0.58225 0.25075q 0.32725 0.0765 0.70125 0.0765q 0.2975 0 0.59075 -0.0425q 0.29325 -0.0425 0.53125 -0.17425q 0.238 -0.13175 0.3825 -0.36975q 0.1445 -0.238 0.1445 -0.6205v -2.261q 0 -0.255 0.02975 -0.374q 0.02975 -0.119 0.19975 -0.119q 0.0935 0 0.221 0.0425v -0.561Z m -1.173 2.2525q -0.136 -0.102 -0.357 -0.14875q -0.221 -0.04675 -0.46325 -0.0765q -0.24225 -0.02975 -0.48875 -0.068q -0.2465 -0.03825 -0.442 -0.12325q -0.1955 -0.085 -0.31875 -0.24225q -0.12325 -0.15725 -0.12325 -0.42925q 0 -0.1785 0.07225 -0.30175q 0.07225 -0.12325 0.187 -0.19975q 0.11475 -0.0765 0.26775 -0.1105q 0.153 -0.034 0.323 -0.034q 0.357 0 0.612 0.09775q 0.255 0.09775 0.4165 0.2465q 0.1615 0.14875 0.238 0.323q 0.0765 0.17425 0.0765 0.32725v 0.7395Z "/></symbol><symbol id="g993EBF1AD28CAB3FFB9DDAF0A15070DA" overflow="visible"><path d="M 0 0m 1.071 2.159q 0 0.323 0.068 0.629q 0.068 0.306 0.221 0.544q 0.153 0.238 0.408 0.3825q 0.255 0.1445 0.6205 0.1445q 0.374 0 0.6375 -0.14025q 0.2635 -0.14025 0.42925 -0.36975q 0.16575 -0.2295 0.24225 -0.53125q 0.0765 -0.30175 0.0765 -0.62475q 0 -0.306 -0.07225 -0.6035q -0.07225 -0.2975 -0.23375 -0.53125q -0.1615 -0.23375 -0.4165 -0.37825q -0.255 -0.1445 -0.6205 -0.1445q -0.3485 0 -0.60775 0.136q -0.25925 0.136 -0.425 0.3655q -0.16575 0.2295 -0.2465 0.52275q -0.08075 0.29325 -0.08075 0.59925Z m 3.4 -2.159v 6.069h -0.7225v -2.261h -0.017q -0.119 0.1955 -0.29325 0.32725q -0.17425 0.13175 -0.36975 0.2125q -0.1955 0.08075 -0.391 0.11475q -0.1955 0.034 -0.3655 0.034q -0.5015 0 -0.87975 -0.18275q -0.37825 -0.18275 -0.629 -0.493q -0.25075 -0.31025 -0.374 -0.72675q -0.12325 -0.4165 -0.12325 -0.884q 0 -0.4675 0.1275 -0.884q 0.1275 -0.4165 0.37825 -0.731q 0.25075 -0.3145 0.629 -0.5015q 0.37825 -0.187 0.88825 -0.187q 0.459 0 0.8415 0.1615q 0.3825 0.1615 0.561 0.527h 0.017v -0.595h 0.7225Z "/></symbol><symbol id="g57F7317BECB8988ED01A49BA6A3AE0AE" overflow="visible"><path d="M 0 0m 0.697 6.069v -6.069h 0.8075v 6.069h -0.8075Z "/></symbol><symbol id="g5ABD0C1ECEB5D5BB743CADA1294A3E6D" overflow="visible"><path d="M 0 0m 1.4705 0.68v 4.709h 1.36q 0.561 0 0.9435 -0.15725q 0.3825 -0.15725 0.62475 -0.459q 0.24225 -0.30175 0.3485 -0.731q 0.10625 -0.42925 0.10625 -0.97325q 0 -0.561 -0.11475 -0.95625q -0.11475 -0.39525 -0.29325 -0.65875q -0.1785 -0.2635 -0.40375 -0.4165q -0.22525 -0.153 -0.45475 -0.23375q -0.2295 -0.08075 -0.4335 -0.102q -0.204 -0.02125 -0.34 -0.02125h -1.343Z m -0.8075 5.389v -6.069h 2.0825q 0.7565 0 1.309 0.2125q 0.5525 0.2125 0.9095 0.61625q 0.357 0.40375 0.527 0.9945q 0.17 0.59075 0.17 1.35575q 0 1.462 -0.7565 2.176q -0.7565 0.714 -2.159 0.714h -2.0825Z "/></symbol><symbol id="g3337A01C082E07854289A63A40BA08CE" overflow="visible"><path d="M 0 0m 0.7055 0.9435v -0.9435h 0.5015q 0.0085 -0.102 -0.01275 -0.221q -0.02125 -0.119 -0.08075 -0.23375q -0.0595 -0.11475 -0.15725 -0.2125q -0.09775 -0.09775 -0.24225 -0.14875v -0.425q 0.493 0.1445 0.714 0.493q 0.221 0.3485 0.221 0.833v 0.8585h -0.9435Z "/></symbol><symbol id="gAB63E54F48E1E72099F0EC89367B5056" overflow="visible"><path d="M 0 0m 0.663 6.069v -6.069h 4.0205v 0.68h -3.213v 5.389h -0.8075Z "/></symbol><symbol id="g5DAA1AE453809C96C7FEC42254F2FF75" overflow="visible"><path d="M 0 0m 4.1735 4.2925h 0.765q -0.017 0.5015 -0.19125 0.86275q -0.17425 0.36125 -0.476 0.59925q -0.30175 0.238 -0.70125 0.3485q -0.3995 0.1105 -0.867 0.1105q -0.4165 0 -0.81175 -0.10625q -0.39525 -0.10625 -0.7055 -0.323q -0.31025 -0.21675 -0.49725 -0.5525q -0.187 -0.33575 -0.187 -0.79475q 0 -0.4165 0.16575 -0.69275q 0.16575 -0.27625 0.442 -0.4505q 0.27625 -0.17425 0.62475 -0.2805q 0.3485 -0.10625 0.70975 -0.187q 0.36125 -0.08075 0.70975 -0.15725q 0.3485 -0.0765 0.62475 -0.19975q 0.27625 -0.12325 0.442 -0.31875q 0.16575 -0.1955 0.16575 -0.51q 0 -0.3315 -0.136 -0.544q -0.136 -0.2125 -0.357 -0.33575q -0.221 -0.12325 -0.49725 -0.17425q -0.27625 -0.051 -0.54825 -0.051q -0.34 0 -0.663 0.085q -0.323 0.085 -0.56525 0.2635q -0.24225 0.1785 -0.391 0.45475q -0.14875 0.27625 -0.14875 0.65875h -0.765q 0 -0.5525 0.19975 -0.95625q 0.19975 -0.40375 0.544 -0.663q 0.34425 -0.25925 0.799 -0.38675q 0.45475 -0.1275 0.96475 -0.1275q 0.4165 0 0.83725 0.09775q 0.42075 0.09775 0.76075 0.3145q 0.34 0.21675 0.55675 0.561q 0.21675 0.34425 0.21675 0.82875q 0 0.4505 -0.16575 0.748q -0.16575 0.2975 -0.442 0.493q -0.27625 0.1955 -0.62475 0.31025q -0.3485 0.11475 -0.70975 0.19975q -0.36125 0.085 -0.70975 0.15725q -0.3485 0.07225 -0.62475 0.18275q -0.27625 0.1105 -0.442 0.28475q -0.16575 0.17425 -0.16575 0.45475q 0 0.2975 0.11475 0.49725q 0.11475 0.19975 0.306 0.31875q 0.19125 0.119 0.43775 0.17q 0.2465 0.051 0.5015 0.051q 0.629 0 1.03275 -0.29325q 0.40375 -0.29325 0.47175 -0.94775Z "/></symbol><symbol id="g5C0757D5B458AFBDF3F360CD3C8D67DE" overflow="visible"><path d="M 0 0m 0.5695 6.069v -6.069h 0.7225v 0.5865h 0.017q 0.119 -0.1955 0.29325 -0.32725q 0.17425 -0.13175 0.36975 -0.20825q 0.1955 -0.0765 0.39525 -0.1105q 0.19975 -0.034 0.36125 -0.034q 0.5015 0 0.87975 0.1785q 0.37825 0.1785 0.629 0.48875q 0.25075 0.31025 0.374 0.72675q 0.12325 0.4165 0.12325 0.884q 0 0.4675 -0.1275 0.884q -0.1275 0.4165 -0.37825 0.73525q -0.25075 0.31875 -0.629 0.50575q -0.37825 0.187 -0.88825 0.187q -0.459 0 -0.8415 -0.16575q -0.3825 -0.16575 -0.561 -0.53125h -0.017v 2.2695h -0.7225Z m 3.4 -3.8335q 0 -0.323 -0.068 -0.629q -0.068 -0.306 -0.221 -0.544q -0.153 -0.238 -0.40375 -0.3825q -0.25075 -0.1445 -0.62475 -0.1445q -0.374 0 -0.6375 0.14025q -0.2635 0.14025 -0.42925 0.36975q -0.16575 0.2295 -0.24225 0.53125q -0.0765 0.30175 -0.0765 0.62475q 0 0.306 0.07225 0.6035q 0.07225 0.2975 0.23375 0.53125q 0.1615 0.23375 0.4165 0.37825q 0.255 0.1445 0.6205 0.1445q 0.3485 0 0.60775 -0.136q 0.25925 -0.136 0.425 -0.3655q 0.16575 -0.2295 0.2465 -0.52275q 0.08075 -0.29325 0.08075 -0.59925Z "/></symbol><symbol id="gEFF7AD7F29645B31072E3462C9C68DCD" overflow="visible"><path d="M 0 0m 0.986 1.3855h -0.7225q 0.017 -0.408 0.17 -0.69275q 0.153 -0.28475 0.408 -0.459q 0.255 -0.17425 0.5865 -0.25075q 0.3315 -0.0765 0.697 -0.0765q 0.3315 0 0.66725 0.06375q 0.33575 0.06375 0.6035 0.22525q 0.26775 0.1615 0.4335 0.425q 0.16575 0.2635 0.16575 0.663q 0 0.3145 -0.12325 0.527q -0.12325 0.2125 -0.323 0.35275q -0.19975 0.14025 -0.459 0.22525q -0.25925 0.085 -0.53125 0.1445q -0.255 0.0595 -0.51 0.11475q -0.255 0.05525 -0.459 0.136q -0.204 0.08075 -0.33575 0.204q -0.13175 0.12325 -0.13175 0.31025q 0 0.17 0.085 0.27625q 0.085 0.10625 0.221 0.17q 0.136 0.06375 0.30175 0.08925q 0.16575 0.0255 0.32725 0.0255q 0.1785 0 0.35275 -0.03825q 0.17425 -0.03825 0.31875 -0.12325q 0.1445 -0.085 0.238 -0.22525q 0.0935 -0.14025 0.1105 -0.35275h 0.7225q -0.0255 0.3995 -0.17 0.66725q -0.1445 0.26775 -0.38675 0.425q -0.24225 0.15725 -0.55675 0.221q -0.3145 0.06375 -0.6885 0.06375q -0.289 0 -0.58225 -0.07225q -0.29325 -0.07225 -0.527 -0.221q -0.23375 -0.14875 -0.3825 -0.38675q -0.14875 -0.238 -0.14875 -0.5695q 0 -0.425 0.2125 -0.663q 0.2125 -0.238 0.53125 -0.36975q 0.31875 -0.13175 0.69275 -0.204q 0.374 -0.07225 0.69275 -0.1615q 0.31875 -0.08925 0.53125 -0.23375q 0.2125 -0.1445 0.2125 -0.425q 0 -0.204 -0.102 -0.33575q -0.102 -0.13175 -0.25925 -0.19975q -0.15725 -0.068 -0.34425 -0.0935q -0.187 -0.0255 -0.357 -0.0255q -0.221 0 -0.42925 0.0425q -0.20825 0.0425 -0.374 0.14025q -0.16575 0.09775 -0.26775 0.2635q -0.102 0.16575 -0.1105 0.40375Z "/></symbol><symbol id="gCEBC7EEB67795D3EAE33D077102FE47F" overflow="visible"><path d="M 0 0m 6.6045 0.9435v -0.9435h 0.9435v 0.9435h -0.9435Z m -2.8305 0v -0.9435h 0.9435v 0.9435h -0.9435Z m -2.8305 0v -0.9435h 0.9435v 0.9435h -0.9435Z "/></symbol><symbol id="g8DF90092F2CD3B8E0CE2AE6E7518F6A9" overflow="visible"><path d="M 0 0m 6.48 2.58v 4.56h -0.95v -4.56q 0 -0.96 -0.475 -1.455q -0.475 -0.495 -1.385 -0.495q -0.96 0 -1.47 0.495q -0.51 0.495 -0.51 1.455v 4.56h -0.95v -4.56q 0 -1.43 0.775 -2.085q 0.775 -0.655 2.155 -0.655q 1.35 0 2.08 0.685q 0.73 0.685 0.73 2.055Z "/></symbol><symbol id="g18134C4F02EF7053944117CC3EBA0B25" overflow="visible"><path d="M 0 0m 1.16 1.63h -0.85q 0.02 -0.48 0.2 -0.815q 0.18 -0.335 0.48 -0.54q 0.3 -0.205 0.69 -0.295q 0.39 -0.09 0.82 -0.09q 0.39 0 0.785 0.075q 0.395 0.075 0.71 0.265q 0.315 0.19 0.51 0.5q 0.195 0.31 0.195 0.78q 0 0.37 -0.145 0.62q -0.145 0.25 -0.38 0.415q -0.235 0.165 -0.54 0.265q -0.305 0.1 -0.625 0.17q -0.3 0.07 -0.6 0.135q -0.3 0.065 -0.54 0.16q -0.24 0.095 -0.395 0.24q -0.155 0.145 -0.155 0.365q 0 0.2 0.1 0.325q 0.1 0.125 0.26 0.2q 0.16 0.075 0.355 0.105q 0.195 0.03 0.385 0.03q 0.21 0 0.415 -0.045q 0.205 -0.045 0.375 -0.145q 0.17 -0.1 0.28 -0.265q 0.11 -0.165 0.13 -0.415h 0.85q -0.03 0.47 -0.2 0.785q -0.17 0.315 -0.455 0.5q -0.285 0.185 -0.655 0.26q -0.37 0.075 -0.81 0.075q -0.34 0 -0.685 -0.085q -0.345 -0.085 -0.62 -0.26q -0.275 -0.175 -0.45 -0.455q -0.175 -0.28 -0.175 -0.67q 0 -0.5 0.25 -0.78q 0.25 -0.28 0.625 -0.435q 0.375 -0.155 0.815 -0.24q 0.44 -0.085 0.815 -0.19q 0.375 -0.105 0.625 -0.275q 0.25 -0.17 0.25 -0.5q 0 -0.24 -0.12 -0.395q -0.12 -0.155 -0.305 -0.235q -0.185 -0.08 -0.405 -0.11q -0.22 -0.03 -0.42 -0.03q -0.26 0 -0.505 0.05q -0.245 0.05 -0.44 0.165q -0.195 0.115 -0.315 0.31q -0.12 0.195 -0.13 0.475Z "/></symbol><symbol id="g359A41E389AB4F8C1AB7B11BF543716" overflow="visible"><path d="M 0 0m 4.23 3.08h -2.97q 0.02 0.3 0.13 0.565q 0.11 0.265 0.3 0.465q 0.19 0.2 0.455 0.315q 0.265 0.115 0.595 0.115q 0.32 0 0.585 -0.115q 0.265 -0.115 0.46 -0.31q 0.195 -0.195 0.31 -0.465q 0.115 -0.27 0.135 -0.57Z m 0.82 -1.44h -0.84q -0.11 -0.51 -0.455 -0.76q -0.345 -0.25 -0.885 -0.25q -0.42 0 -0.73 0.14q -0.31 0.14 -0.51 0.375q -0.2 0.235 -0.29 0.54q -0.09 0.305 -0.08 0.645h 3.87q 0.02 0.47 -0.085 0.99q -0.105 0.52 -0.38 0.96q -0.275 0.44 -0.73 0.725q -0.455 0.285 -1.145 0.285q -0.53 0 -0.975 -0.2q -0.445 -0.2 -0.77 -0.56q -0.325 -0.36 -0.505 -0.85q -0.18 -0.49 -0.18 -1.08q 0.02 -0.59 0.175 -1.09q 0.155 -0.5 0.465 -0.86q 0.31 -0.36 0.765 -0.56q 0.455 -0.2 1.075 -0.2q 0.88 0 1.46 0.44q 0.58 0.44 0.75 1.31Z "/></symbol><symbol id="gF90067B15B1A2D88A04973AD74C0BCEB" overflow="visible"><path d="M 0 0m 0.61 5.17v -5.17h 0.85v 2.3q 0 0.5 0.1 0.885q 0.1 0.385 0.32 0.655q 0.22 0.27 0.58 0.41q 0.36 0.14 0.87 0.14v 0.9q -0.69 0.02 -1.14 -0.28q -0.45 -0.3 -0.76 -0.93h -0.02v 1.09h -0.8Z "/></symbol><symbol id="g6369F59511D23C22C98F42CC8A857C1B" overflow="visible"><path d="M 0 0m 4.91 5.05h 0.9q -0.02 0.59 -0.225 1.015q -0.205 0.425 -0.56 0.705q -0.355 0.28 -0.825 0.41q -0.47 0.13 -1.02 0.13q -0.49 0 -0.955 -0.125q -0.465 -0.125 -0.83 -0.38q -0.365 -0.255 -0.585 -0.65q -0.22 -0.395 -0.22 -0.935q 0 -0.49 0.195 -0.815q 0.195 -0.325 0.52 -0.53q 0.325 -0.205 0.735 -0.33q 0.41 -0.125 0.835 -0.22q 0.425 -0.095 0.835 -0.185q 0.41 -0.09 0.735 -0.235q 0.325 -0.145 0.52 -0.375q 0.195 -0.23 0.195 -0.6q 0 -0.39 -0.16 -0.64q -0.16 -0.25 -0.42 -0.395q -0.26 -0.145 -0.585 -0.205q -0.325 -0.06 -0.645 -0.06q -0.4 0 -0.78 0.1q -0.38 0.1 -0.665 0.31q -0.285 0.21 -0.46 0.535q -0.175 0.325 -0.175 0.775h -0.9q 0 -0.65 0.235 -1.125q 0.235 -0.475 0.64 -0.78q 0.405 -0.305 0.94 -0.455q 0.535 -0.15 1.135 -0.15q 0.49 0 0.985 0.115q 0.495 0.115 0.895 0.37q 0.4 0.255 0.655 0.66q 0.255 0.405 0.255 0.975q 0 0.53 -0.195 0.88q -0.195 0.35 -0.52 0.58q -0.325 0.23 -0.735 0.365q -0.41 0.135 -0.835 0.235q -0.425 0.1 -0.835 0.185q -0.41 0.085 -0.735 0.215q -0.325 0.13 -0.52 0.335q -0.195 0.205 -0.195 0.535q 0 0.35 0.135 0.585q 0.135 0.235 0.36 0.375q 0.225 0.14 0.515 0.2q 0.29 0.06 0.59 0.06q 0.74 0 1.215 -0.345q 0.475 -0.345 0.555 -1.115Z "/></symbol><symbol id="gADE9984FB9D3ECC11EDE65D5E64F858B" overflow="visible"><path d="M 0 0m 1.82 5.17v 1.55h -0.85v -1.55h -0.88v -0.75h 0.88v -3.29q 0 -0.36 0.07 -0.58q 0.07 -0.22 0.215 -0.34q 0.145 -0.12 0.38 -0.165q 0.235 -0.045 0.565 -0.045h 0.65v 0.75h -0.39q -0.2 0 -0.325 0.015q -0.125 0.015 -0.195 0.065q -0.07 0.05 -0.095 0.14q -0.025 0.09 -0.025 0.24v 3.21h 1.03v 0.75h -1.03Z "/></symbol><symbol id="g59981CEF024D02F67F8217D5BBFAC7BF" overflow="visible"><path d="M 0 0m 5.22 0.02q -0.22 -0.13 -0.61 -0.13q -0.33 0 -0.525 0.185q -0.195 0.185 -0.195 0.605q -0.35 -0.42 -0.815 -0.605q -0.465 -0.185 -1.005 -0.185q -0.35 0 -0.665 0.08q -0.315 0.08 -0.545 0.25q -0.23 0.17 -0.365 0.445q -0.135 0.275 -0.135 0.665q 0 0.44 0.15 0.72q 0.15 0.28 0.395 0.455q 0.245 0.175 0.56 0.265q 0.315 0.09 0.645 0.15q 0.35 0.07 0.665 0.105q 0.315 0.035 0.555 0.1q 0.24 0.065 0.38 0.19q 0.14 0.125 0.14 0.365q 0 0.28 -0.105 0.45q -0.105 0.17 -0.27 0.26q -0.165 0.09 -0.37 0.12q -0.205 0.03 -0.405 0.03q -0.54 0 -0.9 -0.205q -0.36 -0.205 -0.39 -0.775h -0.85q 0.02 0.48 0.2 0.81q 0.18 0.33 0.48 0.535q 0.3 0.205 0.685 0.295q 0.385 0.09 0.825 0.09q 0.35 0 0.695 -0.05q 0.345 -0.05 0.625 -0.205q 0.28 -0.155 0.45 -0.435q 0.17 -0.28 0.17 -0.73v -2.66q 0 -0.3 0.035 -0.44q 0.035 -0.14 0.235 -0.14q 0.11 0 0.26 0.05v -0.66Z m -1.38 2.65q -0.16 -0.12 -0.42 -0.175q -0.26 -0.055 -0.545 -0.09q -0.285 -0.035 -0.575 -0.08q -0.29 -0.045 -0.52 -0.145q -0.23 -0.1 -0.375 -0.285q -0.145 -0.185 -0.145 -0.505q 0 -0.21 0.085 -0.355q 0.085 -0.145 0.22 -0.235q 0.135 -0.09 0.315 -0.13q 0.18 -0.04 0.38 -0.04q 0.42 0 0.72 0.115q 0.3 0.115 0.49 0.29q 0.19 0.175 0.28 0.38q 0.09 0.205 0.09 0.385v 0.87Z "/></symbol><symbol id="g8B9CBF712A22D61CD86133FE06377EE3" overflow="visible"><path d="M 0 0m 4.15 3.51h 0.88q -0.05 0.46 -0.24 0.795q -0.19 0.335 -0.485 0.555q -0.295 0.22 -0.68 0.325q -0.385 0.105 -0.825 0.105q -0.61 0 -1.07 -0.215q -0.46 -0.215 -0.765 -0.59q -0.305 -0.375 -0.455 -0.88q -0.15 -0.505 -0.15 -1.085q 0 -0.58 0.155 -1.065q 0.155 -0.485 0.46 -0.835q 0.305 -0.35 0.76 -0.54q 0.455 -0.19 1.045 -0.19q 0.99 0 1.565 0.52q 0.575 0.52 0.715 1.48h -0.87q -0.08 -0.6 -0.435 -0.93q -0.355 -0.33 -0.985 -0.33q -0.4 0 -0.69 0.16q -0.29 0.16 -0.47 0.425q -0.18 0.265 -0.265 0.605q -0.085 0.34 -0.085 0.7q 0 0.39 0.08 0.755q 0.08 0.365 0.265 0.645q 0.185 0.28 0.495 0.45q 0.31 0.17 0.77 0.17q 0.54 0 0.86 -0.27q 0.32 -0.27 0.42 -0.76Z "/></symbol><symbol id="gEB0FC0C5D8A144870A7CCE1006EB3CE" overflow="visible"><path d="M 0 0m 0.69 7.14v -7.14h 0.85v 1.96l 0.8 0.74l 1.77 -2.7h 1.08l -2.2 3.29l 2.05 1.88h -1.14l -2.36 -2.26v 4.23h -0.85Z "/></symbol><symbol id="g8DF6A522626854C7709ACD35BFD2AEB6" overflow="visible"><path d="M 0 0m 0.5865 6.069v -6.069h 0.7225v 6.069h -0.7225Z "/></symbol><symbol id="gA5D6CEF0D74556716394878F527C6297" overflow="visible"><path d="M 0 0m 1.071 2.193q 0 0.3995 0.10625 0.70975q 0.10625 0.31025 0.29325 0.52275q 0.187 0.2125 0.43775 0.323q 0.25075 0.1105 0.53125 0.1105q 0.2805 0 0.53125 -0.1105q 0.25075 -0.1105 0.43775 -0.323q 0.187 -0.2125 0.29325 -0.52275q 0.10625 -0.31025 0.10625 -0.70975q 0 -0.3995 -0.10625 -0.70975q -0.10625 -0.31025 -0.29325 -0.5185q -0.187 -0.20825 -0.43775 -0.31875q -0.25075 -0.1105 -0.53125 -0.1105q -0.2805 0 -0.53125 0.1105q -0.25075 0.1105 -0.43775 0.31875q -0.187 0.20825 -0.29325 0.5185q -0.10625 0.31025 -0.10625 0.70975Z m -0.765 0q 0 -0.4845 0.136 -0.901q 0.136 -0.4165 0.408 -0.72675q 0.272 -0.31025 0.6715 -0.4845q 0.3995 -0.17425 0.918 -0.17425q 0.527 0 0.92225 0.17425q 0.39525 0.17425 0.66725 0.4845q 0.272 0.31025 0.408 0.72675q 0.136 0.4165 0.136 0.901q 0 0.4845 -0.136 0.90525q -0.136 0.42075 -0.408 0.731q -0.272 0.31025 -0.66725 0.48875q -0.39525 0.1785 -0.92225 0.1785q -0.5185 0 -0.918 -0.1785q -0.3995 -0.1785 -0.6715 -0.48875q -0.272 -0.31025 -0.408 -0.731q -0.136 -0.42075 -0.136 -0.90525Z "/></symbol><symbol id="gB8AE167C7E8AF9C2B1D821858016BC99" overflow="visible"><path d="M 0 0m 3.5275 2.9835h 0.748q -0.0425 0.391 -0.204 0.67575q -0.1615 0.28475 -0.41225 0.47175q -0.25075 0.187 -0.578 0.27625q -0.32725 0.08925 -0.70125 0.08925q -0.5185 0 -0.9095 -0.18275q -0.391 -0.18275 -0.65025 -0.5015q -0.25925 -0.31875 -0.38675 -0.748q -0.1275 -0.42925 -0.1275 -0.92225q 0 -0.493 0.13175 -0.90525q 0.13175 -0.41225 0.391 -0.70975q 0.25925 -0.2975 0.646 -0.459q 0.38675 -0.1615 0.88825 -0.1615q 0.8415 0 1.33025 0.442q 0.48875 0.442 0.60775 1.258h -0.7395q -0.068 -0.51 -0.36975 -0.7905q -0.30175 -0.2805 -0.83725 -0.2805q -0.34 0 -0.5865 0.136q -0.2465 0.136 -0.3995 0.36125q -0.153 0.22525 -0.22525 0.51425q -0.07225 0.289 -0.07225 0.595q 0 0.3315 0.068 0.64175q 0.068 0.31025 0.22525 0.54825q 0.15725 0.238 0.42075 0.3825q 0.2635 0.1445 0.6545 0.1445q 0.459 0 0.731 -0.2295q 0.272 -0.2295 0.357 -0.646Z "/></symbol><symbol id="gD89022FE766BF8810F98A780DAC5F580" overflow="visible"><path d="M 0 0m 2.5245 0l 1.6065 4.3945h -0.7565l -1.1985 -3.6635h -0.017l -1.2325 3.6635h -0.8075l 1.632 -4.3945h 0.7735Z "/></symbol><symbol id="gED36C8EF2EA17EEE3B8FC4EC51EBEF3C" overflow="visible"><path d="M 0 0m 1.309 5.185v 0.884h -0.7225v -0.884h 0.7225Z m -0.7225 -0.7905v -4.3945h 0.7225v 4.3945h -0.7225Z "/></symbol><symbol id="g5B9B31CA1DAC6835C9F63CA8589137E0" overflow="visible"><path d="M 0 0m 0.8415 3.757v -3.757h 0.7225v 3.757h 0.85v 0.6375h -0.85v 0.612q 0 0.289 0.1445 0.391q 0.1445 0.102 0.408 0.102q 0.0935 0 0.204 -0.01275q 0.1105 -0.01275 0.204 -0.04675v 0.629q -0.102 0.034 -0.23375 0.051q -0.13175 0.017 -0.23375 0.017q -0.595 0 -0.90525 -0.27625q -0.31025 -0.27625 -0.31025 -0.81175v -0.6545h -0.7395v -0.6375h 0.7395Z "/></symbol><symbol id="g8B4750DBC1F8DA4E46AE9A564E179E48" overflow="visible"><path d="M 0 0m 0.544 4.3945v -4.3945h 0.7225v 2.737q 0 0.1275 0.06375 0.31875q 0.06375 0.19125 0.204 0.36975q 0.14025 0.1785 0.3655 0.306q 0.22525 0.1275 0.53975 0.1275q 0.2465 0 0.40375 -0.07225q 0.15725 -0.07225 0.25075 -0.204q 0.0935 -0.13175 0.13175 -0.31025q 0.03825 -0.1785 0.03825 -0.391v -2.8815h 0.7225v 2.737q 0 0.51 0.306 0.816q 0.306 0.306 0.8415 0.306q 0.2635 0 0.42925 -0.0765q 0.16575 -0.0765 0.25925 -0.20825q 0.0935 -0.13175 0.1275 -0.31025q 0.034 -0.1785 0.034 -0.3825v -2.8815h 0.7225v 3.2215q 0 0.34 -0.10625 0.58225q -0.10625 0.24225 -0.2975 0.39525q -0.19125 0.153 -0.459 0.22525q -0.26775 0.07225 -0.59925 0.07225q -0.4335 0 -0.79475 -0.1955q -0.36125 -0.1955 -0.58225 -0.5525q -0.136 0.408 -0.4675 0.578q -0.3315 0.17 -0.7395 0.17q -0.9265 0 -1.4195 -0.748h -0.017v 0.646h -0.68Z "/></symbol><symbol id="g6E719F786D7B1141CA8C4512E00A2E0D" overflow="visible"><path d="M 0 0m 0.69 7.14v -7.14h 1.57v 2.3l 0.9 0.91l 2.15 -3.21h 1.97l -3.06 4.32l 2.79 2.82h -1.96l -2.79 -2.96v 2.96h -1.57Z "/></symbol><symbol id="g34490206F6358D73AC96D0A0F4603814" overflow="visible"><path d="M 0 0m 0.54 5.17v -5.17h 1.42v 2.71q 0 0.79 0.26 1.135q 0.26 0.345 0.84 0.345q 0.51 0 0.71 -0.315q 0.2 -0.315 0.2 -0.955v -2.92h 1.42v 3.18q 0 0.48 -0.085 0.875q -0.085 0.395 -0.295 0.67q -0.21 0.275 -0.575 0.43q -0.365 0.155 -0.935 0.155q -0.45 0 -0.88 -0.205q -0.43 -0.205 -0.7 -0.655h -0.03v 0.72h -1.35Z "/></symbol><symbol id="g2A097BC7EEE91105D52B352EA84246F0" overflow="visible"><path d="M 0 0m 0.58 7.14v -7.14h 1.42v 7.14h -1.42Z "/></symbol><symbol id="g3CC7049769A82D5EE9C0E77D6E6F8B92" overflow="visible"><path d="M 0 0m 5.8 4.99h 0.95q -0.08 0.57 -0.34 1.005q -0.26 0.435 -0.65 0.725q -0.39 0.29 -0.89 0.44q -0.5 0.15 -1.06 0.15q -0.82 0 -1.455 -0.295q -0.635 -0.295 -1.06 -0.805q -0.425 -0.51 -0.645 -1.195q -0.22 -0.685 -0.22 -1.465q 0 -0.78 0.205 -1.46q 0.205 -0.68 0.615 -1.18q 0.41 -0.5 1.03 -0.785q 0.62 -0.285 1.45 -0.285q 1.37 0 2.16 0.75q 0.79 0.75 0.93 2.1h -0.95q -0.03 -0.44 -0.18 -0.82q -0.15 -0.38 -0.415 -0.655q -0.265 -0.275 -0.63 -0.43q -0.365 -0.155 -0.835 -0.155q -0.64 0 -1.1 0.24q -0.46 0.24 -0.755 0.645q -0.295 0.405 -0.435 0.95q -0.14 0.545 -0.14 1.155q 0 0.56 0.14 1.08q 0.14 0.52 0.435 0.925q 0.295 0.405 0.75 0.645q 0.455 0.24 1.095 0.24q 0.75 0 1.295 -0.38q 0.545 -0.38 0.705 -1.14Z "/></symbol><symbol id="gB9D4D6D822821FBD03112B321A4F5F37" overflow="visible"><path d="M 0 0m 4.176 0.016q -0.176 -0.104 -0.488 -0.104q -0.264 0 -0.42 0.148q -0.156 0.148 -0.156 0.484q -0.28 -0.336 -0.652 -0.484q -0.372 -0.148 -0.804 -0.148q -0.28 0 -0.532 0.064q -0.252 0.064 -0.436 0.2q -0.184 0.136 -0.292 0.356q -0.108 0.22 -0.108 0.532q 0 0.352 0.12 0.576q 0.12 0.224 0.316 0.364q 0.196 0.14 0.448 0.212q 0.252 0.072 0.516 0.12q 0.28 0.056 0.532 0.084q 0.252 0.028 0.444 0.08q 0.192 0.052 0.304 0.152q 0.112 0.1 0.112 0.292q 0 0.224 -0.084 0.36q -0.084 0.136 -0.216 0.208q -0.132 0.072 -0.296 0.096q -0.164 0.024 -0.324 0.024q -0.432 0 -0.72 -0.164q -0.288 -0.164 -0.312 -0.62h -0.68q 0.016 0.384 0.16 0.648q 0.144 0.264 0.384 0.428q 0.24 0.164 0.548 0.236q 0.308 0.072 0.66 0.072q 0.28 0 0.556 -0.04q 0.276 -0.04 0.5 -0.164q 0.224 -0.124 0.36 -0.348q 0.136 -0.224 0.136 -0.584v -2.128q 0 -0.24 0.028 -0.352q 0.028 -0.112 0.188 -0.112q 0.088 0 0.208 0.04v -0.528Z m -1.104 2.12q -0.128 -0.096 -0.336 -0.14q -0.208 -0.044 -0.436 -0.072q -0.228 -0.028 -0.46 -0.064q -0.232 -0.036 -0.416 -0.116q -0.184 -0.08 -0.3 -0.228q -0.116 -0.148 -0.116 -0.404q 0 -0.168 0.068 -0.284q 0.068 -0.116 0.176 -0.188q 0.108 -0.072 0.252 -0.104q 0.144 -0.032 0.304 -0.032q 0.336 0 0.576 0.092q 0.24 0.092 0.392 0.232q 0.152 0.14 0.224 0.304q 0.072 0.164 0.072 0.308v 0.696Z "/></symbol><symbol id="g56F73A9DDE7688229227FB61E73B22EB" overflow="visible"><path d="M 0 0m 1.008 2.032q 0 0.304 0.064 0.592q 0.064 0.288 0.208 0.512q 0.144 0.224 0.384 0.36q 0.24 0.136 0.584 0.136q 0.352 0 0.6 -0.132q 0.248 -0.132 0.404 -0.348q 0.156 -0.216 0.228 -0.5q 0.072 -0.284 0.072 -0.588q 0 -0.288 -0.068 -0.568q -0.068 -0.28 -0.22 -0.5q -0.152 -0.22 -0.392 -0.356q -0.24 -0.136 -0.584 -0.136q -0.328 0 -0.572 0.128q -0.244 0.128 -0.4 0.344q -0.156 0.216 -0.232 0.492q -0.076 0.276 -0.076 0.564Z m 3.2 -2.032v 5.712h -0.68v -2.128h -0.016q -0.112 0.184 -0.276 0.308q -0.164 0.124 -0.348 0.2q -0.184 0.076 -0.368 0.108q -0.184 0.032 -0.344 0.032q -0.472 0 -0.828 -0.172q -0.356 -0.172 -0.592 -0.464q -0.236 -0.292 -0.352 -0.684q -0.116 -0.392 -0.116 -0.832q 0 -0.44 0.12 -0.832q 0.12 -0.392 0.356 -0.688q 0.236 -0.296 0.592 -0.472q 0.356 -0.176 0.836 -0.176q 0.432 0 0.792 0.152q 0.36 0.152 0.528 0.496h 0.016v -0.56h 0.68Z "/></symbol><symbol id="g48D42B4C02F6C0875A6D8CA769E6D9DA" overflow="visible"><path d="M 0 0m 4.335 0.374v 4.0205h -0.68v -0.629h -0.0085q -0.1955 0.3655 -0.544 0.54825q -0.3485 0.18275 -0.765 0.18275q -0.5695 0 -0.9605 -0.21675q -0.391 -0.21675 -0.629 -0.5525q -0.238 -0.33575 -0.34 -0.748q -0.102 -0.41225 -0.102 -0.80325q 0 -0.4505 0.12325 -0.85425q 0.12325 -0.40375 0.36975 -0.7055q 0.2465 -0.30175 0.612 -0.48025q 0.3655 -0.1785 0.8585 -0.1785q 0.425 0 0.80325 0.19125q 0.37825 0.19125 0.56525 0.59925h 0.017v -0.289q 0 -0.3655 -0.07225 -0.6715q -0.07225 -0.306 -0.23375 -0.52275q -0.1615 -0.21675 -0.408 -0.34q -0.2465 -0.12325 -0.6035 -0.12325q -0.1785 0 -0.374 0.03825q -0.1955 0.03825 -0.36125 0.12325q -0.16575 0.085 -0.2805 0.221q -0.11475 0.136 -0.12325 0.3315h -0.7225q 0.017 -0.357 0.187 -0.6035q 0.17 -0.2465 0.42925 -0.3995q 0.25925 -0.153 0.578 -0.221q 0.31875 -0.068 0.62475 -0.068q 1.054 0 1.547 0.5355q 0.493 0.5355 0.493 1.615Z m -2.023 0.2125q -0.357 0 -0.595 0.14875q -0.238 0.14875 -0.3825 0.391q -0.1445 0.24225 -0.204 0.53975q -0.0595 0.2975 -0.0595 0.595q 0 0.3145 0.07225 0.6035q 0.07225 0.289 0.2295 0.51q 0.15725 0.221 0.40375 0.35275q 0.2465 0.13175 0.595 0.13175q 0.34 0 0.578 -0.136q 0.238 -0.136 0.38675 -0.36125q 0.14875 -0.22525 0.21675 -0.50575q 0.068 -0.2805 0.068 -0.5695q 0 -0.306 -0.07225 -0.612q -0.07225 -0.306 -0.22525 -0.54825q -0.153 -0.24225 -0.40375 -0.391q -0.25075 -0.14875 -0.60775 -0.14875Z "/></symbol><symbol id="gA31EDC1ABF3BB95E8FD2BBC5AD7FA25A" overflow="visible"><path d="M 0 0m 1.547 4.3945v 1.3175h -0.7225v -1.3175h -0.748v -0.6375h 0.748v -2.7965q 0 -0.306 0.0595 -0.493q 0.0595 -0.187 0.18275 -0.289q 0.12325 -0.102 0.323 -0.14025q 0.19975 -0.03825 0.48025 -0.03825h 0.5525v 0.6375h -0.3315q -0.17 0 -0.27625 0.01275q -0.10625 0.01275 -0.16575 0.05525q -0.0595 0.0425 -0.08075 0.119q -0.02125 0.0765 -0.02125 0.204v 2.7285h 0.8755v 0.6375h -0.8755Z "/></symbol><symbol id="g97E59DF75FB3E5C6F844F55382E35B0A" overflow="visible"><path d="M 0 0m 0.544 4.3945v -4.3945h 0.7225v 2.482q 0 0.2975 0.08075 0.54825q 0.08075 0.25075 0.24225 0.43775q 0.1615 0.187 0.40375 0.289q 0.24225 0.102 0.57375 0.102q 0.4165 0 0.6545 -0.238q 0.238 -0.238 0.238 -0.646v -2.975h 0.7225v 2.89q 0 0.357 -0.07225 0.65025q -0.07225 0.29325 -0.25075 0.50575q -0.1785 0.2125 -0.4675 0.3315q -0.289 0.119 -0.7225 0.119q -0.9775 0 -1.428 -0.799h -0.017v 0.697h -0.68Z "/></symbol><symbol id="g17E99E3193B4C1CE34646AA81E4507C4" overflow="visible"><path d="M 0 0m 1.7255 2.312l -1.649 -2.312h 0.8755l 1.224 1.819l 1.224 -1.819h 0.9265l -1.7 2.3715l 1.513 2.023h -0.867l -1.0965 -1.5385l -1.054 1.5385h -0.9265l 1.53 -2.0825Z "/></symbol><symbol id="gAC818DE454FD3EA4D62ADA13561B42A0" overflow="visible"><path d="M 0 0m 0.5695 4.3945v -6.069h 0.7225v 2.261h 0.017q 0.119 -0.1955 0.29325 -0.32725q 0.17425 -0.13175 0.36975 -0.20825q 0.1955 -0.0765 0.39525 -0.1105q 0.19975 -0.034 0.36125 -0.034q 0.5015 0 0.87975 0.1785q 0.37825 0.1785 0.629 0.48875q 0.25075 0.31025 0.374 0.72675q 0.12325 0.4165 0.12325 0.884q 0 0.4675 -0.1275 0.884q -0.1275 0.4165 -0.37825 0.73525q -0.25075 0.31875 -0.629 0.50575q -0.37825 0.187 -0.88825 0.187q -0.459 0 -0.8415 -0.16575q -0.3825 -0.16575 -0.561 -0.53125h -0.017v 0.595h -0.7225Z m 3.4 -2.159q 0 -0.323 -0.068 -0.629q -0.068 -0.306 -0.221 -0.544q -0.153 -0.238 -0.40375 -0.3825q -0.25075 -0.1445 -0.62475 -0.1445q -0.374 0 -0.6375 0.14025q -0.2635 0.14025 -0.42925 0.36975q -0.16575 0.2295 -0.24225 0.53125q -0.0765 0.30175 -0.0765 0.62475q 0 0.306 0.07225 0.6035q 0.07225 0.2975 0.23375 0.53125q 0.1615 0.23375 0.4165 0.37825q 0.255 0.1445 0.6205 0.1445q 0.3485 0 0.60775 -0.136q 0.25925 -0.136 0.425 -0.3655q 0.16575 -0.2295 0.2465 -0.52275q 0.08075 -0.29325 0.08075 -0.59925Z "/></symbol><symbol id="g3527964F1BF9125605F3F602192A3621" overflow="visible"><path d="M 0 0m 2.2695 -0.5865q -0.1275 -0.323 -0.25075 -0.544q -0.12325 -0.221 -0.272 -0.36125q -0.14875 -0.14025 -0.3315 -0.204q -0.18275 -0.06375 -0.42075 -0.06375q -0.1275 0 -0.255 0.017q -0.1275 0.017 -0.2465 0.0595v 0.663q 0.0935 -0.0425 0.21675 -0.07225q 0.12325 -0.02975 0.20825 -0.02975q 0.221 0 0.36975 0.10625q 0.14875 0.10625 0.22525 0.30175l 0.2975 0.7395l -1.7425 4.369h 0.816l 1.2835 -3.5955h 0.017l 1.2325 3.5955h 0.765l -1.9125 -4.981Z "/></symbol><symbol id="gC2F6980C151AC63F63332C7A69380D07" overflow="visible"><path d="M 0 0m 1.071 2.159q 0 0.323 0.068 0.629q 0.068 0.306 0.221 0.544q 0.153 0.238 0.408 0.3825q 0.255 0.1445 0.6205 0.1445q 0.374 0 0.6375 -0.14025q 0.2635 -0.14025 0.42925 -0.36975q 0.16575 -0.2295 0.24225 -0.53125q 0.0765 -0.30175 0.0765 -0.62475q 0 -0.306 -0.07225 -0.6035q -0.07225 -0.2975 -0.23375 -0.53125q -0.1615 -0.23375 -0.4165 -0.37825q -0.255 -0.1445 -0.6205 -0.1445q -0.3485 0 -0.60775 0.136q -0.25925 0.136 -0.425 0.3655q -0.16575 0.2295 -0.2465 0.52275q -0.08075 0.29325 -0.08075 0.59925Z m 3.4 -3.8335v 6.069h -0.7225v -0.5865h -0.017q -0.119 0.1955 -0.29325 0.32725q -0.17425 0.13175 -0.36975 0.2125q -0.1955 0.08075 -0.391 0.11475q -0.1955 0.034 -0.3655 0.034q -0.5015 0 -0.87975 -0.18275q -0.37825 -0.18275 -0.629 -0.493q -0.25075 -0.31025 -0.374 -0.72675q -0.12325 -0.4165 -0.12325 -0.884q 0 -0.4675 0.1275 -0.884q 0.1275 -0.4165 0.37825 -0.731q 0.25075 -0.3145 0.629 -0.5015q 0.37825 -0.187 0.88825 -0.187q 0.459 0 0.8415 0.1615q 0.3825 0.1615 0.561 0.527h 0.017v -2.2695h 0.7225Z "/></symbol><symbol id="gB4B3A1E58F4B4830738DE4A2DF37C1FC" overflow="visible"><path d="M 0 0m 4.182 0v 4.3945h -0.7225v -2.482q 0 -0.2975 -0.08075 -0.54825q -0.08075 -0.25075 -0.24225 -0.43775q -0.1615 -0.187 -0.40375 -0.289q -0.24225 -0.102 -0.57375 -0.102q -0.4165 0 -0.6545 0.238q -0.238 0.238 -0.238 0.646v 2.975h -0.7225v -2.89q 0 -0.357 0.07225 -0.65025q 0.07225 -0.29325 0.25075 -0.50575q 0.1785 -0.2125 0.4675 -0.32725q 0.289 -0.11475 0.7225 -0.11475q 0.4845 0 0.8415 0.19125q 0.357 0.19125 0.5865 0.59925h 0.017v -0.697h 0.68Z "/></symbol><symbol id="g96334AC65714C73960638556C49F2926" overflow="visible"><path d="M 0 0m 0.78 7.14v -7.14h 0.95v 2.5l 1.19 1.11l 2.58 -3.61h 1.2l -3.13 4.26l 3.01 2.88h -1.23l -3.62 -3.56v 3.56h -0.95Z "/></symbol><symbol id="g80B889F384B774BBBF423D6B65B0767C" overflow="visible"><path d="M 0 0m 0.64 5.17v -5.17h 0.85v 2.92q 0 0.35 0.095 0.645q 0.095 0.295 0.285 0.515q 0.19 0.22 0.475 0.34q 0.285 0.12 0.675 0.12q 0.49 0 0.77 -0.28q 0.28 -0.28 0.28 -0.76v -3.5h 0.85v 3.4q 0 0.42 -0.085 0.765q -0.085 0.345 -0.295 0.595q -0.21 0.25 -0.55 0.39q -0.34 0.14 -0.85 0.14q -1.15 0 -1.68 -0.94h -0.02v 0.82h -0.8Z "/></symbol><symbol id="g1F43A2232334803B694E993B6894957E" overflow="visible"><path d="M 0 0m 0.69 7.14v -7.14h 0.85v 7.14h -0.85Z "/></symbol><symbol id="gA535E6BDA378EF53C87FC6ABDDA06322" overflow="visible"><path d="M 0 0m 1.649 3.451v 0.9435h -0.9435v -0.9435h 0.9435Z m -0.9435 -2.5075v -0.9435h 0.5015q 0.0085 -0.102 -0.01275 -0.221q -0.02125 -0.119 -0.08075 -0.23375q -0.0595 -0.11475 -0.15725 -0.2125q -0.09775 -0.09775 -0.24225 -0.14875v -0.425q 0.493 0.1445 0.71825 0.493q 0.22525 0.3485 0.21675 0.833v 0.8585h -0.9435Z "/></symbol><symbol id="gA1243D111EE351A27AB4C59FD5A914F7" overflow="visible"><path d="M 0 0m 0.5865 6.069v -6.069h 0.7225v 1.666l 0.68 0.629l 1.5045 -2.295h 0.918l -1.87 2.7965l 1.7425 1.598h -0.969l -2.006 -1.921v 3.5955h -0.7225Z "/></symbol><symbol id="g38C705FD0C01EF1EF0483CC20C78CCB6" overflow="visible"><path d="M 0 0m 0.425 2.703v -0.68h 2.4565v 0.68h -2.4565Z "/></symbol><symbol id="gDDA3FB04B4DABB891619FF70BE5A5D36" overflow="visible"><path d="M 0 0m 1.73 3.72v 2.62h 1.86q 0.81 0 1.185 -0.335q 0.375 -0.335 0.375 -0.975q 0 -0.64 -0.375 -0.98q -0.375 -0.34 -1.185 -0.33h -1.86Z m -0.95 3.42v -7.14h 0.95v 2.92h 2.18q 1.08 -0.01 1.635 0.55q 0.555 0.56 0.555 1.56q 0 1 -0.555 1.555q -0.555 0.555 -1.635 0.555h -3.13Z "/></symbol><symbol id="g9524DB2AB7AD3B578280EC160D005BAC" overflow="visible"><path d="M 0 0m 3.32 2.808h 0.704q -0.04 0.368 -0.192 0.636q -0.152 0.268 -0.388 0.444q -0.236 0.176 -0.544 0.26q -0.308 0.084 -0.66 0.084q -0.488 0 -0.856 -0.172q -0.368 -0.172 -0.612 -0.472q -0.244 -0.3 -0.364 -0.704q -0.12 -0.404 -0.12 -0.868q 0 -0.464 0.124 -0.852q 0.124 -0.388 0.368 -0.668q 0.244 -0.28 0.608 -0.432q 0.364 -0.152 0.836 -0.152q 0.792 0 1.252 0.416q 0.46 0.416 0.572 1.184h -0.696q -0.064 -0.48 -0.348 -0.744q -0.284 -0.264 -0.788 -0.264q -0.32 0 -0.552 0.128q -0.232 0.128 -0.376 0.34q -0.144 0.212 -0.212 0.484q -0.068 0.272 -0.068 0.56q 0 0.312 0.064 0.604q 0.064 0.292 0.212 0.516q 0.148 0.224 0.396 0.36q 0.248 0.136 0.616 0.136q 0.432 0 0.688 -0.216q 0.256 -0.216 0.336 -0.608Z "/></symbol></defs></svg></div>
+
+<p>Every thread also has a dedicated <strong>kernel stack</strong> (typically 4–12 KB). Because a context switch can occur even while the thread is executing kernel-mode code, the kernel cannot use a shared stack; each thread must have its own place to save its kernel-mode state.</p>
+<hr />
+<h2 id="thread-local-storage-tls">Thread Local Storage (TLS)</h2>
+<p>Global variables are shared across all threads in a process. TLS provides the escape hatch: a variable declared in TLS has one independent copy per thread, invisible to all other threads.</p>
+<p>The TEB's TLS pointer is the fast path to that per-thread storage. The C runtime (<code>_beginthreadex</code> / the CRT startup) initializes TLS slots before the thread's entry function runs, which is one reason to prefer CRT thread creation functions over raw OS calls when using the standard library.</p>
+<p>A typical use case is a per-thread error code (<code>errno</code> in the CRT, for example) — each thread reads and writes its own copy without locks.</p>
+<hr />
+<h2 id="fibers-user-mode-threads">Fibers: User-Mode Threads</h2>
+<p>Windows also exposes <strong>Fibers</strong> — execution contexts that look like threads to the code running in them, but are scheduled entirely by the <em>application</em>, not the OS.</p>
+<p>Key properties:</p>
+<ul>
+<li>The OS knows nothing about fibers; the scheduler sees only the kernel thread that hosts them.</li>
+<li>Switching between fibers is <strong>cooperative</strong> (the running fiber must explicitly yield).</li>
+<li>A context switch between fibers is cheap: it is a pure user-mode register save/restore, with no kernel transition.</li>
+<li>Fibers are vulnerable to the same blocking problem as user-level threads generally: if the host thread blocks on a kernel wait (I/O, mutex), <em>all</em> fibers on that thread block with it.</li>
+</ul>
+<p>Fibers predate modern async/await patterns and are rarely the right tool today, but they illustrate the broader principle of user-mode scheduling.</p>
+<hr />
+<h2 id="kernel-level-vs-user-level-threads">Kernel-Level vs. User-Level Threads</h2>
+<p>The distinction between kernel-level and user-level threads is architectural, not Windows-specific.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Kernel-Level Thread</th>
+<th>User-Level Thread</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scheduler visibility</td>
+<td>Kernel sees each thread individually</td>
+<td>Kernel sees only the process</td>
+</tr>
+<tr>
+<td>I/O block behavior</td>
+<td>Only the blocked thread stops; others run</td>
+<td>Entire process blocks if any thread blocks</td>
+</tr>
+<tr>
+<td>Context switch cost</td>
+<td>Higher — requires user↔kernel mode transition</td>
+<td>Lower — no mode switch within the process</td>
+</tr>
+<tr>
+<td>Parallelism on multi-core</td>
+<td>True parallel execution across cores</td>
+<td>Limited to one core per process (without hybrid mapping)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Kernel-level threads</strong> are what Windows and Linux implement natively. The kernel's scheduler distributes CPU time directly to threads; if thread A blocks on I/O, thread B in the same process can immediately receive the CPU.</p>
+<p><strong>User-level threads</strong> (green threads, fibers, coroutines) live entirely in user space. The process manages its own internal schedule. The advantage is cheaper switching; the cost is that a single blocking syscall stalls all user-level threads in that process because the kernel only sees one schedulable entity.</p>
+<hr />
+<h2 id="process-vs-thread-the-cost-dimension">Process vs. Thread: The Cost Dimension</h2>
+<p>The performance difference between process-level and thread-level context switching follows directly from address-space ownership.</p>
+<p><strong>Switching between two threads in the <em>same</em> process:</strong></p>
+<ul>
+<li>Save/restore register set (TCB swap).</li>
+<li>No address-space change — page tables stay the same.</li>
+<li>TLB and CPU cache remain warm.</li>
+<li>Relatively cheap.</li>
+</ul>
+<p><strong>Switching between threads in <em>different</em> processes:</strong></p>
+<ul>
+<li>Save/restore register set.</li>
+<li>Load new CR3 (page-table base) — the entire virtual address mapping changes.</li>
+<li><strong>TLB flush</strong>: cached virtual→physical translations are now invalid.</li>
+<li><strong>Cache pressure</strong>: the new process's working set is cold; L1/L2 misses spike.</li>
+<li>Significantly more expensive.</li>
+</ul>
+<p>This cost asymmetry is the primary reason multi-threaded designs are preferred over multi-process designs for tightly coupled work: threads amortize the address-space overhead across all their parallelism.</p>
+<p>The flip side is isolation: a buggy thread can corrupt the entire process heap; a buggy child process cannot touch the parent. The choice between processes and threads is always a trade-off between isolation and performance.</p>
+<hr />
+<h2 id="kernel-vs-user-mode-why-it-matters-for-thread-switching">Kernel vs. User Mode: Why It Matters for Thread Switching</h2>
+<p>The CPU operates in (at least) two privilege rings:</p>
+<ul>
+<li><strong>User mode (Ring 3):</strong> restricted instructions; cannot access kernel memory.</li>
+<li><strong>Kernel mode (Ring 0):</strong> unrestricted; full access to hardware and kernel data.</li>
+</ul>
+<p>A <strong>kernel mode switch</strong> (also called a mode transition) happens on every syscall or hardware interrupt. The <em>thread</em> does not change — it is still running — but its privilege level rises to Ring 0 so it can execute kernel code. The <code>SYSCALL</code> / <code>INT 2E</code> instruction triggers this transition.</p>
+<p>A <strong>context switch</strong> is different: the <em>executing thread</em> changes. The Dispatcher (a software-interrupt routine in the Windows kernel) saves the current TCB and loads another. Context switches happen when a thread's quantum expires or when it voluntarily blocks.</p>
+<p>Both cost something. A kernel mode switch costs a register save and a privilege-level change. A context switch costs that plus, potentially, the full address-space overhead described above.</p>
+<hr />
+<h2 id="the-gil-is-a-lock-on-bytecode-execution-not-a-ban-on-threads">The GIL is a lock on bytecode execution, not a ban on threads</h2>
+<p>Python threads are real OS threads — the same kernel-scheduled entities <code>std::thread</code>
+wraps. The Global Interpreter Lock does not change that; it admits <strong>one thread executing
+Python bytecode at a time</strong>. It is a lock, not a core affinity: the holder runs on whatever
+core the scheduler picked, and threads migrate across cores over their lifetime. "Python
+runs on one core" is the observed effect, not the mechanism, and the difference matters
+because the lock is <em>released</em> around blocking I/O and inside C extensions. Threaded numpy
+work and threaded I/O really do use several cores from one process. The constraint is
+narrower than it sounds: <strong>pure-Python compute</strong> cannot run in parallel within a process.</p>
+<p>It is tempting to group GIL-limited threading with coroutines, since both multiplex many
+logical tasks onto one core's worth of execution. That shared axis is real, but the
+mechanism separating them is the one that predicts the bugs:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>who decides the switch</th>
+<th>parallelism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS threads under a GIL</td>
+<td>the OS preempts — timer expiry or on I/O</td>
+<td>I/O and native code only</td>
+</tr>
+<tr>
+<td>coroutines (<code>asyncio</code>, Unity <code>IEnumerator</code>)</td>
+<td>the code, at an explicit <code>yield</code> / <code>await</code></td>
+<td>never</td>
+</tr>
+<tr>
+<td>separate processes</td>
+<td>the OS, with independent interpreters</td>
+<td>real</td>
+</tr>
+</tbody>
+</table>
+<p>Preemption can cut between any two bytecodes; a cooperative yield cannot. That single fact
+is why threaded code needs locks around shared mutable state and coroutine code mostly does
+not — the coroutine author knows every point at which control can leave.</p>
+<p>The cross-language mapping is easy to get backwards. A Unity coroutine's counterpart is
+<code>asyncio</code>, not <code>threading</code>: <code>IEnumerator</code>/<code>yield</code> driven by the engine's update loop, no
+threads involved at any point. And Unity coroutines are the outlier within .NET itself —
+C#'s <code>Task</code>/<code>async</code> dispatches onto a real thread pool with genuine multicore parallelism,
+so <code>async</code> in C# and <code>async</code> in Python read alike and differ fundamentally underneath.
+Syntactic resemblance across languages says nothing about which of the three rows above
+you are in.</p>
+<p><strong>Open:</strong> CPU-bound loop across 1 vs 4 threads, default build vs free-threaded build, with
+<code>multiprocessing</code> as the control.</p>
+<hr />
+<p><em>Study notes — Windows-specific material based on 윤성우, 《윈도우즈 시스템 프로그래밍》 (book + lectures).</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.sections", "navigation.path", "navigation.indexes", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
