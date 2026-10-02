@@ -53,3 +53,24 @@ Two things falsified the "divergence" reading before the count confirmed it. **P
 The tools are layered, and the catalog is not one of them: `COUNT(*)` verifies rows, a transaction-id subset test verifies position.
 
 **Open:** does raising the sample-page count shrink the cross-host spread predictably, or just move it? And is Postgres `reltuples` sampled the same way on a physical replica?
+
+## A replica is *a* consistent state, not *the* current one, so it cannot serve as a job queue
+
+Give a worker machine its own replica and let it read `status = 'PENDING'` locally. It claims job 100 by writing `PROCESSING` to the primary, since the replica is read-only, as any replica must be. That update needs a round trip through the log before the replica shows it. Until then the replica still says `PENDING`, and the next poll, or the next worker, takes job 100 again. Lag of a few milliseconds is enough; the read and the claim are on different nodes with no ordering between them, and the lag counter does not help, since MySQL's own documentation says it is not a reliable measure of current replica state.
+
+Put the read and the claim on one node, atomically, on the primary:
+
+```sql
+START TRANSACTION;
+SELECT id FROM job WHERE status = 'PENDING'
+ ORDER BY created_at LIMIT 1 FOR UPDATE SKIP LOCKED;
+UPDATE job SET status = 'PROCESSING', worker_id = ? WHERE id = ?;
+COMMIT;
+```
+
+`SKIP LOCKED` is what makes this a queue rather than a convoy: the second worker skips the locked row instead of waiting on it. The replica stays useful for what replication is for, bulk reads of the rows the claimed job points at.
+
+Two neighbours of the same mistake. Replication copies rows, not the files the rows name; the media needs its own path. And MySQL-to-Postgres is not replication at all: the two share no log format or protocol, so it takes a change-data-capture layer, and the result is a derived copy with no failover role, which still needs a stable row identity downstream for the reason the first section gives.
+
+**Open:** two workers polling a replica at ~10 ms lag, duplicate claims per 1,000 jobs, then the same with `SKIP LOCKED` on the primary.
+
