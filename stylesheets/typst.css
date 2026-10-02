@@ -1,0 +1,18 @@
+/* Typst-rendered diagrams (see hooks/typst_diagrams.py) */
+.typst-diagram {
+  display: flex;
+  justify-content: center;
+  margin: 1.2em 0;
+  color: var(--md-default-fg-color);
+}
+.typst-diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+.typst-error {
+  display: block;
+  border-left: 4px solid #e53935;
+  padding: 0.6em 1em;
+  background: rgba(229, 57, 53, 0.08);
+}
+.typst-error pre { white-space: pre-wrap; font-size: 0.8em; }
