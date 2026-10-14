@@ -145,9 +145,11 @@ associated with the port may be **running** at once, not how many exist.
   another waiting worker. That is why pools are usually larger than the core
   count (2 × cores is the common rule of thumb): the extra threads cover
   workers that block.
-- Waiting threads are released in **LIFO** order. The most recently idle
-  thread runs next, so its stack and cache are still warm, and threads at the
-  bottom of the stack stay asleep.
+- Waiting threads are released in **LIFO** order, while packets leave the
+  queue in **FIFO** order: the most recently blocked thread gets the oldest
+  completion. That thread's stack and cache are still warm, and threads at
+  the bottom of the stack stay asleep (Microsoft, *I/O Completion Ports*).
+- A thread can be associated with at most one completion port.
 
 So the kernel does not simply "never wake more threads than CPUs". It keeps
 the number of *running* workers near the concurrency value.
@@ -217,15 +219,16 @@ operation:
 
 The OS locks the pages of a buffer while an overlapped operation on it is
 outstanding. It is tempting to read this as "the NIC DMAs straight into your
-buffer, so there is no copy", and that is wrong for TCP. Received data still
-passes through the kernel's socket layer (AFD) and is copied into your
-buffer. If a receive is already posted when data arrives, the copy can go
-directly into it and skip the socket's own buffering, but it is still a copy.
+buffer, so there is no copy". That is not how TCP works. Received segments
+are processed by the kernel's TCP/IP stack and the payload is copied into
+your buffer. Pinning guarantees the buffer stays resident for that copy; it
+does not remove the copy.
 
 The pinning has a cost of its own. **10,000 sockets × one outstanding 4 KB
 receive is 40 MB of locked memory, held while the sockets sit idle.** Locked
-pages are a limited resource. Exhausting them shows up as `WSAENOBUFS` and as
-failures elsewhere in the system.
+pages come out of a limited system resource. A server that pins too much
+starts seeing I/O requests fail, and it competes with everything else on the
+machine.
 
 The standard trick is the **zero-byte receive**:
 
@@ -244,11 +247,17 @@ scales with active connections instead of all connections.
   call instead of one per call. Under load this cuts the number of kernel
   transitions per completion.
 - **`SetFileCompletionNotificationModes(FILE_SKIP_COMPLETION_PORT_ON_SUCCESS)`**:
-  - When an operation completes immediately (the data was already there),
-    no packet is queued to the port. The caller handles the result inline.
-  - This saves a queue round trip per fast operation.
-  - The cost is that every call site must now handle two completion paths,
-    inline and via the port.
+  - When an operation completes immediately, no packet is queued to the port
+    and the caller handles the result inline. This saves a queue round trip
+    per fast operation.
+  - Every call site must then handle two completion paths, inline and via
+    the port.
+  - **For sockets, check the Winsock catalog first.** With a non-IFS Layered
+    Service Provider installed, a socket with this mode set may never
+    receive completions on its port (Microsoft KB 2568167). Enable the mode
+    only if every entry from `WSAEnumProtocols` has `XP1_IFS_HANDLES` set in
+    `dwServiceFlags1`. Chromium and the Go runtime both do this check, and
+    both treat the mode as an optional optimisation.
 
 ### Lifetime and shutdown
 
