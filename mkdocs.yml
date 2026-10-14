@@ -87,46 +87,15 @@ nav:
     - Setup/iterm2_setup.md
     - Setup/WSL_dev_setup.md
     - Setup/Win_dev_setup.md
-    - Setup/Vibe_Coder_Manifesto.md
 
   - C / C++:
-    - Cpp/cpp-01-fundamentals.md
-    - Cpp/cpp-02-functions-and-lifetime.md
-    - Cpp/cpp-03-pointers-and-memory.md
-    - Cpp/cpp-04-classes-and-oop.md
-    - Cpp/cpp-05-inheritance-and-polymorphism.md
     - Cpp/cpp-06-templates-exceptions-raii.md
-    - Cpp/cpp-07-operator-overloading-and-memory.md
 
   - Data Structures:
-    - Data_Structure/ds-01-dynamic-array-and-vector.md
-    - Data_Structure/ds-02-linked-lists-and-iterators.md
     - Data_Structure/ds-03-trees-and-traversals.md
-    - Data_Structure/ds-04-binary-search-trees.md
 
   - Algorithms:
-    - Algorithm/A01.md
-    - Algorithm/A02.md
-    - Algorithm/A05.md
-    - Algorithm/A06.md
-    - Algorithm/A08.md
-    - Algorithm/A09.md
-    - Algorithm/BOJ12850.md
-    - Algorithm/CCW.md
-    - Algorithm/FloydWarshall.md
     - Algorithm/Parametric_Search.md
-    - Algorithm/UnionFind.md
-    - HKU Problems:
-      - Algorithm/HKU/HKUL1P1.md
-      - Algorithm/HKU/HKUL1P2.md
-      - Algorithm/HKU/HKUL1P3.md
-      - Algorithm/HKU/HKUL1P4.md
-      - Algorithm/HKU/HKUL1P5.md
-      - Algorithm/HKU/HKUL1P6.md
-      - Algorithm/HKU/HKUL1P7.md
-      - Algorithm/HKU/HKUL1P8.md
-      - Algorithm/HKU/HKUPSET1.md
-      - Algorithm/HKU/HKU_Math.md
 
   - Computer Architecture:
     - Architecture/arch-01-cpu-cache-coherence.md
@@ -135,45 +104,20 @@ nav:
     - Architecture/arch-04-constrained-decoding-llm-serving.md
 
   - Compilers & Low-Level:
-    - Compilers/asm-01-disassembly-control-flow.md
     - Compilers/asm-02-stack-frames-calling-conventions.md
-    - Compilers/asm-03-disassembly-debugging.md
     - Compilers/asm-04-c-runtime-and-executable.md
-    - Compilers/CMP01.md
-    - Compilers/CMP02.md
-    - Compilers/CMP03.md
-    - Compilers/CMP04.md
-    - Compilers/MSVCProject.md
-    - Compilers/MSVCSolution.md
 
   - Operating Systems:
     - Operating_Systems/os-01-processes-and-threads.md
-    - Operating_Systems/os-02-scheduling-and-interrupts.md
     - Operating_Systems/os-03-synchronization-and-deadlock.md
     - Operating_Systems/os-04-tlb-page-faults-and-copy-on-write.md
 
   - Windows Systems:
-    - Windows_System_Programming/win-01-processes-and-kernel-objects.md
-    - Windows_System_Programming/win-02-ipc.md
-    - Windows_System_Programming/win-03-threads-and-synchronization.md
     - Windows_System_Programming/win-04-async-io-and-iocp.md
-    - Windows_System_Programming/win-05-virtual-memory-heap-mmf.md
-    - Windows_System_Programming/win-06-dlls-and-dynamic-linking.md
     - Windows_System_Programming/win-08-iocp.md
 
   - Computer Networks:
     - Computer_Network/nw-tcp-loss-signals-and-round-trips.md
-    - Computer_Network/NW0503.md
-    - Computer_Network/NW0504.md
-    - Computer_Network/NW0724.md
-    - Computer_Network/NW1.md
-    - Computer_Network/NWHeaders.md
-    - Computer_Network/NWL2.md
-    - Computer_Network/NWTCP.md
-    - Computer_Network/NWVoca.md
-    - Computer_Network/TCPIP.md
-    - Computer_Network/TCPIP1.md
-    - Computer_Network/Wireshark.md
 
   - Data Systems:
     - Data_Systems/db-01-namespaces-and-catalogs.md
@@ -186,10 +130,6 @@ nav:
 
   - Distributed Systems:
     - Distributed/dist-01-replication-health-and-time.md
-
-  - Projects:
-    - Portfolio:
-      - Compilers/MSVCSolutionKR.md
 
   # -------------------------------------------------------------------------
   # Archive — raw study logs, pending distillation into topic posts.
