@@ -187,49 +187,9 @@ nav:
   - Distributed Systems:
     - Distributed/dist-01-replication-health-and-time.md
 
-  - Cryptography:
-    - Cryptography/C2PA.md
-    - Cryptography/C2PA_Ref.md
-
   - Projects:
     - Portfolio:
       - Compilers/MSVCSolutionKR.md
-    - ECE482 FA24:
-      - Homework:
-        - ECE482FA24/ECE482HW/ECE482H1.md
-        - ECE482FA24/ECE482HW/ECE482H2.md
-        - ECE482FA24/ECE482HW/ECE482H3.md
-        - ECE482FA24/ECE482HW/ECE482H4.md
-        - ECE482FA24/ECE482HW/ECE482H5.md
-        - ECE482FA24/ECE482HW/ECE482H6.md
-        - ECE482FA24/ECE482HW/ECE482H7.md
-        - ECE482FA24/ECE482HW/ECE482H8.md
-      - Lab:
-        - ECE482FA24/ECE482LAB/ECE482L1.md
-        - ECE482FA24/ECE482LAB/ECE482L2.md
-        - ECE482FA24/ECE482LAB/ECE482L3.md
-        - ECE482FA24/ECE482LAB/ECE482L4.md
-        - ECE482FA24/ECE482LAB/ECE482L5.md
-        - ECE482FA24/ECE482LAB/ECE482L6.md
-        - ECE482FA24/ECE482LAB/ECE482L7.md
-        - ECE482FA24/ECE482LAB/ECE482L8.md
-        - ECE482FA24/ECE482LAB/ECE482L9.md
-        - ECE482FA24/ECE482LAB/ECE482L10.md
-        - ECE482FA24/ECE482LAB/ECE482L11.md
-      - Project 2:
-        - ECE482FA24/ECE482P2/Home.md
-        - ECE482FA24/ECE482P2/Design.md
-        - ECE482FA24/ECE482P2/DeveloperGuide.md
-        - ECE482FA24/ECE482P2/MultiThreading.md
-        - ECE482FA24/ECE482P2/Performance.md
-        - ECE482FA24/ECE482P2/RoadMap.md
-      - Project 3:
-        - ECE482FA24/ECE482P3/Home.md
-        - ECE482FA24/ECE482P3/Design.md
-        - ECE482FA24/ECE482P3/Developer.md
-        - ECE482FA24/ECE482P3/Performance.md
-        - ECE482FA24/ECE482P3/Risk.md
-        - ECE482FA24/ECE482P3/RoadMap.md
 
   # -------------------------------------------------------------------------
   # Archive — raw study logs, pending distillation into topic posts.
