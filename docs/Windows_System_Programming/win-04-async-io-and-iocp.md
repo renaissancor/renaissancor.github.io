@@ -1,13 +1,14 @@
 ---
-title: "Windows File and Asynchronous I/O (Overlapped I/O & IOCP)"
+title: "Windows File and Asynchronous I/O (Overlapped I/O)"
 ---
 
-# Windows File and Asynchronous I/O (Overlapped I/O & IOCP)
+# Windows File and Asynchronous I/O (Overlapped I/O)
 
-File I/O in Windows starts with three kernel-object-based primitives, graduates to
-non-blocking Overlapped I/O, and ultimately reaches I/O Completion Ports (IOCP) —
-the model that powers most high-performance Windows servers and game backends.
-This post traces that progression end-to-end.
+File I/O in Windows starts with three kernel-object-based primitives and graduates to
+non-blocking Overlapped I/O, with two ways to learn that an operation finished: an event
+object and a completion routine. The third way, I/O Completion Ports (IOCP) — the model
+behind most high-performance Windows servers and game backends — has its own post,
+[win-08](win-08-iocp.md).
 
 ---
 
@@ -235,122 +236,13 @@ load balancing harder.
 
 ---
 
-## I/O Completion Ports (IOCP)
+## Next: I/O Completion Ports
 
-### The Scalability Problem IOCP Solves
-
-Naive approaches to concurrent I/O assign one thread per connection (100
-connections → 100 threads) or use a fixed pool but poll for completions.  Neither
-scales: 100 threads thrash the scheduler with context switches; polling burns CPU.
-
-IOCP is the OS-managed solution.  A single **completion port** — a kernel queue —
-collects completion notifications from any number of handles.  A small pool of
-worker threads (typically `2 × CPU cores`) each block in
-`GetQueuedCompletionStatus`; the kernel wakes exactly as many threads as there are
-available CPUs, eliminating over-subscription.
-
-Additional OS-level optimizations kick in for IOCP-associated handles:
-- **Page locking**: The user-mode buffer is pinned (locked in physical memory) for
-  the duration of the transfer.  The NIC or disk DMA controller writes directly
-  into it — no kernel-to-user copy.
-- **Thread pool management**: The kernel tracks how many IOCP threads are actively
-  running vs. waiting, and throttles wake-ups to prevent CPU over-subscription even
-  when many completions arrive simultaneously.
-
-### Creating and Associating a Completion Port
-
-```cpp
-// Step 1: create the port (first call — no handle to associate yet)
-HANDLE hIOCP = CreateIoCompletionPort(
-    INVALID_HANDLE_VALUE,   // no file handle yet
-    NULL,                   // no existing port
-    0,                      // completion key (unused)
-    0                       // 0 = number of threads = number of CPUs
-);
-
-// Step 2: associate an I/O handle with the port
-CreateIoCompletionPort(
-    hFile,          // or hSocket opened with WSASocket(... WSA_FLAG_OVERLAPPED)
-    hIOCP,
-    (ULONG_PTR)pPerHandleData,  // completion key — your context pointer
-    0
-);
-```
-
-The **completion key** is an opaque value that the OS echoes back with every
-completion on that handle.  Store a pointer to per-connection state there.
-
-### Issuing an Overlapped Request
-
-Issue reads or writes exactly as with plain Overlapped I/O.  For network sockets
-use the Winsock equivalents:
-
-```cpp
-WSARecv(hSocket, &wsaBuf, 1, NULL, &flags, &perIoData->ov, NULL);
-```
-
-`perIoData->ov` is the `OVERLAPPED` struct embedded in a per-operation context
-object.  After the call returns `WSA_IO_PENDING` the OS owns the buffer until the
-completion is dequeued.
-
-### Worker Thread Loop
-
-```cpp
-DWORD   bytesTransferred;
-ULONG_PTR completionKey;
-LPOVERLAPPED pOv;
-
-while (true) {
-    BOOL ok = GetQueuedCompletionStatus(
-        hIOCP,
-        &bytesTransferred,
-        &completionKey,
-        &pOv,
-        INFINITE
-    );
-
-    if (!ok || bytesTransferred == 0) {
-        // connection closed or error — clean up
-        continue;
-    }
-
-    // Recover per-operation context from the OVERLAPPED pointer
-    PerIoData* pIo = CONTAINING_RECORD(pOv, PerIoData, ov);
-
-    // Process pIo, then re-issue WSARecv / WSASend …
-}
-```
-
-`GetQueuedCompletionStatus` (GQCS) blocks until a completion packet arrives, then
-returns the byte count, the completion key, and a pointer to the originating
-`OVERLAPPED`.  Because `OVERLAPPED` is typically the first field of a larger
-per-operation struct, `CONTAINING_RECORD` (or a `static_cast` from a known layout)
-recovers the full context.
-
-### IOCP Architecture Summary
-
-```
-  Client connections (many)
-         │
-         ▼
-  Overlapped WSARecv / WSASend
-         │  (completions posted automatically by OS)
-         ▼
-  ┌──────────────────────┐
-  │   I/O Completion     │  ← kernel-managed queue
-  │       Port           │
-  └──────────────────────┘
-         │  (GQCS wakes worker threads)
-         ▼
-  Worker Thread 1 ──┐
-  Worker Thread 2 ──┤  (pool size ≈ 2 × CPU cores)
-  Worker Thread N ──┘
-```
-
-The kernel never wakes more worker threads than there are logical CPUs, even if
-hundreds of completions arrive at once.  Threads that complete their work quickly
-return to GQCS and are recycled immediately, keeping the active thread count near
-the hardware optimum.
+Event objects stop at 64 handles per wait. Completion routines tie every
+completion to the thread that issued it. A server with thousands of sockets
+needs a third model: one kernel queue that collects completions from every
+handle, and a pool of worker threads that drain it. That is the **I/O
+Completion Port**, covered in [win-08 — IOCP for Socket Servers](win-08-iocp.md).
 
 ---
 
@@ -361,7 +253,7 @@ the hardware optimum.
 | Synchronous (`ReadFile`, no `OVERLAPPED`) | Yes | Return value | Simple sequential code |
 | Overlapped + Event | No | `WaitForSingleObject` | Few concurrent operations |
 | Overlapped + Completion Routine (APC) | No (alertable wait) | Callback on issuing thread | Single-thread async loops |
-| IOCP | No | `GetQueuedCompletionStatus` | Many connections, scalable servers |
+| IOCP ([win-08](win-08-iocp.md)) | No | `GetQueuedCompletionStatus` | Many connections, scalable servers |
 
 ---
 

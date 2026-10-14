@@ -159,6 +159,7 @@ nav:
     - Windows_System_Programming/win-04-async-io-and-iocp.md
     - Windows_System_Programming/win-05-virtual-memory-heap-mmf.md
     - Windows_System_Programming/win-06-dlls-and-dynamic-linking.md
+    - Windows_System_Programming/win-08-iocp.md
 
   - Computer Networks:
     - Computer_Network/nw-tcp-loss-signals-and-round-trips.md
