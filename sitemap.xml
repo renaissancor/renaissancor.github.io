@@ -2,412 +2,468 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://renaissancor.github.io/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/"/>
     </url>
     <url>
+        <loc>https://renaissancor.github.io/tags/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/tags/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/tags/"/>
+    </url>
+    <url>
         <loc>https://renaissancor.github.io/Algorithm/Parametric_Search/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Algorithm/Parametric_Search/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Algorithm/Parametric_Search/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Architecture/arch-01-cpu-cache-coherence/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Architecture/arch-01-cpu-cache-coherence/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Architecture/arch-01-cpu-cache-coherence/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Architecture/arch-02-roofline-model/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Architecture/arch-02-roofline-model/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Architecture/arch-02-roofline-model/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Architecture/arch-03-gpu-memory-budget-llm-serving/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Architecture/arch-03-gpu-memory-budget-llm-serving/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Architecture/arch-03-gpu-memory-budget-llm-serving/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Architecture/arch-04-constrained-decoding-llm-serving/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Architecture/arch-04-constrained-decoding-llm-serving/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Architecture/arch-04-constrained-decoding-llm-serving/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Compilers/asm-02-stack-frames-calling-conventions/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Compilers/asm-02-stack-frames-calling-conventions/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Compilers/asm-02-stack-frames-calling-conventions/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Compilers/asm-04-c-runtime-and-executable/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Compilers/asm-04-c-runtime-and-executable/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Compilers/asm-04-c-runtime-and-executable/"/>
     </url>
     <url>
+        <loc>https://renaissancor.github.io/Compilers/gpu-kernel-dsl-triton/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Compilers/gpu-kernel-dsl-triton/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Compilers/gpu-kernel-dsl-triton/"/>
+    </url>
+    <url>
         <loc>https://renaissancor.github.io/Computer_Network/nw-tcp-loss-signals-and-round-trips/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/nw-tcp-loss-signals-and-round-trips/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/nw-tcp-loss-signals-and-round-trips/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Cpp/cpp-06-templates-exceptions-raii/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Cpp/cpp-06-templates-exceptions-raii/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Cpp/cpp-06-templates-exceptions-raii/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Data_Structure/ds-03-trees-and-traversals/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Structure/ds-03-trees-and-traversals/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Structure/ds-03-trees-and-traversals/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Data_Systems/db-01-namespaces-and-catalogs/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-01-namespaces-and-catalogs/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-01-namespaces-and-catalogs/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Data_Systems/db-02-derived-data-placement/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-02-derived-data-placement/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-02-derived-data-placement/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Data_Systems/db-03-write-skew-and-isolation/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-03-write-skew-and-isolation/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-03-write-skew-and-isolation/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Data_Systems/db-04-sequential-writes-wal-and-lsm/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-04-sequential-writes-wal-and-lsm/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-04-sequential-writes-wal-and-lsm/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Data_Systems/db-05-delete-and-space-reclamation/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-05-delete-and-space-reclamation/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-05-delete-and-space-reclamation/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Data_Systems/db-06-replication-mechanics/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-06-replication-mechanics/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-06-replication-mechanics/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Data_Systems/db-07-clustered-vs-heap-and-joins/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-07-clustered-vs-heap-and-joins/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-07-clustered-vs-heap-and-joins/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Distributed/dist-01-replication-health-and-time/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Distributed/dist-01-replication-health-and-time/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Distributed/dist-01-replication-health-and-time/"/>
     </url>
     <url>
+        <loc>https://renaissancor.github.io/Machine_Learning/ml-01-the-learning-chain/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-01-the-learning-chain/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-01-the-learning-chain/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Machine_Learning/ml-02-cnn-weight-sharing/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-02-cnn-weight-sharing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-02-cnn-weight-sharing/"/>
+    </url>
+    <url>
         <loc>https://renaissancor.github.io/Operating_Systems/os-01-processes-and-threads/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Operating_Systems/os-01-processes-and-threads/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Operating_Systems/os-01-processes-and-threads/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Operating_Systems/os-03-synchronization-and-deadlock/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Operating_Systems/os-03-synchronization-and-deadlock/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Operating_Systems/os-03-synchronization-and-deadlock/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Operating_Systems/os-04-tlb-page-faults-and-copy-on-write/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Operating_Systems/os-04-tlb-page-faults-and-copy-on-write/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Operating_Systems/os-04-tlb-page-faults-and-copy-on-write/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Setup/Harness_setup/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Setup/Harness_setup/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Setup/Harness_setup/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Setup/Mac_dev_setup/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Setup/Mac_dev_setup/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Setup/Mac_dev_setup/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Setup/WSL_dev_setup/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Setup/WSL_dev_setup/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Setup/WSL_dev_setup/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Setup/Win_dev_setup/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Setup/Win_dev_setup/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Setup/Win_dev_setup/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Setup/iterm2_setup/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Setup/iterm2_setup/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Setup/iterm2_setup/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Windows_System_Programming/win-04-async-io-and-iocp/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Windows_System_Programming/win-04-async-io-and-iocp/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Windows_System_Programming/win-04-async-io-and-iocp/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Windows_System_Programming/win-08-iocp/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Windows_System_Programming/win-08-iocp/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Windows_System_Programming/win-08-iocp/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/"/>
     </url>
     <url>
+        <loc>https://renaissancor.github.io/ko/tags/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/tags/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/tags/"/>
+    </url>
+    <url>
         <loc>https://renaissancor.github.io/ko/Algorithm/Parametric_Search/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Algorithm/Parametric_Search/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Algorithm/Parametric_Search/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Architecture/arch-01-cpu-cache-coherence/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Architecture/arch-01-cpu-cache-coherence/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Architecture/arch-01-cpu-cache-coherence/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Architecture/arch-02-roofline-model/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Architecture/arch-02-roofline-model/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Architecture/arch-02-roofline-model/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Architecture/arch-03-gpu-memory-budget-llm-serving/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Architecture/arch-03-gpu-memory-budget-llm-serving/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Architecture/arch-03-gpu-memory-budget-llm-serving/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Architecture/arch-04-constrained-decoding-llm-serving/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Architecture/arch-04-constrained-decoding-llm-serving/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Architecture/arch-04-constrained-decoding-llm-serving/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Compilers/asm-02-stack-frames-calling-conventions/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Compilers/asm-02-stack-frames-calling-conventions/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Compilers/asm-02-stack-frames-calling-conventions/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Compilers/asm-04-c-runtime-and-executable/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Compilers/asm-04-c-runtime-and-executable/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Compilers/asm-04-c-runtime-and-executable/"/>
     </url>
     <url>
+        <loc>https://renaissancor.github.io/ko/Compilers/gpu-kernel-dsl-triton/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Compilers/gpu-kernel-dsl-triton/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Compilers/gpu-kernel-dsl-triton/"/>
+    </url>
+    <url>
         <loc>https://renaissancor.github.io/ko/Computer_Network/nw-tcp-loss-signals-and-round-trips/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/nw-tcp-loss-signals-and-round-trips/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/nw-tcp-loss-signals-and-round-trips/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Cpp/cpp-06-templates-exceptions-raii/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Cpp/cpp-06-templates-exceptions-raii/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Cpp/cpp-06-templates-exceptions-raii/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Data_Structure/ds-03-trees-and-traversals/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Structure/ds-03-trees-and-traversals/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Structure/ds-03-trees-and-traversals/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Data_Systems/db-01-namespaces-and-catalogs/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-01-namespaces-and-catalogs/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-01-namespaces-and-catalogs/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Data_Systems/db-02-derived-data-placement/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-02-derived-data-placement/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-02-derived-data-placement/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Data_Systems/db-03-write-skew-and-isolation/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-03-write-skew-and-isolation/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-03-write-skew-and-isolation/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Data_Systems/db-04-sequential-writes-wal-and-lsm/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-04-sequential-writes-wal-and-lsm/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-04-sequential-writes-wal-and-lsm/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Data_Systems/db-05-delete-and-space-reclamation/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-05-delete-and-space-reclamation/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-05-delete-and-space-reclamation/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Data_Systems/db-06-replication-mechanics/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-06-replication-mechanics/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-06-replication-mechanics/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Data_Systems/db-07-clustered-vs-heap-and-joins/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-07-clustered-vs-heap-and-joins/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-07-clustered-vs-heap-and-joins/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Distributed/dist-01-replication-health-and-time/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Distributed/dist-01-replication-health-and-time/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Distributed/dist-01-replication-health-and-time/"/>
     </url>
     <url>
+        <loc>https://renaissancor.github.io/ko/Machine_Learning/ml-01-the-learning-chain/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-01-the-learning-chain/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-01-the-learning-chain/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Machine_Learning/ml-02-cnn-weight-sharing/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-02-cnn-weight-sharing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-02-cnn-weight-sharing/"/>
+    </url>
+    <url>
         <loc>https://renaissancor.github.io/ko/Operating_Systems/os-01-processes-and-threads/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Operating_Systems/os-01-processes-and-threads/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Operating_Systems/os-01-processes-and-threads/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Operating_Systems/os-03-synchronization-and-deadlock/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Operating_Systems/os-03-synchronization-and-deadlock/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Operating_Systems/os-03-synchronization-and-deadlock/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Operating_Systems/os-04-tlb-page-faults-and-copy-on-write/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Operating_Systems/os-04-tlb-page-faults-and-copy-on-write/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Operating_Systems/os-04-tlb-page-faults-and-copy-on-write/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Operating_Systems/os-05-readiness-vs-completion/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Operating_Systems/os-05-readiness-vs-completion/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Setup/Harness_setup/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Setup/Harness_setup/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Setup/Harness_setup/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Setup/Mac_dev_setup/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Setup/Mac_dev_setup/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Setup/Mac_dev_setup/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Setup/WSL_dev_setup/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Setup/WSL_dev_setup/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Setup/WSL_dev_setup/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Setup/Win_dev_setup/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Setup/Win_dev_setup/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Setup/Win_dev_setup/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Setup/iterm2_setup/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Setup/iterm2_setup/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Setup/iterm2_setup/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Windows_System_Programming/win-04-async-io-and-iocp/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Windows_System_Programming/win-04-async-io-and-iocp/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Windows_System_Programming/win-04-async-io-and-iocp/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Windows_System_Programming/win-08-iocp/</loc>
-        <lastmod>2026-10-14</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Windows_System_Programming/win-08-iocp/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Windows_System_Programming/win-08-iocp/"/>
