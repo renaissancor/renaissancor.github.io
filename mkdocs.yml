@@ -106,6 +106,7 @@ nav:
   - Compilers & Low-Level:
     - Compilers/asm-02-stack-frames-calling-conventions.md
     - Compilers/asm-04-c-runtime-and-executable.md
+    - Compilers/gpu-kernel-dsl-triton.md
 
   - Operating Systems:
     - Operating_Systems/os-01-processes-and-threads.md
