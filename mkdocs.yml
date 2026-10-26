@@ -127,6 +127,17 @@ nav:
 
   - Computer Networks:
     - Computer_Network/nw-tcp-loss-signals-and-round-trips.md
+    - Computer_Network/NW0503.md
+    - Computer_Network/NW0504.md
+    - Computer_Network/NW0724.md
+    - Computer_Network/NW1.md
+    - Computer_Network/NWHeaders.md
+    - Computer_Network/NWL2.md
+    - Computer_Network/NWTCP.md
+    - Computer_Network/NWVoca.md
+    - Computer_Network/TCPIP.md
+    - Computer_Network/TCPIP1.md
+    - Computer_Network/Wireshark.md
 
   - Data Systems:
     - Data_Systems/db-01-namespaces-and-catalogs.md
