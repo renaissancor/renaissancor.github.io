@@ -1169,8 +1169,6 @@
       
         
       
-        
-      
     
     
     
@@ -1330,34 +1328,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../NW1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Loopback, Ports, and Sockets: First Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../NWHeaders/" class="md-nav__link">
         
   
@@ -1393,7 +1363,7 @@
   <span class="md-ellipsis">
     
   
-    TCP/IP Model Layer 1 Network Access (네트워크 엑세스)
+    TCP/IP Model, Layer by Layer
   
 
     
@@ -1477,7 +1447,7 @@
   <span class="md-ellipsis">
     
   
-    Winsock bind() and Ports
+    Winsock TCP Echo Server, Step by Step
   
 
     
@@ -1558,10 +1528,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#run-code-in-linux-based-on-wsl-environment" class="md-nav__link">
+  <a href="#run-on-linux-wsl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run code in Linux, based on WSL environment
+        Run on Linux (WSL)
       
     </span>
   </a>
@@ -1569,10 +1539,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux-file-generation-and-data-save" class="md-nav__link">
+  <a href="#files-and-sockets-share-one-descriptor-table" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linux File Generation and Data Save
+        Files and sockets share one descriptor table
       
     </span>
   </a>
@@ -1580,10 +1550,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-code-in-windows-visual-studio" class="md-nav__link">
+  <a href="#run-on-windows-visual-studio-or-mingw" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run code in Windows Visual Studio
+        Run on Windows (Visual Studio or MinGW)
       
     </span>
   </a>
@@ -2335,10 +2305,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#run-code-in-linux-based-on-wsl-environment" class="md-nav__link">
+  <a href="#run-on-linux-wsl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run code in Linux, based on WSL environment
+        Run on Linux (WSL)
       
     </span>
   </a>
@@ -2346,10 +2316,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux-file-generation-and-data-save" class="md-nav__link">
+  <a href="#files-and-sockets-share-one-descriptor-table" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linux File Generation and Data Save
+        Files and sockets share one descriptor table
       
     </span>
   </a>
@@ -2357,10 +2327,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-code-in-windows-visual-studio" class="md-nav__link">
+  <a href="#run-on-windows-visual-studio-or-mingw" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run code in Windows Visual Studio
+        Run on Windows (Visual Studio or MinGW)
       
     </span>
   </a>
@@ -2433,85 +2403,89 @@
 
 
 <h1 id="network-programming-and-sockets">Network Programming and Sockets</h1>
-<h2 id="run-code-in-linux-based-on-wsl-environment">Run code in Linux, based on WSL environment</h2>
-<p>1 Open WSL Terminal and create files </p>
-<p>2 Compile Both Programs </p>
+<p>Building and running the first socket programs on WSL and on Windows, and the one result worth remembering: <strong>a socket is a file descriptor.</strong></p>
+<h2 id="run-on-linux-wsl">Run on Linux (WSL)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gcc<span class="w"> </span>-o<span class="w"> </span>server<span class="w"> </span>hello_server.c
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>gcc<span class="w"> </span>-o<span class="w"> </span>client<span class="w"> </span>hello_clinet.c
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>gcc<span class="w"> </span>-o<span class="w"> </span>client<span class="w"> </span>hello_client.c
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>./server<span class="w"> </span><span class="m">1234</span><span class="w">                 </span><span class="c1"># terminal 1: listen on port 1234, leave running</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>./client<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">1234</span><span class="w">       </span><span class="c1"># terminal 2: connect over loopback</span>
 </code></pre></div>
-<p>3 Run Server </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./server<span class="w"> </span><span class="m">1234</span><span class="w"> </span>
+<table>
+<thead>
+<tr>
+<th>symptom</th>
+<th>cause</th>
+<th>fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Permission denied</code></td>
+<td>not executable</td>
+<td><code>chmod +x server client</code></td>
+</tr>
+<tr>
+<td><code>bind() error</code> right after a rerun</td>
+<td>port 1234 still held by the previous run (TIME_WAIT)</td>
+<td>wait, or set <code>SO_REUSEADDR</code> before <code>bind</code></td>
+</tr>
+<tr>
+<td><code>connect() error!</code></td>
+<td>no server listening on that port</td>
+<td>start the server first</td>
+</tr>
+</tbody>
+</table>
+<h2 id="files-and-sockets-share-one-descriptor-table">Files and sockets share one descriptor table</h2>
+<p>Write and read a file with the low-level calls:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ gcc low_open.c -o lopen
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ ./lopen
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>file descriptor: 3
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ cat data.txt
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Let's go!
 </code></pre></div>
-<p>This starts the server and listens on port <code>1234</code>. Leave this running.</p>
-<p>4 Open Another Terminal for the Client</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./clinet<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">1234</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ gcc low_read.c -o lread
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ ./lread
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>file descriptor: 3
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>file data: Let's go!
 </code></pre></div>
-<p>This connects to the server running on the same machine (localhost, 127.0.0.1).</p>
-<p>5 If you hit a permissions error (e.g. "Permission denied") </p>
-<p>Make sure the files are executable:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>server<span class="w"> </span>client
+<p>Then open a file and two sockets in one program and print their descriptors:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ ./fds
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>file descriptor 1: 3
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>file descriptor 2: 4
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>file descriptor 3: 5
 </code></pre></div>
-<p>6 for server terminal, if you ran code previously running it again might not work 
-because port is currently in usage. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gcc<span class="w"> </span>-o<span class="w"> </span>server<span class="w"> </span>hello_server.c<span class="w"> </span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>./server<span class="w"> </span><span class="m">1234</span><span class="w"> </span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>bind<span class="o">()</span><span class="w"> </span>error
+<ul>
+<li>0, 1, 2 are stdin, stdout, stderr, so the first new descriptor is <strong>3</strong>.</li>
+<li>Files and sockets get <strong>consecutive numbers from the same table</strong>. To the kernel, a socket is just another file, which is why <code>read</code> / <code>write</code> work on both.</li>
+</ul>
+<h2 id="run-on-windows-visual-studio-or-mingw">Run on Windows (Visual Studio or MinGW)</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gcc<span class="w"> </span>-o<span class="w"> </span>server<span class="w"> </span>Server/main.c<span class="w"> </span>-lws2_32
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>.<span class="se">\s</span>erver.exe<span class="w"> </span><span class="m">9190</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>gcc<span class="w"> </span>-o<span class="w"> </span>client<span class="w"> </span>Client/main.c<span class="w"> </span>-lws2_32
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>.<span class="se">\c</span>lient.exe<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">9190</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gcc<span class="w"> </span>-o<span class="w"> </span>client<span class="w"> </span>hello_client.c<span class="w"> </span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>./client<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">1234</span><span class="w">  </span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>connect<span class="o">()</span><span class="w"> </span>error!
-</code></pre></div>
-<p>Because port 1234 is currently in usage </p>
-<h2 id="linux-file-generation-and-data-save">Linux File Generation and Data Save</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gcc<span class="w"> </span>low_open.c<span class="w"> </span>-o<span class="w"> </span>lopen
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>./lopen
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>cat<span class="w"> </span>data.txt
-</code></pre></div>
-<p>This code will actually return </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ gcc low_open.c -o lopen
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ ./lopen
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>file descriptor: 3
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ cat data.txt
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Let's go!
-</code></pre></div>
-<p>Now let's read <code>data.txt</code> file generated from the code </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>gcc<span class="w"> </span>low_read.c<span class="w"> </span>-o<span class="w"> </span>lread
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>./lread
-</code></pre></div>
-<p>This code will return 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ gcc low_read.c -o lread
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ ./lread
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>file descriptor: 3
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>file data: Let's go!
-</code></pre></div></p>
-<p>Now let's generate file and socket together in linux and comapre file descriptor value as integer form </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>gcc<span class="w"> </span>fd_seri.c<span class="w"> </span>-o<span class="w"> </span>fds
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>./fds
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>stephen@ASUSLAPTOP:~/TCPIP/c1$ ./fds
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>file descriptor 1: 3
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>file descriptor 2: 4
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>file descriptor 3: 5
-</code></pre></div>
-<h2 id="run-code-in-windows-visual-studio">Run code in Windows Visual Studio</h2>
-<p>client server </p>
-<p>C++ 형식의 인수가 형식의 매개 변수와 호환되지 않습니다.</p>
-<p>속성 -&gt; C/C++ -&gt; 언어 -&gt; 준수 모드 -&gt; 아니오 </p>
-<p>Compile method </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>gcc<span class="w"> </span>-o<span class="w"> </span>client<span class="w"> </span>Client/main.c<span class="w"> </span>-lws2_32
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>client<span class="w"> </span>&lt;IP&gt;<span class="w"> </span>&lt;PORT&gt;<span class="w"> </span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>gcc<span class="w"> </span>-o<span class="w"> </span>server<span class="w"> </span>Server/main.c<span class="w"> </span>-lws2_32<span class="w"> </span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>server<span class="w"> </span>&lt;PORT&gt;<span class="w"> </span>
-</code></pre></div>
-<p>For example, 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>gcc<span class="w"> </span>-o<span class="w"> </span>server<span class="w"> </span>Server/main.c<span class="w"> </span>-lws2_32<span class="w"> </span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>.<span class="se">\s</span>erver.exe<span class="w"> </span><span class="m">9190</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>gcc<span class="w"> </span>-o<span class="w"> </span>client<span class="w"> </span>Client/main.c<span class="w"> </span>-lws2_32
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>.<span class="se">\c</span>lient.exe<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">9190</span>
-</code></pre></div></p>
-<p>속성 -&gt; 링커 -&gt; 입력 -&gt; 추가 종속성 -&gt; ws2_32.lib 추가 </p>
+<p>Visual Studio settings for the book's C code:</p>
+<table>
+<thead>
+<tr>
+<th>error</th>
+<th>setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>link errors on <code>socket</code>, <code>bind</code>, ...</td>
+<td>Properties → Linker → Input → Additional Dependencies → add <code>ws2_32.lib</code></td>
+</tr>
+<tr>
+<td>"argument of type ... is incompatible with parameter of type ..." (C string literals)</td>
+<td>Properties → C/C++ → Language → Conformance mode → <strong>No</strong></td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -1169,8 +1169,6 @@
       
         
       
-        
-      
     
     
     
@@ -1351,21 +1349,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#edges-links" class="md-nav__link">
+  <a href="#edges-and-messages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edges (Links)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#messages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Messages
+        Edges and Messages
       
     </span>
   </a>
@@ -1424,23 +1411,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1.4 Packet Structure">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#headers-include" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Headers include:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1527,34 +1497,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../NW1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Loopback, Ports, and Sockets: First Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../NWHeaders/" class="md-nav__link">
         
   
@@ -1590,7 +1532,7 @@
   <span class="md-ellipsis">
     
   
-    TCP/IP Model Layer 1 Network Access (네트워크 엑세스)
+    TCP/IP Model, Layer by Layer
   
 
     
@@ -1674,7 +1616,7 @@
   <span class="md-ellipsis">
     
   
-    Winsock bind() and Ports
+    Winsock TCP Echo Server, Step by Step
   
 
     
@@ -2497,21 +2439,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#edges-links" class="md-nav__link">
+  <a href="#edges-and-messages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edges (Links)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#messages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Messages
+        Edges and Messages
       
     </span>
   </a>
@@ -2570,23 +2501,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1.4 Packet Structure">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#headers-include" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Headers include:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2668,9 +2582,7 @@
 
 <h1 id="macroscopic-view-of-networks">Macroscopic View of Networks</h1>
 <h3 id="11-basic-network-structure">1.1 Basic Network Structure</h3>
-<p>Networks are structured as <strong>graphs</strong> composed of:
-- <strong>Nodes</strong> (vertices): Desktop computers, servers, smartphones, tablets, IoT devices, etc.
-- <strong>Edges</strong> (links): Connections between nodes</p>
+<p>A network is a <strong>graph</strong>: nodes are devices, edges are links.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    Visual: Network as a Graph
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    [Desktop] --------- [Router] --------- [Server]
@@ -2681,15 +2593,12 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                          |
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                      [Smartphone]
 </code></pre></div>
-<p>Nodes can be categorized as:
-- <strong>Edge nodes</strong>: End devices (computers, smartphones, etc.)
-- <strong>Intermediate nodes</strong>: Network devices (routers, switches, etc.)</p>
+<ul>
+<li><strong>Edge nodes</strong>: end devices (PC, phone, server).</li>
+<li><strong>Intermediate nodes</strong>: devices that forward (router, switch).</li>
+</ul>
 <h3 id="12-network-components">1.2 Network Components</h3>
 <h4 id="hosts">Hosts</h4>
-<ul>
-<li>End devices that generate or consume network traffic</li>
-<li>Can be categorized as:</li>
-</ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    Visual: Client-Server Interaction
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    Client                       Server
@@ -2701,18 +2610,10 @@
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        |&lt;---- Response: HTML ------ |
 </code></pre></div>
 <ul>
-<li><strong>Clients</strong>: Requesting hosts (e.g., web browsers requesting webpages)</li>
-<li><strong>Servers</strong>: Responding hosts (e.g., web servers providing content)</li>
-<li>Roles are not exclusive:</li>
-<li>A device can act as both client and server</li>
-<li>Function depends on the current operation</li>
+<li><strong>Client</strong> requests, <strong>server</strong> responds.</li>
+<li>A role, not a device: one machine can be both, depending on the operation.</li>
 </ul>
 <h4 id="network-devices">Network Devices</h4>
-<ul>
-<li>Intermediate nodes that facilitate data transfer</li>
-<li>Examples: Ethernet hubs, switches, routers, Wi-Fi access points</li>
-<li>Primary function is to forward data through the network</li>
-</ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    Visual: Network Devices
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    [Host A] --- [Switch] --- [Host B]
@@ -2723,16 +2624,11 @@
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>                    |
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    [Host D] --- [WiFi AP] --- [Mobile]
 </code></pre></div>
-<h4 id="edges-links">Edges (Links)</h4>
+<p>Intermediate nodes whose only job is forwarding: hub, switch, router, Wi-Fi access point.</p>
+<h4 id="edges-and-messages">Edges and Messages</h4>
 <ul>
-<li>Telecommunication methods connecting nodes</li>
-<li>Can be wired (Ethernet cables) or wireless (Wi-Fi)</li>
-<li>Link characteristics affect network performance</li>
-</ul>
-<h4 id="messages">Messages</h4>
-<ul>
-<li>Information transferred between nodes through edges</li>
-<li>Examples: Webpages, files, emails, etc.</li>
+<li><strong>Edge (link)</strong>: wired (Ethernet) or wireless (Wi-Fi). Its characteristics set the performance.</li>
+<li><strong>Message</strong>: what travels over the links: web page, file, email.</li>
 </ul>
 <h3 id="13-network-classifications">1.3 Network Classifications</h3>
 <h4 id="by-geographic-scope">By Geographic Scope</h4>
@@ -2755,16 +2651,35 @@
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    | (Campus) |
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    +----------+
 </code></pre></div>
-<ul>
-<li><strong>LAN</strong> (Local Area Network): Limited geographical area (home, office)</li>
-<li><strong>CAN</strong> (Campus Area Network): Several buildings (school, company campus)</li>
-<li><strong>MAN</strong> (Metropolitan Area Network): City or metropolitan area</li>
-<li><strong>WAN</strong> (Wide Area Network): Broad geographical coverage</li>
-</ul>
-<p><em>Note: Internet is a WAN connecting multiple LANs</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LAN</strong></td>
+<td>home, office</td>
+</tr>
+<tr>
+<td><strong>CAN</strong></td>
+<td>campus, several buildings</td>
+</tr>
+<tr>
+<td><strong>MAN</strong></td>
+<td>city</td>
+</tr>
+<tr>
+<td><strong>WAN</strong></td>
+<td>country to global. The Internet is a WAN of LANs</td>
+</tr>
+</tbody>
+</table>
 <h4 id="by-message-exchange-method">By Message Exchange Method</h4>
 <ol>
-<li><strong>Circuit-Switched Networks</strong></li>
+<li><strong>Circuit switching</strong></li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    Visual: Circuit Switching
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -2776,17 +2691,10 @@
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    Dedicated path A→B→C is reserved for the entire session
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    Path D→E→F cannot use B→C even if available
 </code></pre></div>
-<ul>
-<li>Establishes dedicated connection before data transfer</li>
-<li>Route is reserved for the entire communication session</li>
-<li>Provides stable data transfer rates</li>
-<li>
-<p>Less efficient use of network resources</p>
-</li>
-<li>
-<p><strong>Packet-Switched Networks</strong></p>
-</li>
-</ul>
+<p>A dedicated path is reserved for the whole session. Stable rate, wasted capacity when idle.</p>
+<ol>
+<li><strong>Packet switching</strong></li>
+</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    Visual: Packet Switching
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    [A] ------- [B] ------- [C]
@@ -2798,12 +2706,7 @@
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    Packet 2: A→D→E→F→C
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    Packet 3: A→B→E→C
 </code></pre></div>
-<ul>
-<li>Divides messages into smaller units called packets</li>
-<li>Each packet can take a different path to the destination</li>
-<li>More efficient use of network resources</li>
-<li>Modern internet uses packet switching</li>
-</ul>
+<p>The message is cut into packets; each may take a different path. Efficient use of links. The Internet works this way.</p>
 <h3 id="14-packet-structure">1.4 Packet Structure</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    Visual: Packet Structure
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
@@ -2816,15 +2719,7 @@
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    Info         Data            Checking
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    (Address)
 </code></pre></div>
-<p>Packets are similar to parcels:
-- <strong>Payload</strong>: Actual data being transferred
-- <strong>Header/Trailer</strong>: Control information (addressing, error-checking)</p>
-<h4 id="headers-include">Headers include:</h4>
-<ul>
-<li>Addressing information (IP address, MAC address)</li>
-<li>Identifies sender and receiver</li>
-<li>Routing information</li>
-</ul>
+<p>Like a parcel: <strong>payload</strong> is the content, <strong>header / trailer</strong> is the label (addresses, routing) and the damage check.</p>
 <h3 id="15-transmission-methods">1.5 Transmission Methods</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    Visual: Transmission Methods
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
@@ -2838,12 +2733,32 @@
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>     ↓     
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    [R2]   [R3]
 </code></pre></div>
-<ul>
-<li><strong>Unicast</strong>: One sender to one receiver (most common)</li>
-<li><strong>Broadcast</strong>: One sender to all hosts in a network</li>
-<li><strong>Multicast</strong>: One sender to a specific group of hosts</li>
-<li><strong>Anycast</strong>: One sender to the nearest host in a specific group</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>to whom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unicast</strong></td>
+<td>one receiver (most traffic)</td>
+</tr>
+<tr>
+<td><strong>Broadcast</strong></td>
+<td>every host in the network</td>
+</tr>
+<tr>
+<td><strong>Multicast</strong></td>
+<td>a subscribed group</td>
+</tr>
+<tr>
+<td><strong>Anycast</strong></td>
+<td>the nearest member of a group</td>
+</tr>
+</tbody>
+</table>
 
 
 

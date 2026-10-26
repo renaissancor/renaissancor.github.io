@@ -33,7 +33,7 @@
     
     
       
-        <title>Winsock bind() and Ports - Renaissancoriate</title>
+        <title>Winsock TCP Echo Server, Step by Step - Renaissancoriate</title>
       
     
     
@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#winsock-tcp-echo-server-step-by-step" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -115,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Winsock bind() and Ports
+              Winsock TCP Echo Server, Step by Step
             
           </span>
         </div>
@@ -1164,8 +1169,6 @@
       
         
       
-        
-      
     
     
     
@@ -1325,34 +1328,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../NW1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Loopback, Ports, and Sockets: First Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../NWHeaders/" class="md-nav__link">
         
   
@@ -1388,7 +1363,7 @@
   <span class="md-ellipsis">
     
   
-    TCP/IP Model Layer 1 Network Access (네트워크 엑세스)
+    TCP/IP Model, Layer by Layer
   
 
     
@@ -1471,6 +1446,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Winsock TCP Echo Server, Step by Step
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1479,7 +1474,7 @@
   <span class="md-ellipsis">
     
   
-    Winsock bind() and Ports
+    Winsock TCP Echo Server, Step by Step
   
 
     
@@ -1488,6 +1483,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before the code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-socket-bind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. socket + bind
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-listen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. listen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-accept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. accept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-recv-send-echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. recv / send (echo)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-is-a-byte-stream-not-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP is a byte stream, not messages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nagle-fewer-packets-vs-lower-latency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nagle: fewer packets vs lower latency
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2248,6 +2339,93 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before the code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-socket-bind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. socket + bind
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-listen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. listen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-accept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. accept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-recv-send-echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. recv / send (echo)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-is-a-byte-stream-not-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP is a byte stream, not messages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nagle-fewer-packets-vs-lower-latency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nagle: fewer packets vs lower latency
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2312,89 +2490,88 @@
 
 
 
-  <h1>Winsock bind() and Ports</h1>
-
+<h1 id="winsock-tcp-echo-server-step-by-step">Winsock TCP Echo Server, Step by Step</h1>
+<p>A TCP server in Winsock, in the order the calls happen: <code>socket → bind → listen → accept → recv/send</code>.</p>
+<h2 id="before-the-code">Before the code</h2>
+<ul>
+<li><strong>Server and client are roles.</strong> TCP needs one side listening; P2P has no fixed server, every peer does both.</li>
+<li><strong>Port = process.</strong> A port number is bound to one socket, owned by one process.</li>
+<li><strong>Loopback</strong> <code>127.0.0.1</code> is this host. A connection over loopback never touches a NIC, so it is close to IPC. One host can also have several NICs (Ethernet, USB Wi-Fi), each with its own address.</li>
+</ul>
+<h2 id="1-socket-bind">1. socket + bind</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">SOCKET</span><span class="w"> </span><span class="n">hSocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">::</span><span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span><span class="w"> </span><span class="n">SOCK_STREAM</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">svraddr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">S_un</span><span class="p">.</span><span class="n">S_addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">htonl</span><span class="p">(</span><span class="n">INADDR_ANY</span><span class="p">);</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="n">hSocket</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">SOCKADDR</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">svraddr</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">svraddr</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">SOCKET_ERROR</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">{</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="s">"ERROR: Unable to bind IP Address and Port to the Socket"</span><span class="p">);</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">SOCKADDR_IN</span><span class="w"> </span><span class="n">svraddr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">svraddr</span><span class="p">.</span><span class="n">sin_family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AF_INET</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">svraddr</span><span class="p">.</span><span class="n">sin_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">htons</span><span class="p">(</span><span class="mi">25000</span><span class="p">);</span><span class="w">                  </span><span class="c1">// port, host → network byte order</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">svraddr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">S_un</span><span class="p">.</span><span class="n">S_addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">htonl</span><span class="p">(</span><span class="n">INADDR_ANY</span><span class="p">);</span><span class="w"> </span><span class="c1">// accept on every local IP</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="n">hSocket</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">SOCKADDR</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">svraddr</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">svraddr</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">SOCKET_ERROR</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="s">"ERROR: Unable to bind IP Address and Port to the Socket"</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
 </code></pre></div>
-<p><code>INADDR_ANY</code> means any IP address is available </p>
-<p>Server is IP
-Port Number is </p>
-<p>Even IP is okay, if other process preoccupied TCP port, then 
-process will not be able to use that port. </p>
-<p>ipconfig + netstat</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">svraddr</span><span class="p">.</span><span class="n">sin_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">htons</span><span class="p">(</span><span class="mi">25000</span><span class="p">);</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">svraddr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">S_un</span><span class="p">.</span><span class="n">S_addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">htonl</span><span class="p">(</span><span class="n">INADDR_ANY</span><span class="p">);</span>
+<ul>
+<li><code>INADDR_ANY</code>: listen on all of this host's addresses.</li>
+<li><code>htons</code> / <code>htonl</code>: host byte order (little endian on x86) → network byte order (big endian), for 16- and 32-bit values.</li>
+<li><code>bind</code> fails if another process already holds the port. Check with <code>netstat -ano | find "25000"</code>.</li>
+</ul>
+<h2 id="2-listen">2. listen</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">::</span><span class="n">listen</span><span class="p">(</span><span class="n">hSocket</span><span class="p">,</span><span class="w"> </span><span class="n">SOMAXCONN</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">SOCKET_ERROR</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* error */</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<p>Little Endian to Big Endian functions</p>
-<p>u_short htons([in] u_short hostshort); 
-u_long htol([in] u_long hostlong); </p>
-<p>if ::listen(hSocket, SOMAXCONN) == SOCKET_ERROR </p>
-<p>int WSAAPI listen([in] SOCKET s, [in] int backlog); 
-<code>backlog</code> parameter:  when several client get in, 
-without backlog queue 
-it was not able to connect server A when server B connect during 
-making response in the past, but those problems are now 
-handled by OS so no need to use now.   </p>
-<p>Anyway server socket is prepared by <code>bind</code> <code>listen</code> </p>
-<p>SOCKADDR_IN clientaddr = {0,}; 
-int nAddrLen = sizeof(clientaddr); 
-SOCKET hClient = 0; 
-char szBuffer[128] = {0,}; </p>
-<p>There is server socket, and 
-telecommunication socket to connect with server too. 
-In server perspective client is always remote </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">while</span><span class="p">((</span><span class="n">hClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">::</span><span class="n">accept</span><span class="p">(</span><span class="n">hSocket</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">SOCKADDR</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">clientaddr</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nAddrLen</span><span class="p">))</span><span class="o">!=</span><span class="w"> </span><span class="n">INVALID_SOCKET</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="s">"New Client Connected"</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+<p><code>backlog</code> is the queue of connections that finished the handshake but have not been <code>accept</code>ed yet. It still matters: when it overflows, the kernel silently drops new SYNs and clients retry after 1 s, then 3 s. See <a href="../nw-tcp-loss-signals-and-round-trips/">TCP Loss Signals and Round Trips</a>. <code>SOMAXCONN</code> asks for the system maximum.</p>
+<h2 id="3-accept">3. accept</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">SOCKADDR_IN</span><span class="w"> </span><span class="n">clientaddr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">nAddrLen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">clientaddr</span><span class="p">);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">SOCKET</span><span class="w"> </span><span class="n">hClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">hClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">::</span><span class="n">accept</span><span class="p">(</span><span class="n">hSocket</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">SOCKADDR</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">clientaddr</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nAddrLen</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">INVALID_SOCKET</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="s">"New Client Connected"</span><span class="p">);</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="c1">// ... step 4 with hClient</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
 </code></pre></div>
-<p>IP Address + Port 
-Accept function 
-Remote save </p>
-<p>After accept, send and receive</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">nReceive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">::</span><span class="n">recv</span><span class="p">(</span><span class="n">hClient</span><span class="p">,</span><span class="w"> </span><span class="n">szBuffer</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">szBuffer</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// Connect by Client Communication Socket </span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">{</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="o">::</span><span class="n">send</span><span class="p">(</span><span class="n">hClient</span><span class="p">,</span><span class="w"> </span><span class="n">szBuffer</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">szBuffer</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Send to Client </span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="n">szBuffer</span><span class="p">);</span><span class="w"> </span><span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span><span class="w"> </span><span class="c1">// Print Buffer </span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">szBuffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">szBuffer</span><span class="p">));</span><span class="w"> </span><span class="c1">// Reset Buffer </span>
+<p>Two kinds of socket:</p>
+<table>
+<thead>
+<tr>
+<th>socket</th>
+<th>role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hSocket</code></td>
+<td>listening socket: only accepts</td>
+</tr>
+<tr>
+<td><code>hClient</code></td>
+<td>one per client: carries the data. <code>accept</code> also fills in the client's IP and port</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-recv-send-echo">4. recv / send (echo)</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">szBuffer</span><span class="p">[</span><span class="mi">128</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">nReceive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">nReceive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">::</span><span class="n">recv</span><span class="p">(</span><span class="n">hClient</span><span class="p">,</span><span class="w"> </span><span class="n">szBuffer</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">szBuffer</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="o">::</span><span class="n">send</span><span class="p">(</span><span class="n">hClient</span><span class="p">,</span><span class="w"> </span><span class="n">szBuffer</span><span class="p">,</span><span class="w"> </span><span class="n">nReceive</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// echo back exactly what arrived</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">szBuffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">szBuffer</span><span class="p">));</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
 </code></pre></div>
-<p>hSocket is server socket 
-hClient is client socket </p>
-<p>BPS Bit Per Second 
-Better to send fewer packet with bigger payload 
-PPS Packet Per Second 
-than send more packet with smaller payload </p>
-<p>Nagle Algorithm 
-Reduce PPS, send as much </p>
-<p>Signal Switching means inefficiency. 
-Buffered IO </p>
-<p>Timer Buffer full by Read / Write </p>
-<p>Socket is File, input output buffer. 
-::getsockopt(hSocket, SOL_SOCKET, SO_SNDBUF, (char*)&amp;nBufSize, &amp;nLen) </p>
-<p>Check Sending  Buffer Size of Socket </p>
-<p>::getsockopt(hSocket, SOL_SOCKET, SO_RCVBUF, (char*)&amp;nBufSize, &amp;nLen) </p>
-<p>Check Receiving Buffer Size of Socket </p>
-<p>send(); 
-recv(); </p>
-<p>Are these functions 1 : 1 Match? NO. 
-Buffered IO </p>
-<p>send(1); send(1); send(1); 
-recv(128); 
-Receive might read by once, for several sends. </p>
-<p>Loopback Interface is nearly IPC. </p>
-<p>::setsockopt(hSocket, IPPROTO_TCP, TCP_NODELAY,
-    (char*)&amp;nOpt, sizeof(nOpt));</p>
-<p>This one will make NO_DELAY. Recommended for Game Client, 
-but not recommende for game server. </p>
+<p>Send <code>nReceive</code> bytes, not <code>sizeof(szBuffer)</code>: the buffer is 128 bytes but a <code>recv</code> may return fewer.</p>
+<h2 id="tcp-is-a-byte-stream-not-messages">TCP is a byte stream, not messages</h2>
+<p><code>send</code> and <code>recv</code> do <strong>not</strong> match 1:1. Three <code>send(1 byte)</code> calls can arrive as one <code>recv</code> of 3 bytes. The socket has kernel send and receive buffers:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">::</span><span class="n">getsockopt</span><span class="p">(</span><span class="n">hSocket</span><span class="p">,</span><span class="w"> </span><span class="n">SOL_SOCKET</span><span class="p">,</span><span class="w"> </span><span class="n">SO_SNDBUF</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">nBufSize</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nLen</span><span class="p">);</span><span class="w">  </span><span class="c1">// send buffer size</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="o">::</span><span class="n">getsockopt</span><span class="p">(</span><span class="n">hSocket</span><span class="p">,</span><span class="w"> </span><span class="n">SOL_SOCKET</span><span class="p">,</span><span class="w"> </span><span class="n">SO_RCVBUF</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">nBufSize</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nLen</span><span class="p">);</span><span class="w">  </span><span class="c1">// receive buffer size</span>
+</code></pre></div>
+<p>The application has to frame its own messages (length prefix, delimiter).</p>
+<h2 id="nagle-fewer-packets-vs-lower-latency">Nagle: fewer packets vs lower latency</h2>
+<p>Per-packet cost is fixed, so <strong>fewer, larger packets</strong> (low PPS, same BPS) are cheaper than many tiny ones. <strong>Nagle's algorithm</strong> holds back small writes while earlier data is unacknowledged, to merge them.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">nOpt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">::</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">hSocket</span><span class="p">,</span><span class="w"> </span><span class="n">IPPROTO_TCP</span><span class="p">,</span><span class="w"> </span><span class="n">TCP_NODELAY</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">nOpt</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">nOpt</span><span class="p">));</span><span class="w">  </span><span class="c1">// Nagle off</span>
+</code></pre></div>
+<p><code>TCP_NODELAY</code> sends each write immediately. A game client sending small inputs wants that. A server pushing many small updates may prefer to batch writes itself rather than rely on either Nagle or per-write sends.</p>
 
 
 

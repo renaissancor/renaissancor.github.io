@@ -92,13 +92,6 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW0724/"/>
     </url>
     <url>
-        <loc>https://renaissancor.github.io/Computer_Network/NW1/</loc>
-        <lastmod>2026-10-26</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW1/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW1/"/>
-    </url>
-    <url>
         <loc>https://renaissancor.github.io/Computer_Network/NWHeaders/</loc>
         <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
@@ -398,13 +391,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW0724/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW0724/"/>
-    </url>
-    <url>
-        <loc>https://renaissancor.github.io/ko/Computer_Network/NW1/</loc>
-        <lastmod>2026-10-26</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW1/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW1/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Computer_Network/NWHeaders/</loc>

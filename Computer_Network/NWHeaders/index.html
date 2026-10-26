@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://renaissancor.github.io/Computer_Network/NWHeaders/">
       
       
-        <link rel="prev" href="../NW1/">
+        <link rel="prev" href="../NW0724/">
       
       
         <link rel="next" href="../NWL2/">
@@ -1169,8 +1169,6 @@
       
         
       
-        
-      
     
     
     
@@ -1327,34 +1325,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../NW1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Loopback, Ports, and Sockets: First Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1473,7 +1443,7 @@
   <span class="md-ellipsis">
     
   
-    TCP/IP Model Layer 1 Network Access (네트워크 엑세스)
+    TCP/IP Model, Layer by Layer
   
 
     
@@ -1557,7 +1527,7 @@
   <span class="md-ellipsis">
     
   
-    Winsock bind() and Ports
+    Winsock TCP Echo Server, Step by Step
   
 
     
@@ -2433,8 +2403,9 @@
 
 
 <h1 id="tcp-ip-headers">TCP / IP Headers</h1>
+<p>Every field of the IPv4, TCP, and UDP headers on a 32-bit ruler. One row is 4 bytes.</p>
 <h3 id="ip-version-4-header">IP Version 4 Header</h3>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>+-------+-------+---------------+-------------------------------+
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">|</span><span class="w">       </span><span class="p">|</span>Header<span class="w"> </span><span class="p">|</span><span class="w">   </span>Type<span class="w"> </span>of<span class="w">     </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">|</span>Version<span class="p">|</span>Length<span class="w"> </span><span class="p">|</span><span class="w">   </span>Service<span class="w">     </span><span class="p">|</span><span class="w">         </span>Total<span class="w"> </span>Length<span class="w">          </span><span class="p">|</span>
@@ -2450,8 +2421,78 @@
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">|</span><span class="w">                      </span>Options<span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="w"> </span>~<span class="w"> </span><span class="m">40</span><span class="w"> </span>Bytes<span class="o">)</span><span class="w">                   </span><span class="p">|</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>+---------------------------------------------------------------+
 </code></pre></div>
-- <code>Version</code> IP Version 4 or IP Version 6 
-- <code>Time To Live</code> TTL to avoid packet voyage forever in the internet. </p>
+<p>20 bytes without options (5 rows), up to 60 with them.</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th style="text-align: right;">bits</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Version</code></td>
+<td style="text-align: right;">4</td>
+<td>4 for IPv4. IPv6 has a different header</td>
+</tr>
+<tr>
+<td><code>Header Length</code></td>
+<td style="text-align: right;">4</td>
+<td>header size in 32-bit words: 5 → 20 B, max 15 → 60 B</td>
+</tr>
+<tr>
+<td><code>Type of Service</code></td>
+<td style="text-align: right;">8</td>
+<td>priority class (DSCP) + congestion mark (ECN)</td>
+</tr>
+<tr>
+<td><code>Total Length</code></td>
+<td style="text-align: right;">16</td>
+<td>header + payload in bytes, max 65,535</td>
+</tr>
+<tr>
+<td><code>Identification</code></td>
+<td style="text-align: right;">16</td>
+<td>ties the fragments of one datagram together</td>
+</tr>
+<tr>
+<td><code>Flags</code></td>
+<td style="text-align: right;">3</td>
+<td>reserved, DF (don't fragment), MF (more fragments follow)</td>
+</tr>
+<tr>
+<td><code>Fragment Offset</code></td>
+<td style="text-align: right;">13</td>
+<td>where this fragment sits, in 8-byte units</td>
+</tr>
+<tr>
+<td><code>Time To Live</code></td>
+<td style="text-align: right;">8</td>
+<td>minus 1 per router hop; at 0 the packet is dropped, so it cannot loop forever</td>
+</tr>
+<tr>
+<td><code>Protocol</code></td>
+<td style="text-align: right;">8</td>
+<td>what the payload is: 6 TCP, 17 UDP, 1 ICMP</td>
+</tr>
+<tr>
+<td><code>Header Checksum</code></td>
+<td style="text-align: right;">16</td>
+<td>header only; recomputed at every hop because TTL changes</td>
+</tr>
+<tr>
+<td><code>Source / Destination IP</code></td>
+<td style="text-align: right;">32 each</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Options</code></td>
+<td style="text-align: right;">0–320</td>
+<td>rarely used</td>
+</tr>
+</tbody>
+</table>
 <h3 id="tcp-header">TCP Header</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>+-------------------------------+-------------------------------+
@@ -2470,15 +2511,97 @@
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">|</span><span class="w">                      </span>Options<span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="w"> </span>~<span class="w"> </span><span class="m">40</span><span class="w"> </span>Bytes<span class="o">)</span><span class="w">                   </span><span class="p">|</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>+---------------------------------------------------------------+
 </code></pre></div>
+<p>20 bytes without options, up to 60 with them.</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th style="text-align: right;">bits</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Source / Destination Port</code></td>
+<td style="text-align: right;">16 each</td>
+<td>which process on each host</td>
+</tr>
+<tr>
+<td><code>Sequence Number</code></td>
+<td style="text-align: right;">32</td>
+<td>byte position of this segment's first data byte in <strong>my</strong> stream</td>
+</tr>
+<tr>
+<td><code>Acknowledgement Number</code></td>
+<td style="text-align: right;">32</td>
+<td>next byte I expect from <strong>the other side</strong></td>
+</tr>
+<tr>
+<td><code>Header Length</code></td>
+<td style="text-align: right;">4</td>
+<td>in 32-bit words, same as IP</td>
+</tr>
+<tr>
+<td><code>Reserved</code></td>
+<td style="text-align: right;">6</td>
+<td>always 0</td>
+</tr>
+<tr>
+<td><code>URG</code></td>
+<td style="text-align: right;">1</td>
+<td><code>Urgent Pointer</code> is valid</td>
+</tr>
+<tr>
+<td><code>ACK</code></td>
+<td style="text-align: right;">1</td>
+<td><code>Acknowledgement Number</code> is valid; set on every segment after the first SYN</td>
+</tr>
+<tr>
+<td><code>PSH</code></td>
+<td style="text-align: right;">1</td>
+<td>hand the data to the application now</td>
+</tr>
+<tr>
+<td><code>RST</code></td>
+<td style="text-align: right;">1</td>
+<td>abort the connection</td>
+</tr>
+<tr>
+<td><code>SYN</code></td>
+<td style="text-align: right;">1</td>
+<td>open: synchronize sequence numbers</td>
+</tr>
+<tr>
+<td><code>FIN</code></td>
+<td style="text-align: right;">1</td>
+<td>I have nothing more to send</td>
+</tr>
+<tr>
+<td><code>Window Size</code></td>
+<td style="text-align: right;">16</td>
+<td>free space left in <strong>my</strong> receive buffer (rwnd): flow control</td>
+</tr>
+<tr>
+<td><code>Check Sum</code></td>
+<td style="text-align: right;">16</td>
+<td>header + data + a pseudo-header of the IP addresses</td>
+</tr>
+<tr>
+<td><code>Urgent Pointer</code></td>
+<td style="text-align: right;">16</td>
+<td>end of urgent data; rarely used</td>
+</tr>
+<tr>
+<td><code>Options</code></td>
+<td style="text-align: right;">0–320</td>
+<td>MSS, window scale, SACK, timestamps</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><code>Sequence Number</code> This to Other bytestream number </li>
-<li><code>Acknowledge Number</code> Other to This bytestream number </li>
-<li><code>Windows Size</code> (RWND) Other's Kernel level Recv Buffer left space  </li>
-<li><code>Check Sum</code> Whether data is damaged or not.  </li>
+<li>Sequence and acknowledgement numbers count <strong>bytes, per direction</strong>, not packets.</li>
+<li>The window is what the receiver can absorb; cwnd (sender side, not in the header) is what the network can.</li>
 </ul>
-<p>Header Length 
-Reserved Bits 
-Control Bits </p>
 <h3 id="udp-header">UDP Header</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>+-------------------------------+-------------------------------+
@@ -2487,6 +2610,30 @@ Control Bits </p>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">|</span><span class="w">          </span>UDP<span class="w">  </span>Length<span class="w">          </span><span class="p">|</span><span class="w">      </span>UDP<span class="w">  </span>Check<span class="w"> </span>Sum<span class="w">           </span><span class="p">|</span><span class="w"> </span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>+-------------------------------+-------------------------------+
 </code></pre></div>
+<p>8 bytes in total: ports, <code>UDP Length</code> (header + data), <code>UDP Check Sum</code>.
+No sequence number, no acknowledgement, no window. That is why the header is small, and why ordering and retransmission are left to the application.</p>
+<table>
+<thead>
+<tr>
+<th>header</th>
+<th style="text-align: right;">size without options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IPv4</td>
+<td style="text-align: right;">20 B</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td style="text-align: right;">20 B</td>
+</tr>
+<tr>
+<td>UDP</td>
+<td style="text-align: right;">8 B</td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -1169,8 +1169,6 @@
       
         
       
-        
-      
     
     
     
@@ -1330,34 +1328,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../NW1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Loopback, Ports, and Sockets: First Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../NWHeaders/" class="md-nav__link">
         
   
@@ -1393,7 +1363,7 @@
   <span class="md-ellipsis">
     
   
-    TCP/IP Model Layer 1 Network Access (네트워크 엑세스)
+    TCP/IP Model, Layer by Layer
   
 
     
@@ -1477,7 +1447,7 @@
   <span class="md-ellipsis">
     
   
-    Winsock bind() and Ports
+    Winsock TCP Echo Server, Step by Step
   
 
     
@@ -1586,10 +1556,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#statistics-of-wireshark" class="md-nav__link">
+  <a href="#install-windows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Statistics of Wireshark
+        Install (Windows)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#follow-one-tcp-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow one TCP session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extract files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistics
       
     </span>
   </a>
@@ -2313,10 +2327,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#statistics-of-wireshark" class="md-nav__link">
+  <a href="#install-windows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Statistics of Wireshark
+        Install (Windows)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#follow-one-tcp-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow one TCP session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extract files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistics
       
     </span>
   </a>
@@ -2389,56 +2447,79 @@
 
 
 <h1 id="wireshark-install-setup">Wireshark Install Setup</h1>
-<p>Chappell University 
-https://www.chappell-university.com/ </p>
-<p>Download and Install Wireshark in Windows OS </p>
-<p>Checkbox </p>
+<p>Notes from Chappell University (<a href="https://www.chappell-university.com/">https://www.chappell-university.com/</a>).</p>
+<h3 id="install-windows">Install (Windows)</h3>
+<table>
+<thead>
+<tr>
+<th>component</th>
+<th>install?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wireshark</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Npcap</td>
+<td>yes: the real-time capture driver</td>
+</tr>
+<tr>
+<td>TShark</td>
+<td>yes: command-line Wireshark</td>
+</tr>
+<tr>
+<td>Extcap: Etwdump (Windows event tracing), UDPdump</td>
+<td>optional</td>
+</tr>
+<tr>
+<td>Extcap: Randpktdump</td>
+<td>no, random packets for fun</td>
+</tr>
+<tr>
+<td>USBPcap</td>
+<td>no: can slow the OS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="capture">Capture</h3>
 <ul>
-<li>Wireshark </li>
-<li>Npcap (Real Time Packet Capture Driver)</li>
-<li>Tshark (CLI version of Wireshark)</li>
-<li>Extcap (This and subordinate menu are optional) <ul>
-<li>Etwdump (Windows Event Tracing)</li>
-<li>Randpktdump (For fun, not necessary)</li>
-<li>UDPdump (UDP protocol) </li>
+<li>Capture on Wi-Fi for a desktop on wireless, Ethernet for a wired laptop: whichever carries the traffic.</li>
+<li>Keep capture files around <strong>200 MB</strong>; above <strong>500 MB</strong> analysis gets painful. Thousands of packets is small, millions is slow.</li>
 </ul>
-</li>
-</ul>
-<p>Npcap install setup will be later 
-USBcap might decrease performance of OS so not recommended </p>
-<p>UI setup 
-Open Wifi for PC / Ethernet for Laptop for analysis </p>
-<p>Packet size limit 
-General recommendation is do NOT try to open size above 500MB. 
-Around 200MB size of packet analysis is recommended. </p>
-<p>Session TCP / HTTP Session 
-Session == 연결 Connection </p>
-<p>However in Wireshark it is called as Stream 
-1st discovered TCP session index is 0, not 1. </p>
-<p>Mouse Right Click &gt; Colorize Conversation &gt; TCP Session 
-Then only can get that TCP color </p>
-<p>Mouse Right Click &gt; Follow &gt; TCP Stream 
-Then assemble packet to make data stream combined </p>
-<p>컬러링 적용 취소 / Ctrl Space 등등 
-Reset Colorization </p>
-<p>Display Filter TCP.steam  eq0 </p>
-<p>Ctrl 1 Ctrl 2 Ctrl 3 시 Color 설정 가능 </p>
-<p>Segment 번호로 Sequence Number 설정 </p>
-<p>따라가기 Follow &gt; TCP Stream 
-HTTP 이면 조립된 내용이 아주 잘 보임 </p>
-<p>파일 축출 
-File / Export Objects / HTTP 
-All files exported 
-Filename search and preview 
-Then packet is assembled and displaved. Even saving is possible </p>
-<p>TCP UDP HTTP FOLLOW </p>
-<h3 id="statistics-of-wireshark">Statistics of Wireshark</h3>
-<p>Packets Number and Displayed 
-If it gets thousands it is not big, but if over millions, 
-very slow and hard to analyze </p>
-<p>통계 / 종단점 
-Statistics / Endpoints </p>
-<p>Endpoints are using subjects of networks </p>
+<h3 id="follow-one-tcp-session">Follow one TCP session</h3>
+<p>Wireshark calls a TCP session a <strong>stream</strong>, numbered from <strong>0</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>goal</th>
+<th>how</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>show one session</td>
+<td>display filter <code>tcp.stream eq 0</code></td>
+</tr>
+<tr>
+<td>reassemble its bytes</td>
+<td>right-click → Follow → TCP Stream (HTTP is fully readable)</td>
+</tr>
+<tr>
+<td>color one session</td>
+<td>right-click → Colorize Conversation → TCP; <code>Ctrl+1</code> … <code>Ctrl+0</code> assign colors</td>
+</tr>
+<tr>
+<td>undo coloring</td>
+<td>View → Reset Colorization (<code>Ctrl+Space</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extract-files">Extract files</h3>
+<p>File → Export Objects → HTTP: lists every file carried over HTTP, with preview and save.</p>
+<h3 id="statistics">Statistics</h3>
+<p>Statistics → Endpoints: every address that talked, with packet and byte counts.</p>
 
 
 

@@ -1169,8 +1169,6 @@
       
         
       
-        
-      
     
     
     
@@ -1396,10 +1394,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encapsulation-sending-process" class="md-nav__link">
+  <a href="#encapsulation-sending" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Encapsulation (Sending Process)
+        Encapsulation (Sending)
       
     </span>
   </a>
@@ -1407,10 +1405,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#decapsulation-receiving-process" class="md-nav__link">
+  <a href="#decapsulation-receiving" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Decapsulation (Receiving Process)
+        Decapsulation (Receiving)
       
     </span>
   </a>
@@ -1488,34 +1486,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../NW1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Loopback, Ports, and Sockets: First Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../NWHeaders/" class="md-nav__link">
         
   
@@ -1551,7 +1521,7 @@
   <span class="md-ellipsis">
     
   
-    TCP/IP Model Layer 1 Network Access (네트워크 엑세스)
+    TCP/IP Model, Layer by Layer
   
 
     
@@ -1635,7 +1605,7 @@
   <span class="md-ellipsis">
     
   
-    Winsock bind() and Ports
+    Winsock TCP Echo Server, Step by Step
   
 
     
@@ -2475,10 +2445,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encapsulation-sending-process" class="md-nav__link">
+  <a href="#encapsulation-sending" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Encapsulation (Sending Process)
+        Encapsulation (Sending)
       
     </span>
   </a>
@@ -2486,10 +2456,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#decapsulation-receiving-process" class="md-nav__link">
+  <a href="#decapsulation-receiving" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Decapsulation (Receiving Process)
+        Decapsulation (Receiving)
       
     </span>
   </a>
@@ -2605,16 +2575,33 @@
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        -----------------------------
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                    Network
 </code></pre></div>
-<p>Protocols are rules and methods for exchanging information:
-- Define how data is formatted, transmitted, and received
-- Similar to language used between parcel senders and receivers
-- Modern networks use multiple protocols simultaneously
-- Each protocol has specific purposes and characteristics</p>
-<p>Examples:
-- <strong>IP</strong>: Routes packets to destinations
-- <strong>ARP</strong>: Maps IP addresses to MAC addresses
-- <strong>HTTP/HTTPS</strong>: Web communications (HTTPS is more secure)
-- <strong>TCP/UDP</strong>: Transport layer protocols (TCP is more reliable, UDP is faster)</p>
+<p>A protocol is the agreed format and procedure for exchanging data. Many run at once, each with one job:</p>
+<table>
+<thead>
+<tr>
+<th>protocol</th>
+<th>job</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IP</strong></td>
+<td>route packets to the destination host</td>
+</tr>
+<tr>
+<td><strong>ARP</strong></td>
+<td>find the MAC address for an IP address</td>
+</tr>
+<tr>
+<td><strong>TCP / UDP</strong></td>
+<td>deliver to a process: reliable vs fast</td>
+</tr>
+<tr>
+<td><strong>HTTP / HTTPS</strong></td>
+<td>web requests; HTTPS adds encryption</td>
+</tr>
+</tbody>
+</table>
 <h3 id="22-network-reference-models">2.2 Network Reference Models</h3>
 <h4 id="osi-model-7-layers">OSI Model (7 Layers)</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    Visual: OSI Model Layers
@@ -2635,15 +2622,6 @@
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    | 1. Physical Layer       | &lt;- Bit transmission, physical connections
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    +-------------------------+
 </code></pre></div>
-<ol>
-<li><strong>Physical Layer</strong>: Transmits raw bit streams (0s and 1s)</li>
-<li><strong>Data Link Layer</strong>: Node-to-node data transfer, error detection, MAC addressing</li>
-<li><strong>Network Layer</strong>: Routing between networks, IP addressing</li>
-<li><strong>Transport Layer</strong>: End-to-end communication, reliability, ports</li>
-<li><strong>Session Layer</strong>: Manages connection sessions between applications</li>
-<li><strong>Presentation Layer</strong>: Data formatting, encryption, compression</li>
-<li><strong>Application Layer</strong>: User-facing network services</li>
-</ol>
 <h4 id="tcpip-model-4-layers">TCP/IP Model (4 Layers)</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    Visual: TCP/IP Model vs OSI Model
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    +-------------------------+    +-------------------------+
@@ -2663,15 +2641,9 @@
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    +-------------------------+    +-------------------------+
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>          TCP/IP Model                   OSI Model
 </code></pre></div>
-<ol>
-<li><strong>Network Access Layer</strong>: Similar to OSI's Data Link Layer</li>
-<li><strong>Internet Layer</strong>: Similar to OSI's Network Layer</li>
-<li><strong>Transport Layer</strong>: Similar to OSI's Transport Layer</li>
-<li><strong>Application Layer</strong>: Combines OSI's Session, Presentation, and Application Layers</li>
-</ol>
-<p><em>Note: The Extended TCP/IP Model divides the Network Access Layer into Physical and Data Link Layers</em></p>
+<p>TCP/IP merges OSI 5–7 into Application and 1–2 into Network Access. The extended TCP/IP model splits Network Access back into Physical and Data Link.</p>
 <h3 id="23-encapsulation-and-decapsulation">2.3 Encapsulation and Decapsulation</h3>
-<h4 id="encapsulation-sending-process">Encapsulation (Sending Process)</h4>
+<h4 id="encapsulation-sending">Encapsulation (Sending)</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Application Layer                     +--------+
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>                                      |  Data  |
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                                      +--------+
@@ -2685,18 +2657,13 @@
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                              +----------------+
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                                        ↓
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Data Link Layer           +-----------------------------+
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>                          |MAC|IP |Hdr|  Data  |   FCS    |
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>                          |MAC|IP |Hdr|  Data  |  FCS   |
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                          +-----------------------------+
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                                        ↓
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Physical Layer            0101010101010101010101010101010101
 </code></pre></div>
-<ul>
-<li>Data moves from highest layer to lowest layer</li>
-<li>Each layer adds its header (and sometimes trailer) to the data</li>
-<li>Upper layer's PDU becomes the payload for the current layer</li>
-<li>Similar to nesting boxes within boxes</li>
-</ul>
-<h4 id="decapsulation-receiving-process">Decapsulation (Receiving Process)</h4>
+<p>Going down, each layer wraps the PDU from above as its payload and adds its own header (Data Link also adds the FCS trailer). Boxes inside boxes.</p>
+<h4 id="decapsulation-receiving">Decapsulation (Receiving)</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Application Layer                     +--------+
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>                                      |  Data  |
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>                                      +--------+
@@ -2710,16 +2677,12 @@
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>                              +----------------+
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>                                        ↑
 <a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>Data Link Layer           +-----------------------------+
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>                          |MAC|IP |Hdr|  Data  |   FCS    |
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>                          |MAC|IP |Hdr|  Data  |  FCS   |
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>                          +-----------------------------+
 <a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>                                        ↑
 <a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>Physical Layer            0101010101010101010101010101010101
 </code></pre></div>
-<ul>
-<li>Data moves from lowest layer to highest layer</li>
-<li>Each layer removes its header/trailer and passes the payload up</li>
-<li>Process continues until the original data reaches the application</li>
-</ul>
+<p>Going up, each layer strips its header and hands the payload to the layer above, until the original data reaches the application.</p>
 <h3 id="24-protocol-data-units-pdus">2.4 Protocol Data Units (PDUs)</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    Visual: Protocol Data Units
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
@@ -2737,20 +2700,10 @@
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    Physical     -----&gt; Bit
 </code></pre></div>
-<p>Each layer handles data in specific units:
-- <strong>Application/Presentation/Session</strong>: Data
-- <strong>Transport</strong>: Segments (TCP) or Datagrams (UDP)
-- <strong>Network</strong>: Packets
-- <strong>Data Link</strong>: Frames
-- <strong>Physical</strong>: Bits</p>
 <h3 id="25-practical-considerations">2.5 Practical Considerations</h3>
 <ul>
-<li>Network reference models are theoretical frameworks</li>
-<li>Real protocols and devices don't always fit perfectly into specific layers</li>
-<li>For example, ARP is sometimes called a "2.5 layer protocol"</li>
-<li>Routers primarily operate at the Network layer but interact with other layers</li>
-<li>For software engineers, understanding protocols and devices is more important than memorizing models</li>
-<li>OSI and TCP/IP models are valuable for exams and interviews but may be less practical in industry</li>
+<li>The models are maps, not rules. Real protocols straddle layers: ARP is called "layer 2.5", routers touch more than layer 3.</li>
+<li>For engineering, knowing what each protocol and device does beats memorizing the layer numbers. The numbers matter mostly in exams and interviews.</li>
 </ul>
 
 

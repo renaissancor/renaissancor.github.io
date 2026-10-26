@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#network-vocabulary" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1164,8 +1169,6 @@
       
         
       
-        
-      
     
     
     
@@ -1325,34 +1328,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../NW1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Loopback, Ports, and Sockets: First Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../NWHeaders/" class="md-nav__link">
         
   
@@ -1388,7 +1363,7 @@
   <span class="md-ellipsis">
     
   
-    TCP/IP Model Layer 1 Network Access (네트워크 엑세스)
+    TCP/IP Model, Layer by Layer
   
 
     
@@ -1443,6 +1418,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Vocabulary
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1460,6 +1455,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-and-core-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addressing and core protocols
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-a-security-device-sits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where a security device sits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direction
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1480,7 +1538,7 @@
   <span class="md-ellipsis">
     
   
-    Winsock bind() and Ports
+    Winsock TCP Echo Server, Step by Step
   
 
     
@@ -2248,6 +2306,60 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-and-core-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addressing and core protocols
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-a-security-device-sits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where a security device sits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direction
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2312,42 +2424,183 @@
 
 
 
-  <h1>Network Vocabulary</h1>
-
-<p>NIC Network Interface Card </p>
-<p>IP Internet Protocol </p>
-<p>TCP Transmision Control Protocol 
-UDP User Datagram Protocol </p>
-<p>ISP Internet Service Provider 
-NAT Network Address Translator </p>
-<p>NAC Network Access Control </p>
-<p>ISAKMP Internet Security Association Key Management Protocol 
-IP AH (Authentication Header)
-IP ESP (Encapsulation Security Payload) </p>
-<p>ICMP Internet Control Message Protocol 
-PING Packet Internet Grouper </p>
-<p>IPS Intrusion Prevention System : Inline 
-NIDS Network Intrusion Detection System : Out of Path<br />
-SSL Secure Sockets Layer<br />
-TLS Transport Layer Security 
-HTTPS HyperText Transfer Protocol Secure 
-SSH Secure Shell 
-WAF Web Application Firewall 
-UTM Unified Threat Management System </p>
-<p>ARP Address Resoultion Protocol 
-ACL Access Control List </p>
-<p>SSL VPN Only for certain Application </p>
-<p>PC방화벽 
-Inline<br />
-Out of Path 
-Proxy </p>
-<p>PN Private Network 
-VPN Virtual Private Network  </p>
-<p>Inbound 패킷이 들어올 때 
-Outbound 패킷 내보낼 때 
-Ethernet L2 MAC Address `Protocol  </p>
-<p>패킷이 Outbound 될 때 패킷에 뭐가 하나 추가가 될 때는 아웃바운드 
-SYN ACK 응답 </p>
+<h1 id="network-vocabulary">Network Vocabulary</h1>
+<h3 id="addressing-and-core-protocols">Addressing and core protocols</h3>
+<table>
+<thead>
+<tr>
+<th>term</th>
+<th>stands for</th>
+<th>one line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NIC</td>
+<td>Network Interface Card / Controller</td>
+<td>the hardware between host and medium</td>
+</tr>
+<tr>
+<td>MAC</td>
+<td>Media Access Control</td>
+<td>48-bit hardware address inside a LAN</td>
+</tr>
+<tr>
+<td>IP</td>
+<td>Internet Protocol</td>
+<td>addresses and routes packets between networks</td>
+</tr>
+<tr>
+<td>ARP</td>
+<td>Address Resolution Protocol</td>
+<td>IP → MAC inside a LAN</td>
+</tr>
+<tr>
+<td>ICMP</td>
+<td>Internet Control Message Protocol</td>
+<td>control and error messages; <code>ping</code> uses it</td>
+</tr>
+<tr>
+<td>PING</td>
+<td>Packet INternet Groper</td>
+<td>echo request/reply, measures RTT</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>Transmission Control Protocol</td>
+<td>reliable, ordered byte stream</td>
+</tr>
+<tr>
+<td>UDP</td>
+<td>User Datagram Protocol</td>
+<td>unreliable datagrams, minimal header</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td>Internet Service Provider</td>
+<td>who connects you to the Internet</td>
+</tr>
+<tr>
+<td>NAT</td>
+<td>Network Address Translation</td>
+<td>many private IPs share one public IP</td>
+</tr>
+</tbody>
+</table>
+<h3 id="security">Security</h3>
+<table>
+<thead>
+<tr>
+<th>term</th>
+<th>stands for</th>
+<th>one line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSL / TLS</td>
+<td>Secure Sockets Layer / Transport Layer Security</td>
+<td>encryption over TCP; TLS is the successor</td>
+</tr>
+<tr>
+<td>HTTPS</td>
+<td>HyperText Transfer Protocol Secure</td>
+<td>HTTP over TLS</td>
+</tr>
+<tr>
+<td>SSH</td>
+<td>Secure Shell</td>
+<td>encrypted remote shell</td>
+</tr>
+<tr>
+<td>IPsec AH</td>
+<td>Authentication Header</td>
+<td>integrity + authentication of IP packets</td>
+</tr>
+<tr>
+<td>IPsec ESP</td>
+<td>Encapsulating Security Payload</td>
+<td>adds encryption</td>
+</tr>
+<tr>
+<td>ISAKMP</td>
+<td>Internet Security Association and Key Management Protocol</td>
+<td>sets up IPsec keys</td>
+</tr>
+<tr>
+<td>VPN</td>
+<td>Virtual Private Network</td>
+<td>a private network tunneled over a public one</td>
+</tr>
+<tr>
+<td>SSL VPN</td>
+<td></td>
+<td>VPN over TLS, often per application</td>
+</tr>
+<tr>
+<td>ACL</td>
+<td>Access Control List</td>
+<td>allow/deny rules by address and port</td>
+</tr>
+<tr>
+<td>NAC</td>
+<td>Network Access Control</td>
+<td>decides which devices may join the network</td>
+</tr>
+<tr>
+<td>IPS</td>
+<td>Intrusion Prevention System</td>
+<td><strong>inline</strong>: sits in the path, can block</td>
+</tr>
+<tr>
+<td>NIDS</td>
+<td>Network Intrusion Detection System</td>
+<td><strong>out of path</strong>: sees a copy, can only alert</td>
+</tr>
+<tr>
+<td>WAF</td>
+<td>Web Application Firewall</td>
+<td>filters HTTP, usually as a proxy</td>
+</tr>
+<tr>
+<td>UTM</td>
+<td>Unified Threat Management</td>
+<td>firewall + IPS + VPN + ... in one box</td>
+</tr>
+</tbody>
+</table>
+<h3 id="where-a-security-device-sits">Where a security device sits</h3>
+<table>
+<thead>
+<tr>
+<th>placement</th>
+<th>sees</th>
+<th>can block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inline</strong> (firewall, IPS)</td>
+<td>the real traffic, in the path</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><strong>Out of path</strong> (IDS)</td>
+<td>a mirrored copy</td>
+<td>no, only detect</td>
+</tr>
+<tr>
+<td><strong>Proxy</strong> (WAF)</td>
+<td>terminates the connection and opens a new one</td>
+<td>yes, with full application view</td>
+</tr>
+</tbody>
+</table>
+<h3 id="direction">Direction</h3>
+<ul>
+<li><strong>Inbound</strong>: packets coming into the host or network.</li>
+<li><strong>Outbound</strong>: packets going out.</li>
+</ul>
 
 
 
