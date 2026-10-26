@@ -2026,10 +2026,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-model-y-wx-b" class="md-nav__link">
+  <a href="#1-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Model: y = wx + b
+        1. Model
       
     </span>
   </a>
@@ -2037,10 +2037,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-loss-l-y_pred-y2" class="md-nav__link">
+  <a href="#2-loss" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Loss: L = (y_pred − y)²
+        2. Loss
       
     </span>
   </a>
@@ -2048,10 +2048,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-gradient-descent-w-w-lw" class="md-nav__link">
+  <a href="#3-gradient-descent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Gradient descent: w ← w − η · ∂L/∂w
+        3. Gradient descent
       
     </span>
   </a>
@@ -2059,10 +2059,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-activation-relux-max0-x" class="md-nav__link">
+  <a href="#4-activation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Activation: ReLU(x) = max(0, x)
+        4. Activation
       
     </span>
   </a>
@@ -2070,10 +2070,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-backprop-lw-ly-yw" class="md-nav__link">
+  <a href="#5-backprop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Backprop: ∂L/∂w = ∂L/∂y · ∂y/∂w
+        5. Backprop
       
     </span>
   </a>
@@ -2081,10 +2081,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-classification-softmax-cross-entropy-l-logp_correct" class="md-nav__link">
+  <a href="#6-classification-softmax-cross-entropy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Classification: softmax + cross-entropy, L = −log(p_correct)
+        6. Classification: softmax + cross-entropy
       
     </span>
   </a>
@@ -2390,10 +2390,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-model-y-wx-b" class="md-nav__link">
+  <a href="#1-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Model: y = wx + b
+        1. Model
       
     </span>
   </a>
@@ -2401,10 +2401,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-loss-l-y_pred-y2" class="md-nav__link">
+  <a href="#2-loss" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Loss: L = (y_pred − y)²
+        2. Loss
       
     </span>
   </a>
@@ -2412,10 +2412,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-gradient-descent-w-w-lw" class="md-nav__link">
+  <a href="#3-gradient-descent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Gradient descent: w ← w − η · ∂L/∂w
+        3. Gradient descent
       
     </span>
   </a>
@@ -2423,10 +2423,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-activation-relux-max0-x" class="md-nav__link">
+  <a href="#4-activation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Activation: ReLU(x) = max(0, x)
+        4. Activation
       
     </span>
   </a>
@@ -2434,10 +2434,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-backprop-lw-ly-yw" class="md-nav__link">
+  <a href="#5-backprop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Backprop: ∂L/∂w = ∂L/∂y · ∂y/∂w
+        5. Backprop
       
     </span>
   </a>
@@ -2445,10 +2445,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-classification-softmax-cross-entropy-l-logp_correct" class="md-nav__link">
+  <a href="#6-classification-softmax-cross-entropy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Classification: softmax + cross-entropy, L = −log(p_correct)
+        6. Classification: softmax + cross-entropy
       
     </span>
   </a>
@@ -2562,31 +2562,49 @@
 
 <h1 id="the-learning-chain-loss-gradient-descent-activation-backprop">The Learning Chain: Loss, Gradient Descent, Activation, Backprop</h1>
 <p>The basic formulas do not stick as a list. They stick as a chain where each one exists because the one before it left a problem.</p>
-<h2 id="1-model-y-wx-b">1. Model: <code>y = wx + b</code></h2>
-<p><strong>Problem:</strong> map an input to an answer.
-<strong>Fix:</strong> a function with knobs, <code>w</code> and <code>b</code>. Training only ever changes the knobs.</p>
-<h2 id="2-loss-l-y_pred-y2">2. Loss: <code>L = (y_pred − y)²</code></h2>
+<h2 id="1-model">1. Model</h2>
+<div class="arithmatex">\[
+\hat{y} = w x + b
+\]</div>
+<p><strong>Problem:</strong> map an input <span class="arithmatex">\(x\)</span> to an answer.
+<strong>Fix:</strong> a function with knobs, <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(b\)</span>. Training only ever changes the knobs.</p>
+<h2 id="2-loss">2. Loss</h2>
+<div class="arithmatex">\[
+L = \frac{1}{N} \sum_{i=1}^{N} \left( \hat{y}_i - y_i \right)^2
+\]</div>
 <p><strong>Problem:</strong> to fix anything, "how wrong" has to be one number.
 <strong>Fix:</strong> mean squared error. Squaring removes the sign and punishes large misses harder.</p>
-<h2 id="3-gradient-descent-w-w-lw">3. Gradient descent: <code>w ← w − η · ∂L/∂w</code></h2>
+<h2 id="3-gradient-descent">3. Gradient descent</h2>
+<div class="arithmatex">\[
+w \leftarrow w - \eta \, \frac{\partial L}{\partial w}
+\]</div>
 <p><strong>Problem:</strong> which way to turn each knob.
-<strong>Fix:</strong> the gradient points uphill in loss, so step the other way. <code>η</code> is the step size: too big overshoots, too small crawls.</p>
-<h2 id="4-activation-relux-max0-x">4. Activation: <code>ReLU(x) = max(0, x)</code></h2>
-<p><strong>Problem:</strong> stacked linear layers collapse into one linear layer. A line of a line is a line.
-<strong>Fix:</strong> a bend between layers (ReLU, sigmoid). Without it, depth means nothing.</p>
-<h2 id="5-backprop-lw-ly-yw">5. Backprop: <code>∂L/∂w = ∂L/∂y · ∂y/∂w</code></h2>
+<strong>Fix:</strong> the gradient points uphill in loss, so step the other way. <span class="arithmatex">\(\eta\)</span> is the step size (learning rate): too big overshoots, too small crawls.</p>
+<h2 id="4-activation">4. Activation</h2>
+<div class="arithmatex">\[
+\mathrm{ReLU}(x) = \max(0, x) \qquad \sigma(x) = \frac{1}{1 + e^{-x}}
+\]</div>
+<p><strong>Problem:</strong> stacked linear layers collapse into one linear layer, since <span class="arithmatex">\(W_2 (W_1 x) = (W_2 W_1) x\)</span>. A line of a line is a line.
+<strong>Fix:</strong> a bend between layers (ReLU, sigmoid <span class="arithmatex">\(\sigma\)</span>). Without it, depth means nothing.</p>
+<h2 id="5-backprop">5. Backprop</h2>
+<div class="arithmatex">\[
+\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial w}
+\]</div>
 <p><strong>Problem:</strong> the gradient of a weight far from the output.
 <strong>Fix:</strong> the chain rule, applied backwards. Multiply local derivatives from the output inward, reusing the values saved in the forward pass.</p>
-<h2 id="6-classification-softmax-cross-entropy-l-logp_correct">6. Classification: softmax + cross-entropy, <code>L = −log(p_correct)</code></h2>
-<p><strong>Problem:</strong> picking one of N classes (MNIST digits 0–9), where squared error fits badly.
-<strong>Fix:</strong> softmax turns N scores into probabilities. The loss is 0 when the correct class gets probability 1 and grows without bound as it nears 0.</p>
+<h2 id="6-classification-softmax-cross-entropy">6. Classification: softmax + cross-entropy</h2>
+<div class="arithmatex">\[
+p_k = \frac{e^{z_k}}{\sum_{j} e^{z_j}} \qquad L = -\log p_{\text{correct}}
+\]</div>
+<p><strong>Problem:</strong> picking one of <span class="arithmatex">\(N\)</span> classes (MNIST digits 0–9), where squared error fits badly.
+<strong>Fix:</strong> softmax turns <span class="arithmatex">\(N\)</span> scores <span class="arithmatex">\(z_k\)</span> into probabilities <span class="arithmatex">\(p_k\)</span>. The loss is 0 when the correct class gets <span class="arithmatex">\(p = 1\)</span> and grows without bound as <span class="arithmatex">\(p \to 0\)</span>.</p>
 <h2 id="the-one-line">The one line</h2>
 <p><strong>Measure the error (loss) → step against it (gradient descent) → bend so depth means something (activation) → pass the correction back through depth (backprop).</strong></p>
 <h2 id="recall-before-re-reading">Recall before re-reading</h2>
 <p>Answer these without scrolling up. Re-read only where you get stuck.</p>
 <ol>
 <li>Why does a deep network need an activation function at all?</li>
-<li>In <code>w ← w − η · ∂L/∂w</code>, why the minus sign, and what goes wrong when <code>η</code> is too large?</li>
+<li>In <span class="arithmatex">\(w \leftarrow w - \eta \, \partial L / \partial w\)</span>, why the minus sign, and what goes wrong when <span class="arithmatex">\(\eta\)</span> is too large?</li>
 <li>What does backprop reuse from the forward pass?</li>
 </ol>
 

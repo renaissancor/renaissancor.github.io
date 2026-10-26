@@ -2663,38 +2663,28 @@
 </code></pre></div>
 <hr />
 <h2 id="formulas">Formulas</h2>
-<table>
-<thead>
-<tr>
-<th>formula</th>
-<th>symbols</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>W_out = (W − K + 2P) / S + 1</code></td>
-<td><code>W</code> input width, <code>K</code> kernel, <code>P</code> padding, <code>S</code> stride</td>
-</tr>
-<tr>
-<td><code>params = C_out × (K·K·C_in + 1)</code></td>
-<td><code>C_in</code> input channels, <code>C_out</code> filters, <code>+1</code> bias</td>
-</tr>
-<tr>
-<td><code>MACs = W_out·H_out · C_out · K·K·C_in</code></td>
-<td>multiply-adds for one image</td>
-</tr>
-<tr>
-<td><code>r_out = r_in + (K − 1)·j</code>, then <code>j ← j·S</code></td>
-<td>receptive field <code>r</code>, jump <code>j</code> starts at 1</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Output width</strong> (<span class="arithmatex">\(W\)</span> input width, <span class="arithmatex">\(K\)</span> kernel size, <span class="arithmatex">\(P\)</span> padding, <span class="arithmatex">\(S\)</span> stride):</p>
+<div class="arithmatex">\[
+W_{\text{out}} = \frac{W - K + 2P}{S} + 1
+\]</div>
+<p><strong>Parameters</strong> of a conv layer (<span class="arithmatex">\(C_{\text{in}}\)</span> input channels, <span class="arithmatex">\(C_{\text{out}}\)</span> filters, <span class="arithmatex">\(+1\)</span> for the bias):</p>
+<div class="arithmatex">\[
+\text{params} = C_{\text{out}} \left( K^2 \, C_{\text{in}} + 1 \right)
+\]</div>
+<p><strong>Work</strong> for one image, in MACs:</p>
+<div class="arithmatex">\[
+\text{MACs} = H_{\text{out}} \, W_{\text{out}} \cdot C_{\text{out}} \cdot K^2 \, C_{\text{in}}
+\]</div>
+<p><strong>Receptive field</strong> <span class="arithmatex">\(r\)</span>, with jump <span class="arithmatex">\(j\)</span> (input pixels between neighbouring units). Start at <span class="arithmatex">\(r = j = 1\)</span> and apply per layer:</p>
+<div class="arithmatex">\[
+r \leftarrow r + (K - 1)\, j, \qquad j \leftarrow j \, S
+\]</div>
 <p>Applied to LeNet-5:</p>
 <table>
 <thead>
 <tr>
 <th>layer</th>
-<th><code>W_out</code></th>
+<th><span class="arithmatex">\(W_{\text{out}}\)</span></th>
 <th style="text-align: right;">params</th>
 <th style="text-align: right;">MACs</th>
 </tr>
@@ -2735,8 +2725,8 @@
 <hr />
 <h2 id="answers">Answers</h2>
 <p><strong>1. One step</strong> is a dot product of the 3×3 window with K (Figure 1, <code>Y[0][0] = 27</code>). What stays the same is <strong>K itself</strong>: the same weights at every position.</p>
-<p><strong>2. Shape</strong> follows <code>W_out = (W − K + 2P)/S + 1</code>: conv keeps or trims the width, pool halves it. A deeper unit sees more because each pool step doubles the jump <code>j</code>, so the next 5×5 filter spans 5 cells that each stand for 2×2 or 4×4 input pixels (receptive field 5 → 16).</p>
-<p><strong>3. Weight sharing:</strong> an MLP gives every hidden unit its own weight for every pixel (784 × 300 = 235,200 for the first layer). A conv layer has <code>C_out × K·K·C_in</code> weights no matter how big the image is. LeNet-5 totals <strong>61,706</strong> parameters against <strong>266,610</strong> for an MLP 784→300→100→10.
+<p><strong>2. Shape</strong> follows <span class="arithmatex">\(W_{\text{out}} = (W - K + 2P)/S + 1\)</span>: conv keeps or trims the width, pool halves it. A deeper unit sees more because each pool step doubles the jump <span class="arithmatex">\(j\)</span>, so the next 5×5 filter spans 5 cells that each stand for 2×2 or 4×4 input pixels (receptive field 5 → 16).</p>
+<p><strong>3. Weight sharing:</strong> an MLP gives every hidden unit its own weight for every pixel (784 × 300 = 235,200 for the first layer). A conv layer has <span class="arithmatex">\(C_{\text{out}} K^2 C_{\text{in}}\)</span> weights no matter how big the image is. LeNet-5 totals <strong>61,706</strong> parameters against <strong>266,610</strong> for an MLP 784→300→100→10.
 The same table shows the hardware consequence: the conv layers hold <strong>4%</strong> of the parameters and do <strong>86%</strong> of the MACs. Each conv weight is reused ~750× (conv1) or ~100× (conv2) per image, so intensity is high and conv is <strong>compute-bound</strong>. Each FC weight is used <strong>once</strong> per image, so at batch 1 an FC layer is <strong>bandwidth-bound</strong>, the same shape as LLM decode on the <a href="../../Architecture/arch-02-roofline-model/">roofline</a>.</p>
 <hr />
 <h2 id="gotchas">Gotchas</h2>
