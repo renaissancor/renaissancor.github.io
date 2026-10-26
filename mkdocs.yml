@@ -140,6 +140,10 @@ nav:
   - Distributed Systems:
     - Distributed/dist-01-replication-health-and-time.md
 
+  - Machine Learning:
+    - Machine_Learning/ml-01-the-learning-chain.md
+    - Machine_Learning/ml-02-cnn-weight-sharing.md
+
   # -------------------------------------------------------------------------
   # Archive — raw study logs, pending distillation into topic posts.
   # -------------------------------------------------------------------------
