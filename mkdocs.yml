@@ -146,6 +146,7 @@ nav:
 
   - Machine Learning:
     - Machine_Learning/ml-01-the-learning-chain.md
+    - Machine_Learning/ml-02-cnn-weight-sharing.md
 
   - Setup:
     - Setup/Mac_dev_setup.md
