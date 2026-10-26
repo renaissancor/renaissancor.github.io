@@ -1,25 +1,35 @@
-# Socket Options and `select` model 
+# Socket Options and `select` model
 
-### TCP Socket Options 
+### TCP Socket Options
 
-- Blocking / Non Blocking Socket 
-- Nagle Algorithm 
-- Linger Option 
+| option | what it changes |
+|---|---|
+| non-blocking (`FIONBIO`) | calls return immediately instead of waiting |
+| `TCP_NODELAY` | turns Nagle off: small writes go out at once |
+| `SO_LINGER` | what `closesocket` does with unsent data |
 
 ```cpp
 unsigned long mode = 1; // 1 = non-blocking, 0 = blocking
 ioctlsocket(socket, FIONBIO, &mode);
 
-int flag = 1; // Nagle Deactivate 
+int flag = 1; // Nagle off
 setsockopt(socket, IPPROTO_TCP, TCP_NODELAY, (char*)&flag, sizeof(flag));
 
 struct linger lingerOpt;
-lingerOpt.l_onoff = 1;   // Activate linger, terminate by RST 
-lingerOpt.l_linger = 10; // Unit: Second, close socket after 10 seconds wait  
+lingerOpt.l_onoff = 1;   // linger on
+lingerOpt.l_linger = 10; // close waits up to 10 s for unsent data to be delivered
 setsockopt(socket, SOL_SOCKET, SO_LINGER, (char*)&lingerOpt, sizeof(lingerOpt));
 ```
 
-#### Broadcasting in UDP 
+`SO_LINGER` cases:
+
+| `l_onoff` | `l_linger` | close |
+|---|---|---|
+| 0 | – | returns at once; the kernel sends the rest in the background (default) |
+| 1 | 0 | **abortive**: sends RST, drops unsent data, skips TIME_WAIT |
+| 1 | N > 0 | blocks up to N seconds until unsent data is acknowledged |
+
+#### Broadcasting in UDP
 
 ```cpp
 SOCKET mysock = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP); 
@@ -30,57 +40,51 @@ int broadcastEnable = 1;
 sockaddr_in thisAddr; 
 thisAddr.sin_family = AF_INET; 
 thisAddr.sin_port = htons(THIS_PORT); 
-thisAddr.sin_addr.s_addr = inet_addr("192.168.1.255");
+thisAddr.sin_addr.s_addr = inet_addr("192.168.1.255");  // subnet broadcast address
 ```
 
-### WinSocket TCP Server and Client 
+Broadcast must be enabled explicitly with `SO_BROADCAST`; `x.x.x.255` reaches every host on a /24.
 
-TCP Server 
+### WinSocket TCP Server and Client
 
-1. WSA Setup 
-2. ::bind 
-3. ::listen 
-4. ::accept 
+| server | client |
+|---|---|
+| `WSAStartup` → `socket` → `bind` → `listen` → `accept` | `WSAStartup` → `socket` → `connect` |
 
 ```cpp
+// Server
 WSADATA wsaData;
-if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) { /*Handle Error*/}
+if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) { /* handle error */ }
 SOCKET listenSock = ::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+::bind(listenSock, (sockaddr*)&serverAddr, sizeof(serverAddr));
+::listen(listenSock, SOMAXCONN);
+
 sockaddr_in clientAddr;
 int addrLen = sizeof(clientAddr);
-SOCKET clientSock = accept(listenSock, (sockaddr*)&clientAddr, &addrLen);
+SOCKET clientSock = ::accept(listenSock, (sockaddr*)&clientAddr, &addrLen);
 ```
-
-TCP Client 
-
-1. WSA Setup 
-2 ::connect 
 
 ```cpp
-SOCKET clientSock = ::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); 
-socklen_t serverAddrLen = sizeof(serverAddr); 
-::connect(clientSock, (sockaddr*) &serverAddr, &serverAddrLen); 
+// Client
+SOCKET clientSock = ::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+::connect(clientSock, (sockaddr*)&serverAddr, sizeof(serverAddr));  // length by value
 ```
 
-### WinSocket UDP Server and Client  
+Full walkthrough: [Winsock TCP Echo Server, Step by Step](TCPIP.md).
 
-UDP Server 
-```cpp
-SOCKET sock = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP); 
-::bind(udpSock, (sockaddr*)&thisAddr, sizeof(thisAddr)); 
-```
-
-UDP send & recv should have destination to send, and source received from. 
+### WinSocket UDP Server and Client
 
 ```cpp
-::sendto(sock, buffer, len, 0, (sockaddr*)&destAddr, sizeof(destAddr));
-::recvfrom(sock, buffer, len, 0, (sockaddr*)&fromAddr, &fromLen);
+SOCKET sock = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+::bind(sock, (sockaddr*)&thisAddr, sizeof(thisAddr));
+
+::sendto(sock, buffer, len, 0, (sockaddr*)&destAddr, sizeof(destAddr));   // where to
+::recvfrom(sock, buffer, len, 0, (sockaddr*)&fromAddr, &fromLen);         // from whom
 ```
 
-For client, if SOCKET is ::connect to certain server, then 
-send and recv is also possible. 
+No connection, so every send names its destination and every receive reports its source. A UDP client may still `connect` to fix one peer, then use plain `send` / `recv`.
 
-### TCP/UDP `select` model 
+### TCP/UDP `select` model
 
 ```cpp 
 #define FD_SETSIZE 256    // override FD_SETSIZE from 64 
@@ -101,7 +105,7 @@ for(;;) { // Whatever loop logic
     timeout.tv_usec = 500000; // microseconds wait (0.5 seconds)
     SOCKET socketMax = UpdateSocketMax(); 
     int ret = ::select(socketMax + 1, &readfds, nullptr, nullptr, &timeout); // O(N)
-    int ret = ::select(socketMax + 1, &readfds, nullptr, nullptr, nullptr);  // Wait Infinite 
+    // pass nullptr instead of &timeout to wait forever
 
     if (ret > 0) {
         // handle sets 
@@ -122,3 +126,6 @@ for(;;) { // Whatever loop logic
 WSACleanup(); 
 ```
 
+- The `fd_set` is **rebuilt every loop**: `select` overwrites it with only the ready sockets.
+- Cost is **O(N)** per call in the number of sockets, twice: building the set and scanning it with `FD_ISSET`. Fine for hundreds; IOCP / epoll exist for more.
+- Windows caps `FD_SETSIZE` at 64 unless redefined **before** including `winsock2.h`.

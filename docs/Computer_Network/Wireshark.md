@@ -1,69 +1,38 @@
-# Wireshark Install Setup 
+# Wireshark Install Setup
 
-Chappell University 
-https://www.chappell-university.com/ 
+Notes from Chappell University (<https://www.chappell-university.com/>).
 
-Download and Install Wireshark in Windows OS 
+### Install (Windows)
 
-Checkbox 
+| component | install? |
+|---|---|
+| Wireshark | yes |
+| Npcap | yes: the real-time capture driver |
+| TShark | yes: command-line Wireshark |
+| Extcap: Etwdump (Windows event tracing), UDPdump | optional |
+| Extcap: Randpktdump | no, random packets for fun |
+| USBPcap | no: can slow the OS |
 
-- Wireshark 
-- Npcap (Real Time Packet Capture Driver)
-- Tshark (CLI version of Wireshark)
-- Extcap (This and subordinate menu are optional) 
-    - Etwdump (Windows Event Tracing)
-    - Randpktdump (For fun, not necessary)
-    - UDPdump (UDP protocol) 
+### Capture
 
-Npcap install setup will be later 
-USBcap might decrease performance of OS so not recommended 
+- Capture on Wi-Fi for a desktop on wireless, Ethernet for a wired laptop: whichever carries the traffic.
+- Keep capture files around **200 MB**; above **500 MB** analysis gets painful. Thousands of packets is small, millions is slow.
 
-UI setup 
-Open Wifi for PC / Ethernet for Laptop for analysis 
+### Follow one TCP session
 
-Packet size limit 
-General recommendation is do NOT try to open size above 500MB. 
-Around 200MB size of packet analysis is recommended. 
+Wireshark calls a TCP session a **stream**, numbered from **0**.
 
-Session TCP / HTTP Session 
-Session == 연결 Connection 
+| goal | how |
+|---|---|
+| show one session | display filter `tcp.stream eq 0` |
+| reassemble its bytes | right-click → Follow → TCP Stream (HTTP is fully readable) |
+| color one session | right-click → Colorize Conversation → TCP; `Ctrl+1` … `Ctrl+0` assign colors |
+| undo coloring | View → Reset Colorization (`Ctrl+Space`) |
 
-However in Wireshark it is called as Stream 
-1st discovered TCP session index is 0, not 1. 
+### Extract files
 
-Mouse Right Click > Colorize Conversation > TCP Session 
-Then only can get that TCP color 
+File → Export Objects → HTTP: lists every file carried over HTTP, with preview and save.
 
-Mouse Right Click > Follow > TCP Stream 
-Then assemble packet to make data stream combined 
+### Statistics
 
-컬러링 적용 취소 / Ctrl Space 등등 
-Reset Colorization 
-
-Display Filter TCP.steam  eq0 
-
-Ctrl 1 Ctrl 2 Ctrl 3 시 Color 설정 가능 
-
-Segment 번호로 Sequence Number 설정 
-
-따라가기 Follow > TCP Stream 
-HTTP 이면 조립된 내용이 아주 잘 보임 
-
-파일 축출 
-File / Export Objects / HTTP 
-All files exported 
-Filename search and preview 
-Then packet is assembled and displaved. Even saving is possible 
-
-TCP UDP HTTP FOLLOW 
-
-### Statistics of Wireshark 
-
-Packets Number and Displayed 
-If it gets thousands it is not big, but if over millions, 
-very slow and hard to analyze 
-
-통계 / 종단점 
-Statistics / Endpoints 
-
-Endpoints are using subjects of networks 
+Statistics → Endpoints: every address that talked, with packet and byte counts.

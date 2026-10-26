@@ -1,55 +1,48 @@
+# Network Vocabulary
 
-NIC Network Interface Card 
+### Addressing and core protocols
 
-IP Internet Protocol 
+| term | stands for | one line |
+|---|---|---|
+| NIC | Network Interface Card / Controller | the hardware between host and medium |
+| MAC | Media Access Control | 48-bit hardware address inside a LAN |
+| IP | Internet Protocol | addresses and routes packets between networks |
+| ARP | Address Resolution Protocol | IP → MAC inside a LAN |
+| ICMP | Internet Control Message Protocol | control and error messages; `ping` uses it |
+| PING | Packet INternet Groper | echo request/reply, measures RTT |
+| TCP | Transmission Control Protocol | reliable, ordered byte stream |
+| UDP | User Datagram Protocol | unreliable datagrams, minimal header |
+| ISP | Internet Service Provider | who connects you to the Internet |
+| NAT | Network Address Translation | many private IPs share one public IP |
 
-TCP Transmision Control Protocol 
-UDP User Datagram Protocol 
+### Security
 
-ISP Internet Service Provider 
-NAT Network Address Translator 
+| term | stands for | one line |
+|---|---|---|
+| SSL / TLS | Secure Sockets Layer / Transport Layer Security | encryption over TCP; TLS is the successor |
+| HTTPS | HyperText Transfer Protocol Secure | HTTP over TLS |
+| SSH | Secure Shell | encrypted remote shell |
+| IPsec AH | Authentication Header | integrity + authentication of IP packets |
+| IPsec ESP | Encapsulating Security Payload | adds encryption |
+| ISAKMP | Internet Security Association and Key Management Protocol | sets up IPsec keys |
+| VPN | Virtual Private Network | a private network tunneled over a public one |
+| SSL VPN | | VPN over TLS, often per application |
+| ACL | Access Control List | allow/deny rules by address and port |
+| NAC | Network Access Control | decides which devices may join the network |
+| IPS | Intrusion Prevention System | **inline**: sits in the path, can block |
+| NIDS | Network Intrusion Detection System | **out of path**: sees a copy, can only alert |
+| WAF | Web Application Firewall | filters HTTP, usually as a proxy |
+| UTM | Unified Threat Management | firewall + IPS + VPN + ... in one box |
 
-NAC Network Access Control 
+### Where a security device sits
 
-ISAKMP Internet Security Association Key Management Protocol 
-IP AH (Authentication Header)
-IP ESP (Encapsulation Security Payload) 
+| placement | sees | can block |
+|---|---|---|
+| **Inline** (firewall, IPS) | the real traffic, in the path | yes |
+| **Out of path** (IDS) | a mirrored copy | no, only detect |
+| **Proxy** (WAF) | terminates the connection and opens a new one | yes, with full application view |
 
-ICMP Internet Control Message Protocol 
-PING Packet Internet Grouper 
+### Direction
 
-IPS Intrusion Prevention System : Inline 
-NIDS Network Intrusion Detection System : Out of Path  
-SSL Secure Sockets Layer  
-TLS Transport Layer Security 
-HTTPS HyperText Transfer Protocol Secure 
-SSH Secure Shell 
-WAF Web Application Firewall 
-UTM Unified Threat Management System 
-
-
-ARP Address Resoultion Protocol 
-ACL Access Control List 
-
-SSL VPN Only for certain Application 
-
-
-
-
-
-PC방화벽 
-Inline  
-Out of Path 
-Proxy 
-
-PN Private Network 
-VPN Virtual Private Network  
-
-
-Inbound 패킷이 들어올 때 
-Outbound 패킷 내보낼 때 
-Ethernet L2 MAC Address `Protocol  
-
-패킷이 Outbound 될 때 패킷에 뭐가 하나 추가가 될 때는 아웃바운드 
-SYN ACK 응답 
-
+- **Inbound**: packets coming into the host or network.
+- **Outbound**: packets going out.
