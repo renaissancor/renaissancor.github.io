@@ -71,6 +71,83 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Compilers/gpu-kernel-dsl-triton/"/>
     </url>
     <url>
+        <loc>https://renaissancor.github.io/Computer_Network/NW0503/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW0503/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW0503/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Computer_Network/NW0504/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW0504/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW0504/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Computer_Network/NW0724/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW0724/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW0724/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Computer_Network/NW1/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW1/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW1/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Computer_Network/NWHeaders/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NWHeaders/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NWHeaders/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Computer_Network/NWL2/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NWL2/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NWL2/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Computer_Network/NWTCP/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NWTCP/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NWTCP/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Computer_Network/NWVoca/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NWVoca/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NWVoca/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Computer_Network/TCPIP/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/TCPIP/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/TCPIP/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Computer_Network/TCPIP1/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/TCPIP1/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/TCPIP1/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Computer_Network/Wireshark/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/Wireshark/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/Wireshark/"/>
+    </url>
+    <url>
         <loc>https://renaissancor.github.io/Computer_Network/nw-tcp-loss-signals-and-round-trips/</loc>
         <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
@@ -153,6 +230,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-01-the-learning-chain/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-01-the-learning-chain/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/Machine_Learning/ml-02-cnn-weight-sharing/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-02-cnn-weight-sharing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-02-cnn-weight-sharing/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/Operating_Systems/os-01-processes-and-threads/</loc>
@@ -295,6 +379,83 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Compilers/gpu-kernel-dsl-triton/"/>
     </url>
     <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/NW0503/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW0503/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW0503/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/NW0504/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW0504/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW0504/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/NW0724/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW0724/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW0724/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/NW1/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NW1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NW1/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/NWHeaders/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NWHeaders/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NWHeaders/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/NWL2/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NWL2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NWL2/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/NWTCP/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NWTCP/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NWTCP/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/NWVoca/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/NWVoca/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/NWVoca/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/TCPIP/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/TCPIP/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/TCPIP/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/TCPIP1/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/TCPIP1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/TCPIP1/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Computer_Network/Wireshark/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Computer_Network/Wireshark/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Computer_Network/Wireshark/"/>
+    </url>
+    <url>
         <loc>https://renaissancor.github.io/ko/Computer_Network/nw-tcp-loss-signals-and-round-trips/</loc>
         <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
@@ -377,6 +538,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-01-the-learning-chain/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-01-the-learning-chain/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Machine_Learning/ml-02-cnn-weight-sharing/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-02-cnn-weight-sharing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-02-cnn-weight-sharing/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Operating_Systems/os-01-processes-and-threads/</loc>
