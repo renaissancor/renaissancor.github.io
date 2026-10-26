@@ -87,16 +87,33 @@ Y[0][2] = (-1·9 + 0·9 + 1·9) × 3 rows =  0      <- flat region, no edge
 
 ## Formulas
 
-| formula | symbols |
-|---|---|
-| `W_out = (W − K + 2P) / S + 1` | `W` input width, `K` kernel, `P` padding, `S` stride |
-| `params = C_out × (K·K·C_in + 1)` | `C_in` input channels, `C_out` filters, `+1` bias |
-| `MACs = W_out·H_out · C_out · K·K·C_in` | multiply-adds for one image |
-| `r_out = r_in + (K − 1)·j`, then `j ← j·S` | receptive field `r`, jump `j` starts at 1 |
+**Output width** ($W$ input width, $K$ kernel size, $P$ padding, $S$ stride):
+
+$$
+W_{\text{out}} = \frac{W - K + 2P}{S} + 1
+$$
+
+**Parameters** of a conv layer ($C_{\text{in}}$ input channels, $C_{\text{out}}$ filters, $+1$ for the bias):
+
+$$
+\text{params} = C_{\text{out}} \left( K^2 \, C_{\text{in}} + 1 \right)
+$$
+
+**Work** for one image, in MACs:
+
+$$
+\text{MACs} = H_{\text{out}} \, W_{\text{out}} \cdot C_{\text{out}} \cdot K^2 \, C_{\text{in}}
+$$
+
+**Receptive field** $r$, with jump $j$ (input pixels between neighbouring units). Start at $r = j = 1$ and apply per layer:
+
+$$
+r \leftarrow r + (K - 1)\, j, \qquad j \leftarrow j \, S
+$$
 
 Applied to LeNet-5:
 
-| layer | `W_out` | params | MACs |
+| layer | $W_{\text{out}}$ | params | MACs |
 |---|---|---:|---:|
 | conv1 | (28 − 5 + 4)/1 + 1 = **28** | 6 × (25·1 + 1) = **156** | 28·28 · 6 · 25 = **117,600** |
 | pool1 | (28 − 2)/2 + 1 = **14** | 0 | — |
@@ -110,9 +127,9 @@ Applied to LeNet-5:
 
 **1. One step** is a dot product of the 3×3 window with K (Figure 1, `Y[0][0] = 27`). What stays the same is **K itself**: the same weights at every position.
 
-**2. Shape** follows `W_out = (W − K + 2P)/S + 1`: conv keeps or trims the width, pool halves it. A deeper unit sees more because each pool step doubles the jump `j`, so the next 5×5 filter spans 5 cells that each stand for 2×2 or 4×4 input pixels (receptive field 5 → 16).
+**2. Shape** follows $W_{\text{out}} = (W - K + 2P)/S + 1$: conv keeps or trims the width, pool halves it. A deeper unit sees more because each pool step doubles the jump $j$, so the next 5×5 filter spans 5 cells that each stand for 2×2 or 4×4 input pixels (receptive field 5 → 16).
 
-**3. Weight sharing:** an MLP gives every hidden unit its own weight for every pixel (784 × 300 = 235,200 for the first layer). A conv layer has `C_out × K·K·C_in` weights no matter how big the image is. LeNet-5 totals **61,706** parameters against **266,610** for an MLP 784→300→100→10.
+**3. Weight sharing:** an MLP gives every hidden unit its own weight for every pixel (784 × 300 = 235,200 for the first layer). A conv layer has $C_{\text{out}} K^2 C_{\text{in}}$ weights no matter how big the image is. LeNet-5 totals **61,706** parameters against **266,610** for an MLP 784→300→100→10.
 The same table shows the hardware consequence: the conv layers hold **4%** of the parameters and do **86%** of the MACs. Each conv weight is reused ~750× (conv1) or ~100× (conv2) per image, so intensity is high and conv is **compute-bound**. Each FC weight is used **once** per image, so at batch 1 an FC layer is **bandwidth-bound**, the same shape as LLM decode on the [roofline](../Architecture/arch-02-roofline-model.md).
 
 ---
