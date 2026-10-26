@@ -55,6 +55,7 @@ extra_javascript:
 
 plugins:
   - search
+  - tags
   - i18n:
       docs_structure: suffix
       fallback_to_default: true
@@ -76,10 +77,17 @@ docs_dir: "docs"
 #                                  platform mechanics -> Windows/Linux Systems.
 #     translate <-> execute      : code -> machine code / disassembly -> Compilers
 #                                  & Low-Level; hardware behavior -> Computer Architecture.
+#     mechanism <-> concern       : the folder is the layer whose mechanism the post
+#                                  explains (one node's storage -> Data Systems; agreement
+#                                  across nodes -> Distributed). Concerns that cut across
+#                                  layers -- scale, measurement, llm-serving -- are tags
+#                                  in front matter, listed on tags.md. Posts graduate from
+#                                  ~/code/understudy; its README maps fields to folders.
 #   Raw daily notes + exam scratch are preserved under "Archive", pending distillation.
 # ---------------------------------------------------------------------------
 nav:
   - Home: index.md
+  - Tags: tags.md
 
   - Setup:
     - Setup/Mac_dev_setup.md
