@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://renaissancor.github.io/ko/Machine_Learning/ml-02-cnn-weight-sharing/">
       
       
+        <link rel="prev" href="../ml-01-the-learning-chain/">
+      
+      
+        <link rel="next" href="../../Setup/Mac_dev_setup/">
       
       
         
@@ -1904,10 +1908,14 @@
       
   
   
+    
   
   
+  
     
     
+      
+        
       
         
       
@@ -1915,11 +1923,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
         
           
           <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
@@ -1940,7 +1948,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1974,6 +1982,175 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CNN: One Filter, Reused Everywhere
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CNN: One Filter, Reused Everywhere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Figures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Figures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-filter-sliding-55-input-33-filter-stride-1-no-padding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One filter, sliding (5×5 input, 3×3 filter, stride 1, no padding)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shape-through-lenet-5-one-2828-digit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shape through LeNet-5 (one 28×28 digit)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receptive-field-how-many-input-pixels-one-unit-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receptive field: how many input pixels one unit sees
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formulas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gotchas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2219,10 +2396,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#it-slides-it-does-not-zoom" class="md-nav__link">
+  <a href="#key-questions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        It slides, it does not zoom
+        Key questions
       
     </span>
   </a>
@@ -2230,10 +2407,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#shrinking-is-how-it-sees-wider" class="md-nav__link">
+  <a href="#figures" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Shrinking is how it sees wider
+        Figures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Figures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-filter-sliding-55-input-33-filter-stride-1-no-padding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One filter, sliding (5×5 input, 3×3 filter, stride 1, no padding)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shape-through-lenet-5-one-2828-digit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shape through LeNet-5 (one 28×28 digit)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receptive-field-how-many-input-pixels-one-unit-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receptive field: how many input pixels one unit sees
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formulas
       
     </span>
   </a>
@@ -2241,10 +2468,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#weight-sharing-43-fewer-parameters" class="md-nav__link">
+  <a href="#answers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Weight sharing: 4.3× fewer parameters
+        Answers
       
     </span>
   </a>
@@ -2252,32 +2479,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-conv-layers-hold-4-of-the-weights-and-do-86-of-the-work" class="md-nav__link">
+  <a href="#gotchas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The conv layers hold 4% of the weights and do 86% of the work
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-the-assumption-breaks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Where the assumption breaks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recall-before-re-reading" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recall before re-reading
+        Gotchas
       
     </span>
   </a>
@@ -2302,6 +2507,46 @@
   
 
 
+  <nav class="md-path" aria-label="네비게이션" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../ml-01-the-learning-chain/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -2323,210 +2568,217 @@
         <a href="../../tags/#tag:machine-learning" class="md-tag">machine-learning</a>
       
     
-      
-      
-      
-      
-        <a href="../../tags/#tag:measurement" class="md-tag">measurement</a>
-      
-    
   </nav>
 
 
 
 <h1 id="cnn-one-filter-reused-everywhere">CNN: One Filter, Reused Everywhere</h1>
-<p>A correction from a recall test, then the numbers. I remembered a CNN as "zooming into regions of the image to interpret them". Regions is right. Zooming is backwards, and the part I had forgotten entirely, weight reuse, turns out to be the whole point, for accuracy and for hardware alike.</p>
-<p>All counts below are from PyTorch 2.8 on LeNet-5 (the classic MNIST CNN) and a plain MLP of similar size, using the script at the end.</p>
+<p><strong>CNN = Convolutional Neural Network.</strong> A neural network whose main layers are <em>convolutions</em>: one small grid of weights (a filter) slid over the whole input, instead of a separate weight for every pixel.</p>
+<table>
+<thead>
+<tr>
+<th>abbreviation</th>
+<th>stands for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CNN</td>
+<td>Convolutional Neural Network</td>
+</tr>
+<tr>
+<td>MLP</td>
+<td>Multi-Layer Perceptron: every layer fully connected</td>
+</tr>
+<tr>
+<td>FC</td>
+<td>Fully Connected layer: every input linked to every output by its own weight</td>
+</tr>
+<tr>
+<td>MAC</td>
+<td>Multiply-ACcumulate: one <code>a·b + sum</code> step, the unit of work counted below</td>
+</tr>
+<tr>
+<td>LeNet-5</td>
+<td>the classic 1998 CNN for handwritten digits (MNIST, 0–9), used for all numbers here</td>
+</tr>
+</tbody>
+</table>
+<h2 id="key-questions">Key questions</h2>
+<ol>
+<li>What does one convolution step compute, and what stays the same as the filter moves?</li>
+<li>How does the shape change layer by layer, and why does a deeper layer see more of the image?</li>
+<li>Why does weight sharing cut parameters, and why does it make conv compute-bound?</li>
+</ol>
 <hr />
-<h2 id="it-slides-it-does-not-zoom">It slides, it does not zoom</h2>
-<p>A filter is a small grid of weights, say 5×5. It is placed on the top-left 5×5 patch of the image, multiplied element-wise, summed to one number, then moved one pixel right and repeated, row by row. The output is a new image (a feature map) of "how strongly this patch matched the filter".</p>
-<p>Two things the zoom model misses:</p>
+<h2 id="figures">Figures</h2>
+<h3 id="one-filter-sliding-55-input-33-filter-stride-1-no-padding">One filter, sliding (5×5 input, 3×3 filter, stride 1, no padding)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>        input X (5×5)            filter K (3×3)      output Y (3×3)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>+---+---+---+---+---+       +---+---+---+       +---+---+---+
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>| 0*| 0*| 9*| 9 | 9 |       |-1 | 0 | 1 |       |27 |27 | 0 |
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>+---+---+---+---+---+       +---+---+---+       +---+---+---+
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| 0*| 0*| 9*| 9 | 9 |   *   |-1 | 0 | 1 |   =   |27 |27 | 0 |
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>+---+---+---+---+---+       +---+---+---+       +---+---+---+
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>| 0*| 0*| 9*| 9 | 9 |       |-1 | 0 | 1 |       |27 |27 | 0 |
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>+---+---+---+---+---+       +---+---+---+       +---+---+---+
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>| 0 | 0 | 9 | 9 | 9 |
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>+---+---+---+---+---+          * = window for Y[0][0]
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>| 0 | 0 | 9 | 9 | 9 |
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>+---+---+---+---+---+
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Y[0][0] = (-1·0 + 0·0 + 1·9) × 3 rows = 27      &lt;- edge inside the window
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Y[0][2] = (-1·9 + 0·9 + 1·9) × 3 rows =  0      &lt;- flat region, no edge
+</code></pre></div>
 <ul>
-<li><strong>The same 25 weights are used at every position.</strong> A filter that detects a vertical edge detects it top-left and bottom-right alike. That is the assumption a CNN bakes in: <em>a pattern means the same thing wherever it appears.</em></li>
-<li><strong>A layer has many filters, not one.</strong> LeNet's first layer has 6, so the output is 6 feature maps stacked as channels. The next layer's filters span all 6 channels: 5×5×6 weights each.</li>
+<li>The window moves one cell right, then wraps to the next row: 3 × 3 = 9 positions.</li>
+<li><strong>The same 9 weights are used at all 9 positions.</strong> That is weight sharing.</li>
+<li>High output means "the pattern in K is here". This K is a vertical-edge detector.</li>
 </ul>
-<p>Shapes through LeNet-5 for one 28×28 digit:</p>
+<h3 id="shape-through-lenet-5-one-2828-digit">Shape through LeNet-5 (one 28×28 digit)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>  C × H × W
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  1 × 28 × 28     input digit
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>      │  conv 5×5, 6 filters, pad 2
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>      ▼
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  6 × 28 × 28     6 feature maps
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>      │  max-pool 2×2
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>      ▼
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  6 × 14 × 14     shrinks
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      │  conv 5×5, 16 filters (each spans 6 channels)
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>      ▼
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a> 16 × 10 × 10
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>      │  max-pool 2×2
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>      ▼
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a> 16 ×  5 ×  5     shrinks
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>      │  flatten
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>      ▼
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a> 400 ─FC─▶ 120 ─FC─▶ 84 ─FC─▶ 10    one score per digit
+</code></pre></div>
+<ul>
+<li>Channels go <strong>up</strong> (1 → 6 → 16): more kinds of pattern.</li>
+<li>Width goes <strong>down</strong> (28 → 14 → 10 → 5): coarser, wider view.</li>
+</ul>
+<h3 id="receptive-field-how-many-input-pixels-one-unit-sees">Receptive field: how many input pixels one unit sees</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a> after   conv1   pool1   conv2   pool2
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> field    5×5     6×6    14×14   16×16   (of a 28×28 image)
+</code></pre></div>
+<hr />
+<h2 id="formulas">Formulas</h2>
+<table>
+<thead>
+<tr>
+<th>formula</th>
+<th>symbols</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>W_out = (W − K + 2P) / S + 1</code></td>
+<td><code>W</code> input width, <code>K</code> kernel, <code>P</code> padding, <code>S</code> stride</td>
+</tr>
+<tr>
+<td><code>params = C_out × (K·K·C_in + 1)</code></td>
+<td><code>C_in</code> input channels, <code>C_out</code> filters, <code>+1</code> bias</td>
+</tr>
+<tr>
+<td><code>MACs = W_out·H_out · C_out · K·K·C_in</code></td>
+<td>multiply-adds for one image</td>
+</tr>
+<tr>
+<td><code>r_out = r_in + (K − 1)·j</code>, then <code>j ← j·S</code></td>
+<td>receptive field <code>r</code>, jump <code>j</code> starts at 1</td>
+</tr>
+</tbody>
+</table>
+<p>Applied to LeNet-5:</p>
 <table>
 <thead>
 <tr>
 <th>layer</th>
-<th>output shape</th>
-<th>note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>conv 5×5, 6 filters, pad 2</td>
-<td>6 × 28 × 28</td>
-<td>6 feature maps</td>
-</tr>
-<tr>
-<td>max-pool 2×2</td>
-<td>6 × 14 × 14</td>
-<td><strong>shrinks</strong></td>
-</tr>
-<tr>
-<td>conv 5×5, 16 filters</td>
-<td>16 × 10 × 10</td>
-<td>each filter spans 6 channels</td>
-</tr>
-<tr>
-<td>max-pool 2×2</td>
-<td>16 × 5 × 5</td>
-<td><strong>shrinks</strong></td>
-</tr>
-<tr>
-<td>flatten → FC 120 → FC 84 → FC 10</td>
-<td>10</td>
-<td>one score per digit</td>
-</tr>
-</tbody>
-</table>
-<p>The image gets <em>smaller</em> as it goes deeper, never larger.</p>
-<hr />
-<h2 id="shrinking-is-how-it-sees-wider">Shrinking is how it sees wider</h2>
-<p>Pooling keeps the strongest response in each 2×2 block and halves the width. A pixel after pooling stands for a 2×2 area before it, so the next 5×5 filter covers a wider patch of the original image than the first one did.</p>
-<p>Receptive field, i.e. how many original pixels one unit can see:</p>
-<table>
-<thead>
-<tr>
-<th>after</th>
-<th>receptive field</th>
+<th><code>W_out</code></th>
+<th style="text-align: right;">params</th>
+<th style="text-align: right;">MACs</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>conv1</td>
-<td>5 × 5</td>
+<td>(28 − 5 + 4)/1 + 1 = <strong>28</strong></td>
+<td style="text-align: right;">6 × (25·1 + 1) = <strong>156</strong></td>
+<td style="text-align: right;">28·28 · 6 · 25 = <strong>117,600</strong></td>
 </tr>
 <tr>
 <td>pool1</td>
-<td>6 × 6</td>
+<td>(28 − 2)/2 + 1 = <strong>14</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">—</td>
 </tr>
 <tr>
 <td>conv2</td>
-<td>14 × 14</td>
+<td>(14 − 5)/1 + 1 = <strong>10</strong></td>
+<td style="text-align: right;">16 × (25·6 + 1) = <strong>2,416</strong></td>
+<td style="text-align: right;">10·10 · 16 · 150 = <strong>240,000</strong></td>
 </tr>
 <tr>
 <td>pool2</td>
-<td>16 × 16 (of a 28 × 28 image)</td>
+<td>(10 − 2)/2 + 1 = <strong>5</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>3 FC layers</td>
+<td>—</td>
+<td style="text-align: right;"><strong>59,134</strong></td>
+<td style="text-align: right;"><strong>58,920</strong></td>
 </tr>
 </tbody>
 </table>
-<p>So meaning climbs with depth: first layer edges and strokes, second layer stroke combinations covering half the digit, the FC layers the whole digit. Wider view comes from shrinking plus stacking, not from zooming.</p>
 <hr />
-<h2 id="weight-sharing-43-fewer-parameters">Weight sharing: 4.3× fewer parameters</h2>
+<h2 id="answers">Answers</h2>
+<p><strong>1. One step</strong> is a dot product of the 3×3 window with K (Figure 1, <code>Y[0][0] = 27</code>). What stays the same is <strong>K itself</strong>: the same weights at every position.</p>
+<p><strong>2. Shape</strong> follows <code>W_out = (W − K + 2P)/S + 1</code>: conv keeps or trims the width, pool halves it. A deeper unit sees more because each pool step doubles the jump <code>j</code>, so the next 5×5 filter spans 5 cells that each stand for 2×2 or 4×4 input pixels (receptive field 5 → 16).</p>
+<p><strong>3. Weight sharing:</strong> an MLP gives every hidden unit its own weight for every pixel (784 × 300 = 235,200 for the first layer). A conv layer has <code>C_out × K·K·C_in</code> weights no matter how big the image is. LeNet-5 totals <strong>61,706</strong> parameters against <strong>266,610</strong> for an MLP 784→300→100→10.
+The same table shows the hardware consequence: the conv layers hold <strong>4%</strong> of the parameters and do <strong>86%</strong> of the MACs. Each conv weight is reused ~750× (conv1) or ~100× (conv2) per image, so intensity is high and conv is <strong>compute-bound</strong>. Each FC weight is used <strong>once</strong> per image, so at batch 1 an FC layer is <strong>bandwidth-bound</strong>, the same shape as LLM decode on the <a href="../../Architecture/arch-02-roofline-model/">roofline</a>.</p>
+<hr />
+<h2 id="gotchas">Gotchas</h2>
 <table>
 <thead>
 <tr>
-<th>model</th>
-<th style="text-align: right;">parameters</th>
+<th>plausible model</th>
+<th>what actually happens</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>MLP 784 → 300 → 100 → 10</td>
-<td style="text-align: right;">266,610</td>
+<td>A CNN zooms into regions</td>
+<td>It <strong>slides</strong> one filter over every position, and <strong>shrinks</strong> the map with pooling</td>
 </tr>
 <tr>
-<td>LeNet-5</td>
-<td style="text-align: right;"><strong>61,706</strong></td>
+<td>Deeper layers see more because they are bigger</td>
+<td>They are <strong>smaller</strong>; they see more because each cell stands for a wider input patch</td>
+</tr>
+<tr>
+<td>Most compute is where most parameters are</td>
+<td>The opposite in LeNet: FC has 96% of params, conv has 86% of MACs</td>
+</tr>
+<tr>
+<td>"Convolution" flips the kernel</td>
+<td>Deep-learning conv is cross-correlation, no flip. <code>F.conv2d</code> gave <code>+27</code> above with K as written</td>
 </tr>
 </tbody>
 </table>
-<p>The MLP's first layer alone is 784 × 300 + 300 = 235,500 weights, because every hidden unit has its own weight for every pixel. The 784 → 9 intuition I first wrote down (one neuron's 784 weights versus one 3×3 filter) points the right way, but the real comparison is layer against layer, and it is 4.3× for the whole model.</p>
-<p>Fewer parameters to fit means less data needed and less overfitting. The assumption "same pattern, same meaning, anywhere" is what pays for it.</p>
-<p>I also checked the assumption directly: shift an input square 7 pixels, and conv1's output shifts by exactly 7 pixels (<code>allclose</code> away from the borders). The conv layer is <strong>translation equivariant</strong>: move the input, the output moves with it. Pooling and the final FC layers then throw away <em>where</em>, which makes the class score approximately <strong>invariant</strong>.</p>
-<hr />
-<h2 id="the-conv-layers-hold-4-of-the-weights-and-do-86-of-the-work">The conv layers hold 4% of the weights and do 86% of the work</h2>
-<p>This is the number I did not expect, and the one that connects to <a href="../../Architecture/arch-02-roofline-model/">roofline</a>.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align: right;">parameters</th>
-<th style="text-align: right;">multiply-adds per image</th>
-<th style="text-align: right;">uses per weight</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>conv1</td>
-<td style="text-align: right;">156</td>
-<td style="text-align: right;">117,600</td>
-<td style="text-align: right;">~750</td>
-</tr>
-<tr>
-<td>conv2</td>
-<td style="text-align: right;">2,416</td>
-<td style="text-align: right;">240,000</td>
-<td style="text-align: right;">~100</td>
-</tr>
-<tr>
-<td>FC layers (3)</td>
-<td style="text-align: right;">59,134</td>
-<td style="text-align: right;">~58,900</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr>
-<td><strong>conv share</strong></td>
-<td style="text-align: right;"><strong>4%</strong></td>
-<td style="text-align: right;"><strong>86%</strong></td>
-<td style="text-align: right;"></td>
-</tr>
-</tbody>
-</table>
-<p>The FC layer that holds 78% of LeNet's weights (400 → 120, 48,120 parameters) uses each weight <strong>once</strong> per image. The conv weights are reused at every position, hundreds of times per image.</p>
-<p>That is arithmetic intensity, the x axis of the roofline:</p>
-<ul>
-<li><strong>Conv:</strong> load a few weights, do hundreds of multiply-adds each. High intensity, compute-bound. GPUs run it as one big matrix multiply (im2col / implicit GEMM) and keep the tensor cores busy.</li>
-<li><strong>FC at batch 1:</strong> load every weight, use it once. About 1 FLOP per byte. Bandwidth-bound.</li>
-</ul>
-<p>The FC case is the same shape as LLM decode at batch 1: every weight read once per token. The fix is also the same: batch, so each loaded weight is used by many inputs at once. Weight sharing in a CNN is batching <em>inside one image</em>.</p>
-<hr />
-<h2 id="where-the-assumption-breaks">Where the assumption breaks</h2>
-<p>"Same pattern, same meaning, anywhere" is false when position carries meaning: the eyes sit above the mouth in a face, a total sits at the bottom of an invoice. A CNN learns position only indirectly, through depth and padding effects.</p>
-<p>ViT drops the assumption. It cuts the image into 16×16 patches (which is a conv with stride 16, used once), turns each into a token, and lets attention learn which positions relate. It needs more data to learn what the CNN was given for free, and in exchange it is not stuck with it. For the VLMs I serve, this is why an image becomes hundreds of tokens of prefill.</p>
-<hr />
-<h2 id="recall-before-re-reading">Recall before re-reading</h2>
-<ol>
-<li>Does a CNN zoom or slide, and what stays the same at every position?</li>
-<li>Why does a deeper layer see more of the image even though the feature map is smaller?</li>
-<li>Why are conv layers compute-bound while an FC layer at batch 1 is bandwidth-bound?</li>
-</ol>
-<p><strong>Open:</strong></p>
-<ul>
-<li>Train both models on MNIST and compare accuracy against parameter count, not just count parameters.</li>
-<li>Time conv1 versus the 400 → 120 FC layer on the GPU at batch 1 and batch 256. Prediction: FC time barely moves with batch until it turns compute-bound; conv scales linearly from the start.</li>
-</ul>
 <hr />
 <details>
-<summary>Script</summary>
+<summary>Check (PyTorch 2.8)</summary>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span><span class="o">,</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">lenet</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>   <span class="c1"># 28 -&gt; 28 -&gt; 14</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>             <span class="c1"># 14 -&gt; 10 -&gt; 5</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">16</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">84</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">84</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">mlp</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">count</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="n">lenet</span><span class="p">),</span> <span class="n">count</span><span class="p">(</span><span class="n">mlp</span><span class="p">))</span>                 <span class="c1"># 61706 266610</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># multiply-adds per image: output positions x filters x weights per filter</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">conv1</span> <span class="o">=</span> <span class="mi">28</span> <span class="o">*</span> <span class="mi">28</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">1</span><span class="p">)</span>               <span class="c1"># 117600</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">conv2</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">16</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span>              <span class="c1"># 240000</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1"># translation equivariance: shift input, output shifts with it</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">conv</span> <span class="o">=</span> <span class="n">lenet</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="n">img</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">);</span> <span class="n">img</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="n">moved</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">img</span><span class="p">),</span> <span class="n">conv</span><span class="p">(</span><span class="n">moved</span><span class="p">)</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))[</span><span class="o">...</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span><span class="mi">26</span><span class="p">],</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>                     <span class="n">b</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span><span class="mi">26</span><span class="p">],</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">))</span>   <span class="c1"># True</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span><span class="o">,</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">X</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">K</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">K</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># tensor([[27., 27., 0.], [27., 27., 0.], [27., 27., 0.]])</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">out</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">W</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">S</span><span class="p">:</span> <span class="p">(</span><span class="n">W</span> <span class="o">-</span> <span class="n">K</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">P</span><span class="p">)</span> <span class="o">//</span> <span class="n">S</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">out</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">out</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">out</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># 28 14 10 5</span>
 </code></pre></div>
 
 </details>
