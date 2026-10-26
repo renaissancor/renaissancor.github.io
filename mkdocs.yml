@@ -20,7 +20,6 @@ theme:
 
   features:
     - navigation.top
-    - navigation.sections
     - navigation.path
     - navigation.indexes
     - content.code.annotate
@@ -89,13 +88,6 @@ nav:
   - Home: index.md
   - Tags: tags.md
 
-  - Setup:
-    - Setup/Mac_dev_setup.md
-    - Setup/Harness_setup.md
-    - Setup/iterm2_setup.md
-    - Setup/WSL_dev_setup.md
-    - Setup/Win_dev_setup.md
-
   - C / C++:
     - Cpp/cpp-06-templates-exceptions-raii.md
 
@@ -130,13 +122,13 @@ nav:
     - Computer_Network/NW0503.md
     - Computer_Network/NW0504.md
     - Computer_Network/NW0724.md
-    - Computer_Network/NW1.md
+    - "Loopback, Ports, and Sockets: First Notes": Computer_Network/NW1.md
     - Computer_Network/NWHeaders.md
     - Computer_Network/NWL2.md
     - Computer_Network/NWTCP.md
-    - Computer_Network/NWVoca.md
-    - Computer_Network/TCPIP.md
-    - Computer_Network/TCPIP1.md
+    - Network Vocabulary: Computer_Network/NWVoca.md
+    - Winsock bind() and Ports: Computer_Network/TCPIP.md
+    - Network Programming and Sockets: Computer_Network/TCPIP1.md
     - Computer_Network/Wireshark.md
 
   - Data Systems:
@@ -153,6 +145,13 @@ nav:
 
   - Machine Learning:
     - Machine_Learning/ml-01-the-learning-chain.md
+
+  - Setup:
+    - Setup/Mac_dev_setup.md
+    - Setup/Harness_setup.md
+    - Setup/iterm2_setup.md
+    - Setup/WSL_dev_setup.md
+    - Setup/Win_dev_setup.md
 
   # -------------------------------------------------------------------------
   # Archive — raw study logs, pending distillation into topic posts.

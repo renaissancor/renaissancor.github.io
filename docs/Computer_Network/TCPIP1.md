@@ -1,4 +1,4 @@
-# Network Prgramming and Socket
+# Network Programming and Sockets
 
 ## Run code in Linux, based on WSL environment 
 
