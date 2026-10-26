@@ -155,13 +155,6 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-01-the-learning-chain/"/>
     </url>
     <url>
-        <loc>https://renaissancor.github.io/Machine_Learning/ml-02-cnn-weight-sharing/</loc>
-        <lastmod>2026-10-26</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-02-cnn-weight-sharing/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-02-cnn-weight-sharing/"/>
-    </url>
-    <url>
         <loc>https://renaissancor.github.io/Operating_Systems/os-01-processes-and-threads/</loc>
         <lastmod>2026-10-26</lastmod>
         <changefreq>daily</changefreq>
@@ -384,13 +377,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-01-the-learning-chain/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-01-the-learning-chain/"/>
-    </url>
-    <url>
-        <loc>https://renaissancor.github.io/ko/Machine_Learning/ml-02-cnn-weight-sharing/</loc>
-        <lastmod>2026-10-26</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Machine_Learning/ml-02-cnn-weight-sharing/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Machine_Learning/ml-02-cnn-weight-sharing/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Operating_Systems/os-01-processes-and-threads/</loc>
