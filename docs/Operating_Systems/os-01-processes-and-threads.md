@@ -204,6 +204,20 @@ you are in.
 **Open:** CPU-bound loop across 1 vs 4 threads, default build vs free-threaded build, with
 `multiprocessing` as the control.
 
+## Run code on a server without writing a file: `ssh host python3 -`
+
+`python3 -` reads the whole program from stdin until EOF, then runs it. A laptop can therefore write a script into ssh's stdin, close it, and read results from ssh's stdout. Nothing lands on the server's disk; add `sys.dont_write_bytecode` so no `__pycache__` appears either.
+
+`python3 -c "<script>"` would put the program in argv instead. `/proc/<pid>/cmdline` is readable by every user, so the whole script would show in their `ps`. Stdin does not.
+
+When the ssh session ends, the pipes close. The next `write()` raises `BrokenPipeError`: Python ignores SIGPIPE and raises instead. The program then exits, so it leaves no orphan as long as it writes regularly.
+
+Measured for a monitoring collector: a 38.6 KB script sent once per connect, then about 5 KB/s of JSON lines (about 1 KB/s with `ssh -C`). The process was gone from the server within 1–2 s of disconnecting.
+
+One trap: write stdin from a separate thread. If the remote side prints before it has read all of stdin, both pipe buffers fill and the two processes deadlock.
+
+**Open:** with `ssh -T` (no tty), does the remote process also get SIGHUP, or is EPIPE the only signal?
+
 ---
 
 *Study notes — Windows-specific material based on 윤성우, 《윈도우즈 시스템 프로그래밍》 (book + lectures).*
