@@ -22,4 +22,12 @@ Decide which window wins. Here, any tokens in the window count as serving.
 
 The same trap applies to prefix caching: `30.8k in tok/s` with a 94% prefix-cache hit rate is mostly cached prompt, not prefill work.
 
+## An identical request in every benchmark run measures the cache, not the engine
+
+A co-location benchmark on one H200 reported a captioning model getting **2× faster under contention** (p50 4.69 s → 2.49 s). Contention cannot make a server faster, so the result was a methodology bug. Prefix caching was on and every request sent the same clip: the solo phase filled the cache and the contended phase was served from it. There was also no warmup, so the solo phase alone paid for CUDA-graph capture.
+
+The fix has three parts: a distinct input per request, a warmup burst before measuring, and the solo baseline measured again *after* the contended phase. If the two baselines disagree, the comparison is void. With all three, the speedup disappeared (baselines 2.48 s vs 2.39 s).
+
+This matters most when comparing engines on prefix reuse, such as vLLM's prefix caching against SGLang's RadixAttention. Identical prompts reward whichever engine caches more aggressively, not the one that serves real traffic better.
+
 **Open:** p50/p95 time-to-first-token from Prometheus histogram bucket deltas, and how far a 30 s exporter sample period lags the 1 s NVML numbers.
