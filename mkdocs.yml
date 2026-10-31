@@ -89,6 +89,13 @@ nav:
   - Home: index.md
   - Tags: tags.md
 
+  - Glossary:
+    - Glossary/gl-network.md
+    - Glossary/gl-os.md
+    - Glossary/gl-infra-security.md
+    - Glossary/gl-hardware.md
+    - Glossary/gl-ml-systems.md
+
   - C / C++:
     - Cpp/cpp-06-templates-exceptions-raii.md
 
@@ -126,7 +133,6 @@ nav:
     - Computer_Network/NWHeaders.md
     - Computer_Network/NWL2.md
     - Computer_Network/NWTCP.md
-    - Computer_Network/NWVoca.md
     - Computer_Network/TCPIP.md
     - Computer_Network/TCPIP1.md
     - Computer_Network/Wireshark.md
