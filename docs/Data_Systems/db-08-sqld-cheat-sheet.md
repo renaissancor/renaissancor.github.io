@@ -136,8 +136,9 @@ King(1)
 FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY
 ```
 
-- A SELECT alias works in ORDER BY but **not** in WHERE, because WHERE runs before the alias exists.
+- A SELECT alias works in ORDER BY but **not** in WHERE or GROUP BY, because both run before the alias exists. (Oracle 23ai allows it in GROUP BY. The exam follows the older rule.)
 - To filter on an aggregate, use HAVING. WHERE runs before the groups exist.
+- HAVING also works without GROUP BY: the whole table becomes one group.
 - After GROUP BY, SELECT and ORDER BY may use only group keys and aggregates.
 - ORDER BY accepts a position (`ORDER BY 2`), an alias or a column name.
 - Oracle has `NULLS FIRST` / `NULLS LAST`. SQL Server has no such syntax.
@@ -147,6 +148,7 @@ FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY
 Comparing anything with unknown gives unknown, and that row is dropped.
 
 - `NULL + 1` is NULL. `col = NULL` never matches. Write `col IS NULL`.
+- Concatenation is the exception in Oracle: `'a' || NULL` = `'a'`, because NULL is treated as `''`. In SQL Server `'a' + NULL` is NULL.
 - `COUNT(*)` counts rows (5). `COUNT(dept)` skips NULLs (4). `COUNT(DISTINCT col)` counts distinct non-NULL values.
 - SUM, AVG, MAX and MIN skip NULLs, so `AVG` is the sum divided by the **non-NULL** count.
 - On an empty table with no GROUP BY, you still get one row: `COUNT` is 0, and `SUM` / `MAX` are NULL. With GROUP BY you get 0 rows.
@@ -201,7 +203,7 @@ Comparing anything with unknown gives unknown, and that row is dropped.
 - CROSS: every pair (m × n rows).
 - Self join: the same table under two aliases (`emp e JOIN emp m ON e.mgr = m.empno`).
 - Non-equi join: a condition such as `ON e.sal BETWEEN g.lo AND g.hi`.
-- `NATURAL JOIN` joins on **every** same-named column. `USING (col)` joins on just the named ones. Either way, the join column takes **no table prefix**.
+- `NATURAL JOIN` joins on **every** same-named column. `USING (col)` joins on just the named ones. Either way, the join column takes **no table prefix**. SQL Server supports neither.
 - Oracle `(+)` goes on the side that **might be empty**: `e.dept = d.dept(+)` is `e LEFT JOIN d`.
     - Every condition on the optional table needs `(+)`. Without it, the outer join becomes an inner join.
     - `(+)` can't be combined with OR or IN, and there is no FULL join with `(+)`.
@@ -213,7 +215,7 @@ Comparing anything with unknown gives unknown, and that row is dropped.
 
 - A single-row operator (`=`, `<`) against a multi-row result is an **error**. Use `IN`, `ANY` or `ALL`.
 - `> ALL` means greater than the **max**. `> ANY` means greater than the **min**.
-- `= ANY` is the same as `IN`. `<> ALL` is the same as `NOT IN`. `ALL` against an empty result is TRUE.
+- `= ANY` is the same as `IN`. `<> ALL` is the same as `NOT IN`. Against an empty result, `ALL` is TRUE and `ANY` is FALSE.
 - `EXISTS` asks whether the subquery returned any row. The values don't matter, so `SELECT 1` is fine.
 - Correlated subquery: the inner query refers to the outer row and runs once per outer row.
 - Where subqueries go:
