@@ -110,7 +110,6 @@ nav:
     - Architecture/arch-02-roofline-model.md
     - Architecture/arch-03-gpu-memory-budget-llm-serving.md
     - Architecture/arch-04-constrained-decoding-llm-serving.md
-    - Architecture/arch-06-reading-gpu-serving-metrics.md
 
   - Compilers & Low-Level:
     - Compilers/asm-02-stack-frames-calling-conventions.md
