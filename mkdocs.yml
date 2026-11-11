@@ -146,6 +146,7 @@ nav:
     - Data_Systems/db-06-replication-mechanics.md
     - Data_Systems/db-07-clustered-vs-heap-and-joins.md
     - Data_Systems/db-08-sqld-cheat-sheet.md
+    - Data_Systems/db-09-sqld-mock-exam.md
 
   - Distributed Systems:
     - Distributed/dist-01-replication-health-and-time.md
