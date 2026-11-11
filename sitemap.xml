@@ -211,6 +211,13 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-08-sqld-cheat-sheet/"/>
     </url>
     <url>
+        <loc>https://renaissancor.github.io/Data_Systems/db-09-sqld-mock-exam/</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-09-sqld-mock-exam/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-09-sqld-mock-exam/"/>
+    </url>
+    <url>
         <loc>https://renaissancor.github.io/Distributed/dist-01-replication-health-and-time/</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
@@ -545,6 +552,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-08-sqld-cheat-sheet/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-08-sqld-cheat-sheet/"/>
+    </url>
+    <url>
+        <loc>https://renaissancor.github.io/ko/Data_Systems/db-09-sqld-mock-exam/</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://renaissancor.github.io/ko/Data_Systems/db-09-sqld-mock-exam/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://renaissancor.github.io/Data_Systems/db-09-sqld-mock-exam/"/>
     </url>
     <url>
         <loc>https://renaissancor.github.io/ko/Distributed/dist-01-replication-health-and-time/</loc>

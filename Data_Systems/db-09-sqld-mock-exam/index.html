@@ -1,0 +1,3631 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Systems Programming & Software Engineering Portfolio">
+      
+      
+        <meta name="author" content="Renaissancor">
+      
+      
+        <link rel="canonical" href="https://renaissancor.github.io/Data_Systems/db-09-sqld-mock-exam/">
+      
+      
+        <link rel="prev" href="../db-08-sqld-cheat-sheet/">
+      
+      
+        <link rel="next" href="../../Distributed/dist-01-replication-health-and-time/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../ko/Data_Systems/db-09-sqld-mock-exam/" hreflang="ko">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>SQLD Mock Exam: 50 Original Questions - Renaissancoriate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/typst.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sqld-mock-exam-50-original-questions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Renaissancoriate" class="md-header__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Renaissancoriate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SQLD Mock Exam: 50 Original Questions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../ko/Data_Systems/db-09-sqld-mock-exam/" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Renaissancoriate" class="md-nav__button md-logo" aria-label="Renaissancoriate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Renaissancoriate
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Glossary
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Glossary/gl-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary: Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Glossary/gl-os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary: Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Glossary/gl-infra-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary: Infra and Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Glossary/gl-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary: Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Glossary/gl-ml-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary: ML and ML Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C / C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C / C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/cpp-06-templates-exceptions-raii/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Templates, Exceptions, and RAII
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Structures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/ds-03-trees-and-traversals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trees and Traversals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Algorithms
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/Parametric_Search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parametric Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/arch-01-cpu-cache-coherence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU Cache, Coherence, and Performance Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/arch-02-roofline-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roofline Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/arch-03-gpu-memory-budget-llm-serving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU Memory Budget in LLM Serving
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/arch-04-constrained-decoding-llm-serving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constrained Decoding in LLM Serving
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compilers & Low-Level
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compilers & Low-Level
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/asm-02-stack-frames-calling-conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stack Frames, Calling Conventions, and Memory Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/asm-04-c-runtime-and-executable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The C Runtime and the Executable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Compilers/gpu-kernel-dsl-triton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triton: Python-Syntax GPU Kernels Without CUDA C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operating Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Operating_Systems/os-01-processes-and-threads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Processes and Threads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Operating_Systems/os-03-synchronization-and-deadlock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synchronization and Deadlock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Operating_Systems/os-04-tlb-page-faults-and-copy-on-write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLB, Page Faults, and Copy-on-Write
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Windows Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_System_Programming/win-04-async-io-and-iocp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows File and Asynchronous I/O (Overlapped I/O)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows_System_Programming/win-08-iocp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I/O Completion Ports (IOCP) for Socket Servers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Networks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Networks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/nw-tcp-loss-signals-and-round-trips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP Loss Signals and Round Trips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0503/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Macroscopic View of Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0504/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microscopic View of Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NW0724/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physical Layer &amp; Data Link Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NWHeaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP / IP Headers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NWL2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP/IP Model, Layer by Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/NWTCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Socket Options and select model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/TCPIP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Winsock TCP Echo Server, Step by Step
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/TCPIP1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Programming and Sockets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Network/Wireshark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireshark Install Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db-01-namespaces-and-catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Namespaces and System Catalogs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db-02-derived-data-placement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Where Derived Data Belongs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db-03-write-skew-and-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Write Skew and Isolation Levels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db-04-sequential-writes-wal-and-lsm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequential Writes: WAL and LSM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db-05-delete-and-space-reclamation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE and Space Reclamation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db-06-replication-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replication Mechanics: Row Identity and Catalog Estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db-07-clustered-vs-heap-and-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clustered vs Heap Storage, and What It Does to Joins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db-08-sqld-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQLD Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQLD Mock Exam: 50 Original Questions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQLD Mock Exam: 50 Original Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subject-1-data-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subject 1: data modeling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subject-2-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subject 2: SQL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subject 2: SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NULL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joins-and-subqueries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joins and subqueries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-operators-and-group-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set operators and group functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-functions-and-top-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Window functions and Top-N
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchical queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions-like-regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions, LIKE, regular expressions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivot-and-unpivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PIVOT and UNPIVOT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#management-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Management statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Distributed Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Distributed/dist-01-replication-health-and-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replication Health and Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine_Learning/ml-01-the-learning-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Learning Chain: Loss, Gradient Descent, Activation, Backprop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine_Learning/ml-02-cnn-weight-sharing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CNN: One Filter, Reused Everywhere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/Mac_dev_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MacBook Developer Setup Guide (2026, M4 Pro)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/Harness_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code + AI Harness Setup (macOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/iterm2_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    iTerm2 Setup Guide (macOS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/WSL_dev_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSL Dev Setup Guide (Windows + Ubuntu)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/Win_dev_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Developer Setup Guide (From Zero)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subject-1-data-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subject 1: data modeling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subject-2-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subject 2: SQL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subject 2: SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NULL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joins-and-subqueries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joins and subqueries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-operators-and-group-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set operators and group functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-functions-and-top-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Window functions and Top-N
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchical queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions-like-regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions, LIKE, regular expressions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivot-and-unpivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PIVOT and UNPIVOT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#management-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Management statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../db-01-namespaces-and-catalogs/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Data Systems
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sqld-mock-exam-50-original-questions">SQLD Mock Exam: 50 Original Questions</h1>
+<p>Fifty original questions in the real split: 10 data modeling, 40 SQL. Each one is built on a trap that recurs in the 2025–2026 rounds (57–61). The patterns came from candidate reviews and third-party restorations of those rounds, and the question text is new. Oracle unless a question says otherwise. Answers and one-line explanations are at the end, and the rules behind them are in the <a href="../db-08-sqld-cheat-sheet/">SQLD cheat sheet</a>.</p>
+<p>Give yourself 90 minutes for the full set, as on the real exam.</p>
+<h2 id="tables">Tables</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>EMP                                   DEPT
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>empno name  dept  sal  mgr            dept dname loc
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>1     King  10    500  NULL           10   Sales Seoul
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>2     Lee   10    300  1              20   Dev   Busan
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>3     Park  20    300  1              30   HR    Seoul
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>4     Kim   20    200  3
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>5     Choi  NULL  100  3              SALES
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                                      region product amt
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                                      East   A       10
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                                      East   B       20
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                                      West   A       30
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>King(1)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── Lee(2)
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>└── Park(3)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    ├── Kim(4)
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    └── Choi(5)
+</code></pre></div>
+<h2 id="subject-1-data-modeling">Subject 1: data modeling</h2>
+<p><strong>Q1.</strong> Classify 사원 (employee), 주문 (order) and 주문목록 (order line) by when the entity arises.</p>
+<ul>
+<li>(1) 기본, 중심, 행위</li>
+<li>(2) 중심, 기본, 행위</li>
+<li>(3) 기본, 행위, 중심</li>
+<li>(4) 행위, 중심, 기본</li>
+</ul>
+<p><strong>Q2.</strong> In <code>ORDER_LINE(order_id, product_id, unit_price, qty, line_amount)</code>, line_amount is always unit_price × qty. What kind of attribute is line_amount?</p>
+<ul>
+<li>(1) 기본 (basic)</li>
+<li>(2) 설계 (designed)</li>
+<li>(3) 파생 (derived)</li>
+<li>(4) 복합 (composite)</li>
+</ul>
+<p><strong>Q3.</strong> A sequence-generated <code>order_seq</code> replaces the composite PK <code>(order_id, product_id)</code>. Which is correct?</p>
+<ul>
+<li>(1) order_seq is a 본질식별자 (natural identifier).</li>
+<li>(2) order_seq is an 인조식별자 (artificial identifier), and <code>(order_id, product_id)</code> now needs its own unique constraint to stop duplicate business rows.</li>
+<li>(3) order_seq is an 외부식별자 (external identifier).</li>
+<li>(4) An artificial identifier can never be a primary identifier.</li>
+</ul>
+<p><strong>Q4.</strong> In EMP, empno alone is unique, never NULL and never changes. Someone defines the PK as <code>(empno, name)</code>. Which primary-identifier property does this violate?</p>
+<ul>
+<li>(1) 유일성 (uniqueness)</li>
+<li>(2) 불변성 (immutability)</li>
+<li>(3) 존재성 (never NULL)</li>
+<li>(4) 최소성 (minimality)</li>
+</ul>
+<p><strong>Q5.</strong> The DEPT (parent) → EMP (child) relationship changes from 비식별 (non-identifying) to 식별 (identifying). What happens?</p>
+<ul>
+<li>(1) dept becomes part of EMP's PK, and the line becomes solid.</li>
+<li>(2) dept becomes an ordinary column in EMP, and the line becomes dotted.</li>
+<li>(3) EMP's PK stays the same and dept is removed.</li>
+<li>(4) DEPT's PK becomes an alternate key of EMP.</li>
+</ul>
+<p><strong>Q6.</strong> STUDENT and COURSE have an M:N relationship. What is the standard logical-model treatment?</p>
+<ul>
+<li>(1) Add course_id to STUDENT as a multi-valued attribute.</li>
+<li>(2) Add an intersection entity ENROLLMENT, giving two 1:M relationships.</li>
+<li>(3) Merge the two into one entity.</li>
+<li>(4) Keep the M:N into the physical model unchanged.</li>
+</ul>
+<p><strong>Q7.</strong> <code>ORDER_LINE(order_id, product_id, qty, product_name)</code> has the PK <code>(order_id, product_id)</code>, and product_name depends only on product_id. Which normal form does it violate first?</p>
+<ul>
+<li>(1) 1NF</li>
+<li>(2) 2NF</li>
+<li>(3) 3NF</li>
+<li>(4) BCNF</li>
+</ul>
+<p><strong>Q8.</strong> <code>EMP(empno, name, dept, dname)</code>, where dname depends on dept. Deleting the last employee of dept 30 also loses the name "HR". Which anomaly is this, and what is the fix?</p>
+<ul>
+<li>(1) Insert anomaly; move to 2NF</li>
+<li>(2) Update anomaly; move to 1NF</li>
+<li>(3) Delete anomaly; split DEPT into its own table (3NF)</li>
+<li>(4) Delete anomaly; denormalize</li>
+</ul>
+<p><strong>Q9.</strong> A DBA moves a table to new storage and adds an index. Neither the conceptual schema nor any application changes. Which property made this possible?</p>
+<ul>
+<li>(1) Logical independence</li>
+<li>(2) Physical independence</li>
+<li>(3) External independence</li>
+<li>(4) Transaction independence</li>
+</ul>
+<p><strong>Q10.</strong> Supertype PAYMENT has subtypes CARD and CASH. It is built as one table holding every column, and the card-only columns are NULL on cash rows. What is this conversion called?</p>
+<ul>
+<li>(1) One-to-One</li>
+<li>(2) Plus</li>
+<li>(3) Single (all-in-one)</li>
+<li>(4) Arc</li>
+</ul>
+<h2 id="subject-2-sql">Subject 2: SQL</h2>
+<h3 id="null">NULL</h3>
+<p><strong>Q11.</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">dept</span><span class="p">),</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
+</code></pre></div>
+- (1) 5, 5, 5
+- (2) 5, 4, 5
+- (3) 4, 4, 4
+- (4) 5, 4, 4</p>
+<p><strong>Q12.</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">sal</span><span class="p">),</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+</code></pre></div>
+- (1) No rows
+- (2) 0, 0
+- (3) NULL, 0
+- (4) NULL, NULL</p>
+<p><strong>Q13.</strong> How many rows does each query return?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- A</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">empno</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">mgr</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">-- B</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="n">e</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">mgr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">empno</span><span class="p">);</span>
+</code></pre></div>
+- (1) 3, 3
+- (2) 0, 3
+- (3) 3, 0
+- (4) 2, 3</p>
+<p><strong>Q14.</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">NVL2</span><span class="p">(</span><span class="n">mgr</span><span class="p">,</span><span class="w"> </span><span class="s1">'Y'</span><span class="p">,</span><span class="w"> </span><span class="s1">'N'</span><span class="p">),</span><span class="w"> </span><span class="k">NULLIF</span><span class="p">(</span><span class="n">sal</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">),</span><span class="w"> </span><span class="k">COALESCE</span><span class="p">(</span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">mgr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">empno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</code></pre></div>
+- (1) N, 100, 0
+- (2) Y, NULL, 3
+- (3) Y, 100, 3
+- (4) Y, 100, 0</p>
+<p><strong>Q15.</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="k">END</span><span class="p">),</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
+</code></pre></div>
+- (1) 400, 400
+- (2) 160, 160
+- (3) 400, 160
+- (4) 160, 400</p>
+<p><strong>Q16.</strong> Which name comes first?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">empno</span><span class="p">;</span>
+</code></pre></div>
+- (1) King
+- (2) Park
+- (3) Kim
+- (4) Choi</p>
+<p><strong>Q17.</strong> What do these two expressions return for Choi?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">CASE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">'none'</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">'has'</span><span class="w"> </span><span class="k">END</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">DECODE</span><span class="p">(</span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="s1">'none'</span><span class="p">,</span><span class="w"> </span><span class="s1">'has'</span><span class="p">)</span>
+</code></pre></div>
+- (1) none, none
+- (2) has, has
+- (3) has, none
+- (4) none, has</p>
+<h3 id="joins-and-subqueries">Joins and subqueries</h3>
+<p><strong>Q18.</strong> How many rows?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">FULL</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept</span><span class="p">;</span>
+</code></pre></div>
+- (1) 4
+- (2) 5
+- (3) 7
+- (4) 6</p>
+<p><strong>Q19.</strong> How many rows does each query return?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">-- A</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dname</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">loc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Seoul'</span><span class="p">;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1">-- B</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dname</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">loc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Seoul'</span><span class="p">;</span>
+</code></pre></div>
+- (1) 5, 5
+- (2) 2, 2
+- (3) 5, 2
+- (4) 2, 5</p>
+<p><strong>Q20.</strong> Which ANSI query is equivalent to this one?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dname</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">d</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dept</span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">loc</span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Seoul'</span><span class="p">;</span>
+</code></pre></div>
+- (1) <code>emp e LEFT JOIN dept d ON e.dept = d.dept WHERE d.loc = 'Seoul'</code>
+- (2) <code>emp e LEFT JOIN dept d ON e.dept = d.dept AND d.loc = 'Seoul'</code>
+- (3) <code>emp e RIGHT JOIN dept d ON e.dept = d.dept AND d.loc = 'Seoul'</code>
+- (4) <code>emp e JOIN dept d ON e.dept = d.dept AND d.loc = 'Seoul'</code></p>
+<p><strong>Q21.</strong> Which statement raises an error?</p>
+<ul>
+<li>(1) <code>SELECT name, dname FROM emp NATURAL JOIN dept;</code></li>
+<li>(2) <code>SELECT dept, dname FROM emp JOIN dept USING (dept);</code></li>
+<li>(3) <code>SELECT e.dept, d.dname FROM emp e NATURAL JOIN dept d;</code></li>
+<li>(4) <code>SELECT e.name, d.dname FROM emp e JOIN dept d ON e.dept = d.dept;</code></li>
+</ul>
+<p><strong>Q22.</strong> How many rows does each query return?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">-- A</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1">-- B</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+</code></pre></div>
+- (1) 1, 0
+- (2) 1, 5
+- (3) 3, 0
+- (4) 3, 5</p>
+<p><strong>Q23.</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="p">);</span>
+</code></pre></div>
+- (1) King, Park, Choi
+- (2) King, Lee, Park
+- (3) King
+- (4) King, Park</p>
+<p><strong>Q24.</strong> Which statement raises an error?</p>
+<ul>
+<li>(1) <code>SELECT name, (SELECT dname FROM dept d WHERE d.dept = e.dept) FROM emp e;</code></li>
+<li>(2) <code>SELECT name, (SELECT dname FROM dept WHERE loc = 'Seoul') FROM emp;</code></li>
+<li>(3) <code>SELECT name FROM emp WHERE sal = (SELECT MAX(sal) FROM emp);</code></li>
+<li>(4) <code>SELECT name FROM emp WHERE dept IN (SELECT dept FROM dept WHERE loc = 'Seoul');</code></li>
+</ul>
+<h3 id="set-operators-and-group-functions">Set operators and group functions</h3>
+<p><strong>Q25.</strong> In Oracle, how many rows?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">UNION</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">INTERSECT</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">loc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Seoul'</span><span class="p">;</span>
+</code></pre></div>
+- (1) 2
+- (2) 3
+- (3) 5
+- (4) 4</p>
+<p><strong>Q26.</strong> Row counts of <code>UNION ALL</code>, <code>UNION</code> and <code>MINUS</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w">  </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w">  </span><span class="k">UNION</span><span class="w">     </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept</span><span class="p">;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">MINUS</span><span class="w">     </span><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
+</code></pre></div>
+- (1) 8, 5, 1
+- (2) 7, 4, 1
+- (3) 8, 4, 2
+- (4) 8, 4, 1</p>
+<p><strong>Q27.</strong> On SALES, how many rows does each of <code>GROUP BY ROLLUP(region, product)</code>, <code>CUBE(region, product)</code> and <code>GROUPING SETS(region, product)</code> return?</p>
+<ul>
+<li>(1) 6, 8, 4</li>
+<li>(2) 6, 8, 5</li>
+<li>(3) 5, 8, 4</li>
+<li>(4) 6, 9, 4</li>
+</ul>
+<p><strong>Q28.</strong> In the result of this query, what is <code>GROUPING_ID</code> on the row (NULL, 'A')?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">product</span><span class="p">,</span><span class="w"> </span><span class="n">GROUPING_ID</span><span class="p">(</span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">product</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">CUBE</span><span class="p">(</span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">product</span><span class="p">);</span>
+</code></pre></div>
+- (1) 0
+- (2) 1
+- (3) 2
+- (4) 3</p>
+<p><strong>Q29.</strong> How many result rows have dept = NULL, and how many of those have <code>GROUPING(dept) = 1</code>?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">GROUPING</span><span class="p">(</span><span class="n">dept</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">ROLLUP</span><span class="p">(</span><span class="n">dept</span><span class="p">);</span>
+</code></pre></div>
+- (1) 1, 1
+- (2) 2, 1
+- (3) 2, 2
+- (4) 1, 0</p>
+<h3 id="window-functions-and-top-n">Window functions and Top-N</h3>
+<p><strong>Q30.</strong> What is Lee's value?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
+</code></pre></div>
+- (1) 600
+- (2) 300
+- (3) 1400
+- (4) 900</p>
+<p><strong>Q31.</strong> How many rows?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p">)</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
+- (1) 1
+- (2) 2
+- (3) 3
+- (4) 4</p>
+<p><strong>Q32.</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">       </span><span class="n">sal</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">LAG</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">empno</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">d</span><span class="p">,</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">       </span><span class="n">LAG</span><span class="p">(</span><span class="n">sal</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">empno</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">l</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
+</code></pre></div>
+Which is correct?</p>
+<ul>
+<li>(1) King: d = NULL, l = 0. Lee: d = -200.</li>
+<li>(2) King: d = 0, l = 0. Lee: d = 200.</li>
+<li>(3) King: d = NULL, l = NULL. Lee: d = -200.</li>
+<li>(4) King: d = 500, l = 0. Lee: d = -200.</li>
+</ul>
+<p><strong>Q33.</strong> With <code>NTILE(3) OVER (ORDER BY sal DESC)</code>, which bucket is Kim in, and what are the bucket sizes?</p>
+<ul>
+<li>(1) 3; 2, 2, 1</li>
+<li>(2) 2; 2, 2, 1</li>
+<li>(3) 2; 1, 2, 2</li>
+<li>(4) 3; 1, 2, 2</li>
+</ul>
+<p><strong>Q34.</strong> What is King's value?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">LAST_VALUE</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
+</code></pre></div>
+- (1) 100
+- (2) 500
+- (3) 1400
+- (4) NULL</p>
+<p><strong>Q35.</strong> Which query correctly returns the two lowest-paid employees?</p>
+<ul>
+<li>(1) <code>SELECT name FROM emp WHERE ROWNUM &lt;= 2 ORDER BY sal;</code></li>
+<li>(2) <code>SELECT name FROM emp WHERE ROWNUM BETWEEN 1 AND 2 ORDER BY sal;</code></li>
+<li>(3) <code>SELECT name FROM (SELECT name, ROWNUM rn FROM emp ORDER BY sal) WHERE rn &lt;= 2;</code></li>
+<li>(4) <code>SELECT name FROM (SELECT name FROM emp ORDER BY sal) WHERE ROWNUM &lt;= 2;</code></li>
+</ul>
+<p><strong>Q36.</strong> In Oracle 12c or later, how many rows?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span><span class="k">FETCH</span><span class="w"> </span><span class="k">FIRST</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">ROWS</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">TIES</span><span class="p">;</span>
+</code></pre></div>
+- (1) 1
+- (2) 2
+- (3) 3
+- (4) 5</p>
+<h3 id="hierarchical-queries">Hierarchical queries</h3>
+<p><strong>Q37.</strong> There is no START WITH. How many rows?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">CONNECT</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">PRIOR</span><span class="w"> </span><span class="n">empno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mgr</span><span class="p">;</span>
+</code></pre></div>
+- (1) 5
+- (2) 9
+- (3) 11
+- (4) Error</p>
+<p><strong>Q38.</strong> Which is correct?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">LEVEL</span><span class="p">,</span><span class="w"> </span><span class="n">CONNECT_BY_ISLEAF</span><span class="p">,</span><span class="w"> </span><span class="n">SYS_CONNECT_BY_PATH</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s1">'/'</span><span class="p">)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="k">START</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">empno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="k">CONNECT</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">PRIOR</span><span class="w"> </span><span class="n">empno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mgr</span><span class="p">;</span>
+</code></pre></div>
+- (1) 3 rows. Kim: LEVEL 2, ISLEAF 1, path <code>/Park/Kim</code>.
+- (2) 3 rows. Kim: LEVEL 3, ISLEAF 1, path <code>/King/Park/Kim</code>.
+- (3) 2 rows: Park, King.
+- (4) 3 rows. Park: ISLEAF 1.</p>
+<p><strong>Q39.</strong> Which rows come back?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">START</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Choi'</span><span class="w"> </span><span class="k">CONNECT</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">PRIOR</span><span class="w"> </span><span class="n">mgr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">empno</span><span class="p">;</span>
+</code></pre></div>
+- (1) Choi
+- (2) Choi, Park, King
+- (3) Choi, Kim
+- (4) Choi, Park</p>
+<h3 id="functions-like-regular-expressions">Functions, LIKE, regular expressions</h3>
+<p><strong>Q40.</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">SUBSTR</span><span class="p">(</span><span class="s1">'DATABASE'</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">LTRIM</span><span class="p">(</span><span class="s1">'xxABx'</span><span class="p">,</span><span class="w"> </span><span class="s1">'x'</span><span class="p">),</span><span class="w"> </span><span class="n">ROUND</span><span class="p">(</span><span class="mi">1234</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dual</span><span class="p">;</span>
+</code></pre></div>
+- (1) BA, ABx, 1200
+- (2) AS, AB, 1200
+- (3) BA, ABx, 1300
+- (4) SE, ABx, 1200</p>
+<p><strong>Q41.</strong> Column <code>d</code> is a DATE that includes a time of day. Which condition <strong>misses</strong> a row with d = 2026-01-31 14:00?</p>
+<ul>
+<li>(1) <code>d &gt;= TO_DATE('20260101','YYYYMMDD') AND d &lt; TO_DATE('20260201','YYYYMMDD')</code></li>
+<li>(2) <code>TRUNC(d) BETWEEN TO_DATE('20260101','YYYYMMDD') AND TO_DATE('20260131','YYYYMMDD')</code></li>
+<li>(3) <code>TO_CHAR(d, 'YYYYMM') = '202601'</code></li>
+<li>(4) <code>d BETWEEN TO_DATE('20260101','YYYYMMDD') AND TO_DATE('20260131','YYYYMMDD')</code></li>
+</ul>
+<p><strong>Q42.</strong> A column holds <code>'A_1'</code>, <code>'AB1'</code> and <code>'A%1'</code>. Which values match <code>code LIKE 'A\_%' ESCAPE '\'</code>?</p>
+<ul>
+<li>(1) <code>A_1</code> only</li>
+<li>(2) <code>A_1</code>, <code>AB1</code></li>
+<li>(3) All three</li>
+<li>(4) <code>A_1</code>, <code>A%1</code></li>
+</ul>
+<p><strong>Q43.</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">REGEXP_SUBSTR</span><span class="p">(</span><span class="s1">'a1b22c333'</span><span class="p">,</span><span class="w"> </span><span class="s1">'[0-9]+'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">       </span><span class="n">REGEXP_COUNT</span><span class="p">(</span><span class="s1">'1.2.3'</span><span class="p">,</span><span class="w"> </span><span class="s1">'.'</span><span class="p">),</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">       </span><span class="n">REGEXP_COUNT</span><span class="p">(</span><span class="s1">'1.2.3'</span><span class="p">,</span><span class="w"> </span><span class="s1">'\.'</span><span class="p">)</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">dual</span><span class="p">;</span>
+</code></pre></div>
+- (1) 22, 5, 2
+- (2) 2, 5, 2
+- (3) 22, 2, 2
+- (4) 333, 5, 2</p>
+<p><strong>Q44.</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">REGEXP_SUBSTR</span><span class="p">(</span><span class="s1">'&lt;a&gt;&lt;b&gt;'</span><span class="p">,</span><span class="w"> </span><span class="s1">'&lt;.+&gt;'</span><span class="p">),</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">       </span><span class="n">REGEXP_SUBSTR</span><span class="p">(</span><span class="s1">'&lt;a&gt;&lt;b&gt;'</span><span class="p">,</span><span class="w"> </span><span class="s1">'&lt;.+?&gt;'</span><span class="p">),</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">       </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="s1">'2026-11-30'</span><span class="p">,</span><span class="w"> </span><span class="s1">'(\d+)-(\d+)-(\d+)'</span><span class="p">,</span><span class="w"> </span><span class="s1">'\3/\2/\1'</span><span class="p">)</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">dual</span><span class="p">;</span>
+</code></pre></div>
+- (1) <code>&lt;a&gt;</code>, <code>&lt;a&gt;</code>, <code>30/11/2026</code>
+- (2) <code>&lt;a&gt;&lt;b&gt;</code>, <code>&lt;a&gt;</code>, <code>30/11/2026</code>
+- (3) <code>&lt;a&gt;&lt;b&gt;</code>, <code>&lt;a&gt;&lt;b&gt;</code>, <code>2026/11/30</code>
+- (4) <code>&lt;a&gt;</code>, <code>&lt;a&gt;&lt;b&gt;</code>, <code>30/11/2026</code></p>
+<h3 id="pivot-and-unpivot">PIVOT and UNPIVOT</h3>
+<p><strong>Q45.</strong> What does this return?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">mgr</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="p">)</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="n">PIVOT</span><span class="w"> </span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">d10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">d20</span><span class="p">));</span>
+</code></pre></div>
+- (1) 1 row; columns D10, D20
+- (2) 3 rows; columns MGR, D10, D20
+- (3) 5 rows; columns MGR, D10, D20
+- (4) 3 rows; columns D10, D20</p>
+<p><strong>Q46.</strong> Table Q(id, q1, q2) holds (1, 10, NULL) and (2, 20, 30). How many rows does <code>SELECT * FROM q UNPIVOT (amt FOR qtr IN (q1, q2))</code> return, and how many with <code>UNPIVOT INCLUDE NULLS</code>?</p>
+<ul>
+<li>(1) 4, 4</li>
+<li>(2) 3, 4</li>
+<li>(3) 3, 3</li>
+<li>(4) 2, 4</li>
+</ul>
+<h3 id="management-statements">Management statements</h3>
+<p><strong>Q47.</strong> Table T starts empty. After this sequence, which rows remain?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'A'</span><span class="p">);</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="k">COMMIT</span><span class="p">;</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'B'</span><span class="p">);</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="n">SAVEPOINT</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'C'</span><span class="p">);</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="k">ROLLBACK</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'D'</span><span class="p">);</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="nb">NUMBER</span><span class="p">);</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'E'</span><span class="p">);</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="k">ROLLBACK</span><span class="p">;</span>
+</code></pre></div>
+- (1) A
+- (2) A, D
+- (3) A, B, D, E
+- (4) A, B, D</p>
+<p><strong>Q48.</strong> T holds (1,'a') and (2,'b'). S holds (2,'x') and (3,'y'). What is in T afterwards?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">MERGE</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">t</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="k">USING</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="k">WHEN</span><span class="w"> </span><span class="n">MATCHED</span><span class="w"> </span><span class="k">THEN</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">  </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">v</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">  </span><span class="k">DELETE</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'x'</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="k">WHEN</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">MATCHED</span><span class="w"> </span><span class="k">THEN</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">  </span><span class="k">INSERT</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">v</span><span class="p">);</span>
+</code></pre></div>
+- (1) (1,a), (2,x), (3,y)
+- (2) (1,a), (3,y)
+- (3) (1,a), (2,b), (3,y)
+- (4) (2,x), (3,y)</p>
+<p><strong>Q49.</strong> After this sequence, who can still SELECT from u1.emp?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1">-- as u1</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">u2</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">OPTION</span><span class="p">;</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="c1">-- as u2</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u1</span><span class="p">.</span><span class="n">emp</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">u3</span><span class="p">;</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="c1">-- as u1</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="k">REVOKE</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">u2</span><span class="p">;</span>
+</code></pre></div>
+- (1) u2 and u3
+- (2) u3 only
+- (3) u2 only
+- (4) Neither u2 nor u3</p>
+<p><strong>Q50.</strong> Which statement is <strong>wrong</strong>?</p>
+<ul>
+<li>(1) <code>CREATE TABLE emp2 AS SELECT * FROM emp</code> copies explicitly declared NOT NULL constraints but not the PK.</li>
+<li>(2) TRUNCATE keeps the table structure and cannot be rolled back.</li>
+<li>(3) A UNIQUE column can hold several NULLs.</li>
+<li>(4) <code>CHECK (sal &gt; 0)</code> rejects an INSERT whose sal is NULL.</li>
+</ul>
+<h2 id="answers">Answers</h2>
+<p>✓ means the answer was run in DuckDB. <strong>O</strong> means the behavior is Oracle-specific, so the answer was worked out by hand against Oracle semantics. <strong>R</strong> means a regex result checked against Oracle's regular-expression documentation. Every answer was also re-solved by an independent reviewer.</p>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th>Ans</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>Employee is 기본 (basic, exists on its own). Order is 중심 (central, arises from basic entities). Order line is 행위 (action, arises from two or more parents).</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>Computable from other attributes, so it's 파생 (derived).</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>An artificial key doesn't stop the same business row being inserted twice, so the natural key needs a unique constraint.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>empno alone is already unique, so adding name breaks minimality.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>Identifying relationship: the parent's PK moves into the child's PK, drawn as a solid line.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>M:N is resolved with an intersection entity.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2</td>
+<td>product_name depends on part of the composite key, which is a partial dependency.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3</td>
+<td>Losing an unrelated fact on delete is a delete anomaly. The fix removes the transitive dependency empno → dept → dname.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>2</td>
+<td>Changing storage without touching the conceptual schema is physical independence.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>3</td>
+<td>One table with NULL-padded subtype columns is the Single (all-in-one) type.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>4</td>
+<td>✓ 5 rows, 4 non-NULL depts, 4 distinct salaries (500, 300, 200, 100).</td>
+</tr>
+<tr>
+<td>12</td>
+<td>3</td>
+<td>✓ With no GROUP BY you always get one row. SUM over nothing is NULL, COUNT is 0.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>✓ The mgr list contains NULL, so NOT IN matches nothing. NOT EXISTS returns Lee, Kim, Choi.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>3</td>
+<td>Choi's mgr is 3, so NVL2 gives Y. NULLIF(100,300) = 100. COALESCE skips the NULL dept and returns 3. (✓ for NULLIF and COALESCE; NVL2 is <strong>O</strong>.)</td>
+</tr>
+<tr>
+<td>15</td>
+<td>3</td>
+<td>✓ The first AVG skips the NULLs: 800/2. ELSE 0 turns them into zeros: 800/5.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>4</td>
+<td><strong>O</strong> Oracle sorts NULL as the largest value, so it comes first in DESC.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>3</td>
+<td><strong>O</strong> <code>CASE dept WHEN NULL</code> tests <code>dept = NULL</code>, which is never true. DECODE treats NULL = NULL as a match.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>4</td>
+<td>✓ 4 matched rows + Choi (no dept) + dept 30 (no employees).</td>
+</tr>
+<tr>
+<td>19</td>
+<td>3</td>
+<td>✓ A filter in ON keeps every left row. The same filter in WHERE drops the NULL-filled rows.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>2</td>
+<td><strong>O</strong> <code>(+)</code> on every condition for d keeps it inside the outer join, which is ANSI ON.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>3</td>
+<td><strong>O</strong> The NATURAL JOIN column can't take a table prefix (ORA-25155).</td>
+</tr>
+<tr>
+<td>22</td>
+<td>2</td>
+<td>✓ A: greater than 300 is King only. B: ALL over an empty set is TRUE, so all 5 rows.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>4</td>
+<td>✓ The (NULL, 100) group never matches, because NULL = NULL is unknown.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>2</td>
+<td>Two departments are in Seoul, so the scalar subquery returns 2 rows (ORA-01427). Option 1 returns NULL for Choi, which is fine.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>1</td>
+<td><strong>O</strong> Oracle evaluates set operators left to right: {10, 20, 30, NULL} ∩ {10, 30} = 2 rows. SQL Server and DuckDB do INTERSECT first and give 4 (✓). Oracle's docs warn this may change in a future release, so use parentheses in real code.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>4</td>
+<td>✓ UNION treats the NULLs as duplicates, giving 10, 20, 30, NULL. MINUS leaves dept 30.</td>
+</tr>
+<tr>
+<td>27</td>
+<td>1</td>
+<td>✓ ROLLUP: 3 + 2 + 1. CUBE adds 2 product subtotals. GROUPING SETS: 2 + 2.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>3</td>
+<td>✓ region rolled up = bit 1 (value 2), product kept = bit 0.</td>
+</tr>
+<tr>
+<td>29</td>
+<td>2</td>
+<td>✓ Choi's real NULL group (GROUPING 0) and the grand total (GROUPING 1).</td>
+</tr>
+<tr>
+<td>30</td>
+<td>4</td>
+<td>✓ The default RANGE frame includes Park's tied 300: 100 + 200 + 300 + 300.</td>
+</tr>
+<tr>
+<td>31</td>
+<td>3</td>
+<td>✓ One top earner per partition: 10, 20 and the NULL partition.</td>
+</tr>
+<tr>
+<td>32</td>
+<td>1</td>
+<td>✓ King has no previous row, so the difference is NULL. The default argument 0 fills l.</td>
+</tr>
+<tr>
+<td>33</td>
+<td>2</td>
+<td>✓ 5 rows into 3 buckets: the remainder goes to the first buckets (2, 2, 1). Kim is the 4th row.</td>
+</tr>
+<tr>
+<td>34</td>
+<td>2</td>
+<td>✓ The default RANGE frame ends at the last row tied with the current one, so LAST_VALUE is the row's own sal.</td>
+</tr>
+<tr>
+<td>35</td>
+<td>4</td>
+<td><strong>O</strong> ROWNUM is assigned before ORDER BY, so sort in an inline view first. Option 3 numbers the rows before sorting.</td>
+</tr>
+<tr>
+<td>36</td>
+<td>3</td>
+<td><strong>O</strong> King (500), plus Lee and Park tied at 300 for 2nd place.</td>
+</tr>
+<tr>
+<td>37</td>
+<td>3</td>
+<td>✓ (as a recursive CTE) With no START WITH, every row is a root: 5 + 1 + 3 + 1 + 1.</td>
+</tr>
+<tr>
+<td>38</td>
+<td>1</td>
+<td><strong>O</strong> Park is the root (LEVEL 1), so Kim is LEVEL 2 with the path /Park/Kim.</td>
+</tr>
+<tr>
+<td>39</td>
+<td>2</td>
+<td><strong>O</strong> <code>PRIOR mgr = empno</code> walks up the tree, from staff to boss.</td>
+</tr>
+<tr>
+<td>40</td>
+<td>1</td>
+<td>✓ (SUBSTR) -4 starts at the 4th character from the end, 'B'. LTRIM strips only from the left. 1234.5 rounds to the hundreds.</td>
+</tr>
+<tr>
+<td>41</td>
+<td>4</td>
+<td>A date with no time is midnight, so 01-31 14:00 is after the upper bound.</td>
+</tr>
+<tr>
+<td>42</td>
+<td>1</td>
+<td>The escaped <code>_</code> is a literal underscore. <code>%</code> after it matches the rest.</td>
+</tr>
+<tr>
+<td>43</td>
+<td>1</td>
+<td><strong>R</strong> The 2nd run of digits is '22'. An unescaped <code>.</code> matches any character.</td>
+</tr>
+<tr>
+<td>44</td>
+<td>2</td>
+<td><strong>R</strong> <code>.+</code> is greedy and <code>.+?</code> is lazy. <code>\n</code> refers back to group n.</td>
+</tr>
+<tr>
+<td>45</td>
+<td>2</td>
+<td>✓ The column left over (mgr) becomes an implicit GROUP BY: 3 distinct mgr values.</td>
+</tr>
+<tr>
+<td>46</td>
+<td>2</td>
+<td>✓ UNPIVOT drops NULL values unless you write INCLUDE NULLS.</td>
+</tr>
+<tr>
+<td>47</td>
+<td>4</td>
+<td><strong>O</strong> ROLLBACK TO s1 removes C. The DDL commits A, B, D. The final ROLLBACK removes only E.</td>
+</tr>
+<tr>
+<td>48</td>
+<td>2</td>
+<td><strong>O</strong> DELETE WHERE checks the updated value, so row 2 becomes 'x' and is then deleted. (✓ for the MERGE without DELETE.)</td>
+</tr>
+<tr>
+<td>49</td>
+<td>4</td>
+<td><strong>O</strong> Object privileges granted WITH GRANT OPTION are revoked in cascade.</td>
+</tr>
+<tr>
+<td>50</td>
+<td>4</td>
+<td><strong>O</strong> CHECK rejects only FALSE. NULL &gt; 0 is unknown, so the row is accepted. (Option 1 is true; note that the NOT NULL Oracle adds implicitly for a PK column is not copied.)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.path", "navigation.indexes", "content.code.annotate", "content.code.copy", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/nav-accordion.js"></script>
+      
+    
+  </body>
+</html>

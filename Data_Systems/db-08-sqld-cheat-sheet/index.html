@@ -18,7 +18,7 @@
         <link rel="prev" href="../db-07-clustered-vs-heap-and-joins/">
       
       
-        <link rel="next" href="../../Distributed/dist-01-replication-health-and-time/">
+        <link rel="next" href="../db-09-sqld-mock-exam/">
       
       
         
@@ -1725,6 +1725,8 @@
       
         
       
+        
+      
     
     
     
@@ -2374,6 +2376,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db-09-sqld-mock-exam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQLD Mock Exam: 50 Original Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3273,6 +3303,7 @@
 <li>Crow's foot = many</li>
 </ul>
 </li>
+<li>Peter Chen notation: rectangle = entity, diamond = relationship, ellipse = attribute.</li>
 </ul>
 <h3 id="entities">Entities</h3>
 <ul>
@@ -3306,6 +3337,7 @@
 <li>An M:N relationship is resolved with an intersection entity, which gives two 1:M relationships.</li>
 <li>식별 relationship: the parent's PK becomes part of the child's PK (solid line), and the child is a weak entity.</li>
 <li>비식별 relationship: the parent's PK is an ordinary FK column in the child (dotted line).</li>
+<li>Arc (exclusive) relationship: each child row relates to exactly one of several parents.</li>
 </ul>
 <h3 id="identifiers-and-keys">Identifiers and keys</h3>
 <table>
@@ -3426,6 +3458,7 @@
 <li>Precedence: <code>NOT</code> &gt; <code>AND</code> &gt; <code>OR</code>. Use parentheses when unsure.</li>
 <li><code>BETWEEN a AND b</code> includes both ends. <code>IN (...)</code> is a chain of ORs.</li>
 <li><code>LIKE</code>: <code>%</code> = any number of characters, <code>_</code> = exactly one. <code>LIKE '%\_%' ESCAPE '\'</code> matches a literal underscore.</li>
+<li>SQL Server only: <code>LIKE '[a-c]%'</code> matches a bracket range of characters.</li>
 <li>CHAR vs VARCHAR2: CHAR is blank-padded, so <code>'a '</code> = <code>'a'</code> is true when both are CHAR. Between VARCHAR2 values the comparison is exact.</li>
 </ul>
 <h3 id="functions">Functions</h3>
@@ -3469,6 +3502,8 @@
 </table>
 <ul>
 <li><code>SUBSTR('SQLD',2,2)</code> = <code>'QL'</code> (start position, then length, counting from 1) · <code>INSTR('SQLD','L')</code> = 3 · <code>LPAD('7',3,'0')</code> = <code>'007'</code></li>
+<li><code>SUBSTR('DATABASE',-4,2)</code> = <code>'BA'</code>: a negative start counts from the end.</li>
+<li><code>LTRIM('xxABx','x')</code> = <code>'ABx'</code>: the second argument is a <strong>set</strong> of characters to strip from the left. <code>TRIM(LEADING '0' FROM '00120')</code> = <code>'120'</code>.</li>
 <li>Oracle <code>CONCAT</code> takes exactly 2 arguments.</li>
 <li><code>ROUND(123.456,1)</code> = 123.5 · <code>ROUND(123.456,-1)</code> = 120 · <code>TRUNC(123.456,1)</code> = 123.4</li>
 <li>CEIL always rounds <strong>up</strong>: <code>CEIL(-1.5)</code> = -1. FLOOR always rounds <strong>down</strong>: <code>FLOOR(-1.5)</code> = -2. <code>MOD(7,3)</code> = 1.</li>
@@ -3476,6 +3511,8 @@
 <li>date + 1 = the next day · date + 1/24 = one hour later</li>
 <li><code>ADD_MONTHS(d,n)</code>, <code>MONTHS_BETWEEN(a,b)</code>, <code>LAST_DAY(d)</code>, <code>EXTRACT(YEAR FROM d)</code></li>
 <li>Conversion: <code>TO_CHAR(d,'YYYY-MM-DD HH24:MI:SS')</code> and <code>TO_DATE</code> (<code>HH24</code>: 24-hour clock, <code>MI</code>: minutes)</li>
+<li><code>TRUNC(d,'MM')</code> = the first day of the month.</li>
+<li>BETWEEN trap: <code>TO_DATE('20260131','YYYYMMDD')</code> is midnight, so <code>d BETWEEN ... AND TO_DATE('20260131','YYYYMMDD')</code> misses the rest of Jan 31. Write <code>d &lt; TO_DATE('20260201','YYYYMMDD')</code>.</li>
 </ul>
 </li>
 <li><code>CASE</code>:<ul>
@@ -3490,7 +3527,7 @@
 <ul>
 <li>INNER: both sides must match.</li>
 <li>LEFT / RIGHT: keep every row of that side, with NULLs filled in on the other.</li>
-<li>FULL: keep both sides.</li>
+<li>FULL: keep both sides. Row count = matched + unmatched left + unmatched right. NULL keys never match each other.</li>
 <li>CROSS: every pair (m × n rows).</li>
 <li>Self join: the same table under two aliases (<code>emp e JOIN emp m ON e.mgr = m.empno</code>).</li>
 <li>Non-equi join: a condition such as <code>ON e.sal BETWEEN g.lo AND g.hi</code>.</li>
@@ -3511,16 +3548,17 @@
 <li><code>EXISTS</code> asks whether the subquery returned any row. The values don't matter, so <code>SELECT 1</code> is fine.</li>
 <li>Correlated subquery: the inner query refers to the outer row and runs once per outer row.</li>
 <li>Where subqueries go:<ul>
-<li>In SELECT: a scalar subquery, which must return 1 value.</li>
+<li>In SELECT: a scalar subquery, which must return 1 value. 0 rows gives NULL. 2+ rows is an error (ORA-01427).</li>
 <li>In FROM: an inline view, the only kind that can take ORDER BY.</li>
 <li>In WHERE: a nested subquery.</li>
 </ul>
 </li>
-<li>Multi-column: <code>WHERE (dept, sal) IN (SELECT dept, MAX(sal) ... GROUP BY dept)</code>.</li>
+<li>Multi-column: <code>WHERE (dept, sal) IN (SELECT dept, MAX(sal) ... GROUP BY dept)</code>. A pair containing NULL, such as (NULL, 100), never matches.</li>
 </ul>
 <h3 id="set-operators">Set operators</h3>
 <ul>
 <li><code>UNION</code> removes duplicates. <code>UNION ALL</code> keeps them, so it does no dedup work and is the cheapest.</li>
+<li>Set operators treat NULLs as <strong>equal</strong>: UNION keeps one NULL row, even though <code>NULL = NULL</code> is unknown in WHERE and joins.</li>
 <li><code>INTERSECT</code>: rows in both. <code>MINUS</code> (SQL Server <code>EXCEPT</code>): rows in the first but not the second.</li>
 <li>Precedence:<ul>
 <li>Oracle evaluates all set operators left to right, with equal precedence.</li>
@@ -3633,6 +3671,7 @@
 </code></pre></div>
 <ul>
 <li><code>START WITH</code> picks the roots. Without it, <strong>every</strong> row starts its own tree. LEVEL starts at 1 at the root.</li>
+<li>Row generator: <code>SELECT LEVEL FROM dual CONNECT BY LEVEL &lt;= 3</code> returns 1, 2, 3.</li>
 <li>START WITH rows are never tested against the CONNECT BY condition.</li>
 <li>With <code>START WITH mgr IS NULL</code>:<ul>
 <li>A condition in <strong>CONNECT BY</strong> cuts the whole branch: <code>CONNECT BY PRIOR empno = mgr AND name &lt;&gt; 'Park'</code> returns King, Lee.</li>
@@ -3651,13 +3690,19 @@
 </ul>
 <h3 id="pivot-and-regular-expressions">PIVOT and regular expressions</h3>
 <ul>
-<li><code>PIVOT (SUM(sal) FOR dept IN (10, 20))</code> turns rows into columns. <code>UNPIVOT</code> turns columns into rows.</li>
+<li><code>PIVOT (SUM(sal) FOR dept IN (10, 20))</code> turns rows into columns. <code>UNPIVOT</code> turns columns into rows.<ul>
+<li>Any source column not used in PIVOT becomes an implicit GROUP BY key, so pivot from an inline view that selects only the columns you need.</li>
+<li>The alias in <code>IN (10 AS d10)</code> becomes the result column name.</li>
+<li>UNPIVOT drops NULL values unless written <code>UNPIVOT INCLUDE NULLS</code>.</li>
+</ul>
+</li>
 <li>Symbols:<ul>
 <li><code>.</code> any character · <code>^</code> start · <code>$</code> end · <code>|</code> or</li>
 <li><code>*</code> 0 or more · <code>+</code> 1 or more · <code>?</code> 0 or 1</li>
 <li><code>{n}</code> exactly n · <code>{n,}</code> n or more · <code>{n,m}</code> between n and m</li>
 <li><code>[abc]</code> one of these · <code>[^abc]</code> none of these</li>
 <li><code>\d</code> a digit, the same as <code>[[:digit:]]</code> (also <code>[[:alpha:]]</code>, <code>[[:space:]]</code>)</li>
+<li><code>\.</code> a literal dot</li>
 <li><code>\1</code> back-reference to the first group</li>
 </ul>
 </li>
@@ -3668,6 +3713,10 @@
 <li><code>REGEXP_REPLACE</code>: replace</li>
 <li><code>REGEXP_INSTR</code>: position</li>
 <li><code>REGEXP_COUNT</code>: count matches</li>
+</ul>
+</li>
+<li>Argument order: <code>REGEXP_SUBSTR(src, pattern, position, occurrence, match_param)</code>. match_param <code>'i'</code> = case-insensitive.<ul>
+<li><code>REGEXP_SUBSTR('a1b22c333','[0-9]+',1,2)</code> = <code>'22'</code> (the 2nd match, starting from position 1)</li>
 </ul>
 </li>
 </ul>
@@ -3689,6 +3738,9 @@
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">WHEN</span><span class="w"> </span><span class="n">MATCHED</span><span class="w">     </span><span class="k">THEN</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">v</span><span class="w">  </span><span class="p">[</span><span class="k">DELETE</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">...]</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">WHEN</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">MATCHED</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">v</span><span class="p">);</span>
 </code></pre></div>
+<ul>
+<li><code>DELETE WHERE</code> applies only to rows this MERGE just updated, and tests their <strong>updated</strong> values.</li>
+</ul>
 <h3 id="ddl">DDL</h3>
 <table>
 <thead>
@@ -3717,7 +3769,9 @@
 </tbody>
 </table>
 <ul>
-<li><code>CREATE TABLE t2 AS SELECT ...</code> (CTAS) copies the data and the NOT NULL constraints only: no PK, FK, UNIQUE or CHECK.</li>
+<li><code>CREATE TABLE t2 AS SELECT ...</code> (CTAS) copies the data and the explicitly declared NOT NULL constraints only: no PK, FK, UNIQUE or CHECK. The NOT NULL that a PK puts on its column is not copied, so that column becomes nullable.</li>
+<li>Names: start with a letter, use only A–Z, 0–9, <code>_</code>, <code>$</code> and <code>#</code>, and can't be reserved words.</li>
+<li>SQL Server auto-number: <code>id INT IDENTITY(1,1)</code> (start 1, step 1).</li>
 <li><code>DROP TABLE t CASCADE CONSTRAINTS</code> also drops the FKs that point at t.</li>
 <li><code>DELETE</code> removes rows and can be rolled back until COMMIT. <code>TRUNCATE</code> removes all rows but keeps the table, and can't be rolled back in Oracle. <code>DROP</code> removes the table itself.</li>
 <li>A view is a stored query and holds no data. Views with joins, GROUP BY or DISTINCT are restricted for DML.</li>
@@ -3731,7 +3785,7 @@
 <li><code>ON DELETE SET NULL</code>: the children's FK becomes NULL.</li>
 </ul>
 </li>
-<li><code>CHECK (sal &gt; 0)</code> enforces a condition. <code>DEFAULT</code> supplies the value when an INSERT leaves the column out.</li>
+<li><code>CHECK (sal &gt; 0)</code> enforces a condition, but <strong>lets NULL through</strong>: the check fails only on FALSE, and NULL gives unknown. <code>DEFAULT</code> supplies the value when an INSERT leaves the column out.</li>
 </ul>
 <h3 id="tcl">TCL</h3>
 <ul>
