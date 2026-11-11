@@ -3394,8 +3394,9 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY
 </code></pre></div>
 <ul>
-<li>A SELECT alias works in ORDER BY but <strong>not</strong> in WHERE, because WHERE runs before the alias exists.</li>
+<li>A SELECT alias works in ORDER BY but <strong>not</strong> in WHERE or GROUP BY, because both run before the alias exists. (Oracle 23ai allows it in GROUP BY. The exam follows the older rule.)</li>
 <li>To filter on an aggregate, use HAVING. WHERE runs before the groups exist.</li>
+<li>HAVING also works without GROUP BY: the whole table becomes one group.</li>
 <li>After GROUP BY, SELECT and ORDER BY may use only group keys and aggregates.</li>
 <li>ORDER BY accepts a position (<code>ORDER BY 2</code>), an alias or a column name.</li>
 <li>Oracle has <code>NULLS FIRST</code> / <code>NULLS LAST</code>. SQL Server has no such syntax.</li>
@@ -3404,6 +3405,7 @@
 <p>Comparing anything with unknown gives unknown, and that row is dropped.</p>
 <ul>
 <li><code>NULL + 1</code> is NULL. <code>col = NULL</code> never matches. Write <code>col IS NULL</code>.</li>
+<li>Concatenation is the exception in Oracle: <code>'a' || NULL</code> = <code>'a'</code>, because NULL is treated as <code>''</code>. In SQL Server <code>'a' + NULL</code> is NULL.</li>
 <li><code>COUNT(*)</code> counts rows (5). <code>COUNT(dept)</code> skips NULLs (4). <code>COUNT(DISTINCT col)</code> counts distinct non-NULL values.</li>
 <li>SUM, AVG, MAX and MIN skip NULLs, so <code>AVG</code> is the sum divided by the <strong>non-NULL</strong> count.</li>
 <li>On an empty table with no GROUP BY, you still get one row: <code>COUNT</code> is 0, and <code>SUM</code> / <code>MAX</code> are NULL. With GROUP BY you get 0 rows.</li>
@@ -3492,7 +3494,7 @@
 <li>CROSS: every pair (m × n rows).</li>
 <li>Self join: the same table under two aliases (<code>emp e JOIN emp m ON e.mgr = m.empno</code>).</li>
 <li>Non-equi join: a condition such as <code>ON e.sal BETWEEN g.lo AND g.hi</code>.</li>
-<li><code>NATURAL JOIN</code> joins on <strong>every</strong> same-named column. <code>USING (col)</code> joins on just the named ones. Either way, the join column takes <strong>no table prefix</strong>.</li>
+<li><code>NATURAL JOIN</code> joins on <strong>every</strong> same-named column. <code>USING (col)</code> joins on just the named ones. Either way, the join column takes <strong>no table prefix</strong>. SQL Server supports neither.</li>
 <li>Oracle <code>(+)</code> goes on the side that <strong>might be empty</strong>: <code>e.dept = d.dept(+)</code> is <code>e LEFT JOIN d</code>.<ul>
 <li>Every condition on the optional table needs <code>(+)</code>. Without it, the outer join becomes an inner join.</li>
 <li><code>(+)</code> can't be combined with OR or IN, and there is no FULL join with <code>(+)</code>.</li>
@@ -3505,7 +3507,7 @@
 <ul>
 <li>A single-row operator (<code>=</code>, <code>&lt;</code>) against a multi-row result is an <strong>error</strong>. Use <code>IN</code>, <code>ANY</code> or <code>ALL</code>.</li>
 <li><code>&gt; ALL</code> means greater than the <strong>max</strong>. <code>&gt; ANY</code> means greater than the <strong>min</strong>.</li>
-<li><code>= ANY</code> is the same as <code>IN</code>. <code>&lt;&gt; ALL</code> is the same as <code>NOT IN</code>. <code>ALL</code> against an empty result is TRUE.</li>
+<li><code>= ANY</code> is the same as <code>IN</code>. <code>&lt;&gt; ALL</code> is the same as <code>NOT IN</code>. Against an empty result, <code>ALL</code> is TRUE and <code>ANY</code> is FALSE.</li>
 <li><code>EXISTS</code> asks whether the subquery returned any row. The values don't matter, so <code>SELECT 1</code> is fine.</li>
 <li>Correlated subquery: the inner query refers to the outer row and runs once per outer row.</li>
 <li>Where subqueries go:<ul>
