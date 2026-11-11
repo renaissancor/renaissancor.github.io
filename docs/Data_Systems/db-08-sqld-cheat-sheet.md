@@ -47,6 +47,7 @@ King(1)
     - Circle = optional
     - Bar = mandatory
     - Crow's foot = many
+- Peter Chen notation: rectangle = entity, diamond = relationship, ellipse = attribute.
 
 ### Entities
 
@@ -76,6 +77,7 @@ King(1)
 - An M:N relationship is resolved with an intersection entity, which gives two 1:M relationships.
 - 식별 relationship: the parent's PK becomes part of the child's PK (solid line), and the child is a weak entity.
 - 비식별 relationship: the parent's PK is an ordinary FK column in the child (dotted line).
+- Arc (exclusive) relationship: each child row relates to exactly one of several parents.
 
 ### Identifiers and keys
 
@@ -167,6 +169,7 @@ Comparing anything with unknown gives unknown, and that row is dropped.
 - Precedence: `NOT` > `AND` > `OR`. Use parentheses when unsure.
 - `BETWEEN a AND b` includes both ends. `IN (...)` is a chain of ORs.
 - `LIKE`: `%` = any number of characters, `_` = exactly one. `LIKE '%\_%' ESCAPE '\'` matches a literal underscore.
+- SQL Server only: `LIKE '[a-c]%'` matches a bracket range of characters.
 - CHAR vs VARCHAR2: CHAR is blank-padded, so `'a '` = `'a'` is true when both are CHAR. Between VARCHAR2 values the comparison is exact.
 
 ### Functions
@@ -182,6 +185,8 @@ Comparing anything with unknown gives unknown, and that row is dropped.
 | <code>'a' &#124;&#124; 'b'</code> | `'a' + 'b'` |
 
 - `SUBSTR('SQLD',2,2)` = `'QL'` (start position, then length, counting from 1) · `INSTR('SQLD','L')` = 3 · `LPAD('7',3,'0')` = `'007'`
+- `SUBSTR('DATABASE',-4,2)` = `'BA'`: a negative start counts from the end.
+- `LTRIM('xxABx','x')` = `'ABx'`: the second argument is a **set** of characters to strip from the left. `TRIM(LEADING '0' FROM '00120')` = `'120'`.
 - Oracle `CONCAT` takes exactly 2 arguments.
 - `ROUND(123.456,1)` = 123.5 · `ROUND(123.456,-1)` = 120 · `TRUNC(123.456,1)` = 123.4
 - CEIL always rounds **up**: `CEIL(-1.5)` = -1. FLOOR always rounds **down**: `FLOOR(-1.5)` = -2. `MOD(7,3)` = 1.
@@ -189,6 +194,8 @@ Comparing anything with unknown gives unknown, and that row is dropped.
     - date + 1 = the next day · date + 1/24 = one hour later
     - `ADD_MONTHS(d,n)`, `MONTHS_BETWEEN(a,b)`, `LAST_DAY(d)`, `EXTRACT(YEAR FROM d)`
     - Conversion: `TO_CHAR(d,'YYYY-MM-DD HH24:MI:SS')` and `TO_DATE` (`HH24`: 24-hour clock, `MI`: minutes)
+    - `TRUNC(d,'MM')` = the first day of the month.
+    - BETWEEN trap: `TO_DATE('20260131','YYYYMMDD')` is midnight, so `d BETWEEN ... AND TO_DATE('20260131','YYYYMMDD')` misses the rest of Jan 31. Write `d < TO_DATE('20260201','YYYYMMDD')`.
 - `CASE`:
     - Searched form: `CASE WHEN cond THEN ...`
     - Simple form: `CASE col WHEN val THEN ...`, which **can't test NULL**
@@ -199,7 +206,7 @@ Comparing anything with unknown gives unknown, and that row is dropped.
 
 - INNER: both sides must match.
 - LEFT / RIGHT: keep every row of that side, with NULLs filled in on the other.
-- FULL: keep both sides.
+- FULL: keep both sides. Row count = matched + unmatched left + unmatched right. NULL keys never match each other.
 - CROSS: every pair (m × n rows).
 - Self join: the same table under two aliases (`emp e JOIN emp m ON e.mgr = m.empno`).
 - Non-equi join: a condition such as `ON e.sal BETWEEN g.lo AND g.hi`.
@@ -219,14 +226,15 @@ Comparing anything with unknown gives unknown, and that row is dropped.
 - `EXISTS` asks whether the subquery returned any row. The values don't matter, so `SELECT 1` is fine.
 - Correlated subquery: the inner query refers to the outer row and runs once per outer row.
 - Where subqueries go:
-    - In SELECT: a scalar subquery, which must return 1 value.
+    - In SELECT: a scalar subquery, which must return 1 value. 0 rows gives NULL. 2+ rows is an error (ORA-01427).
     - In FROM: an inline view, the only kind that can take ORDER BY.
     - In WHERE: a nested subquery.
-- Multi-column: `WHERE (dept, sal) IN (SELECT dept, MAX(sal) ... GROUP BY dept)`.
+- Multi-column: `WHERE (dept, sal) IN (SELECT dept, MAX(sal) ... GROUP BY dept)`. A pair containing NULL, such as (NULL, 100), never matches.
 
 ### Set operators
 
 - `UNION` removes duplicates. `UNION ALL` keeps them, so it does no dedup work and is the cheapest.
+- Set operators treat NULLs as **equal**: UNION keeps one NULL row, even though `NULL = NULL` is unknown in WHERE and joins.
 - `INTERSECT`: rows in both. `MINUS` (SQL Server `EXCEPT`): rows in the first but not the second.
 - Precedence:
     - Oracle evaluates all set operators left to right, with equal precedence.
@@ -324,6 +332,7 @@ void walk(int c, int level) {
 ```
 
 - `START WITH` picks the roots. Without it, **every** row starts its own tree. LEVEL starts at 1 at the root.
+- Row generator: `SELECT LEVEL FROM dual CONNECT BY LEVEL <= 3` returns 1, 2, 3.
 - START WITH rows are never tested against the CONNECT BY condition.
 - With `START WITH mgr IS NULL`:
     - A condition in **CONNECT BY** cuts the whole branch: `CONNECT BY PRIOR empno = mgr AND name <> 'Park'` returns King, Lee.
@@ -339,12 +348,16 @@ void walk(int c, int level) {
 ### PIVOT and regular expressions
 
 - `PIVOT (SUM(sal) FOR dept IN (10, 20))` turns rows into columns. `UNPIVOT` turns columns into rows.
+    - Any source column not used in PIVOT becomes an implicit GROUP BY key, so pivot from an inline view that selects only the columns you need.
+    - The alias in `IN (10 AS d10)` becomes the result column name.
+    - UNPIVOT drops NULL values unless written `UNPIVOT INCLUDE NULLS`.
 - Symbols:
     - `.` any character · `^` start · `$` end · `|` or
     - `*` 0 or more · `+` 1 or more · `?` 0 or 1
     - `{n}` exactly n · `{n,}` n or more · `{n,m}` between n and m
     - `[abc]` one of these · `[^abc]` none of these
     - `\d` a digit, the same as `[[:digit:]]` (also `[[:alpha:]]`, `[[:space:]]`)
+    - `\.` a literal dot
     - `\1` back-reference to the first group
 - Matching is greedy by default. `*?` and `+?` match as little as possible.
 - Functions:
@@ -353,6 +366,8 @@ void walk(int c, int level) {
     - `REGEXP_REPLACE`: replace
     - `REGEXP_INSTR`: position
     - `REGEXP_COUNT`: count matches
+- Argument order: `REGEXP_SUBSTR(src, pattern, position, occurrence, match_param)`. match_param `'i'` = case-insensitive.
+    - `REGEXP_SUBSTR('a1b22c333','[0-9]+',1,2)` = `'22'` (the 2nd match, starting from position 1)
 
 ## Subject 2: management statements
 
@@ -378,6 +393,8 @@ WHEN MATCHED     THEN UPDATE SET t.v = s.v  [DELETE WHERE ...]
 WHEN NOT MATCHED THEN INSERT (id, v) VALUES (s.id, s.v);
 ```
 
+- `DELETE WHERE` applies only to rows this MERGE just updated, and tests their **updated** values.
+
 ### DDL
 
 | | Oracle | SQL Server |
@@ -386,7 +403,9 @@ WHEN NOT MATCHED THEN INSERT (id, v) VALUES (s.id, s.v);
 | Rename a column | `ALTER TABLE t RENAME COLUMN a TO b` | `sp_rename` |
 | Add / drop a column | `ADD (c ...)` / `DROP COLUMN c` | `ADD c ...` / `DROP COLUMN c` |
 
-- `CREATE TABLE t2 AS SELECT ...` (CTAS) copies the data and the NOT NULL constraints only: no PK, FK, UNIQUE or CHECK.
+- `CREATE TABLE t2 AS SELECT ...` (CTAS) copies the data and the explicitly declared NOT NULL constraints only: no PK, FK, UNIQUE or CHECK. The NOT NULL that a PK puts on its column is not copied, so that column becomes nullable.
+- Names: start with a letter, use only A–Z, 0–9, `_`, `$` and `#`, and can't be reserved words.
+- SQL Server auto-number: `id INT IDENTITY(1,1)` (start 1, step 1).
 - `DROP TABLE t CASCADE CONSTRAINTS` also drops the FKs that point at t.
 - `DELETE` removes rows and can be rolled back until COMMIT. `TRUNCATE` removes all rows but keeps the table, and can't be rolled back in Oracle. `DROP` removes the table itself.
 - A view is a stored query and holds no data. Views with joins, GROUP BY or DISTINCT are restricted for DML.
@@ -398,7 +417,7 @@ WHEN NOT MATCHED THEN INSERT (id, v) VALUES (s.id, s.v);
 - FK: the child's value must exist in the parent, or be NULL.
     - `ON DELETE CASCADE`: deleting a parent deletes its children.
     - `ON DELETE SET NULL`: the children's FK becomes NULL.
-- `CHECK (sal > 0)` enforces a condition. `DEFAULT` supplies the value when an INSERT leaves the column out.
+- `CHECK (sal > 0)` enforces a condition, but **lets NULL through**: the check fails only on FALSE, and NULL gives unknown. `DEFAULT` supplies the value when an INSERT leaves the column out.
 
 ### TCL
 
